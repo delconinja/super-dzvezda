@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { getFamilySession, loginWithPin, register, parentLogin, StudentProfile } from '@/lib/auth'
+import { saveAffiliateRef } from '@/lib/affiliate'
 
 const GRADES = [5, 6, 7, 8, 9] as const
 
@@ -319,6 +320,10 @@ export default function HomePage() {
   const [students, setStudents] = useState<StudentProfile[]>([])
 
   useEffect(() => {
+    // Capture affiliate ref from URL before anything else
+    const ref = new URLSearchParams(window.location.search).get('ref')
+    if (ref) saveAffiliateRef(ref)
+
     const family = getFamilySession()
     if (family && family.students.length > 0) {
       setStudents(family.students)

@@ -1,4 +1,5 @@
 import { supabase } from './supabase'
+import { getAffiliateRef, clearAffiliateRef } from './affiliate'
 
 export interface StudentProfile {
   id: string
@@ -120,10 +121,20 @@ export async function register(data: {
 
     const userId = authData.user.id
 
+    // Resolve affiliate ref if present
+    let affiliateId: string | null = null
+    const refCode = getAffiliateRef()
+    if (refCode) {
+      const { data: aff } = await supabase
+        .from('affiliates').select('id').eq('code', refCode).eq('status', 'active').maybeSingle()
+      if (aff) { affiliateId = aff.id; clearAffiliateRef() }
+    }
+
     // Create trial subscription
     const trialEnd = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString()
     const { error: subError } = await supabase.from('subscriptions').insert({
       parent_id: userId, trial_ends_at: trialEnd, status: 'trial',
+      ...(affiliateId ? { affiliate_id: affiliateId } : {}),
     })
     if (subError) return { ok: false, error: 'Грешка при активирање пробен период: ' + subError.message }
 
