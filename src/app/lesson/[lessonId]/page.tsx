@@ -17,6 +17,9 @@ export default function LessonPage() {
   const [currentEx, setCurrentEx] = useState(0)
   const [selected, setSelected] = useState<string | null>(null)
   const [answered, setAnswered] = useState(false)
+  const [hintShown, setHintShown] = useState(false)
+  const [revealed, setRevealed] = useState(false)
+  const [wrongAttempts, setWrongAttempts] = useState<string[]>([])
   const [correct, setCorrect] = useState(0)
   const [showStar, setShowStar] = useState(false)
   const [student, setStudent] = useState<StudentProfile | null>(null)
@@ -49,14 +52,34 @@ export default function LessonPage() {
   const starsEarned = correct >= exercises.length ? 3 : correct >= Math.ceil(exercises.length * 0.6) ? 2 : correct > 0 ? 1 : 0
 
   const handleAnswer = (option: string) => {
-    if (answered) return
+    if (revealed) return
+    if (hintShown) return  // must click retry, not another option
+
     setSelected(option)
     setAnswered(true)
+
     if (option === ex.correct) {
       setCorrect((c) => c + 1)
+      setRevealed(true)
+      setHintShown(false)
       setShowStar(true)
       setTimeout(() => setShowStar(false), 800)
+    } else {
+      const isFirstWrong = wrongAttempts.length === 0
+      setWrongAttempts((prev) => [...prev, option])
+      if (ex.hint && isFirstWrong) {
+        setHintShown(true)   // first wrong + hint available → show hint, allow retry
+      } else {
+        setRevealed(true)    // second wrong or no hint → reveal answer
+      }
     }
+  }
+
+  const handleRetry = () => {
+    setSelected(null)
+    setAnswered(false)
+    setHintShown(false)
+    // wrongAttempts kept so we can fade the already-tried option
   }
 
   const handleNext = () => {
@@ -64,6 +87,9 @@ export default function LessonPage() {
       setCurrentEx((i) => i + 1)
       setSelected(null)
       setAnswered(false)
+      setHintShown(false)
+      setRevealed(false)
+      setWrongAttempts([])
     } else {
       const stars = correct >= exercises.length ? 3 : correct >= Math.ceil(exercises.length * 0.6) ? 2 : correct > 0 ? 1 : 0
       if (student) {
@@ -138,42 +164,65 @@ export default function LessonPage() {
         </div>
 
         {/* Options */}
-        <div className="grid gap-3 mb-6">
+        <div className="grid gap-3 mb-4">
           {(ex.options || ['Точно', 'Неточно']).map((opt) => {
             let bg = 'white'
             let border = '#E5E7EB'
             let textColor = '#1A1A2E'
-            if (answered) {
-              if (opt === ex.correct) { bg = '#E8F8EA'; border = '#6BCB77'; textColor = '#2D7A35' }
-              else if (opt === selected) { bg = '#FFE8E8'; border = '#FF6B6B'; textColor = '#C0392B' }
-            } else if (selected === opt) {
-              bg = subject.bgColor; border = subject.color
+            let opacity = 1
+            let icon = ''
+
+            if (revealed) {
+              if (opt === ex.correct) { bg = '#E8F8EA'; border = '#6BCB77'; textColor = '#2D7A35'; icon = ' ✅' }
+              else if (wrongAttempts.includes(opt)) { bg = '#FFE8E8'; border = '#FF6B6B'; textColor = '#C0392B'; icon = ' ❌' }
+            } else if (hintShown) {
+              if (opt === selected) { bg = '#FFF8E1'; border = '#FFD93D'; textColor = '#92660A' }
+            } else {
+              // retry mode — fade previously wrong option
+              if (wrongAttempts.includes(opt)) { opacity = 0.4 }
+              else if (selected === opt) { bg = subject.bgColor; border = subject.color }
             }
+
             return (
-              <button key={opt} onClick={() => handleAnswer(opt)}
+              <button key={opt}
+                onClick={() => handleAnswer(opt)}
+                disabled={revealed || hintShown}
                 className="w-full p-4 rounded-2xl text-left font-bold text-lg transition-all duration-200"
-                style={{ background: bg, border: `2px solid ${border}`, color: textColor,
-                  transform: !answered ? 'scale(1)' : undefined,
-                  cursor: answered ? 'default' : 'pointer' }}>
-                {opt}
-                {answered && opt === ex.correct && <span className="ml-2">✅</span>}
-                {answered && opt === selected && opt !== ex.correct && <span className="ml-2">❌</span>}
+                style={{
+                  background: bg, border: `2px solid ${border}`, color: textColor, opacity,
+                  cursor: (revealed || hintShown) ? 'default' : 'pointer',
+                }}>
+                {opt}{icon}
               </button>
             )
           })}
         </div>
 
-        {/* Explanation */}
-        {answered && (
-          <div className="rounded-3xl p-4 mb-6"
-            style={{ background: selected === ex.correct ? '#E8F8EA' : '#FFE8E8' }}>
-            <p className="font-bold text-sm" style={{ color: selected === ex.correct ? '#2D7A35' : '#C0392B' }}>
+        {/* Hint */}
+        {hintShown && ex.hint && (
+          <div className="rounded-3xl p-4 mb-4 animate-fade-up"
+            style={{ background: '#FFFBEA', border: '2px solid #FFD93D' }}>
+            <p className="text-sm font-black mb-1" style={{ color: '#92660A' }}>💡 Намек</p>
+            <p className="text-sm font-semibold leading-relaxed" style={{ color: '#6B4C0A' }}>{ex.hint}</p>
+            <button onClick={handleRetry}
+              className="mt-3 w-full py-3 rounded-2xl font-black text-base transition-all active:scale-95"
+              style={{ background: '#FFD93D', color: '#1A1A2E' }}>
+              🔄 Обиди се пак
+            </button>
+          </div>
+        )}
+
+        {/* Explanation after reveal */}
+        {revealed && (
+          <div className="rounded-3xl p-4 mb-4 animate-fade-up"
+            style={{ background: wrongAttempts.length === 0 || selected === ex.correct ? '#E8F8EA' : '#FFE8E8' }}>
+            <p className="font-bold text-sm" style={{ color: wrongAttempts.length === 0 || selected === ex.correct ? '#2D7A35' : '#C0392B' }}>
               {selected === ex.correct ? '✅ Точно!' : '❌ Неточно'} — {ex.explanation}
             </p>
           </div>
         )}
 
-        {answered && (
+        {revealed && (
           <button onClick={handleNext}
             className="w-full py-4 rounded-2xl text-xl font-black text-white transition-all duration-200 hover:scale-[1.02]"
             style={{ background: `linear-gradient(135deg, ${subject.color}, ${subject.color}cc)` }}>
@@ -211,7 +260,7 @@ export default function LessonPage() {
         </div>
 
         <div className="flex flex-col gap-3 w-full max-w-xs mx-auto">
-          <button onClick={() => { setPhase('exercises'); setCurrentEx(0); setSelected(null); setAnswered(false); setCorrect(0) }}
+          <button onClick={() => { setPhase('exercises'); setCurrentEx(0); setSelected(null); setAnswered(false); setHintShown(false); setRevealed(false); setWrongAttempts([]); setCorrect(0) }}
             className="w-full py-3 rounded-2xl font-black text-white border-2 border-white/30 hover:border-white/60 transition-all">
             🔄 Повтори
           </button>
