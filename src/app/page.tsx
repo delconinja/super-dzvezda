@@ -641,12 +641,14 @@ function ParentLoginForm({ onDone, onRegister }: { onDone: () => void; onRegiste
               style={{ background: 'linear-gradient(135deg, #5C35D4, #7B5CE5)' }}>
               {loading ? 'Се логира...' : 'Влези'}
             </button>
-            <p className="text-center text-sm font-semibold" style={{ color: '#9B9BAA' }}>
-              Немаш профил?{' '}
-              <button type="button" onClick={onRegister} className="font-black" style={{ color: '#5C35D4' }}>
-                Регистрирај се
+            <div className="flex items-center justify-between text-sm">
+              <button type="button" onClick={onRegister} className="font-semibold" style={{ color: '#9B9BAA' }}>
+                Нема профил? <span className="font-black" style={{ color: '#5C35D4' }}>Регистрирај се</span>
               </button>
-            </p>
+              <a href="/reset-password" className="font-semibold" style={{ color: '#9B9BAA' }}>
+                Заборавена лозинка?
+              </a>
+            </div>
           </div>
         </div>
       </div>

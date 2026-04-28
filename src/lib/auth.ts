@@ -269,11 +269,34 @@ export async function saveProgress(
       .from('progress').select('stars_earned').eq('student_id', studentId)
     const total = (all || []).reduce((sum, r) => sum + r.stars_earned, 0)
     await supabase.from('students').update({ stars_total: total }).eq('id', studentId)
+    if (starsEarned > 0) await updateStreak(studentId)
     return total
   } catch (e) {
     console.error('saveProgress error:', e)
     return 0
   }
+}
+
+async function updateStreak(studentId: string): Promise<void> {
+  try {
+    const { data: records } = await supabase
+      .from('progress').select('completed_at')
+      .eq('student_id', studentId).eq('completed', true)
+    if (!records?.length) {
+      await supabase.from('students').update({ streak: 1 }).eq('id', studentId)
+      return
+    }
+    const dates = new Set(records.map(r => r.completed_at.slice(0, 10)))
+    let streak = 0
+    const today = new Date()
+    for (let i = 0; i < 365; i++) {
+      const d = new Date(today)
+      d.setDate(d.getDate() - i)
+      if (dates.has(d.toISOString().slice(0, 10))) streak++
+      else break
+    }
+    await supabase.from('students').update({ streak: Math.max(1, streak) }).eq('id', studentId)
+  } catch (e) { console.error('updateStreak error:', e) }
 }
 
 export async function refreshStudentSession(studentId: string): Promise<void> {
