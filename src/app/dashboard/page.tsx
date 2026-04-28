@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { SUBJECTS } from '@/lib/subjects'
-import { getActiveStudent, getSubscription, parentLogout, clearActiveStudent, trialDaysLeft, isTrialExpired, StudentProfile, Subscription } from '@/lib/auth'
+import { getActiveStudent, getSubscription, getProgress, parentLogout, clearActiveStudent, trialDaysLeft, isTrialExpired, StudentProfile, Subscription } from '@/lib/auth'
+import { GRADE7_CONTENT } from '@/lib/content'
 
 export default function DashboardPage() {
   const router = useRouter()
@@ -11,17 +12,31 @@ export default function DashboardPage() {
   const [sub, setSub] = useState<Subscription | null>(null)
   const [daysLeft, setDaysLeft] = useState(14)
   const [loading, setLoading] = useState(true)
+  const [starsBySubject, setStarsBySubject] = useState<Record<string, number>>({})
 
   useEffect(() => {
     const active = getActiveStudent()
     if (!active) { router.push('/'); return }
     setStudent(active)
 
-    getSubscription().then((s) => {
+    // Build lessonId → subjectId lookup once
+    const lessonSubjectMap: Record<string, string> = {}
+    Object.entries(GRADE7_CONTENT).forEach(([subjectId, units]) =>
+      units.forEach(u => u.lessons.forEach(l => { lessonSubjectMap[l.id] = subjectId }))
+    )
+
+    Promise.all([getSubscription(), getProgress(active.id)]).then(([s, progress]) => {
       if (!s) { setLoading(false); return }
       if (isTrialExpired(s)) { router.push('/trial-expired'); return }
       setSub(s)
       setDaysLeft(trialDaysLeft(s))
+
+      const map: Record<string, number> = {}
+      progress.forEach((p) => {
+        const subId = lessonSubjectMap[p.lesson_id]
+        if (subId) map[subId] = (map[subId] || 0) + p.stars_earned
+      })
+      setStarsBySubject(map)
       setLoading(false)
     })
   }, [router])
@@ -56,6 +71,10 @@ export default function DashboardPage() {
               </span>
             </div>
           )}
+          <button onClick={() => router.push('/parent')}
+            className="text-white/60 hover:text-white/90 text-sm font-bold transition-colors">
+            👪
+          </button>
           <button onClick={handleLogout}
             className="text-white/50 hover:text-white/90 text-sm font-bold transition-colors">
             Излез
@@ -98,11 +117,11 @@ export default function DashboardPage() {
                     <div className="text-xl font-black" style={{ color: subject.color }}>{subject.nameMk}</div>
                     <div className="text-sm font-semibold mt-0.5" style={{ color: '#9B9BAA' }}>{subject.world}</div>
                     <div className="flex items-center gap-1 mt-2">
-                      {[...Array(3)].map((_, i) => (
-                        <span key={i} style={{ color: '#D1D5DB', fontSize: '0.9rem' }}>★</span>
-                      ))}
-                      <span className="text-xs ml-1" style={{ color: '#9B9BAA' }}>
-                        0 / {subject.unitsCount * 3} ѕвезди
+                      <span className="text-xs font-bold" style={{ color: '#FFD93D' }}>
+                        ⭐ {starsBySubject[subject.id] || 0}
+                      </span>
+                      <span className="text-xs" style={{ color: '#9B9BAA' }}>
+                        / {subject.unitsCount * 3} ѕвезди
                       </span>
                     </div>
                   </div>

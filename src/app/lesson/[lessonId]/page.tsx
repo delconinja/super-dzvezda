@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import { GRADE7_CONTENT, ExerciseData } from '@/lib/content'
 import { SUBJECTS } from '@/lib/subjects'
-import { getActiveStudent } from '@/lib/auth'
+import { getActiveStudent, saveProgress, refreshStudentSession, StudentProfile } from '@/lib/auth'
 
 type Phase = 'lesson' | 'exercises' | 'results'
 
@@ -19,6 +19,7 @@ export default function LessonPage() {
   const [answered, setAnswered] = useState(false)
   const [correct, setCorrect] = useState(0)
   const [showStar, setShowStar] = useState(false)
+  const [student, setStudent] = useState<StudentProfile | null>(null)
 
   // Find lesson across all subjects
   const lesson = Object.values(GRADE7_CONTENT)
@@ -33,7 +34,8 @@ export default function LessonPage() {
 
   useEffect(() => {
     const active = getActiveStudent()
-    if (!active) router.push('/')
+    if (!active) { router.push('/'); return }
+    setStudent(active)
   }, [router])
 
   if (!lesson || !subject) return (
@@ -63,6 +65,11 @@ export default function LessonPage() {
       setSelected(null)
       setAnswered(false)
     } else {
+      const stars = correct >= exercises.length ? 3 : correct >= Math.ceil(exercises.length * 0.6) ? 2 : correct > 0 ? 1 : 0
+      if (student) {
+        saveProgress(student.id, lessonId, stars)
+          .then(() => refreshStudentSession(student.id))
+      }
       setPhase('results')
     }
   }

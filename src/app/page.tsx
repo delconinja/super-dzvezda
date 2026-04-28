@@ -21,6 +21,14 @@ function Stars() {
   )
 }
 
+function capitalizeWords(val: string) {
+  return val.replace(/(^|\s)(\S)/g, (_, sp, ch) => sp + ch.toUpperCase())
+}
+
+function isCyrillicName(val: string) {
+  return /^[Ѐ-ӿ\s\-]+$/.test(val.trim())
+}
+
 // ── REGISTER FORM ─────────────────────────────────────────────────
 function RegisterForm({ onDone }: { onDone: () => void }) {
   const [parentName, setParentName] = useState('')
@@ -34,10 +42,12 @@ function RegisterForm({ onDone }: { onDone: () => void }) {
 
   const handleRegister = async () => {
     setError('')
-    if (!parentName.trim()) return setError('Внеси го твоето ime.')
+    if (!parentName.trim()) return setError('Внеси го твоето име.')
+    if (!isCyrillicName(parentName)) return setError('Името мора да биде на кирилица (пр. Ана Петровска).')
     if (!email.includes('@')) return setError('Внеси валидна е-пошта.')
     if (password.length < 6) return setError('Лозинката мора да има барем 6 знаци.')
     if (!studentName.trim()) return setError('Внеси го името на детето.')
+    if (!isCyrillicName(studentName)) return setError('Името на детето мора да биде на кирилица.')
     if (!grade) return setError('Одбери одделение.')
     if (pin.length !== 4) return setError('PIN мора да има точно 4 цифри.')
     setLoading(true)
@@ -62,13 +72,13 @@ function RegisterForm({ onDone }: { onDone: () => void }) {
         <div className="space-y-3">
           <p className="text-xs font-black tracking-widest" style={{ color: '#9B9BAA' }}>РОДИТЕЛ</p>
           {[
-            { label: 'ИМЕ', val: parentName, set: setParentName, type: 'text', ph: 'Ана Петровска' },
+            { label: 'ИМЕ', val: parentName, set: setParentName, type: 'text', ph: 'Ана Петровска', transform: capitalizeWords },
             { label: 'Е-ПОШТА', val: email, set: setEmail, type: 'email', ph: 'ana@example.com' },
             { label: 'ЛОЗИНКА', val: password, set: setPassword, type: 'password', ph: 'Минимум 6 знаци' },
-          ].map(({ label, val, set, type, ph }) => (
+          ].map(({ label, val, set, type, ph, transform }: { label: string; val: string; set: (v: string) => void; type: string; ph: string; transform?: (v: string) => string }) => (
             <div key={label}>
               <label className="block text-xs font-black mb-1" style={{ color: '#6B6B8A' }}>{label}</label>
-              <input type={type} value={val} onChange={(e) => { set(e.target.value); setError('') }}
+              <input type={type} value={val} onChange={(e) => { set(transform ? transform(e.target.value) : e.target.value); setError('') }}
                 placeholder={ph}
                 className="w-full px-4 py-3 rounded-2xl border-2 font-semibold text-base outline-none"
                 style={{ borderColor: val ? '#5C35D4' : '#E5E7EB', color: '#1A1A2E', background: '#FAFAFA' }} />
@@ -80,7 +90,7 @@ function RegisterForm({ onDone }: { onDone: () => void }) {
           <p className="text-xs font-black tracking-widest" style={{ color: '#9B9BAA' }}>ДЕТЕ</p>
           <div>
             <label className="block text-xs font-black mb-1" style={{ color: '#6B6B8A' }}>ИМЕ НА ДЕТЕТО</label>
-            <input type="text" value={studentName} onChange={(e) => { setStudentName(e.target.value); setError('') }}
+            <input type="text" value={studentName} onChange={(e) => { setStudentName(capitalizeWords(e.target.value)); setError('') }}
               placeholder="Марија"
               className="w-full px-4 py-3 rounded-2xl border-2 font-semibold text-base outline-none"
               style={{ borderColor: studentName ? '#5C35D4' : '#E5E7EB', color: '#1A1A2E', background: '#FAFAFA' }} />
@@ -325,13 +335,7 @@ export default function HomePage() {
   }
 
   const handleParentLoggedIn = () => {
-    const family = getFamilySession()
-    if (family && family.students.length > 0) {
-      setStudents(family.students)
-      setView('kids')
-    } else {
-      router.push('/dashboard')
-    }
+    router.push('/parent')
   }
 
   if (view === 'loading') return (

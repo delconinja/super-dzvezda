@@ -29,10 +29,24 @@ export interface Subscription {
 }
 
 export const PLANS = {
-  individual:        { label: 'Поединец',       price: 8,   annual: 70,  maxStudents: 1, desc: '1 дете, сите предмети' },
-  family:            { label: 'Семеен',          price: 13,  annual: 110, maxStudents: 3, desc: 'До 3 деца' },
-  school:            { label: 'Училиште/Клас',   price: 80,  annual: 800, maxStudents: 35, desc: 'До 35 ученици' },
+  school: { label: 'Училиште/Клас', price: 80, annual: 800, maxStudents: 35 },
 } as const
+
+export function familyMonthlyEur(kids: number) {
+  return kids <= 1 ? 10 : 15
+}
+
+export function familyMonthlyMkd(kids: number) {
+  return kids <= 1 ? 600 : 900
+}
+
+export function familyAnnualEur(kids: number) {
+  return familyMonthlyEur(kids) * 10
+}
+
+export function familyAnnualMkd(kids: number) {
+  return familyMonthlyMkd(kids) * 10
+}
 
 export interface FamilySession {
   parentId: string
@@ -190,19 +204,78 @@ export function isTrialExpired(sub: Subscription): boolean {
   return trialDaysLeft(sub) <= 0
 }
 
-// ── PROGRESS ─────────────────────────────────────────────────────
-export async function saveProgress(studentId: string, lessonId: string, starsEarned: number) {
+// ── ADD STUDENT ───────────────────────────────────────────────────
+export async function addStudent(data: {
+  studentName: string
+  grade: number
+  pin: string
+}): Promise<{ ok: boolean; error?: string; student?: StudentProfile }> {
   try {
-    await supabase.from('progress').upsert({
-      student_id: studentId, lesson_id: lessonId,
-      stars_earned: starsEarned, completed: true,
-      completed_at: new Date().toISOString(),
-    }, { onConflict: 'student_id,lesson_id' })
+    const { data: { user } } = await supabase.auth.getUser()
+    if (!user) return { ok: false, error: 'Не си најавен.' }
+
+    const { data: existing } = await supabase
+      .from('students').select('id').eq('parent_id', user.id)
+    if ((existing?.length || 0) >= 3) {
+      return { ok: false, error: 'Достигнат е максимумот од 3 деца.' }
+    }
+
+    const { data: student, error } = await supabase
+      .from('students')
+      .insert({ parent_id: user.id, name: data.studentName, grade: data.grade, pin: data.pin })
+      .select().single()
+    if (error) return { ok: false, error: 'Грешка при додавање: ' + error.message }
+
+    const session = getFamilySession()
+    saveFamilySession(user.id, [...(session?.students || []), student])
+    return { ok: true, student }
+  } catch (e: unknown) {
+    return { ok: false, error: 'Неочекувана грешка: ' + String(e) }
+  }
+}
+
+// ── PROGRESS ─────────────────────────────────────────────────────
+export async function saveProgress(
+  studentId: string,
+  lessonId: string,
+  starsEarned: number,
+): Promise<number> {
+  try {
+    // Only save if score is better than existing (protect high scores on retry)
+    const { data: existing } = await supabase
+      .from('progress').select('stars_earned')
+      .eq('student_id', studentId).eq('lesson_id', lessonId).single()
+
+    if (!existing || starsEarned >= existing.stars_earned) {
+      await supabase.from('progress').upsert({
+        student_id: studentId, lesson_id: lessonId,
+        stars_earned: starsEarned, completed: starsEarned > 0,
+        completed_at: new Date().toISOString(),
+      }, { onConflict: 'student_id,lesson_id' })
+    }
+
     const { data: all } = await supabase
       .from('progress').select('stars_earned').eq('student_id', studentId)
     const total = (all || []).reduce((sum, r) => sum + r.stars_earned, 0)
     await supabase.from('students').update({ stars_total: total }).eq('id', studentId)
-  } catch (e) { console.error('saveProgress error:', e) }
+    return total
+  } catch (e) {
+    console.error('saveProgress error:', e)
+    return 0
+  }
+}
+
+export async function refreshStudentSession(studentId: string): Promise<void> {
+  try {
+    const { data: student } = await supabase
+      .from('students').select('*').eq('id', studentId).single()
+    if (!student) return
+    setActiveStudent(student)
+    const session = getFamilySession()
+    if (session) {
+      saveFamilySession(session.parentId, session.students.map(s => s.id === studentId ? student : s))
+    }
+  } catch { /* silent */ }
 }
 
 export async function getProgress(studentId: string) {
