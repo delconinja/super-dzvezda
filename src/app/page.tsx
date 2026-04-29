@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { getFamilySession, loginWithPin, register, parentLogin, StudentProfile } from '@/lib/auth'
 import { saveAffiliateRef } from '@/lib/affiliate'
-import { MK_TOWNS, getSchools } from '@/lib/schools'
+import TownSchoolPicker from '@/components/TownSchoolPicker'
 
 const GRADES = [5, 6, 7, 8, 9] as const
 
@@ -14,64 +14,6 @@ function capitalizeWords(val: string) {
 }
 function isCyrillicName(val: string) {
   return /^[Ѐ-ӿ\s\-]+$/.test(val.trim())
-}
-
-// ── TOWN / SCHOOL PICKER ──────────────────────────────────────────
-const selectStyle = {
-  width: '100%', padding: '12px 16px', borderRadius: '1rem',
-  border: '2px solid #E5E7EB', background: '#FAFAFA',
-  color: '#1A1A2E', fontWeight: 600, fontSize: '1rem',
-  outline: 'none', appearance: 'none' as const,
-  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6B8A' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`,
-  backgroundRepeat: 'no-repeat', backgroundPosition: 'right 14px center',
-}
-
-function TownSchoolPicker({
-  town, school, onTownChange, onSchoolChange,
-}: {
-  town: string; school: string
-  onTownChange: (t: string) => void
-  onSchoolChange: (s: string) => void
-}) {
-  const schools = town ? getSchools(town) : []
-
-  return (
-    <div className="space-y-3">
-      <div className="flex items-center gap-2 mt-1">
-        <div className="flex-1 h-px" style={{ background: '#E5E7EB' }} />
-        <span className="text-xs font-black px-2 py-1 rounded-full" style={{ background: '#FFF8E1', color: '#B8860B' }}>
-          🏆 Препорачано за натпревари
-        </span>
-        <div className="flex-1 h-px" style={{ background: '#E5E7EB' }} />
-      </div>
-
-      <div>
-        <label className="block text-xs font-black mb-1" style={{ color: '#6B6B8A' }}>
-          ГРАД / ОПШТИНА <span className="font-semibold text-gray-400">(необврзно)</span>
-        </label>
-        <select value={town}
-          onChange={(e) => { onTownChange(e.target.value); onSchoolChange('') }}
-          style={{ ...selectStyle, borderColor: town ? '#5C35D4' : '#E5E7EB' }}>
-          <option value="">— Одбери град —</option>
-          {MK_TOWNS.map((t) => <option key={t} value={t}>{t}</option>)}
-        </select>
-      </div>
-
-      {town && (
-        <div>
-          <label className="block text-xs font-black mb-1" style={{ color: '#6B6B8A' }}>
-            УЧИЛИШТЕ <span className="font-semibold text-gray-400">(необврзно)</span>
-          </label>
-          <select value={school}
-            onChange={(e) => onSchoolChange(e.target.value)}
-            style={{ ...selectStyle, borderColor: school ? '#5C35D4' : '#E5E7EB' }}>
-            <option value="">— Одбери училиште —</option>
-            {schools.map((s) => <option key={s} value={s}>{s}</option>)}
-          </select>
-        </div>
-      )}
-    </div>
-  )
 }
 
 // ── STAR FIELD ────────────────────────────────────────────────────
