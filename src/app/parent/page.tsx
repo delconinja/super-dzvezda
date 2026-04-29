@@ -10,6 +10,7 @@ import {
   setActiveStudent, trialDaysLeft, isTrialExpired,
   StudentProfile, Subscription,
 } from '@/lib/auth'
+import { MK_TOWNS, getSchools } from '@/lib/schools'
 
 const GRADES = [5, 6, 7, 8, 9] as const
 
@@ -31,6 +32,55 @@ function isCyrillicName(val: string) {
   return /^[Ѐ-ӿ\s\-]+$/.test(val.trim())
 }
 
+const selectStyle = {
+  width: '100%', padding: '12px 16px', borderRadius: '1rem',
+  border: '2px solid #E5E7EB', background: '#FAFAFA',
+  color: '#1A1A2E', fontWeight: 600, fontSize: '1rem',
+  outline: 'none', appearance: 'none' as const,
+  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6B8A' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`,
+  backgroundRepeat: 'no-repeat', backgroundPosition: 'right 14px center',
+}
+
+function TownSchoolPicker({ town, school, onTownChange, onSchoolChange }: {
+  town: string; school: string
+  onTownChange: (t: string) => void; onSchoolChange: (s: string) => void
+}) {
+  const schools = town ? getSchools(town) : []
+  return (
+    <div className="space-y-3">
+      <div className="flex items-center gap-2">
+        <div className="flex-1 h-px" style={{ background: '#E5E7EB' }} />
+        <span className="text-xs font-black px-2 py-1 rounded-full" style={{ background: '#FFF8E1', color: '#B8860B' }}>
+          🏆 Препорачано за натпревари
+        </span>
+        <div className="flex-1 h-px" style={{ background: '#E5E7EB' }} />
+      </div>
+      <div>
+        <label className="block text-xs font-black mb-1 tracking-widest" style={{ color: '#6B6B8A' }}>
+          ГРАД <span className="font-semibold normal-case" style={{ color: '#C0C0C0' }}>(необврзно)</span>
+        </label>
+        <select value={town} onChange={(e) => { onTownChange(e.target.value); onSchoolChange('') }}
+          style={{ ...selectStyle, borderColor: town ? '#5C35D4' : '#E5E7EB' }}>
+          <option value="">— Одбери град —</option>
+          {MK_TOWNS.map((t) => <option key={t} value={t}>{t}</option>)}
+        </select>
+      </div>
+      {town && (
+        <div>
+          <label className="block text-xs font-black mb-1 tracking-widest" style={{ color: '#6B6B8A' }}>
+            УЧИЛИШТЕ <span className="font-semibold normal-case" style={{ color: '#C0C0C0' }}>(необврзно)</span>
+          </label>
+          <select value={school} onChange={(e) => onSchoolChange(e.target.value)}
+            style={{ ...selectStyle, borderColor: school ? '#5C35D4' : '#E5E7EB' }}>
+            <option value="">— Одбери училиште —</option>
+            {schools.map((s) => <option key={s} value={s}>{s}</option>)}
+          </select>
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function ParentPage() {
   const router = useRouter()
   const [parentName, setParentName] = useState('')
@@ -42,6 +92,8 @@ export default function ParentPage() {
   const [newName, setNewName] = useState('')
   const [newGrade, setNewGrade] = useState<number | null>(null)
   const [newPin, setNewPin] = useState('')
+  const [newTown, setNewTown] = useState('')
+  const [newSchool, setNewSchool] = useState('')
   const [addError, setAddError] = useState('')
   const [addLoading, setAddLoading] = useState(false)
 
@@ -70,11 +122,11 @@ export default function ParentPage() {
     if (!newGrade) return setAddError('Одбери одделение.')
     if (newPin.length !== 4) return setAddError('PIN мора да има 4 цифри.')
     setAddLoading(true)
-    const result = await addStudent({ studentName: newName.trim(), grade: newGrade, pin: newPin })
+    const result = await addStudent({ studentName: newName.trim(), grade: newGrade, pin: newPin, town: newTown || undefined, school: newSchool || undefined })
     setAddLoading(false)
     if (!result.ok) return setAddError(result.error!)
     setStudents((prev) => [...prev, result.student!])
-    setNewName(''); setNewGrade(null); setNewPin(''); setShowAdd(false)
+    setNewName(''); setNewGrade(null); setNewPin(''); setNewTown(''); setNewSchool(''); setShowAdd(false)
   }
 
   const handleLogout = async () => {
@@ -185,6 +237,8 @@ export default function ParentPage() {
                 <div className="flex-1 min-w-0">
                   <p className="font-black text-lg leading-tight" style={{ color: '#1A1A2E' }}>{s.name}</p>
                   <p className="text-sm font-semibold" style={{ color: '#9B9BAA' }}>{ordinal(s.grade)}</p>
+                  {s.school && <p className="text-xs font-semibold" style={{ color: '#B39DDB' }}>🏫 {s.school}</p>}
+                  {!s.school && s.town && <p className="text-xs font-semibold" style={{ color: '#B39DDB' }}>📍 {s.town}</p>}
                   <div className="flex items-center gap-3 mt-1">
                     <span className="text-sm font-bold" style={{ color: '#FFD93D' }}>⭐ {s.stars_total}</span>
                     {s.streak > 0 && (
@@ -247,6 +301,11 @@ export default function ParentPage() {
                   className="w-full px-4 py-4 rounded-2xl border-2 font-black text-2xl text-center outline-none tracking-widest"
                   style={{ borderColor: newPin.length === 4 ? '#5C35D4' : '#E5E7EB', color: '#1A1A2E', background: '#FAFAFA' }} />
               </div>
+
+              <TownSchoolPicker
+                town={newTown} school={newSchool}
+                onTownChange={setNewTown} onSchoolChange={setNewSchool}
+              />
 
               {addError && (
                 <div className="rounded-2xl px-4 py-3" style={{ background: '#FFE8E8' }}>

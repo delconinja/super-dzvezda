@@ -9,6 +9,8 @@ export interface StudentProfile {
   pin: string
   stars_total: number
   streak: number
+  town: string | null
+  school: string | null
 }
 
 export type SubscriptionPlan =
@@ -101,6 +103,8 @@ export async function register(data: {
   studentName: string
   grade: number
   pin: string
+  town?: string
+  school?: string
 }): Promise<{ ok: boolean; error?: string }> {
   try {
     const { data: authData, error: authError } = await supabase.auth.signUp({
@@ -141,7 +145,10 @@ export async function register(data: {
     // Create student profile
     const { data: student, error: stuError } = await supabase
       .from('students')
-      .insert({ parent_id: userId, name: data.studentName, grade: data.grade, pin: data.pin })
+      .insert({
+        parent_id: userId, name: data.studentName, grade: data.grade, pin: data.pin,
+        town: data.town || null, school: data.school || null,
+      })
       .select().single()
     if (stuError) return { ok: false, error: 'Грешка при креирање профил: ' + stuError.message }
 
@@ -220,6 +227,8 @@ export async function addStudent(data: {
   studentName: string
   grade: number
   pin: string
+  town?: string
+  school?: string
 }): Promise<{ ok: boolean; error?: string; student?: StudentProfile }> {
   try {
     const { data: { user } } = await supabase.auth.getUser()
@@ -233,7 +242,10 @@ export async function addStudent(data: {
 
     const { data: student, error } = await supabase
       .from('students')
-      .insert({ parent_id: user.id, name: data.studentName, grade: data.grade, pin: data.pin })
+      .insert({
+        parent_id: user.id, name: data.studentName, grade: data.grade, pin: data.pin,
+        town: data.town || null, school: data.school || null,
+      })
       .select().single()
     if (error) return { ok: false, error: 'Грешка при додавање: ' + error.message }
 
