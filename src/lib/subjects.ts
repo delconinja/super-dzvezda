@@ -13,6 +13,17 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     grades: [5, 6, 7, 8, 9],
   },
   {
+    id: 'mk',
+    name: 'Macedonian Language',
+    nameMk: 'Македонски јазик',
+    world: 'Зборовен свет',
+    color: '#E84393',
+    bgColor: '#FFE8F5',
+    emoji: '📖',
+    unitsCount: 7,
+    grades: [5, 6],
+  },
+  {
     id: 'science',
     name: 'Natural Sciences',
     nameMk: 'Природни науки',
