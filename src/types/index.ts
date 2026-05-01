@@ -1,6 +1,6 @@
 export type Grade = 5 | 6 | 7 | 8 | 9
 
-export type SubjectId = 'math' | 'biology' | 'chemistry' | 'mk' | 'science' | 'history'
+export type SubjectId = 'math' | 'biology' | 'chemistry'
 
 export interface Subject {
   id: SubjectId
