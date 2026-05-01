@@ -4,8 +4,8 @@ export const dynamic = 'force-dynamic'
 
 import { useEffect, useState } from 'react'
 import { useRouter, useParams } from 'next/navigation'
-import { GRADE7_CONTENT, ExerciseData } from '@/lib/content'
-import { SUBJECTS } from '@/lib/subjects'
+import { getGradeContent, ExerciseData } from '@/lib/content'
+import { getSubject } from '@/lib/subjects'
 import { getActiveStudent, saveProgress, refreshStudentSession, StudentProfile } from '@/lib/auth'
 
 type Phase = 'lesson' | 'exercises' | 'results'
@@ -26,16 +26,19 @@ export default function LessonPage() {
   const [showStar, setShowStar] = useState(false)
   const [student, setStudent] = useState<StudentProfile | null>(null)
 
+  const activeStudent = getActiveStudent()
+  const gradeContent = getGradeContent(activeStudent?.grade ?? 7)
+
   // Find lesson across all subjects
-  const lesson = Object.values(GRADE7_CONTENT)
+  const lesson = Object.values(gradeContent)
     .flatMap((units) => units.flatMap((u) => u.lessons))
     .find((l) => l.id === lessonId)
 
-  const subjectId = Object.entries(GRADE7_CONTENT).find(([, units]) =>
+  const subjectId = Object.entries(gradeContent).find(([, units]) =>
     units.some((u) => u.lessons.some((l) => l.id === lessonId))
   )?.[0]
 
-  const subject = SUBJECTS.find((s) => s.id === subjectId)
+  const subject = getSubject(subjectId ?? '')
 
   useEffect(() => {
     const active = getActiveStudent()

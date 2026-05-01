@@ -4,9 +4,10 @@ export const dynamic = 'force-dynamic'
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { SUBJECTS } from '@/lib/subjects'
-import { getActiveStudent, getSubscription, getProgress, parentLogout, clearActiveStudent, trialDaysLeft, isTrialExpired, StudentProfile, Subscription } from '@/lib/auth'
-import { GRADE7_CONTENT } from '@/lib/content'
+import { getSubjectsForGrade } from '@/lib/subjects'
+import { getActiveStudent, getSubscription, getProgress, clearActiveStudent, trialDaysLeft, isTrialExpired, StudentProfile, Subscription } from '@/lib/auth'
+import { getGradeContent } from '@/lib/content'
+import { Subject } from '@/types'
 
 export default function DashboardPage() {
   const router = useRouter()
@@ -15,17 +16,28 @@ export default function DashboardPage() {
   const [daysLeft, setDaysLeft] = useState(14)
   const [loading, setLoading] = useState(true)
   const [starsBySubject, setStarsBySubject] = useState<Record<string, number>>({})
+  const [maxStarsBySubject, setMaxStarsBySubject] = useState<Record<string, number>>({})
+  const [subjects, setSubjects] = useState<Subject[]>([])
 
   useEffect(() => {
     const active = getActiveStudent()
     if (!active) { router.push('/'); return }
     setStudent(active)
 
-    // Build lessonId → subjectId lookup once
+    const gradeSubjects = getSubjectsForGrade(active.grade)
+    setSubjects(gradeSubjects)
+
+    // Build lessonId → subjectId lookup + max stars per subject
+    const gradeContent = getGradeContent(active.grade)
     const lessonSubjectMap: Record<string, string> = {}
-    Object.entries(GRADE7_CONTENT).forEach(([subjectId, units]) =>
-      units.forEach(u => u.lessons.forEach(l => { lessonSubjectMap[l.id] = subjectId }))
-    )
+    const maxMap: Record<string, number> = {}
+    Object.entries(gradeContent).forEach(([subjectId, units]) => {
+      units.forEach(u => u.lessons.forEach(l => {
+        lessonSubjectMap[l.id] = subjectId
+        maxMap[subjectId] = (maxMap[subjectId] || 0) + 3
+      }))
+    })
+    setMaxStarsBySubject(maxMap)
 
     Promise.all([getSubscription(), getProgress(active.id)]).then(([s, progress]) => {
       if (!s) { setLoading(false); return }
@@ -105,7 +117,7 @@ export default function DashboardPage() {
         </div>
 
         <div className="grid gap-4">
-          {SUBJECTS.map((subject) => (
+          {subjects.map((subject) => (
             <button key={subject.id} type="button"
               onClick={() => router.push(`/subject/${subject.id}`)}
               className="w-full rounded-3xl p-6 text-left transition-all duration-200 active:scale-[0.98]"
@@ -123,7 +135,7 @@ export default function DashboardPage() {
                         ⭐ {starsBySubject[subject.id] || 0}
                       </span>
                       <span className="text-xs" style={{ color: '#9B9BAA' }}>
-                        / {subject.unitsCount * 3} ѕвезди
+                        / {maxStarsBySubject[subject.id] || subject.unitsCount * 3} ѕвезди
                       </span>
                     </div>
                   </div>

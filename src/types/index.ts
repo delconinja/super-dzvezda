@@ -1,6 +1,6 @@
 export type Grade = 5 | 6 | 7 | 8 | 9
 
-export type SubjectId = 'math' | 'biology' | 'chemistry'
+export type SubjectId = 'math' | 'biology' | 'chemistry' | 'mk' | 'science' | 'history'
 
 export interface Subject {
   id: SubjectId
@@ -11,6 +11,7 @@ export interface Subject {
   bgColor: string
   emoji: string
   unitsCount: number
+  grades?: number[]
 }
 
 export interface Unit {

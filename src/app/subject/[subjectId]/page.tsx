@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic'
 import { useEffect, useState } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import { getSubject } from '@/lib/subjects'
-import { GRADE7_CONTENT } from '@/lib/content'
+import { getGradeContent } from '@/lib/content'
 import { getActiveStudent, getProgress, StudentProfile } from '@/lib/auth'
 
 export default function SubjectPage() {
@@ -29,7 +29,8 @@ export default function SubjectPage() {
 
   if (!subject || !student) return null
 
-  const units = GRADE7_CONTENT[subjectId as keyof typeof GRADE7_CONTENT] || []
+  const gradeContent = getGradeContent(student.grade)
+  const units = gradeContent[subjectId] || []
   const totalStars = units.flatMap(u => u.lessons).reduce((s, l) => s + (lessonStars[l.id] || 0), 0)
   const maxStars = units.flatMap(u => u.lessons).length * 3
 

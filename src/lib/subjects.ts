@@ -1,6 +1,6 @@
 import { Subject } from '@/types'
 
-export const SUBJECTS: Subject[] = [
+const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
   {
     id: 'math',
     name: 'Mathematics',
@@ -10,6 +10,40 @@ export const SUBJECTS: Subject[] = [
     bgColor: '#EDE9FF',
     emoji: '🔮',
     unitsCount: 4,
+    grades: [5, 6, 7, 8, 9],
+  },
+  {
+    id: 'mk',
+    name: 'Macedonian Language',
+    nameMk: 'Македонски јазик',
+    world: 'Зборовен свет',
+    color: '#E84393',
+    bgColor: '#FFE8F5',
+    emoji: '📖',
+    unitsCount: 2,
+    grades: [5, 6],
+  },
+  {
+    id: 'science',
+    name: 'Natural Sciences',
+    nameMk: 'Природни науки',
+    world: 'Зелена планета',
+    color: '#6BCB77',
+    bgColor: '#E8F8EA',
+    emoji: '🌿',
+    unitsCount: 2,
+    grades: [5, 6],
+  },
+  {
+    id: 'history',
+    name: 'History & Society',
+    nameMk: 'Историја и општество',
+    world: 'Временска машина',
+    color: '#FF9A3C',
+    bgColor: '#FFF3E8',
+    emoji: '🏛️',
+    unitsCount: 2,
+    grades: [5, 6],
   },
   {
     id: 'biology',
@@ -20,6 +54,7 @@ export const SUBJECTS: Subject[] = [
     bgColor: '#E8F8EA',
     emoji: '🌿',
     unitsCount: 4,
+    grades: [7, 8, 9],
   },
   {
     id: 'chemistry',
@@ -30,8 +65,15 @@ export const SUBJECTS: Subject[] = [
     bgColor: '#FFE8E8',
     emoji: '⚗️',
     unitsCount: 4,
+    grades: [7, 8, 9],
   },
 ]
 
+export const SUBJECTS: Subject[] = ALL_SUBJECTS
+
+export function getSubjectsForGrade(grade: number): Subject[] {
+  return ALL_SUBJECTS.filter((s) => s.grades.includes(grade))
+}
+
 export const getSubject = (id: string) =>
-  SUBJECTS.find((s) => s.id === id)
+  ALL_SUBJECTS.find((s) => s.id === id)
