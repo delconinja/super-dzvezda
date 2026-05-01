@@ -88,15 +88,31 @@ export default function SubjectPage() {
                       <button key={lesson.id}
                         onClick={() => router.push(`/lesson/${lesson.id}`)}
                         className="w-full flex items-center justify-between p-3 rounded-2xl transition-all duration-200 hover:scale-[1.01] active:scale-[0.99]"
-                        style={{ background: done ? `${subject.color}15` : subject.bgColor, border: done ? `1.5px solid ${subject.color}40` : '1.5px solid transparent' }}>
+                        style={{
+                          background: lesson.isTest
+                            ? done ? '#FFF8E8' : '#FFFDF5'
+                            : done ? `${subject.color}15` : subject.bgColor,
+                          border: lesson.isTest
+                            ? `1.5px solid ${done ? '#F0A500' : '#FFE082'}`
+                            : done ? `1.5px solid ${subject.color}40` : '1.5px solid transparent',
+                        }}>
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-black text-white flex-shrink-0"
-                            style={{ background: done ? subject.color : lessonIdx === 0 ? subject.color : '#D1D5DB' }}>
-                            {done ? '✓' : lessonIdx === 0 ? '▶' : `${lessonIdx + 1}`}
+                          <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-black flex-shrink-0"
+                            style={{
+                              background: lesson.isTest
+                                ? done ? '#F0A500' : '#FFE082'
+                                : done ? subject.color : lessonIdx === 0 ? subject.color : '#D1D5DB',
+                              color: lesson.isTest ? (done ? 'white' : '#7A5800') : 'white',
+                            }}>
+                            {lesson.isTest ? (done ? '✓' : '📝') : done ? '✓' : lessonIdx === 0 ? '▶' : `${lessonIdx + 1}`}
                           </div>
                           <span className="font-bold text-sm text-left" style={{ color: '#1A1A2E' }}>
                             {lesson.title}
                           </span>
+                          {lesson.isTest && (
+                            <span className="text-xs font-black px-2 py-0.5 rounded-full"
+                              style={{ background: '#FFE082', color: '#7A5800' }}>ТЕСТ</span>
+                          )}
                         </div>
                         <div className="flex gap-0.5 flex-shrink-0">
                           {[1, 2, 3].map((s) => (

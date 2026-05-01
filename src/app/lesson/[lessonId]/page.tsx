@@ -9,6 +9,7 @@ import remarkGfm from 'remark-gfm'
 import { getGradeContent, ExerciseData } from '@/lib/content'
 import { getSubject } from '@/lib/subjects'
 import { getActiveStudent, saveProgress, refreshStudentSession, StudentProfile } from '@/lib/auth'
+import MathVisual from '@/components/math/MathVisual'
 
 type Phase = 'lesson' | 'exercises' | 'results'
 
@@ -341,83 +342,108 @@ export default function LessonPage() {
           }} />
       </div>
 
-      <div className="flex-1 flex flex-col max-w-xl w-full mx-auto px-4 py-5 gap-4">
+      <div className="flex-1 flex flex-col max-w-xl w-full mx-auto px-4 py-4 gap-3">
 
-        {/* Question card */}
-        <div className="rounded-3xl overflow-hidden shadow-sm"
-          style={{ background: 'white' }}>
-          <div className="px-5 py-2 flex items-center gap-2"
-            style={{ background: `${subject.color}15` }}>
-            <span className="text-xs font-black tracking-widest uppercase" style={{ color: subject.color }}>
+        {/* Question card — visual + text */}
+        <div className="rounded-3xl overflow-hidden shadow-sm" style={{ background: 'white' }}>
+
+          {/* Visual diagram */}
+          {ex.visual && (
+            <div className="flex items-center justify-center px-5 pt-5 pb-2">
+              <MathVisual {...ex.visual} color={subject.color} />
+            </div>
+          )}
+
+          {/* Question type tag */}
+          <div className="px-5 pt-4 pb-1">
+            <span className="text-xs font-black tracking-widest uppercase"
+              style={{ color: subject.color, opacity: 0.7 }}>
               {ex.type === 'true-false' ? 'Точно или Неточно?' : 'Одбери точен одговор'}
             </span>
           </div>
-          <div className="px-5 py-5">
-            <p className="font-black text-xl leading-snug" style={{ color: '#1A1A2E', fontSize: '1.15rem' }}>
+
+          {/* Question text */}
+          <div className="px-5 pb-5">
+            <p className="font-black leading-snug" style={{ color: '#1A1A2E', fontSize: '1.1rem' }}>
               {ex.question}
             </p>
           </div>
         </div>
 
-        {/* Options */}
-        <div className={`flex flex-col gap-3 ${shake ? 'animate-shake' : ''}`}>
-          {(ex.options || ['Точно', 'Неточно']).map((opt, idx) => {
-            const isCorrect = opt === ex.correct
-            const isWrong = wrongAttempts.includes(opt)
-            const isSelected = selected === opt
-            const isFaded = !revealed && !hintShown && wrongAttempts.includes(opt)
-
-            let bg = 'white'
-            let border = '#E8EAF0'
-            let textColor = '#1A1A2E'
-            let labelBg = '#F0F0F8'
-            let labelColor = '#9B9BAA'
-            let icon = null
-
-            if (revealed) {
-              if (isCorrect) {
-                bg = '#EDFFF2'; border = '#4CAF50'; textColor = '#1B5E20'
-                labelBg = '#4CAF50'; labelColor = 'white'
-                icon = <span style={{ color: '#4CAF50', fontSize: '1.1rem' }}>✓</span>
-              } else if (isWrong) {
-                bg = '#FFF0F0'; border = '#EF5350'; textColor = '#B71C1C'
-                labelBg = '#EF5350'; labelColor = 'white'
-                icon = <span style={{ color: '#EF5350', fontSize: '1rem' }}>✗</span>
+        {/* Options — chip-style for T/F, full-width for multiple choice */}
+        {ex.type === 'true-false' ? (
+          // True/False — two large equal chips
+          <div className={`grid grid-cols-2 gap-3 ${shake ? 'animate-shake' : ''}`}>
+            {(['Точно', 'Неточно'] as const).map((opt) => {
+              const isCorrect = opt === ex.correct
+              const isWrong = wrongAttempts.includes(opt)
+              const isSelected = selected === opt
+              let bg = 'white', border = '#E8EAF0', textColor = '#1A1A2E', icon = ''
+              if (revealed) {
+                if (isCorrect) { bg = '#EDFFF2'; border = '#4CAF50'; textColor = '#1B5E20'; icon = ' ✓' }
+                else if (isWrong) { bg = '#FFF0F0'; border = '#EF5350'; textColor = '#B71C1C'; icon = ' ✗' }
+              } else if (hintShown && isSelected) {
+                bg = '#FFFBEA'; border = '#FFD93D'; textColor = '#7A5800'
+              } else if (isSelected) {
+                bg = subject.bgColor; border = subject.color
               }
-            } else if (hintShown && isSelected) {
-              bg = '#FFFBEA'; border = '#FFD93D'; textColor = '#7A5800'
-              labelBg = '#FFD93D'; labelColor = '#7A5800'
-            } else if (!revealed && !hintShown && isSelected) {
-              bg = subject.bgColor; border = subject.color; textColor = '#1A1A2E'
-              labelBg = subject.color; labelColor = 'white'
-            }
-
-            return (
-              <button key={opt}
-                onClick={() => handleAnswer(opt)}
-                disabled={revealed || hintShown}
-                className="w-full flex items-center gap-4 rounded-2xl text-left transition-all duration-200 active:scale-[0.98]"
-                style={{
-                  background: bg,
-                  border: `2px solid ${border}`,
-                  padding: '14px 16px',
-                  opacity: isFaded ? 0.38 : 1,
-                  cursor: (revealed || hintShown) ? 'default' : 'pointer',
-                  boxShadow: (!revealed && !hintShown) ? '0 2px 8px rgba(0,0,0,0.05)' : 'none',
-                }}>
-                {/* Letter label */}
-                <div className="w-8 h-8 rounded-xl flex items-center justify-center font-black text-sm flex-shrink-0 transition-all"
-                  style={{ background: labelBg, color: labelColor }}>
-                  {LABELS[idx]}
-                </div>
-                <span className="font-bold text-base flex-1" style={{ color: textColor }}>
-                  {opt}
-                </span>
-                {icon && <span className="flex-shrink-0">{icon}</span>}
-              </button>
-            )
-          })}
-        </div>
+              return (
+                <button key={opt} onClick={() => handleAnswer(opt)}
+                  disabled={revealed || hintShown}
+                  className="py-4 rounded-2xl font-black text-base transition-all duration-200 active:scale-[0.97]"
+                  style={{ background: bg, border: `2px solid ${border}`, color: textColor,
+                    opacity: (!revealed && !hintShown && wrongAttempts.includes(opt)) ? 0.35 : 1 }}>
+                  {opt}{icon}
+                </button>
+              )
+            })}
+          </div>
+        ) : (
+          // Multiple choice — full-width with letter badge
+          <div className={`flex flex-col gap-2.5 ${shake ? 'animate-shake' : ''}`}>
+            {(ex.options || []).map((opt, idx) => {
+              const isCorrect = opt === ex.correct
+              const isWrong = wrongAttempts.includes(opt)
+              const isSelected = selected === opt
+              const isFaded = !revealed && !hintShown && wrongAttempts.includes(opt)
+              let bg = 'white', border = '#E8EAF0', textColor = '#1A1A2E'
+              let labelBg = '#F0F0F8', labelColor = '#9B9BAA'
+              let icon = null
+              if (revealed) {
+                if (isCorrect) {
+                  bg = '#EDFFF2'; border = '#4CAF50'; textColor = '#1B5E20'
+                  labelBg = '#4CAF50'; labelColor = 'white'
+                  icon = <span style={{ color: '#4CAF50' }}>✓</span>
+                } else if (isWrong) {
+                  bg = '#FFF0F0'; border = '#EF5350'; textColor = '#B71C1C'
+                  labelBg = '#EF5350'; labelColor = 'white'
+                  icon = <span style={{ color: '#EF5350' }}>✗</span>
+                }
+              } else if (hintShown && isSelected) {
+                bg = '#FFFBEA'; border = '#FFD93D'; textColor = '#7A5800'
+                labelBg = '#FFD93D'; labelColor = '#7A5800'
+              } else if (isSelected) {
+                bg = subject.bgColor; border = subject.color
+                labelBg = subject.color; labelColor = 'white'
+              }
+              return (
+                <button key={opt} onClick={() => handleAnswer(opt)}
+                  disabled={revealed || hintShown}
+                  className="w-full flex items-center gap-3 rounded-2xl text-left transition-all duration-200 active:scale-[0.98]"
+                  style={{ background: bg, border: `2px solid ${border}`,
+                    padding: '12px 14px', opacity: isFaded ? 0.35 : 1,
+                    cursor: (revealed || hintShown) ? 'default' : 'pointer' }}>
+                  <div className="w-7 h-7 rounded-lg flex items-center justify-center font-black text-xs flex-shrink-0"
+                    style={{ background: labelBg, color: labelColor }}>
+                    {LABELS[idx]}
+                  </div>
+                  <span className="font-semibold text-sm flex-1" style={{ color: textColor }}>{opt}</span>
+                  {icon && <span className="flex-shrink-0 text-sm">{icon}</span>}
+                </button>
+              )
+            })}
+          </div>
+        )}
 
         {/* Hint box */}
         {hintShown && ex.hint && (
