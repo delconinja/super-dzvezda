@@ -428,7 +428,7 @@ function RegisterForm({ onDone, onBack }: { onDone: () => void; onBack: () => vo
             <div className="space-y-3">
               <p className="text-xs font-black tracking-widest" style={{ color: '#9B9BAA' }}>РОДИТЕЛ</p>
               {[
-                { label: 'Име и презиме', val: parentName, set: setParentName, type: 'text', ph: 'Ана Петровска', transform: capitalizeWords },
+                { label: 'ИМЕ И ПРЕЗИМЕ', val: parentName, set: setParentName, type: 'text', ph: 'Ана Петровска', transform: capitalizeWords },
                 { label: 'Е-ПОШТА', val: email, set: setEmail, type: 'email', ph: 'ana@example.com' },
                 { label: 'ЛОЗИНКА', val: password, set: setPassword, type: 'password', ph: 'Минимум 6 знаци' },
               ].map(({ label, val, set, type, ph, transform }: { label: string; val: string; set: (v: string) => void; type: string; ph: string; transform?: (v: string) => string }) => (
