@@ -322,7 +322,7 @@ export default function LessonPage() {
       {/* Star pop animation */}
       {showStar && (
         <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
-          <div className="text-8xl animate-star-pop">⭐</div>
+          <div className="text-8xl leading-none overflow-hidden animate-star-pop">⭐</div>
         </div>
       )}
 
@@ -554,7 +554,7 @@ export default function LessonPage() {
         <div className="flex justify-center gap-3">
           {[1, 2, 3].map((s) => (
             <div key={s} className="flex flex-col items-center gap-1">
-              <span className="text-5xl transition-all duration-500"
+              <span className="text-5xl leading-none overflow-hidden transition-all duration-500"
                 style={{
                   filter: s <= starsEarned ? 'none' : 'grayscale(1) opacity(0.25)',
                   transform: s <= starsEarned ? 'scale(1.05)' : 'scale(0.9)',
