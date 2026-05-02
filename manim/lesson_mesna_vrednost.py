@@ -188,11 +188,12 @@ class MesnaVrednost(Scene):
             if val_display is None:
                 self.play(FadeIn(highlight, run_time=0.3),
                           FadeIn(new_val,  run_time=0.4))
+                val_display = new_val
             else:
                 self.play(FadeIn(highlight, run_time=0.3),
                           Transform(val_display, new_val, run_time=0.4))
+                # keep val_display pointing to the original scene object — don't swap
 
-            val_display = new_val
             self.wait(1.0)
             self.play(FadeOut(highlight, run_time=0.25))
 
