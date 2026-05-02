@@ -6,6 +6,7 @@ export interface LessonData {
   content: string
   exercises: ExerciseData[]
   isTest?: boolean
+  videoUrl?: string
 }
 
 export interface UnitData {
@@ -1003,6 +1004,7 @@ export const GRADE5_CONTENT: Record<string, UnitData[]> = {
         {
           id: 'math-5-4-4',
           title: 'Видови триаголници',
+          videoUrl: '/videos/VidoviTriagolnici.mp4',
           content: `## Видови триаголници
 
 Триаголниците ги класифицираме на два начина: **по агли** и **по страни**.

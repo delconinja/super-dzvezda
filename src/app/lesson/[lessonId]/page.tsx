@@ -147,6 +147,19 @@ export default function LessonPage() {
             </div>
           </div>
 
+          {/* Video explainer */}
+          {lesson.videoUrl && (
+            <div className="px-4 pt-4 pb-2">
+              <video
+                src={lesson.videoUrl}
+                controls
+                playsInline
+                className="w-full rounded-2xl overflow-hidden"
+                style={{ background: '#0D1B2A', maxHeight: 240 }}
+              />
+            </div>
+          )}
+
           {/* Markdown content */}
           <div className="px-6 py-5 lesson-content">
             <ReactMarkdown
