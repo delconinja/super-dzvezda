@@ -5,9 +5,10 @@ import PlaceValueTable from './PlaceValueTable'
 import FractionBar from './FractionBar'
 import FractionCircle from './FractionCircle'
 import RectangleShape from './RectangleShape'
+import TriangleShape from './TriangleShape'
 
 export interface VisualProps {
-  type: 'number-line' | 'place-value' | 'fraction-bar' | 'fraction-circle' | 'rectangle'
+  type: 'number-line' | 'place-value' | 'fraction-bar' | 'fraction-circle' | 'rectangle' | 'triangle'
   // number-line
   min?: number
   max?: number
@@ -27,6 +28,11 @@ export interface VisualProps {
   unit?: string
   showArea?: boolean
   isSquare?: boolean
+  // triangle
+  angleA?: number
+  angleB?: number
+  kind?: 'acute' | 'right' | 'obtuse'
+  showAngles?: boolean
   // shared
   color?: string
 }
@@ -66,6 +72,16 @@ export default function MathVisual({ type, color, ...props }: VisualProps) {
       numerator={props.numerator ?? 1}
       denominator={props.denominator ?? 4}
       color={c}
+    />
+  )
+
+  if (type === 'triangle') return (
+    <TriangleShape
+      a={props.angleA ?? 60}
+      b={props.angleB ?? 60}
+      kind={props.kind}
+      color={c}
+      showAngles={props.showAngles !== false}
     />
   )
 
