@@ -39,7 +39,7 @@ def angle_label(vertex, neighbor1, neighbor2, angle_deg, color, radius=0.32):
     d2 = normalize(neighbor2 - vertex)
     mid_dir = normalize(d1 + d2)
     label_pos = vertex + mid_dir * (radius + 0.28)
-    txt = Text(f"{angle_deg}°", font_size=18, color=color, weight=BOLD)
+    txt = Text(f"{angle_deg}°", font_size=24, color=color, weight=BOLD)
     txt.move_to(label_pos)
     return txt
 
@@ -77,15 +77,14 @@ class VidoviTriagolnici(Scene):
 
     # ── 2. Key rule: angles sum to 180° ──────────────────────────
     def _rule_sum(self):
-        rule_box = RoundedRectangle(width=8, height=1.6,
-                                    corner_radius=0.25,
-                                    fill_color=C_ACC, fill_opacity=0.12,
-                                    stroke_color=C_ACC, stroke_width=2)
         rule_txt = Text("Збирот на аглите на секој триаголник = 180°",
-                        font_size=28, color=WHITE, weight=BOLD)
-        rule_txt.move_to(rule_box)
-        icon = Text("💡", font_size=34)
-        icon.next_to(rule_box, LEFT, buff=0.2)
+                        font_size=32, color=WHITE, weight=BOLD)
+        rule_box = SurroundingRectangle(rule_txt,
+                                        buff=0.45, corner_radius=0.25,
+                                        fill_color=C_ACC, fill_opacity=0.12,
+                                        stroke_color=C_ACC, stroke_width=2)
+        icon = Text("💡", font_size=40)
+        icon.next_to(rule_box, LEFT, buff=0.25)
 
         self.play(DrawBorderThenFill(rule_box), run_time=0.8)
         self.play(Write(rule_txt), FadeIn(icon))
@@ -99,7 +98,7 @@ class VidoviTriagolnici(Scene):
             color=C_ACUTE,
             mk_name="Остар триаголник",
             rule="Сите 3 агли < 90°",
-            scale=2.2,
+            scale=3.4,
         )
 
     # ── 4. Right triangle ─────────────────────────────────────────
@@ -109,7 +108,7 @@ class VidoviTriagolnici(Scene):
             color=C_RIGHT,
             mk_name="Правоаголен триаголник",
             rule="Точно 1 агол = 90°",
-            scale=2.0,
+            scale=3.8,
             is_right=True,
         )
 
@@ -120,7 +119,7 @@ class VidoviTriagolnici(Scene):
             color=C_OBTUSE,
             mk_name="Тап триаголник",
             rule="Еден агол > 90°",
-            scale=2.4,
+            scale=5.0,
         )
 
     def _show_triangle_type(self, a_deg, b_deg, color, mk_name,
@@ -131,11 +130,11 @@ class VidoviTriagolnici(Scene):
         tri = Polygon(v1, v2, v3,
                       fill_color=color, fill_opacity=0.18,
                       stroke_color=color, stroke_width=2.5)
-        tri.shift(DOWN * 0.3)
+        tri.shift(DOWN * 1.2)
 
         # Right-angle box
         if is_right:
-            box_size = 0.18
+            box_size = 0.28
             right_box = Square(side_length=box_size,
                                stroke_color=color, stroke_width=1.5,
                                fill_opacity=0)
@@ -181,14 +180,14 @@ class VidoviTriagolnici(Scene):
         self.play(FadeIn(title))
 
         configs = [
-            (55, 65, C_ACUTE,  "Остар",        "сите < 90°", -3.8),
+            (55, 65, C_ACUTE,  "Остар",        "сите < 90°", -4.2),
             (90, 50, C_RIGHT,  "Правоаголен",  "еден = 90°",  0.0),
-            (31, 31, C_OBTUSE, "Тап",          "еден > 90°",  3.8),
+            (31, 31, C_OBTUSE, "Тап",          "еден > 90°",  4.2),
         ]
 
         triangles = []
         for a, b, col, name, desc, xoff in configs:
-            v1, v2, v3 = make_triangle(a, b, scale=1.3)
+            v1, v2, v3 = make_triangle(a, b, scale=2.0)
             tri = Polygon(v1, v2, v3,
                           fill_color=col, fill_opacity=0.18,
                           stroke_color=col, stroke_width=2)
