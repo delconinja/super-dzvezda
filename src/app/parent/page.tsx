@@ -12,12 +12,12 @@ import {
 } from '@/lib/auth'
 import TownSchoolPicker from '@/components/TownSchoolPicker'
 
-const GRADES = [5, 6, 7, 8, 9] as const
+const GRADES = [1, 2, 3, 4, 5, 6, 7, 8, 9] as const
 
-const GRADE_COLORS = ['#5C35D4', '#6BCB77', '#FF6B6B', '#FFD93D', '#FF9A3C']
+const GRADE_COLORS = ['#FFD93D', '#FF9A3C', '#FF6B6B', '#6BCB77', '#7B5CE5', '#FF6B9D', '#4ECDC4', '#45B7D1', '#96CEB4']
 
 function kidColor(grade: number) {
-  return GRADE_COLORS[(grade - 5) % GRADE_COLORS.length]
+  return GRADE_COLORS[(grade - 1) % GRADE_COLORS.length]
 }
 
 function ordinal(g: number) {

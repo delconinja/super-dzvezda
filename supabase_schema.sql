@@ -3,7 +3,7 @@ CREATE TABLE students (
   id            UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   parent_id     UUID REFERENCES auth.users(id) ON DELETE CASCADE NOT NULL,
   name          TEXT NOT NULL,
-  grade         INTEGER NOT NULL CHECK (grade BETWEEN 5 AND 9),
+  grade         INTEGER NOT NULL CHECK (grade BETWEEN 1 AND 9),
   pin           TEXT NOT NULL,
   stars_total   INTEGER DEFAULT 0,
   streak        INTEGER DEFAULT 0,
