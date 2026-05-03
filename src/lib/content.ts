@@ -14691,6 +14691,278 @@ der Rucksack (ранец) · der Taschenrechner (калкулатор)
       ],
     },
   ],
+  french: [
+    // ── UNITÉ 1: Premiers contacts ────────────────────────────────
+    {
+      id: 'fra6-1',
+      title: 'Premiers contacts — Први контакти',
+      lessons: [
+        {
+          id: 'fra6-1-1',
+          title: 'Bonjour! Поздравување и претставување',
+          content: `## Поздравување
+
+| Француски | Кога | Македонски |
+|-----------|------|-----------|
+| **Bonjour!** | Формален / Ден | Добар ден! |
+| **Salut!** | Неформален | Здраво! |
+| **Bonsoir!** | Вечер | Добра вечер! |
+| **Au revoir!** | Збогум (формален) | Збогум! |
+| **Ciao! / Tchao!** | Збогум (неформален) | Чао! |
+
+## Претставување
+
+- **Je m'appelle** Marie. → Јас се викам Мари.
+- **J'ai** 12 **ans**. → Имам 12 години.
+- **J'habite à** Skopje. → Живеам во Скопје.
+- **Je suis** macédonien/macédonienne. → Јас сум Македонец/Македонка.
+
+## Прашања при прв контакт
+
+| Прашање | Значење |
+|---------|---------|
+| **Comment tu t'appelles?** | Kako se vikаш? |
+| **Quel âge as-tu?** | Kolку имаш години? |
+| **Où habites-tu?** | Каде живееш? |
+| **Tu as des frères et sœurs?** | Имаш ли браќа/сестри? |
+
+## Nombres — Броеви 1–20
+1 un · 2 deux · 3 trois · 4 quatre · 5 cinq
+6 six · 7 sept · 8 huit · 9 neuf · 10 dix
+11 onze · 12 douze · 13 treize · 14 quatorze · 15 quinze
+16 seize · 17 dix-sept · 18 dix-huit · 19 dix-neuf · 20 vingt`,
+          exercises: [
+            {
+              id: 'efra6-1-1', type: 'multiple-choice',
+              question: '"Salut!" е:',
+              options: ['Формален поздрав', 'Неформален поздрав', 'Збогување', 'Вечерен поздрав'],
+              correct: 'Неформален поздрав',
+              hint: '"Salut" се користи меѓу пријатели, исто како "Здраво" — не е формален.',
+              explanation: '"Salut!" е неформален поздрав — за пријатели и врсници. "Bonjour" е формален.',
+            },
+            {
+              id: 'efra6-1-2', type: 'multiple-choice',
+              question: '"J\'ai 12 ans." значи:',
+              options: ['Јас сум 12 метри.', 'Јас имам 12 години.', 'Јас сум 12-ти.', 'Јас се викам 12.'],
+              correct: 'Јас имам 12 години.',
+              hint: 'Avoir = има. J\'ai = јас имам. Ans = години. J\'ai X ans = имам X години.',
+              explanation: '"J\'ai 12 ans." = Имам 12 години. Француски: "ans" (години) со глаголот "avoir" (имам).',
+            },
+            {
+              id: 'efra6-1-3', type: 'multiple-choice',
+              question: 'Бројот 15 на француски е:',
+              options: ['quatorze', 'quinze', 'seize', 'treize'],
+              correct: 'quinze',
+              hint: '14=quatorze, 15=?, 16=seize. Запомни: quinze звучи слично на "quince" (шпански).',
+              explanation: '15 = quinze. 14=quatorze, 15=quinze, 16=seize.',
+            },
+          ],
+        },
+        {
+          id: 'fra6-1-2',
+          title: 'Famille et goûts — Семејство и интереси',
+          content: `## La famille — Семејството
+
+| Француски | Македонски |
+|-----------|-----------|
+| **la mère** | мајката |
+| **le père** | таткото |
+| **le frère** | братот |
+| **la sœur** | сестрата |
+| **la grand-mère** | бабата |
+| **le grand-père** | дедото |
+| **les parents** | родителите |
+
+**Salut, je m'appelle Marie. J'ai une sœur et deux frères.**
+= Здраво, јас се викам Мари. Имам сестра и два брата.
+
+## Животни миленичиња (Les animaux)
+**un chien** (куче) · **un chat** (маче) · **un poisson** (риба) · **un perroquet** (папагал)
+
+## Изразување вкусови
+
+| Израз | Значење |
+|-------|---------|
+| **J'aime** le foot. | Сакам фудбал. |
+| **J'adore** la musique! | Обожавам музика! |
+| **Je n'aime pas** les maths. | Не сакам математика. |
+| **Je déteste** les épinards! | Мразам спанаќ! |
+
+## Граматика: être и avoir
+
+| | être (сум) | avoir (имам) |
+|--|-----------|-------------|
+| je | **suis** | **ai** |
+| tu | **es** | **as** |
+| il/elle | **est** | **a** |
+| nous | **sommes** | **avons** |
+| vous | **êtes** | **avez** |
+| ils/elles | **sont** | **ont** |`,
+          exercises: [
+            {
+              id: 'efra6-1-4', type: 'multiple-choice',
+              question: '"J\'adore la musique!" значи:',
+              options: ['Не сакам музика.', 'Слушам музика.', 'Обожавам музика!', 'Играм музика.'],
+              correct: 'Обожавам музика!',
+              hint: 'adorer = обожавам (посилно од aimer). J\'adore = јас обожавам.',
+              explanation: '"J\'adore" значи обожавам — посилно чувство од "j\'aime" (сакам).',
+            },
+            {
+              id: 'efra6-1-5', type: 'multiple-choice',
+              question: '"Elle ___ 11 ans." — пополни со avoir:',
+              options: ['ai', 'as', 'a', 'est'],
+              correct: 'a',
+              hint: 'Elle = таа = 3. лице еднина. avoir: je ai / tu as / il,elle **a**.',
+              explanation: 'Elle **a** 11 ans. — 3. лице еднина на "avoir" е "a".',
+            },
+          ],
+        },
+      ],
+    },
+    // ── UNITÉ 2: L'école ──────────────────────────────────────────
+    {
+      id: 'fra6-2',
+      title: 'L\'école — Училиштето',
+      lessons: [
+        {
+          id: 'fra6-2-1',
+          title: 'Les matières, les jours et l\'heure',
+          content: `## Les matières — Наставни предмети
+
+| Француски | Македонски |
+|-----------|-----------|
+| **le français** | Француски јазик |
+| **les maths** | Математика |
+| **la géo** (géographie) | Географија |
+| **l'histoire** | Историја |
+| **le sport / l'EPS** | Спорт |
+| **les arts plastiques** | Ликовно |
+| **la musique** | Музичко |
+
+**J'aime le français!** / **Je n'aime pas les maths.**
+
+## Les jours de la semaine — Денови
+
+**lundi · mardi · mercredi · jeudi · vendredi · samedi · dimanche**
+
+**Aujourd'hui nous sommes mercredi.** = Денес е среда.
+**Le mercredi, j'ai les maths.** = В среда имам математика.
+
+## L'heure — Часот
+
+- **Quelle heure est-il?** = Колку е часот?
+- Il est **onze heures**. = 11:00
+- Il est **midi**. = 12:00 (пладне)
+- Il est **minuit**. = 00:00 (полноќ)
+
+## Les fournitures scolaires — Ученички прибор
+**le crayon** (молив) · **le stylo** (хемиска) · **la gomme** (гума)
+**le sac à dos** (ранец) · **le cahier** (тетратка) · **le livre** (книга)
+
+## Les couleurs — Бои
+blanc (бела) · rouge (црвена) · vert (зелена) · bleu (сина) · jaune (жолта) · noir (черна)`,
+          exercises: [
+            {
+              id: 'efra6-2-1', type: 'multiple-choice',
+              question: '"Aujourd\'hui nous sommes mercredi." значи:',
+              options: ['Денес е понеделник.', 'Денес е среда.', 'Денес е петок.', 'Денес е вторник.'],
+              correct: 'Денес е среда.',
+              hint: 'mercredi = средата на неделата (lundi/mardi/mercredi = пон/вт/среда).',
+              explanation: '"mercredi" = среда. Редослед: lundi→mardi→mercredi→jeudi→vendredi→samedi→dimanche.',
+            },
+            {
+              id: 'efra6-2-2', type: 'multiple-choice',
+              question: '"Le stylo" е:',
+              options: ['молив', 'тетратка', 'хемиска', 'гума'],
+              correct: 'хемиска',
+              hint: 'Стило → стилограф → пенкало/хемиска. Crayon = молив.',
+              explanation: '"Le stylo" = хемиска (пенкало). "Le crayon" = молив.',
+            },
+            {
+              id: 'efra6-2-3', type: 'multiple-choice',
+              question: '"rouge" е бојата:',
+              options: ['сина', 'зелена', 'жолта', 'црвена'],
+              correct: 'црвена',
+              hint: 'Rouge звучи слично на "рубин" — темноцрвен камен.',
+              explanation: '"Rouge" = црвена. Француското знаме: bleu (сина), blanc (бела), rouge (црвена).',
+            },
+          ],
+        },
+      ],
+    },
+    // ── UNITÉ 3: Le temps libre ───────────────────────────────────
+    {
+      id: 'fra6-3',
+      title: 'Le temps libre — Слободно време',
+      lessons: [
+        {
+          id: 'fra6-3-1',
+          title: 'Les activités et les goûts',
+          content: `## Activités du temps libre — Слободни активности
+
+| Француски | Македонски |
+|-----------|-----------|
+| **faire du sport** | спортува |
+| **jouer au foot** | игра фудбал |
+| **jouer de la guitare** | свири гитара |
+| **regarder la télé** | гледа телевизија |
+| **aller au cinéma** | оди на кино |
+| **écouter de la musique** | слуша музика |
+| **lire** | чита |
+| **dessiner** | цртa |
+
+**jouer à** + спорт/игра · **jouer de** + инструмент
+
+## Искажување вкусови и преференции
+
+- **J'aime** jouer au foot. = Сакам да играм фудбал.
+- **Je préfère** écouter de la musique. = Претпочитам да слушам музика.
+- **Je n'aime pas** aller au cinéma. = Не сакам да одам на кино.
+- **J'adore** regarder la télé! = Обожавам да гледам телевизија!
+
+## Корисни прилози
+
+| Француски | Македонски |
+|-----------|-----------|
+| **aujourd'hui** | денес |
+| **toujours** | секогаш |
+| **beaucoup** | многу |
+| **souvent** | честопати |
+| **jamais** | никогаш |
+
+## Интернационализми 🌍
+Многу француски зборови постојат во повеќе јазици:
+**café, taxi, ballet, restaurant, sport, tennis, Internet, radio**`,
+          exercises: [
+            {
+              id: 'efra6-3-1', type: 'multiple-choice',
+              question: '"Jouer de la guitare" значи:',
+              options: ['Купи гитара.', 'Свири гитара.', 'Слуша гитара.', 'Гитара за продажба.'],
+              correct: 'Свири гитара.',
+              hint: 'jouer = игра/свири. jouer DE = свири инструмент. jouer À = игра спорт.',
+              explanation: '"Jouer de la guitare" = свири гитара. За инструменти: jouer DE. За спортови: jouer À.',
+            },
+            {
+              id: 'efra6-3-2', type: 'multiple-choice',
+              question: '"Je préfère écouter de la musique." значи:',
+              options: ['Не сакам музика.', 'Обожавам музика.', 'Претпочитам да слушам музика.', 'Слушам музика секогаш.'],
+              correct: 'Претпочитам да слушам музика.',
+              hint: 'Préférer = претпочитам (prefer). Je préfère = јас претпочитам.',
+              explanation: '"Je préfère" = јас претпочитам. Послабо од "j\'adore", посилно избирање од "j\'aime".',
+            },
+            {
+              id: 'efra6-3-3', type: 'multiple-choice',
+              question: '"café, taxi, sport, tennis" се примери за:',
+              options: ['Само французски зборови', 'Интернационализми — зборови во повеќе јазици', 'Германски зборови', 'Спортски термини'],
+              correct: 'Интернационализми — зборови во повеќе јазици',
+              hint: 'Café, taxi, tennis... Дали ги препознаваш на македонски? Затоа и постојат во многу јазици!',
+              explanation: 'Интернационализми = зборови кои се користат во многу јазици. Француски е извор на многу светски зборови.',
+            },
+          ],
+        },
+      ],
+    },
+  ],
 }
 
 // ── GRADE CONTENT LOOKUP ─────────────────────────────────────────

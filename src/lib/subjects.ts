@@ -92,6 +92,18 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     grades: [5, 6],
   },
   {
+    id: 'french',
+    name: 'French',
+    nameMk: 'Француски јазик',
+    world: 'Le Monde Français',
+    color: '#2563EB',
+    bgColor: '#EFF6FF',
+    emoji: '🇫🇷',
+    flagCode: 'fr',
+    unitsCount: 3,
+    grades: [6],
+  },
+  {
     id: 'german',
     name: 'German',
     nameMk: 'Германски јазик',
