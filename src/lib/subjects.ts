@@ -92,6 +92,18 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     grades: [5, 6],
   },
   {
+    id: 'german',
+    name: 'German',
+    nameMk: 'Германски јазик',
+    world: 'Deutsch Welt',
+    color: '#F59E0B',
+    bgColor: '#FEF3C7',
+    emoji: '🇩🇪',
+    flagCode: 'de',
+    unitsCount: 3,
+    grades: [6],
+  },
+  {
     id: 'biology',
     name: 'Biology',
     nameMk: 'Биологија',

@@ -14429,6 +14429,268 @@ Children have a right to:
       ],
     },
   ],
+  german: [
+    // ── EINHEIT 1: Meine ersten Kontakte ─────────────────────────
+    {
+      id: 'ger6-1',
+      title: 'Meine ersten Kontakte — Мои први контакти',
+      lessons: [
+        {
+          id: 'ger6-1-1',
+          title: 'Hallo! Поздравување и претставување',
+          content: `## Поздравување 👋
+
+| Германски | Кога | Македонски |
+|-----------|------|-----------|
+| **Hallo! / Hi!** | Неформален | Здраво! |
+| **Guten Morgen!** | Утро | Добро утро! |
+| **Guten Tag!** | Ден | Добар ден! |
+| **Guten Abend!** | Вечер | Добра вечер! |
+| **Tschüss! / Auf Wiedersehen!** | Збогум | Збогум! |
+
+## Претставување
+
+- **Ich heiße** Ana. / **Mein Name ist** Ana. → Јас се викам Ана.
+- **Ich bin** 12 Jahre alt. → Имам 12 години.
+- **Ich komme aus** Skopje. → Доаѓам од Скопје.
+- **Ich wohne in** Skopje. → Живеам во Скопје.
+- **Mein Hobby ist** Gitarre spielen. → Моето хоби е свирење гитара.
+
+## Прашања
+
+| Прашање | Значење |
+|---------|---------|
+| **Wie heißt du?** | Kako се викаш? |
+| **Wie alt bist du?** | Колку имаш години? |
+| **Woher kommst du?** | Откаде доаѓаш? |
+| **Wo wohnst du?** | Каде живееш? |
+| **Was machst du gern?** | Што сакаш да правиш? |
+
+## Земји каде се зборува германски 🇩🇪
+**Deutschland** (Германија) · **Österreich** (Австрија) · **die Schweiz** (Швајцарија)`,
+          exercises: [
+            {
+              id: 'eger6-1-1', type: 'multiple-choice',
+              question: '"Guten Morgen!" се користи:',
+              options: ['Навечер', 'Наутро', 'При збогување', 'Во секое доба'],
+              correct: 'Наутро',
+              hint: 'Morgen = утро. Guten = добар. Добро утро!',
+              explanation: '"Guten Morgen!" = Добро утро! Се користи наутро при поздравување.',
+            },
+            {
+              id: 'eger6-1-2', type: 'multiple-choice',
+              question: '"Ich bin 12 Jahre alt." значи:',
+              options: ['Јас сум од Германија.', 'Јас имам 12 години.', 'Јас се викам 12.', 'Јас живеам 12 години.'],
+              correct: 'Јас имам 12 години.',
+              hint: 'Jahre alt = години стар. Ich bin = јас сум/имам.',
+              explanation: '"Ich bin 12 Jahre alt." = Јас имам 12 години. (букв. "Јас сум 12 години стар/а")',
+            },
+            {
+              id: 'eger6-1-3', type: 'multiple-choice',
+              question: 'Со кое прашање прашуваш за името?',
+              options: ['Wie alt bist du?', 'Woher kommst du?', 'Wie heißt du?', 'Was machst du?'],
+              correct: 'Wie heißt du?',
+              hint: 'Heißen = се вика. Wie = kako. Wie heißt du = Kako se vikаш?',
+              explanation: '"Wie heißt du?" = Kako se vikаш? Одговор: "Ich heiße..." = Јас се викам...',
+            },
+          ],
+        },
+        {
+          id: 'ger6-1-2',
+          title: 'Familie und Interessen — Семејство и интереси',
+          content: `## Die Familie — Семејството
+
+| Германски | Македонски |
+|-----------|-----------|
+| **der Vater** | таткото |
+| **die Mutter** | мајката |
+| **die Eltern** | родителите |
+| **der Bruder** | братот |
+| **die Schwester** | сестрата |
+| **der Opa / der Großvater** | дедото |
+| **die Oma / die Großmutter** | бабата |
+| **die Tante** | теткaта |
+| **der Onkel** | вујкото/стрикото |
+| **der Cousin / die Cousine** | братучедот/ката |
+
+**Das sind mein Vater und meine Mutter.** = Тоа се мојот татко и мојата мајка.
+**Meine Familie ist klein/groß.** = Моето семејство е мало/големо.
+
+## Interessen — Интереси
+
+- **Ich spiele gern** Tennis/Fußball/Volleyball.
+- **Ich höre gern** Musik.
+- **Mein Hobby ist** Gitarre spielen/Schwimmen.
+- **Ich mag** Sport / Karate.
+- **Was magst du?** → **Ich mag** Musik. / **Ich mag kein** Fußball.
+
+## Пијалоци (Getränke)
+Orangensaft (сок) · Apfelsaft · Kakao · Limo · Cola · Wasser (вода)
+**Ich trinke gern** Orangensaft. = Сакам да пијам сок од портокал.`,
+          exercises: [
+            {
+              id: 'eger6-1-4', type: 'multiple-choice',
+              question: '"die Schwester" на македонски е:',
+              options: ['мајката', 'бабата', 'сестрата', 'теткaта'],
+              correct: 'сестрата',
+              hint: 'Schwester → Schwes-ter → слично на "сестра"?',
+              explanation: '"die Schwester" = сестрата. "der Bruder" = братот.',
+            },
+            {
+              id: 'eger6-1-5', type: 'multiple-choice',
+              question: '"Ich spiele gern Tennis." значи:',
+              options: ['Не сакам да играм тенис.', 'Сакам да играм тенис.', 'Играм тенис секој ден.', 'Тој игра тенис.'],
+              correct: 'Сакам да играм тенис.',
+              hint: 'gern = сакам, со задоволство. Ich spiele = јас играм.',
+              explanation: '"Ich spiele gern Tennis." = Сакам да играм тенис. (со задоволство играм тенис)',
+            },
+          ],
+        },
+      ],
+    },
+    // ── EINHEIT 2: Meine Umgebung und ich ────────────────────────
+    {
+      id: 'ger6-2',
+      title: 'Meine Umgebung — Мојата околина',
+      lessons: [
+        {
+          id: 'ger6-2-1',
+          title: 'Schule, Fächer und Zeit — Училиште и време',
+          content: `## Schulfächer — Наставни предмети
+
+| Германски | Македонски |
+|-----------|-----------|
+| **Deutsch** | Германски јазик |
+| **Mathematik (Mathe)** | Математика |
+| **Sport** | Спорт |
+| **Kunst** | Ликовно |
+| **Musik** | Музичко |
+| **Englisch** | Англиски |
+| **Geschichte** | Историја |
+
+**Magst du Sport?** – **Ja, ich mag Sport.** / **Nein, ich mag Kunst.**
+
+## Schulsachen — Училиштен прибор
+
+der Bleistift (молив) · der Kuli (хемиска) · das Heft (тетратка)
+das Buch (книга) · das Lineal (линијар) · die Schere (ножици)
+der Rucksack (ранец) · der Taschenrechner (калкулатор)
+
+## Wochentage — Денови во неделата
+
+**Montag · Dienstag · Mittwoch · Donnerstag · Freitag · Samstag · Sonntag**
+
+**Heute ist Montag.** = Денес е понеделник.
+**Ich habe Sport am Freitag.** = Имам спорт во петок.
+
+## Uhrzeit — Кажување на времето
+
+- **Wie spät ist es?** / **Wie viel Uhr ist es?** = Колку е часот?
+- Es ist **drei Uhr** (3:00)
+- Es ist **halb vier** (3:30) — половина кон четири
+- Es ist **Viertel nach zwei** (2:15)
+- Es ist **Viertel vor fünf** (4:45)`,
+          exercises: [
+            {
+              id: 'eger6-2-1', type: 'multiple-choice',
+              question: '"Heute ist Mittwoch." значи:',
+              options: ['Денес е понеделник.', 'Денес е среда.', 'Денес е петок.', 'Денес е сабота.'],
+              correct: 'Денес е среда.',
+              hint: 'Mittwoch = средата на неделата. Митвох → средина на недела = Среда.',
+              explanation: '"Mittwoch" = Среда (буквално: средата на неделата). Heute = денес.',
+            },
+            {
+              id: 'eger6-2-2', type: 'multiple-choice',
+              question: '"Es ist halb vier" значи:',
+              options: ['4:00', '3:30', '4:30', '3:00'],
+              correct: '3:30',
+              hint: '"Halb" = половина. "Halb vier" = половина КОН четири = 3:30.',
+              explanation: '"Halb vier" = 3:30. Во германски "halb X" значи половина час ПРЕД X.',
+            },
+            {
+              id: 'eger6-2-3', type: 'multiple-choice',
+              question: 'Кој предмет е "Mathematik"?',
+              options: ['Историја', 'Музичко', 'Математика', 'Ликовно'],
+              correct: 'Математика',
+              hint: 'Mathematik → Math → Математика. Слично во многу јазици!',
+              explanation: '"Mathematik" (скратено "Mathe") = Математика.',
+            },
+          ],
+        },
+      ],
+    },
+    // ── EINHEIT 3: Meine Freizeit ─────────────────────────────────
+    {
+      id: 'ger6-3',
+      title: 'Meine Freizeit — Моето слободно време',
+      lessons: [
+        {
+          id: 'ger6-3-1',
+          title: 'Hobbys und Sport — Хобија и спорт',
+          content: `## Freizeitaktivitäten — Слободни активности
+
+| Германски | Македонски |
+|-----------|-----------|
+| **Rad fahren** | вози велосипед |
+| **Snowboard fahren** | вози сноуборд |
+| **Schlittschuh laufen** | лизга на мраз |
+| **Eishockey spielen** | игра хокеј на мраз |
+| **fernsehen** | гледа телевизија |
+| **Musik hören** | слуша музика |
+| **malen/zeichnen** | слика/цртa |
+
+## Modalverben — Модални глаголи
+
+**können** (може):
+- Ich **kann** schwimmen. = Можам да пливам.
+- Er **kann** nicht mitkommen. = Тој не може да дојде.
+
+**möchten** (сака, би сакал):
+- **Möchtest du** zeichnen? = Сакаш ли да црташ?
+- Ich **möchte** ins Kino gehen. = Би сакал/а да одам на кино.
+
+## Beschreibende Adjektive — Описни придавки
+
+| Позитивно | Негативно |
+|-----------|----------|
+| sportlich (спортски) | unsportlich |
+| interessant (интересно) | langweilig (здодевно) |
+| einfach (лесно) | kompliziert (сложено) |
+| groß (големо) | klein (мало) |
+
+## Гради — каде се вежба?
+**das Schwimmbad** (базен) · **der Sportplatz** (спортски терен)
+**die Skaterbahn** (скејт патека) · **der Tennisplatz** (тениски терен)`,
+          exercises: [
+            {
+              id: 'eger6-3-1', type: 'multiple-choice',
+              question: '"Ich kann schwimmen." значи:',
+              options: ['Сакам да пливам.', 'Пливам секој ден.', 'Можам да пливам.', 'Не можам да пливам.'],
+              correct: 'Можам да пливам.',
+              hint: 'können = може. Ich kann = јас можам.',
+              explanation: '"Ich kann schwimmen." = Можам да пливам. Können = модален глагол за способност.',
+            },
+            {
+              id: 'eger6-3-2', type: 'multiple-choice',
+              question: '"Möchtest du ins Kino gehen?" прашува:',
+              options: ['Можеш ли да одиш на кино?', 'Сакаш ли да одиш на кино?', 'Дали одиш на кино?', 'Каде е киното?'],
+              correct: 'Сакаш ли да одиш на кино?',
+              hint: 'möchten = би сакал. Möchtest du? = Сакаш ли?/Би сакал ли?',
+              explanation: '"Möchtest du ins Kino gehen?" = Сакаш ли да одиш на кино? (учтива желба)',
+            },
+            {
+              id: 'eger6-3-3', type: 'multiple-choice',
+              question: 'Спротивното од "interessant" е:',
+              options: ['sportlich', 'groß', 'langweilig', 'einfach'],
+              correct: 'langweilig',
+              hint: 'Interessant = интересно. Спротивното = здодевно = ?',
+              explanation: '"langweilig" = здодевно (boring). Спротивно на "interessant" (интересно).',
+            },
+          ],
+        },
+      ],
+    },
+  ],
 }
 
 // ── GRADE CONTENT LOOKUP ─────────────────────────────────────────
