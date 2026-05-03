@@ -14093,6 +14093,342 @@ export const GRADE6_CONTENT: Record<string, UnitData[]> = {
       ],
     },
   ],
+  english: [
+    // ── UNIT 1: My Small World ────────────────────────────────────
+    {
+      id: 'eng6-1',
+      title: 'My Small World: Family & Home',
+      lessons: [
+        {
+          id: 'eng6-1-1',
+          title: 'Daily Routines & Describing People',
+          content: `## Daily Routine Phrases
+
+| Phrase | Meaning |
+|--------|---------|
+| have a shower/bath | се туша/капа |
+| have breakfast/lunch | јаде појадок/ручек |
+| take a bus | зема автобус |
+| get ready | се подготвува |
+| brush teeth | ги мие забите |
+| watch TV | гледа телевизија |
+| take a shower | се туша |
+
+## Describing People
+
+**Physical appearance (Физички изглед):**
+- She is **tall and slim**. He has **short brown hair**.
+- What does your friend **look like**? — She is tall with blue eyes.
+
+**Character (Карактер):**
+- She is **kind, honest, funny, shy, brave**.
+- What is your friend **like**? — He is very friendly and helpful.
+
+## Adverbs of Frequency
+
+**always** (100%) → **usually** → **often** → **sometimes** → **rarely** → **never** (0%)
+
+Position: BEFORE the main verb, but AFTER "to be":
+- She **always** has breakfast. ✅
+- She is **always** happy. ✅
+
+## Present Simple — All Forms
+
+| | Positive | Negative | Question |
+|--|---------|---------|---------|
+| I/You/We | work | don't work | Do you work? |
+| He/She/It | work**s** | doesn't work | Does she work? |`,
+          exercises: [
+            {
+              id: 'een6-1-1', type: 'multiple-choice',
+              question: '"What does she look like?" asks about:',
+              options: ['Her personality', 'Her physical appearance', 'Her daily routine', 'Her hobbies'],
+              correct: 'Her physical appearance',
+              hint: '"Look like" = how someone appears physically — tall, short, hair colour etc.',
+              explanation: '"What does she look like?" asks about physical appearance. "What is she like?" asks about character.',
+            },
+            {
+              id: 'een6-1-2', type: 'multiple-choice',
+              question: 'She ___ always late for school.',
+              options: ['don\'t be', 'doesn\'t', 'is', 'are'],
+              correct: 'is',
+              hint: 'She = 3rd person singular. To be: she IS. Adverb "always" goes AFTER "to be".',
+              explanation: 'She **is** always late. With "to be", the adverb comes AFTER: She is always...',
+            },
+            {
+              id: 'een6-1-3', type: 'multiple-choice',
+              question: 'He ___ his teeth every morning.',
+              options: ['brush', 'brushes', 'is brush', 'brushing'],
+              correct: 'brushes',
+              hint: 'He = 3rd person singular. Present Simple: add -s/-es to the verb.',
+              explanation: 'He brushes — 3rd person singular Present Simple adds -s: brush → brushes.',
+            },
+          ],
+        },
+      ],
+    },
+    // ── UNIT 2: My Outer World ────────────────────────────────────
+    {
+      id: 'eng6-2',
+      title: 'My Outer World: Interests & Activities',
+      lessons: [
+        {
+          id: 'eng6-2-1',
+          title: 'Present Continuous & Gerunds',
+          content: `## Present Continuous Tense
+
+**Form:** subject + **am/is/are** + verb**-ing**
+
+**Used for:**
+- Something happening NOW: *I **am studying** at the moment.*
+- Future arrangements: *We **are flying** to Paris this weekend.*
+
+| | Positive | Negative | Question |
+|--|---------|---------|---------|
+| I | am working | am not working | Am I working? |
+| He/She/It | is working | isn't working | Is she working? |
+| We/They | are working | aren't working | Are they working? |
+
+## Present Simple vs Present Continuous
+
+| Present Simple | Present Continuous |
+|---------------|-------------------|
+| Habits/routines | Now/at this moment |
+| I **walk** to school (every day). | I **am walking** to school (now). |
+| She **usually** reads. | She **is reading** right now. |
+
+## Gerunds — Verb + -ing after feelings
+
+| Expression | Example |
+|-----------|---------|
+| I **love** | swimming |
+| I **like** | dancing |
+| I **don't mind** | waiting |
+| I **dislike** | cooking |
+| I **hate** | cleaning |
+| I **can't stand** | losing |
+| I **enjoy** | going to the mall |
+
+**What does she like doing?** — She loves reading books.`,
+          exercises: [
+            {
+              id: 'een6-2-1', type: 'multiple-choice',
+              question: '"She is reading right now." — which tense is this?',
+              options: ['Present Simple', 'Past Simple', 'Present Continuous', 'Future'],
+              correct: 'Present Continuous',
+              hint: '"is reading" = am/is/are + verb-ing. What tense is that?',
+              explanation: 'Present Continuous = is/am/are + verb-ing. Used for actions happening right now.',
+            },
+            {
+              id: 'een6-2-2', type: 'multiple-choice',
+              question: 'I can\'t stand ___ early on Saturdays.',
+              options: ['wake', 'to wake', 'waking', 'woke'],
+              correct: 'waking',
+              hint: 'After can\'t stand, hate, like, love, enjoy → use verb + -ing (gerund).',
+              explanation: 'After "can\'t stand" we use a gerund (-ing form): I can\'t stand **waking** early.',
+            },
+            {
+              id: 'een6-2-3', type: 'multiple-choice',
+              question: 'I ___ to school every day. (habit)',
+              options: ['am walking', 'walk', 'walks', 'walking'],
+              correct: 'walk',
+              hint: '"every day" = habit/routine → use Present Simple, not Continuous.',
+              explanation: 'Habits use Present Simple: I **walk** to school every day.',
+            },
+          ],
+        },
+      ],
+    },
+    // ── UNIT 3: Our Town & World ──────────────────────────────────
+    {
+      id: 'eng6-3',
+      title: 'Our Town & World',
+      lessons: [
+        {
+          id: 'eng6-3-1',
+          title: 'Directions, Comparatives & Future Plans',
+          content: `## Giving Directions
+
+- **Turn left/right** at the traffic lights.
+- **Go straight ahead** down that road.
+- **It's next to** the bookstore.
+- **Could you tell me** the way to...? (polite)
+
+## Comparative & Superlative Adjectives
+
+**Short adjectives** (1 syllable): add **-er / -est**
+| Adjective | Comparative | Superlative |
+|-----------|-------------|-------------|
+| big | bigg**er** | the bigg**est** |
+| tall | tall**er** | the tall**est** |
+| old | old**er** | the old**est** |
+
+**Long adjectives** (2+ syllables): use **more / most**
+- interesting → **more** interesting → the **most** interesting
+- difficult → **more** difficult → the **most** difficult
+
+**Irregular:**
+- good → **better** → the **best**
+- bad → **worse** → the **worst**
+
+## Future Plans — BE GOING TO
+
+*I **am going to** visit Rome next summer.*
+*She **isn't going to** come to the party.*
+*Are they **going to** buy a new car?*
+
+Use: for decided future plans/intentions.`,
+          exercises: [
+            {
+              id: 'een6-3-1', type: 'multiple-choice',
+              question: 'Our school is ___ than yours. (big)',
+              options: ['more big', 'bigger', 'biggest', 'most big'],
+              correct: 'bigger',
+              hint: '"Big" is a short adjective (1 syllable) → add -er for comparative.',
+              explanation: 'big → bigger (double the g). Short adjectives use -er for comparative.',
+            },
+            {
+              id: 'een6-3-2', type: 'multiple-choice',
+              question: '"Chemistry is the ___ subject." (difficult)',
+              options: ['difficulter', 'more difficult', 'most difficult', 'difficultiest'],
+              correct: 'most difficult',
+              hint: '"Difficult" is a long adjective → use "most" for superlative.',
+              explanation: 'Long adjectives use "the most": the most difficult. NOT "difficultest".',
+            },
+            {
+              id: 'een6-3-3', type: 'multiple-choice',
+              question: '"We ___ going to fly to Paris this weekend." — fill in:',
+              options: ['is', 'am', 'are', 'be'],
+              correct: 'are',
+              hint: 'We → are. Be going to: I am / he is / we ARE going to.',
+              explanation: 'We **are** going to fly — "be going to" uses am/is/are depending on the subject.',
+            },
+          ],
+        },
+        {
+          id: 'eng6-3-2',
+          title: 'Past Simple & The UK',
+          content: `## Past Simple — Regular Verbs
+
+**Form:** verb + **-ed**
+- walk → walk**ed**
+- visit → visit**ed**
+- travel → travel**led**
+
+**Negative:** did**n't** + base verb
+- I **didn't visit** the museum. (NOT: I didn't visited)
+
+**Question:** **Did** + subject + base verb?
+- **Did** you visit Rome? — Yes, I did. / No, I didn't.
+
+**Adverbs of past time:**
+yesterday · last week · last month · two days ago · in 2020
+
+## The United Kingdom 🇬🇧
+
+The UK = **England + Scotland + Wales + Northern Ireland**
+
+| Country | Capital | Fact |
+|---------|---------|------|
+| **England** | London | Biggest country |
+| **Scotland** | Edinburgh | Ben Nevis (highest mountain) |
+| **Wales** | Cardiff | Dragon on the flag! 🐉 |
+| **N. Ireland** | Belfast | Giant's Causeway |`,
+          exercises: [
+            {
+              id: 'een6-3-4', type: 'multiple-choice',
+              question: 'We ___ by bus from Paris to Rome. (travel)',
+              options: ['travel', 'travelled', 'did travel', 'travelling'],
+              correct: 'travelled',
+              hint: 'Past Simple regular verb: travel → travel + l + ed = travelled.',
+              explanation: 'Past Simple: travelled (double l before -ed for verbs ending in consonant-vowel-consonant).',
+            },
+            {
+              id: 'een6-3-5', type: 'multiple-choice',
+              question: 'The Welsh flag has a picture of a ___ on it.',
+              options: ['lion', 'dragon', 'thistle', 'harp'],
+              correct: 'dragon',
+              hint: 'Wales is famous for its dragon symbol — Y Ddraig Goch (The Red Dragon).',
+              explanation: 'The Welsh flag features a red dragon — Y Ddraig Goch, the national symbol of Wales. 🐉',
+            },
+          ],
+        },
+      ],
+    },
+    // ── UNIT 4: Our Planet & Future ───────────────────────────────
+    {
+      id: 'eng6-4',
+      title: 'Our Planet, Health & Future',
+      lessons: [
+        {
+          id: 'eng6-4-1',
+          title: 'Environment, Weather & Life Stages',
+          content: `## Life Stages 👶→👴
+
+baby → toddler → child → **adolescent/teenager** → adult → middle-aged → elderly
+
+*"adolescent" = teen (13–17) · "adult" = grown-up (18+)*
+
+## Weather Vocabulary ☀️🌧️
+
+| English | Македонски |
+|---------|-----------|
+| sunny | сончево |
+| rainy / it's raining | дождливо / врне |
+| snowy / it's snowing | снежно / врне снег |
+| windy | ветровито |
+| stormy | невремето |
+| rainbow | виножито |
+| lightning | молња |
+
+**What's the weather like?** — It's sunny and warm today.
+
+## Environment — Imperatives
+
+**Save the planet! 🌍**
+- **Save** water! / **Don't waste** electricity!
+- **Recycle** your rubbish! / **Don't pollute** the rivers!
+- **Plant** trees! / **Don't cut** down forests!
+
+**Imperative:** base verb (positive) / **Don't** + base verb (negative)
+
+## Children's Rights
+
+Children have a right to:
+- **health** and **clean water**
+- **education**
+- **safety** and **protection**
+- **express** themselves`,
+          exercises: [
+            {
+              id: 'een6-4-1', type: 'multiple-choice',
+              question: '"What\'s the weather like?" asks about:',
+              options: ['Someone\'s personality', 'Current weather conditions', 'Future weather', 'Temperature only'],
+              correct: 'Current weather conditions',
+              hint: '"What\'s the weather like?" = a question about the weather right now.',
+              explanation: '"What\'s the weather like?" asks about the current weather — It\'s sunny. / It\'s raining.',
+            },
+            {
+              id: 'een6-4-2', type: 'multiple-choice',
+              question: 'Make a negative imperative: "___ electricity!" (waste)',
+              options: ['Waste not', 'Don\'t waste', 'Not wasting', 'No waste'],
+              correct: 'Don\'t waste',
+              hint: 'Negative imperative = Don\'t + base verb.',
+              explanation: 'Negative imperative: **Don\'t waste** electricity! Don\'t = do not.',
+            },
+            {
+              id: 'een6-4-3', type: 'multiple-choice',
+              question: 'A "teenager" is someone who is:',
+              options: ['Under 10 years old', 'Between 13 and 19', 'Over 30', 'A baby'],
+              correct: 'Between 13 and 19',
+              hint: 'Teen = the numbers ending in -teen: thirTEEN to nineTEEN.',
+              explanation: 'Teenager = 13–19 years old. All these numbers end in "-teen".',
+            },
+          ],
+        },
+      ],
+    },
+  ],
 }
 
 // ── GRADE CONTENT LOOKUP ─────────────────────────────────────────
