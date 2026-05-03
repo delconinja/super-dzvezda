@@ -6347,6 +6347,469 @@ $$\\frac{1}{4}$$ = **Една четвртина** — поделено на 4 �
       ],
     },
   ],
+  english: [
+    // ── UNIT 1: Me and Others at Home ────────────────────────────
+    {
+      id: 'eng3-1',
+      title: 'Me and Others at Home',
+      lessons: [
+        {
+          id: 'eng3-1-1',
+          title: 'Greetings & Describing Family',
+          content: `## Greetings — Formal & Informal
+
+| Situation | Phrase |
+|-----------|--------|
+| Meeting (informal) | Hello! / Hi! / How are you? |
+| Meeting (formal) | How do you do? |
+| Goodbye (informal) | Bye bye! / See you soon! |
+| Goodbye (friendly) | Have a nice weekend! |
+
+## Describing Your Family
+
+**I'm in Grade 3. This is my family:**
+- This is my **mum**. She is kind.
+- This is my **dad**. He is tall.
+- These are my **sisters**. They are funny.
+- I have got **cousins**. I love my family!
+
+## Possessive Adjectives
+
+| Pronoun | Possessive |
+|---------|-----------|
+| I | **my** |
+| you | **your** |
+| he | **his** |
+| she | **her** |
+| we | **our** |
+| they | **their** |
+
+**Examples:** *My* dog is big. *Her* mum is a teacher. *Their* house is blue.`,
+          exercises: [
+            {
+              id: 'een3-1-1', type: 'multiple-choice',
+              question: '"How do you do?" is a ___ greeting.',
+              options: ['informal', 'formal', 'goodbye', 'rude'],
+              correct: 'formal',
+              hint: 'We use "How do you do?" in more serious, grown-up situations — not between friends.',
+              explanation: '"How do you do?" is a formal greeting — used when meeting someone for the first time in a polite context.',
+            },
+            {
+              id: 'een3-1-2', type: 'multiple-choice',
+              question: 'Fill in: "___ mum is a doctor." (talking about Ana)',
+              options: ['My', 'His', 'Her', 'Their'],
+              correct: 'Her',
+              hint: 'Ana is a girl. Which possessive adjective do we use for a girl (she)?',
+              explanation: '"Her" = possessive for she/her. Ana is a girl → Her mum is a doctor.',
+            },
+            {
+              id: 'een3-1-3', type: 'multiple-choice',
+              question: 'She is my mum\'s sister. Who is she?',
+              options: ['grandmother', 'cousin', 'aunt', 'sister'],
+              correct: 'aunt',
+              hint: 'Mum\'s sister = the female sibling of your mother.',
+              explanation: 'Your mum\'s sister is your aunt (тетка/вујна).',
+            },
+          ],
+        },
+        {
+          id: 'eng3-1-2',
+          title: 'Home & Celebrations',
+          content: `## Describing Your Home
+
+**Where do you live?** I live in a house / flat.
+
+**Prepositions of place:**
+- The book is **on** the table.
+- The cat is **under** the chair.
+- The lamp is **above** the desk.
+- The ball is **behind** the sofa.
+- The bag is **in front of** the door.
+- The keys are **in** the drawer.
+
+## TO HAVE GOT — Negative
+
+| Positive | Negative |
+|---------|---------|
+| I **have got** a sofa. | I **haven't got** a sofa. |
+| She **has got** a lamp. | She **hasn't got** a lamp. |
+
+## Celebrations 🎃
+
+**Halloween:** face paint, sweets, skeleton, scary, jack-o'-lantern
+*Trick or treat! Abracadabra! Happy Halloween!*
+
+**European Day of Languages** — 26 September 🌍
+*We love English! Благодарам / Thank you / Falëminderit / Teşekkürler*`,
+          exercises: [
+            {
+              id: 'een3-1-4', type: 'multiple-choice',
+              question: 'The cat is ___ the chair. (под столот)',
+              options: ['on', 'above', 'under', 'behind'],
+              correct: 'under',
+              hint: 'Under = под. The cat is hiding beneath the chair.',
+              explanation: '"Under" = под. The cat is under the chair = мачката е под столот.',
+            },
+            {
+              id: 'een3-1-5', type: 'multiple-choice',
+              question: 'Make it negative: "She has got a pink armchair."',
+              options: ['She not has got a pink armchair.', 'She hasn\'t got a pink armchair.', 'She have not a pink armchair.', 'She don\'t got a pink armchair.'],
+              correct: 'She hasn\'t got a pink armchair.',
+              hint: 'For she/he/it: has got → hasn\'t got.',
+              explanation: '"She hasn\'t got" is the negative of "she has got". Has → hasn\'t (has not).',
+            },
+          ],
+        },
+      ],
+    },
+    // ── UNIT 2: Me and Others at School ──────────────────────────
+    {
+      id: 'eng3-2',
+      title: 'Me and Others at School',
+      lessons: [
+        {
+          id: 'eng3-2-1',
+          title: 'Numbers 1–50 & School Objects',
+          content: `## Numbers 1–50
+
+1–20 (same as Grade 2), then:
+**20** twenty · **30** thirty · **40** forty · **50** fifty
+
+21 twenty-one · 22 twenty-two · 33 thirty-three · 45 forty-five
+
+## School Objects 🏫
+
+| English | Македонски |
+|---------|-----------|
+| a library | библиотека |
+| a blackboard | табла (со креда) |
+| chalk | крeда |
+| a cupboard | орман |
+| a map | карта |
+| a globe | глобус |
+| bookshelves | полици за книги |
+
+## 3D Shapes
+
+| English | Македонски |
+|---------|-----------|
+| a cube | коцка |
+| a sphere | топка |
+| a cylinder | цилиндар |
+| a cone | конус |
+| a pyramid | пирамида |
+
+## Celebrations 🎄
+**Christmas:** elf, reindeer, stocking, chimney → *Merry Christmas!*
+**World Children's Day** — 20 November 🌍`,
+          exercises: [
+            {
+              id: 'een3-2-1', type: 'multiple-choice',
+              question: 'How do you say 43 in English?',
+              options: ['thirty-four', 'forty-three', 'fourteen', 'four-thirty'],
+              correct: 'forty-three',
+              hint: '40 = forty, 3 = three. Put them together: forty-___.',
+              explanation: '43 = forty-three. 40 = forty + 3 = three.',
+            },
+            {
+              id: 'een3-2-2', type: 'multiple-choice',
+              question: 'What do you find on a globe?',
+              options: ['Chalk', 'A map of the world (round)', 'Books', 'Numbers'],
+              correct: 'A map of the world (round)',
+              hint: 'A globe is a round ball showing the Earth — countries, oceans, continents.',
+              explanation: 'A globe (глобус) is a spherical model of the Earth — shows countries and oceans.',
+            },
+            {
+              id: 'een3-2-3', type: 'multiple-choice',
+              question: 'Which 3D shape looks like an ice cream cone?',
+              options: ['cube', 'sphere', 'cylinder', 'cone'],
+              correct: 'cone',
+              hint: 'An ice cream cone is pointed at the bottom and round at the top.',
+              explanation: 'A cone (конус) — pointed tip and circular base, like an ice cream cone! 🍦',
+            },
+          ],
+        },
+        {
+          id: 'eng3-2-2',
+          title: 'Clothes & Prepositions',
+          content: `## Clothes — New Words 🧥
+
+| English | Македонски |
+|---------|-----------|
+| a scarf | шал |
+| gloves | ракавици |
+| a coat | палто |
+| boots | чизми |
+| a uniform | униформа |
+
+**This / These:**
+- **This** is my scarf. (еднина — едно нешто)
+- **These** are my gloves. (множина — повеќе нешта)
+
+**That / Those:**
+- **That** is your coat. (далеку, еднина)
+- **Those** are your boots. (далеку, множина)
+
+## Action Verbs
+
+| Verb | Meaning |
+|------|---------|
+| wear | носи (облека) |
+| work | работи |
+| do | прави |
+| clean | чисти |
+
+*I **wear** my uniform to school.*
+*She **cleans** the blackboard.*`,
+          exercises: [
+            {
+              id: 'een3-2-4', type: 'multiple-choice',
+              question: '"___ are my gloves." — which word fits?',
+              options: ['This', 'That', 'These', 'Those'],
+              correct: 'These',
+              hint: 'Gloves = two items = plural. For plural objects near you, use...',
+              explanation: '"These" is used for plural objects near you. Gloves are plural → These are my gloves.',
+            },
+            {
+              id: 'een3-2-5', type: 'multiple-choice',
+              question: 'She ___ her uniform every day.',
+              options: ['cleans', 'wears', 'does', 'works'],
+              correct: 'wears',
+              hint: 'We ___ clothes. Which verb means "to put on / have on" clothes?',
+              explanation: '"Wear" = носи облека. She wears her uniform = таа ја носи својата униформа.',
+            },
+          ],
+        },
+      ],
+    },
+    // ── UNIT 3: Me and Others Around Me ──────────────────────────
+    {
+      id: 'eng3-3',
+      title: 'Me and Others Around Me',
+      lessons: [
+        {
+          id: 'eng3-3-1',
+          title: 'The English Alphabet & Places',
+          content: `## The English Alphabet 🔤
+
+**Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm**
+**Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz**
+
+26 letters total. Some look like Macedonian Cyrillic, some don't!
+
+## Places in My Town 🏙️
+
+| English | Македонски |
+|---------|-----------|
+| the cinema | кино |
+| the playground | игралиште |
+| the hospital | болница |
+| a bus stop | автобуска постојка |
+| a swimming pool | базен |
+| a museum | музеј |
+
+## TO BE — All Forms
+
+| | Positive | Negative | Question |
+|--|---------|---------|---------|
+| I | am | am not | Am I? |
+| You | are | are not | Are you? |
+| He/She/It | is | is not | Is he/she/it? |
+| We/They | are | are not | Are we/they? |
+
+*I **am** at the playground. **Is** she at the hospital?*`,
+          exercises: [
+            {
+              id: 'een3-3-1', type: 'multiple-choice',
+              question: 'How many letters are in the English alphabet?',
+              options: ['24', '25', '26', '28'],
+              correct: '26',
+              hint: 'Count from A to Z — there are 26 letters in English.',
+              explanation: 'The English alphabet has 26 letters — from A to Z.',
+            },
+            {
+              id: 'een3-3-2', type: 'multiple-choice',
+              question: 'Where do you go to watch movies?',
+              options: ['hospital', 'museum', 'cinema', 'bus stop'],
+              correct: 'cinema',
+              hint: 'Movies = films. Where do you watch films on a big screen?',
+              explanation: 'The cinema (кино) is where you go to watch movies on a big screen.',
+            },
+            {
+              id: 'een3-3-3', type: 'multiple-choice',
+              question: 'Make a question: "___ she at school?"',
+              options: ['Am', 'Are', 'Is', 'Be'],
+              correct: 'Is',
+              hint: 'She = he/she/it group. Which form of TO BE goes with she?',
+              explanation: '"Is she at school?" — she/he/it use "is". Are you? Am I? Is he/she/it?',
+            },
+          ],
+        },
+        {
+          id: 'eng3-3-2',
+          title: 'Animals, Food & Body',
+          content: `## Animals — Review & New
+
+| Animal | Young |
+|--------|-------|
+| a horse | a foal |
+| a sheep | a lamb |
+| a cow | a calf |
+| a duck | a duckling |
+
+## TO HAVE GOT — Questions
+
+**Have you got a pet?** — Yes, I have. / No, I haven't.
+**Has she got a dog?** — Yes, she has. / No, she hasn't.
+
+## TO LIKE
+
+✅ **I like** juice. / She **likes** pizza.
+❌ **I don't like** carrots. / He **doesn't like** spiders.
+❓ **Do you like** chocolate? — Yes, I do. / No, I don't.
+
+## Celebrations 🐣
+**Easter:** egg hunt, lamb, chocolate, candy
+**April Fool's Day** — Априлилили! 🃏`,
+          exercises: [
+            {
+              id: 'een3-3-4', type: 'multiple-choice',
+              question: 'A young sheep is called a:',
+              options: ['foal', 'calf', 'lamb', 'duckling'],
+              correct: 'lamb',
+              hint: 'At Easter we often see a young sheep. What is it called?',
+              explanation: 'A lamb (јагне) is a young sheep. Famous at Easter! 🐑',
+            },
+            {
+              id: 'een3-3-5', type: 'multiple-choice',
+              question: '"Does she like pizza?" → "Yes, ___."',
+              options: ['she do', 'she does', 'she is', 'she likes'],
+              correct: 'she does',
+              hint: 'Short answer for does: Yes, she ___.',
+              explanation: '"Yes, she does." — short answer for does questions. Does she? Yes, she does.',
+            },
+          ],
+        },
+      ],
+    },
+    // ── UNIT 4: Me and Others in Free Time ───────────────────────
+    {
+      id: 'eng3-4',
+      title: 'Me and Others in Free Time',
+      lessons: [
+        {
+          id: 'eng3-4-1',
+          title: 'Daily Routines & Time',
+          content: `## Daily Routine Expressions ⏰
+
+| Expression | Македонски |
+|------------|-----------|
+| get up | станува |
+| get dressed | се облекува |
+| comb your hair | се чешла |
+| have breakfast | јаде појадок |
+| go to school | оди на училиште |
+| go to bed | оди да спие |
+| take a bus | зема автобус |
+
+**Telling the time (whole hours):**
+- It's **3 o'clock**. (3:00)
+- It's **half past 7**. (7:30)
+- **What time is it?** — It's 9 o'clock.
+
+## Months of the Year 📅
+
+Jan · Feb · Mar · Apr · May · Jun · Jul · Aug · Sep · Oct · Nov · Dec
+
+**January, February, March, April, May, June,**
+**July, August, September, October, November, December**`,
+          exercises: [
+            {
+              id: 'een3-4-1', type: 'multiple-choice',
+              question: 'What do you do first in the morning?',
+              options: ['go to bed', 'get up', 'have dinner', 'go to school'],
+              correct: 'get up',
+              hint: 'The very first thing in the morning — you open your eyes and...',
+              explanation: 'Get up (стануваш) is the first thing in the morning routine.',
+            },
+            {
+              id: 'een3-4-2', type: 'multiple-choice',
+              question: '"It\'s 8 o\'clock." What time is it?',
+              options: ['8:30', '8:15', '8:00', '8:45'],
+              correct: '8:00',
+              hint: '"O\'clock" means exactly on the hour — no minutes.',
+              explanation: '"8 o\'clock" = 8:00 exactly — на точно 8 часот.',
+            },
+            {
+              id: 'een3-4-3', type: 'multiple-choice',
+              question: 'Which month comes after October?',
+              options: ['September', 'December', 'November', 'August'],
+              correct: 'November',
+              hint: 'Oct → Nov → Dec. October is the 10th month, November is the...',
+              explanation: 'November (11th month) comes after October (10th). Oct→Nov→Dec.',
+            },
+          ],
+        },
+        {
+          id: 'eng3-4-2',
+          title: 'Transport & CAN',
+          content: `## Transport 🚌
+
+| English | Македонски |
+|---------|-----------|
+| a helicopter | хеликоптер |
+| a lorry | камион |
+| a tram | трамвај |
+| a taxi | такси |
+| a skateboard | скејтборд |
+| a motorbike | мотоцикл |
+| a scooter | тротинет |
+
+## CAN / CAN'T — Abilities & Permission
+
+**Abilities:**
+- I **can** ski. ✅ (Можам да скијам)
+- I **can't** fly. ❌ (Не можам да летам)
+
+**Permission / Requests:**
+- **Can I** go to the playground? (Можам ли...?)
+- **Can you** help me, please? (Можеш ли...?)
+
+## Free Time Activities
+
+visit my grandparents · play computer games · ski · play basketball
+
+*On Saturdays, I **visit** my grandparents. I **can** play basketball.*`,
+          exercises: [
+            {
+              id: 'een3-4-4', type: 'multiple-choice',
+              question: 'A lorry is a type of:',
+              options: ['small car', 'large truck', 'boat', 'bicycle'],
+              correct: 'large truck',
+              hint: 'A lorry is a big vehicle used to transport goods — like a камион.',
+              explanation: 'A lorry (камион) is a large truck used to carry heavy loads.',
+            },
+            {
+              id: 'een3-4-5', type: 'multiple-choice',
+              question: '"Can you help me, please?" is:',
+              options: ['Saying you can help', 'Asking for help politely', 'Saying you cannot help', 'A greeting'],
+              correct: 'Asking for help politely',
+              hint: 'Can you...? = a polite request — you are asking someone to do something.',
+              explanation: '"Can you help me?" = Можеш ли да ми помогнеш? — a polite request for help.',
+            },
+            {
+              id: 'een3-4-6', type: 'multiple-choice',
+              question: 'Fill in: "I ___ swim, but I ___ fly."',
+              options: ['can / can', 'can\'t / can', 'can / can\'t', 'can\'t / can\'t'],
+              correct: 'can / can\'t',
+              hint: 'People can swim (with practice), but people cannot fly (without a plane).',
+              explanation: 'I can swim (можам да пливам) but I can\'t fly (не можам да летам).',
+            },
+          ],
+        },
+      ],
+    },
+  ],
 }
 
 // ── GRADE 5 CONTENT ──────────────────────────────────────────────
