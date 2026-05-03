@@ -8,6 +8,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { getGradeContent, ExerciseData } from '@/lib/content'
 import { getSubject } from '@/lib/subjects'
+import SubjectIcon from '@/components/SubjectIcon'
 import { getActiveStudent, saveProgress, refreshStudentSession, StudentProfile } from '@/lib/auth'
 import MathVisual from '@/components/math/MathVisual'
 
@@ -124,7 +125,7 @@ export default function LessonPage() {
           style={{ background: 'rgba(255,255,255,0.18)' }}>
           <span className="text-white font-bold text-lg">←</span>
         </button>
-        <span className="text-2xl">{subject.emoji}</span>
+        <SubjectIcon subject={subject} size="sm" />
         <span className="text-white font-black text-base leading-tight flex-1">{lesson.title}</span>
       </header>
 
@@ -136,7 +137,7 @@ export default function LessonPage() {
           {/* Subject colour band */}
           <div className="px-6 pt-5 pb-3 flex items-center gap-3"
             style={{ background: `${subject.color}12`, borderBottom: `3px solid ${subject.color}` }}>
-            <span className="text-3xl">{subject.emoji}</span>
+            <SubjectIcon subject={subject} size="md" />
             <div>
               <p className="text-xs font-bold tracking-widest uppercase" style={{ color: subject.color }}>
                 {subject.nameMk}
@@ -330,7 +331,7 @@ export default function LessonPage() {
       <header className="px-5 py-3 flex items-center justify-between"
         style={{ background: subject.color }}>
         <div className="flex items-center gap-2">
-          <span className="text-xl">{subject.emoji}</span>
+          <SubjectIcon subject={subject} size="sm" />
           <span className="text-white font-black text-sm">{lesson.title}</span>
         </div>
         <div className="flex items-center gap-1">
@@ -528,7 +529,7 @@ export default function LessonPage() {
 
       <header className="px-5 py-4" style={{ background: subject.color }}>
         <div className="flex items-center gap-2">
-          <span className="text-xl">{subject.emoji}</span>
+          <SubjectIcon subject={subject} size="sm" />
           <span className="text-white font-black text-sm">{lesson.title}</span>
         </div>
       </header>

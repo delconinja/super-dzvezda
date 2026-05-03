@@ -8,6 +8,7 @@ import { getSubjectsForGrade } from '@/lib/subjects'
 import { getActiveStudent, getSubscription, getProgress, clearActiveStudent, trialDaysLeft, isTrialExpired, StudentProfile, Subscription } from '@/lib/auth'
 import { getGradeContent } from '@/lib/content'
 import { Subject } from '@/types'
+import SubjectIcon from '@/components/SubjectIcon'
 
 export default function DashboardPage() {
   const router = useRouter()
@@ -111,9 +112,19 @@ export default function DashboardPage() {
           <h1 className="text-3xl font-black" style={{ color: '#1A1A2E' }}>
             Здраво, {student.name.split(' ')[0]}! 👋
           </h1>
-          <p className="text-base mt-1" style={{ color: '#6B6B8A' }}>
+          <p className="text-base mt-1 mb-4" style={{ color: '#6B6B8A' }}>
             Одбери предмет и почни да учиш!
           </p>
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-2xl font-black text-sm"
+              style={{ background: student.streak > 0 ? '#FFF3E0' : '#F3F4F6', color: student.streak > 0 ? '#E65100' : '#9CA3AF', border: `2px solid ${student.streak > 0 ? '#FF9800' : '#E5E7EB'}` }}>
+              🔥 {student.streak} {student.streak === 1 ? 'ден' : 'дена'} по ред
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-2xl font-black text-sm"
+              style={{ background: '#FFFDE7', color: '#F57F17', border: '2px solid #FFD600' }}>
+              ⭐ {student.stars_total} ѕвезди вкупно
+            </div>
+          </div>
         </div>
 
         <div className="grid gap-4">
@@ -126,7 +137,7 @@ export default function DashboardPage() {
               onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'scale(1)' }}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                  <div className="text-5xl">{subject.emoji}</div>
+                  <SubjectIcon subject={subject} size="lg" />
                   <div>
                     <div className="text-xl font-black" style={{ color: subject.color }}>{subject.nameMk}</div>
                     <div className="text-sm font-semibold mt-0.5" style={{ color: '#9B9BAA' }}>{subject.world}</div>

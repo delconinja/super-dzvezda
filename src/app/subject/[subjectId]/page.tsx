@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic'
 import { useEffect, useState } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import { getSubject } from '@/lib/subjects'
+import SubjectIcon from '@/components/SubjectIcon'
 import { getGradeContent } from '@/lib/content'
 import { getActiveStudent, getProgress, StudentProfile } from '@/lib/auth'
 
@@ -39,7 +40,7 @@ export default function SubjectPage() {
       <header className="px-6 py-4 flex items-center gap-3" style={{ background: subject.color }}>
         <button onClick={() => router.push('/dashboard')}
           className="text-white/80 hover:text-white text-2xl font-bold transition-colors">←</button>
-        <span className="text-3xl">{subject.emoji}</span>
+        <SubjectIcon subject={subject} size="md" />
         <div className="flex-1">
           <div className="text-white font-black text-xl">{subject.nameMk}</div>
           <div className="text-white/70 text-sm">{subject.world}</div>
@@ -83,33 +84,44 @@ export default function SubjectPage() {
                   {unit.lessons.map((lesson, lessonIdx) => {
                     const stars = lessonStars[lesson.id] || 0
                     const done = stars > 0
+                    // First lesson of every unit is always unlocked.
+                    // Each subsequent lesson unlocks only when the previous is done.
+                    const locked = lessonIdx > 0 && !(lessonStars[unit.lessons[lessonIdx - 1].id] > 0)
 
                     return (
                       <button key={lesson.id}
-                        onClick={() => router.push(`/lesson/${lesson.id}`)}
+                        onClick={() => { if (!locked) router.push(`/lesson/${lesson.id}`) }}
                         className="w-full flex items-center justify-between p-3 rounded-2xl transition-all duration-200 hover:scale-[1.01] active:scale-[0.99]"
                         style={{
-                          background: lesson.isTest
-                            ? done ? '#FFF8E8' : '#FFFDF5'
-                            : done ? `${subject.color}15` : subject.bgColor,
-                          border: lesson.isTest
-                            ? `1.5px solid ${done ? '#F0A500' : '#FFE082'}`
-                            : done ? `1.5px solid ${subject.color}40` : '1.5px solid transparent',
+                          background: locked
+                            ? '#F3F4F6'
+                            : lesson.isTest
+                              ? done ? '#FFF8E8' : '#FFFDF5'
+                              : done ? `${subject.color}15` : subject.bgColor,
+                          border: locked
+                            ? '1.5px solid #E5E7EB'
+                            : lesson.isTest
+                              ? `1.5px solid ${done ? '#F0A500' : '#FFE082'}`
+                              : done ? `1.5px solid ${subject.color}40` : '1.5px solid transparent',
+                          opacity: locked ? 0.6 : 1,
+                          cursor: locked ? 'not-allowed' : 'pointer',
                         }}>
                         <div className="flex items-center gap-3">
                           <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-black flex-shrink-0"
                             style={{
-                              background: lesson.isTest
-                                ? done ? '#F0A500' : '#FFE082'
-                                : done ? subject.color : lessonIdx === 0 ? subject.color : '#D1D5DB',
-                              color: lesson.isTest ? (done ? 'white' : '#7A5800') : 'white',
+                              background: locked
+                                ? '#D1D5DB'
+                                : lesson.isTest
+                                  ? done ? '#F0A500' : '#FFE082'
+                                  : done ? subject.color : subject.color,
+                              color: locked ? '#9CA3AF' : lesson.isTest ? (done ? 'white' : '#7A5800') : 'white',
                             }}>
-                            {lesson.isTest ? (done ? '✓' : '📝') : done ? '✓' : lessonIdx === 0 ? '▶' : `${lessonIdx + 1}`}
+                            {locked ? '🔒' : lesson.isTest ? (done ? '✓' : '📝') : done ? '✓' : '▶'}
                           </div>
-                          <span className="font-bold text-sm text-left" style={{ color: '#1A1A2E' }}>
+                          <span className="font-bold text-sm text-left" style={{ color: locked ? '#9CA3AF' : '#1A1A2E' }}>
                             {lesson.title}
                           </span>
-                          {lesson.isTest && (
+                          {lesson.isTest && !locked && (
                             <span className="text-xs font-black px-2 py-0.5 rounded-full"
                               style={{ background: '#FFE082', color: '#7A5800' }}>ТЕСТ</span>
                           )}
@@ -117,7 +129,7 @@ export default function SubjectPage() {
                         <div className="flex gap-0.5 flex-shrink-0">
                           {[1, 2, 3].map((s) => (
                             <span key={s} className="text-sm transition-colors"
-                              style={{ color: s <= stars ? '#FFD93D' : '#D1D5DB' }}>★</span>
+                              style={{ color: locked ? '#E5E7EB' : s <= stars ? '#FFD93D' : '#D1D5DB' }}>★</span>
                           ))}
                         </div>
                       </button>
