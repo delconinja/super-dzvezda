@@ -128,6 +128,18 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     grades: [6],
   },
   {
+    id: 'russian',
+    name: 'Russian',
+    nameMk: 'Руски јазик',
+    world: 'Русский мир',
+    color: '#DC2626',
+    bgColor: '#FEE2E2',
+    emoji: '🇷🇺',
+    flagCode: 'ru',
+    unitsCount: 3,
+    grades: [6],
+  },
+  {
     id: 'biology',
     name: 'Biology',
     nameMk: 'Биологија',
