@@ -1,6 +1,6 @@
 export type Grade = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
-export type SubjectId = 'math' | 'biology' | 'chemistry' | 'science' | 'mk' | 'history' | 'tech' | 'english' | 'enviro' | 'society' | 'german' | 'french'
+export type SubjectId = 'math' | 'biology' | 'chemistry' | 'science' | 'mk' | 'history' | 'tech' | 'english' | 'enviro' | 'society' | 'german' | 'french' | 'italian'
 
 export interface Subject {
   id: SubjectId
