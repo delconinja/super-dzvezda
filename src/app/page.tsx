@@ -6,7 +6,7 @@ import { getFamilySession, loginWithPin, register, parentLogin, StudentProfile }
 import { saveAffiliateRef } from '@/lib/affiliate'
 import TownSchoolPicker from '@/components/TownSchoolPicker'
 
-const GRADES = [5, 6, 7, 8, 9] as const
+const GRADES = [1, 2, 3, 4, 5, 6, 7, 8, 9] as const
 
 // ── HELPERS ───────────────────────────────────────────────────────
 function capitalizeWords(val: string) {
@@ -41,7 +41,7 @@ function StarField({ count = 40 }: { count?: number }) {
 }
 
 // ── LANDING PAGE ──────────────────────────────────────────────────
-const GRADE_COLORS = ['#FFD93D', '#FF9A3C', '#FF6B6B', '#6BCB77', '#7B5CE5']
+const GRADE_COLORS = ['#FFD93D', '#FF9A3C', '#FF6B6B', '#6BCB77', '#7B5CE5', '#FF6B9D', '#4ECDC4', '#45B7D1', '#96CEB4']
 
 const FLOATERS = [
   { e: '📚', x: 12, y: 28, delay: 0,   size: '2.2rem', op: 0.3 },
