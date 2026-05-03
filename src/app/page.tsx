@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { getFamilySession, loginWithPin, register, parentLogin, StudentProfile } from '@/lib/auth'
 import { saveAffiliateRef } from '@/lib/affiliate'
 import TownSchoolPicker from '@/components/TownSchoolPicker'
+import { SUBJECTS } from '@/lib/subjects'
 
 const GRADES = [1, 2, 3, 4, 5, 6, 7, 8, 9] as const
 
@@ -114,11 +115,11 @@ function LandingPage({ onRegister, onLogin }: { onRegister: () => void; onLogin:
           </div>
 
           {/* Subjects */}
-          <div className="flex justify-center gap-4 mb-7 text-2xl">
-            {[['🔮', 'Математика'], ['🌿', 'Биологија'], ['⚗️', 'Хемија']].map(([e, n]) => (
-              <div key={n} className="flex flex-col items-center gap-1">
-                <span>{e}</span>
-                <span className="text-xs font-bold" style={{ color: 'rgba(255,255,255,0.4)' }}>{n}</span>
+          <div className="flex justify-center gap-3 mb-7 text-xl flex-wrap max-w-xs">
+            {SUBJECTS.map((subject) => (
+              <div key={subject.id} className="flex flex-col items-center gap-1">
+                <span>{subject.emoji}</span>
+                <span className="text-xs font-bold text-center leading-tight" style={{ color: 'rgba(255,255,255,0.4)' }}>{subject.nameMk}</span>
               </div>
             ))}
           </div>
