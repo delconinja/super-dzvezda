@@ -22,7 +22,7 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     emoji: '📖',
     flagCode: 'mk',
     unitsCount: 7,
-    grades: [1, 2, 3, 4, 5, 6],
+    grades: [1, 2, 3, 4, 5, 6, 7],
   },
   {
     id: 'science',
