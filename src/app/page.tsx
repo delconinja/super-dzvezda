@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { getFamilySession, loginWithPin, register, parentLogin, StudentProfile } from '@/lib/auth'
+import { getFamilySession, loginWithPin, register, parentLogin, setActiveStudent, isDevAdminUser, StudentProfile } from '@/lib/auth'
 import { saveAffiliateRef } from '@/lib/affiliate'
 import TownSchoolPicker from '@/components/TownSchoolPicker'
 import { SUBJECTS } from '@/lib/subjects'
@@ -601,6 +601,7 @@ function KidSelector({ students, onBack }: { students: StudentProfile[]; onBack:
 
 // ── PARENT LOGIN FORM ─────────────────────────────────────────────
 function ParentLoginForm({ onDone, onRegister }: { onDone: () => void; onRegister: () => void }) {
+  const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -613,6 +614,24 @@ function ParentLoginForm({ onDone, onRegister }: { onDone: () => void; onRegiste
     const result = await parentLogin(email.trim().toLowerCase(), password)
     setLoading(false)
     if (!result.ok) return setError(result.error!)
+
+    const isAdmin = await isDevAdminUser()
+    if (isAdmin) {
+      setActiveStudent({
+        id: 'dev-admin',
+        parent_id: 'dev-admin',
+        name: 'Admin',
+        grade: 0,
+        pin: '0000',
+        stars_total: 0,
+        streak: 0,
+        town: null,
+        school: null,
+      })
+      router.push('/dashboard')
+      return
+    }
+
     onDone()
   }
 
