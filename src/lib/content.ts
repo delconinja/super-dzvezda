@@ -17013,6 +17013,435 @@ muessen → musste · koennen → konnte · wollen → wollte
       ],
     },
   ],
+  italian: [
+    // ── UNITA 1: Io e gli altri ───────────────────────────────────
+    {
+      id: 'ita7-1',
+      title: 'Io e gli altri — Јас и другите',
+      lessons: [
+        {
+          id: 'ita7-1-1',
+          title: 'Aspetto fisico e abbigliamento — Изглед и облека',
+          content: `## Aggettivi descrittivi — Описни придавки
+
+| Italiano | Македонски |
+|----------|-----------|
+| **grande** | голем/а |
+| **piccolo** | мал/а |
+| **alto** | висок/а |
+| **basso** | низок/ниска |
+| **magro** | витка/о |
+| **grasso** | дебел/а |
+| **bello** | убав/а |
+| **simpatico** | симпатичен/а |
+| **carino** | миол/а |
+
+**Gli occhi (Очи):** neri · verdi · marroni · blu · azzurri
+**I capelli (Коса):** lunghi · corti · biondi · castani · rossi
+
+*Mia sorella e alta e magra. Ha i capelli lunghi e biondi e gli occhi azzurri.*
+
+## Abbigliamento — Облека
+
+| Italiano | Македонски |
+|----------|-----------|
+| una gonna | здолниште |
+| una camicia | кошула |
+| i pantaloni | панталони |
+| una maglietta | маица |
+| un maglione | џемпер |
+| i jeans | фармерки |
+| le scarpe | чевли |
+| le scarpe da ginnastica | патики |
+| un abito / un vestito | облека / фустан |
+
+## I colori — Бои
+
+bianco · nero · rosso · giallo · blu · grigio · marrone · verde · viola · arancione
+
+*Elena indossa una camicia rossa e i jeans blu.*`,
+          exercises: [
+            {
+              id: 'eita7-1-1', type: 'multiple-choice',
+              question: 'Придавката "alto" на македонски значи:',
+              options: ['низок', 'дебел', 'висок', 'убав'],
+              correct: 'висок',
+              hint: 'Alto = висок. Basso = низок. Magro = витка. Grasso = дебел.',
+              explanation: 'Alto = висок/а. Basso = низок/ниска. Magro = витка/о. Grasso = дебел/а.',
+            },
+            {
+              id: 'eita7-1-2', type: 'multiple-choice',
+              question: '"I jeans" на македонски означува:',
+              options: ['чевли', 'фармерки', 'кошула', 'здолниште'],
+              correct: 'фармерки',
+              hint: 'Jeans = фармерки (истиот збор и на македонски).',
+              explanation: 'I jeans = фармерките. Le scarpe = чевлите. Una camicia = кошула. Una gonna = здолниште.',
+            },
+            {
+              id: 'eita7-1-3', type: 'multiple-choice',
+              question: 'Бојата "verde" на македонски е:',
+              options: ['сина', 'зелена', 'жолта', 'сива'],
+              correct: 'зелена',
+              hint: 'Verde = зелена. Blu = сина. Giallo = жолта. Grigio = сива.',
+              explanation: 'Verde = зелена. Blu = сина. Giallo = жолта. Grigio = сива. Rosso = црвена.',
+            },
+          ],
+        },
+        {
+          id: 'ita7-1-2',
+          title: 'Grammatica: aggettivi dimostrativi e verbi — Показни придавки и глаголи',
+          content: `## Aggettivi dimostrativi — Показни придавки
+
+| | Еднина машки | Еднина женски | Множина машки | Множина женски |
+|-|-------------|--------------|--------------|--------------|
+| **questo** (овој) | questo | questa | questi | queste |
+| **quello** (оној) | quello | quella | quei | quelle |
+
+*Questo maglione mi piace molto. Quelle scarpe sono carine.*
+
+## Accordo degli aggettivi — Согласување
+
+Придавките во италијанскиот јазик се согласуваат со именката по род и број:
+
+| | Еднина | Множина |
+|-|--------|---------|
+| Машки | alto | alti |
+| Женски | alta | alte |
+
+*I capelli di Sofia sono lunghi. Marco e alto e simpatico.*
+
+## Verbi importanti — Важни глаголи
+
+| Инфинитив | Значење | Io | Lei/Lui |
+|-----------|---------|----|----|
+| **portare** | носам (облека) | porto | porta |
+| **indossare** | облекувам | indosso | indossa |
+| **mettere** | ставам | metto | mette |
+
+*Luca indossa sempre una camicia bianca e un paio di pantaloni neri.*
+
+## Frase negativa — Одречна реченица
+
+- Mi piacciono queste scarpe. → **Non mi piacciono** queste scarpe.
+- Porto il maglione. → **Non porto** il maglione.`,
+          exercises: [
+            {
+              id: 'eita7-1-4', type: 'multiple-choice',
+              question: 'Показната придавка за женски род еднина "овој" е:',
+              options: ['questo', 'questa', 'questi', 'queste'],
+              correct: 'questa',
+              hint: 'Questo (м.р. ед.), questa (ж.р. ед.), questi (м.р. мн.), queste (ж.р. мн.).',
+              explanation: 'Questa е показна придавка за женски род еднина. Questa camicia, questa gonna, questa ragazza.',
+            },
+            {
+              id: 'eita7-1-5', type: 'multiple-choice',
+              question: '"Indossare" значи:',
+              options: ['купувам', 'барам', 'облекувам', 'перам'],
+              correct: 'облекувам',
+              hint: 'Indossare = облекувам, носам облека. Portare = носам.',
+              explanation: 'Indossare = облекувам / носам (облека). Lei indossa una camicia = Таа носи кошула.',
+            },
+            {
+              id: 'eita7-1-6', type: 'multiple-choice',
+              question: 'Множинската форма на придавката "alto" (машки) е:',
+              options: ['alte', 'alti', 'altos', 'alta'],
+              correct: 'alti',
+              hint: 'Машки род: alto (ед.) → alti (мн.). Женски: alta → alte.',
+              explanation: 'Alto → alti (машки множина). Alta → alte (женски множина). Mario e Carlo sono alti.',
+            },
+          ],
+        },
+      ],
+    },
+    // ── UNITA 2: La casa e la vita quotidiana ─────────────────────
+    {
+      id: 'ita7-2',
+      title: 'La casa e la vita quotidiana — Домот и секојдневниот живот',
+      lessons: [
+        {
+          id: 'ita7-2-1',
+          title: 'La casa — Домот и просториите',
+          content: `## Tipi di abitazione — Видови живеалишта
+
+- **una casa** / **una villetta** — куќа
+- **un appartamento** — стан
+- **un condominio** — зграда / станбен блок
+- **un palazzo** — зграда / палата
+
+## Le stanze — Просториите
+
+| Italiano | Македонски |
+|----------|-----------|
+| il soggiorno | дневна соба |
+| la camera da letto | спална соба |
+| la cucina | кујна |
+| il bagno | бања |
+| lo studio | работна соба |
+| il corridoio | ходник |
+| il balcone | балкон |
+
+## I mobili — Мебелот
+
+il divano (кауч) · la poltrona (фотелја) · il letto (кревет)
+il tavolo (маса) · la sedia (стол) · l'armadio (гардероба)
+il frigorifero (фрижидер) · il televisore (ТВ)
+
+## Avverbi di luogo — Прилози за место
+
+| Italiano | Македонски |
+|----------|-----------|
+| **sopra** | горе / на |
+| **sotto** | под |
+| **vicino** | близу / до |
+| **accanto** | покрај |
+| **dentro** | внатре |
+| **fuori** | надвор |
+| **davanti** | пред |
+| **dietro** | зад |
+
+*Il libro e sul tavolo. La poltrona si trova davanti alla finestra.*
+*Nel soggiorno ci sono un divano e un televisore.*`,
+          exercises: [
+            {
+              id: 'eita7-2-1', type: 'multiple-choice',
+              question: 'Просторијата каде се готви храна се вика:',
+              options: ['il bagno', 'il soggiorno', 'la cucina', 'lo studio'],
+              correct: 'la cucina',
+              hint: 'Cucina = кујна. Bagno = бања. Soggiorno = дневна соба.',
+              explanation: 'La cucina = кујна. Il bagno = бања. Il soggiorno = дневна соба. Lo studio = работна соба.',
+            },
+            {
+              id: 'eita7-2-2', type: 'multiple-choice',
+              question: 'Прилогот "sotto" означува:',
+              options: ['горе', 'пред', 'под', 'до'],
+              correct: 'под',
+              hint: 'Sotto = под. Sopra = горе. Davanti = пред. Vicino = до.',
+              explanation: 'Sotto = под. Sopra = горе/на. Davanti = пред. Dietro = зад. Vicino = близу.',
+            },
+            {
+              id: 'eita7-2-3', type: 'multiple-choice',
+              question: '"Abito in un appartamento" значи:',
+              options: ['Живеам во куќа', 'Живеам во стан', 'Живеам во хотел', 'Живеам во замок'],
+              correct: 'Живеам во стан',
+              hint: 'Appartamento = стан. Abitare = живеам.',
+              explanation: 'Abitare = живеам. Un appartamento = стан. Una casa = куќа. Abito in un appartamento = Живеам во стан.',
+            },
+          ],
+        },
+        {
+          id: 'ita7-2-2',
+          title: 'La vita quotidiana — Секојдневниот живот',
+          content: `## Verbi riflessivi — Повратни глаголи
+
+Повратните глаголи се употребуваат со повратна заменка:
+
+| Пронома | Глагол | Пример |
+|---------|--------|--------|
+| mi | alzarsi | Io **mi alzo** alle 7. |
+| ti | lavarsi | Tu **ti lavi** le mani. |
+| si | vestirsi | Lui **si veste** in fretta. |
+| ci | svegliarsi | Noi **ci svegliamo** presto. |
+
+**Повратни глаголи (verbi riflessivi):**
+- **alzarsi** — ставам / станувам
+- **lavarsi** — се перам
+- **vestirsi** — се облекувам
+- **pettinarsi** — се češlam
+- **svegliarsi** — се будам
+- **addormentarsi** — заспивам
+
+*Ogni giorno mi sveglio alle 7, mi vesto e vado a fare colazione.*
+
+## Cibo e pasti — Храна и оброци
+
+**I pasti (Оброците):**
+- **la prima colazione** — појадок
+- **il pranzo** — ручек
+- **lo spuntino** — ужина
+- **la cena** — вечера
+
+**Cibo (Храна):** latte · formaggio · prosciutto · pane · burro · frutta · pasta · pizza
+
+## Articolo partitivo — Партитивен член
+
+| Машки ед. | Женски ед. | Множина |
+|-----------|-----------|---------|
+| **del** pane | **della** frutta | **dei** panini |
+| | | **delle** pizze |
+
+*Mangio del pane e bevo della frutta fresca.*
+
+## Avverbi di tempo — Прилози за време
+
+di solito · spesso · sempre · raramente · ogni tanto · tardi · presto`,
+          exercises: [
+            {
+              id: 'eita7-2-4', type: 'multiple-choice',
+              question: '"Mi alzo alle 7" значи:',
+              options: ['Јас заспивам во 7', 'Јас станувам во 7', 'Јас се облекувам во 7', 'Јас се будам во 7'],
+              correct: 'Јас станувам во 7',
+              hint: 'Alzarsi = станувам (стануваm од кревет). Mi alzo = Јас станувам.',
+              explanation: 'Alzarsi = станувам (од кревет). Mi alzo = Јас станувам. Svegliarsi = се будам. Addormentarsi = заспивам.',
+            },
+            {
+              id: 'eita7-2-5', type: 'multiple-choice',
+              question: 'Партитивниот член пред машка именка (del pane) се употребува за:',
+              options: ['Одредена количина', 'Цел предмет', 'Одречна форма', 'Множина секогаш'],
+              correct: 'Одредена количина',
+              hint: 'Партитивниот член (del/della) означува дел / одредена количина: del pane = леб (малку леб).',
+              explanation: 'Articolo partitivo (del/della/dei/delle) означува одредена (неодредена) количина. Del pane = малку леб.',
+            },
+            {
+              id: 'eita7-2-6', type: 'multiple-choice',
+              question: 'Оброкот "la cena" е:',
+              options: ['Појадок', 'Ручек', 'Ужина', 'Вечера'],
+              correct: 'Вечера',
+              hint: 'Cena = вечера. Prima colazione = појадок. Pranzo = ручек. Spuntino = ужина.',
+              explanation: 'La cena = вечера. La prima colazione = појадок. Il pranzo = ручек. Lo spuntino = ужина (попладне).',
+            },
+          ],
+        },
+      ],
+    },
+    // ── UNITA 3: Il tempo libero ──────────────────────────────────
+    {
+      id: 'ita7-3',
+      title: 'Il tempo libero — Слободно време',
+      lessons: [
+        {
+          id: 'ita7-3-1',
+          title: 'Attivita e inviti — Активности и поканување',
+          content: `## Attivita nel tempo libero — Слободно време
+
+| Italiano | Македонски |
+|----------|-----------|
+| **navigare in internet** | сурфам по интернет |
+| **fare sport** | се занимавам со спорт |
+| **andare al cinema** | одам на кино |
+| **giocare ai videogiochi** | играм видео игри |
+| **nuotare** | пливам |
+| **ascoltare la musica** | слушам музика |
+| **leggere** | читам |
+| **guardare un film** | гледам филм |
+
+## Verbi importanti
+
+| Глагол | io | tu | lui/lei |
+|--------|----|----|---------|
+| **fare** | faccio | fai | fa |
+| **andare** | vado | vai | va |
+| **giocare** | gioco | giochi | gioca |
+
+## Invitare — Поканување
+
+| Израз | Значење |
+|-------|---------|
+| Vieni con me al cinema? | Ќе дојдеш со мене на кино? |
+| Si, vengo volentieri. | Да, ќе дојдам со задоволство. |
+| Mi dispiace, non posso. | Жал ми е, не можам. |
+| Buon compleanno! Auguri! | Среќен роденден! |
+
+## Preposizioni articolate — Членувани предлози
+
+| Предлог + член | Пример |
+|---------------|--------|
+| in + il = **nel** | Gioco **nel** parco. |
+| da + il = **dal** | Torno **dal** cinema. |
+| di + il = **del** | Il libro **del** ragazzo. |
+
+*Francesca gioca nel cortile. Vado dal medico.*`,
+          exercises: [
+            {
+              id: 'eita7-3-1', type: 'multiple-choice',
+              question: 'Со кој израз прифаќаш покана на италијански?',
+              options: ['Mi dispiace', 'Non posso', 'Si, vengo volentieri', 'Arrivederci'],
+              correct: 'Si, vengo volentieri',
+              hint: 'Vengo volentieri = доаѓам со задоволство (прифаќање). Mi dispiace = жал ми е (одбивање).',
+              explanation: 'Si, vengo volentieri = Да, доаѓам со задоволство! Mi dispiace, non posso = Жал ми е, не можам.',
+            },
+            {
+              id: 'eita7-3-2', type: 'multiple-choice',
+              question: '"Faccio" е прво лице еднина на глаголот:',
+              options: ['andare', 'giocare', 'fare', 'nuotare'],
+              correct: 'fare',
+              hint: 'Fare (правам/прават): io faccio, tu fai, lui fa. Неправилен глагол.',
+              explanation: 'Fare = правам. Io faccio (јас правам), tu fai, lui/lei fa. Fare sport = се занимавам со спорт.',
+            },
+            {
+              id: 'eita7-3-3', type: 'multiple-choice',
+              question: 'Членуваниот предлог "nel" е комбинација на:',
+              options: ['di + il', 'in + il', 'da + il', 'a + il'],
+              correct: 'in + il',
+              hint: 'Nel = in + il. Esempio: Gioco nel parco (in + il parco).',
+              explanation: 'Nel = in + il (машки член еднина). Dal = da + il. Del = di + il. Al = a + il.',
+            },
+          ],
+        },
+        {
+          id: 'ita7-3-2',
+          title: 'Il tempo e le stagioni — Времето и годишните времиња',
+          content: `## Le stagioni — Годишни времиња
+
+| Italiano | Македонски |
+|----------|-----------|
+| **la primavera** | пролет |
+| **estate** | лето |
+| **autunno** | есен |
+| **inverno** | зима |
+
+## Il tempo — Временски услови
+
+| Израз | Значење |
+|-------|---------|
+| **Fa bel tempo.** | Убаво е времето. |
+| **Fa brutto tempo.** | Лошо е времето. |
+| **Fa caldo.** | Топло е. |
+| **Fa freddo.** | Студено е. |
+| **Piove.** | Врне дожд. |
+| **Nevica.** | Врне снег. |
+| **Tira il vento.** | Дува ветер. |
+| **E nuvoloso.** | Облачно е. |
+| **C'e il sole.** | Има сонце. |
+
+**Che tempo fa?** — Какво е времето?
+**Com'e il tempo a Roma?** — Какво е времето во Рим?
+
+## Espressioni utili
+
+- d'estate fa caldo → во лето е топло
+- in inverno fa freddo → во зима е студено
+- in primavera piove spesso → во пролет врне често
+- in autunno fa fresco → во есен е свежо`,
+          exercises: [
+            {
+              id: 'eita7-3-4', type: 'multiple-choice',
+              question: '"Piove" значи:',
+              options: ['Врне снег', 'Дува ветер', 'Врне дожд', 'Сончево е'],
+              correct: 'Врне дожд',
+              hint: 'Piove = врне дожд. Nevica = врне снег. Tira il vento = дува ветер.',
+              explanation: 'Piove = врне дожд. Nevica = врне снег. Fa bel tempo = убаво е. Tira il vento = дува ветер.',
+            },
+            {
+              id: 'eita7-3-5', type: 'multiple-choice',
+              question: 'Годишното време "primavera" е:',
+              options: ['Лето', 'Есен', 'Зима', 'Пролет'],
+              correct: 'Пролет',
+              hint: 'Primavera = пролет. Estate = лето. Autunno = есен. Inverno = зима.',
+              explanation: 'La primavera = пролет. Estate = лето. Autunno = есен. Inverno = зима.',
+            },
+            {
+              id: 'eita7-3-6', type: 'multiple-choice',
+              question: 'Со кој израз прашуваш за времето на италијански?',
+              options: ['Che ora e?', 'Che tempo fa?', 'Come stai?', 'Dove abiti?'],
+              correct: 'Che tempo fa?',
+              hint: 'Che tempo fa? = Какво е времето? Che ora e? = Колку е часот?',
+              explanation: 'Che tempo fa? = Какво е времето? Che ora e? = Колку е часот? Come stai? = Како си? Dove abiti? = Каде живееш?',
+            },
+          ],
+        },
+      ],
+    },
+  ],
 }
 
 // ── GRADE 6 CONTENT ──────────────────────────────────────────────
