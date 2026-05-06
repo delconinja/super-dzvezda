@@ -11,7 +11,7 @@ import {
   estimatedMonthlyEur, Affiliate, AffiliatePayout,
 } from '@/lib/affiliate'
 
-const ADMIN_EMAIL = 'delco.k.de@gmail.com'
+const ADMIN_EMAILS = ['delco.k.de@gmail.com', 'apostolova.marija22@gmail.com']
 
 type Tab = 'affiliates' | 'subscriptions' | 'payouts'
 
@@ -39,7 +39,7 @@ export default function AdminPage() {
   useEffect(() => {
     const init = async () => {
       const { data: { user } } = await supabase.auth.getUser()
-      if (!user || user.email !== ADMIN_EMAIL) { router.push('/'); return }
+      if (!user || !ADMIN_EMAILS.includes(user.email ?? '')) { router.push('/'); return }
       const [affs, subs, pays] = await Promise.all([
         adminGetAffiliates(),
         adminGetSubscriptions(),
