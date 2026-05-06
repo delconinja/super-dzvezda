@@ -16579,6 +16579,440 @@ la confiture (мармалад) · le jus (сок) · les fruits (овошје)`
       ],
     },
   ],
+  german: [
+    // ── EINHEIT 1: Meine Freunde und ich ─────────────────────────
+    {
+      id: 'ger7-1',
+      title: 'Meine Freunde und ich — Мои другари и јас',
+      lessons: [
+        {
+          id: 'ger7-1-1',
+          title: 'Aussehen und Kleidung — Изглед и облека',
+          content: `## Beschreibung von Personen — Опис на личности
+
+**Adjektive (Придавки за изглед):**
+
+| Deutsch | Македонски |
+|---------|-----------|
+| **groß** | висок/а |
+| **klein** | низок/ниска |
+| **schlank** | витка/о |
+| **sympathisch** | симпатичен/а |
+| **huebsch / schoen** | убав/а |
+| **nett / freundlich** | љубезен/а |
+| **sportlich** | спортски |
+| **intelligent** | интелигентен/а |
+| **fleißig** | вреден/а |
+| **faul** | мрзелив/а |
+
+*Meine Freundin ist 1,65 m groß. Sie hat lange, blonde Haare und blaue Augen.*
+
+## Kleidung — Облека
+
+| Deutsch | Македонски |
+|---------|-----------|
+| die Jacke | јакна |
+| das T-Shirt | маица |
+| das Sweatshirt | дуксер |
+| die Hose | панталони |
+| die Jeans | фармерки |
+| der Pulli | џемпер |
+| das Kleid | фустан |
+| der Rock | здолниште |
+| die Schuhe | чевли |
+| die Stiefel | чизми |
+| die Muetze | капа |
+| die Handschuhe | ракавици |
+
+**Farben (Бои):** rot · blau · gruen · gelb · orange · schwarz · weiss · grau · braun
+
+## Wichtige Verben
+
+| Verb | Bedeutung | Beispiel |
+|------|-----------|---------|
+| tragen | носам | Sie traegt eine Jeans. |
+| finden | сметам | Ich finde den Pulli schoen. |
+| kaufen | купувам | Wir kaufen Kleidung. |
+
+*Wie findest du den Pulli? — Ich finde ihn super!*`,
+          exercises: [
+            {
+              id: 'eger7-1-1', type: 'multiple-choice',
+              question: 'Придавката "fleißig" на македонски значи:',
+              options: ['мрзелив', 'вреден', 'висок', 'симпатичен'],
+              correct: 'вреден',
+              hint: 'Fleißig = вреден. Faul = мрзелив.',
+              explanation: 'Fleißig = вреден/а. Faul = мрзелив/а. Groß = висок/а. Sympathisch = симпатичен/а.',
+            },
+            {
+              id: 'eger7-1-2', type: 'multiple-choice',
+              question: '"Sie traegt eine Jeans" значи:',
+              options: ['Таа бара фармерки', 'Таа купува фармерки', 'Таа носи фармерки', 'Таа сака фармерки'],
+              correct: 'Таа носи фармерки',
+              hint: 'Tragen = носам (облека). Jeans = фармерки.',
+              explanation: 'Tragen = носам (облека). Sie traegt = Таа носи. Die Jeans = фармерките.',
+            },
+            {
+              id: 'eger7-1-3', type: 'multiple-choice',
+              question: 'Кој збор означува "чизми" на германски?',
+              options: ['die Muetze', 'die Schuhe', 'die Stiefel', 'der Rock'],
+              correct: 'die Stiefel',
+              hint: 'Stiefel = чизми. Schuhe = чевли. Muetze = капа.',
+              explanation: 'Die Stiefel = чизми. Die Schuhe = чевли. Die Muetze = капа. Der Rock = здолниште.',
+            },
+          ],
+        },
+        {
+          id: 'ger7-1-2',
+          title: 'Verben, Negation und Modalverb wollen — Глаголи и одречна форма',
+          content: `## Trennbare Verben — Деливи глаголи
+
+Деливите глаголи го испраќаат префиксот на КРАЈ на реченицата:
+
+| Глагол | Пример |
+|--------|--------|
+| fernsehen | Ich sehe gern **fern**. |
+| einkaufen | Wir kaufen heute **ein**. |
+| aufstehen | Er steht um 7 Uhr **auf**. |
+| mitkommen | Kommst du **mit**? |
+
+## Negation — Одречна форма
+
+- **nicht** — одречување на глаголи: *Ich sehe nicht fern.*
+- **kein / keine** — одречување на именки: *Ich habe keinen Computer.*
+- **nie** — никогаш: *Ich spiele nie Fußball.*
+
+| Потврдна | Одречна |
+|----------|---------|
+| Ich habe einen Pulli. | Ich habe **keinen** Pulli. |
+| Das ist eine Jacke. | Das ist **keine** Jacke. |
+| Er kommt mit. | Er kommt **nicht** mit. |
+
+## Modalverb wollen — Сакам
+
+| ich | du | er/sie | wir | ihr | sie |
+|-----|----|--------|-----|-----|-----|
+| will | willst | will | wollen | wollt | wollen |
+
+*Ich will Gitarre spielen. / Wir wollen ins Kino gehen.*
+
+## Imperativ — Заповеден начин
+
+| du | ihr | Sie |
+|----|-----|-----|
+| Komm! | Kommt! | Kommen Sie! |
+| Mach! | Macht! | Machen Sie! |
+| Iss! | Esst! | Essen Sie! |`,
+          exercises: [
+            {
+              id: 'eger7-1-4', type: 'multiple-choice',
+              question: 'При употреба на "fernsehen", префиксот "fern" оди:',
+              options: ['На почеток на реченицата', 'По субјектот', 'На крај на реченицата', 'Пред глаголот'],
+              correct: 'На крај на реченицата',
+              hint: 'Деливи глаголи: префиксот оди на крај. Ich sehe fern.',
+              explanation: 'Деливи глаголи го испраќаат префиксот на крај: Ich sehe fern. Er kauft ein. Wir stehen auf.',
+            },
+            {
+              id: 'eger7-1-5', type: 'multiple-choice',
+              question: 'Одречната форма на "Ich habe eine Jacke" е:',
+              options: ['Ich habe nicht Jacke', 'Ich habe keine Jacke', 'Ich habe kein Jacke', 'Ich nicht habe Jacke'],
+              correct: 'Ich habe keine Jacke',
+              hint: 'Именките се одречуваат со kein/keine. Jacke е женски род → keine.',
+              explanation: 'Kein/keine се употребуваат пред именки. Die Jacke (ж.р.) → keine Jacke. Der Pulli → keinen Pulli.',
+            },
+            {
+              id: 'eger7-1-6', type: 'multiple-choice',
+              question: '"Wir wollen ins Kino gehen" значи:',
+              options: ['Ние одевме на кино', 'Ние сакаме да одиме на кино', 'Ние одиме на кино', 'Ние не сакаме кино'],
+              correct: 'Ние сакаме да одиме на кино',
+              hint: 'Wollen = сакам (намера). Wir wollen = Ние сакаме.',
+              explanation: 'Modalverb wollen + инфинитив на крај. Wir wollen ins Kino gehen = Ние сакаме да одиме на кино.',
+            },
+          ],
+        },
+      ],
+    },
+    // ── EINHEIT 2: Mein Zuhause und Alltag ───────────────────────
+    {
+      id: 'ger7-2',
+      title: 'Mein Zuhause und Alltag — Мојот дом и секојдневниот живот',
+      lessons: [
+        {
+          id: 'ger7-2-1',
+          title: 'Das Zuhause — Домот и просториите',
+          content: `## Raeume — Простории
+
+- das Wohnzimmer — дневна соба
+- das Schlafzimmer — спална соба
+- das Kinderzimmer — детска соба
+- die Kueche — кујна
+- das Bad / die Toilette — бања / тоалет
+- der Balkon — балкон
+
+## Moebelstücke — Мебел
+
+das Bett (кревет) · der Schrank (плакар) · das Regal (полица)
+der Schreibtisch (биро) · der Stuhl (стол) · der Tisch (маса)
+das Poster · der Teppich (килим)
+
+## Praepositionen mit Dativ — Предлози со датив (wo?)
+
+| Предлог | Значење | Пример |
+|---------|---------|--------|
+| auf | на | Das Buch liegt **auf dem** Tisch. |
+| in | во | Das Hemd haengt **in dem** Schrank. |
+| an | на (ѕид) | Das Poster haengt **an der** Wand. |
+| vor | пред | Der Stuhl steht **vor dem** Schreibtisch. |
+| hinter | зад | Das Regal steht **hinter der** Tuer. |
+| neben | до | Das Bett steht **neben dem** Fenster. |
+| zwischen | помеѓу | Der Korb steht **zwischen** Couch und Sessel. |
+| unter | под | Die Schuhe sind **unter dem** Bett. |
+| ueber | над | Die Lampe haengt **ueber dem** Tisch. |
+
+## Tagesroutine — Дневна рутина
+
+aufstehen · sich waschen · sich die Zaehne putzen
+fruehstuecken · in die Schule gehen · Hausaufgaben machen
+zu Abend essen · fernsehen · schlafen gehen
+
+*Von Montag bis Freitag stehe ich um 7 Uhr auf. Dann gehe ich ins Bad und putze mir die Zaehne.*`,
+          exercises: [
+            {
+              id: 'eger7-2-1', type: 'multiple-choice',
+              question: 'Просторијата каде се готви храна се вика:',
+              options: ['das Schlafzimmer', 'das Wohnzimmer', 'die Kueche', 'das Bad'],
+              correct: 'die Kueche',
+              hint: 'Kueche = кујна. Schlafzimmer = спална. Wohnzimmer = дневна.',
+              explanation: 'Die Kueche = кујна. Das Schlafzimmer = спална соба. Das Wohnzimmer = дневна соба.',
+            },
+            {
+              id: 'eger7-2-2', type: 'multiple-choice',
+              question: '"Das Buch liegt auf dem Tisch" значи:',
+              options: ['Книгата е под масата', 'Книгата е на масата', 'Книгата е зад масата', 'Книгата е до масата'],
+              correct: 'Книгата е на масата',
+              hint: 'Auf = на (горна страна). Tisch = маса. Liegen = лежи.',
+              explanation: 'Auf + датив = на (горна страна). Das Buch liegt auf dem Tisch = Книгата лежи на масата.',
+            },
+            {
+              id: 'eger7-2-3', type: 'multiple-choice',
+              question: 'Кој предлог означува "помеѓу"?',
+              options: ['vor', 'hinter', 'zwischen', 'ueber'],
+              correct: 'zwischen',
+              hint: 'Zwischen = помеѓу. Vor = пред. Hinter = зад. Ueber = над.',
+              explanation: 'Zwischen = помеѓу. Vor = пред. Hinter = зад. Unter = под. Ueber = над.',
+            },
+          ],
+        },
+        {
+          id: 'ger7-2-2',
+          title: 'Essen, Trinken und Plural — Храна и множина',
+          content: `## Essen und Trinken — Храна и пијалаци
+
+**Lebensmittel (Намирници):**
+das Brot (леб) · das Broetchen (геврече) · der Kaese (сирење)
+der Schinken (шунка) · das Ei (јајце) · die Butter (путер)
+die Marmelade (мармалад) · das Muesli (мислии)
+die Wurst (колбас) · der Fisch (риба) · das Gemuese (зеленчук)
+
+**Getraenke (Пијалаци):**
+das Wasser · die Milch · der Saft · der Tee · der Kaffee · die Cola
+
+*Zum Fruehstueck esse ich Brot mit Marmelade und trinke Milch.*
+
+## Nomen im Plural — Множина на именките
+
+| Еднина | Множина |
+|--------|---------|
+| das Bett | die Betten |
+| der Stuhl | die Stuehle |
+| das Regal | die Regale |
+| die Wand | die Waende |
+| das Fenster | die Fenster |
+| das Kind | die Kinder |
+
+## Modalverben koennen und muessen
+
+| Глагол | ich | du | er/sie | wir |
+|--------|-----|----|--------|-----|
+| koennen | kann | kannst | kann | koennen |
+| muessen | muss | musst | muss | muessen |
+
+*Sie muss lernen, deshalb kann sie nicht fernsehen.*`,
+          exercises: [
+            {
+              id: 'eger7-2-4', type: 'multiple-choice',
+              question: 'Множината на "das Bett" е:',
+              options: ['die Betts', 'die Betten', 'die Bette', 'die Bettre'],
+              correct: 'die Betten',
+              hint: 'Das Bett → die Betten (+ en). Правило за множина.',
+              explanation: 'Das Bett → die Betten. Многу именки добиваат -en во множина.',
+            },
+            {
+              id: 'eger7-2-5', type: 'multiple-choice',
+              question: '"Ich muss lernen" значи:',
+              options: ['Јас можам да учам', 'Јас сакам да учам', 'Јас мора да учам', 'Јас учам'],
+              correct: 'Јас мора да учам',
+              hint: 'Muessen = мора/треба. Koennen = можам. Wollen = сакам.',
+              explanation: 'Muessen = мора, треба (обврска). Ich muss lernen = Јас мора да учам.',
+            },
+            {
+              id: 'eger7-2-6', type: 'multiple-choice',
+              question: 'Оброкот наутро на германски се вика:',
+              options: ['das Mittagessen', 'das Fruehstueck', 'das Abendessen', 'die Mahlzeit'],
+              correct: 'das Fruehstueck',
+              hint: 'Frueh = рано. Fruehstueck = појадок (раниот оброк).',
+              explanation: 'Das Fruehstueck = појадок. Das Mittagessen = ручек. Das Abendessen = вечера.',
+            },
+          ],
+        },
+      ],
+    },
+    // ── EINHEIT 3: Freizeit, Wetter und Vergangenheit ─────────────
+    {
+      id: 'ger7-3',
+      title: 'Freizeit, Wetter und Vergangenheit — Слободно време и минато',
+      lessons: [
+        {
+          id: 'ger7-3-1',
+          title: 'Freizeit und Wetter — Слободно време и времето',
+          content: `## Freizeitaktivitaeten — Слободно време
+
+| Deutsch | Македонски |
+|---------|-----------|
+| Musik hoeren | слушам музика |
+| ins Kino gehen | одам на кино |
+| Computer spielen | играм компјутер |
+| Freunde treffen | се среќавам со другари |
+| wandern | планинарам |
+| schwimmen | пливам |
+| Fußball spielen | играм фудбал |
+| lesen | читам |
+| fernsehen | гледам ТВ |
+
+## Das Wetter — Временски услови
+
+| Израз | Значење |
+|-------|---------|
+| Es ist sonnig. | Сончево е. |
+| Es ist wolkig. | Облачно е. |
+| Es regnet. | Врне дожд. |
+| Es schneit. | Врне снег. |
+| Es ist kalt / warm. | Студено / топло е. |
+| Es ist kuehl. | Свежо е. |
+| Es ist windig. | Ветровито е. |
+
+## Kalender — Календар
+
+**Jahreszeiten:** der Fruehling · der Sommer · der Herbst · der Winter
+
+**Monate:** Januar · Februar · Maerz · April · Mai · Juni · Juli · August · September · Oktober · November · Dezember
+
+**Wochentage:** Montag · Dienstag · Mittwoch · Donnerstag · Freitag · Samstag · Sonntag
+
+*Im Sommer scheint die Sonne. Im Winter schneit es oft.*`,
+          exercises: [
+            {
+              id: 'eger7-3-1', type: 'multiple-choice',
+              question: '"Es regnet" значи:',
+              options: ['Врне снег', 'Сончево е', 'Врне дожд', 'Ветровито е'],
+              correct: 'Врне дожд',
+              hint: 'Regnen = врне дожд. Schneien = врне снег.',
+              explanation: 'Es regnet = Врне дожд. Es schneit = Врне снег. Es ist sonnig = Сончево е.',
+            },
+            {
+              id: 'eger7-3-2', type: 'multiple-choice',
+              question: 'Годишното време "der Herbst" е:',
+              options: ['Пролет', 'Лето', 'Есен', 'Зима'],
+              correct: 'Есен',
+              hint: 'Herbst = есен. Fruehling = пролет. Sommer = лето. Winter = зима.',
+              explanation: 'Der Herbst = есен. Der Fruehling = пролет. Der Sommer = лето. Der Winter = зима.',
+            },
+            {
+              id: 'eger7-3-3', type: 'multiple-choice',
+              question: 'Која активност значи "планинарам" на германски?',
+              options: ['schwimmen', 'wandern', 'lesen', 'fernsehen'],
+              correct: 'wandern',
+              hint: 'Wandern = планинарам / одам во природа.',
+              explanation: 'Wandern = планинарање. Schwimmen = пливање. Lesen = читање. Fernsehen = гледање ТВ.',
+            },
+          ],
+        },
+        {
+          id: 'ger7-3-2',
+          title: 'Perfekt und Praeteritum — Перфект и претеритум',
+          content: `## Perfekt — Сложено минато време
+
+**Структура:** haben / sein (сегашно) + Partizip II (на крај)
+
+**Partizip II за слаби глаголи:** ge- + основа + -t
+
+| Инфинитив | Partizip II |
+|-----------|------------|
+| machen | ge**mach**t |
+| hoeren | ge**hoer**t |
+| kaufen | ge**kauf**t |
+| lernen | ge**lern**t |
+
+**Partizip II за јаки глаголи:** ge- + (промена) + -en
+
+| Инфинитив | Partizip II | Пример |
+|-----------|------------|--------|
+| fahren | gefahren | Er ist nach Berlin **gefahren**. |
+| gehen | gegangen | Wir sind ins Kino **gegangen**. |
+| kommen | gekommen | Sie sind zu Besuch **gekommen**. |
+| essen | gegessen | Ich habe Pizza **gegessen**. |
+
+**Правило haben vs. sein:**
+- **haben**: повеќето глаголи (transitive)
+- **sein**: глаголи за движење и промена на состојба (fahren, gehen, kommen, fliegen)
+
+## Praeteritum — Просто минато
+
+**haben и sein (задолжително!):**
+
+| Лице | haben | sein |
+|------|-------|------|
+| ich | hatte | war |
+| du | hattest | warst |
+| er/sie | hatte | war |
+| wir | hatten | waren |
+
+*Gestern war ich im Park und hatte meine Kamera.*
+
+**Modalni глаголи во претеритум:**
+muessen → musste · koennen → konnte · wollen → wollte
+
+*Er wollte ins Kino gehen, aber er musste lernen.*`,
+          exercises: [
+            {
+              id: 'eger7-3-4', type: 'multiple-choice',
+              question: 'Partizip II на глаголот "machen" е:',
+              options: ['gemacht', 'gemachen', 'macht', 'gemascht'],
+              correct: 'gemacht',
+              hint: 'Слаби глаголи: ge- + основа + -t. mach- + -t = gemacht.',
+              explanation: 'Partizip II на слабите глаголи: ge- + основа + -t. machen → gemacht. hoeren → gehoert.',
+            },
+            {
+              id: 'eger7-3-5', type: 'multiple-choice',
+              question: 'За глаголот "gehen" се употребува:',
+              options: ['haben + gegangen', 'sein + gegangen', 'haben + gegehen', 'sein + gegeht'],
+              correct: 'sein + gegangen',
+              hint: 'Глаголи за движење (gehen, fahren, kommen) користат sein.',
+              explanation: 'Gehen = глагол за движење → sein + gegangen. Ich bin gegangen. Wir sind gegangen.',
+            },
+            {
+              id: 'eger7-3-6', type: 'multiple-choice',
+              question: 'Претеритумот на "sein" во прво лице еднина е:',
+              options: ['hatte', 'war', 'wollte', 'konnte'],
+              correct: 'war',
+              hint: 'Sein (сум) → war (бев). Haben (имам) → hatte (имав).',
+              explanation: 'Sein → war (претеритум). Haben → hatte. Ich war im Park = Јас бев во паркот.',
+            },
+          ],
+        },
+      ],
+    },
+  ],
 }
 
 // ── GRADE 6 CONTENT ──────────────────────────────────────────────

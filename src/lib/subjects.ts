@@ -125,7 +125,7 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     emoji: '🇩🇪',
     flagCode: 'de',
     unitsCount: 3,
-    grades: [6],
+    grades: [6, 7],
   },
   {
     id: 'russian',
