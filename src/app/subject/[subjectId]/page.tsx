@@ -84,44 +84,35 @@ export default function SubjectPage() {
                   {unit.lessons.map((lesson, lessonIdx) => {
                     const stars = lessonStars[lesson.id] || 0
                     const done = stars > 0
-                    // First lesson of every unit is always unlocked.
-                    // Each subsequent lesson unlocks only when the previous is done.
-                    const locked = lessonIdx > 0 && !(lessonStars[unit.lessons[lessonIdx - 1].id] > 0)
 
                     return (
                       <button key={lesson.id}
-                        onClick={() => { if (!locked) router.push(`/lesson/${lesson.id}`) }}
+                        onClick={() => router.push(`/lesson/${lesson.id}`)}
                         className="w-full flex items-center justify-between p-3 rounded-2xl transition-all duration-200 hover:scale-[1.01] active:scale-[0.99]"
                         style={{
-                          background: locked
-                            ? '#F3F4F6'
-                            : lesson.isTest
-                              ? done ? '#FFF8E8' : '#FFFDF5'
-                              : done ? `${subject.color}15` : subject.bgColor,
-                          border: locked
-                            ? '1.5px solid #E5E7EB'
-                            : lesson.isTest
-                              ? `1.5px solid ${done ? '#F0A500' : '#FFE082'}`
-                              : done ? `1.5px solid ${subject.color}40` : '1.5px solid transparent',
-                          opacity: locked ? 0.6 : 1,
-                          cursor: locked ? 'not-allowed' : 'pointer',
+                          background: lesson.isTest
+                            ? done ? '#FFF8E8' : '#FFFDF5'
+                            : done ? `${subject.color}15` : subject.bgColor,
+                          border: lesson.isTest
+                            ? `1.5px solid ${done ? '#F0A500' : '#FFE082'}`
+                            : done ? `1.5px solid ${subject.color}40` : '1.5px solid transparent',
+                          opacity: 1,
+                          cursor: 'pointer',
                         }}>
                         <div className="flex items-center gap-3">
                           <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-black flex-shrink-0"
                             style={{
-                              background: locked
-                                ? '#D1D5DB'
-                                : lesson.isTest
-                                  ? done ? '#F0A500' : '#FFE082'
-                                  : done ? subject.color : subject.color,
-                              color: locked ? '#9CA3AF' : lesson.isTest ? (done ? 'white' : '#7A5800') : 'white',
+                              background: lesson.isTest
+                                ? done ? '#F0A500' : '#FFE082'
+                                : done ? subject.color : subject.color,
+                              color: lesson.isTest ? (done ? 'white' : '#7A5800') : 'white',
                             }}>
-                            {locked ? '🔒' : lesson.isTest ? (done ? '✓' : '📝') : done ? '✓' : '▶'}
+                            {lesson.isTest ? (done ? '✓' : '📝') : done ? '✓' : '▶'}
                           </div>
-                          <span className="font-bold text-sm text-left" style={{ color: locked ? '#9CA3AF' : '#1A1A2E' }}>
+                          <span className="font-bold text-sm text-left" style={{ color: '#1A1A2E' }}>
                             {lesson.title}
                           </span>
-                          {lesson.isTest && !locked && (
+                          {lesson.isTest && (
                             <span className="text-xs font-black px-2 py-0.5 rounded-full"
                               style={{ background: '#FFE082', color: '#7A5800' }}>ТЕСТ</span>
                           )}
@@ -129,7 +120,7 @@ export default function SubjectPage() {
                         <div className="flex gap-0.5 flex-shrink-0">
                           {[1, 2, 3].map((s) => (
                             <span key={s} className="text-sm transition-colors"
-                              style={{ color: locked ? '#E5E7EB' : s <= stars ? '#FFD93D' : '#D1D5DB' }}>★</span>
+                              style={{ color: s <= stars ? '#FFD93D' : '#D1D5DB' }}>★</span>
                           ))}
                         </div>
                       </button>
