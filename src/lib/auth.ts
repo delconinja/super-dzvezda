@@ -1,6 +1,10 @@
 import { supabase } from './supabase'
 import { getAffiliateRef, clearAffiliateRef } from './affiliate'
 
+export const DEV_ADMIN_EMAILS = ['delco.k.de@gmail.com']
+const DEV_ADMIN_FLAG = 'dev_admin_enabled'
+const DEV_SELECTED_GRADE_KEY = 'dev_grade_override'
+
 export interface StudentProfile {
   id: string
   parent_id: string
@@ -83,6 +87,40 @@ export function setActiveStudent(student: StudentProfile) {
 
 export function clearActiveStudent() {
   localStorage.removeItem('active_student')
+  clearSelectedGrade()
+}
+
+export function getSelectedGrade(): number {
+  if (typeof window !== 'undefined') {
+    const enabled = localStorage.getItem(DEV_ADMIN_FLAG)
+    const override = Number(localStorage.getItem(DEV_SELECTED_GRADE_KEY))
+    if (enabled === 'true' && override >= 0 && override <= 9) {
+      return override
+    }
+  }
+  const active = getActiveStudent()
+  return active?.grade ?? 7
+}
+
+export function setSelectedGrade(grade: number) {
+  if (typeof window === 'undefined') return
+  localStorage.setItem(DEV_ADMIN_FLAG, 'true')
+  localStorage.setItem(DEV_SELECTED_GRADE_KEY, String(grade))
+}
+
+export function clearSelectedGrade() {
+  if (typeof window === 'undefined') return
+  localStorage.removeItem(DEV_ADMIN_FLAG)
+  localStorage.removeItem(DEV_SELECTED_GRADE_KEY)
+}
+
+export async function isDevAdminUser(): Promise<boolean> {
+  try {
+    const { data: { user } } = await supabase.auth.getUser()
+    return !!user?.email && DEV_ADMIN_EMAILS.includes(user.email.toLowerCase())
+  } catch {
+    return false
+  }
 }
 
 // ── PIN LOGIN (local — fast, no API call) ─────────────────────────

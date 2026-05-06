@@ -38,6 +38,8 @@ export default function ParentPage() {
   const [students, setStudents] = useState<StudentProfile[]>([])
   const [sub, setSub] = useState<Subscription | null>(null)
   const [loading, setLoading] = useState(true)
+  const [isAdmin, setIsAdmin] = useState(false)
+  const [parentId, setParentId] = useState<string | null>(null)
 
   const [showAdd, setShowAdd] = useState(false)
   const [newName, setNewName] = useState('')
@@ -53,6 +55,9 @@ export default function ParentPage() {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) { router.push('/'); return }
       setParentName(user.user_metadata?.full_name || user.email || 'Родитело')
+      setParentId(user.id)
+      const admin = await isDevAdminUser()
+      setIsAdmin(admin)
       const [studs, subscription] = await Promise.all([getStudents(), getSubscription()])
       setStudents(studs)
       setSub(subscription)
@@ -63,6 +68,22 @@ export default function ParentPage() {
 
   const handleSelectKid = (student: StudentProfile) => {
     setActiveStudent(student)
+    router.push('/dashboard')
+  }
+
+  const handleDevAccess = () => {
+    const devStudent: StudentProfile = {
+      id: 'dev-admin',
+      parent_id: parentId || 'dev-admin',
+      name: 'Admin',
+      grade: 0,
+      pin: '0000',
+      stars_total: 0,
+      streak: 0,
+      town: null,
+      school: null,
+    }
+    setActiveStudent(devStudent)
     router.push('/dashboard')
   }
 
@@ -174,6 +195,23 @@ export default function ParentPage() {
               <p className="text-4xl mb-3">👧</p>
               <p className="font-bold" style={{ color: '#6B6B8A' }}>Нема додадени деца.</p>
               <p className="text-sm mt-1" style={{ color: '#9B9BAA' }}>Додади го првото дете за да почне учењето!</p>
+              {isAdmin && (
+                <button onClick={handleDevAccess}
+                  className="mt-4 px-5 py-3 rounded-2xl font-black text-white"
+                  style={{ background: 'linear-gradient(135deg, #5C35D4, #7B5CE5)' }}>
+                  Dev admin: отвори сите одделенија
+                </button>
+              )}
+            </div>
+          )}
+          {isAdmin && students.length > 0 && (
+            <div className="rounded-3xl p-5 bg-white shadow-sm mb-4">
+              <p className="text-sm font-bold mb-3" style={{ color: '#5C35D4' }}>DEV ACCESS</p>
+              <button onClick={handleDevAccess}
+                className="w-full py-3 rounded-2xl font-black text-white"
+                style={{ background: 'linear-gradient(135deg, #5C35D4, #7B5CE5)' }}>
+                Отвори ги сите одделенија
+              </button>
             </div>
           )}
 

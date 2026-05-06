@@ -187,8 +187,12 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
 
 export const SUBJECTS: Subject[] = ALL_SUBJECTS
 
+export function getAllSubjects(): Subject[] {
+  return ALL_SUBJECTS
+}
+
 export function getSubjectsForGrade(grade: number): Subject[] {
-  return ALL_SUBJECTS.filter((s) => s.grades.includes(grade))
+  return grade === 0 ? ALL_SUBJECTS : ALL_SUBJECTS.filter((s) => s.grades.includes(grade))
 }
 
 export const getSubject = (id: string) =>

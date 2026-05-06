@@ -7,7 +7,7 @@ import { useRouter, useParams } from 'next/navigation'
 import { getSubject } from '@/lib/subjects'
 import SubjectIcon from '@/components/SubjectIcon'
 import { getGradeContent } from '@/lib/content'
-import { getActiveStudent, getProgress, StudentProfile } from '@/lib/auth'
+import { getActiveStudent, getProgress, getSelectedGrade, StudentProfile } from '@/lib/auth'
 
 export default function SubjectPage() {
   const router = useRouter()
@@ -30,7 +30,7 @@ export default function SubjectPage() {
 
   if (!subject || !student) return null
 
-  const gradeContent = getGradeContent(student.grade)
+  const gradeContent = getGradeContent(getSelectedGrade())
   const units = gradeContent[subjectId] || []
   const totalStars = units.flatMap(u => u.lessons).reduce((s, l) => s + (lessonStars[l.id] || 0), 0)
   const maxStars = units.flatMap(u => u.lessons).length * 3

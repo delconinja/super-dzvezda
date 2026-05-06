@@ -9,7 +9,7 @@ import remarkGfm from 'remark-gfm'
 import { getGradeContent, ExerciseData } from '@/lib/content'
 import { getSubject } from '@/lib/subjects'
 import SubjectIcon from '@/components/SubjectIcon'
-import { getActiveStudent, saveProgress, refreshStudentSession, StudentProfile } from '@/lib/auth'
+import { getActiveStudent, saveProgress, refreshStudentSession, getSelectedGrade, StudentProfile } from '@/lib/auth'
 import MathVisual from '@/components/math/MathVisual'
 
 type Phase = 'lesson' | 'exercises' | 'results'
@@ -35,7 +35,7 @@ export default function LessonPage() {
   const [shake, setShake] = useState(false)
 
   const activeStudent = getActiveStudent()
-  const gradeContent = getGradeContent(activeStudent?.grade ?? 7)
+  const gradeContent = getGradeContent(getSelectedGrade())
 
   const lesson = Object.values(gradeContent)
     .flatMap((units) => units.flatMap((u) => u.lessons))

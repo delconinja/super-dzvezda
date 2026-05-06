@@ -21913,8 +21913,28 @@ rosso (црвена) · blu (сина) · verde (зелена) · giallo (жол
   ],
 }
 
+function mergeGradeContents(contents: Array<Record<string, UnitData[]>>) {
+  const merged: Record<string, UnitData[]> = {}
+  contents.forEach((content) => {
+    Object.entries(content).forEach(([subjectId, units]) => {
+      merged[subjectId] = [...(merged[subjectId] || []), ...units]
+    })
+  })
+  return merged
+}
+
 // ── GRADE CONTENT LOOKUP ─────────────────────────────────────────
 export function getGradeContent(grade: number): Record<string, UnitData[]> {
+  if (grade === 0) {
+    return mergeGradeContents([
+      GRADE1_CONTENT,
+      GRADE2_CONTENT,
+      GRADE3_CONTENT,
+      GRADE5_CONTENT,
+      GRADE6_CONTENT,
+      GRADE7_CONTENT,
+    ])
+  }
   if (grade === 1) return GRADE1_CONTENT
   if (grade === 2) return GRADE2_CONTENT
   if (grade === 3) return GRADE3_CONTENT
