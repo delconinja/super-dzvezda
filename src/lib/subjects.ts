@@ -47,17 +47,6 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     grades: [1, 2, 3, 4],
   },
   {
-    id: 'enviro',
-    name: 'Nature & Society',
-    nameMk: 'Запознавање на околината',
-    world: 'Природен свет',
-    color: '#16A34A',
-    bgColor: '#DCFCE7',
-    emoji: '🌱',
-    unitsCount: 3,
-    grades: [1, 2, 3, 4],
-  },
-  {
     id: 'english',
     name: 'English',
     nameMk: 'Англиски јазик',
