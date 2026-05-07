@@ -78,7 +78,7 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     bgColor: '#FEF3C7',
     emoji: '🏛️',
     unitsCount: 3,
-    grades: [5, 6, 7],
+    grades: [4, 5, 6, 7],
   },
   {
     id: 'italian',
