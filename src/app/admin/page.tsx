@@ -55,7 +55,6 @@ export default function AdminPage() {
   const [selectedGrade, setSelectedGrade] = useState(7)
   const [expandedSubject, setExpandedSubject] = useState<string | null>(null)
   const [expandedUnit, setExpandedUnit] = useState<string | null>(null)
-  const [expandedLesson, setExpandedLesson] = useState<string | null>(null)
 
   const loadData = async () => {
     const [affs, subs, pays] = await Promise.all([
