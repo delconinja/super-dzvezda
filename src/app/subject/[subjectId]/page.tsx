@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic'
 
 import { useEffect, useState } from 'react'
 import { useRouter, useParams } from 'next/navigation'
-import { getSubject } from '@/lib/subjects'
+import { getSubject, gradeOrdinal } from '@/lib/subjects'
 import SubjectIcon from '@/components/SubjectIcon'
 import { getGradeContent } from '@/lib/content'
 import { getActiveStudent, getProgress, getSelectedGrade, StudentProfile } from '@/lib/auth'
@@ -53,7 +53,7 @@ export default function SubjectPage() {
 
       <div className="max-w-2xl mx-auto px-6 py-8">
         <h2 className="text-2xl font-black mb-6" style={{ color: '#1A1A2E' }}>
-          Единици за {student.grade}-то одделение
+          Единици за {student.grade}-{gradeOrdinal(student.grade)} одделение
         </h2>
 
         <div className="grid gap-4">

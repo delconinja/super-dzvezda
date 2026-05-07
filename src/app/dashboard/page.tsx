@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic'
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { getSubjectsForGrade } from '@/lib/subjects'
+import { getSubjectsForGrade, gradeOrdinal } from '@/lib/subjects'
 import { getActiveStudent, getSubscription, getProgress, clearActiveStudent, trialDaysLeft, isTrialExpired, StudentProfile, Subscription } from '@/lib/auth'
 import { getGradeContent } from '@/lib/content'
 import { Subject } from '@/types'
@@ -112,7 +112,7 @@ export default function DashboardPage() {
       <div className="max-w-2xl mx-auto px-6 py-8">
         <div className="mb-8">
           <p className="text-sm font-bold mb-1" style={{ color: '#6B6B8A' }}>
-            {grade === 0 ? 'Сите одделенија' : `${grade}-то одделение`}
+            {grade === 0 ? 'Сите одделенија' : `${grade}-${gradeOrdinal(grade)} одделение`}
           </p>
           <h1 className="text-3xl font-black" style={{ color: '#1A1A2E' }}>
             Здраво, {student.name.split(' ')[0]}! 👋

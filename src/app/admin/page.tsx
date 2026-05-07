@@ -10,7 +10,7 @@ import {
   adminGetPayouts, adminCreatePayout, adminMarkPaid,
   estimatedMonthlyEur, Affiliate, AffiliatePayout,
 } from '@/lib/affiliate'
-import { getSubjectsForGrade } from '@/lib/subjects'
+import { getSubjectsForGrade, gradeOrdinal } from '@/lib/subjects'
 import { getGradeContent } from '@/lib/content'
 import SubjectIcon from '@/components/SubjectIcon'
 import { setActiveStudent, setSelectedGrade } from '@/lib/auth'
@@ -427,7 +427,7 @@ export default function AdminPage() {
                     boxShadow: active ? '0 4px 12px rgba(92,53,212,0.3)' : hasC ? '0 2px 8px rgba(0,0,0,0.06)' : 'none',
                     cursor: hasC ? 'pointer' : 'default',
                   }}>
-                  {g}-во
+                  {g}-{gradeOrdinal(g)}
                   {!hasC && <span className="absolute -top-1 -right-1 text-xs">🚧</span>}
                 </button>
               )
@@ -437,7 +437,7 @@ export default function AdminPage() {
           {!hasContent && (
             <div className="bg-white rounded-3xl p-8 text-center" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
               <p className="text-3xl mb-2">🚧</p>
-              <p className="font-black" style={{ color: '#1A1A2E' }}>{selectedGrade}-во одделение</p>
+              <p className="font-black" style={{ color: '#1A1A2E' }}>{selectedGrade}-{gradeOrdinal(selectedGrade)} одделение</p>
               <p className="text-sm font-semibold mt-1" style={{ color: '#9B9BAA' }}>Содржината е во изработка.</p>
             </div>
           )}

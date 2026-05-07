@@ -20,8 +20,15 @@ function kidColor(grade: number) {
   return GRADE_COLORS[(grade - 1) % GRADE_COLORS.length]
 }
 
+function gradeOrdSuffix(g: number) {
+  if (g === 1) return 'во'
+  if (g === 2) return 'ро'
+  if (g === 7 || g === 8) return 'мо'
+  return 'то'
+}
+
 function ordinal(g: number) {
-  return `${g}-то одд.`
+  return `${g}-${gradeOrdSuffix(g)} одд.`
 }
 
 function capitalizeWords(val: string) {

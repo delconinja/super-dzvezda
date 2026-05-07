@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { getFamilySession, loginWithPin, register, parentLogin, setActiveStudent, isDevAdminUser, StudentProfile } from '@/lib/auth'
 import { saveAffiliateRef } from '@/lib/affiliate'
 import TownSchoolPicker from '@/components/TownSchoolPicker'
-import { SUBJECTS } from '@/lib/subjects'
+import { SUBJECTS, gradeOrdinal } from '@/lib/subjects'
 import SubjectIcon from '@/components/SubjectIcon'
 
 const GRADES = [1, 2, 3, 4, 5, 6, 7, 8, 9] as const
@@ -288,7 +288,7 @@ function LandingPage({ onRegister, onLogin }: { onRegister: () => void; onLogin:
               }}>
               <div className="text-4xl mb-2">{k.emoji}</div>
               <p className="font-black text-base" style={{ color: '#1A1A2E' }}>{k.name}</p>
-              <p className="text-xs font-bold mb-2" style={{ color: '#9B9BAA' }}>{k.grade}-то одд.</p>
+              <p className="text-xs font-bold mb-2" style={{ color: '#9B9BAA' }}>{k.grade}-{gradeOrdinal(k.grade)} одд.</p>
               <div className="rounded-xl py-1 font-black text-sm" style={{ background: k.color, color: '#1A1A2E' }}>
                 ⭐ {k.stars}
               </div>
@@ -547,7 +547,7 @@ function KidSelector({ students, onBack }: { students: StudentProfile[]; onBack:
                   <div className="text-left">
                     <div className="text-lg font-black" style={{ color: '#1A1A2E' }}>{s.name}</div>
                     <div className="text-sm font-semibold" style={{ color: '#9B9BAA' }}>
-                      {s.grade}-то одделение · ⭐ {s.stars_total}
+                      {s.grade}-{gradeOrdinal(s.grade)} одделение · ⭐ {s.stars_total}
                     </div>
                   </div>
                 </button>

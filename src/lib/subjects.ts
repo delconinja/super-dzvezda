@@ -197,3 +197,10 @@ export function getSubjectsForGrade(grade: number): Subject[] {
 
 export const getSubject = (id: string) =>
   ALL_SUBJECTS.find((s) => s.id === id)
+
+export function gradeOrdinal(g: number): string {
+  if (g === 1) return 'во'
+  if (g === 2) return 'ро'
+  if (g === 7 || g === 8) return 'мо'
+  return 'то'
+}
