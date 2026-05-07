@@ -5,12 +5,10 @@ export const dynamic = 'force-dynamic'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { getSubjectsForGrade } from '@/lib/subjects'
-import { getActiveStudent, getSubscription, getProgress, clearActiveStudent, trialDaysLeft, isTrialExpired, StudentProfile, Subscription, getSelectedGrade, setSelectedGrade, isDevAdminUser } from '@/lib/auth'
+import { getActiveStudent, getSubscription, getProgress, clearActiveStudent, trialDaysLeft, isTrialExpired, StudentProfile, Subscription } from '@/lib/auth'
 import { getGradeContent } from '@/lib/content'
 import { Subject } from '@/types'
 import SubjectIcon from '@/components/SubjectIcon'
-
-const DEV_GRADES = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] as const
 
 export default function DashboardPage() {
   const router = useRouter()
@@ -21,8 +19,6 @@ export default function DashboardPage() {
   const [starsBySubject, setStarsBySubject] = useState<Record<string, number>>({})
   const [maxStarsBySubject, setMaxStarsBySubject] = useState<Record<string, number>>({})
   const [subjects, setSubjects] = useState<Subject[]>([])
-  const [devAdmin, setDevAdmin] = useState(false)
-  const [selectedGrade, setSelectedGradeState] = useState<number | null>(null)
 
   useEffect(() => {
     const init = async () => {
@@ -30,12 +26,7 @@ export default function DashboardPage() {
       if (!active) { router.push('/'); return }
       setStudent(active)
 
-      const admin = await isDevAdminUser()
-      setDevAdmin(admin)
-      const overrideGrade = admin ? getSelectedGrade() : active.grade
-      setSelectedGradeState(overrideGrade)
-
-      const grade = admin ? overrideGrade : active.grade
+      const grade = active.grade
       const gradeSubjects = getSubjectsForGrade(grade)
       setSubjects(gradeSubjects)
 
@@ -79,7 +70,7 @@ export default function DashboardPage() {
 
   if (!student) return null
 
-  const grade = devAdmin ? (selectedGrade ?? student.grade) : student.grade
+  const grade = student.grade
   const trialColor = daysLeft <= 3 ? '#FF6B6B' : daysLeft <= 7 ? '#FFD93D' : '#6BCB77'
 
   return (
@@ -141,25 +132,6 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {devAdmin && (
-          <div className="mb-6 rounded-3xl bg-white p-4 shadow-sm">
-            <p className="text-sm font-bold mb-3" style={{ color: '#5C35D4' }}>DEV MODE – grade override</p>
-            <div className="grid grid-cols-5 gap-2">
-              {DEV_GRADES.map((g) => (
-                <button key={g} type="button"
-                  onClick={() => { setSelectedGradeState(g); setSelectedGrade(g) }}
-                  className="py-3 rounded-2xl text-sm font-black transition-all duration-150"
-                  style={{
-                    background: selectedGrade === g ? '#5C35D4' : 'white',
-                    color: selectedGrade === g ? '#FFD93D' : '#5C35D4',
-                    border: selectedGrade === g ? '2px solid #5C35D4' : '2px solid #E5E7EB',
-                  }}>
-                  {g === 0 ? 'Сите одд.' : `${g}`}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
 
         <div className="grid gap-4">
           {subjects.map((subject) => (
