@@ -13,6 +13,7 @@ import {
 import { getSubjectsForGrade } from '@/lib/subjects'
 import { getGradeContent } from '@/lib/content'
 import SubjectIcon from '@/components/SubjectIcon'
+import { setActiveStudent, setSelectedGrade } from '@/lib/auth'
 
 const ADMIN_EMAILS = ['delco.k.de@gmail.com', 'apostolova.marija22@gmail.com']
 const GRADES_WITH_CONTENT = [1, 2, 3, 5, 6, 7]
@@ -172,6 +173,22 @@ export default function AdminPage() {
       </div>
     </div>
   )
+
+  const previewLesson = (lessonId: string) => {
+    setActiveStudent({
+      id: 'admin-preview',
+      parent_id: 'admin',
+      name: 'Admin',
+      grade: selectedGrade,
+      pin: '0000',
+      stars_total: 0,
+      streak: 0,
+      town: null,
+      school: null,
+    })
+    setSelectedGrade(selectedGrade)
+    window.open(`/lesson/${lessonId}`, '_blank')
+  }
 
   // ── Content browser data ──────────────────────────────────────────
   const hasContent = GRADES_WITH_CONTENT.includes(selectedGrade)
@@ -479,65 +496,25 @@ export default function AdminPage() {
                           {/* Lessons list */}
                           {isUnitExpanded && (
                             <div style={{ background: '#FAFAFA' }}>
-                              {unit.lessons.map((lesson, li) => {
-                                const lessonKey = lesson.id
-                                const isLessonExpanded = expandedLesson === lessonKey
-                                return (
-                                  <div key={lesson.id} className="border-t" style={{ borderColor: '#F3F0FF' }}>
-                                    {/* Lesson row */}
-                                    <button className="w-full px-7 py-2.5 flex items-center justify-between"
-                                      style={{ background: isLessonExpanded ? '#EDE9FF' : 'transparent' }}
-                                      onClick={() => setExpandedLesson(isLessonExpanded ? null : lessonKey)}>
-                                      <p className="text-sm font-semibold text-left" style={{ color: '#1A1A2E' }}>
-                                        {li + 1}. {lesson.title}
-                                      </p>
-                                      <span className="text-xs font-bold ml-3 shrink-0" style={{ color: '#9B9BAA' }}>
-                                        {lesson.exercises.length} вежби {isLessonExpanded ? '▲' : '▼'}
-                                      </span>
+                              {unit.lessons.map((lesson, li) => (
+                                <div key={lesson.id} className="border-t px-7 py-2.5 flex items-center justify-between"
+                                  style={{ borderColor: '#F3F0FF' }}>
+                                  <p className="text-sm font-semibold" style={{ color: '#1A1A2E' }}>
+                                    {li + 1}. {lesson.title}
+                                  </p>
+                                  <div className="flex items-center gap-3 ml-3 shrink-0">
+                                    <span className="text-xs font-bold" style={{ color: '#9B9BAA' }}>
+                                      {lesson.exercises.length} вежби
+                                    </span>
+                                    <button
+                                      onClick={() => previewLesson(lesson.id)}
+                                      className="px-3 py-1.5 rounded-xl text-xs font-black text-white transition-all active:scale-95"
+                                      style={{ background: '#5C35D4' }}>
+                                      ▶ Preview
                                     </button>
-
-                                    {/* Lesson content + exercises */}
-                                    {isLessonExpanded && (
-                                      <div className="px-7 pb-4 space-y-4">
-                                        {/* Content text */}
-                                        <pre className="text-xs rounded-2xl p-4 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed"
-                                          style={{ background: '#1A1A2E', color: '#E8E8F0' }}>
-                                          {lesson.content}
-                                        </pre>
-                                        {/* Exercises */}
-                                        {lesson.exercises.map((ex, ei) => (
-                                          <div key={ex.id} className="rounded-2xl p-4 space-y-2"
-                                            style={{ background: 'white', border: '1px solid #EDE9FF' }}>
-                                            <div className="flex items-center gap-2">
-                                              <span className="text-xs px-2 py-0.5 rounded-full font-black"
-                                                style={{ background: '#EDE9FF', color: '#5C35D4' }}>
-                                                {ei + 1}. {ex.type}
-                                              </span>
-                                            </div>
-                                            <p className="text-sm font-bold" style={{ color: '#1A1A2E' }}>{ex.question}</p>
-                                            {ex.options && (
-                                              <div className="flex flex-wrap gap-2">
-                                                {ex.options.map((opt) => (
-                                                  <span key={opt} className="text-xs px-3 py-1 rounded-xl font-semibold"
-                                                    style={{
-                                                      background: opt === ex.correct ? '#E8F8EA' : '#F3F0FF',
-                                                      color: opt === ex.correct ? '#2D7A35' : '#6B6B8A',
-                                                      fontWeight: opt === ex.correct ? 800 : 600,
-                                                    }}>
-                                                    {opt === ex.correct ? '✓ ' : ''}{opt}
-                                                  </span>
-                                                ))}
-                                              </div>
-                                            )}
-                                            {ex.hint && <p className="text-xs" style={{ color: '#9B9BAA' }}>💡 {ex.hint}</p>}
-                                            {ex.explanation && <p className="text-xs" style={{ color: '#6B6B8A' }}>📖 {ex.explanation}</p>}
-                                          </div>
-                                        ))}
-                                      </div>
-                                    )}
                                   </div>
-                                )
-                              })}
+                                </div>
+                              ))}
                             </div>
                           )}
                         </div>
