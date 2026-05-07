@@ -23,6 +23,13 @@ export default function AdminPage() {
   const router = useRouter()
   const [tab, setTab] = useState<Tab>('affiliates')
   const [loading, setLoading] = useState(true)
+  const [authed, setAuthed] = useState(false)
+
+  // Login form
+  const [loginEmail, setLoginEmail] = useState('')
+  const [loginPassword, setLoginPassword] = useState('')
+  const [loginError, setLoginError] = useState('')
+  const [loginLoading, setLoginLoading] = useState(false)
 
   const [affiliates, setAffiliates] = useState<AffiliateRow[]>([])
   const [subscriptions, setSubscriptions] = useState<SubRow[]>([])
@@ -36,22 +43,47 @@ export default function AdminPage() {
   const [payoutLoading, setPayoutLoading] = useState(false)
   const [payoutError, setPayoutError] = useState('')
 
+  const loadData = async () => {
+    const [affs, subs, pays] = await Promise.all([
+      adminGetAffiliates(),
+      adminGetSubscriptions(),
+      adminGetPayouts(),
+    ])
+    setAffiliates(affs as AffiliateRow[])
+    setSubscriptions(subs as SubRow[])
+    setPayouts(pays as PayoutRow[])
+    setLoading(false)
+    setAuthed(true)
+  }
+
   useEffect(() => {
     const init = async () => {
       const { data: { user } } = await supabase.auth.getUser()
-      if (!user || !ADMIN_EMAILS.includes(user.email ?? '')) { router.push('/'); return }
-      const [affs, subs, pays] = await Promise.all([
-        adminGetAffiliates(),
-        adminGetSubscriptions(),
-        adminGetPayouts(),
-      ])
-      setAffiliates(affs as AffiliateRow[])
-      setSubscriptions(subs as SubRow[])
-      setPayouts(pays as PayoutRow[])
-      setLoading(false)
+      if (user && ADMIN_EMAILS.includes(user.email ?? '')) {
+        await loadData()
+      } else {
+        setLoading(false)
+      }
     }
     init()
-  }, [router])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoginError('')
+    setLoginLoading(true)
+    const { error } = await supabase.auth.signInWithPassword({ email: loginEmail, password: loginPassword })
+    if (error) { setLoginError('Погрешна е-пошта или лозинка.'); setLoginLoading(false); return }
+    const { data: { user } } = await supabase.auth.getUser()
+    if (!user || !ADMIN_EMAILS.includes(user.email ?? '')) {
+      await supabase.auth.signOut()
+      setLoginError('Немаш admin пристап.')
+      setLoginLoading(false)
+      return
+    }
+    await loadData()
+  }
 
   const handleStatus = async (affiliateId: string, status: 'active' | 'suspended' | 'pending') => {
     await adminSetAffiliateStatus(affiliateId, status)
@@ -87,6 +119,44 @@ export default function AdminPage() {
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center" style={{ background: '#F7F5FF' }}>
       <div className="text-5xl animate-float">⭐</div>
+    </div>
+  )
+
+  if (!authed) return (
+    <div className="min-h-screen flex items-center justify-center px-4" style={{ background: '#F7F5FF' }}>
+      <div className="bg-white rounded-3xl p-8 w-full max-w-sm space-y-5"
+        style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.08)' }}>
+        <div className="text-center">
+          <div className="text-4xl mb-2">⭐</div>
+          <h1 className="font-black text-xl" style={{ color: '#1A1A2E' }}>Admin</h1>
+        </div>
+        <form onSubmit={handleLogin} className="space-y-4">
+          <div>
+            <label className="block text-xs font-black mb-1 tracking-widest" style={{ color: '#6B6B8A' }}>Е-ПОШТА</label>
+            <input type="email" value={loginEmail} onChange={e => setLoginEmail(e.target.value)}
+              required autoFocus placeholder="admin@example.com"
+              className="w-full px-4 py-3 rounded-2xl border-2 font-semibold outline-none"
+              style={{ borderColor: loginEmail ? '#5C35D4' : '#E5E7EB', color: '#1A1A2E', background: '#FAFAFA' }} />
+          </div>
+          <div>
+            <label className="block text-xs font-black mb-1 tracking-widest" style={{ color: '#6B6B8A' }}>ЛОЗИНКА</label>
+            <input type="password" value={loginPassword} onChange={e => setLoginPassword(e.target.value)}
+              required placeholder="••••••••"
+              className="w-full px-4 py-3 rounded-2xl border-2 font-semibold outline-none"
+              style={{ borderColor: loginPassword ? '#5C35D4' : '#E5E7EB', color: '#1A1A2E', background: '#FAFAFA' }} />
+          </div>
+          {loginError && (
+            <div className="rounded-2xl px-4 py-3" style={{ background: '#FFE8E8' }}>
+              <p className="text-sm font-bold" style={{ color: '#C0392B' }}>⚠️ {loginError}</p>
+            </div>
+          )}
+          <button type="submit" disabled={loginLoading}
+            className="w-full py-3 rounded-2xl font-black text-white disabled:opacity-60 transition-all active:scale-95"
+            style={{ background: 'linear-gradient(135deg, #5C35D4, #7B5CE5)' }}>
+            {loginLoading ? '...' : 'Влези'}
+          </button>
+        </form>
+      </div>
     </div>
   )
 
