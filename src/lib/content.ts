@@ -24586,6 +24586,7 @@ export function getGradeContent(grade: number): Record<string, UnitData[]> {
       GRADE1_CONTENT,
       GRADE2_CONTENT,
       GRADE3_CONTENT,
+      GRADE4_CONTENT,
       GRADE5_CONTENT,
       GRADE6_CONTENT,
       GRADE7_CONTENT,
