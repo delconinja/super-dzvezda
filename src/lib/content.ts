@@ -8940,6 +8940,517 @@ export const GRADE4_CONTENT: Record<string, UnitData[]> = {
       ],
     },
   ],
+  english: [
+    {
+      id: 'eng4-1',
+      title: 'My Small World: Family, Home & Friends',
+      lessons: [
+        {
+          id: 'eng4-1-1',
+          title: 'Family, possessive adjectives and verb TO BE',
+          content: `## Family, Possessive Adjectives and Verb TO BE
+
+### Family vocabulary
+- **friend** — пријател/пријателка
+- **cousin** — братучед/братучедка
+- **niece** — внука
+- **nephew** — внук
+- **neighbour** — сосед/соседка
+
+### Possessive adjectives
+| Person | Adjective | Example |
+|--------|-----------|---------|
+| I | **my** | This is my cousin. |
+| you | **your** | What is your name? |
+| he | **his** | His name is Tom. |
+| she | **her** | Her friend is Sara. |
+| it | **its** | Its colour is red. |
+
+### Verb TO BE — Present Simple
+| Long form | Short form | Negative |
+|-----------|------------|---------|
+| I am | I'm | I am not |
+| she is | she's | she is not |
+| they are | they're | they are not |
+
+### Introducing people
+- *Hello! I am Iva. This is my friend. Her name is Zara.*
+- *How old is Zara? — She is 9 years old.*`,
+          exercises: [
+            {
+              id: 'eeng4-1-1-1', type: 'multiple-choice',
+              question: 'Choose the correct sentence: "This ___ my cousin."',
+              options: ['This am my cousin.', 'This is my cousin.', 'This are my cousin.', 'This be my cousin.'],
+              correct: 'This is my cousin.',
+              hint: 'We use "is" with he/she/it and singular nouns.',
+              explanation: '"This is my cousin." is correct. We use "is" because "cousin" is singular (he/she). "This is" = short demonstrative sentence with verb TO BE.',
+            },
+            {
+              id: 'eeng4-1-1-2', type: 'multiple-choice',
+              question: 'His name ___ Tom and ___ is 10 years old.',
+              options: ['is / she', 'are / he', 'is / he', 'am / it'],
+              correct: 'is / he',
+              hint: 'Tom is a boy. Which pronoun do we use for a boy?',
+              explanation: '"His name is Tom and he is 10 years old." — We use "is" for third person singular, and "he" for a boy.',
+            },
+            {
+              id: 'eeng4-1-1-3', type: 'true-false',
+              question: 'The short form of "she is" is "she\'s".',
+              options: ['Точно', 'Неточно'],
+              correct: 'Точно',
+              hint: 'Short forms use an apostrophe to replace a missing letter.',
+              explanation: 'Точно. "she is" → "she\'s" (the letter "i" is removed and replaced with an apostrophe). Same pattern: I am → I\'m, they are → they\'re.',
+            },
+          ],
+        },
+        {
+          id: 'eng4-1-2',
+          title: 'Home, furniture and prepositions of place',
+          content: `## Home, Furniture and Prepositions of Place
+
+### Home vocabulary
+- **house / building / apartment** — куќа / зграда / стан
+- **floor** — кат
+- **garden / yard** — градина / двориште
+- **chair, sofa, cupboard, lamp, toy** — стол, кауч, плакар, ламба, играчка
+
+### Adjectives for describing
+- **clean / dirty** — чист / нечист
+- **new / old** — нов / стар
+- **beautiful / nice** — убав / пријатен
+- **modern** — модерен
+
+### Prepositions of place
+| Preposition | Meaning |
+|-------------|---------|
+| **in** | внатре во |
+| **on** | на (горе) |
+| **under** | под |
+| **behind** | зад |
+| **in front of** | пред |
+| **next to** | до |
+| **between** | помеѓу |
+| **above** | над |
+
+### Examples
+- *The lamp is **on** the cupboard.*
+- *The toys are **under** the bed.*
+- *My brother is **behind** the door.*`,
+          exercises: [
+            {
+              id: 'eeng4-1-2-1', type: 'multiple-choice',
+              question: 'The cat is ___ the chair. (Мачката е под столот.)',
+              options: ['on', 'in', 'under', 'behind'],
+              correct: 'under',
+              hint: 'Under = под.',
+              explanation: '"Under" means под. The cat is under the chair — мачката е под столот.',
+            },
+            {
+              id: 'eeng4-1-2-2', type: 'multiple-choice',
+              question: 'Which sentence correctly uses a possessive adjective?',
+              options: [
+                'This is my sofa. It is new.',
+                'This is me sofa. It are new.',
+                'This is I sofa. It is new.',
+                'This is mine sofa. It is new.',
+              ],
+              correct: 'This is my sofa. It is new.',
+              hint: 'Possessive adjective comes before a noun.',
+              explanation: '"This is my sofa." uses "my" correctly — it is a possessive adjective placed before the noun "sofa". "mine" is a possessive pronoun (used alone, not before a noun).',
+            },
+            {
+              id: 'eeng4-1-2-3', type: 'true-false',
+              question: '"Next to" and "between" mean the same thing.',
+              options: ['Точно', 'Неточно'],
+              correct: 'Неточно',
+              hint: '"Between" involves two things on each side.',
+              explanation: 'Неточно. "Next to" = до (beside). "Between" = помеѓу (with something on each side). Example: The lamp is next to the sofa. / The lamp is between the sofa and the chair.',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'eng4-2',
+      title: 'My Outer World: School, Hobbies & Activities',
+      lessons: [
+        {
+          id: 'eng4-2-1',
+          title: 'School vocabulary, collocations and days of the week',
+          content: `## School, Collocations and Days of the Week
+
+### School vocabulary
+- **classroom** — училница
+- **interactive board** — интерактивна табла
+- **hobby** — хоби
+- **free time** — слободно време
+- **pet** — миленик
+
+### Common collocations (verb + noun)
+| Collocation | Meaning |
+|-------------|---------|
+| **do** homework | прави домашна |
+| **play** the piano/guitar | свири пијано/гитара |
+| **play** computer games | игра компјутерски игри |
+| **read** a book | чита книга |
+| **write** a story | пишува приказна |
+| **take** a photo | прави фотографија |
+| **send** an email | праќа е-пошта |
+| **use** a computer | користи компјутер |
+
+### Days of the week
+Monday → Tuesday → Wednesday → Thursday → Friday → Saturday → Sunday
+
+*She has English on **Monday**. He plays football on **Wednesday**.*
+
+### Have got
+- I **have got** a dog. = I **have** a dog.
+- **Have** you got a pet? — Yes, I **have** got. / No, I **have not** got.
+- She **has got** a guitar. / She **has not got** a piano.`,
+          exercises: [
+            {
+              id: 'eeng4-2-1-1', type: 'multiple-choice',
+              question: 'Which collocation is correct?',
+              options: ['make my homework', 'do my homework', 'play my homework', 'write my homework'],
+              correct: 'do my homework',
+              hint: 'In English we "do" homework, not "make" it.',
+              explanation: '"Do my homework" is the correct collocation. In English, we say "do homework" — never "make homework". This is a fixed phrase you must remember.',
+            },
+            {
+              id: 'eeng4-2-1-2', type: 'multiple-choice',
+              question: 'They have English classes on ___. (Тие имаат англиски во понеделник.)',
+              options: ['Sunday', 'Monday', 'Saturday', 'Friday'],
+              correct: 'Monday',
+              hint: 'Понеделник = ?',
+              explanation: 'Monday = понеделник. The days of the week: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.',
+            },
+            {
+              id: 'eeng4-2-1-3', type: 'true-false',
+              question: '"Have got" and "have" mean the same thing.',
+              options: ['Точно', 'Неточно'],
+              correct: 'Точно',
+              hint: 'Both express possession.',
+              explanation: 'Точно. "I have got a cat" and "I have a cat" mean the same — and двете значат "јас имам мачка". "Have got" is more common in British English.',
+            },
+          ],
+        },
+        {
+          id: 'eng4-2-2',
+          title: 'Demonstrative pronouns, numbers and adjectives',
+          content: `## Demonstratives, Numbers and Adjectives
+
+### Demonstrative pronouns
+| Near the speaker | Far from the speaker |
+|-----------------|---------------------|
+| **this** (еднина) — овој/оваа/ова | **that** (еднина) — оној/онаа/она |
+| **these** (множина) — овие | **those** (множина) — оние |
+
+Examples:
+- *This is my desk. That is her desk over there.*
+- *These are his books. Those windows are from our school gym.*
+
+### Numbers 1–50
+- 11 = eleven, 12 = twelve, 13 = thirteen
+- 20 = twenty, 21 = twenty-one, 30 = thirty
+- 40 = forty, 50 = fifty
+
+### Adjectives (opposites)
+- **happy** ↔ **sad**
+- **good** ↔ **bad**
+- **tall** ↔ **short**
+- **clever / smart / gifted**
+
+### Regular plural nouns
+- school → school**s**
+- classroom → classroom**s**
+- book → book**s**
+- pencil → pencil**s**`,
+          exercises: [
+            {
+              id: 'eeng4-2-2-1', type: 'multiple-choice',
+              question: 'The book is near you. You point to it and say: "___ is my book."',
+              options: ['That', 'Those', 'This', 'These'],
+              correct: 'This',
+              hint: 'Near = this/these. Far = that/those.',
+              explanation: '"This" is used for something singular and near the speaker. "That" is for something far. Since the book is near you, we say "This is my book."',
+            },
+            {
+              id: 'eeng4-2-2-2', type: 'multiple-choice',
+              question: 'How do you write 25 in words?',
+              options: ['twentyfive', 'twenty five', 'twenty-five', 'twety-five'],
+              correct: 'twenty-five',
+              hint: 'Numbers 21–99 use a hyphen.',
+              explanation: '"Twenty-five" is correct. Numbers between 21 and 99 are written with a hyphen: twenty-one, thirty-two, forty-seven, etc.',
+            },
+            {
+              id: 'eeng4-2-2-3', type: 'true-false',
+              question: '"These" is the plural form of "this".',
+              options: ['Точно', 'Неточно'],
+              correct: 'Точно',
+              hint: 'this → these (near), that → those (far)',
+              explanation: 'Точно. This → these (near, plural). That → those (far, plural). Example: This book → These books. That chair → Those chairs.',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'eng4-3',
+      title: 'Our Town and World: Places, Countries and Routines',
+      lessons: [
+        {
+          id: 'eng4-3-1',
+          title: 'Countries, nationalities and places in town',
+          content: `## Countries, Nationalities and Places in Town
+
+### Countries and nationalities
+| Country | Nationality |
+|---------|-------------|
+| North Macedonia | Macedonian |
+| Albania | Albanian |
+| USA | American |
+| Great Britain | British |
+| Germany | German |
+| Italy | Italian |
+| Greece | Greek |
+| Russia | Russian |
+| Spain | Spanish |
+
+### Places in town
+- **hospital** — болница
+- **bank** — банка
+- **supermarket** — супермаркет
+- **library** — библиотека
+- **park** — парк
+- **café** — кафе
+- **bookstore** — книжарница
+
+### There is / There are
+- **There is** a hospital on our street. (еднина)
+- **There are** three parks in our town. (множина)
+- Is there a café? — Yes, there is. / No, there is not.
+- Are there any banks? — Yes, there are.`,
+          exercises: [
+            {
+              id: 'eeng4-3-1-1', type: 'multiple-choice',
+              question: 'She is from Italy. She is ___.',
+              options: ['Italian', 'Italic', 'Italy', 'Italiano'],
+              correct: 'Italian',
+              hint: 'Italy → Italian (adds -an and changes the ending)',
+              explanation: 'People from Italy are called "Italian". The nationality is formed from the country name. Italy → Italian, Greece → Greek, Germany → German.',
+            },
+            {
+              id: 'eeng4-3-1-2', type: 'multiple-choice',
+              question: '___ a big library in our neighbourhood.',
+              options: ['There are', 'There is', 'They is', 'It are'],
+              correct: 'There is',
+              hint: '"Library" is singular — one library.',
+              explanation: '"There is" is used with singular nouns. "There are" is used with plural nouns. One library = There is a library. Three parks = There are three parks.',
+            },
+            {
+              id: 'eeng4-3-1-3', type: 'true-false',
+              question: 'People from Great Britain are called "British".',
+              options: ['Точно', 'Неточно'],
+              correct: 'Точно',
+              hint: 'Great Britain includes England, Scotland and Wales.',
+              explanation: 'Точно. People from Great Britain (UK) are called "British". The country adjective does not follow the usual -an/-ian pattern — it uses the special form "British".',
+            },
+          ],
+        },
+        {
+          id: 'eng4-3-2',
+          title: 'Present Simple Tense and adverbs of frequency',
+          content: `## Present Simple Tense and Adverbs of Frequency
+
+### Present Simple — key rules
+**Positive:**
+- I/you/we/they **play** football.
+- he/she/it **play**→ **plays** football. (add **-s** or **-es**)
+
+**Negative:**
+- I/you/we/they **do not** play. (do not = don't)
+- he/she/it **does not** play. (does not = doesn't)
+
+**Question:**
+- **Do** you play? — Yes, I **do**. / No, I **don't**.
+- **Does** she play? — Yes, she **does**. / No, she **doesn't**.
+
+### Adverbs of frequency
+| Adverb | Frequency |
+|--------|-----------|
+| **always** | 100% — секогаш |
+| **usually** | 80% — обично |
+| **often** | 60% — често |
+| **sometimes** | 40% — понекогаш |
+| **never** | 0% — никогаш |
+
+*She **always** does her homework. He **sometimes** rides his bike. They **never** go to bed late.*
+
+### Ordinal numbers (1–10)
+1st = first, 2nd = second, 3rd = third, 4th = fourth, 5th = fifth`,
+          exercises: [
+            {
+              id: 'eeng4-3-2-1', type: 'multiple-choice',
+              question: 'He ___ football every Saturday.',
+              options: ['play', 'plays', 'is play', 'are plays'],
+              correct: 'plays',
+              hint: 'He/she/it → add -s in Present Simple.',
+              explanation: '"He plays" is correct. In Present Simple, for he/she/it we add -s to the verb: play → plays, read → reads, live → lives.',
+            },
+            {
+              id: 'eeng4-3-2-2', type: 'multiple-choice',
+              question: 'She ___ eats vegetables. (Таа никогаш не јаде зеленчук.)',
+              options: ['always', 'usually', 'often', 'never'],
+              correct: 'never',
+              hint: 'Никогаш = ?',
+              explanation: '"Never" = никогаш (0% frequency). "Always" = секогаш (100%), "usually" = обично, "often" = често, "sometimes" = понекогаш.',
+            },
+            {
+              id: 'eeng4-3-2-3', type: 'true-false',
+              question: 'In Present Simple, we add -s or -es to the verb for he/she/it.',
+              options: ['Точно', 'Неточно'],
+              correct: 'Точно',
+              hint: 'I play, you play, he play... or he plays?',
+              explanation: 'Точно. In Present Simple, the verb changes for he/she/it: I read → she reads, you go → he goes, they watch → it watches.',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'eng4-4',
+      title: 'Our Planet: Health, Nature and the Future',
+      lessons: [
+        {
+          id: 'eng4-4-1',
+          title: 'Animals, food, body parts and irregular plurals',
+          content: `## Animals, Food, Body Parts and Irregular Plurals
+
+### Animals
+**Domestic animals:** chicken, cow, goat, sheep, horse, donkey
+**Wild animals:** bear, wolf, lion, leopard, monkey, owl
+
+Examples:
+- *Bears live in the mountains. They do not live in the jungle.*
+- *Leopards eat meat. They hunt at night.*
+
+### Healthy food
+- **Fruit:** pear, peach, plum, watermelon
+- **Vegetables:** potato, tomato, pepper, onion, carrot, mushroom, broccoli
+- **Other:** butter, cheese, milk, cereals, meat
+
+*An apple a day keeps the doctor away!*
+
+### Body parts
+- **head, arm, leg, stomach, face**
+
+### Irregular plurals
+| Singular | Plural |
+|----------|--------|
+| man | men |
+| woman | women |
+| child | children |
+| tooth | teeth |
+| foot | feet |
+| goose | geese |
+| mouse | mice |
+| sheep | sheep (no change!) |
+| fish | fish (no change!) |`,
+          exercises: [
+            {
+              id: 'eeng4-4-1-1', type: 'multiple-choice',
+              question: 'The plural of "child" is ___.',
+              options: ['childs', 'childen', 'children', 'childes'],
+              correct: 'children',
+              hint: 'Irregular plural — does not follow the normal -s rule.',
+              explanation: '"Children" is the irregular plural of "child". These irregular plurals must be memorised: child → children, tooth → teeth, foot → feet, man → men.',
+            },
+            {
+              id: 'eeng4-4-1-2', type: 'multiple-choice',
+              question: 'Which animal is a domestic animal?',
+              options: ['a lion', 'a wolf', 'a leopard', 'a cow'],
+              correct: 'a cow',
+              hint: 'Domestic animals live on farms with people.',
+              explanation: 'A cow is a domestic animal — it lives on a farm. Lions, wolves and leopards are wild animals — they live in nature (mountains, jungles, forests).',
+            },
+            {
+              id: 'eeng4-4-1-3', type: 'true-false',
+              question: 'The plural of "tooth" is "tooths".',
+              options: ['Точно', 'Неточно'],
+              correct: 'Неточно',
+              hint: 'Is "tooth" a regular or irregular noun?',
+              explanation: 'Неточно. "Tooth" has the irregular plural "teeth" — not "tooths". Other irregular examples: foot → feet, goose → geese.',
+            },
+          ],
+        },
+        {
+          id: 'eng4-4-2',
+          title: 'Modal CAN, imperatives and eco vocabulary',
+          content: `## Modal CAN, Imperatives and Eco Vocabulary
+
+### Modal verb CAN
+Used for **ability** and **asking permission**:
+- *I **can** swim.* (ability — умеење)
+- *Can I use your pen?* (permission — дозвола)
+- *Yes, you **can**. / No, you **cannot**.*
+
+### Imperatives (commands)
+**Positive:** *Save the Earth! Plant a tree! Recycle!*
+**Negative:** *Do not pollute! Do not throw garbage!*
+
+### Let's... (suggestion — предлог)
+- *Let's save the Earth!*
+- *Let's plant a tree in our school yard!*
+
+### Some / Any
+- **Some** → positive sentences: *There is some milk in the fridge.*
+- **Any** → questions and negatives: *Is there any water? There are not any apples.*
+
+### How many / How much
+- **How many** → countable nouns: *How many apples?*
+- **How much** → uncountable nouns: *How much milk?*
+
+### Eco vocabulary
+- **garbage / waste** — отпад
+- **pollution** — загадување
+- **recycle** — рециклира
+- **reduce** — намалува
+- **reuse** — повторно употребува`,
+          exercises: [
+            {
+              id: 'eeng4-4-2-1', type: 'multiple-choice',
+              question: 'To ask for permission in English, we say:',
+              options: [
+                'I can use your pen?',
+                'Can I use your pen?',
+                'Do I can use your pen?',
+                'Am I use your pen?',
+              ],
+              correct: 'Can I use your pen?',
+              hint: 'Modal verbs come before the subject in questions.',
+              explanation: '"Can I use your pen?" is correct. For questions with modal verbs, we put the modal (can) before the subject (I): Can I...? Can she...? Can they...?',
+            },
+            {
+              id: 'eeng4-4-2-2', type: 'multiple-choice',
+              question: '___ water do you drink every day? (Колку вода пиеш секој ден?)',
+              options: ['How many', 'How much', 'How often', 'How big'],
+              correct: 'How much',
+              hint: 'Water cannot be counted individually — is it countable or uncountable?',
+              explanation: '"How much" is used with uncountable nouns like water, milk, juice. "How many" is used with countable nouns: How many apples? How many books?',
+            },
+            {
+              id: 'eeng4-4-2-3', type: 'true-false',
+              question: '"Let\'s" is a short form of "Let us".',
+              options: ['Точно', 'Неточно'],
+              correct: 'Точно',
+              hint: 'What does the apostrophe replace?',
+              explanation: 'Точно. "Let\'s" = "Let us" — used to make suggestions. "Let\'s go!" = "Let us go!". It includes the speaker and the listener in the suggestion.',
+            },
+          ],
+        },
+      ],
+    },
+  ],
 }
 
 export const GRADE5_CONTENT: Record<string, UnitData[]> = {
