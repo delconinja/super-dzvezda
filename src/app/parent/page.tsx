@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 import {
   getStudents, getSubscription, addStudent, parentLogout,
-  setActiveStudent, trialDaysLeft, isTrialExpired,
+  setActiveStudent, trialDaysLeft, isTrialExpired, isDevAdminUser,
   StudentProfile, Subscription,
 } from '@/lib/auth'
 import TownSchoolPicker from '@/components/TownSchoolPicker'
