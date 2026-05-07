@@ -6,6 +6,7 @@ import { getFamilySession, loginWithPin, register, parentLogin, setActiveStudent
 import { saveAffiliateRef } from '@/lib/affiliate'
 import TownSchoolPicker from '@/components/TownSchoolPicker'
 import { SUBJECTS } from '@/lib/subjects'
+import SubjectIcon from '@/components/SubjectIcon'
 
 const GRADES = [1, 2, 3, 4, 5, 6, 7, 8, 9] as const
 
@@ -118,7 +119,7 @@ function LandingPage({ onRegister, onLogin }: { onRegister: () => void; onLogin:
           <div className="flex justify-center gap-3 mb-7 text-xl flex-wrap max-w-xs">
             {SUBJECTS.map((subject) => (
               <div key={subject.id} className="flex flex-col items-center gap-1">
-                <span>{subject.emoji}</span>
+                <SubjectIcon subject={subject} size="sm" />
                 <span className="text-xs font-bold text-center leading-tight" style={{ color: 'rgba(255,255,255,0.4)' }}>{subject.nameMk}</span>
               </div>
             ))}
