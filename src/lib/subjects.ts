@@ -142,7 +142,7 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
   {
     id: 'geography',
     name: 'Geography',
-    nameMk: 'географија',
+    nameMk: 'Географија',
     world: 'Светски патник',
     color: '#16A34A',
     bgColor: '#DCFCE7',
