@@ -12,6 +12,7 @@ import {
 } from '@/lib/affiliate'
 import { getSubjectsForGrade } from '@/lib/subjects'
 import { getGradeContent } from '@/lib/content'
+import SubjectIcon from '@/components/SubjectIcon'
 
 const ADMIN_EMAILS = ['delco.k.de@gmail.com', 'apostolova.marija22@gmail.com']
 const GRADES_WITH_CONTENT = [1, 2, 3, 5, 6, 7]
@@ -441,7 +442,7 @@ export default function AdminPage() {
                   onClick={() => { setExpandedSubject(isExpanded ? null : subject.id); setExpandedUnit(null) }}
                   style={{ background: isExpanded ? subject.bgColor : 'white' }}>
                   <div className="flex items-center gap-3">
-                    <span className="text-2xl">{subject.emoji}</span>
+                    <SubjectIcon subject={subject} size="sm" />
                     <div className="text-left">
                       <p className="font-black text-base" style={{ color: '#1A1A2E' }}>{subject.nameMk}</p>
                       <p className="text-xs font-semibold" style={{ color: '#9B9BAA' }}>
