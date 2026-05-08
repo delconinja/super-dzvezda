@@ -15,7 +15,7 @@ import { getGradeContent } from '@/lib/content'
 import SubjectIcon from '@/components/SubjectIcon'
 import { setActiveStudent, setSelectedGrade } from '@/lib/auth'
 
-const ADMIN_EMAILS = ['delco.k.de@gmail.com', 'apostolova.marija22@gmail.com']
+const ADMIN_EMAILS = ['delco.k.de@gmail.com', 'apostolova.marija22@gmail.com', 'stefanijavk02@gmail.com']
 const GRADES_WITH_CONTENT = [1, 2, 3, 4, 5, 6, 7]
 
 type Section = 'partners' | 'content'
