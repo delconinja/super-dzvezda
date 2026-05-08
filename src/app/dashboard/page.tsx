@@ -9,6 +9,7 @@ import { getActiveStudent, getSubscription, getProgress, clearActiveStudent, tri
 import { getGradeContent } from '@/lib/content'
 import { Subject } from '@/types'
 import SubjectIcon from '@/components/SubjectIcon'
+import StarMascot from '@/components/StarMascot'
 
 export default function DashboardPage() {
   const router = useRouter()
@@ -111,16 +112,21 @@ export default function DashboardPage() {
 
       <div className="max-w-2xl mx-auto px-6 py-8">
         <div className="mb-8">
-          <p className="text-sm font-bold mb-1" style={{ color: '#6B6B8A' }}>
-            {grade === 0 ? 'Сите одделенија' : `${grade}-${gradeOrdinal(grade)} одделение`}
-          </p>
-          <h1 className="text-3xl font-black" style={{ color: '#1A1A2E' }}>
-            Здраво, {student.name.split(' ')[0]}! 👋
-          </h1>
-          <p className="text-base mt-1 mb-4" style={{ color: '#6B6B8A' }}>
-            Одбери предмет и почни да учиш!
-          </p>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4 mb-3">
+            <StarMascot talking={false} size={80} />
+            <div>
+              <p className="text-sm font-bold mb-1" style={{ color: '#6B6B8A' }}>
+                {grade === 0 ? 'Сите одделенија' : `${grade}-${gradeOrdinal(grade)} одделение`}
+              </p>
+              <h1 className="text-3xl font-black" style={{ color: '#1A1A2E' }}>
+                Здраво, {student.name.split(' ')[0]}! 👋
+              </h1>
+              <p className="text-base mt-1" style={{ color: '#6B6B8A' }}>
+                Одбери предмет и почни да учиш!
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3 mb-4">
             <div className="flex items-center gap-2 px-4 py-2 rounded-2xl font-black text-sm"
               style={{ background: student.streak > 0 ? '#FFF3E0' : '#F3F4F6', color: student.streak > 0 ? '#E65100' : '#9CA3AF', border: `2px solid ${student.streak > 0 ? '#FF9800' : '#E5E7EB'}` }}>
               🔥 {student.streak} {student.streak === 1 ? 'ден' : 'дена'} по ред
