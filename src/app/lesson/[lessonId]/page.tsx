@@ -2,11 +2,11 @@
 
 export const dynamic = 'force-dynamic'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { getGradeContent, ExerciseData } from '@/lib/content'
+import { getGradeContent, ExerciseData, VideoQuiz } from '@/lib/content'
 import { getSubject } from '@/lib/subjects'
 import SubjectIcon from '@/components/SubjectIcon'
 import { getActiveStudent, saveProgress, refreshStudentSession, getSelectedGrade, StudentProfile } from '@/lib/auth'
@@ -33,6 +33,14 @@ export default function LessonPage() {
   const [showStar, setShowStar] = useState(false)
   const [student, setStudent] = useState<StudentProfile | null>(null)
   const [shake, setShake] = useState(false)
+
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const firedTimestamps = useRef<Set<number>>(new Set())
+  const [videoQuizActive, setVideoQuizActive] = useState(false)
+  const [videoQuizQuestion, setVideoQuizQuestion] = useState<VideoQuiz | null>(null)
+  const [videoQuizTimeLeft, setVideoQuizTimeLeft] = useState(10)
+  const [videoQuizSelected, setVideoQuizSelected] = useState<string | null>(null)
+  const [videoQuizAnswered, setVideoQuizAnswered] = useState(false)
 
   const activeStudent = getActiveStudent()
   const gradeContent = getGradeContent(getSelectedGrade())
@@ -94,6 +102,51 @@ export default function LessonPage() {
     setHintShown(false)
   }
 
+  const handleTimeUpdate = () => {
+    if (!videoRef.current || !lesson?.videoQuizzes?.length) return
+    const currentTime = videoRef.current.currentTime
+    for (const quiz of lesson.videoQuizzes) {
+      if (!firedTimestamps.current.has(quiz.timestamp) && currentTime >= quiz.timestamp) {
+        firedTimestamps.current.add(quiz.timestamp)
+        videoRef.current.pause()
+        setVideoQuizQuestion(quiz)
+        setVideoQuizTimeLeft(10)
+        setVideoQuizSelected(null)
+        setVideoQuizAnswered(false)
+        setVideoQuizActive(true)
+        break
+      }
+    }
+  }
+
+  const dismissVideoQuiz = () => {
+    setVideoQuizActive(false)
+    setVideoQuizQuestion(null)
+    setVideoQuizTimeLeft(10)
+    setVideoQuizSelected(null)
+    setVideoQuizAnswered(false)
+    videoRef.current?.play()
+  }
+
+  const handleVideoQuizAnswer = (option: string) => {
+    if (videoQuizAnswered) return
+    setVideoQuizSelected(option)
+    setVideoQuizAnswered(true)
+    setTimeout(dismissVideoQuiz, 2000)
+  }
+
+  useEffect(() => {
+    if (!videoQuizActive || videoQuizAnswered) return
+    if (videoQuizTimeLeft <= 0) {
+      setVideoQuizAnswered(true)
+      const t = setTimeout(dismissVideoQuiz, 2000)
+      return () => clearTimeout(t)
+    }
+    const t = setTimeout(() => setVideoQuizTimeLeft((n) => n - 1), 1000)
+    return () => clearTimeout(t)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [videoQuizActive, videoQuizTimeLeft, videoQuizAnswered])
+
   const handleNext = () => {
     if (currentEx < exercises.length - 1) {
       setCurrentEx((i) => i + 1)
@@ -152,9 +205,11 @@ export default function LessonPage() {
           {lesson.videoUrl && (
             <div className="px-4 pt-4 pb-2">
               <video
+                ref={videoRef}
                 src={lesson.videoUrl}
                 controls
                 playsInline
+                onTimeUpdate={handleTimeUpdate}
                 className="w-full rounded-2xl overflow-hidden"
                 style={{ background: '#0D1B2A', maxHeight: 240 }}
               />
@@ -308,6 +363,82 @@ export default function LessonPage() {
           Почни со вежби →
         </button>
       </div>
+
+      {/* Video quiz overlay */}
+      {videoQuizActive && videoQuizQuestion && (
+        <div className="fixed inset-0 z-50 flex items-end justify-center pb-6 px-4"
+          style={{ background: 'rgba(0,0,0,0.78)' }}>
+          <div className="w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl animate-fade-up">
+
+            {/* Header + countdown number */}
+            <div className="px-5 py-3 flex items-center justify-between"
+              style={{ background: subject.color }}>
+              <span className="text-white font-black text-sm">💡 Прашање</span>
+              <div className="flex items-center gap-1.5">
+                <span className="text-white/70 text-sm">⏱</span>
+                <span className="text-white font-black text-xl w-6 text-right">
+                  {videoQuizTimeLeft}
+                </span>
+              </div>
+            </div>
+
+            {/* Countdown bar */}
+            <div className="h-2" style={{ background: '#E8EAF0' }}>
+              <div className="h-2 transition-all duration-1000"
+                style={{
+                  width: `${(videoQuizTimeLeft / 10) * 100}%`,
+                  background: videoQuizTimeLeft <= 3 ? '#EF5350' : subject.color,
+                }} />
+            </div>
+
+            {/* Question */}
+            <div className="px-5 pt-4 pb-3" style={{ background: 'white' }}>
+              <p className="font-black text-lg leading-snug" style={{ color: '#1A1A2E' }}>
+                {videoQuizQuestion.question}
+              </p>
+            </div>
+
+            {/* Options */}
+            <div className="px-5 pb-5 flex flex-col gap-2.5" style={{ background: 'white' }}>
+              {videoQuizQuestion.options.map((opt, idx) => {
+                const isCorrect = opt === videoQuizQuestion.correctAnswer
+                const isSelected = videoQuizSelected === opt
+                let bg = 'white', border = '#E8EAF0', textColor = '#1A1A2E'
+                let labelBg = '#F0F0F8', labelColor = '#9B9BAA'
+                if (videoQuizAnswered) {
+                  if (isCorrect) { bg = '#EDFFF2'; border = '#4CAF50'; textColor = '#1B5E20'; labelBg = '#4CAF50'; labelColor = 'white' }
+                  else if (isSelected) { bg = '#FFF0F0'; border = '#EF5350'; textColor = '#B71C1C'; labelBg = '#EF5350'; labelColor = 'white' }
+                } else if (isSelected) {
+                  bg = subject.bgColor; border = subject.color; labelBg = subject.color; labelColor = 'white'
+                }
+                return (
+                  <button key={opt}
+                    onClick={() => handleVideoQuizAnswer(opt)}
+                    disabled={videoQuizAnswered}
+                    className="w-full flex items-center gap-3 rounded-2xl text-left transition-all duration-200 active:scale-[0.98]"
+                    style={{ background: bg, border: `2px solid ${border}`, padding: '12px 14px',
+                      cursor: videoQuizAnswered ? 'default' : 'pointer' }}>
+                    <div className="w-7 h-7 rounded-lg flex items-center justify-center font-black text-xs flex-shrink-0"
+                      style={{ background: labelBg, color: labelColor }}>
+                      {LABELS[idx]}
+                    </div>
+                    <span className="font-semibold text-sm flex-1" style={{ color: textColor }}>{opt}</span>
+                    {videoQuizAnswered && isCorrect && <span style={{ color: '#4CAF50' }}>✓</span>}
+                    {videoQuizAnswered && isSelected && !isCorrect && <span style={{ color: '#EF5350' }}>✗</span>}
+                  </button>
+                )
+              })}
+
+              {/* Time ran out message */}
+              {videoQuizAnswered && !videoQuizSelected && (
+                <p className="text-center text-sm font-bold pt-1" style={{ color: '#9B9BAA' }}>
+                  Времето истече! Точен одговор: <span style={{ color: '#4CAF50' }}>{videoQuizQuestion.correctAnswer}</span>
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       <style>{`
         .lesson-content > *:first-child { margin-top: 0 !important; }

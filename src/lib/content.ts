@@ -1,5 +1,12 @@
 ﻿import type { VisualProps } from '@/components/math/MathVisual'
 
+export interface VideoQuiz {
+  timestamp: number
+  question: string
+  options: string[]
+  correctAnswer: string
+}
+
 export interface LessonData {
   id: string
   title: string
@@ -7,6 +14,7 @@ export interface LessonData {
   exercises: ExerciseData[]
   isTest?: boolean
   videoUrl?: string
+  videoQuizzes?: VideoQuiz[]
 }
 
 export interface UnitData {
