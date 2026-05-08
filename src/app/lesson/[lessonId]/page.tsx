@@ -109,17 +109,41 @@ export default function LessonPage() {
     setHintShown(false)
   }
 
+  const talkTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
   const speakText = (text: string) => {
     if (typeof window === 'undefined' || !window.speechSynthesis) return
     window.speechSynthesis.cancel()
-    const u = new SpeechSynthesisUtterance(text)
-    u.lang = 'mk-MK'
-    u.rate = 0.85
-    u.pitch = 1.1
-    u.onstart = () => setIsSpeaking(true)
-    u.onend = () => setIsSpeaking(false)
-    u.onerror = () => setIsSpeaking(false)
-    window.speechSynthesis.speak(u)
+    if (talkTimerRef.current) clearTimeout(talkTimerRef.current)
+
+    const attempt = (voices: SpeechSynthesisVoice[]) => {
+      const mkVoice = voices.find((v) => v.lang.startsWith('mk'))
+      if (!mkVoice) {
+        // No Macedonian voice — animate mascot silently based on text length
+        setIsSpeaking(true)
+        talkTimerRef.current = setTimeout(() => setIsSpeaking(false), Math.max(2500, text.length * 65))
+        return
+      }
+      const u = new SpeechSynthesisUtterance(text)
+      u.voice = mkVoice
+      u.lang = 'mk-MK'
+      u.rate = 0.85
+      u.pitch = 1.1
+      u.onstart = () => setIsSpeaking(true)
+      u.onend = () => setIsSpeaking(false)
+      u.onerror = () => setIsSpeaking(false)
+      window.speechSynthesis.speak(u)
+    }
+
+    const voices = window.speechSynthesis.getVoices()
+    if (voices.length > 0) {
+      attempt(voices)
+    } else {
+      window.speechSynthesis.onvoiceschanged = () => {
+        attempt(window.speechSynthesis.getVoices())
+        window.speechSynthesis.onvoiceschanged = null
+      }
+    }
   }
 
   const handleVideoPlay = () => {
@@ -131,6 +155,7 @@ export default function LessonPage() {
     setVideoPlaying(false)
     setIsSpeaking(false)
     window.speechSynthesis?.cancel()
+    if (talkTimerRef.current) { clearTimeout(talkTimerRef.current); talkTimerRef.current = null }
   }
 
   useEffect(() => {
@@ -149,6 +174,7 @@ export default function LessonPage() {
           videoRef.current.pause()
           window.speechSynthesis?.cancel()
           setIsSpeaking(false)
+          if (talkTimerRef.current) { clearTimeout(talkTimerRef.current); talkTimerRef.current = null }
           setVideoQuizQuestion(quiz)
           setVideoQuizTimeLeft(10)
           setVideoQuizSelected(null)
