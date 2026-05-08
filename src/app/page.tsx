@@ -7,6 +7,7 @@ import { saveAffiliateRef } from '@/lib/affiliate'
 import TownSchoolPicker from '@/components/TownSchoolPicker'
 import { SUBJECTS, gradeOrdinal } from '@/lib/subjects'
 import SubjectIcon from '@/components/SubjectIcon'
+import StarMascot from '@/components/StarMascot'
 
 const GRADES = [1, 2, 3, 4, 5, 6, 7, 8, 9] as const
 
@@ -92,7 +93,9 @@ function LandingPage({ onRegister, onLogin }: { onRegister: () => void; onLogin:
         <div className="relative z-10 text-center w-full max-w-sm animate-fade-up">
 
           {/* Mascot */}
-          <div className="text-8xl mb-2 animate-float inline-block" style={{ filter: 'drop-shadow(0 0 30px rgba(255,217,61,0.6))' }}>⭐</div>
+          <div className="mb-2 inline-block">
+            <StarMascot talking={false} size={110} />
+          </div>
 
           <h1 className="text-5xl font-black text-white mb-1" style={{ letterSpacing: '-1.5px', textShadow: '0 2px 20px rgba(92,53,212,0.8)' }}>
             Супер Ѕвезда
