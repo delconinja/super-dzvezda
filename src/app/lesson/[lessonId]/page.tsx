@@ -36,6 +36,7 @@ export default function LessonPage() {
 
   const videoRef = useRef<HTMLVideoElement>(null)
   const firedTimestamps = useRef<Set<number>>(new Set())
+  const dismissTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const [videoQuizActive, setVideoQuizActive] = useState(false)
   const [videoQuizQuestion, setVideoQuizQuestion] = useState<VideoQuiz | null>(null)
   const [videoQuizTimeLeft, setVideoQuizTimeLeft] = useState(10)
@@ -120,6 +121,7 @@ export default function LessonPage() {
   }
 
   const dismissVideoQuiz = () => {
+    dismissTimerRef.current = null
     setVideoQuizActive(false)
     setVideoQuizQuestion(null)
     setVideoQuizTimeLeft(10)
@@ -132,15 +134,17 @@ export default function LessonPage() {
     if (videoQuizAnswered) return
     setVideoQuizSelected(option)
     setVideoQuizAnswered(true)
-    setTimeout(dismissVideoQuiz, 2000)
+    if (dismissTimerRef.current) clearTimeout(dismissTimerRef.current)
+    dismissTimerRef.current = setTimeout(dismissVideoQuiz, 5000)
   }
 
   useEffect(() => {
     if (!videoQuizActive || videoQuizAnswered) return
     if (videoQuizTimeLeft <= 0) {
       setVideoQuizAnswered(true)
-      const t = setTimeout(dismissVideoQuiz, 2000)
-      return () => clearTimeout(t)
+      // Store in ref so React cleanup cannot cancel it
+      dismissTimerRef.current = setTimeout(dismissVideoQuiz, 5000)
+      return
     }
     const t = setTimeout(() => setVideoQuizTimeLeft((n) => n - 1), 1000)
     return () => clearTimeout(t)
