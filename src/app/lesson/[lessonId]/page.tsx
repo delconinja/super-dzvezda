@@ -9,6 +9,7 @@ import remarkGfm from 'remark-gfm'
 import { getGradeContent, ExerciseData, VideoQuiz } from '@/lib/content'
 import { getSubject } from '@/lib/subjects'
 import SubjectIcon from '@/components/SubjectIcon'
+import StarMascot from '@/components/StarMascot'
 import { getActiveStudent, saveProgress, refreshStudentSession, getSelectedGrade, StudentProfile } from '@/lib/auth'
 import MathVisual from '@/components/math/MathVisual'
 
@@ -37,6 +38,11 @@ export default function LessonPage() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const firedTimestamps = useRef<Set<number>>(new Set())
   const dismissTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const currentNarrationRef = useRef<string | null>(null)
+  const lastNarrationTs = useRef<number>(-1)
+  const [videoPlaying, setVideoPlaying] = useState(false)
+  const [currentNarration, setCurrentNarration] = useState<string | null>(null)
+  const [isSpeaking, setIsSpeaking] = useState(false)
   const [videoQuizActive, setVideoQuizActive] = useState(false)
   const [videoQuizQuestion, setVideoQuizQuestion] = useState<VideoQuiz | null>(null)
   const [videoQuizTimeLeft, setVideoQuizTimeLeft] = useState(10)
@@ -103,19 +109,65 @@ export default function LessonPage() {
     setHintShown(false)
   }
 
+  const speakText = (text: string) => {
+    if (typeof window === 'undefined' || !window.speechSynthesis) return
+    window.speechSynthesis.cancel()
+    const u = new SpeechSynthesisUtterance(text)
+    u.lang = 'mk-MK'
+    u.rate = 0.85
+    u.pitch = 1.1
+    u.onstart = () => setIsSpeaking(true)
+    u.onend = () => setIsSpeaking(false)
+    u.onerror = () => setIsSpeaking(false)
+    window.speechSynthesis.speak(u)
+  }
+
+  const handleVideoPlay = () => {
+    setVideoPlaying(true)
+    if (currentNarrationRef.current) speakText(currentNarrationRef.current)
+  }
+
+  const handleVideoPause = () => {
+    setVideoPlaying(false)
+    setIsSpeaking(false)
+    window.speechSynthesis?.cancel()
+  }
+
+  useEffect(() => {
+    return () => { window.speechSynthesis?.cancel() }
+  }, [])
+
   const handleTimeUpdate = () => {
-    if (!videoRef.current || !lesson?.videoQuizzes?.length) return
+    if (!videoRef.current) return
     const currentTime = videoRef.current.currentTime
-    for (const quiz of lesson.videoQuizzes) {
-      if (!firedTimestamps.current.has(quiz.timestamp) && currentTime >= quiz.timestamp) {
-        firedTimestamps.current.add(quiz.timestamp)
-        videoRef.current.pause()
-        setVideoQuizQuestion(quiz)
-        setVideoQuizTimeLeft(10)
-        setVideoQuizSelected(null)
-        setVideoQuizAnswered(false)
-        setVideoQuizActive(true)
-        break
+
+    // Video quizzes
+    if (lesson?.videoQuizzes?.length) {
+      for (const quiz of lesson.videoQuizzes) {
+        if (!firedTimestamps.current.has(quiz.timestamp) && currentTime >= quiz.timestamp) {
+          firedTimestamps.current.add(quiz.timestamp)
+          videoRef.current.pause()
+          window.speechSynthesis?.cancel()
+          setIsSpeaking(false)
+          setVideoQuizQuestion(quiz)
+          setVideoQuizTimeLeft(10)
+          setVideoQuizSelected(null)
+          setVideoQuizAnswered(false)
+          setVideoQuizActive(true)
+          break
+        }
+      }
+    }
+
+    // Narration cues
+    if (lesson?.videoNarration?.length) {
+      const sorted = [...lesson.videoNarration].sort((a, b) => b.timestamp - a.timestamp)
+      const activeCue = sorted.find((c) => currentTime >= c.timestamp)
+      if (activeCue && activeCue.timestamp !== lastNarrationTs.current) {
+        lastNarrationTs.current = activeCue.timestamp
+        currentNarrationRef.current = activeCue.text
+        setCurrentNarration(activeCue.text)
+        speakText(activeCue.text)
       }
     }
   }
@@ -214,6 +266,8 @@ export default function LessonPage() {
                 controls
                 playsInline
                 onTimeUpdate={handleTimeUpdate}
+                onPlay={handleVideoPlay}
+                onPause={handleVideoPause}
                 className="w-full rounded-2xl overflow-hidden"
                 style={{ background: '#0D1B2A', maxHeight: 240 }}
               />
@@ -367,6 +421,29 @@ export default function LessonPage() {
           Почни со вежби →
         </button>
       </div>
+
+      {/* Star mascot */}
+      {lesson.videoUrl && lesson.videoNarration?.length && (
+        <div className="fixed bottom-28 right-3 z-40 flex items-end gap-2 pointer-events-none">
+          {currentNarration && (
+            <div style={{ position: 'relative' }}>
+              <div
+                className="bg-white rounded-2xl px-3 py-2.5 shadow-xl text-xs font-semibold leading-relaxed"
+                style={{ color: '#1A1A2E', border: '2px solid #FFD93D', maxWidth: 160 }}>
+                {currentNarration}
+              </div>
+              {/* Tail pointing right toward mascot */}
+              <div style={{ position: 'absolute', right: -9, bottom: 14, width: 0, height: 0,
+                borderTop: '7px solid transparent', borderBottom: '7px solid transparent',
+                borderLeft: '9px solid #FFD93D' }} />
+              <div style={{ position: 'absolute', right: -6, bottom: 15, width: 0, height: 0,
+                borderTop: '6px solid transparent', borderBottom: '6px solid transparent',
+                borderLeft: '8px solid white' }} />
+            </div>
+          )}
+          <StarMascot talking={isSpeaking} size={64} />
+        </div>
+      )}
 
       {/* Video quiz overlay */}
       {videoQuizActive && videoQuizQuestion && (

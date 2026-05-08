@@ -7,6 +7,11 @@ export interface VideoQuiz {
   correctAnswer: string
 }
 
+export interface NarrationCue {
+  timestamp: number
+  text: string
+}
+
 export interface LessonData {
   id: string
   title: string
@@ -15,6 +20,7 @@ export interface LessonData {
   isTest?: boolean
   videoUrl?: string
   videoQuizzes?: VideoQuiz[]
+  videoNarration?: NarrationCue[]
 }
 
 export interface UnitData {
@@ -9555,6 +9561,14 @@ export const GRADE5_CONTENT: Record<string, UnitData[]> = {
               options: ['Стотки илјади', 'Десетки илјади', 'Единици илјади', 'Стотки'],
               correctAnswer: 'Стотки илјади',
             },
+          ],
+          videoNarration: [
+            { timestamp: 0,  text: 'Здраво! Денес ќе учиме за местната вредност на цифрите.' },
+            { timestamp: 5,  text: 'Еве го нашиот број: 374 826. Секоја цифра има своја вредност!' },
+            { timestamp: 13, text: 'Ги ставаме цифрите во табела — секоја на своето место.' },
+            { timestamp: 29, text: 'Цифрата 3 е на местото на стотки илјади, па вреди 300 000!' },
+            { timestamp: 43, text: 'Развиената форма е збир на вредностите на сите цифри.' },
+            { timestamp: 53, text: 'Запомни: местото на цифрата ја одредува нејзината вредност!' },
           ],
           content: `## Местна вредност
 

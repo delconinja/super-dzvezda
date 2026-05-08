@@ -61,3 +61,15 @@ body {
   background-size: 200% auto;
   animation: shimmer 2.5s linear infinite;
 }
+
+@keyframes starIdle {
+  0%, 100% { transform: translateY(0px) rotate(-3deg) scale(1);    filter: drop-shadow(0 0 7px #FFD93Daa); }
+  50%       { transform: translateY(-7px) rotate(3deg) scale(1.05); filter: drop-shadow(0 0 16px #FFD93Ddd); }
+}
+@keyframes starTalk {
+  0%, 100% { transform: translateY(0px) rotate(-2deg) scale(1);    filter: drop-shadow(0 0 12px #FFD93Dcc); }
+  25%       { transform: translateY(-3px) rotate(2deg) scale(1.04); filter: drop-shadow(0 0 22px #FFD93Dff); }
+  75%       { transform: translateY(2px)  rotate(-1deg) scale(0.97); filter: drop-shadow(0 0 16px #FFD93Dee); }
+}
+.star-mascot-idle { animation: starIdle 2.5s ease-in-out infinite; }
+.star-mascot-talk { animation: starTalk 0.4s ease-in-out infinite; }
