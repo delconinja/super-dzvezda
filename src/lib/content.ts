@@ -9548,6 +9548,14 @@ export const GRADE5_CONTENT: Record<string, UnitData[]> = {
           id: 'math-5-1-2',
           title: 'Местна вредност на цифрите',
           videoUrl: '/videos/MesnaVrednost.mp4',
+          videoQuizzes: [
+            {
+              timestamp: 30,
+              question: 'Каква вредност има цифрата 3 во бројот 374 826?',
+              options: ['Стотки илјади', 'Десетки илјади', 'Единици илјади', 'Стотки'],
+              correctAnswer: 'Стотки илјади',
+            },
+          ],
           content: `## Местна вредност
 
 Секоја цифра во бројот има **местна вредност** зависна од нејзиното место.
