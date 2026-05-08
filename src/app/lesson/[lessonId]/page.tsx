@@ -36,8 +36,11 @@ export default function LessonPage() {
   const [shake, setShake] = useState(false)
 
   const videoRef = useRef<HTMLVideoElement>(null)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
+  const narrationCache = useRef<Map<string, string>>(new Map())
   const firedTimestamps = useRef<Set<number>>(new Set())
   const dismissTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const talkTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const currentNarrationRef = useRef<string | null>(null)
   const lastNarrationTs = useRef<number>(-1)
   const [videoPlaying, setVideoPlaying] = useState(false)
@@ -109,40 +112,42 @@ export default function LessonPage() {
     setHintShown(false)
   }
 
-  const talkTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const stopNarration = () => {
+    if (audioRef.current) { audioRef.current.pause(); audioRef.current.onended = null }
+    if (talkTimerRef.current) { clearTimeout(talkTimerRef.current); talkTimerRef.current = null }
+    setIsSpeaking(false)
+  }
 
-  const speakText = (text: string) => {
-    if (typeof window === 'undefined' || !window.speechSynthesis) return
-    window.speechSynthesis.cancel()
-    if (talkTimerRef.current) clearTimeout(talkTimerRef.current)
+  const playAudioUrl = (url: string) => {
+    stopNarration()
+    const audio = new Audio(url)
+    audioRef.current = audio
+    audio.onplay = () => setIsSpeaking(true)
+    audio.onended = () => setIsSpeaking(false)
+    audio.onerror = () => setIsSpeaking(false)
+    audio.play().catch(() => setIsSpeaking(false))
+  }
 
-    const attempt = (voices: SpeechSynthesisVoice[]) => {
-      const mkVoice = voices.find((v) => v.lang.startsWith('mk'))
-      if (!mkVoice) {
-        // No Macedonian voice — animate mascot silently based on text length
-        setIsSpeaking(true)
-        talkTimerRef.current = setTimeout(() => setIsSpeaking(false), Math.max(2500, text.length * 65))
-        return
-      }
-      const u = new SpeechSynthesisUtterance(text)
-      u.voice = mkVoice
-      u.lang = 'mk-MK'
-      u.rate = 0.85
-      u.pitch = 1.1
-      u.onstart = () => setIsSpeaking(true)
-      u.onend = () => setIsSpeaking(false)
-      u.onerror = () => setIsSpeaking(false)
-      window.speechSynthesis.speak(u)
+  const speakText = async (text: string) => {
+    if (narrationCache.current.has(text)) {
+      playAudioUrl(narrationCache.current.get(text)!)
+      return
     }
-
-    const voices = window.speechSynthesis.getVoices()
-    if (voices.length > 0) {
-      attempt(voices)
-    } else {
-      window.speechSynthesis.onvoiceschanged = () => {
-        attempt(window.speechSynthesis.getVoices())
-        window.speechSynthesis.onvoiceschanged = null
-      }
+    try {
+      const res = await fetch('/api/tts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text }),
+      })
+      if (!res.ok) throw new Error('tts failed')
+      const blob = await res.blob()
+      const url = URL.createObjectURL(blob)
+      narrationCache.current.set(text, url)
+      playAudioUrl(url)
+    } catch {
+      // Fallback: silent talking animation
+      setIsSpeaking(true)
+      talkTimerRef.current = setTimeout(() => setIsSpeaking(false), Math.max(2500, text.length * 65))
     }
   }
 
@@ -153,14 +158,34 @@ export default function LessonPage() {
 
   const handleVideoPause = () => {
     setVideoPlaying(false)
-    setIsSpeaking(false)
-    window.speechSynthesis?.cancel()
-    if (talkTimerRef.current) { clearTimeout(talkTimerRef.current); talkTimerRef.current = null }
+    stopNarration()
   }
 
   useEffect(() => {
-    return () => { window.speechSynthesis?.cancel() }
+    return () => {
+      if (audioRef.current) audioRef.current.pause()
+      if (talkTimerRef.current) clearTimeout(talkTimerRef.current)
+    }
   }, [])
+
+  // Pre-fetch all narration audio so there's no delay when cues trigger
+  useEffect(() => {
+    if (!lesson?.videoNarration?.length) return
+    lesson.videoNarration.forEach(async (cue) => {
+      if (narrationCache.current.has(cue.text)) return
+      try {
+        const res = await fetch('/api/tts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: cue.text }),
+        })
+        if (!res.ok) return
+        const blob = await res.blob()
+        narrationCache.current.set(cue.text, URL.createObjectURL(blob))
+      } catch { /* silently fail — speakText will retry on demand */ }
+    })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lesson?.id])
 
   const handleTimeUpdate = () => {
     if (!videoRef.current) return
@@ -172,9 +197,7 @@ export default function LessonPage() {
         if (!firedTimestamps.current.has(quiz.timestamp) && currentTime >= quiz.timestamp) {
           firedTimestamps.current.add(quiz.timestamp)
           videoRef.current.pause()
-          window.speechSynthesis?.cancel()
-          setIsSpeaking(false)
-          if (talkTimerRef.current) { clearTimeout(talkTimerRef.current); talkTimerRef.current = null }
+          stopNarration()
           setVideoQuizQuestion(quiz)
           setVideoQuizTimeLeft(10)
           setVideoQuizSelected(null)
