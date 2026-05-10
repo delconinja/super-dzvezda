@@ -18,6 +18,7 @@ export interface LessonData {
   content: string
   exercises: ExerciseData[]
   isTest?: boolean
+  isChallenge?: boolean
   videoUrl?: string
   videoQuizzes?: VideoQuiz[]
   videoNarration?: NarrationCue[]
@@ -38,6 +39,7 @@ export interface ExerciseData {
   hint?: string
   explanation: string
   visual?: VisualProps
+  difficulty?: 'easy' | 'medium' | 'hard'
 }
 
 // ── GRADE 1 CONTENT ──────────────────────────────────────────────
@@ -9879,6 +9881,88 @@ export const GRADE5_CONTENT: Record<string, UnitData[]> = {
               correct: 'Точно',
               hint: '100 000 е веќе на десетки илјади.',
               explanation: '100 000 = точно 10 десетки илјади. ✓',
+            },
+          ],
+        },
+        {
+          id: 'math-5-1-challenge',
+          title: 'Предизвик — Броеви до 1 000 000',
+          isChallenge: true,
+          content: '',
+          exercises: [
+            // ── ЛЕСНО (Yellow ⭐) ──────────────────────────────────────
+            {
+              id: 'ch5-1-e1', type: 'multiple-choice', difficulty: 'easy',
+              question: 'Колку цифри има шестцифрен број?',
+              options: ['4', '5', '6', '7'],
+              correct: '6',
+              explanation: 'Шестцифрениот број има точно 6 цифри (пример: 100 000 до 999 999).',
+            },
+            {
+              id: 'ch5-1-e2', type: 'multiple-choice', difficulty: 'easy',
+              question: 'Кој е најмалиот шестцифрен број?',
+              options: ['99 999', '100 000', '100 001', '999 999'],
+              correct: '100 000',
+              explanation: '100 000 е најмалиот шестцифрен број — прв со 6 цифри.',
+            },
+            {
+              id: 'ch5-1-e3', type: 'true-false', difficulty: 'easy',
+              question: '1 000 000 е седумцифрен број.',
+              options: ['Точно', 'Неточно'],
+              correct: 'Точно',
+              explanation: '1 000 000 има 7 цифри — тој е седумцифрен број. ✓',
+            },
+            // ── СРЕДНО (Green 🟢) ──────────────────────────────────────
+            {
+              id: 'ch5-1-m1', type: 'multiple-choice', difficulty: 'medium',
+              question: 'Месната вредност на цифрата 5 во бројот 256 340 е:',
+              visual: { type: 'place-value', number: 256340, highlightCol: 1 },
+              options: ['5 000', '50 000', '500 000', '500'],
+              correct: '50 000',
+              explanation: 'Цифрата 5 е на ДИ (десетки илјади) → 5 × 10 000 = 50 000.',
+            },
+            {
+              id: 'ch5-1-m2', type: 'multiple-choice', difficulty: 'medium',
+              question: 'Заокружи го 74 600 на десетки илјади.',
+              visual: { type: 'number-line', min: 70000, max: 80000, step: 5000, markers: [74600] },
+              options: ['70 000', '80 000', '74 000', '75 000'],
+              correct: '70 000',
+              explanation: '74 600: ЕИ = 4 < 5 → заокружуваме надолу → 70 000.',
+            },
+            {
+              id: 'ch5-1-m3', type: 'multiple-choice', difficulty: 'medium',
+              question: 'Кој знак треба меѓу: 365 100 ☐ 356 100?',
+              options: ['>', '<', '=', '≠'],
+              correct: '>',
+              explanation: 'На ДИ: 365 100 → 6, 356 100 → 5. Бидејќи 6 > 5, важи 365 100 > 356 100.',
+            },
+            // ── ТЕШКО (Blue 🔵) ──────────────────────────────────────
+            {
+              id: 'ch5-1-h1', type: 'multiple-choice', difficulty: 'hard',
+              question: 'Кој е бројот: 6×100 000 + 4×1 000 + 8×10 + 2?',
+              options: ['604 082', '640 082', '604 820', '640 820'],
+              correct: '604 082',
+              explanation: '600 000 + 4 000 + 80 + 2 = 604 082. Нулите на ДИ и С го прават тоа.',
+            },
+            {
+              id: 'ch5-1-h2', type: 'multiple-choice', difficulty: 'hard',
+              question: 'Месната вредност на цифрата 9 во бројот 190 438 е:',
+              visual: { type: 'place-value', number: 190438, highlightCol: 1 },
+              options: ['9 000', '900', '90 000', '900 000'],
+              correct: '90 000',
+              explanation: '190 438: 9 е на ДИ → 9 × 10 000 = 90 000.',
+            },
+            {
+              id: 'ch5-1-h3', type: 'multiple-choice', difficulty: 'hard',
+              question: 'Подреди ги во растечки редослед: 987 654, 978 645, 987 456, 978 546',
+              options: [
+                '978 546 < 978 645 < 987 456 < 987 654',
+                '978 645 < 978 546 < 987 654 < 987 456',
+                '987 456 < 987 654 < 978 546 < 978 645',
+                '978 546 < 987 456 < 978 645 < 987 654',
+              ],
+              correct: '978 546 < 978 645 < 987 456 < 987 654',
+              explanation: 'Прво ги групираме по ДИ: 978___ < 987___. Потоа: 978 546 < 978 645 и 987 456 < 987 654.',
             },
           ],
         },
