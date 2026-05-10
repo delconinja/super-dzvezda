@@ -104,7 +104,6 @@ export default function DragDropExercise({ items, targets, color, explanation, o
                 transition: 'all 0.2s',
               }}>
               <ShapeSVG type={item.shapeType} />
-              <span className="text-xs font-black" style={{ color: '#1A1A2E' }}>{item.label}</span>
             </button>
           )
         })}
