@@ -624,7 +624,7 @@ function ParentLoginForm({ onDone, onRegister }: { onDone: () => void; onRegiste
       setActiveStudent({
         id: 'dev-admin',
         parent_id: 'dev-admin',
-        name: 'Admin',
+        name: 'Админ',
         grade: 0,
         pin: '0000',
         stars_total: 0,
