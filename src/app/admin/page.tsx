@@ -222,7 +222,7 @@ export default function AdminPage() {
         <div className="max-w-4xl mx-auto flex gap-3">
           {([
             { key: 'partners', label: '👥 Партнери', desc: 'Афилијати, претплати, исплати' },
-            { key: 'content', label: '📚 Содржина', desc: 'Прегled по одделенија и предмети' },
+            { key: 'content', label: '📚 Содржина', desc: 'Преглед по одделенија и предмети' },
           ] as { key: Section; label: string; desc: string }[]).map((s) => (
             <button key={s.key} onClick={() => setSection(s.key)}
               className="flex-1 py-4 px-5 rounded-2xl text-left transition-all active:scale-95"
