@@ -177,7 +177,7 @@ export default function AdminPage() {
     setActiveStudent({
       id: 'admin-preview',
       parent_id: 'admin',
-      name: 'Admin',
+      name: 'Админ',
       grade: selectedGrade,
       pin: '0000',
       stars_total: 0,
