@@ -30,9 +30,21 @@ export interface UnitData {
   lessons: LessonData[]
 }
 
+export interface DragDropItem {
+  id: string
+  label: string
+  shapeType: 'circle' | 'triangle' | 'square' | 'cube'
+}
+
+export interface DragDropTarget {
+  id: string
+  label: string
+  correctItemId: string
+}
+
 export interface ExerciseData {
   id: string
-  type: 'multiple-choice' | 'true-false' | 'fill-in'
+  type: 'multiple-choice' | 'true-false' | 'fill-in' | 'drag-drop'
   question: string
   options?: string[]
   correct: string
@@ -40,6 +52,8 @@ export interface ExerciseData {
   explanation: string
   visual?: VisualProps
   difficulty?: 'easy' | 'medium' | 'hard'
+  dragItems?: DragDropItem[]
+  dragTargets?: DragDropTarget[]
 }
 
 // ── GRADE 1 CONTENT ──────────────────────────────────────────────
@@ -178,6 +192,22 @@ export const GRADE1_CONTENT: Record<string, UnitData[]> = {
               correct: 'Конус',
               hint: 'Потесно на дното, поширока на горе = конус.',
               explanation: 'Чашата за сладолед е конус — заострена на дното, поширока на горе.',
+            },
+            {
+              id: 'emath1-1-2-5', type: 'drag-drop',
+              question: 'Повлечи ги формите на вистинското место!',
+              correct: '__dragdrop__',
+              explanation: 'Кругот е рамна заоблена форма, триаголникот има 3 страни, а коцката е просторна форма со еднакви страни.',
+              dragItems: [
+                { id: 'shape-circle',   label: 'Круг',      shapeType: 'circle'   },
+                { id: 'shape-triangle', label: 'Триаголник', shapeType: 'triangle' },
+                { id: 'shape-cube',     label: 'Коцка',     shapeType: 'cube'     },
+              ],
+              dragTargets: [
+                { id: 'zone-circle',   label: 'Круг',      correctItemId: 'shape-circle'   },
+                { id: 'zone-triangle', label: 'Триаголник', correctItemId: 'shape-triangle' },
+                { id: 'zone-cube',     label: 'Коцка',     correctItemId: 'shape-cube'     },
+              ],
             },
           ],
         },

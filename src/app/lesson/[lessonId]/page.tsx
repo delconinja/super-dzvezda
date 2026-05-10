@@ -12,6 +12,7 @@ import SubjectIcon from '@/components/SubjectIcon'
 import StarMascot from '@/components/StarMascot'
 import { getActiveStudent, saveProgress, refreshStudentSession, getSelectedGrade, StudentProfile } from '@/lib/auth'
 import MathVisual from '@/components/math/MathVisual'
+import DragDropExercise from '@/components/DragDropExercise'
 
 type Phase = 'lesson' | 'exercises' | 'results'
 
@@ -34,6 +35,7 @@ export default function LessonPage() {
   const [showStar, setShowStar] = useState(false)
   const [student, setStudent] = useState<StudentProfile | null>(null)
   const [shake, setShake] = useState(false)
+  const [dragDropDone, setDragDropDone] = useState(false)
 
   const videoRef = useRef<HTMLVideoElement>(null)
   const audioRef = useRef<HTMLAudioElement | null>(null)
@@ -104,6 +106,14 @@ export default function LessonPage() {
         setRevealed(true)
       }
     }
+  }
+
+  const handleDragDropComplete = () => {
+    setCorrect((c) => c + 1)
+    setRevealed(true)
+    setShowStar(true)
+    setTimeout(() => setShowStar(false), 900)
+    setDragDropDone(true)
   }
 
   const handleRetry = () => {
@@ -260,6 +270,7 @@ export default function LessonPage() {
       setHintShown(false)
       setRevealed(false)
       setWrongAttempts([])
+      setDragDropDone(false)
     } else {
       const stars = correct >= exercises.length ? 3
         : correct >= Math.ceil(exercises.length * 0.6) ? 2
@@ -645,83 +656,96 @@ export default function LessonPage() {
           </div>
         </div>
 
-        {/* Options — chip-style for T/F, full-width for multiple choice */}
-        {ex.type === 'true-false' ? (
-          // True/False — two large equal chips
-          <div className={`grid grid-cols-2 gap-3 ${shake ? 'animate-shake' : ''}`}>
-            {(['Точно', 'Неточно'] as const).map((opt) => {
-              const isCorrect = opt === ex.correct
-              const isWrong = wrongAttempts.includes(opt)
-              const isSelected = selected === opt
-              let bg = 'white', border = '#E8EAF0', textColor = '#1A1A2E', icon = ''
-              if (revealed) {
-                if (isCorrect) { bg = '#EDFFF2'; border = '#4CAF50'; textColor = '#1B5E20'; icon = ' ✓' }
-                else if (isWrong) { bg = '#FFF0F0'; border = '#EF5350'; textColor = '#B71C1C'; icon = ' ✗' }
-              } else if (hintShown && isSelected) {
-                bg = '#FFFBEA'; border = '#FFD93D'; textColor = '#7A5800'
-              } else if (isSelected) {
-                bg = subject.bgColor; border = subject.color
-              }
-              return (
-                <button key={opt} onClick={() => handleAnswer(opt)}
-                  disabled={revealed || hintShown}
-                  className="py-4 rounded-2xl font-black text-base transition-all duration-200 active:scale-[0.97]"
-                  style={{ background: bg, border: `2px solid ${border}`, color: textColor,
-                    opacity: (!revealed && !hintShown && wrongAttempts.includes(opt)) ? 0.35 : 1 }}>
-                  {opt}{icon}
-                </button>
-              )
-            })}
-          </div>
-        ) : (
-          // Multiple choice — full-width with letter badge
-          <div className={`flex flex-col gap-2.5 ${shake ? 'animate-shake' : ''}`}>
-            {(ex.options || []).map((opt, idx) => {
-              const isCorrect = opt === ex.correct
-              const isWrong = wrongAttempts.includes(opt)
-              const isSelected = selected === opt
-              const isFaded = !revealed && !hintShown && wrongAttempts.includes(opt)
-              let bg = 'white', border = '#E8EAF0', textColor = '#1A1A2E'
-              let labelBg = '#F0F0F8', labelColor = '#9B9BAA'
-              let icon = null
-              if (revealed) {
-                if (isCorrect) {
-                  bg = '#EDFFF2'; border = '#4CAF50'; textColor = '#1B5E20'
-                  labelBg = '#4CAF50'; labelColor = 'white'
-                  icon = <span style={{ color: '#4CAF50' }}>✓</span>
-                } else if (isWrong) {
-                  bg = '#FFF0F0'; border = '#EF5350'; textColor = '#B71C1C'
-                  labelBg = '#EF5350'; labelColor = 'white'
-                  icon = <span style={{ color: '#EF5350' }}>✗</span>
-                }
-              } else if (hintShown && isSelected) {
-                bg = '#FFFBEA'; border = '#FFD93D'; textColor = '#7A5800'
-                labelBg = '#FFD93D'; labelColor = '#7A5800'
-              } else if (isSelected) {
-                bg = subject.bgColor; border = subject.color
-                labelBg = subject.color; labelColor = 'white'
-              }
-              return (
-                <button key={opt} onClick={() => handleAnswer(opt)}
-                  disabled={revealed || hintShown}
-                  className="w-full flex items-center gap-3 rounded-2xl text-left transition-all duration-200 active:scale-[0.98]"
-                  style={{ background: bg, border: `2px solid ${border}`,
-                    padding: '12px 14px', opacity: isFaded ? 0.35 : 1,
-                    cursor: (revealed || hintShown) ? 'default' : 'pointer' }}>
-                  <div className="w-7 h-7 rounded-lg flex items-center justify-center font-black text-xs flex-shrink-0"
-                    style={{ background: labelBg, color: labelColor }}>
-                    {LABELS[idx]}
-                  </div>
-                  <span className="font-semibold text-sm flex-1" style={{ color: textColor }}>{opt}</span>
-                  {icon && <span className="flex-shrink-0 text-sm">{icon}</span>}
-                </button>
-              )
-            })}
-          </div>
+        {/* Drag-drop exercise */}
+        {ex.type === 'drag-drop' && ex.dragItems && ex.dragTargets && (
+          <DragDropExercise
+            items={ex.dragItems}
+            targets={ex.dragTargets}
+            color={subject.color}
+            explanation={ex.explanation}
+            onComplete={handleDragDropComplete}
+          />
         )}
 
-        {/* Hint box */}
-        {hintShown && ex.hint && (
+        {/* Options — chip-style for T/F, full-width for multiple choice */}
+        {ex.type !== 'drag-drop' && (
+          ex.type === 'true-false' ? (
+            // True/False — two large equal chips
+            <div className={`grid grid-cols-2 gap-3 ${shake ? 'animate-shake' : ''}`}>
+              {(['Точно', 'Неточно'] as const).map((opt) => {
+                const isCorrect = opt === ex.correct
+                const isWrong = wrongAttempts.includes(opt)
+                const isSelected = selected === opt
+                let bg = 'white', border = '#E8EAF0', textColor = '#1A1A2E', icon = ''
+                if (revealed) {
+                  if (isCorrect) { bg = '#EDFFF2'; border = '#4CAF50'; textColor = '#1B5E20'; icon = ' ✓' }
+                  else if (isWrong) { bg = '#FFF0F0'; border = '#EF5350'; textColor = '#B71C1C'; icon = ' ✗' }
+                } else if (hintShown && isSelected) {
+                  bg = '#FFFBEA'; border = '#FFD93D'; textColor = '#7A5800'
+                } else if (isSelected) {
+                  bg = subject.bgColor; border = subject.color
+                }
+                return (
+                  <button key={opt} onClick={() => handleAnswer(opt)}
+                    disabled={revealed || hintShown}
+                    className="py-4 rounded-2xl font-black text-base transition-all duration-200 active:scale-[0.97]"
+                    style={{ background: bg, border: `2px solid ${border}`, color: textColor,
+                      opacity: (!revealed && !hintShown && wrongAttempts.includes(opt)) ? 0.35 : 1 }}>
+                    {opt}{icon}
+                  </button>
+                )
+              })}
+            </div>
+          ) : (
+            // Multiple choice — full-width with letter badge
+            <div className={`flex flex-col gap-2.5 ${shake ? 'animate-shake' : ''}`}>
+              {(ex.options || []).map((opt, idx) => {
+                const isCorrect = opt === ex.correct
+                const isWrong = wrongAttempts.includes(opt)
+                const isSelected = selected === opt
+                const isFaded = !revealed && !hintShown && wrongAttempts.includes(opt)
+                let bg = 'white', border = '#E8EAF0', textColor = '#1A1A2E'
+                let labelBg = '#F0F0F8', labelColor = '#9B9BAA'
+                let icon = null
+                if (revealed) {
+                  if (isCorrect) {
+                    bg = '#EDFFF2'; border = '#4CAF50'; textColor = '#1B5E20'
+                    labelBg = '#4CAF50'; labelColor = 'white'
+                    icon = <span style={{ color: '#4CAF50' }}>✓</span>
+                  } else if (isWrong) {
+                    bg = '#FFF0F0'; border = '#EF5350'; textColor = '#B71C1C'
+                    labelBg = '#EF5350'; labelColor = 'white'
+                    icon = <span style={{ color: '#EF5350' }}>✗</span>
+                  }
+                } else if (hintShown && isSelected) {
+                  bg = '#FFFBEA'; border = '#FFD93D'; textColor = '#7A5800'
+                  labelBg = '#FFD93D'; labelColor = '#7A5800'
+                } else if (isSelected) {
+                  bg = subject.bgColor; border = subject.color
+                  labelBg = subject.color; labelColor = 'white'
+                }
+                return (
+                  <button key={opt} onClick={() => handleAnswer(opt)}
+                    disabled={revealed || hintShown}
+                    className="w-full flex items-center gap-3 rounded-2xl text-left transition-all duration-200 active:scale-[0.98]"
+                    style={{ background: bg, border: `2px solid ${border}`,
+                      padding: '12px 14px', opacity: isFaded ? 0.35 : 1,
+                      cursor: (revealed || hintShown) ? 'default' : 'pointer' }}>
+                    <div className="w-7 h-7 rounded-lg flex items-center justify-center font-black text-xs flex-shrink-0"
+                      style={{ background: labelBg, color: labelColor }}>
+                      {LABELS[idx]}
+                    </div>
+                    <span className="font-semibold text-sm flex-1" style={{ color: textColor }}>{opt}</span>
+                    {icon && <span className="flex-shrink-0 text-sm">{icon}</span>}
+                  </button>
+                )
+              })}
+            </div>
+          )
+        )}
+
+        {/* Hint box — not shown for drag-drop */}
+        {ex.type !== 'drag-drop' && hintShown && ex.hint && (
           <div className="rounded-2xl overflow-hidden animate-fade-up"
             style={{ border: '2px solid #FFD93D' }}>
             <div className="px-4 py-2 flex items-center gap-2"
@@ -742,8 +766,8 @@ export default function LessonPage() {
           </div>
         )}
 
-        {/* Explanation after reveal */}
-        {revealed && (
+        {/* Explanation after reveal — not shown for drag-drop (component shows its own) */}
+        {ex.type !== 'drag-drop' && revealed && (
           <div className="rounded-2xl overflow-hidden animate-fade-up"
             style={{ border: `2px solid ${selected === ex.correct ? '#4CAF50' : '#EF5350'}` }}>
             <div className="px-4 py-2"
@@ -762,7 +786,7 @@ export default function LessonPage() {
         )}
 
         {/* Next button */}
-        {revealed && (
+        {(revealed || dragDropDone) && (
           <button onClick={handleNext}
             className="w-full py-4 rounded-2xl text-lg font-black text-white transition-all active:scale-[0.98] shadow-md animate-fade-up"
             style={{ background: `linear-gradient(135deg, ${subject.color}, ${subject.color}cc)` }}>
