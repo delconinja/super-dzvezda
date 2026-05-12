@@ -17,12 +17,19 @@ body {
   font-family: 'Nunito', 'Inter', system-ui, sans-serif;
 }
 
-button {
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
-  -webkit-user-select: none;
-  cursor: pointer;
+@layer base {
+  button, a, [role="button"] {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+  }
+
+  *:focus, *:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
 }
 
 @keyframes star-pop {
