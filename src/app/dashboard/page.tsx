@@ -11,6 +11,9 @@ import { Subject } from '@/types'
 import SubjectIcon from '@/components/SubjectIcon'
 import StarMascot from '@/components/StarMascot'
 
+// Grades with V2 structure active — add a grade here to enable XP bar for it
+const V2_GRADES = [5]
+
 export default function DashboardPage() {
   const router = useRouter()
   const [student, setStudent] = useState<StudentProfile | null>(null)
@@ -22,6 +25,7 @@ export default function DashboardPage() {
   const [subjects, setSubjects] = useState<Subject[]>([])
   const [totalXP, setTotalXP] = useState(0)
   const [maxXP, setMaxXP] = useState(0)
+  const [gradeStats, setGradeStats] = useState({ lessons: 0, subjects: 0 })
 
   useEffect(() => {
     const init = async () => {
@@ -45,11 +49,15 @@ export default function DashboardPage() {
       })
       setMaxStarsBySubject(maxMap)
 
-      if (grade === 5) {
-        const totalLessons = Object.values(gradeContent).reduce(
-          (sum, units) => sum + units.reduce((s, u) => s + u.lessons.length, 0), 0
-        )
+      // XP stats — computed directly from gradeContent so new lessons/subjects are counted automatically
+      if (V2_GRADES.includes(grade)) {
+        const gradeLessonIds = new Set(Object.keys(lessonSubjectMap))
+        const totalLessons = gradeLessonIds.size
+        const activeSubjects = Object.values(gradeContent).filter(units =>
+          units.some(u => u.lessons.length > 0)
+        ).length
         setMaxXP(totalLessons * 50)
+        setGradeStats({ lessons: totalLessons, subjects: activeSubjects })
       }
 
       Promise.all([getSubscription(), getProgress(active.id)]).then(([s, progress]) => {
@@ -65,8 +73,12 @@ export default function DashboardPage() {
         })
         setStarsBySubject(map)
 
-        if (grade === 5) {
-          const completedLessons = progress.filter(p => p.stars_earned > 0).length
+        // Only count lessons that belong to this grade (fixes cross-grade contamination)
+        if (V2_GRADES.includes(grade)) {
+          const gradeLessonIds = new Set(Object.keys(lessonSubjectMap))
+          const completedLessons = progress.filter(
+            p => p.stars_earned > 0 && gradeLessonIds.has(p.lesson_id)
+          ).length
           setTotalXP(completedLessons * 50)
         }
 
@@ -152,8 +164,8 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {/* XP bar — Grade 5 only */}
-          {grade === 5 && maxXP > 0 && (() => {
+          {/* XP bar — V2 grades only */}
+          {V2_GRADES.includes(grade) && maxXP > 0 && (() => {
             const XP_PER_LEVEL = 200
             const level = Math.floor(totalXP / XP_PER_LEVEL) + 1
             const xpInLevel = totalXP % XP_PER_LEVEL
@@ -161,13 +173,22 @@ export default function DashboardPage() {
             return (
               <div className="rounded-2xl p-4 mb-1"
                 style={{ background: 'linear-gradient(135deg, #F5F0FF, #EDE9FE)', border: '2px solid #DDD6FE' }}>
-                <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center justify-between mb-1">
                   <div className="flex items-center gap-2">
                     <span className="text-lg">⚡</span>
                     <span className="font-black text-sm" style={{ color: '#5B21B6' }}>Ниво {level}</span>
                   </div>
                   <span className="text-xs font-bold" style={{ color: '#7C3AED' }}>
-                    {totalXP} / {maxXP} XP вкупно
+                    {totalXP} / {maxXP} XP
+                  </span>
+                </div>
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-xs font-semibold" style={{ color: '#8B5CF6' }}>
+                    📚 {gradeStats.lessons} лекции
+                  </span>
+                  <span style={{ color: '#C4B5FD' }}>·</span>
+                  <span className="text-xs font-semibold" style={{ color: '#8B5CF6' }}>
+                    🎯 {gradeStats.subjects} предмети
                   </span>
                 </div>
                 <div className="h-3 rounded-full overflow-hidden" style={{ background: '#DDD6FE' }}>
