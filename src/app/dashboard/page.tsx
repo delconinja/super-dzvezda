@@ -61,11 +61,11 @@ export default function DashboardPage() {
       }
 
       Promise.all([getSubscription(), getProgress(active.id)]).then(([s, progress]) => {
-        if (!s) { setLoading(false); return }
-        if (isTrialExpired(s)) { router.push('/trial-expired'); return }
-        setSub(s)
-        setDaysLeft(trialDaysLeft(s))
+        // Subscription check — trial redirect only, never block progress loading
+        if (s && isTrialExpired(s)) { router.push('/trial-expired'); return }
+        if (s) { setSub(s); setDaysLeft(trialDaysLeft(s)) }
 
+        // Progress always loads regardless of subscription state
         const map: Record<string, number> = {}
         progress.forEach((p) => {
           const subId = lessonSubjectMap[p.lesson_id]
@@ -73,7 +73,6 @@ export default function DashboardPage() {
         })
         setStarsBySubject(map)
 
-        // Only count lessons that belong to this grade (fixes cross-grade contamination)
         if (V2_GRADES.includes(grade)) {
           const gradeLessonIds = new Set(Object.keys(lessonSubjectMap))
           const completedLessons = progress.filter(

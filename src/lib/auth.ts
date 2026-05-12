@@ -308,11 +308,12 @@ export async function saveProgress(
       .eq('student_id', studentId).eq('lesson_id', lessonId).single()
 
     if (!existing || starsEarned >= existing.stars_earned) {
-      await supabase.from('progress').upsert({
+      const { error: upsertError } = await supabase.from('progress').upsert({
         student_id: studentId, lesson_id: lessonId,
         stars_earned: starsEarned, completed: starsEarned > 0,
         completed_at: new Date().toISOString(),
       }, { onConflict: 'student_id,lesson_id' })
+      if (upsertError) throw new Error(upsertError.message)
     }
 
     const { data: all } = await supabase
@@ -323,7 +324,7 @@ export async function saveProgress(
     return total
   } catch (e) {
     console.error('saveProgress error:', e)
-    return 0
+    throw e
   }
 }
 

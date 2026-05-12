@@ -64,6 +64,7 @@ export default function LessonPage() {
   const [shake, setShake] = useState(false)
   const [dragDropDone, setDragDropDone] = useState(false)
   const [progressSaving, setProgressSaving] = useState(false)
+  const [saveError, setSaveError] = useState<string | null>(null)
 
   const videoRef = useRef<HTMLVideoElement>(null)
   const ytPlayerRef = useRef<YTPlayerInstance | null>(null)
@@ -402,8 +403,10 @@ export default function LessonPage() {
       const quizPassed = quizTotal === 0 || quizCorrect / quizTotal >= 0.8
       if (student) {
         setProgressSaving(true)
+        setSaveError(null)
         saveProgress(student.id, lessonId, stars)
           .then(() => refreshStudentSession(student.id))
+          .catch(e => setSaveError(String(e)))
           .finally(() => setProgressSaving(false))
       }
       setPhase(v2Lesson && !quizPassed ? 'quiz-failed' : 'results')
@@ -1099,6 +1102,16 @@ export default function LessonPage() {
               <p className="font-black text-base" style={{ color: '#7A5800' }}>+{v2Lesson.xpReward} XP</p>
               <p className="text-xs font-semibold" style={{ color: '#9B7B00' }}>Освоени поени</p>
             </div>
+          </div>
+        )}
+
+        {/* Save error — shows if Supabase write failed */}
+        {saveError && (
+          <div className="w-full max-w-xs rounded-2xl px-4 py-3"
+            style={{ background: '#FFF0F0', border: '2px solid #EF5350' }}>
+            <p className="text-xs font-bold" style={{ color: '#B71C1C' }}>
+              Грешка при зачувување: {saveError}
+            </p>
           </div>
         )}
 
