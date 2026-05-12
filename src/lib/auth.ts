@@ -1,7 +1,7 @@
 import { supabase } from './supabase'
 import { getAffiliateRef, clearAffiliateRef } from './affiliate'
 
-export const DEV_ADMIN_EMAILS = ['delco.k.de@gmail.com', 'apostolova.marija22@gmail.com']
+export const DEV_ADMIN_EMAILS = ['delco.k.de@gmail.com', 'apostolova.marija22@gmail.com', 'stefanijavk02@gmail.com']
 const DEV_ADMIN_FLAG = 'dev_admin_enabled'
 const DEV_SELECTED_GRADE_KEY = 'dev_grade_override'
 
