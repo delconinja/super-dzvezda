@@ -301,66 +301,24 @@ export async function saveProgress(
   lessonId: string,
   starsEarned: number,
 ): Promise<number> {
-  try {
-    // Only save if score is better than existing (protect high scores on retry)
-    const { data: existing } = await supabase
-      .from('progress').select('stars_earned')
-      .eq('student_id', studentId).eq('lesson_id', lessonId).single()
-
-    if (!existing || starsEarned >= existing.stars_earned) {
-      const { error: upsertError } = await supabase.from('progress').upsert({
-        student_id: studentId, lesson_id: lessonId,
-        stars_earned: starsEarned, completed: starsEarned > 0,
-        completed_at: new Date().toISOString(),
-      }, { onConflict: 'student_id,lesson_id' })
-      if (upsertError) throw new Error(upsertError.message)
-    }
-
-    const { data: all } = await supabase
-      .from('progress').select('stars_earned').eq('student_id', studentId)
-    const total = (all || []).reduce((sum, r) => sum + r.stars_earned, 0)
-    await supabase.from('students').update({ stars_total: total }).eq('id', studentId)
-    if (starsEarned > 0) await updateStreak(studentId)
-    return total
-  } catch (e) {
-    console.error('saveProgress error:', e)
-    throw e
+  const res = await fetch('/api/save-progress', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ studentId, lessonId, starsEarned }),
+  })
+  if (!res.ok) {
+    const text = await res.text()
+    throw new Error(text)
   }
-}
-
-async function updateStreak(studentId: string): Promise<void> {
-  try {
-    const { data: records } = await supabase
-      .from('progress').select('completed_at')
-      .eq('student_id', studentId).eq('completed', true)
-    if (!records?.length) {
-      await supabase.from('students').update({ streak: 1 }).eq('id', studentId)
-      return
-    }
-    const dates = new Set(records.map(r => r.completed_at.slice(0, 10)))
-    let streak = 0
-    const today = new Date()
-    for (let i = 0; i < 365; i++) {
-      const d = new Date(today)
-      d.setDate(d.getDate() - i)
-      if (dates.has(d.toISOString().slice(0, 10))) streak++
-      else break
-    }
-    await supabase.from('students').update({ streak: Math.max(1, streak) }).eq('id', studentId)
-  } catch (e) { console.error('updateStreak error:', e) }
-}
-
-export async function refreshStudentSession(studentId: string): Promise<void> {
-  try {
-    const { data: student } = await supabase
-      .from('students').select('*').eq('id', studentId).single()
-    if (!student) return
+  const { starsTotal, student } = await res.json()
+  if (student) {
     setActiveStudent(student)
     const session = getFamilySession()
     if (session) {
-      saveFamilySession(session.parentId, session.students.map(s => s.id === studentId ? student : s))
+      saveFamilySession(session.parentId, session.students.map((s: StudentProfile) => s.id === studentId ? student : s))
     }
-  } catch { /* silent */ }
+  }
+  return starsTotal
 }
 
 export async function getProgress(studentId: string) {

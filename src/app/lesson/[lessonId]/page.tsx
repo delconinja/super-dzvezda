@@ -11,7 +11,7 @@ import { convertToV2, v2GetPracticeCount, v2GetQuizBlock } from '@/lib/content-v
 import { getSubject } from '@/lib/subjects'
 import SubjectIcon from '@/components/SubjectIcon'
 import StarMascot from '@/components/StarMascot'
-import { getActiveStudent, saveProgress, refreshStudentSession, getSelectedGrade, StudentProfile } from '@/lib/auth'
+import { getActiveStudent, saveProgress, getSelectedGrade, StudentProfile } from '@/lib/auth'
 import MathVisual from '@/components/math/MathVisual'
 import DragDropExercise from '@/components/DragDropExercise'
 
@@ -405,7 +405,6 @@ export default function LessonPage() {
         setProgressSaving(true)
         setSaveError(null)
         saveProgress(student.id, lessonId, stars)
-          .then(() => refreshStudentSession(student.id))
           .catch(e => setSaveError(String(e)))
           .finally(() => setProgressSaving(false))
       }
