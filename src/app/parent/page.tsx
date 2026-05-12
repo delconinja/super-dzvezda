@@ -13,6 +13,7 @@ import {
   StudentProfile, Subscription,
 } from '@/lib/auth'
 import TownSchoolPicker from '@/components/TownSchoolPicker'
+import { getBadgeDef, TIER_COLORS } from '@/lib/badges'
 
 const GRADES = [1, 2, 3, 4, 5, 6, 7, 8, 9] as const
 
@@ -114,6 +115,8 @@ export default function ParentPage() {
   const [newSchool, setNewSchool] = useState('')
   const [addError, setAddError] = useState('')
   const [addLoading, setAddLoading] = useState(false)
+  const [latestBadges, setLatestBadges] = useState<Record<string, { badge_id: string; earned_at: string }>>({})
+
 
   useEffect(() => {
     const init = async () => {
@@ -126,6 +129,24 @@ export default function ParentPage() {
       setSub(subscription)
       setIsAdmin(adminFlag)
       setLoading(false)
+
+      // Fetch latest badge per student (non-blocking)
+      if (studs.length > 0) {
+        Promise.all(
+          studs.map(s =>
+            fetch(`/api/badges?studentId=${s.id}`)
+              .then(r => r.json())
+              .then((data: { badge_id: string; earned_at: string }[]) =>
+                data.length > 0 ? { id: s.id, badge: data[0] } : null
+              )
+              .catch(() => null)
+          )
+        ).then(results => {
+          const map: Record<string, { badge_id: string; earned_at: string }> = {}
+          results.forEach(r => { if (r) map[r.id] = r.badge })
+          setLatestBadges(map)
+        })
+      }
     }
     init()
   }, [router])
@@ -398,6 +419,18 @@ export default function ParentPage() {
                       <span className="text-sm font-bold" style={{ color: '#FF6B6B' }}>🔥 {s.streak}</span>
                     )}
                   </div>
+                  {latestBadges[s.id] && (() => {
+                    const def = getBadgeDef(latestBadges[s.id].badge_id)
+                    if (!def) return null
+                    const tier = TIER_COLORS[def.tier]
+                    return (
+                      <div className="flex items-center gap-1.5 mt-1.5 px-2 py-1 rounded-xl w-fit"
+                        style={{ background: tier.bg, border: `1.5px solid ${tier.border}` }}>
+                        <span style={{ fontSize: '0.9rem' }}>{def.emoji}</span>
+                        <span className="text-xs font-black" style={{ color: tier.label }}>{def.nameMk}</span>
+                      </div>
+                    )
+                  })()}
                 </div>
                 <div className="flex items-center gap-2 flex-shrink-0">
                   <button onClick={() => router.push(`/parent/progress/${s.id}`)}

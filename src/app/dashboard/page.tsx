@@ -10,6 +10,8 @@ import { getGradeContent } from '@/lib/content'
 import { Subject, SubjectCategory } from '@/types'
 import SubjectIcon from '@/components/SubjectIcon'
 import StarMascot from '@/components/StarMascot'
+import BadgeCard from '@/components/BadgeCard'
+import { BADGE_DEFS, CATEGORY_META, BadgeCategory } from '@/lib/badges'
 
 // Grades with V2 structure active — add a grade here to enable XP bar for it
 const V2_GRADES = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -27,6 +29,7 @@ export default function DashboardPage() {
   const [maxXP, setMaxXP] = useState(0)
   const [gradeStats, setGradeStats] = useState({ lessons: 0, subjects: 0 })
   const [liveStarsTotal, setLiveStarsTotal] = useState<number | null>(null)
+  const [earnedBadges, setEarnedBadges] = useState<{ badge_id: string; earned_at: string }[]>([])
 
   useEffect(() => {
     const init = async () => {
@@ -86,6 +89,12 @@ export default function DashboardPage() {
         }
 
         setLoading(false)
+
+        // Fetch badges (non-blocking)
+        fetch(`/api/badges?studentId=${active.id}`)
+          .then(r => r.json())
+          .then(data => setEarnedBadges(data || []))
+          .catch(() => {})
       })
     }
     init()
@@ -260,6 +269,45 @@ export default function DashboardPage() {
             </div>
           )
         })}
+
+        {/* Badges section */}
+        {earnedBadges.length > 0 && (() => {
+          const categories: { key: BadgeCategory; }[] = [
+            { key: 'mastery' }, { key: 'consistency' }, { key: 'effort' }, { key: 'exploration' },
+          ]
+          const earnedIds = new Set(earnedBadges.map(b => b.badge_id))
+          return (
+            <div className="mb-8">
+              <div className="flex items-center gap-2 mb-4 px-1">
+                <span className="text-base">🎖️</span>
+                <span className="text-xs font-black tracking-widest uppercase" style={{ color: '#9B9BAA' }}>Мои Значки</span>
+                <div className="flex-1 h-px" style={{ background: '#E8E8F0' }} />
+                <span className="text-xs font-bold px-2 py-0.5 rounded-full"
+                  style={{ background: '#F0EDFF', color: '#5C35D4' }}>{earnedBadges.length}</span>
+              </div>
+              <div className="space-y-4">
+                {categories.map(({ key }) => {
+                  const meta = CATEGORY_META[key]
+                  const catBadges = BADGE_DEFS.filter(b => b.category === key && earnedIds.has(b.id))
+                  if (catBadges.length === 0) return null
+                  return (
+                    <div key={key}>
+                      <p className="text-xs font-black mb-2 px-1" style={{ color: '#9B9BAA' }}>
+                        {meta.emoji} {meta.labelMk}
+                      </p>
+                      <div className="space-y-2">
+                        {catBadges.map(badge => {
+                          const earned = earnedBadges.find(b => b.badge_id === badge.id)
+                          return <BadgeCard key={badge.id} badge={badge} earnedAt={earned?.earned_at} size="sm" />
+                        })}
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          )
+        })()}
 
         <div className="mt-8 rounded-3xl p-5"
           style={{ background: 'linear-gradient(135deg, #5C35D4, #7B5CE5)' }}>

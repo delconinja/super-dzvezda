@@ -9,6 +9,8 @@ import { getProgress, StudentProfile } from '@/lib/auth'
 import { getSubjectsForGrade } from '@/lib/subjects'
 import { getGradeContent } from '@/lib/content'
 import { Subject, SubjectCategory } from '@/types'
+import BadgeCard from '@/components/BadgeCard'
+import { BADGE_DEFS, CATEGORY_META, BadgeCategory as BadgeCat } from '@/lib/badges'
 
 function gradeLabel(g: number) {
   const suffix = g === 1 ? 'во' : g === 2 ? 'ро' : g === 7 || g === 8 ? 'мо' : 'то'
@@ -38,6 +40,7 @@ export default function ParentProgressPage() {
   const [contentMap, setContentMap] = useState<Record<string, { id: string; title: string; unitTitle: string }[]>>({})
   const [loading, setLoading] = useState(true)
   const [expanded, setExpanded] = useState<Record<string, boolean>>({})
+  const [earnedBadges, setEarnedBadges] = useState<{ badge_id: string; earned_at: string }[]>([])
 
   useEffect(() => {
     const init = async () => {
@@ -91,6 +94,12 @@ export default function ParentProgressPage() {
       setStarsBySubject(bySubject)
 
       setLoading(false)
+
+      // Fetch badges non-blocking
+      fetch(`/api/badges?studentId=${studentId}`)
+        .then(r => r.json())
+        .then(data => setEarnedBadges(data || []))
+        .catch(() => {})
     }
     init()
   }, [router, studentId])
@@ -235,6 +244,52 @@ export default function ParentProgressPage() {
             </div>
           )
         })}
+        {/* Badges section */}
+        {earnedBadges.length > 0 && (() => {
+          const categories: BadgeCat[] = ['mastery', 'consistency', 'effort', 'exploration']
+          const earnedIds = new Set(earnedBadges.map(b => b.badge_id))
+          return (
+            <div>
+              <div className="flex items-center gap-2 mb-3 px-1">
+                <span className="text-base">🎖️</span>
+                <span className="text-xs font-black tracking-widest uppercase" style={{ color: '#9B9BAA' }}>Значки</span>
+                <div className="flex-1 h-px" style={{ background: '#E8E8F0' }} />
+                <span className="text-xs font-bold px-2 py-0.5 rounded-full"
+                  style={{ background: '#F0EDFF', color: '#5C35D4' }}>{earnedBadges.length}</span>
+              </div>
+              <div className="space-y-4">
+                {categories.map(cat => {
+                  const meta = CATEGORY_META[cat]
+                  const catBadges = BADGE_DEFS.filter(b => b.category === cat && earnedIds.has(b.id))
+                  if (catBadges.length === 0) return null
+                  return (
+                    <div key={cat}>
+                      <p className="text-xs font-black mb-2 px-1" style={{ color: '#9B9BAA' }}>
+                        {meta.emoji} {meta.labelMk}
+                      </p>
+                      <div className="space-y-2">
+                        {catBadges.map(badge => {
+                          const earned = earnedBadges.find(b => b.badge_id === badge.id)
+                          return <BadgeCard key={badge.id} badge={badge} earnedAt={earned?.earned_at} />
+                        })}
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          )
+        })()}
+
+        {earnedBadges.length === 0 && (
+          <div className="rounded-3xl p-6 text-center" style={{ background: 'white', boxShadow: '0 2px 12px rgba(92,53,212,0.08)' }}>
+            <p className="text-2xl mb-2">🎖️</p>
+            <p className="font-black text-sm" style={{ color: '#1A1A2E' }}>Сè уште нема значки</p>
+            <p className="text-xs font-semibold mt-1" style={{ color: '#9B9BAA' }}>
+              Значките се освојуваат со завршување лекции и предизвици
+            </p>
+          </div>
+        )}
       </div>
     </main>
   )
