@@ -63,6 +63,7 @@ export default function LessonPage() {
   const [student, setStudent] = useState<StudentProfile | null>(null)
   const [shake, setShake] = useState(false)
   const [dragDropDone, setDragDropDone] = useState(false)
+  const [progressSaving, setProgressSaving] = useState(false)
 
   const videoRef = useRef<HTMLVideoElement>(null)
   const ytPlayerRef = useRef<YTPlayerInstance | null>(null)
@@ -400,8 +401,10 @@ export default function LessonPage() {
       const quizTotal = v2Lesson ? exercises.length - practiceCount : 0
       const quizPassed = quizTotal === 0 || quizCorrect / quizTotal >= 0.8
       if (student) {
+        setProgressSaving(true)
         saveProgress(student.id, lessonId, stars)
           .then(() => refreshStudentSession(student.id))
+          .finally(() => setProgressSaving(false))
       }
       setPhase(v2Lesson && !quizPassed ? 'quiz-failed' : 'results')
     }
@@ -1112,10 +1115,12 @@ export default function LessonPage() {
             style={{ background: 'white', color: subject.color, border: `2px solid ${subject.color}` }}>
             Повтори уште еднаш
           </button>
-          <button onClick={() => router.push(`/subject/${subject.id}`)}
+          <button
+            onClick={() => { router.refresh(); router.push(`/subject/${subject.id}`) }}
+            disabled={progressSaving}
             className="w-full py-4 rounded-2xl font-black text-base text-white transition-all active:scale-[0.98] shadow-md"
-            style={{ background: `linear-gradient(135deg, ${subject.color}, ${subject.color}cc)` }}>
-            ← Назад кон {subject.nameMk}
+            style={{ background: `linear-gradient(135deg, ${subject.color}, ${subject.color}cc)`, opacity: progressSaving ? 0.6 : 1 }}>
+            {progressSaving ? 'Зачувување...' : `← Назад кон ${subject.nameMk}`}
           </button>
         </div>
 
