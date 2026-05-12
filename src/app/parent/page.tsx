@@ -182,7 +182,14 @@ export default function ParentPage() {
 
   const daysLeft = sub ? trialDaysLeft(sub) : 0
   const expired = sub ? isTrialExpired(sub) : false
-  const trialColor = expired ? '#FF6B6B' : daysLeft <= 3 ? '#FF6B6B' : daysLeft <= 7 ? '#FFD93D' : '#6BCB77'
+  // Admins without a real subscription see a mock active card so all UI is visible
+  const effectiveSub: Subscription | null = sub ?? (isAdmin ? {
+    status: 'active', plan: 'individual', price_paid: 10, max_students: 1,
+    billing: 'monthly', trial_ends_at: new Date().toISOString(),
+    subscribed_until: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+  } : null)
+  const trialColor = effectiveSub?.status === 'active' ? '#6BCB77'
+    : expired ? '#FF6B6B' : daysLeft <= 3 ? '#FF6B6B' : daysLeft <= 7 ? '#FFD93D' : '#6BCB77'
   const canAdd = students.length < 3
 
   return (
@@ -212,34 +219,39 @@ export default function ParentPage() {
         </div>
 
         {/* Subscription status */}
-        {sub && (
+        {effectiveSub && (
           <div className="rounded-3xl overflow-hidden"
             style={{ border: `2px solid ${trialColor}55` }}>
             <div className="p-5 flex items-center justify-between"
               style={{ background: `${trialColor}18` }}>
               <div>
+                {isAdmin && !sub && (
+                  <p className="text-xs font-black tracking-widest mb-1" style={{ color: '#9B9BAA' }}>
+                    АДМИН ПРЕГЛЕД
+                  </p>
+                )}
                 <p className="text-xs font-black tracking-widest mb-1" style={{ color: trialColor }}>
-                  {sub.status === 'active' ? 'АКТИВНА ПРЕТПЛАТА'
-                    : sub.status === 'paused' ? 'ПАУЗИРАНА ПРЕТПЛАТА'
+                  {effectiveSub.status === 'active' ? 'АКТИВНА ПРЕТПЛАТА'
+                    : effectiveSub.status === 'paused' ? 'ПАУЗИРАНА ПРЕТПЛАТА'
                     : expired ? 'ПРОБЕН ПЕРИОД — ИСТЕЧЕН'
                     : 'ПРОБЕН ПЕРИОД'}
                 </p>
                 <p className="text-2xl font-black" style={{ color: '#1A1A2E' }}>
-                  {sub.status === 'active' ? 'Активна'
-                    : sub.status === 'paused' ? 'Паузирана'
+                  {effectiveSub.status === 'active' ? 'Активна'
+                    : effectiveSub.status === 'paused' ? 'Паузирана'
                     : expired ? 'Истечен'
                     : `${daysLeft} ${daysLeft === 1 ? 'ден' : 'дена'} останати`}
                 </p>
               </div>
               <div className="flex flex-col items-end gap-2">
-                {(sub.status === 'trial' || expired) && (
+                {(effectiveSub.status === 'trial' || expired) && (
                   <button onClick={() => router.push('/trial-expired')}
                     className="px-5 py-3 rounded-2xl text-sm font-black text-white transition-all active:scale-95"
                     style={{ background: 'linear-gradient(135deg, #5C35D4, #7B5CE5)' }}>
                     Надгради ↗
                   </button>
                 )}
-                {sub.status === 'active' && (
+                {effectiveSub.status === 'active' && (
                   <button onClick={() => { setShowManage(v => !v); setCancelStep('idle'); setManageError('') }}
                     className="text-xs font-black transition-colors"
                     style={{ color: trialColor }}>
@@ -249,7 +261,7 @@ export default function ParentPage() {
               </div>
             </div>
 
-            {showManage && sub.status === 'active' && (
+            {showManage && effectiveSub.status === 'active' && (
               <div className="p-4 space-y-2 bg-white">
                 {cancelStep !== 'confirm' && (
                   <button onClick={handlePause} disabled={manageLoading}
@@ -278,8 +290,8 @@ export default function ParentPage() {
                     <p className="font-black text-sm mb-1" style={{ color: '#C62828' }}>Дали си сигурен?</p>
                     <p className="text-xs font-semibold mb-3" style={{ color: '#6B6B8A' }}>
                       Претплатата ќе заврши на{' '}
-                      {sub.subscribed_until
-                        ? new Date(sub.subscribed_until).toLocaleDateString('mk-MK')
+                      {effectiveSub.subscribed_until
+                        ? new Date(effectiveSub.subscribed_until).toLocaleDateString('mk-MK')
                         : 'крај на периодот'}.
                       До тогаш имаш целосен пристап.
                     </p>
