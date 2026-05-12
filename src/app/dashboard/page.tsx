@@ -12,7 +12,7 @@ import SubjectIcon from '@/components/SubjectIcon'
 import StarMascot from '@/components/StarMascot'
 
 // Grades with V2 structure active — add a grade here to enable XP bar for it
-const V2_GRADES = [5]
+const V2_GRADES = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 export default function DashboardPage() {
   const router = useRouter()

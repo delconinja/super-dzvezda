@@ -99,7 +99,7 @@ export default function LessonPage() {
 
   const subject = getSubject(subjectId ?? '')
 
-  const v2Lesson = (selectedGrade === 5 && lesson) ? convertToV2(lesson) : null
+  const v2Lesson = lesson ? convertToV2(lesson) : null
   const practiceCount = v2Lesson ? v2GetPracticeCount(v2Lesson) : (lesson?.exercises.length ?? 0)
 
   // Video source — V2 reads from lessonFlow, V1 uses lesson.videoUrl directly
