@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { getFamilySession, loginWithPin, register, parentLogin, setActiveStudent, isDevAdminUser, StudentProfile } from '@/lib/auth'
+import { getFamilySession, loginWithPin, register, parentLogin, setActiveStudent, isDevAdminUser, getProgress, StudentProfile } from '@/lib/auth'
 import { saveAffiliateRef } from '@/lib/affiliate'
 import TownSchoolPicker from '@/components/TownSchoolPicker'
 import { SUBJECTS, gradeOrdinal } from '@/lib/subjects'
@@ -509,6 +509,17 @@ function KidSelector({ students, onBack }: { students: StudentProfile[]; onBack:
   const [selected, setSelected] = useState<StudentProfile | null>(students.length === 1 ? students[0] : null)
   const [pin, setPin] = useState('')
   const [error, setError] = useState('')
+  const [liveStars, setLiveStars] = useState<Record<string, number>>({})
+
+  useEffect(() => {
+    Promise.all(
+      students.map(async (s) => {
+        const progress = await getProgress(s.id)
+        const total = progress.reduce((sum, p) => sum + p.stars_earned, 0)
+        return [s.id, total] as [string, number]
+      })
+    ).then(entries => setLiveStars(Object.fromEntries(entries)))
+  }, [students])
 
   const handlePin = (digit: string) => {
     if (pin.length >= 4) return
@@ -550,7 +561,7 @@ function KidSelector({ students, onBack }: { students: StudentProfile[]; onBack:
                   <div className="text-left">
                     <div className="text-lg font-black" style={{ color: '#1A1A2E' }}>{s.name}</div>
                     <div className="text-sm font-semibold" style={{ color: '#9B9BAA' }}>
-                      {s.grade}-{gradeOrdinal(s.grade)} одделение · ⭐ {s.stars_total}
+                      {s.grade}-{gradeOrdinal(s.grade)} одделение · ⭐ {liveStars[s.id] ?? s.stars_total}
                     </div>
                   </div>
                 </button>
