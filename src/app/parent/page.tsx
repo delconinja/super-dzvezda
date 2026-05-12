@@ -8,7 +8,7 @@ import { supabase } from '@/lib/supabase'
 import {
   getStudents, getSubscription, addStudent, parentLogout,
   setActiveStudent, trialDaysLeft, isTrialExpired,
-  familyMonthlyMkd, familyAnnualMkd,
+  familyMonthlyMkd, familyAnnualMkd, isDevAdminUser,
   StudentProfile, Subscription,
 } from '@/lib/auth'
 import TownSchoolPicker from '@/components/TownSchoolPicker'
@@ -100,6 +100,7 @@ export default function ParentPage() {
   const [loading, setLoading] = useState(true)
   const [parentId, setParentId] = useState<string | null>(null)
 
+  const [isAdmin, setIsAdmin] = useState(false)
   const [showInvoices, setShowInvoices] = useState(false)
   const [showAdd, setShowAdd] = useState(false)
   const [newName, setNewName] = useState('')
@@ -116,9 +117,10 @@ export default function ParentPage() {
       if (!user) { router.push('/'); return }
       setParentName(user.user_metadata?.full_name || user.email || 'Родитело')
       setParentId(user.id)
-      const [studs, subscription] = await Promise.all([getStudents(), getSubscription()])
+      const [studs, subscription, adminFlag] = await Promise.all([getStudents(), getSubscription(), isDevAdminUser()])
       setStudents(studs)
       setSub(subscription)
+      setIsAdmin(adminFlag)
       setLoading(false)
     }
     init()
@@ -213,8 +215,8 @@ export default function ParentPage() {
           </div>
         )}
 
-        {/* Invoices section */}
-        {(() => {
+        {/* Invoices section — visible to subscribers and admins */}
+        {(!!sub || isAdmin) && (() => {
           const invoices = sub ? generateInvoices(sub) : []
           return (
             <div>
