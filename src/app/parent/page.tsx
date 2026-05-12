@@ -206,11 +206,18 @@ export default function ParentPage() {
                     )}
                   </div>
                 </div>
-                <button onClick={() => handleSelectKid(s)}
-                  className="px-4 py-2 rounded-2xl text-sm font-black text-white flex-shrink-0 transition-all active:scale-95"
-                  style={{ background: 'linear-gradient(135deg, #5C35D4, #7B5CE5)' }}>
-                  Учи →
-                </button>
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <button onClick={() => router.push(`/parent/progress/${s.id}`)}
+                    className="px-4 py-2 rounded-2xl text-sm font-black text-white transition-all active:scale-95"
+                    style={{ background: 'linear-gradient(135deg, #5C35D4, #7B5CE5)' }}>
+                    Напредок →
+                  </button>
+                  <button onClick={() => handleSelectKid(s)}
+                    className="px-3 py-2 rounded-2xl text-sm font-semibold border-2 transition-all active:scale-95"
+                    style={{ borderColor: '#5C35D4', color: '#5C35D4', background: 'white' }}>
+                    Учи
+                  </button>
+                </div>
               </div>
             ))}
           </div>
