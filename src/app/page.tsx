@@ -123,7 +123,7 @@ function LandingPage({ onRegister, onLogin }: { onRegister: () => void; onLogin:
           {/* Subjects */}
           <div className="flex justify-center gap-3 mb-7 text-xl flex-wrap max-w-xs">
             {SUBJECTS.map((subject) => (
-              <button key={subject.id} onClick={scrollToPricing}
+              <button key={subject.id} onClick={() => router.push('/register')}
                 className="flex flex-col items-center gap-1 outline-none select-none transition-all duration-150 hover:scale-110 active:scale-95 cursor-pointer">
                 <SubjectIcon subject={subject} size="sm" />
                 <span className="text-xs font-bold text-center leading-tight" style={{ color: 'rgba(255,255,255,0.4)' }}>{subject.nameMk}</span>
