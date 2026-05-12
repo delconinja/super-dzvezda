@@ -8,11 +8,64 @@ import { supabase } from '@/lib/supabase'
 import {
   getStudents, getSubscription, addStudent, parentLogout,
   setActiveStudent, trialDaysLeft, isTrialExpired,
+  familyMonthlyMkd, familyAnnualMkd,
   StudentProfile, Subscription,
 } from '@/lib/auth'
 import TownSchoolPicker from '@/components/TownSchoolPicker'
 
 const GRADES = [1, 2, 3, 4, 5, 6, 7, 8, 9] as const
+
+const MK_MONTHS = ['Јануари','Февруари','Март','Април','Мај','Јуни',
+  'Јули','Август','Септември','Октомври','Ноември','Декември']
+
+interface InvoiceRecord {
+  id: string
+  periodLabel: string
+  issuedAt: Date
+  amountEur: number
+  amountMkd: number
+  description: string
+}
+
+function generateInvoices(sub: Subscription): InvoiceRecord[] {
+  if (sub.status === 'trial' || !sub.subscribed_until || !sub.price_paid) return []
+
+  const start = new Date(sub.trial_ends_at)
+  const end   = new Date(sub.subscribed_until)
+  const kids  = sub.max_students || 1
+  const eur   = sub.price_paid
+  const invoices: InvoiceRecord[] = []
+
+  if (sub.billing === 'annual') {
+    invoices.push({
+      id: `${start.getFullYear()}-G-001`,
+      periodLabel: String(start.getFullYear()),
+      issuedAt: start,
+      amountEur: eur,
+      amountMkd: familyAnnualMkd(kids),
+      description: `Годишна претплата · ${kids} ${kids === 1 ? 'дете' : 'деца'}`,
+    })
+  } else {
+    let cursor = new Date(start)
+    let idx = 1
+    while (cursor < end) {
+      const y = cursor.getFullYear()
+      const m = cursor.getMonth()
+      invoices.push({
+        id: `${y}-M-${String(idx).padStart(3, '0')}`,
+        periodLabel: `${MK_MONTHS[m]} ${y}`,
+        issuedAt: new Date(cursor),
+        amountEur: eur,
+        amountMkd: familyMonthlyMkd(kids),
+        description: `Месечна претплата · ${kids} ${kids === 1 ? 'дете' : 'деца'}`,
+      })
+      cursor.setMonth(cursor.getMonth() + 1)
+      idx++
+    }
+  }
+
+  return invoices.reverse()
+}
 
 const GRADE_COLORS = ['#FFD93D', '#FF9A3C', '#FF6B6B', '#6BCB77', '#7B5CE5', '#FF6B9D', '#4ECDC4', '#45B7D1', '#96CEB4']
 
@@ -47,6 +100,7 @@ export default function ParentPage() {
   const [loading, setLoading] = useState(true)
   const [parentId, setParentId] = useState<string | null>(null)
 
+  const [showInvoices, setShowInvoices] = useState(false)
   const [showAdd, setShowAdd] = useState(false)
   const [newName, setNewName] = useState('')
   const [newGrade, setNewGrade] = useState<number | null>(null)
@@ -158,6 +212,76 @@ export default function ParentPage() {
             )}
           </div>
         )}
+
+        {/* Invoices section */}
+        {sub && (() => {
+          const invoices = generateInvoices(sub)
+          return (
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <h2 className="text-lg font-black flex items-center gap-2" style={{ color: '#1A1A2E' }}>
+                  🧾 Фактури
+                  {invoices.length > 0 && (
+                    <span className="text-sm font-bold px-2 py-0.5 rounded-full"
+                      style={{ background: '#EDE9FF', color: '#5C35D4' }}>
+                      {invoices.length}
+                    </span>
+                  )}
+                </h2>
+                <button onClick={() => setShowInvoices(v => !v)}
+                  className="text-sm font-bold transition-colors"
+                  style={{ color: '#5C35D4' }}>
+                  {showInvoices ? 'Затвори ▲' : 'Прикажи ▼'}
+                </button>
+              </div>
+
+              {showInvoices && (
+                invoices.length === 0 ? (
+                  <div className="rounded-3xl p-6 text-center bg-white"
+                    style={{ boxShadow: '0 2px 12px rgba(92,53,212,0.06)' }}>
+                    <p className="text-3xl mb-2">🧾</p>
+                    <p className="font-bold" style={{ color: '#6B6B8A' }}>Уште нема фактури.</p>
+                    <p className="text-sm mt-1" style={{ color: '#9B9BAA' }}>
+                      Фактурите ќе се прикажат откако ќе активираш претплата.
+                    </p>
+                  </div>
+                ) : (
+                  <div className="space-y-3">
+                    {invoices.map(inv => (
+                      <div key={inv.id} className="bg-white rounded-3xl p-5"
+                        style={{ boxShadow: '0 2px 12px rgba(92,53,212,0.08)' }}>
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="min-w-0">
+                            <p className="text-xs font-black tracking-widest mb-1" style={{ color: '#9B9BAA' }}>
+                              ФАКТУРА #{inv.id}
+                            </p>
+                            <p className="font-black text-base leading-tight" style={{ color: '#1A1A2E' }}>
+                              {inv.periodLabel}
+                            </p>
+                            <p className="text-sm font-semibold mt-0.5" style={{ color: '#6B6B8A' }}>
+                              {inv.description}
+                            </p>
+                            <p className="text-xs font-semibold mt-1" style={{ color: '#B0B0C8' }}>
+                              {inv.issuedAt.toLocaleDateString('mk-MK')}
+                            </p>
+                          </div>
+                          <div className="text-right flex-shrink-0">
+                            <p className="text-xl font-black" style={{ color: '#5C35D4' }}>€{inv.amountEur}</p>
+                            <p className="text-sm font-semibold" style={{ color: '#9B9BAA' }}>{inv.amountMkd} ден</p>
+                            <span className="inline-block mt-2 px-3 py-1 rounded-full text-xs font-black"
+                              style={{ background: '#E8F8EA', color: '#2E7D32' }}>
+                              ✓ Платено
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )
+              )}
+            </div>
+          )
+        })()}
 
         {/* Kids section */}
         <div>
