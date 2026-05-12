@@ -26,6 +26,7 @@ export default function DashboardPage() {
   const [totalXP, setTotalXP] = useState(0)
   const [maxXP, setMaxXP] = useState(0)
   const [gradeStats, setGradeStats] = useState({ lessons: 0, subjects: 0 })
+  const [liveStarsTotal, setLiveStarsTotal] = useState<number | null>(null)
 
   useEffect(() => {
     const init = async () => {
@@ -72,6 +73,9 @@ export default function DashboardPage() {
           if (subId) map[subId] = (map[subId] || 0) + p.stars_earned
         })
         setStarsBySubject(map)
+
+        const liveTotalStars = progress.reduce((sum: number, p: { stars_earned: number }) => sum + p.stars_earned, 0)
+        setLiveStarsTotal(liveTotalStars)
 
         if (V2_GRADES.includes(grade)) {
           const gradeLessonIds = new Set(Object.keys(lessonSubjectMap))
@@ -159,7 +163,7 @@ export default function DashboardPage() {
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-2xl font-black text-sm"
               style={{ background: '#FFFDE7', color: '#F57F17', border: '2px solid #FFD600' }}>
-              ⭐ {student.stars_total} ѕвезди вкупно
+              ⭐ {liveStarsTotal !== null ? liveStarsTotal : student.stars_total} ѕвезди вкупно
             </div>
           </div>
 

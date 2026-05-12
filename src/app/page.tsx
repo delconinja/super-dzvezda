@@ -561,7 +561,7 @@ function KidSelector({ students, onBack }: { students: StudentProfile[]; onBack:
                   <div className="text-left">
                     <div className="text-lg font-black" style={{ color: '#1A1A2E' }}>{s.name}</div>
                     <div className="text-sm font-semibold" style={{ color: '#9B9BAA' }}>
-                      {s.grade}-{gradeOrdinal(s.grade)} одделение · ⭐ {liveStars[s.id] ?? s.stars_total}
+                      {s.grade}-{gradeOrdinal(s.grade)} одделение · ⭐ {s.id in liveStars ? liveStars[s.id] : s.stars_total}
                     </div>
                   </div>
                 </button>
