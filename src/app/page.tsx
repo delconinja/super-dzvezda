@@ -132,11 +132,10 @@ function LandingPage({ onRegister, onLogin }: { onRegister: () => void; onLogin:
           </div>
 
           {/* Trial pill */}
-          <button onClick={onRegister}
-            className="inline-block rounded-2xl px-4 py-2 mb-5 transition-all active:scale-95 hover:opacity-80 outline-none cursor-pointer"
+          <div className="inline-block rounded-2xl px-4 py-2 mb-5"
             style={{ background: 'rgba(255,217,61,0.12)', border: '1.5px solid rgba(255,217,61,0.45)' }}>
-            <p className="font-black text-sm select-none" style={{ color: '#FFD93D' }}>🎉 14 дена БЕСПЛАТНО · Без кредитна картичка</p>
-          </button>
+            <p className="font-black text-sm" style={{ color: '#FFD93D' }}>🎉 14 дена БЕСПЛАТНО · Без кредитна картичка</p>
+          </div>
 
           {/* CTA */}
           <button onClick={onRegister}
