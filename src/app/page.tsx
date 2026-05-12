@@ -687,14 +687,21 @@ function ParentLoginForm({ onDone, onRegister }: { onDone: () => void; onRegiste
               style={{ background: 'linear-gradient(135deg, #5C35D4, #7B5CE5)' }}>
               {loading ? 'Се логира...' : 'Влези'}
             </button>
-            <div className="flex items-center justify-between text-sm">
-              <button type="button" onClick={onRegister} className="font-semibold" style={{ color: '#9B9BAA' }}>
-                Нема профил? <span className="font-black" style={{ color: '#5C35D4' }}>Регистрирај се</span>
-              </button>
-              <a href="/reset-password" className="font-semibold" style={{ color: '#9B9BAA' }}>
-                Заборавена лозинка?
-              </a>
+            <a href="/reset-password"
+              className="block text-center text-sm font-semibold transition-colors hover:opacity-80"
+              style={{ color: '#9B9BAA' }}>
+              Заборавена лозинка?
+            </a>
+            <div className="flex items-center gap-3 my-1">
+              <div className="flex-1 h-px" style={{ background: '#E5E7EB' }} />
+              <span className="text-xs font-semibold" style={{ color: '#C4C4D4' }}>или</span>
+              <div className="flex-1 h-px" style={{ background: '#E5E7EB' }} />
             </div>
+            <button type="button" onClick={onRegister}
+              className="w-full py-3 rounded-2xl text-sm font-black border-2 transition-all active:scale-95"
+              style={{ borderColor: '#5C35D4', color: '#5C35D4', background: 'white' }}>
+              Нема профил? Регистрирај се →
+            </button>
           </div>
         </div>
       </div>
