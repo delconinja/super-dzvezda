@@ -7,6 +7,7 @@ import { useRouter, useParams } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { getGradeContent, ExerciseData, VideoQuiz } from '@/lib/content'
+import { convertToV2, v2GetPracticeCount, v2GetQuizBlock } from '@/lib/content-v2'
 import { getSubject } from '@/lib/subjects'
 import SubjectIcon from '@/components/SubjectIcon'
 import StarMascot from '@/components/StarMascot'
@@ -55,7 +56,8 @@ export default function LessonPage() {
   const [videoQuizAnswered, setVideoQuizAnswered] = useState(false)
 
   const activeStudent = getActiveStudent()
-  const gradeContent = getGradeContent(getSelectedGrade())
+  const selectedGrade = getSelectedGrade()
+  const gradeContent = getGradeContent(selectedGrade)
 
   const lesson = Object.values(gradeContent)
     .flatMap((units) => units.flatMap((u) => u.lessons))
@@ -66,6 +68,9 @@ export default function LessonPage() {
   )?.[0]
 
   const subject = getSubject(subjectId ?? '')
+
+  const v2Lesson = (selectedGrade === 5 && lesson) ? convertToV2(lesson) : null
+  const practiceCount = v2Lesson ? v2GetPracticeCount(v2Lesson) : (lesson?.exercises.length ?? 0)
 
   useEffect(() => {
     const active = getActiveStudent()
@@ -316,6 +321,23 @@ export default function LessonPage() {
               </p>
             </div>
           </div>
+
+          {/* Learning objectives — V2 Grade 5 only */}
+          {v2Lesson && v2Lesson.learningObjectives.length > 0 && (
+            <div className="px-6 pt-4 pb-1">
+              <p className="text-xs font-black tracking-widest uppercase mb-2" style={{ color: '#9B9BAA' }}>
+                Цели на лекцијата
+              </p>
+              <ul className="flex flex-col gap-1.5">
+                {v2Lesson.learningObjectives.map((obj, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm font-semibold" style={{ color: '#2D2D44' }}>
+                    <span style={{ color: subject.color, fontWeight: 900 }}>✓</span>
+                    {obj}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Video explainer */}
           {lesson.videoUrl && (
@@ -630,6 +652,22 @@ export default function LessonPage() {
 
       <div className="flex-1 flex flex-col max-w-xl w-full mx-auto px-4 py-4 gap-3">
 
+        {/* Mastery check banner — V2 Grade 5 only */}
+        {v2Lesson && currentEx === practiceCount && (
+          <div className="rounded-2xl overflow-hidden animate-fade-up"
+            style={{ border: '2px solid #7C3AED' }}>
+            <div className="px-4 py-2.5 flex items-center gap-2" style={{ background: '#7C3AED' }}>
+              <span className="text-white font-black text-sm">🎯 Мастерски тест</span>
+              <span className="text-white/70 text-xs ml-auto">80% за поминување</span>
+            </div>
+            <div className="px-4 py-2.5" style={{ background: '#F5F0FF' }}>
+              <p className="text-xs font-semibold" style={{ color: '#4C1D95' }}>
+                Последните {v2GetQuizBlock(v2Lesson)?.questions.length} прашања проверуваат дали ја совладавте темата.
+              </p>
+            </div>
+          </div>
+        )}
+
         {/* Question card — visual + text */}
         <div className="rounded-3xl overflow-hidden shadow-sm" style={{ background: 'white' }}>
 
@@ -862,6 +900,18 @@ export default function LessonPage() {
             {Math.round((correct / exercises.length) * 100)}% точност
           </p>
         </div>
+
+        {/* XP reward — V2 Grade 5 only */}
+        {v2Lesson && (
+          <div className="flex items-center gap-3 px-5 py-3 rounded-2xl w-full max-w-xs"
+            style={{ background: '#FFF9E6', border: '2px solid #FFD93D' }}>
+            <span className="text-2xl">⚡</span>
+            <div className="text-left">
+              <p className="font-black text-base" style={{ color: '#7A5800' }}>+{v2Lesson.xpReward} XP</p>
+              <p className="text-xs font-semibold" style={{ color: '#9B7B00' }}>Освоени поени</p>
+            </div>
+          </div>
+        )}
 
         {/* Buttons */}
         <div className="flex flex-col gap-3 w-full max-w-xs">
