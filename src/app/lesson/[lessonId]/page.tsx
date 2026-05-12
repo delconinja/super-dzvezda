@@ -15,10 +15,35 @@ import { getActiveStudent, saveProgress, refreshStudentSession, getSelectedGrade
 import MathVisual from '@/components/math/MathVisual'
 import DragDropExercise from '@/components/DragDropExercise'
 
-type Phase = 'lesson' | 'exercises' | 'results'
+type Phase = 'lesson' | 'exercises' | 'results' | 'quiz-failed'
 
 // ── Option labels ────────────────────────────────────────────────
 const LABELS = ['А', 'Б', 'В', 'Г', 'Д']
+
+// ── YouTube helpers ───────────────────────────────────────────────
+function isYouTubeUrl(url: string) {
+  return url.includes('youtube.com') || url.includes('youtu.be')
+}
+function getYouTubeId(url: string) {
+  return url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/)?.[1] ?? ''
+}
+
+declare global {
+  interface Window {
+    YT: {
+      Player: new (id: string, opts: object) => YTPlayerInstance
+      PlayerState: { PLAYING: number; PAUSED: number }
+    }
+    onYouTubeIframeAPIReady?: () => void
+  }
+}
+interface YTPlayerInstance {
+  getCurrentTime(): number
+  pauseVideo(): void
+  playVideo(): void
+  getPlayerState(): number
+  destroy(): void
+}
 
 export default function LessonPage() {
   const router = useRouter()
@@ -33,12 +58,15 @@ export default function LessonPage() {
   const [revealed, setRevealed] = useState(false)
   const [wrongAttempts, setWrongAttempts] = useState<string[]>([])
   const [correct, setCorrect] = useState(0)
+  const [quizCorrect, setQuizCorrect] = useState(0)
   const [showStar, setShowStar] = useState(false)
   const [student, setStudent] = useState<StudentProfile | null>(null)
   const [shake, setShake] = useState(false)
   const [dragDropDone, setDragDropDone] = useState(false)
 
   const videoRef = useRef<HTMLVideoElement>(null)
+  const ytPlayerRef = useRef<YTPlayerInstance | null>(null)
+  const ytIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const narrationCache = useRef<Map<string, string>>(new Map())
   const firedTimestamps = useRef<Set<number>>(new Set())
@@ -72,6 +100,12 @@ export default function LessonPage() {
   const v2Lesson = (selectedGrade === 5 && lesson) ? convertToV2(lesson) : null
   const practiceCount = v2Lesson ? v2GetPracticeCount(v2Lesson) : (lesson?.exercises.length ?? 0)
 
+  // Video source — V2 reads from lessonFlow, V1 uses lesson.videoUrl directly
+  const v2VideoBlock = v2Lesson?.lessonFlow.find(b => b.type === 'video') as import('@/lib/content-v2').VideoFlowBlock | undefined
+  const effectiveVideoUrl = v2VideoBlock?.url ?? lesson?.videoUrl
+  const isYTVideo = effectiveVideoUrl ? isYouTubeUrl(effectiveVideoUrl) : false
+  const ytVideoId = isYTVideo && effectiveVideoUrl ? getYouTubeId(effectiveVideoUrl) : ''
+
   useEffect(() => {
     const active = getActiveStudent()
     if (!active) { router.push('/'); return }
@@ -90,6 +124,8 @@ export default function LessonPage() {
     : correct >= Math.ceil(exercises.length * 0.6) ? 2
     : correct > 0 ? 1 : 0
 
+  const isQuizEx = v2Lesson !== null && currentEx >= practiceCount
+
   const handleAnswer = (option: string) => {
     if (revealed || hintShown) return
     setSelected(option)
@@ -97,6 +133,7 @@ export default function LessonPage() {
 
     if (option === ex.correct) {
       setCorrect((c) => c + 1)
+      if (isQuizEx) setQuizCorrect((q) => q + 1)
       setRevealed(true)
       setShowStar(true)
       setTimeout(() => setShowStar(false), 900)
@@ -105,7 +142,8 @@ export default function LessonPage() {
       setWrongAttempts((prev) => [...prev, option])
       setShake(true)
       setTimeout(() => setShake(false), 400)
-      if (ex.hint && isFirstWrong) {
+      // No hints during mastery quiz
+      if (ex.hint && isFirstWrong && !isQuizEx) {
         setHintShown(true)
       } else {
         setRevealed(true)
@@ -202,6 +240,81 @@ export default function LessonPage() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lesson?.id])
 
+  // YouTube IFrame Player API setup
+  useEffect(() => {
+    if (!isYTVideo || !ytVideoId) return
+
+    const interactionPoints = v2VideoBlock?.interactionPoints ?? []
+    const narrationCues = v2VideoBlock?.narration ?? lesson?.videoNarration ?? []
+
+    const setupPlayer = () => {
+      if (ytPlayerRef.current) { try { ytPlayerRef.current.destroy() } catch { /* ignore */ } }
+      ytPlayerRef.current = new window.YT.Player('yt-player-container', {
+        height: '240',
+        width: '100%',
+        videoId: ytVideoId,
+        playerVars: { rel: 0, modestbranding: 1, enablejsapi: 1 },
+        events: {
+          onStateChange: (event: { data: number }) => {
+            const playing = event.data === window.YT.PlayerState.PLAYING
+            setVideoPlaying(playing)
+            if (playing) {
+              if (currentNarrationRef.current) speakText(currentNarrationRef.current)
+              ytIntervalRef.current = setInterval(() => {
+                const t = ytPlayerRef.current?.getCurrentTime() ?? 0
+                // Interaction points (quiz overlays)
+                for (const ip of interactionPoints) {
+                  if (!firedTimestamps.current.has(ip.time) && t >= ip.time) {
+                    firedTimestamps.current.add(ip.time)
+                    ytPlayerRef.current?.pauseVideo()
+                    stopNarration()
+                    setVideoQuizQuestion({ timestamp: ip.time, question: ip.question, options: ip.options, correctAnswer: ip.correctAnswer })
+                    setVideoQuizTimeLeft(10)
+                    setVideoQuizSelected(null)
+                    setVideoQuizAnswered(false)
+                    setVideoQuizActive(true)
+                    break
+                  }
+                }
+                // Narration cues
+                if (narrationCues.length) {
+                  const sorted = [...narrationCues].sort((a, b) => b.timestamp - a.timestamp)
+                  const activeCue = sorted.find(c => t >= c.timestamp)
+                  if (activeCue && activeCue.timestamp !== lastNarrationTs.current) {
+                    lastNarrationTs.current = activeCue.timestamp
+                    currentNarrationRef.current = activeCue.text
+                    setCurrentNarration(activeCue.text)
+                    speakText(activeCue.text)
+                  }
+                }
+              }, 500)
+            } else {
+              if (ytIntervalRef.current) { clearInterval(ytIntervalRef.current); ytIntervalRef.current = null }
+              stopNarration()
+            }
+          },
+        },
+      })
+    }
+
+    if (window.YT?.Player) {
+      setupPlayer()
+    } else {
+      window.onYouTubeIframeAPIReady = setupPlayer
+      if (!document.getElementById('yt-api-script')) {
+        const script = document.createElement('script')
+        script.id = 'yt-api-script'
+        script.src = 'https://www.youtube.com/iframe_api'
+        document.head.appendChild(script)
+      }
+    }
+
+    return () => {
+      if (ytIntervalRef.current) { clearInterval(ytIntervalRef.current); ytIntervalRef.current = null }
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lesson?.id])
+
   const handleTimeUpdate = () => {
     if (!videoRef.current) return
     const currentTime = videoRef.current.currentTime
@@ -243,7 +356,11 @@ export default function LessonPage() {
     setVideoQuizTimeLeft(10)
     setVideoQuizSelected(null)
     setVideoQuizAnswered(false)
-    videoRef.current?.play()
+    if (isYTVideo) {
+      ytPlayerRef.current?.playVideo()
+    } else {
+      videoRef.current?.play()
+    }
   }
 
   const handleVideoQuizAnswer = (option: string) => {
@@ -280,11 +397,13 @@ export default function LessonPage() {
       const stars = correct >= exercises.length ? 3
         : correct >= Math.ceil(exercises.length * 0.6) ? 2
         : correct > 0 ? 1 : 0
+      const quizTotal = v2Lesson ? exercises.length - practiceCount : 0
+      const quizPassed = quizTotal === 0 || quizCorrect / quizTotal >= 0.8
       if (student) {
         saveProgress(student.id, lessonId, stars)
           .then(() => refreshStudentSession(student.id))
       }
-      setPhase('results')
+      setPhase(v2Lesson && !quizPassed ? 'quiz-failed' : 'results')
     }
   }
 
@@ -340,19 +459,24 @@ export default function LessonPage() {
           )}
 
           {/* Video explainer */}
-          {lesson.videoUrl && (
+          {effectiveVideoUrl && (
             <div className="px-4 pt-4 pb-2">
-              <video
-                ref={videoRef}
-                src={lesson.videoUrl}
-                controls
-                playsInline
-                onTimeUpdate={handleTimeUpdate}
-                onPlay={handleVideoPlay}
-                onPause={handleVideoPause}
-                className="w-full rounded-2xl overflow-hidden"
-                style={{ background: '#0D1B2A', maxHeight: 240 }}
-              />
+              {isYTVideo ? (
+                <div id="yt-player-container" className="w-full rounded-2xl overflow-hidden"
+                  style={{ background: '#0D1B2A', minHeight: 240 }} />
+              ) : (
+                <video
+                  ref={videoRef}
+                  src={effectiveVideoUrl}
+                  controls
+                  playsInline
+                  onTimeUpdate={handleTimeUpdate}
+                  onPlay={handleVideoPlay}
+                  onPause={handleVideoPause}
+                  className="w-full rounded-2xl overflow-hidden"
+                  style={{ background: '#0D1B2A', maxHeight: 240 }}
+                />
+              )}
             </div>
           )}
 
@@ -505,7 +629,7 @@ export default function LessonPage() {
       </div>
 
       {/* Star mascot */}
-      {lesson.videoUrl && lesson.videoNarration?.length && (
+      {effectiveVideoUrl && (lesson.videoNarration?.length || v2VideoBlock?.narration?.length) && (
         <div className="fixed bottom-28 right-3 z-40 flex items-end gap-2 pointer-events-none">
           {currentNarration && (
             <div style={{ position: 'relative' }}>
@@ -846,6 +970,68 @@ export default function LessonPage() {
     </main>
   )
 
+  // ── QUIZ FAILED PHASE ────────────────────────────────────────────
+  if (phase === 'quiz-failed') {
+    const quizTotal = exercises.length - practiceCount
+    const quizPct = quizTotal > 0 ? Math.round((quizCorrect / quizTotal) * 100) : 0
+    return (
+      <main className="min-h-screen flex flex-col" style={{ background: '#F4F6FB' }}>
+        <header className="px-5 py-4" style={{ background: '#7C3AED' }}>
+          <div className="flex items-center gap-2">
+            <SubjectIcon subject={subject!} size="sm" />
+            <span className="text-white font-black text-sm">{lesson!.title}</span>
+          </div>
+        </header>
+        <div className="flex-1 flex flex-col items-center justify-center px-6 text-center gap-6">
+          <div className="text-8xl animate-float">😤</div>
+          <div>
+            <h1 className="text-3xl font-black mb-2" style={{ color: '#1A1A2E' }}>
+              Мастерскиот тест не е поминат
+            </h1>
+            <p className="font-semibold" style={{ color: '#6B6B8A' }}>
+              Постигнавте {quizPct}% — потребно е 80%
+            </p>
+          </div>
+          <div className="w-full max-w-xs">
+            <div className="h-3 rounded-full overflow-hidden" style={{ background: '#E8EAF0' }}>
+              <div className="h-full rounded-full transition-all duration-700"
+                style={{ width: `${quizPct}%`, background: '#EF5350' }} />
+            </div>
+            <div className="flex justify-between mt-1 px-1">
+              <span className="text-xs font-semibold" style={{ color: '#9B9BAA' }}>{quizPct}%</span>
+              <span className="text-xs font-semibold" style={{ color: '#7C3AED' }}>Цел: 80%</span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-3 w-full max-w-xs">
+            <button
+              onClick={() => {
+                setCurrentEx(practiceCount)
+                setSelected(null); setAnswered(false)
+                setHintShown(false); setRevealed(false)
+                setWrongAttempts([]); setDragDropDone(false)
+                setQuizCorrect(0); setPhase('exercises')
+              }}
+              className="w-full py-4 rounded-2xl font-black text-base text-white transition-all active:scale-[0.98] shadow-md"
+              style={{ background: 'linear-gradient(135deg, #7C3AED, #9D6BE8)' }}>
+              🎯 Повтори мастерски тест
+            </button>
+            <button
+              onClick={() => {
+                setCurrentEx(0); setSelected(null); setAnswered(false)
+                setHintShown(false); setRevealed(false)
+                setWrongAttempts([]); setCorrect(0); setQuizCorrect(0)
+                setPhase('exercises')
+              }}
+              className="w-full py-4 rounded-2xl font-black text-base transition-all active:scale-[0.98]"
+              style={{ background: 'white', color: '#6B6B8A', border: '2px solid #E8EAF0' }}>
+              Повтори ги сите вежби
+            </button>
+          </div>
+        </div>
+      </main>
+    )
+  }
+
   // ── RESULTS PHASE ────────────────────────────────────────────────
   return (
     <main className="min-h-screen flex flex-col" style={{ background: '#F4F6FB' }}>
@@ -920,7 +1106,7 @@ export default function LessonPage() {
               setPhase('exercises')
               setCurrentEx(0); setSelected(null); setAnswered(false)
               setHintShown(false); setRevealed(false)
-              setWrongAttempts([]); setCorrect(0)
+              setWrongAttempts([]); setCorrect(0); setQuizCorrect(0)
             }}
             className="w-full py-4 rounded-2xl font-black text-base transition-all active:scale-[0.98]"
             style={{ background: 'white', color: subject.color, border: `2px solid ${subject.color}` }}>
