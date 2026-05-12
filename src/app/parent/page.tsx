@@ -214,8 +214,8 @@ export default function ParentPage() {
         )}
 
         {/* Invoices section */}
-        {sub && (() => {
-          const invoices = generateInvoices(sub)
+        {(() => {
+          const invoices = sub ? generateInvoices(sub) : []
           return (
             <div>
               <div className="flex items-center justify-between mb-3">
