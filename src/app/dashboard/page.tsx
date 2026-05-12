@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 import { getSubjectsForGrade, gradeOrdinal } from '@/lib/subjects'
 import { getActiveStudent, getSubscription, getProgress, clearActiveStudent, trialDaysLeft, isTrialExpired, StudentProfile, Subscription } from '@/lib/auth'
 import { getGradeContent } from '@/lib/content'
-import { Subject } from '@/types'
+import { Subject, SubjectCategory } from '@/types'
 import SubjectIcon from '@/components/SubjectIcon'
 import StarMascot from '@/components/StarMascot'
 
@@ -213,35 +213,53 @@ export default function DashboardPage() {
         </div>
 
 
-        <div className="grid gap-4">
-          {subjects.map((subject) => (
-            <button key={subject.id} type="button"
-              onClick={() => router.push(`/subject/${subject.id}`)}
-              className="w-full rounded-3xl p-6 text-left transition-all duration-200 active:scale-[0.98]"
-              style={{ background: subject.bgColor, border: `2px solid ${subject.color}25` }}
-              onMouseEnter={(e) => { e.currentTarget.style.boxShadow = `0 8px 30px ${subject.color}30`; e.currentTarget.style.transform = 'scale(1.02)' }}
-              onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'scale(1)' }}>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <SubjectIcon subject={subject} size="lg" />
-                  <div>
-                    <div className="text-xl font-black" style={{ color: subject.color }}>{subject.nameMk}</div>
-                    <div className="text-sm font-semibold mt-0.5" style={{ color: '#9B9BAA' }}>{subject.world}</div>
-                    <div className="flex items-center gap-1 mt-2">
-                      <span className="text-xs font-bold" style={{ color: '#FFD93D' }}>
-                        ⭐ {starsBySubject[subject.id] || 0}
-                      </span>
-                      <span className="text-xs" style={{ color: '#9B9BAA' }}>
-                        / {maxStarsBySubject[subject.id] || subject.unitsCount * 3} ѕвезди
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <span className="text-2xl font-black" style={{ color: subject.color }}>→</span>
+        {([
+          { key: 'core' as SubjectCategory,      label: 'Основни',    emoji: '📚' },
+          { key: 'science' as SubjectCategory,   label: 'Наука',      emoji: '🔬' },
+          { key: 'social' as SubjectCategory,    label: 'Општество',  emoji: '🌍' },
+          { key: 'languages' as SubjectCategory, label: 'Јазици',     emoji: '💬' },
+        ] as const).map(({ key, label, emoji }) => {
+          const group = subjects.filter(s => s.category === key)
+          if (group.length === 0) return null
+          return (
+            <div key={key} className="mb-6">
+              <div className="flex items-center gap-2 mb-3 px-1">
+                <span className="text-base">{emoji}</span>
+                <span className="text-xs font-black tracking-widest uppercase" style={{ color: '#9B9BAA' }}>{label}</span>
+                <div className="flex-1 h-px" style={{ background: '#E8E8F0' }} />
               </div>
-            </button>
-          ))}
-        </div>
+              <div className="grid gap-3">
+                {group.map((subject) => (
+                  <button key={subject.id} type="button"
+                    onClick={() => router.push(`/subject/${subject.id}`)}
+                    className="w-full rounded-3xl p-5 text-left transition-all duration-200 active:scale-[0.98]"
+                    style={{ background: subject.bgColor, border: `2px solid ${subject.color}25` }}
+                    onMouseEnter={(e) => { e.currentTarget.style.boxShadow = `0 8px 30px ${subject.color}30`; e.currentTarget.style.transform = 'scale(1.02)' }}
+                    onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'scale(1)' }}>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <SubjectIcon subject={subject} size="lg" />
+                        <div>
+                          <div className="text-lg font-black" style={{ color: subject.color }}>{subject.nameMk}</div>
+                          <div className="text-xs font-semibold mt-0.5" style={{ color: '#9B9BAA' }}>{subject.world}</div>
+                          <div className="flex items-center gap-1 mt-1.5">
+                            <span className="text-xs font-bold" style={{ color: '#FFD93D' }}>
+                              ⭐ {starsBySubject[subject.id] || 0}
+                            </span>
+                            <span className="text-xs" style={{ color: '#9B9BAA' }}>
+                              / {maxStarsBySubject[subject.id] || subject.unitsCount * 3} ѕвезди
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <span className="text-xl font-black" style={{ color: subject.color }}>→</span>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )
+        })}
 
         <div className="mt-8 rounded-3xl p-5"
           style={{ background: 'linear-gradient(135deg, #5C35D4, #7B5CE5)' }}>
