@@ -118,7 +118,7 @@ export default function ParentProgressPage() {
       <header className="px-6 py-4 flex items-center gap-4"
         style={{ background: 'linear-gradient(135deg, #1A1A2E, #2D1B69)' }}>
         <button onClick={() => router.push('/parent')}
-          className="text-white/70 hover:text-white text-xl font-black transition-colors">
+          className="text-white/70 hover:text-white text-xl font-black transition-colors outline-none">
           ←
         </button>
         <div className="flex items-center gap-3 flex-1">
