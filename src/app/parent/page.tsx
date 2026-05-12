@@ -106,7 +106,6 @@ export default function ParentPage() {
   const [cancelStep, setCancelStep] = useState<'idle' | 'confirm'>('idle')
   const [manageLoading, setManageLoading] = useState(false)
   const [manageError, setManageError] = useState('')
-  const [showInvoices, setShowInvoices] = useState(false)
   const [showAdd, setShowAdd] = useState(false)
   const [newName, setNewName] = useState('')
   const [newGrade, setNewGrade] = useState<number | null>(null)
@@ -255,14 +254,48 @@ export default function ParentPage() {
                   <button onClick={() => { setShowManage(v => !v); setCancelStep('idle'); setManageError('') }}
                     className="text-xs font-black transition-colors"
                     style={{ color: trialColor }}>
-                    Управувај {showManage ? '▲' : '▼'}
+                    Управување со претплата {showManage ? '▲' : '▼'}
                   </button>
                 )}
               </div>
             </div>
 
             {showManage && effectiveSub.status === 'active' && (
-              <div className="p-4 space-y-2 bg-white">
+              <div className="p-4 space-y-3 bg-white">
+
+                {/* Invoices */}
+                {(() => {
+                  const invoices = sub ? generateInvoices(sub) : []
+                  return (
+                    <div>
+                      <p className="text-xs font-black tracking-widest mb-2" style={{ color: '#9B9BAA' }}>🧾 ФАКТУРИ</p>
+                      {invoices.length === 0 ? (
+                        <p className="text-sm font-semibold text-center py-3 rounded-2xl" style={{ background: '#F7F5FF', color: '#9B9BAA' }}>
+                          Уште нема фактури.
+                        </p>
+                      ) : (
+                        <div className="space-y-2">
+                          {invoices.map(inv => (
+                            <div key={inv.id} className="flex items-center justify-between px-4 py-3 rounded-2xl"
+                              style={{ background: '#F7F5FF' }}>
+                              <div className="min-w-0">
+                                <p className="font-black text-sm leading-tight" style={{ color: '#1A1A2E' }}>{inv.periodLabel}</p>
+                                <p className="text-xs font-semibold" style={{ color: '#9B9BAA' }}>{inv.description}</p>
+                              </div>
+                              <div className="text-right flex-shrink-0 ml-3">
+                                <p className="font-black text-sm" style={{ color: '#5C35D4' }}>€{inv.amountEur}</p>
+                                <span className="text-xs font-black px-2 py-0.5 rounded-full" style={{ background: '#E8F8EA', color: '#2E7D32' }}>✓ Платено</span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )
+                })()}
+
+                <div className="h-px" style={{ background: '#E8E8F0' }} />
+
                 {cancelStep !== 'confirm' && (
                   <button onClick={handlePause} disabled={manageLoading}
                     className="w-full flex items-center gap-3 p-3 rounded-2xl border-2 text-left transition-all active:scale-[0.99] disabled:opacity-60"
@@ -318,75 +351,6 @@ export default function ParentPage() {
           </div>
         )}
 
-        {/* Invoices section — visible to subscribers and admins */}
-        {(!!sub || isAdmin) && (() => {
-          const invoices = sub ? generateInvoices(sub) : []
-          return (
-            <div>
-              <div className="flex items-center justify-between mb-3">
-                <h2 className="text-lg font-black flex items-center gap-2" style={{ color: '#1A1A2E' }}>
-                  🧾 Фактури
-                  {invoices.length > 0 && (
-                    <span className="text-sm font-bold px-2 py-0.5 rounded-full"
-                      style={{ background: '#EDE9FF', color: '#5C35D4' }}>
-                      {invoices.length}
-                    </span>
-                  )}
-                </h2>
-                <button onClick={() => setShowInvoices(v => !v)}
-                  className="text-sm font-bold transition-colors"
-                  style={{ color: '#5C35D4' }}>
-                  {showInvoices ? 'Затвори ▲' : 'Прикажи ▼'}
-                </button>
-              </div>
-
-              {showInvoices && (
-                invoices.length === 0 ? (
-                  <div className="rounded-3xl p-6 text-center bg-white"
-                    style={{ boxShadow: '0 2px 12px rgba(92,53,212,0.06)' }}>
-                    <p className="text-3xl mb-2">🧾</p>
-                    <p className="font-bold" style={{ color: '#6B6B8A' }}>Уште нема фактури.</p>
-                    <p className="text-sm mt-1" style={{ color: '#9B9BAA' }}>
-                      Фактурите ќе се прикажат откако ќе активираш претплата.
-                    </p>
-                  </div>
-                ) : (
-                  <div className="space-y-3">
-                    {invoices.map(inv => (
-                      <div key={inv.id} className="bg-white rounded-3xl p-5"
-                        style={{ boxShadow: '0 2px 12px rgba(92,53,212,0.08)' }}>
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="min-w-0">
-                            <p className="text-xs font-black tracking-widest mb-1" style={{ color: '#9B9BAA' }}>
-                              ФАКТУРА #{inv.id}
-                            </p>
-                            <p className="font-black text-base leading-tight" style={{ color: '#1A1A2E' }}>
-                              {inv.periodLabel}
-                            </p>
-                            <p className="text-sm font-semibold mt-0.5" style={{ color: '#6B6B8A' }}>
-                              {inv.description}
-                            </p>
-                            <p className="text-xs font-semibold mt-1" style={{ color: '#B0B0C8' }}>
-                              {inv.issuedAt.toLocaleDateString('mk-MK')}
-                            </p>
-                          </div>
-                          <div className="text-right flex-shrink-0">
-                            <p className="text-xl font-black" style={{ color: '#5C35D4' }}>€{inv.amountEur}</p>
-                            <p className="text-sm font-semibold" style={{ color: '#9B9BAA' }}>{inv.amountMkd} ден</p>
-                            <span className="inline-block mt-2 px-3 py-1 rounded-full text-xs font-black"
-                              style={{ background: '#E8F8EA', color: '#2E7D32' }}>
-                              ✓ Платено
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )
-              )}
-            </div>
-          )
-        })()}
 
         {/* Kids section */}
         <div>
