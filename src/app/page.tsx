@@ -277,7 +277,7 @@ function LandingPage({ onRegister, onLogin }: { onRegister: () => void; onLogin:
 
       {/* ── KIDS ROW ── */}
       <section className="px-5 py-12 bg-white">
-        <h2 className="text-2xl font-black text-center mb-2" style={{ color: '#1A1A2E' }}>За деца од 5-то до 9-то одделение</h2>
+        <h2 className="text-2xl font-black text-center mb-2" style={{ color: '#1A1A2E' }}>За деца од 1-во до 9-то одделение</h2>
         <p className="text-center text-sm font-semibold mb-8" style={{ color: '#9B9BAA' }}>Секое одделение, свои лекции и вежби</p>
 
         {/* Kid cards */}
@@ -305,7 +305,7 @@ function LandingPage({ onRegister, onLogin }: { onRegister: () => void; onLogin:
         {/* Why bullets */}
         <div className="max-w-lg mx-auto space-y-5">
           {[
-            { icon: '📋', title: 'МОН учебна програма', desc: 'Секоја лекција е усогласена со македонскиот учебник — точно она што се учи во школо, 5-то до 9-то одд.' },
+            { icon: '📋', title: 'МОН учебна програма', desc: 'Секоја лекција е усогласена со македонскиот учебник — точно она што се учи во школо, 1-во до 9-то одд.' },
             { icon: '⭐', title: 'Учење преку игри', desc: 'Ѕвезди, серии, прогрес — детето ќе бара само да учи. Без принуда, само мотивација.' },
             { icon: '👪', title: 'До 3 деца, еден профил', desc: 'Секое дете свој PIN и напредок. Родителот ги следи сите од едно место.' },
             { icon: '💰', title: 'Поевтино од еден час кај учител', desc: '1 час кај учител ≈ €15. Супер Ѕвезда = €10/месец, 24/7, сите предмети, на телефон.' },
