@@ -58,6 +58,7 @@ const FLOATERS = [
 ]
 
 function LandingPage({ onRegister, onLogin }: { onRegister: () => void; onLogin: () => void }) {
+  const router = useRouter()
   const pricingRef = useRef<HTMLElement>(null)
   const scrollToPricing = () => pricingRef.current?.scrollIntoView({ behavior: 'smooth' })
   return (
