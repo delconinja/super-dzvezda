@@ -62,7 +62,7 @@ export default function SubjectPage() {
   return (
     <main className="min-h-screen" style={{ background: '#F7F5FF' }}>
       <header className="px-6 py-4 flex items-center gap-3" style={{ background: subject.color }}>
-        <button onClick={() => router.push('/dashboard')}
+        <button onClick={() => { window.location.href = '/dashboard' }}
           className="text-white/80 hover:text-white text-2xl font-bold transition-colors">←</button>
         <SubjectIcon subject={subject} size="md" />
         <div className="flex-1">

@@ -1116,7 +1116,7 @@ export default function LessonPage() {
             Повтори уште еднаш
           </button>
           <button
-            onClick={() => { router.refresh(); router.push(`/subject/${subject.id}`) }}
+            onClick={() => { window.location.href = `/subject/${subject.id}` }}
             disabled={progressSaving}
             className="w-full py-4 rounded-2xl font-black text-base text-white transition-all active:scale-[0.98] shadow-md"
             style={{ background: `linear-gradient(135deg, ${subject.color}, ${subject.color}cc)`, opacity: progressSaving ? 0.6 : 1 }}>
