@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { getFamilySession, loginWithPin, register, parentLogin, setActiveStudent, isDevAdminUser, getProgress, StudentProfile } from '@/lib/auth'
 import { saveAffiliateRef } from '@/lib/affiliate'
@@ -58,6 +58,8 @@ const FLOATERS = [
 ]
 
 function LandingPage({ onRegister, onLogin }: { onRegister: () => void; onLogin: () => void }) {
+  const pricingRef = useRef<HTMLElement>(null)
+  const scrollToPricing = () => pricingRef.current?.scrollIntoView({ behavior: 'smooth' })
   return (
     <div>
 
@@ -121,18 +123,20 @@ function LandingPage({ onRegister, onLogin }: { onRegister: () => void; onLogin:
           {/* Subjects */}
           <div className="flex justify-center gap-3 mb-7 text-xl flex-wrap max-w-xs">
             {SUBJECTS.map((subject) => (
-              <div key={subject.id} className="flex flex-col items-center gap-1">
+              <button key={subject.id} onClick={scrollToPricing}
+                className="flex flex-col items-center gap-1 outline-none select-none transition-all duration-150 hover:scale-110 active:scale-95 cursor-pointer">
                 <SubjectIcon subject={subject} size="sm" />
                 <span className="text-xs font-bold text-center leading-tight" style={{ color: 'rgba(255,255,255,0.4)' }}>{subject.nameMk}</span>
-              </div>
+              </button>
             ))}
           </div>
 
           {/* Trial pill */}
-          <div className="inline-block rounded-2xl px-4 py-2 mb-5"
+          <button onClick={onRegister}
+            className="inline-block rounded-2xl px-4 py-2 mb-5 transition-all active:scale-95 hover:opacity-80 outline-none cursor-pointer"
             style={{ background: 'rgba(255,217,61,0.12)', border: '1.5px solid rgba(255,217,61,0.45)' }}>
-            <p className="font-black text-sm" style={{ color: '#FFD93D' }}>🎉 14 дена БЕСПЛАТНО · Без кредитна картичка</p>
-          </div>
+            <p className="font-black text-sm select-none" style={{ color: '#FFD93D' }}>🎉 14 дена БЕСПЛАТНО · Без кредитна картичка</p>
+          </button>
 
           {/* CTA */}
           <button onClick={onRegister}
@@ -322,7 +326,7 @@ function LandingPage({ onRegister, onLogin }: { onRegister: () => void; onLogin:
       </section>
 
       {/* ── PRICING ── */}
-      <section className="px-5 py-14 relative overflow-hidden"
+      <section ref={pricingRef} className="px-5 py-14 relative overflow-hidden"
         style={{ background: 'linear-gradient(160deg, #0D0B1E 0%, #2D1B69 60%, #5C35D4 100%)' }}>
         <StarField count={25} />
         <div className="relative z-10 max-w-sm mx-auto text-center">
