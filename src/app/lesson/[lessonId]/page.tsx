@@ -747,7 +747,7 @@ export default function LessonPage() {
       {/* Star pop animation */}
       {showStar && (
         <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
-          <div className="text-8xl leading-none overflow-hidden animate-star-pop">⭐</div>
+          <div className="text-8xl animate-star-pop">⭐</div>
         </div>
       )}
 
