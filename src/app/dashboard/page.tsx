@@ -20,6 +20,8 @@ export default function DashboardPage() {
   const [starsBySubject, setStarsBySubject] = useState<Record<string, number>>({})
   const [maxStarsBySubject, setMaxStarsBySubject] = useState<Record<string, number>>({})
   const [subjects, setSubjects] = useState<Subject[]>([])
+  const [totalXP, setTotalXP] = useState(0)
+  const [maxXP, setMaxXP] = useState(0)
 
   useEffect(() => {
     const init = async () => {
@@ -43,6 +45,13 @@ export default function DashboardPage() {
       })
       setMaxStarsBySubject(maxMap)
 
+      if (grade === 5) {
+        const totalLessons = Object.values(gradeContent).reduce(
+          (sum, units) => sum + units.reduce((s, u) => s + u.lessons.length, 0), 0
+        )
+        setMaxXP(totalLessons * 50)
+      }
+
       Promise.all([getSubscription(), getProgress(active.id)]).then(([s, progress]) => {
         if (!s) { setLoading(false); return }
         if (isTrialExpired(s)) { router.push('/trial-expired'); return }
@@ -55,6 +64,12 @@ export default function DashboardPage() {
           if (subId) map[subId] = (map[subId] || 0) + p.stars_earned
         })
         setStarsBySubject(map)
+
+        if (grade === 5) {
+          const completedLessons = progress.filter(p => p.stars_earned > 0).length
+          setTotalXP(completedLessons * 50)
+        }
+
         setLoading(false)
       })
     }
@@ -136,6 +151,41 @@ export default function DashboardPage() {
               ⭐ {student.stars_total} ѕвезди вкупно
             </div>
           </div>
+
+          {/* XP bar — Grade 5 only */}
+          {grade === 5 && maxXP > 0 && (() => {
+            const XP_PER_LEVEL = 200
+            const level = Math.floor(totalXP / XP_PER_LEVEL) + 1
+            const xpInLevel = totalXP % XP_PER_LEVEL
+            const pct = Math.round((xpInLevel / XP_PER_LEVEL) * 100)
+            return (
+              <div className="rounded-2xl p-4 mb-1"
+                style={{ background: 'linear-gradient(135deg, #F5F0FF, #EDE9FE)', border: '2px solid #DDD6FE' }}>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg">⚡</span>
+                    <span className="font-black text-sm" style={{ color: '#5B21B6' }}>Ниво {level}</span>
+                  </div>
+                  <span className="text-xs font-bold" style={{ color: '#7C3AED' }}>
+                    {totalXP} / {maxXP} XP вкупно
+                  </span>
+                </div>
+                <div className="h-3 rounded-full overflow-hidden" style={{ background: '#DDD6FE' }}>
+                  <div className="h-full rounded-full transition-all duration-700"
+                    style={{
+                      width: `${pct}%`,
+                      background: 'linear-gradient(90deg, #7C3AED, #A855F7)',
+                    }} />
+                </div>
+                <div className="flex justify-between mt-1">
+                  <span className="text-xs font-semibold" style={{ color: '#8B5CF6' }}>
+                    {xpInLevel} / {XP_PER_LEVEL} XP до Ниво {level + 1}
+                  </span>
+                  <span className="text-xs font-semibold" style={{ color: '#A78BFA' }}>{pct}%</span>
+                </div>
+              </div>
+            )
+          })()}
         </div>
 
 
