@@ -9,6 +9,7 @@ import {
   getStudents, getSubscription, addStudent, parentLogout,
   setActiveStudent, trialDaysLeft, isTrialExpired,
   familyMonthlyMkd, familyAnnualMkd, isDevAdminUser,
+  pauseSubscription, cancelSubscription,
   StudentProfile, Subscription,
 } from '@/lib/auth'
 import TownSchoolPicker from '@/components/TownSchoolPicker'
@@ -101,6 +102,10 @@ export default function ParentPage() {
   const [parentId, setParentId] = useState<string | null>(null)
 
   const [isAdmin, setIsAdmin] = useState(false)
+  const [showManage, setShowManage] = useState(false)
+  const [cancelStep, setCancelStep] = useState<'idle' | 'confirm'>('idle')
+  const [manageLoading, setManageLoading] = useState(false)
+  const [manageError, setManageError] = useState('')
   const [showInvoices, setShowInvoices] = useState(false)
   const [showAdd, setShowAdd] = useState(false)
   const [newName, setNewName] = useState('')
@@ -150,6 +155,24 @@ export default function ParentPage() {
     router.push('/')
   }
 
+  const handlePause = async () => {
+    setManageLoading(true); setManageError('')
+    const result = await pauseSubscription()
+    setManageLoading(false)
+    if (!result.ok) return setManageError(result.error!)
+    setSub(prev => prev ? { ...prev, status: 'paused' } : prev)
+    setShowManage(false)
+  }
+
+  const handleCancel = async () => {
+    setManageLoading(true); setManageError('')
+    const result = await cancelSubscription()
+    setManageLoading(false)
+    if (!result.ok) return setManageError(result.error!)
+    setSub(prev => prev ? { ...prev, status: 'cancelled' } : prev)
+    setCancelStep('idle'); setShowManage(false)
+  }
+
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center"
       style={{ background: 'linear-gradient(135deg, #1A1A2E, #2D1B69, #5C35D4)' }}>
@@ -190,27 +213,95 @@ export default function ParentPage() {
 
         {/* Subscription status */}
         {sub && (
-          <div className="rounded-3xl p-5 flex items-center justify-between"
-            style={{ background: `${trialColor}18`, border: `2px solid ${trialColor}55` }}>
-            <div>
-              <p className="text-xs font-black tracking-widest mb-1" style={{ color: trialColor }}>
-                {sub.status === 'active' ? 'АКТИВНА ПРЕТПЛАТА' : expired ? 'ПРОБЕН ПЕРИОД — ИСТЕЧЕН' : 'ПРОБЕН ПЕРИОД'}
-              </p>
-              <p className="text-2xl font-black" style={{ color: '#1A1A2E' }}>
-                {sub.status === 'active'
-                  ? 'Активна'
-                  : expired
-                    ? 'Истечен'
+          <div className="rounded-3xl overflow-hidden"
+            style={{ border: `2px solid ${trialColor}55` }}>
+            <div className="p-5 flex items-center justify-between"
+              style={{ background: `${trialColor}18` }}>
+              <div>
+                <p className="text-xs font-black tracking-widest mb-1" style={{ color: trialColor }}>
+                  {sub.status === 'active' ? 'АКТИВНА ПРЕТПЛАТА'
+                    : sub.status === 'paused' ? 'ПАУЗИРАНА ПРЕТПЛАТА'
+                    : expired ? 'ПРОБЕН ПЕРИОД — ИСТЕЧЕН'
+                    : 'ПРОБЕН ПЕРИОД'}
+                </p>
+                <p className="text-2xl font-black" style={{ color: '#1A1A2E' }}>
+                  {sub.status === 'active' ? 'Активна'
+                    : sub.status === 'paused' ? 'Паузирана'
+                    : expired ? 'Истечен'
                     : `${daysLeft} ${daysLeft === 1 ? 'ден' : 'дена'} останати`}
-              </p>
+                </p>
+              </div>
+              <div className="flex flex-col items-end gap-2">
+                {(sub.status === 'trial' || expired) && (
+                  <button onClick={() => router.push('/trial-expired')}
+                    className="px-5 py-3 rounded-2xl text-sm font-black text-white transition-all active:scale-95"
+                    style={{ background: 'linear-gradient(135deg, #5C35D4, #7B5CE5)' }}>
+                    Надгради ↗
+                  </button>
+                )}
+                {sub.status === 'active' && (
+                  <button onClick={() => { setShowManage(v => !v); setCancelStep('idle'); setManageError('') }}
+                    className="text-xs font-black transition-colors"
+                    style={{ color: trialColor }}>
+                    Управувај {showManage ? '▲' : '▼'}
+                  </button>
+                )}
+              </div>
             </div>
-            {(sub.status === 'trial' || expired) && (
-              <button
-                onClick={() => router.push('/trial-expired')}
-                className="px-5 py-3 rounded-2xl text-sm font-black text-white transition-all active:scale-95"
-                style={{ background: 'linear-gradient(135deg, #5C35D4, #7B5CE5)' }}>
-                Надгради ↗
-              </button>
+
+            {showManage && sub.status === 'active' && (
+              <div className="p-4 space-y-2 bg-white">
+                {cancelStep !== 'confirm' && (
+                  <button onClick={handlePause} disabled={manageLoading}
+                    className="w-full flex items-center gap-3 p-3 rounded-2xl border-2 text-left transition-all active:scale-[0.99] disabled:opacity-60"
+                    style={{ borderColor: '#E5E7EB' }}>
+                    <span className="text-xl">🔄</span>
+                    <div>
+                      <p className="font-black text-sm" style={{ color: '#1A1A2E' }}>Паузирај претплата</p>
+                      <p className="text-xs font-semibold" style={{ color: '#9B9BAA' }}>Претплатата ќе биде паузирана до наредниот период</p>
+                    </div>
+                  </button>
+                )}
+
+                {cancelStep === 'idle' ? (
+                  <button onClick={() => setCancelStep('confirm')}
+                    className="w-full flex items-center gap-3 p-3 rounded-2xl border-2 text-left transition-all active:scale-[0.99]"
+                    style={{ borderColor: '#FFD0D0' }}>
+                    <span className="text-xl">❌</span>
+                    <div>
+                      <p className="font-black text-sm" style={{ color: '#E53935' }}>Откажи претплата</p>
+                      <p className="text-xs font-semibold" style={{ color: '#9B9BAA' }}>Пристапот продолжува до крај на тековниот период</p>
+                    </div>
+                  </button>
+                ) : (
+                  <div className="rounded-2xl p-4" style={{ background: '#FFF0F0', border: '2px solid #FFCDD2' }}>
+                    <p className="font-black text-sm mb-1" style={{ color: '#C62828' }}>Дали си сигурен?</p>
+                    <p className="text-xs font-semibold mb-3" style={{ color: '#6B6B8A' }}>
+                      Претплатата ќе заврши на{' '}
+                      {sub.subscribed_until
+                        ? new Date(sub.subscribed_until).toLocaleDateString('mk-MK')
+                        : 'крај на периодот'}.
+                      До тогаш имаш целосен пристап.
+                    </p>
+                    <div className="flex gap-2">
+                      <button onClick={() => setCancelStep('idle')}
+                        className="flex-1 py-2.5 rounded-xl font-black text-sm border-2 transition-all active:scale-95"
+                        style={{ borderColor: '#E5E7EB', color: '#6B6B8A', background: 'white' }}>
+                        Назад
+                      </button>
+                      <button onClick={handleCancel} disabled={manageLoading}
+                        className="flex-1 py-2.5 rounded-xl font-black text-sm text-white transition-all active:scale-95 disabled:opacity-60"
+                        style={{ background: '#E53935' }}>
+                        {manageLoading ? 'Се откажува...' : 'Да, откажи'}
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {manageError && (
+                  <p className="text-xs font-bold text-center pt-1" style={{ color: '#E53935' }}>{manageError}</p>
+                )}
+              </div>
             )}
           </div>
         )}

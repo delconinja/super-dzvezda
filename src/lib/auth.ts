@@ -26,7 +26,7 @@ export type SubscriptionPlan =
   | 'school'
 
 export interface Subscription {
-  status: 'trial' | 'active' | 'expired' | 'cancelled'
+  status: 'trial' | 'active' | 'expired' | 'cancelled' | 'paused'
   plan: SubscriptionPlan
   price_paid: number
   max_students: number
@@ -319,6 +319,28 @@ export async function saveProgress(
     }
   }
   return starsTotal
+}
+
+export async function pauseSubscription(): Promise<{ ok: boolean; error?: string }> {
+  try {
+    const { data: { user } } = await supabase.auth.getUser()
+    if (!user) return { ok: false, error: 'Не си најавен.' }
+    const { error } = await supabase
+      .from('subscriptions').update({ status: 'paused' }).eq('parent_id', user.id)
+    if (error) return { ok: false, error: error.message }
+    return { ok: true }
+  } catch (e: unknown) { return { ok: false, error: String(e) } }
+}
+
+export async function cancelSubscription(): Promise<{ ok: boolean; error?: string }> {
+  try {
+    const { data: { user } } = await supabase.auth.getUser()
+    if (!user) return { ok: false, error: 'Не си најавен.' }
+    const { error } = await supabase
+      .from('subscriptions').update({ status: 'cancelled' }).eq('parent_id', user.id)
+    if (error) return { ok: false, error: error.message }
+    return { ok: true }
+  } catch (e: unknown) { return { ok: false, error: String(e) } }
 }
 
 export async function getProgress(studentId: string) {
