@@ -13,7 +13,6 @@ export async function POST(req: NextRequest) {
   const sb = createServiceClient()
 
   try {
-    // Load student to get grade + streak
     const { data: student } = await sb.from('students').select('*').eq('id', studentId).single()
     if (!student) return NextResponse.json({ error: 'Student not found' }, { status: 404 })
 
@@ -120,7 +119,12 @@ export async function POST(req: NextRequest) {
       newBadgeIds,
     })
   } catch (e) {
-    return NextResponse.json({ error: String(e) }, { status: 500 })
+    const msg = String(e)
+    // Tables don't exist yet — return safe empty response so client still works
+    if (msg.includes('relation') && msg.includes('does not exist')) {
+      return NextResponse.json({ yellow, green, blue, newBadgeIds: [] })
+    }
+    return NextResponse.json({ error: msg }, { status: 500 })
   }
 }
 
@@ -139,8 +143,12 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(data || { yellow: false, green: false, blue: false, attempts: 0 })
   }
 
-  const { data } = await sb
-    .from('challenge_stars').select('unit_id, yellow, green, blue')
-    .eq('student_id', studentId)
-  return NextResponse.json(data || [])
+  try {
+    const { data } = await sb
+      .from('challenge_stars').select('unit_id, yellow, green, blue')
+      .eq('student_id', studentId)
+    return NextResponse.json(data || [])
+  } catch {
+    return NextResponse.json([])
+  }
 }

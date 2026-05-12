@@ -6,11 +6,14 @@ export async function GET(req: NextRequest) {
   if (!studentId) return NextResponse.json({ error: 'Missing studentId' }, { status: 400 })
 
   const sb = createServiceClient()
-  const { data } = await sb
-    .from('user_badges')
-    .select('badge_id, earned_at')
-    .eq('student_id', studentId)
-    .order('earned_at', { ascending: false })
-
-  return NextResponse.json(data || [])
+  try {
+    const { data } = await sb
+      .from('user_badges')
+      .select('badge_id, earned_at')
+      .eq('student_id', studentId)
+      .order('earned_at', { ascending: false })
+    return NextResponse.json(data || [])
+  } catch {
+    return NextResponse.json([])
+  }
 }
