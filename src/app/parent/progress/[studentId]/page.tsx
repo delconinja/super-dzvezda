@@ -125,10 +125,6 @@ export default function ParentProgressPage() {
           <span className="text-2xl">⭐</span>
           <span className="text-white font-black text-lg">Напредок</span>
         </div>
-        <span className="text-xs font-bold px-3 py-1 rounded-full"
-          style={{ background: '#FFFFFF22', color: 'white' }}>
-          САМО ЗА ЧИТАЊЕ
-        </span>
       </header>
 
       <div className="max-w-2xl mx-auto px-6 py-8 space-y-6">
