@@ -20,6 +20,9 @@ body {
 button {
   outline: none;
   -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
 }
 
 @keyframes star-pop {
