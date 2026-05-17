@@ -226,7 +226,7 @@ export default function HomePage() {
               Учи. Вежбај. Сјај!
             </h1>
             <p className="font-semibold text-base leading-relaxed" style={{ color: '#6B6B8A' }}>
-              Интерактивни лекции по математика, биологија и хемија за деца од 1-во до 9-то одделение.
+              Учи ги сите предмети — на македонски, на твој начин.
             </p>
           </div>
 
