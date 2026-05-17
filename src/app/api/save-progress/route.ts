@@ -15,9 +15,14 @@ export async function POST(req: NextRequest) {
   if (typeof starsEarned !== 'number' || starsEarned < 0 || starsEarned > 3)
     return NextResponse.json({ error: 'Invalid starsEarned' }, { status: 400 })
 
-  const sb = createServiceClient()
-
   try {
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL)
+      return NextResponse.json({ error: 'SUPABASE_URL not configured' }, { status: 500 })
+    if (!process.env.SUPABASE_SERVICE_ROLE_KEY)
+      return NextResponse.json({ error: 'SUPABASE_SERVICE_ROLE_KEY not configured' }, { status: 500 })
+
+    const sb = createServiceClient()
+
     const { data: existing } = await sb
       .from('progress').select('stars_earned')
       .eq('student_id', studentId).eq('lesson_id', lessonId).single()
