@@ -212,17 +212,23 @@ export default function HomePage() {
 
       {/* ── HERO ── */}
       <section className="px-5 pt-14 pb-16 text-center"
-        style={{ background: 'linear-gradient(160deg, #EDE9FF 0%, #D4F5EC 100%)' }}>
+        style={{
+          backgroundImage: 'url(/hero-bg.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top',
+        }}>
         <div className="max-w-sm mx-auto animate-fade-up">
           <div className="mb-4 inline-block">
             <StarMascot talking={false} size={100} />
           </div>
-          <h1 className="text-4xl font-black mb-3" style={{ color: '#1A1A2E', letterSpacing: '-1px' }}>
-            Учи. Вежбај. Сјај!
-          </h1>
-          <p className="font-semibold text-base mb-8 leading-relaxed" style={{ color: '#6B6B8A' }}>
-            Интерактивни лекции по математика, биологија и хемија за деца од 1-во до 9-то одделение.
-          </p>
+          <div className="rounded-3xl px-6 py-5 mb-6" style={{ background: 'rgba(255,255,255,0.72)', backdropFilter: 'blur(8px)' }}>
+            <h1 className="text-4xl font-black mb-3" style={{ color: '#1A1A2E', letterSpacing: '-1px' }}>
+              Учи. Вежбај. Сјај!
+            </h1>
+            <p className="font-semibold text-base leading-relaxed" style={{ color: '#6B6B8A' }}>
+              Интерактивни лекции по математика, биологија и хемија за деца од 1-во до 9-то одделение.
+            </p>
+          </div>
 
           {/* Grade badges */}
           <div className="flex justify-center gap-1.5 mb-8 flex-wrap">
