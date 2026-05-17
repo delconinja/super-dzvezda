@@ -271,17 +271,15 @@ export default function ParentPage() {
                     Надгради ↗
                   </button>
                 )}
-                {effectiveSub.status === 'active' && (
-                  <button onClick={() => { setShowManage(v => !v); setCancelStep('idle'); setManageError('') }}
-                    className="text-xs font-black transition-colors"
-                    style={{ color: trialColor }}>
-                    Управување со претплата {showManage ? '▲' : '▼'}
-                  </button>
-                )}
+                <button onClick={() => { setShowManage(v => !v); setCancelStep('idle'); setManageError('') }}
+                  className="text-xs font-black transition-colors"
+                  style={{ color: '#5C35D4' }}>
+                  Управување со претплата {showManage ? '▲' : '▼'}
+                </button>
               </div>
             </div>
 
-            {showManage && effectiveSub.status === 'active' && (
+            {showManage && (
               <div className="p-4 space-y-3 bg-white">
 
                 {/* Invoices */}
