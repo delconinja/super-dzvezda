@@ -120,6 +120,7 @@ export default function LoginPage() {
     const family = getFamilySession()
     if (family && family.students.length > 0) {
       setStudents(family.students)
+      setTab('kid')
     }
   }, [])
 

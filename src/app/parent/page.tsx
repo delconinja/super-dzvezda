@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 import {
-  getStudents, getSubscription, addStudent, parentLogout,
+  getStudents, getSubscription, addStudent, parentLogout, parentSwitchToKids,
   setActiveStudent, trialDaysLeft, isTrialExpired,
   familyMonthlyMkd, familyAnnualMkd, isDevAdminUser,
   pauseSubscription, cancelSubscription,
@@ -170,7 +170,12 @@ export default function ParentPage() {
     setNewName(''); setNewGrade(null); setNewPin(''); setNewTown(''); setNewSchool(''); setShowAdd(false)
   }
 
-  const handleLogout = async () => {
+  const handleSwitchToKids = async () => {
+    await parentSwitchToKids()
+    router.push('/login')
+  }
+
+  const handleFullLogout = async () => {
     await parentLogout()
     router.push('/')
   }
@@ -222,10 +227,16 @@ export default function ParentPage() {
           <span className="text-3xl">⭐</span>
           <span className="font-black text-xl" style={{ color: '#5C35D4' }}>Супер Ѕвезда</span>
         </div>
-        <button onClick={handleLogout}
-          className="text-sm font-bold transition-colors" style={{ color: '#9B9BAA' }}>
-          Излези
-        </button>
+        <div className="flex items-center gap-3">
+          <button onClick={handleSwitchToKids}
+            className="text-sm font-bold transition-colors" style={{ color: '#5C35D4' }}>
+            🧒 Деца
+          </button>
+          <button onClick={handleFullLogout}
+            className="text-sm font-bold transition-colors" style={{ color: '#9B9BAA' }}>
+            Излези
+          </button>
+        </div>
       </header>
 
       <div className="max-w-2xl mx-auto px-6 py-8 space-y-6">

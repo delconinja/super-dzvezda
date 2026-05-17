@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { getFamilySession, clearFamilySession } from '@/lib/auth'
+import { getFamilySession } from '@/lib/auth'
 import { supabase } from '@/lib/supabase'
 import { saveAffiliateRef } from '@/lib/affiliate'
 import StarMascot from '@/components/StarMascot'
@@ -170,11 +170,10 @@ export default function HomePage() {
       const family = getFamilySession()
       if (family && family.students.length > 0) {
         const { data: { user } } = await supabase.auth.getUser()
-        if (user) {
-          router.replace('/parent')
-          return
-        }
-        clearFamilySession()
+        // Parent authenticated → parent dashboard
+        // Family exists but parent not logged in → kid PIN selector
+        router.replace(user ? '/parent' : '/login')
+        return
       }
       setLoading(false)
     }

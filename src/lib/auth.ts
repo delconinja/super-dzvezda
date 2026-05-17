@@ -227,6 +227,11 @@ export async function parentLogout() {
   await supabase.auth.signOut()
 }
 
+// Switch to kid selector — signs out parent but keeps family session on device
+export async function parentSwitchToKids() {
+  await supabase.auth.signOut()
+}
+
 // ── GET STUDENTS FROM DB ──────────────────────────────────────────
 export async function getStudents(): Promise<StudentProfile[]> {
   try {
