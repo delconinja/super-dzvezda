@@ -204,17 +204,17 @@ export default function AdminPage() {
     <main className="min-h-screen" style={{ background: '#F7F5FF' }}>
       {/* Header */}
       <header className="px-6 py-4 flex items-center justify-between"
-        style={{ background: 'linear-gradient(135deg, #8B6FE8, #A889F0)' }}>
+        style={{ background: '#EDE9FF', borderBottom: '2px solid #D4C8F5' }}>
         <div className="flex items-center gap-3">
           <span className="text-3xl">⭐</span>
           <div>
-            <span className="text-white font-black">Супер Ѕвезда</span>
+            <span className="font-black" style={{ color: '#5C35D4' }}>Супер Ѕвезда</span>
             <span className="ml-2 text-xs px-2 py-0.5 rounded-full font-black"
               style={{ background: '#FF6B6B', color: 'white' }}>ADMIN</span>
           </div>
         </div>
         <button onClick={() => { supabase.auth.signOut(); router.push('/') }}
-          className="text-white/50 hover:text-white/80 text-sm font-bold">Излези</button>
+          className="text-sm font-bold" style={{ color: '#9B9BAA' }}>Излези</button>
       </header>
 
       {/* Top section menu */}

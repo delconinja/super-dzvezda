@@ -125,12 +125,13 @@ export default function ParentProgressPage() {
   return (
     <main className="min-h-screen" style={{ background: '#F7F5FF' }}>
       <header className="px-6 py-4 flex items-center gap-4"
-        style={{ background: 'linear-gradient(135deg, #8B6FE8, #A889F0)' }}>
+        style={{ background: '#EDE9FF', borderBottom: '2px solid #D4C8F5' }}>
         <button onClick={() => router.push('/parent')}
-          className="text-white/70 hover:text-white text-xl font-black transition-colors outline-none select-none cursor-pointer flex items-center justify-center w-8 h-8">{'←'}</button>
+          className="text-xl font-black transition-colors outline-none select-none cursor-pointer flex items-center justify-center w-8 h-8"
+          style={{ color: '#7B5CE5' }}>{'←'}</button>
         <div className="flex items-center gap-3 flex-1">
           <span className="text-2xl">⭐</span>
-          <span className="text-white font-black text-lg">Напредок</span>
+          <span className="font-black text-lg" style={{ color: '#5C35D4' }}>Напредок</span>
         </div>
       </header>
 

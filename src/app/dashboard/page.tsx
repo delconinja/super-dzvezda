@@ -116,10 +116,10 @@ export default function DashboardPage() {
   return (
     <main className="min-h-screen" style={{ background: '#F7F5FF' }}>
       <header className="px-6 py-4 flex items-center justify-between"
-        style={{ background: 'linear-gradient(135deg, #8B6FE8, #A889F0)' }}>
+        style={{ background: '#EDE9FF', borderBottom: '2px solid #D4C8F5' }}>
         <div className="flex items-center gap-3">
           <span className="text-3xl">⭐</span>
-          <span className="text-white font-black text-xl">Супер Ѕвезда</span>
+          <span className="font-black text-xl" style={{ color: '#5C35D4' }}>Супер Ѕвезда</span>
         </div>
         <div className="flex items-center gap-3">
           {sub && (
@@ -132,11 +132,11 @@ export default function DashboardPage() {
             </div>
           )}
           <button onClick={() => router.push('/parent')}
-            className="text-white/60 hover:text-white/90 text-sm font-bold transition-colors">
+            className="text-sm font-bold transition-colors" style={{ color: '#9B9BAA' }}>
             👪
           </button>
           <button onClick={handleLogout}
-            className="text-white/50 hover:text-white/90 text-sm font-bold transition-colors">
+            className="text-sm font-bold transition-colors" style={{ color: '#9B9BAA' }}>
             Излез
           </button>
         </div>
@@ -310,12 +310,12 @@ export default function DashboardPage() {
         })()}
 
         <div className="mt-8 rounded-3xl p-5"
-          style={{ background: 'linear-gradient(135deg, #5C35D4, #7B5CE5)' }}>
+          style={{ background: '#D4F5EC', border: '2px solid #A8E8D4' }}>
           <div className="flex items-start gap-3">
             <span className="text-2xl">💡</span>
             <div>
-              <div className="text-white font-black text-sm mb-1">СОВЕТ НА ДЕНОТ</div>
-              <div className="text-purple-100 text-sm leading-relaxed">
+              <div className="font-black text-sm mb-1" style={{ color: '#1A6B50' }}>СОВЕТ НА ДЕНОТ</div>
+              <div className="text-sm leading-relaxed" style={{ color: '#2D7A5E' }}>
                 Редовното вежбање по 15 минути е подобро од еднаш неделно по еден час. Учи секој ден!
               </div>
             </div>
