@@ -274,7 +274,9 @@ export default function HomePage() {
             <button key={s.name} type="button"
               onClick={() => {
                 setActiveSubject(s.key)
-                document.getElementById('trial-section')?.scrollIntoView({ behavior: 'smooth' })
+                setTimeout(() => {
+                  document.getElementById('trial-section')?.scrollIntoView({ behavior: 'smooth' })
+                }, 50)
               }}
               className="w-full rounded-3xl p-5 flex items-center gap-4 transition-all hover:scale-[1.01] active:scale-[0.99] text-left"
               style={{ background: activeSubject === s.key ? s.color : s.bg, border: `2px solid ${s.color}40`, boxShadow: activeSubject === s.key ? `0 4px 20px ${s.color}40` : 'none' }}>
