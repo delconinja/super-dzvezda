@@ -11,31 +11,41 @@ const GRADES = [1, 2, 3, 4, 5, 6, 7, 8, 9] as const
 const GRADE_COLORS = ['#E8D5FF', '#FFE0C8', '#FFD0D0', '#C8F0D8', '#D8CCFF', '#FFD0E8', '#C8F0EC', '#C8E8FF', '#D0EED8']
 
 // ── FREE TRIAL EXERCISES ────────────────────────────────────────────
-const TRIAL_EXERCISES = [
-  {
-    id: 'trial-1',
-    question: 'Топката е ПОД масата. Каде е топката?',
-    emoji: '🔮',
-    subject: 'Математика · 1-во одд.',
-    type: 'choice' as const,
-    options: ['Под масата', 'Над масата', 'До масата', 'Пред масата'],
-    correct: 0,
-  },
-  {
-    id: 'trial-2',
-    question: '5 + 3 = ?',
-    emoji: '🔮',
-    subject: 'Математика · 1-во одд.',
-    type: 'choice' as const,
-    options: ['6', '7', '8', '9'],
-    correct: 2,
-  },
-]
+type SubjectKey = 'math' | 'bio' | 'chem'
 
-function TrialSection({ onRegister }: { onRegister: () => void }) {
+const TRIAL_EXERCISES: Record<SubjectKey, { id: string; question: string; subjectLabel: string; options: string[]; correct: number }[]> = {
+  math: [
+    { id: 'math-1', question: '5 + 3 = ?', subjectLabel: 'Математика · 1-во одд.', options: ['6', '7', '8', '9'], correct: 2 },
+    { id: 'math-2', question: 'Топката е ПОД масата. Каде е топката?', subjectLabel: 'Математика · 1-во одд.', options: ['Под масата', 'Над масата', 'До масата', 'Пред масата'], correct: 0 },
+  ],
+  bio: [
+    { id: 'bio-1', question: 'Кои се основните делови на растението?', subjectLabel: 'Биологија · 1-во одд.', options: ['Корен, стебло, лист', 'Глава, тело, нозе', 'Јадро, мембрана, цитоплазма', 'Цвет, плод, семе'], correct: 0 },
+    { id: 'bio-2', question: 'Дрвото е жив организам. Точно или неточно?', subjectLabel: 'Биологија · 1-во одд.', options: ['Точно', 'Неточно'], correct: 0 },
+  ],
+  chem: [
+    { id: 'chem-1', question: 'Водата е составена од...?', subjectLabel: 'Хемија · 7-мо одд.', options: ['Водород и кислород', 'Јаглерод и азот', 'Натриум и хлор', 'Калциум и фосфор'], correct: 0 },
+    { id: 'chem-2', question: 'Каков е хемискиот симбол за злато?', subjectLabel: 'Хемија · 7-мо одд.', options: ['Go', 'Gl', 'Au', 'Ag'], correct: 2 },
+  ],
+}
+
+const SUBJECT_META: Record<SubjectKey, { name: string; emoji: string; color: string; bg: string }> = {
+  math: { name: 'Математика', emoji: '🔮', color: '#5C35D4', bg: '#F0EBFF' },
+  bio:  { name: 'Биологија',  emoji: '🌿', color: '#2D7A35', bg: '#E8FAF2' },
+  chem: { name: 'Хемија',     emoji: '⚗️', color: '#C0392B', bg: '#FFF0F0' },
+}
+
+function TrialSection({ onRegister, activeSubject }: { onRegister: () => void; activeSubject: SubjectKey }) {
+  const exercises = TRIAL_EXERCISES[activeSubject]
+  const meta = SUBJECT_META[activeSubject]
   const [answers, setAnswers] = useState<Record<string, number | null>>({})
   const [submitted, setSubmitted] = useState<Record<string, boolean>>({})
   const [allDone, setAllDone] = useState(false)
+
+  useEffect(() => {
+    setAnswers({})
+    setSubmitted({})
+    setAllDone(false)
+  }, [activeSubject])
 
   const handleAnswer = (exId: string, idx: number, correct: number) => {
     if (submitted[exId]) return
@@ -43,10 +53,10 @@ function TrialSection({ onRegister }: { onRegister: () => void }) {
     const newSubmitted = { ...submitted, [exId]: true }
     setAnswers(newAnswers)
     setSubmitted(newSubmitted)
-    if (TRIAL_EXERCISES.every(e => newSubmitted[e.id])) setAllDone(true)
+    if (exercises.every(e => newSubmitted[e.id])) setAllDone(true)
   }
 
-  const correctCount = TRIAL_EXERCISES.filter(e => submitted[e.id] && answers[e.id] === e.correct).length
+  const correctCount = exercises.filter(e => submitted[e.id] && answers[e.id] === e.correct).length
 
   return (
     <section className="px-5 py-14" style={{ background: '#FAFAFE' }}>
@@ -62,38 +72,43 @@ function TrialSection({ onRegister }: { onRegister: () => void }) {
           </p>
         </div>
 
+        {/* Subject badge */}
+        <div className="flex items-center gap-2 mb-4 px-1">
+          <span className="text-xl">{meta.emoji}</span>
+          <span className="font-black text-sm" style={{ color: meta.color }}>{meta.name}</span>
+          <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={{ background: meta.bg, color: meta.color }}>
+            2 вежби · бесплатно
+          </span>
+        </div>
+
         <div className="space-y-4">
-          {TRIAL_EXERCISES.map((ex, qi) => {
+          {exercises.map((ex, qi) => {
             const isSubmitted = !!submitted[ex.id]
             const chosen = answers[ex.id] ?? null
             const isCorrect = chosen === ex.correct
 
             return (
               <div key={ex.id} className="bg-white rounded-3xl p-5 transition-all"
-                style={{ border: isSubmitted ? `2px solid ${isCorrect ? '#6BCB77' : '#FF6B6B'}` : '2px solid #EDE9FF', boxShadow: '0 2px 12px rgba(92,53,212,0.07)' }}>
+                style={{ border: isSubmitted ? `2px solid ${isCorrect ? '#6BCB77' : '#FF6B6B'}` : `2px solid ${meta.color}20`, boxShadow: '0 2px 12px rgba(92,53,212,0.07)' }}>
                 <div className="flex items-start gap-3 mb-4">
                   <div className="w-8 h-8 rounded-xl flex items-center justify-center font-black text-sm flex-shrink-0"
-                    style={{ background: '#EDE9FF', color: '#5C35D4' }}>
+                    style={{ background: meta.bg, color: meta.color }}>
                     {qi + 1}
                   </div>
                   <div>
-                    <p className="text-xs font-black tracking-widest mb-1" style={{ color: '#9B9BAA' }}>
-                      {ex.subject}
-                    </p>
+                    <p className="text-xs font-black tracking-widest mb-1" style={{ color: '#9B9BAA' }}>{ex.subjectLabel}</p>
                     <p className="font-black text-base" style={{ color: '#1A1A2E' }}>{ex.question}</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-2">
                   {ex.options.map((opt, idx) => {
-                    let bg = '#F7F5FF'
-                    let color = '#1A1A2E'
-                    let border = 'transparent'
+                    let bg = '#F7F5FF'; let color = '#1A1A2E'; let border = 'transparent'
                     if (isSubmitted) {
                       if (idx === ex.correct) { bg = '#E8F8EA'; color = '#2D7A35'; border = '#6BCB77' }
                       else if (idx === chosen) { bg = '#FFE8E8'; color = '#C0392B'; border = '#FF6B6B' }
                     } else if (chosen === idx) {
-                      bg = '#EDE9FF'; color = '#5C35D4'; border = '#5C35D4'
+                      bg = meta.bg; color = meta.color; border = meta.color
                     }
                     return (
                       <button key={idx} type="button"
@@ -110,8 +125,7 @@ function TrialSection({ onRegister }: { onRegister: () => void }) {
                 </div>
 
                 {isSubmitted && (
-                  <p className="mt-3 text-sm font-bold"
-                    style={{ color: isCorrect ? '#2D7A35' : '#C0392B' }}>
+                  <p className="mt-3 text-sm font-bold" style={{ color: isCorrect ? '#2D7A35' : '#C0392B' }}>
                     {isCorrect ? '⭐ Точно! Одлично!' : `Точниот одговор е: ${ex.options[ex.correct]}`}
                   </p>
                 )}
@@ -122,14 +136,14 @@ function TrialSection({ onRegister }: { onRegister: () => void }) {
 
         {allDone && (
           <div className="mt-6 rounded-3xl p-6 text-center"
-            style={{ background: 'linear-gradient(135deg, #EDE9FF, #D4F5EC)', border: '2px solid #D4C8F5' }}>
-            <div className="text-4xl mb-2">{correctCount === TRIAL_EXERCISES.length ? '🏆' : '⭐'}</div>
+            style={{ background: `linear-gradient(135deg, ${meta.bg}, #D4F5EC)`, border: `2px solid ${meta.color}30` }}>
+            <div className="text-4xl mb-2">{correctCount === exercises.length ? '🏆' : '⭐'}</div>
             <p className="font-black text-xl mb-1" style={{ color: '#1A1A2E' }}>
-              {correctCount}/{TRIAL_EXERCISES.length} точни!
+              {correctCount}/{exercises.length} точни!
             </p>
             <p className="text-sm font-semibold mb-4" style={{ color: '#6B6B8A' }}>
-              {correctCount === TRIAL_EXERCISES.length
-                ? 'Совршено! Имаш уште стотици вежби да ги откријш.'
+              {correctCount === exercises.length
+                ? 'Совршено! Регистрирај се за уште стотици вежби.'
                 : 'Продолжи да вежбаш — секој ден малку подобро!'}
             </p>
             <button onClick={onRegister}
@@ -147,6 +161,7 @@ function TrialSection({ onRegister }: { onRegister: () => void }) {
 export default function HomePage() {
   const router = useRouter()
   const [loading, setLoading] = useState(true)
+  const [activeSubject, setActiveSubject] = useState<SubjectKey>('math')
 
   useEffect(() => {
     const ref = new URLSearchParams(window.location.search).get('ref')
@@ -244,22 +259,30 @@ export default function HomePage() {
       {/* ── SUBJECTS ── */}
       <section className="px-5 py-14" style={{ background: 'white' }}>
         <h2 className="text-2xl font-black text-center mb-2" style={{ color: '#1A1A2E' }}>3 предмети, безброј авантури</h2>
-        <p className="text-center text-sm font-semibold mb-8" style={{ color: '#9B9BAA' }}>Секој предмет е своја приказна</p>
+        <p className="text-center text-sm font-semibold mb-8" style={{ color: '#9B9BAA' }}>Кликни на предмет за да пробаш бесплатна вежба</p>
         <div className="max-w-lg mx-auto space-y-3">
-          {[
-            { emoji: '🔮', name: 'Математика', desc: 'Броеви, геометрија, равенки', bg: '#F0EBFF', color: '#5C35D4' },
-            { emoji: '🌿', name: 'Биологија',  desc: 'Клетки, екосистеми, живи суштества', bg: '#E8FAF2', color: '#2D7A35' },
-            { emoji: '⚗️', name: 'Хемија',     desc: 'Елементи, реакции, периоден систем', bg: '#FFF0F0', color: '#C0392B' },
-          ].map((s) => (
-            <div key={s.name} className="rounded-3xl p-5 flex items-center gap-4 transition-all hover:scale-[1.01]"
-              style={{ background: s.bg, border: `1.5px solid ${s.color}25` }}>
+          {([
+            { key: 'math' as SubjectKey, emoji: '🔮', name: 'Математика', desc: 'Броеви, геометрија, равенки', bg: '#F0EBFF', color: '#5C35D4' },
+            { key: 'bio'  as SubjectKey, emoji: '🌿', name: 'Биологија',  desc: 'Клетки, екосистеми, живи суштества', bg: '#E8FAF2', color: '#2D7A35' },
+            { key: 'chem' as SubjectKey, emoji: '⚗️', name: 'Хемија',     desc: 'Елементи, реакции, периоден систем', bg: '#FFF0F0', color: '#C0392B' },
+          ]).map((s) => (
+            <button key={s.name} type="button"
+              onClick={() => {
+                setActiveSubject(s.key)
+                document.getElementById('trial-section')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+              className="w-full rounded-3xl p-5 flex items-center gap-4 transition-all hover:scale-[1.01] active:scale-[0.99] text-left"
+              style={{ background: activeSubject === s.key ? s.color : s.bg, border: `2px solid ${s.color}40` }}>
               <div className="text-4xl flex-shrink-0">{s.emoji}</div>
               <div className="flex-1">
-                <div className="font-black text-lg" style={{ color: s.color }}>{s.name}</div>
-                <div className="text-sm font-semibold" style={{ color: '#9B9BAA' }}>{s.desc}</div>
+                <div className="font-black text-lg" style={{ color: activeSubject === s.key ? 'white' : s.color }}>{s.name}</div>
+                <div className="text-sm font-semibold" style={{ color: activeSubject === s.key ? 'rgba(255,255,255,0.75)' : '#9B9BAA' }}>{s.desc}</div>
               </div>
-              <div className="text-xl font-black" style={{ color: s.color }}>→</div>
-            </div>
+              <div className="text-sm font-black px-3 py-1.5 rounded-xl"
+                style={{ background: activeSubject === s.key ? 'rgba(255,255,255,0.2)' : s.color + '15', color: activeSubject === s.key ? 'white' : s.color }}>
+                Пробај →
+              </div>
+            </button>
           ))}
         </div>
       </section>
@@ -289,7 +312,9 @@ export default function HomePage() {
       </section>
 
       {/* ── TRIAL EXERCISES ── */}
-      <TrialSection onRegister={() => router.push('/register')} />
+      <div id="trial-section">
+        <TrialSection onRegister={() => router.push('/register')} activeSubject={activeSubject} />
+      </div>
 
       {/* ── PRICING ── */}
       <section className="px-5 py-14" style={{ background: '#EDE9FF' }}>
