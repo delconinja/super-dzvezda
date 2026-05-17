@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { getFamilySession } from '@/lib/auth'
+import { getFamilySession, clearFamilySession } from '@/lib/auth'
+import { supabase } from '@/lib/supabase'
 import { saveAffiliateRef } from '@/lib/affiliate'
 import StarMascot from '@/components/StarMascot'
 
@@ -150,12 +151,19 @@ export default function HomePage() {
   useEffect(() => {
     const ref = new URLSearchParams(window.location.search).get('ref')
     if (ref) saveAffiliateRef(ref)
-    const family = getFamilySession()
-    if (family && family.students.length > 0) {
-      router.replace('/parent')
-    } else {
+    const init = async () => {
+      const family = getFamilySession()
+      if (family && family.students.length > 0) {
+        const { data: { user } } = await supabase.auth.getUser()
+        if (user) {
+          router.replace('/parent')
+          return
+        }
+        clearFamilySession()
+      }
       setLoading(false)
     }
+    init()
   }, [router])
 
   if (loading) return (
