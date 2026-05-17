@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { parentLogin, isDevAdminUser, getFamilySession, loginWithPin, getProgress, StudentProfile } from '@/lib/auth'
+import StarMascot from '@/components/StarMascot'
 
 // ── KID FULL-SCREEN SELECTOR ──────────────────────────────────────
 function KidFullScreen({ students, onParentClick }: { students: StudentProfile[]; onParentClick: () => void }) {
@@ -116,8 +117,8 @@ function KidFullScreen({ students, onParentClick }: { students: StudentProfile[]
 
       {/* Logo */}
       <div className="text-center mb-10">
-        <div className="text-5xl mb-2" style={{ display: 'inline-block', animation: 'float 3s ease-in-out infinite' }}>⭐</div>
-        <h1 className="text-3xl font-black" style={{ color: '#1A1A2E' }}>Супер Ѕвезда</h1>
+        <StarMascot mood="calm" size={100} className="mx-auto" />
+        <h1 className="text-3xl font-black mt-1" style={{ color: '#1A1A2E' }}>Супер Ѕвезда</h1>
         <p className="text-base font-semibold mt-1" style={{ color: '#9B9BAA' }}>Кој учи денес? 👋</p>
       </div>
 
@@ -178,8 +179,8 @@ function ParentLoginForm({ onBack, hasFamily }: { onBack?: () => void; hasFamily
 
       {/* Logo */}
       <div className="text-center mb-8">
-        <div className="text-5xl mb-2" style={{ display: 'inline-block', animation: 'float 3s ease-in-out infinite' }}>⭐</div>
-        <h1 className="text-3xl font-black" style={{ color: '#1A1A2E' }}>Супер Ѕвезда</h1>
+        <StarMascot mood="calm" size={88} className="mx-auto" />
+        <h1 className="text-3xl font-black mt-1" style={{ color: '#1A1A2E' }}>Супер Ѕвезда</h1>
       </div>
 
       <div className="w-full max-w-sm">

@@ -96,3 +96,35 @@ input, textarea, [contenteditable] {
 }
 .star-mascot-idle { animation: starIdle 2.5s ease-in-out infinite; }
 .star-mascot-talk { animation: starTalk 0.4s ease-in-out infinite; }
+
+@keyframes starCalmFloat {
+  0%, 100% { transform: translateY(0px);   filter: drop-shadow(0 4px 14px rgba(255,215,0,0.4)); }
+  50%       { transform: translateY(-11px); filter: drop-shadow(0 8px 26px rgba(255,215,0,0.78)); }
+}
+@keyframes starEnergeticBounce {
+  0%, 100% { transform: translateY(0px)   scale(1);    filter: drop-shadow(0 4px 16px rgba(255,215,0,0.55)); }
+  35%       { transform: translateY(-19px) scale(1.07); filter: drop-shadow(0 14px 34px rgba(255,215,0,1)); }
+  60%       { transform: translateY(-11px) scale(0.97); filter: drop-shadow(0 8px 22px rgba(255,215,0,0.8)); }
+}
+@keyframes sparkCalmPulse {
+  0%, 100% { opacity: 0.15; }
+  50%       { opacity: 1; }
+}
+@keyframes sparkEnergetic {
+  0%   { opacity: 0;   transform: scale(0.3); }
+  25%  { opacity: 1;   transform: scale(1.3); }
+  60%  { opacity: 0.8; transform: scale(1); }
+  100% { opacity: 0;   transform: scale(0.3); }
+}
+
+.star-mascot-calm      { animation: starCalmFloat 3s ease-in-out infinite; }
+.star-mascot-energetic { animation: starEnergeticBounce 0.55s ease-in-out infinite; }
+
+.spark-calm-1 { animation: sparkCalmPulse 2.5s ease-in-out infinite; }
+.spark-calm-2 { animation: sparkCalmPulse 2.5s ease-in-out infinite 0.83s; }
+.spark-calm-3 { animation: sparkCalmPulse 2.5s ease-in-out infinite 1.66s; }
+
+.spark-e-1 { animation: sparkEnergetic 0.9s ease-out infinite;       transform-box: fill-box; transform-origin: center; }
+.spark-e-2 { animation: sparkEnergetic 0.9s ease-out infinite 0.22s; transform-box: fill-box; transform-origin: center; }
+.spark-e-3 { animation: sparkEnergetic 0.9s ease-out infinite 0.45s; transform-box: fill-box; transform-origin: center; }
+.spark-e-4 { animation: sparkEnergetic 0.9s ease-out infinite 0.67s; transform-box: fill-box; transform-origin: center; }

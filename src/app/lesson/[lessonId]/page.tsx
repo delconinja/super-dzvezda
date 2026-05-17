@@ -652,7 +652,7 @@ export default function LessonPage() {
                 borderLeft: '8px solid white' }} />
             </div>
           )}
-          <StarMascot talking={isSpeaking} size={64} />
+          <StarMascot mood={isSpeaking ? 'talking' : 'calm'} size={64} />
         </div>
       )}
 

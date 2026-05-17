@@ -152,7 +152,7 @@ export default function DashboardPage() {
       <div className="max-w-2xl mx-auto px-6 py-8">
         <div className="mb-8">
           <div className="flex items-center gap-4 mb-3">
-            <StarMascot talking={false} size={80} />
+            <StarMascot mood="calm" size={80} />
             <div>
               <p className="text-sm font-bold mb-1" style={{ color: '#6B6B8A' }}>
                 {grade === 0 ? 'Сите одделенија' : `${grade}-${gradeOrdinal(grade)} одделение`}

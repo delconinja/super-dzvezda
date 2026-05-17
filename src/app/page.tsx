@@ -219,7 +219,7 @@ export default function HomePage() {
         }}>
         <div className="max-w-sm mx-auto animate-fade-up">
           <div className="mb-4 inline-block">
-            <StarMascot talking={false} size={100} />
+            <StarMascot mood="calm" size={100} />
           </div>
           <div className="rounded-3xl px-6 py-5 mb-6" style={{ background: 'rgba(255,255,255,0.72)', backdropFilter: 'blur(8px)' }}>
             <h1 className="text-4xl font-black mb-3" style={{ color: '#1A1A2E', letterSpacing: '-1px' }}>
