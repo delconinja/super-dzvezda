@@ -18,12 +18,14 @@ import { setActiveStudent, setSelectedGrade } from '@/lib/auth'
 const ADMIN_EMAILS = ['delco.k.de@gmail.com', 'apostolova.marija22@gmail.com', 'stefanijavk02@gmail.com']
 const GRADES_WITH_CONTENT = [1, 2, 3, 4, 5, 6, 7]
 
-type Section = 'partners' | 'content'
+type Section = 'partners' | 'content' | 'users'
 type Tab = 'affiliates' | 'subscriptions' | 'payouts'
 
 type AffiliateRow = Affiliate & { referral_count: number }
 type SubRow = { id: string; status: string; created_at: string; affiliate_id: string | null; affiliates: { name: string; code: string } | null }
 type PayoutRow = AffiliatePayout & { affiliates: { name: string; code: string } }
+type StudentRow = { id: string; parent_id: string; name: string; grade: number; stars_total: number; streak: number; town: string | null; school: string | null }
+type FamilyRow = { parentId: string; students: StudentRow[]; subscription: SubRow | null }
 
 export default function AdminPage() {
   const router = useRouter()
@@ -43,6 +45,9 @@ export default function AdminPage() {
   const [subscriptions, setSubscriptions] = useState<SubRow[]>([])
   const [payouts, setPayouts] = useState<PayoutRow[]>([])
 
+  // Families/users data
+  const [families, setFamilies] = useState<FamilyRow[]>([])
+
   // Payout modal
   const [payoutModal, setPayoutModal] = useState<AffiliateRow | null>(null)
   const [payoutEur, setPayoutEur] = useState('')
@@ -57,14 +62,43 @@ export default function AdminPage() {
   const [expandedUnit, setExpandedUnit] = useState<string | null>(null)
 
   const loadData = async () => {
-    const [affs, subs, pays] = await Promise.all([
+    const [affs, subs, pays, studentsRes, subFullRes] = await Promise.all([
       adminGetAffiliates(),
       adminGetSubscriptions(),
       adminGetPayouts(),
+      supabase.from('students').select('*').order('name'),
+      supabase.from('subscriptions').select('parent_id, status, created_at').order('created_at', { ascending: false }),
     ])
+    const subsTyped = subs as SubRow[]
     setAffiliates(affs as AffiliateRow[])
-    setSubscriptions(subs as SubRow[])
+    setSubscriptions(subsTyped)
     setPayouts(pays as PayoutRow[])
+
+    const studentRows: StudentRow[] = studentsRes.data || []
+    const subFullRows: { parent_id: string; status: string; created_at: string }[] = subFullRes.data || []
+    const subByParent: Record<string, { parent_id: string; status: string; created_at: string }> = {}
+    subFullRows.forEach(s => { subByParent[s.parent_id] = s })
+
+    const grouped: Record<string, StudentRow[]> = {}
+    studentRows.forEach(st => {
+      if (!grouped[st.parent_id]) grouped[st.parent_id] = []
+      grouped[st.parent_id].push(st)
+    })
+    const familyRows: FamilyRow[] = Object.entries(grouped).map(([parentId, kids]) => {
+      const sub = subByParent[parentId]
+      return {
+        parentId,
+        students: kids,
+        subscription: sub ? { id: parentId, status: sub.status, created_at: sub.created_at, affiliate_id: null, affiliates: null } : null,
+      }
+    })
+    familyRows.sort((a, b) => {
+      const aDate = a.subscription?.created_at ?? ''
+      const bDate = b.subscription?.created_at ?? ''
+      return bDate.localeCompare(aDate)
+    })
+    setFamilies(familyRows)
+
     setLoading(false)
     setAuthed(true)
   }
@@ -222,6 +256,7 @@ export default function AdminPage() {
         <div className="max-w-4xl mx-auto flex gap-3">
           {([
             { key: 'partners', label: '👥 Партнери', desc: 'Афилијати, претплати, исплати' },
+            { key: 'users', label: `🏠 Семејства (${families.length})`, desc: 'Сите регистрирани корисници' },
             { key: 'content', label: '📚 Содржина', desc: 'Преглед по одделенија и предмети' },
           ] as { key: Section; label: string; desc: string }[]).map((s) => (
             <button key={s.key} onClick={() => setSection(s.key)}
@@ -408,6 +443,100 @@ export default function AdminPage() {
               ))}
             </div>
           )}
+        </>)}
+
+        {/* ── USERS SECTION ────────────────────────────────────────── */}
+        {section === 'users' && (<>
+          {/* Summary strip */}
+          <div className="grid grid-cols-3 gap-3">
+            {[
+              { label: 'Семејства', value: families.length, icon: '🏠', color: '#5C35D4' },
+              { label: 'Деца вкупно', value: families.reduce((s, f) => s + f.students.length, 0), icon: '🧒', color: '#6BCB77' },
+              { label: 'Активни / Trial', value: families.filter(f => f.subscription && (f.subscription.status === 'active' || f.subscription.status === 'trial')).length, icon: '✅', color: '#FFD93D' },
+            ].map((k) => (
+              <div key={k.label} className="bg-white rounded-2xl p-4 text-center"
+                style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
+                <div className="text-xl mb-0.5">{k.icon}</div>
+                <div className="text-2xl font-black" style={{ color: k.color }}>{k.value}</div>
+                <div className="text-xs font-semibold" style={{ color: '#9B9BAA' }}>{k.label}</div>
+              </div>
+            ))}
+          </div>
+
+          {families.length === 0 && (
+            <div className="bg-white rounded-3xl p-8 text-center" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
+              <p className="font-bold" style={{ color: '#9B9BAA' }}>Нема регистрирани семејства.</p>
+            </div>
+          )}
+
+          <div className="space-y-3">
+            {families.map((f) => {
+              const sub = f.subscription
+              const totalStars = f.students.reduce((s, st) => s + st.stars_total, 0)
+              const locations = [...new Set(f.students.map(st => st.school || st.town).filter(Boolean))]
+              const subStatusColor = !sub ? '#9B9BAA' : sub.status === 'active' ? '#2D7A35' : sub.status === 'trial' ? '#5C35D4' : '#C0392B'
+              const subStatusBg = !sub ? '#F3F0FF' : sub.status === 'active' ? '#E8F8EA' : sub.status === 'trial' ? '#EDE9FF' : '#FFE8E8'
+              const subLabel = !sub ? 'Без претплата' : sub.status === 'active' ? '✅ Активна' : sub.status === 'trial' ? '🎁 Trial' : `❌ ${sub.status}`
+              return (
+                <div key={f.parentId} className="bg-white rounded-3xl p-5"
+                  style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs font-black tracking-widest mb-1" style={{ color: '#9B9BAA' }}>
+                        РОДИТЕЛ ID: {f.parentId.slice(0, 8)}…
+                      </p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {f.students.map(st => (
+                          <span key={st.id} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl text-sm font-black"
+                            style={{ background: '#EDE9FF', color: '#5C35D4' }}>
+                            {st.name}
+                            <span className="font-semibold text-xs opacity-70">{st.grade}-одд</span>
+                          </span>
+                        ))}
+                      </div>
+                      {locations.length > 0 && (
+                        <p className="text-xs font-semibold mt-1.5" style={{ color: '#9B9BAA' }}>
+                          📍 {locations.join(', ')}
+                        </p>
+                      )}
+                    </div>
+                    <div className="flex flex-col items-end gap-1.5 shrink-0">
+                      <span className="text-xs px-2 py-0.5 rounded-full font-black"
+                        style={{ background: subStatusBg, color: subStatusColor }}>
+                        {subLabel}
+                      </span>
+                      <span className="text-xs font-bold" style={{ color: '#FFD93D' }}>⭐ {totalStars} ѕвезди</span>
+                    </div>
+                  </div>
+                  {/* Per-student row */}
+                  <div className="space-y-1">
+                    {f.students.map(st => (
+                      <div key={st.id} className="flex items-center justify-between px-3 py-2 rounded-2xl"
+                        style={{ background: '#F7F5FF' }}>
+                        <div className="flex items-center gap-2">
+                          <div className="w-7 h-7 rounded-xl flex items-center justify-center text-xs font-black text-white"
+                            style={{ background: 'linear-gradient(135deg, #7B5CE5, #A889F0)' }}>
+                            {st.name[0].toUpperCase()}
+                          </div>
+                          <span className="text-sm font-bold" style={{ color: '#1A1A2E' }}>{st.name}</span>
+                          <span className="text-xs font-semibold" style={{ color: '#9B9BAA' }}>{st.grade}-то одд.</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          {st.streak > 0 && <span className="text-xs font-bold" style={{ color: '#FF6B6B' }}>🔥 {st.streak}</span>}
+                          <span className="text-xs font-bold" style={{ color: '#FFD93D' }}>⭐ {st.stars_total}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  {sub && (
+                    <p className="text-xs font-semibold mt-2 pl-1" style={{ color: '#9B9BAA' }}>
+                      Регистрирани: {new Date(sub.created_at).toLocaleDateString('mk-MK')}
+                    </p>
+                  )}
+                </div>
+              )
+            })}
+          </div>
         </>)}
 
         {/* ── CONTENT SECTION ──────────────────────────────────────── */}
