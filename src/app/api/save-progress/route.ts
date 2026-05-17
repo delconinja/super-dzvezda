@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServiceClient } from '@/lib/supabase-server'
 import { evaluateNewBadges, BadgeStats } from '@/lib/badges'
-import { getGradeContent } from '@/lib/content'
 
 export async function POST(req: NextRequest) {
   const body = await req.json().catch(() => null)
@@ -60,18 +59,9 @@ async function checkLessonBadges(sb: ServiceClient, studentId: string, student: 
       .from('progress').select('lesson_id, stars_earned').eq('student_id', studentId)
     const totalLessons = (progressRows || []).filter(p => p.stars_earned > 0).length
 
-    const gradeContent = getGradeContent(student?.grade ?? 7)
-    const lessonSubjectMap: Record<string, string> = {}
-    const unitsBySubject: Record<string, string[]> = {}
-    Object.entries(gradeContent).forEach(([subjectId, units]) => {
-      unitsBySubject[subjectId] = units.map(u => u.id)
-      units.forEach(u => u.lessons.forEach(l => { lessonSubjectMap[l.id] = subjectId }))
-    })
+    // Subject/unit mapping skipped here to avoid importing the large content module
+    // in a serverless function. Badge types that need it receive empty arrays.
     const studiedSubjectSet = new Set<string>()
-    ;(progressRows || []).forEach(p => {
-      const sid = lessonSubjectMap[p.lesson_id]
-      if (sid) studiedSubjectSet.add(sid)
-    })
 
     const { data: starRows } = await sb
       .from('challenge_stars').select('unit_id, yellow, green, blue').eq('student_id', studentId)
@@ -90,7 +80,7 @@ async function checkLessonBadges(sb: ServiceClient, studentId: string, student: 
       streakDays: student?.streak ?? 0,
       subjectsStudied: [...studiedSubjectSet],
       completedUnitIds,
-      allUnitsBySubject: Object.values(unitsBySubject),
+      allUnitsBySubject: [],
     }
 
     const newBadgeIds = evaluateNewBadges(stats, earnedBadgeIds)

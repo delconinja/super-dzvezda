@@ -335,7 +335,7 @@ export async function saveProgress(
   })
   if (!res.ok) {
     const text = await res.text()
-    throw new Error(text)
+    throw new Error(`HTTP ${res.status}: ${text || '(empty)'}`)
   }
   const { starsTotal, student } = await res.json()
   if (student) {
