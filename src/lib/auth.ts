@@ -70,6 +70,28 @@ function saveFamilySession(parentId: string, students: StudentProfile[]) {
   localStorage.setItem('family_session', JSON.stringify({ parentId, students }))
 }
 
+export async function updateStudentPin(
+  studentId: string,
+  newPin: string,
+): Promise<{ ok: boolean; error?: string }> {
+  try {
+    const { data: { user } } = await supabase.auth.getUser()
+    if (!user) return { ok: false, error: 'Не си најавен.' }
+    const { error } = await supabase
+      .from('students').update({ pin: newPin })
+      .eq('id', studentId).eq('parent_id', user.id)
+    if (error) return { ok: false, error: error.message }
+    const session = getFamilySession()
+    if (session) {
+      saveFamilySession(
+        session.parentId,
+        session.students.map(s => s.id === studentId ? { ...s, pin: newPin } : s),
+      )
+    }
+    return { ok: true }
+  } catch (e: unknown) { return { ok: false, error: String(e) } }
+}
+
 export function clearFamilySession() {
   localStorage.removeItem('family_session')
   localStorage.removeItem('active_student')

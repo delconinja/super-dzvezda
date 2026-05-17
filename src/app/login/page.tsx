@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { parentLogin, isDevAdminUser, getFamilySession, loginWithPin, getProgress, StudentProfile } from '@/lib/auth'
+import { parentLogin, isDevAdminUser, getFamilySession, loginWithPin, updateStudentPin, getProgress, StudentProfile } from '@/lib/auth'
 import StarMascot from '@/components/StarMascot'
+
+type ResetStep = 'auth' | 'newpin' | 'done'
 
 // ── KID FULL-SCREEN SELECTOR ──────────────────────────────────────
 function KidFullScreen({ students, onParentClick }: { students: StudentProfile[]; onParentClick: () => void }) {
@@ -12,6 +14,14 @@ function KidFullScreen({ students, onParentClick }: { students: StudentProfile[]
   const [pin, setPin] = useState('')
   const [error, setError] = useState('')
   const [liveStars, setLiveStars] = useState<Record<string, number>>({})
+
+  // Reset-PIN flow
+  const [resetStep, setResetStep] = useState<ResetStep | null>(null)
+  const [resetEmail, setResetEmail] = useState('')
+  const [resetPassword, setResetPassword] = useState('')
+  const [resetError, setResetError] = useState('')
+  const [resetLoading, setResetLoading] = useState(false)
+  const [newPin, setNewPin] = useState('')
 
   useEffect(() => {
     Promise.all(
@@ -22,6 +32,11 @@ function KidFullScreen({ students, onParentClick }: { students: StudentProfile[]
       })
     ).then(entries => setLiveStars(Object.fromEntries(entries)))
   }, [students])
+
+  const clearSelected = () => {
+    setSelected(null); setPin(''); setError('')
+    setResetStep(null); setResetEmail(''); setResetPassword(''); setResetError(''); setNewPin('')
+  }
 
   const handlePin = (digit: string) => {
     if (pin.length >= 4) return
@@ -39,6 +54,37 @@ function KidFullScreen({ students, onParentClick }: { students: StudentProfile[]
     }
   }
 
+  const handleResetAuth = async () => {
+    setResetError('')
+    if (!resetEmail.trim() || !resetPassword.trim()) return setResetError('Внеси е-пошта и лозинка.')
+    setResetLoading(true)
+    const result = await parentLogin(resetEmail.trim().toLowerCase(), resetPassword)
+    setResetLoading(false)
+    if (!result.ok) return setResetError('Погрешна е-пошта или лозинка.')
+    setResetStep('newpin')
+  }
+
+  const handleNewPin = async (digit: string) => {
+    if (newPin.length >= 4) return
+    const next = newPin + digit
+    setNewPin(next)
+    setResetError('')
+    if (next.length === 4) {
+      if (!selected) return
+      setResetLoading(true)
+      const result = await updateStudentPin(selected.id, next)
+      setResetLoading(false)
+      if (!result.ok) {
+        setTimeout(() => { setNewPin(''); setResetError(result.error!) }, 300)
+        return
+      }
+      // Update local state so the kid can log in immediately with the new PIN
+      setSelected({ ...selected, pin: next })
+      setResetStep('done')
+      setTimeout(() => { setResetStep(null); setNewPin(''); setPin('') }, 1800)
+    }
+  }
+
   const KEYS = ['1','2','3','4','5','6','7','8','9','⌫','0','✓']
 
   const AVATAR_COLORS = [
@@ -48,10 +94,113 @@ function KidFullScreen({ students, onParentClick }: { students: StudentProfile[]
   ]
 
   if (selected) {
+    const avatarBg = AVATAR_COLORS[students.indexOf(selected) % AVATAR_COLORS.length]
+
+    // ── RESET: parent auth ──
+    if (resetStep === 'auth') {
+      return (
+        <div className="min-h-screen flex flex-col items-center justify-center px-5 py-10"
+          style={{ background: 'linear-gradient(160deg, #EDE9FF 0%, #D4F5EC 100%)' }}>
+          <button type="button" onClick={() => setResetStep(null)}
+            className="self-start mb-6 text-sm font-bold" style={{ color: '#7B5CE5' }}>← Назад</button>
+          <div className="w-full max-w-xs">
+            <div className="text-center mb-6">
+              <div className="text-3xl mb-2">🔐</div>
+              <h2 className="text-xl font-black" style={{ color: '#1A1A2E' }}>Потврди со родителска лозинка</h2>
+              <p className="text-sm font-semibold mt-1" style={{ color: '#9B9BAA' }}>
+                За да го ресетираш PIN-от на {selected.name}
+              </p>
+            </div>
+            <div className="bg-white rounded-3xl p-5 space-y-4" style={{ border: '2px solid #EDE9FF' }}>
+              {[
+                { label: 'Е-ПОШТА', val: resetEmail, set: setResetEmail, type: 'email', ph: 'roditel@example.com' },
+                { label: 'ЛОЗИНКА', val: resetPassword, set: setResetPassword, type: 'password', ph: '••••••••' },
+              ].map(({ label, val, set, type, ph }) => (
+                <div key={label}>
+                  <label className="block text-xs font-black mb-1.5 tracking-widest" style={{ color: '#6B6B8A' }}>{label}</label>
+                  <input type={type} value={val}
+                    onChange={e => { set(e.target.value); setResetError('') }}
+                    onKeyDown={e => e.key === 'Enter' && handleResetAuth()}
+                    placeholder={ph}
+                    className="w-full px-4 py-3 rounded-2xl border-2 font-semibold outline-none"
+                    style={{ borderColor: val ? '#5C35D4' : '#E5E7EB', color: '#1A1A2E', background: '#FAFAFA' }} />
+                </div>
+              ))}
+              {resetError && (
+                <p className="text-sm font-bold" style={{ color: '#C0392B' }}>⚠️ {resetError}</p>
+              )}
+              <button type="button" onClick={handleResetAuth} disabled={resetLoading}
+                className="w-full py-4 rounded-2xl font-black text-white transition-all active:scale-95 disabled:opacity-60"
+                style={{ background: '#5C35D4' }}>
+                {resetLoading ? 'Се проверува...' : 'Потврди →'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )
+    }
+
+    // ── RESET: new PIN entry ──
+    if (resetStep === 'newpin' || resetStep === 'done') {
+      return (
+        <div className="min-h-screen flex flex-col items-center justify-center px-5 py-10"
+          style={{ background: 'linear-gradient(160deg, #EDE9FF 0%, #D4F5EC 100%)' }}>
+          <div className="w-full max-w-xs">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 rounded-3xl flex items-center justify-center text-4xl font-black text-white mx-auto mb-3"
+                style={{ background: avatarBg }}>
+                {selected.name[0].toUpperCase()}
+              </div>
+              {resetStep === 'done' ? (
+                <>
+                  <div className="text-4xl mb-2">✅</div>
+                  <h2 className="text-xl font-black" style={{ color: '#2D7A35' }}>PIN успешно сменет!</h2>
+                </>
+              ) : (
+                <>
+                  <h2 className="text-xl font-black" style={{ color: '#1A1A2E' }}>Нов PIN за {selected.name}</h2>
+                  <p className="text-sm font-semibold mt-1" style={{ color: '#9B9BAA' }}>Внеси 4 цифри</p>
+                </>
+              )}
+            </div>
+
+            {resetStep === 'newpin' && (
+              <>
+                <div className="flex justify-center gap-5 mb-6">
+                  {[0,1,2,3].map(i => (
+                    <div key={i} className="w-4 h-4 rounded-full transition-all duration-150"
+                      style={{ background: i < newPin.length ? '#10B981' : '#E5E7EB', transform: i < newPin.length ? 'scale(1.3)' : 'scale(1)' }} />
+                  ))}
+                </div>
+                {resetError && <p className="text-center text-sm font-bold mb-4" style={{ color: '#FF6B6B' }}>⚠️ {resetError}</p>}
+                <div className="bg-white rounded-3xl p-4" style={{ border: '2px solid #D4F5EC', boxShadow: '0 4px 20px rgba(16,185,129,0.08)' }}>
+                  <div className="grid grid-cols-3 gap-2.5">
+                    {KEYS.map(k => (
+                      <button key={k} type="button"
+                        onClick={() => k === '⌫' ? setNewPin(p => p.slice(0,-1)) : k !== '✓' ? handleNewPin(k) : undefined}
+                        disabled={resetLoading}
+                        className="py-4 rounded-2xl text-2xl font-black transition-all active:scale-90 disabled:opacity-50"
+                        style={{
+                          background: k === '⌫' ? '#FFE8E8' : k === '✓' ? '#10B981' : '#F0FFF8',
+                          color: k === '⌫' ? '#FF6B6B' : k === '✓' ? 'white' : '#1A1A2E',
+                        }}>
+                        {k}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )
+    }
+
+    // ── NORMAL: PIN entry ──
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-5 py-10"
         style={{ background: 'linear-gradient(160deg, #EDE9FF 0%, #D4F5EC 100%)' }}>
-        <button type="button" onClick={() => { setSelected(null); setPin(''); setError('') }}
+        <button type="button" onClick={clearSelected}
           className="self-start mb-6 text-sm font-bold flex items-center gap-1"
           style={{ color: '#7B5CE5' }}>
           ← Назад
@@ -61,7 +210,7 @@ function KidFullScreen({ students, onParentClick }: { students: StudentProfile[]
           {/* Avatar + greeting */}
           <div className="text-center mb-8">
             <div className="w-20 h-20 rounded-3xl flex items-center justify-center text-4xl font-black text-white mx-auto mb-3"
-              style={{ background: AVATAR_COLORS[students.indexOf(selected) % AVATAR_COLORS.length], boxShadow: '0 8px 24px rgba(92,53,212,0.25)' }}>
+              style={{ background: avatarBg, boxShadow: '0 8px 24px rgba(92,53,212,0.25)' }}>
               {selected.name[0].toUpperCase()}
             </div>
             <h2 className="text-2xl font-black" style={{ color: '#1A1A2E' }}>Здраво, {selected.name}!</h2>
@@ -99,11 +248,18 @@ function KidFullScreen({ students, onParentClick }: { students: StudentProfile[]
               ))}
             </div>
           </div>
+
+          {/* Forgot PIN */}
+          <button type="button" onClick={() => { setResetStep('auth'); setResetEmail(''); setResetPassword(''); setResetError('') }}
+            className="w-full mt-4 text-sm font-semibold text-center transition-colors"
+            style={{ color: '#C4C4D4' }}>
+            Заборавен PIN?
+          </button>
         </div>
 
         {/* Parent link */}
         <button type="button" onClick={onParentClick}
-          className="mt-10 text-sm font-semibold transition-colors"
+          className="mt-8 text-sm font-semibold transition-colors"
           style={{ color: '#C4C4D4' }}>
           Родителски профил →
         </button>
