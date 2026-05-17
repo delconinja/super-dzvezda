@@ -161,7 +161,7 @@ function TrialSection({ onRegister, activeSubject }: { onRegister: () => void; a
 export default function HomePage() {
   const router = useRouter()
   const [loading, setLoading] = useState(true)
-  const [activeSubject, setActiveSubject] = useState<SubjectKey>('math')
+  const [activeSubject, setActiveSubject] = useState<SubjectKey | null>(null)
 
   useEffect(() => {
     const ref = new URLSearchParams(window.location.search).get('ref')
@@ -277,7 +277,7 @@ export default function HomePage() {
                 document.getElementById('trial-section')?.scrollIntoView({ behavior: 'smooth' })
               }}
               className="w-full rounded-3xl p-5 flex items-center gap-4 transition-all hover:scale-[1.01] active:scale-[0.99] text-left"
-              style={{ background: activeSubject === s.key ? s.color : s.bg, border: `2px solid ${s.color}40` }}>
+              style={{ background: activeSubject === s.key ? s.color : s.bg, border: `2px solid ${s.color}40`, boxShadow: activeSubject === s.key ? `0 4px 20px ${s.color}40` : 'none' }}>
               <div className="text-4xl flex-shrink-0">{s.emoji}</div>
               <div className="flex-1">
                 <div className="font-black text-lg" style={{ color: activeSubject === s.key ? 'white' : s.color }}>{s.name}</div>
@@ -316,10 +316,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── TRIAL EXERCISES ── */}
-      <div id="trial-section">
-        <TrialSection onRegister={() => router.push('/register')} activeSubject={activeSubject} />
-      </div>
+      {/* ── TRIAL EXERCISES — hidden until a subject is clicked ── */}
+      {activeSubject && (
+        <div id="trial-section">
+          <TrialSection onRegister={() => router.push('/register')} activeSubject={activeSubject} />
+        </div>
+      )}
 
       {/* ── PRICING ── */}
       <section className="px-5 py-14" style={{ background: '#EDE9FF' }}>
