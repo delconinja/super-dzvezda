@@ -74,7 +74,7 @@ export default function JoinPage() {
 
   if (view === 'success') return (
     <main className="min-h-screen flex items-center justify-center px-4"
-      style={{ background: 'linear-gradient(135deg, #1A1A2E 0%, #2D1B69 50%, #5C35D4 100%)' }}>
+      style={{ background: 'linear-gradient(160deg, #EEE8FF 0%, #F5EEFF 50%, #FFF0F8 100%)' }}>
       <div className="bg-white rounded-3xl p-8 max-w-md w-full text-center">
         <div className="text-6xl mb-4">🎉</div>
         <h1 className="text-2xl font-black mb-3" style={{ color: '#1A1A2E' }}>Пријавата е примена!</h1>
@@ -100,13 +100,13 @@ export default function JoinPage() {
 
   return (
     <main className="min-h-screen px-4 py-10"
-      style={{ background: 'linear-gradient(135deg, #1A1A2E 0%, #2D1B69 50%, #5C35D4 100%)' }}>
+      style={{ background: 'linear-gradient(160deg, #EEE8FF 0%, #F5EEFF 50%, #FFF0F8 100%)' }}>
 
       <div className="text-center mb-8">
         <div className="text-5xl mb-3">🤝</div>
-        <h1 className="text-3xl font-black text-white">Партнерска програма</h1>
-        <p className="text-purple-200 mt-2 max-w-sm mx-auto text-sm">
-          Промовирај Супер Ѕвезда и заработи <span className="font-black text-yellow-300">30% комисија</span> на секоја претплата — секој месец.
+        <h1 className="text-3xl font-black" style={{ color: '#1A1A2E' }}>Партнерска програма</h1>
+        <p className="mt-2 max-w-sm mx-auto text-sm font-semibold" style={{ color: '#6B6B8A' }}>
+          Промовирај Супер Ѕвезда и заработи <span className="font-black" style={{ color: '#5C35D4' }}>30% комисија</span> на секоја претплата — секој месец.
         </p>
       </div>
 
@@ -117,10 +117,10 @@ export default function JoinPage() {
           { icon: '📲', title: 'Некој се претплати', desc: 'Преку твојот линк' },
           { icon: '💰', title: 'Заработи 30%', desc: 'Секој месец, рекурентно' },
         ].map((s) => (
-          <div key={s.title} className="bg-white/10 rounded-2xl p-3 text-center">
+          <div key={s.title} className="bg-white rounded-2xl p-3 text-center" style={{ border: '1.5px solid #E8E0FF' }}>
             <div className="text-2xl mb-1">{s.icon}</div>
-            <div className="text-white font-black text-xs">{s.title}</div>
-            <div className="text-purple-300 text-xs mt-0.5">{s.desc}</div>
+            <div className="font-black text-xs" style={{ color: '#1A1A2E' }}>{s.title}</div>
+            <div className="text-xs mt-0.5" style={{ color: '#6B6B8A' }}>{s.desc}</div>
           </div>
         ))}
       </div>

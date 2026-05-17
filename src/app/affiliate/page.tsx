@@ -51,7 +51,7 @@ export default function AffiliatePage() {
 
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center"
-      style={{ background: 'linear-gradient(135deg, #1A1A2E, #2D1B69, #5C35D4)' }}>
+      style={{ background: '#F8F5FF' }}>
       <div className="text-6xl animate-float">⭐</div>
     </div>
   )
@@ -67,7 +67,7 @@ export default function AffiliatePage() {
   // PENDING state
   if (affiliate.status === 'pending') return (
     <main className="min-h-screen flex items-center justify-center px-4"
-      style={{ background: 'linear-gradient(135deg, #1A1A2E 0%, #2D1B69 50%, #5C35D4 100%)' }}>
+      style={{ background: 'linear-gradient(160deg, #EEE8FF 0%, #F5EEFF 50%, #FFF0F8 100%)' }}>
       <div className="bg-white rounded-3xl p-8 max-w-md w-full text-center">
         <div className="text-6xl mb-4">⏳</div>
         <h1 className="text-2xl font-black mb-3" style={{ color: '#1A1A2E' }}>Пријавата е во разгледување</h1>
@@ -92,7 +92,7 @@ export default function AffiliatePage() {
   // SUSPENDED state
   if (affiliate.status === 'suspended') return (
     <main className="min-h-screen flex items-center justify-center px-4"
-      style={{ background: 'linear-gradient(135deg, #1A1A2E 0%, #2D1B69 50%, #5C35D4 100%)' }}>
+      style={{ background: 'linear-gradient(160deg, #EEE8FF 0%, #F5EEFF 50%, #FFF0F8 100%)' }}>
       <div className="bg-white rounded-3xl p-8 max-w-md w-full text-center">
         <div className="text-6xl mb-4">🚫</div>
         <h1 className="text-2xl font-black mb-3" style={{ color: '#1A1A2E' }}>Профилот е суспендиран</h1>
@@ -108,7 +108,7 @@ export default function AffiliatePage() {
   return (
     <main className="min-h-screen" style={{ background: '#F7F5FF' }}>
       <header className="px-6 py-4 flex items-center justify-between"
-        style={{ background: 'linear-gradient(135deg, #1A1A2E, #2D1B69)' }}>
+        style={{ background: 'linear-gradient(135deg, #8B6FE8, #A889F0)' }}>
         <div className="flex items-center gap-3">
           <span className="text-3xl">⭐</span>
           <div>

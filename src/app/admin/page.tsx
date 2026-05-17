@@ -204,7 +204,7 @@ export default function AdminPage() {
     <main className="min-h-screen" style={{ background: '#F7F5FF' }}>
       {/* Header */}
       <header className="px-6 py-4 flex items-center justify-between"
-        style={{ background: 'linear-gradient(135deg, #1A1A2E, #2D1B69)' }}>
+        style={{ background: 'linear-gradient(135deg, #8B6FE8, #A889F0)' }}>
         <div className="flex items-center gap-3">
           <span className="text-3xl">⭐</span>
           <div>

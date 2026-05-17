@@ -195,7 +195,7 @@ export default function ParentPage() {
 
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center"
-      style={{ background: 'linear-gradient(135deg, #1A1A2E, #2D1B69, #5C35D4)' }}>
+      style={{ background: '#F8F5FF' }}>
       <div className="text-6xl animate-float">⭐</div>
     </div>
   )
@@ -217,7 +217,7 @@ export default function ParentPage() {
 
       {/* Header */}
       <header className="px-6 py-4 flex items-center justify-between"
-        style={{ background: 'linear-gradient(135deg, #1A1A2E, #2D1B69)' }}>
+        style={{ background: 'linear-gradient(135deg, #8B6FE8, #A889F0)' }}>
         <div className="flex items-center gap-3">
           <span className="text-3xl">⭐</span>
           <span className="text-white font-black text-xl">Супер Ѕвезда</span>

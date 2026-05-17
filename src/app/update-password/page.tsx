@@ -36,12 +36,12 @@ export default function UpdatePasswordPage() {
 
   return (
     <main className="min-h-screen flex items-center justify-center px-5 relative overflow-hidden"
-      style={{ background: 'linear-gradient(160deg, #07040F 0%, #130726 30%, #2D1B69 70%, #5C35D4 100%)' }}>
+      style={{ background: 'linear-gradient(160deg, #EEE8FF 0%, #F5EEFF 40%, #FFF0F8 100%)' }}>
 
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <div className="text-5xl mb-2 animate-float">⭐</div>
-          <h1 className="text-3xl font-black text-white">Супер Ѕвезда</h1>
+          <h1 className="text-3xl font-black" style={{ color: '#1A1A2E' }}>Супер Ѕвезда</h1>
         </div>
 
         <div className="bg-white rounded-3xl shadow-2xl p-7">

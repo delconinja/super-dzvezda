@@ -25,13 +25,13 @@ export default function TrialExpiredPage() {
 
   return (
     <main className="min-h-screen px-4 py-10"
-      style={{ background: 'linear-gradient(135deg, #1A1A2E 0%, #2D1B69 50%, #5C35D4 100%)' }}>
+      style={{ background: 'linear-gradient(160deg, #EEE8FF 0%, #F5EEFF 50%, #FFF0F8 100%)' }}>
 
       {/* Header */}
       <div className="text-center mb-8">
         <div className="text-6xl mb-3">⭐</div>
-        <h1 className="text-3xl font-black text-white">Твојот пробен период заврши!</h1>
-        <p className="text-purple-200 mt-2 max-w-sm mx-auto">
+        <h1 className="text-3xl font-black" style={{ color: '#1A1A2E' }}>Твојот пробен период заврши!</h1>
+        <p className="mt-2 max-w-sm mx-auto font-semibold" style={{ color: '#6B6B8A' }}>
           Одбери колку деца и продолжи да учите заедно!
         </p>
       </div>
@@ -194,12 +194,12 @@ export default function TrialExpiredPage() {
         </div>
 
         {/* Payment note */}
-        <div className="rounded-2xl p-4" style={{ background: 'rgba(255,255,255,0.1)' }}>
+        <div className="rounded-2xl p-4 bg-white" style={{ border: '1.5px solid #E8E0FF' }}>
           <div className="flex items-start gap-3">
             <span className="text-xl">🏦</span>
             <div>
-              <p className="text-white font-black text-sm">Плаќање преку МК банки</p>
-              <p className="text-purple-200 text-xs mt-0.5">
+              <p className="font-black text-sm" style={{ color: '#1A1A2E' }}>Плаќање преку МК банки</p>
+              <p className="text-xs mt-0.5" style={{ color: '#6B6B8A' }}>
                 Casys · NestPay · Monri · Трансакција на сметка за претплата по фактура
               </p>
             </div>
@@ -212,8 +212,8 @@ export default function TrialExpiredPage() {
           <div className="flex items-start gap-3">
             <span className="text-xl">🚀</span>
             <div>
-              <p className="text-yellow-300 font-black text-sm">Рана претплата — само за први 500!</p>
-              <p className="text-yellow-100 text-xs mt-0.5">
+              <p className="font-black text-sm" style={{ color: '#7A5800' }}>Рана претплата — само за први 500!</p>
+              <p className="text-xs mt-0.5" style={{ color: '#9B7B00' }}>
                 1 дете €5/мес · 2–3 деца €9/мес — заклучена цена засекогаш
               </p>
             </div>
@@ -223,7 +223,8 @@ export default function TrialExpiredPage() {
         <div className="text-center pt-2">
           <button type="button"
             onClick={() => { parentLogout(); router.push('/') }}
-            className="text-purple-300 hover:text-white text-sm font-bold transition-colors">
+            className="text-sm font-bold transition-colors"
+            style={{ color: '#7B5CE5' }}>
             ← Назад на почеток
           </button>
         </div>

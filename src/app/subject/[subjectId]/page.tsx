@@ -161,19 +161,19 @@ export default function SubjectPage() {
                       onClick={() => router.push(`/challenge/${unit.id}`)}
                       className="w-full flex items-center justify-between p-4 rounded-2xl transition-all duration-200 hover:scale-[1.01] active:scale-[0.99]"
                       style={{
-                        background: 'linear-gradient(135deg, #1A1A2E, #2D1B69)',
+                        background: 'linear-gradient(135deg, #7B5CE5, #9B7FE8)',
                         border: '2px solid #5C35D4',
                       }}>
                       <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-full flex items-center justify-center text-lg flex-shrink-0"
-                          style={{ background: '#5C35D4' }}>
+                          style={{ background: 'rgba(255,255,255,0.25)' }}>
                           🏆
                         </div>
                         <div className="text-left">
                           <span className="font-black text-sm block" style={{ color: 'white' }}>
                             Предизвик
                           </span>
-                          <span className="text-xs font-semibold" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                          <span className="text-xs font-semibold" style={{ color: 'rgba(255,255,255,0.75)' }}>
                             Освои ѕвезди по тежина
                           </span>
                         </div>
