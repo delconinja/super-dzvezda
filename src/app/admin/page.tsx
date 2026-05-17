@@ -13,7 +13,7 @@ import {
 import { getSubjectsForGrade, gradeOrdinal } from '@/lib/subjects'
 import { getGradeContent } from '@/lib/content'
 import SubjectIcon from '@/components/SubjectIcon'
-import { setActiveStudent, setSelectedGrade } from '@/lib/auth'
+import { setActiveStudent, setSelectedGrade, clearFamilySession } from '@/lib/auth'
 
 const ADMIN_EMAILS = ['delco.k.de@gmail.com', 'apostolova.marija22@gmail.com', 'stefanijavk02@gmail.com']
 const GRADES_WITH_CONTENT = [1, 2, 3, 4, 5, 6, 7]
@@ -247,7 +247,7 @@ export default function AdminPage() {
               style={{ background: '#FF6B6B', color: 'white' }}>ADMIN</span>
           </div>
         </div>
-        <button onClick={() => { supabase.auth.signOut(); router.push('/') }}
+        <button onClick={async () => { clearFamilySession(); await supabase.auth.signOut(); router.push('/') }}
           className="text-sm font-bold" style={{ color: '#9B9BAA' }}>Излези</button>
       </header>
 
