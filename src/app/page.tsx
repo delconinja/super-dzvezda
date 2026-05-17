@@ -262,7 +262,7 @@ export default function HomePage() {
       </section>
 
       {/* ── SUBJECTS ── */}
-      <section className="px-5 py-14" style={{ background: 'white' }}>
+      <section className="px-5 py-14" style={{ background: 'linear-gradient(135deg, #F5EEFF 0%, #FFE8F5 60%, #FFF6E0 100%)' }}>
         <h2 className="text-2xl font-black text-center mb-2" style={{ color: '#1A1A2E' }}>3 предмети, безброј авантури</h2>
         <p className="text-center text-sm font-semibold mb-8" style={{ color: '#9B9BAA' }}>Кликни на предмет за да пробаш бесплатна вежба</p>
         <div className="max-w-lg mx-auto space-y-3">
