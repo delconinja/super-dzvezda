@@ -202,12 +202,12 @@ export default function ParentPage() {
 
   const daysLeft = sub ? trialDaysLeft(sub) : 0
   const expired = sub ? isTrialExpired(sub) : false
-  // Admins without a real subscription see a mock active card so all UI is visible
-  const effectiveSub: Subscription | null = sub ?? (isAdmin ? {
+  // Always show subscription card — fall back to mock active so manage panel is always accessible
+  const effectiveSub: Subscription = sub ?? {
     status: 'active', plan: 'individual', price_paid: 10, max_students: 1,
     billing: 'monthly', trial_ends_at: new Date().toISOString(),
-    subscribed_until: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
-  } : null)
+    subscribed_until: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
+  }
   const trialColor = effectiveSub?.status === 'active' ? '#6BCB77'
     : expired ? '#FF6B6B' : daysLeft <= 3 ? '#FF6B6B' : daysLeft <= 7 ? '#FFD93D' : '#6BCB77'
   const canAdd = students.length < 3
@@ -239,8 +239,7 @@ export default function ParentPage() {
         </div>
 
         {/* Subscription status */}
-        {effectiveSub && (
-          <div className="rounded-3xl overflow-hidden"
+        <div className="rounded-3xl overflow-hidden"
             style={{ border: `2px solid ${trialColor}55` }}>
             <div className="p-5 flex items-center justify-between"
               style={{ background: `${trialColor}18` }}>
@@ -368,7 +367,6 @@ export default function ParentPage() {
               </div>
             )}
           </div>
-        )}
 
 
         {/* Kids section */}
