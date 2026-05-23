@@ -24,7 +24,7 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     flagCode: 'mk',
     unitsCount: 7,
     category: 'core',
-    grades: [1, 2, 3, 4, 5, 6, 7],
+    grades: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
     id: 'english',
@@ -37,7 +37,7 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     flagCode: 'gb',
     unitsCount: 4,
     category: 'core',
-    grades: [1, 2, 3, 4, 5, 6, 7],
+    grades: [1, 2, 3, 4, 5, 6, 7, 8],
   },
   {
     id: 'science',
@@ -73,7 +73,7 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     emoji: '⚛️',
     unitsCount: 3,
     category: 'science',
-    grades: [7],
+    grades: [7, 8, 9],
   },
   {
     id: 'chemistry',
@@ -97,7 +97,7 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     emoji: '💻',
     unitsCount: 4,
     category: 'science',
-    grades: [4, 5, 6, 7],
+    grades: [4, 5, 6, 7, 8],
   },
   {
     id: 'society',
@@ -121,7 +121,7 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     emoji: '🏛️',
     unitsCount: 3,
     category: 'social',
-    grades: [4, 5, 6, 7],
+    grades: [4, 5, 6, 7, 8],
   },
   {
     id: 'geography',
@@ -133,7 +133,7 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     emoji: '🌍',
     unitsCount: 4,
     category: 'social',
-    grades: [7],
+    grades: [7, 8],
   },
   {
     id: 'civics',
@@ -145,7 +145,7 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     emoji: '🏛️',
     unitsCount: 3,
     category: 'social',
-    grades: [7],
+    grades: [7, 8],
   },
   {
     id: 'french',
@@ -158,7 +158,7 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     flagCode: 'fr',
     unitsCount: 3,
     category: 'languages',
-    grades: [6, 7],
+    grades: [6, 7, 8],
   },
   {
     id: 'german',
@@ -171,7 +171,33 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     flagCode: 'de',
     unitsCount: 3,
     category: 'languages',
-    grades: [6, 7],
+    grades: [6, 7, 8],
+  },
+  {
+    id: 'italian',
+    name: 'Italian',
+    nameMk: 'Италијански јазик',
+    world: 'Il Mondo Italiano',
+    color: '#16A34A',
+    bgColor: '#DCFCE7',
+    emoji: '🇮🇹',
+    flagCode: 'it',
+    unitsCount: 3,
+    category: 'languages',
+    grades: [],
+  },
+  {
+    id: 'russian',
+    name: 'Russian',
+    nameMk: 'Руски јазик',
+    world: 'Русский мир',
+    color: '#1565C0',
+    bgColor: '#E3F2FD',
+    emoji: '🇷🇺',
+    flagCode: 'ru',
+    unitsCount: 3,
+    category: 'languages',
+    grades: [],
   },
 ]
 
