@@ -100,6 +100,18 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     grades: [4, 5, 6, 7, 8],
   },
   {
+    id: 'innovation',
+    name: 'Innovation',
+    nameMk: 'Иновации',
+    world: 'Иноваторски свет',
+    color: '#F97316',
+    bgColor: '#FFEDD5',
+    emoji: '💡',
+    unitsCount: 5,
+    category: 'science',
+    grades: [9],
+  },
+  {
     id: 'society',
     name: 'Society',
     nameMk: 'Општество',
