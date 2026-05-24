@@ -62589,6 +62589,1829 @@ Daniel Ek забележа: пиратерија е огромна; луѓе с�
       ],
     },
   ],
+  german: [
+    {
+      id: 'ger9-1',
+      title: 'Theme 1: Freizeit (Слободно време)',
+      lessons: [
+        {
+          id: 'ger9-1-1',
+          title: 'Vokabeln und Grammatik — Activities and past events',
+          content: `## Темата: Слободно време
+**Слободно време (Freizeit)** е важна тема за тинејџери — спорт, хобија, патувања, дружење.
+
+## Чести активности (Aktivitäten)
+| Германски | Македонски |
+|-----------|------------|
+| wandern | пешачи |
+| campen | кампува |
+| angeln | риболов |
+| surfen | сурфа |
+| Picknick machen | прави пикник |
+| Sport treiben | спортува |
+| Musik hören | слуша музика |
+| Filme sehen | гледа филмови |
+| lesen | чита |
+
+## Граматика: Перфект (Perfekt)
+**Perfekt** е најчестото минато време во германски разговор.
+
+### Образување
+**haben/sein + Partizip II (минато партицип)**
+
+### Со „haben" (повеќето глаголи)
+- *Wir **haben** ein Picknick **gemacht**.* (направивме пикник)
+- *Papa **hat** geangelt.* (татко рибаше)
+- *Ich **habe** surfen **gelernt**.* (научив сурфање)
+
+### Со „sein" (глаголи на движење и промена)
+- *Ich **bin** gewandert.* (пешачев)
+- *Wir **sind** zum Park **gegangen**.* (отидовме во парк)
+- *Tom **ist mitgekommen**.* (Том дојде со нас)
+- *Er **ist** spät **gekommen**.* (дојде доцна)
+
+## Слаби и јаки глаголи
+
+### Слаби (правилни)
+- Образувание: ge- + основа + -t
+- machen → gemacht
+- spielen → gespielt
+- lernen → gelernt
+
+### Јаки (неправилни)
+- Образувание: ge- + променета основа + -en
+- gehen → gegangen
+- kommen → gekommen
+- sehen → gesehen
+- schwimmen → geschwommen
+
+## Пример разказ
+> Gestern bin ich in den Park gegangen. Ich war nicht allein. Tom ist mitgekommen. Wir haben uns um elf Uhr getroffen. Er sollte um halb elf kommen, aber er ist nie pünktlich.
+
+**Превод:** Вчера отидов во паркот. Не бев сам. Том дојде со мене. Се сретнавме во 11. Требаше да дојде во 10:30, но никогаш не е навремен.
+
+## Поими за насока и просторно ориентирање
+- **hinten** (позади)
+- **vorne** (напред)
+- **links** (лево)
+- **rechts** (десно)
+- **oben** (горе)
+- **unten** (долу)
+- **in der Mitte** (на средина)
+
+## Места во град
+- **die Ampel** (семафор)
+- **der Bahnhof** (железничка станица)
+- **die Haltestelle** (постојка)
+- **die Kreuzung** (раскрсница)
+- **die Straße** (улица)
+
+**Поими:** Freizeit, Perfekt, haben, sein, Partizip II, слаби/јаки глаголи.`,
+          exercises: [
+            {
+              id: 'eger9-1-1',
+              type: 'multiple-choice',
+              question: 'Како се вика минатото време во германски разговор?',
+              options: ['Präsens', 'Präteritum', 'Perfekt', 'Futur'],
+              correct: 'Perfekt',
+              explanation: 'Перфектот (Perfekt) е најчестото минато време во германскиот разговор. Се гради со haben/sein + Partizip II.',
+            },
+            {
+              id: 'eger9-1-2',
+              type: 'multiple-choice',
+              question: 'Со кој помошен глагол се образува перфектот за „gehen"?',
+              options: ['haben', 'sein', 'werden', 'können'],
+              correct: 'sein',
+              explanation: 'Глаголите на движење (gehen, kommen, fahren) користат „sein" во перфект: Ich bin gegangen, Wir sind gekommen.',
+            },
+            {
+              id: 'eger9-1-3',
+              type: 'true-false',
+              question: 'Партицип II на „spielen" е „gespielt".',
+              correct: 'точно',
+              explanation: 'Точно — „spielen" е слаб (правилен) глагол. Партицип II: ge + spiel + t = gespielt. Пр. Ich habe Fußball gespielt.',
+            },
+          ],
+        },
+        {
+          id: 'ger9-1-2',
+          title: 'Hörverstehen und Leseverstehen — Listening and reading',
+          content: `## Разбирање на текст за слободно време
+
+### Стратегии за слушање
+1. **Слушаj за клучни зборови** (имиња, бројки, активности)
+2. **Не плаши се** ако не разбираш сè
+3. **Заклучи од контекст**
+4. **Барај глаголи во перфект** (хаbe/bin + партицип)
+
+## Пример: Слушан текст
+
+> Maria: Hallo Anna! Was hast du am Wochenende gemacht?
+> Anna: Ich bin mit meiner Familie nach Ohrid gefahren. Wir haben am See gepicknickt und gebadet.
+> Maria: Das klingt schön! Ich habe nur Hausaufgaben gemacht.
+> Anna: Schade! Vielleicht nächstes Wochenende kommen wir mit dir.
+
+### Прашања за разбирање
+1. Што направила Ана на викендот?
+2. Каде била?
+3. Што направила Марија?
+4. Што предлага Ана?
+
+## Стратегии за читање
+1. **Скенирање** — брзо барај информации
+2. **Скимирање** — главна идеа
+3. **Подробно читање** — за детали
+
+## Пример текст за читање
+
+> **Mein Hobby**
+>
+> Ich heiße Petar und ich bin 14 Jahre alt. Mein Hobby ist Schwimmen. Ich schwimme seit ich fünf war. Drei Mal in der Woche gehe ich ins Schwimmbad. Letztes Jahr habe ich einen Wettkampf gewonnen!
+>
+> Am Wochenende treffe ich meine Freunde. Wir spielen Fußball oder gehen ins Kino. Manchmal bleiben wir zu Hause und spielen Videospiele.
+
+### Прашања
+1. Колку години има Петар?
+2. Кое е неговото хоби?
+3. Колку често оди на пливање?
+4. Што направил минатата година?
+5. Што прави на викендот со другарите?
+
+## Глобално vs селективно разбирање
+- **Глобално** — главна идеа, општа порака
+- **Селективно** — специфични детали (датум, име, бројка)
+
+## Корисни прашања за разговор
+- Was machst du gern? (Што сакаш да правиш?)
+- Welche Hobbys hast du? (Кои хобија имаш?)
+- Wie oft? (Колку често?)
+- Wo? (Каде?)
+- Mit wem? (Со кого?)
+
+## Помашки глаголи за изразување
+
+### „werden" како главен глагол
+- Das Wetter **wird** schön. (Времето станува убаво)
+- Anna **wird** Ärztin. (Ана ќе биде лекар)
+
+### „haben, sein, werden" во претеритум (Präteritum)
+- Martina **wollte** dich besuchen, aber sie **hatte** keine Zeit. (Мартина сакаше да те посети, но немаше време)
+- Sie **war** lange in der Schule. (Беше долго во школа)
+- Es **wurde** spät. (Стана доцна)
+
+## Модални глаголи во претеритум
+- **dürfen → durfte** (смееше)
+- **können → konnte** (можеше)
+- **mögen → mochte** (сакаше)
+- **müssen → musste** (мораше)
+- **sollen → sollte** (требаше)
+- **wollen → wollte** (сакаше)
+
+### Пример
+- *Er **wollte** zu mir kommen, aber er **konnte** nicht, weil er lernen **musste**.* (Сакаше да ми дојде, но не можеше зашто мораше да учи.)
+
+**Поими:** Hörverstehen, Leseverstehen, глобално/селективно, werden, Präteritum, модални глаголи.`,
+          exercises: [
+            {
+              id: 'eger9-1-4',
+              type: 'multiple-choice',
+              question: 'Што значи „glob­ално разбирање" во читање?',
+              options: [
+                'Разбирање на секој збор',
+                'Разбирање на главната идеа на текстот',
+                'Разбирање на граматика',
+                'Разбирање на писменост',
+              ],
+              correct: 'Разбирање на главната идеа на текстот',
+              explanation: 'Глобално разбирање = главна идеа, општа порака. Селективно = специфични детали. Двете се важни вештини за читање.',
+            },
+            {
+              id: 'eger9-1-5',
+              type: 'multiple-choice',
+              question: 'Што е „musste" (минатно време од „müssen")?',
+              options: ['Може', 'Сака', 'Мораше', 'Смее'],
+              correct: 'Мораше',
+              explanation: '„Müssen" = мора. Претеритум „musste" = мораше. Пр. Ich musste lernen = Морав да учам.',
+            },
+            {
+              id: 'eger9-1-6',
+              type: 'true-false',
+              question: '„Werden" може да биде помашки глагол за иднина и главен глагол за станување.',
+              correct: 'точно',
+              explanation: 'Точно — „werden" има двојна функција: помашки (Ich werde lernen = ќе учам) и главен (Das wird schön = тоа станува убаво).',
+            },
+          ],
+        },
+        {
+          id: 'ger9-1-3',
+          title: 'Wortschatz und Schreiben — Vocabulary and writing about leisure',
+          content: `## Вокабулар: бои и описи (Farben und Beschreibungen)
+
+### Бои (Farben)
+| Германски | Македонски |
+|-----------|------------|
+| rot | црвено |
+| blau | сино |
+| grün | зелено |
+| gelb | жолто |
+| schwarz | црно |
+| weiß | бело |
+| braun | кафено |
+| grau | сиво |
+| rosa | розево |
+| orange | портокалово |
+
+### Пример со бои
+> Ich habe einen **roten** Apfel und eine **blaue** Tasche. Mein **grüner** Pullover liegt auf dem Bett.
+
+(Имам црвено јаболко и сина чанта. Мојот зелен пуловер лежи на креветот.)
+
+## Усвојување (Possessivpronomen)
+**Присвојни заменки** — кому му припаѓа нешто.
+
+### Главни форми
+| Заменка | Значење |
+|---------|---------|
+| mein | мој |
+| dein | твој |
+| sein | негов |
+| ihr | неjзин |
+| unser | наш |
+| euer | ваш |
+| ihr | нивен |
+| Ihr | Ваш (учтиво) |
+
+### Промена според род и падеж
+- Маж: mein**er** (мојот) во номинатив
+- Жена: mein**e**
+- Среден: mein**s** или mein
+
+### Примери
+- *Wo ist **dein** Apfel? **Meiner** liegt auf dem Tisch.* (Каде е твоето јаболко? Моето лежи на масата.)
+- *Das ist **mein** Bruder.* (Ова е мојот брат.)
+- *Hier ist **ihre** Tasche.* (Овде е нејзината чанта.)
+
+## Граматика: членски зборови
+
+### Определен член (Bestimmter Artikel)
+| | Mаж | Жена | Среден | Множ. |
+|---|-----|------|--------|-------|
+| Nom | der | die | das | die |
+| Akk | den | die | das | die |
+| Dat | dem | der | dem | den |
+
+### Неопределен член (Unbestimmter Artikel)
+| | Mаж | Жена | Среден |
+|---|-----|------|--------|
+| Nom | ein | eine | ein |
+| Akk | einen | eine | ein |
+| Dat | einem | einer | einem |
+
+## Пример сo членови
+- *Dort steht **ein** Junge.* (Таму стои момче.) — Nominativ
+- *Er hat **einen** Freund.* (Има пријател.) — Akkusativ
+- *Der Junge geht mit **dem** Freund in die Disco.* (Момчето оди со пријателот во дискотеката.) — Dativ
+
+## Писмено изразување
+
+### Опис на хоби
+Структура:
+1. Кое ми е хобито?
+2. Колку често го практикувам?
+3. Зошто го сакам?
+4. Со кого го правам?
+
+### Пример
+> Mein Hobby ist Fotografieren. Ich fotografiere seit drei Jahren. Jedes Wochenende gehe ich in die Natur und mache Fotos von Tieren und Landschaften. Ich liebe es, weil es kreativ und entspannend ist. Manchmal teile ich meine Fotos auf Instagram.
+
+(Моето хоби е фотографирање. Фотографирам три години. Секој викенд одам во природа и правам фотки на животни и пејзажи. Го сакам, зашто е креативно и опуштачко. Понекогаш ги делам моите фотки на Инстаграм.)
+
+### Опис на минат настан
+Структура:
+1. Кога и каде?
+2. Со кого?
+3. Што направивме?
+4. Како беше?
+
+### Пример
+> Letztes Wochenende bin ich mit meiner Familie nach Ohrid gefahren. Wir haben am See gepicknickt und sind geschwommen. Am Abend haben wir in einem Restaurant gegessen. Es war ein wunderbares Wochenende!
+
+(Минатиот викенд отидов со семејството во Охрид. Кампувавме крај езерото и пливавме. Вечерта јадевме во ресторан. Беше прекрасен викенд!)
+
+**Поими:** Farben, Possessivpronomen, членски зборови, Nominativ/Akkusativ/Dativ.`,
+          exercises: [
+            {
+              id: 'eger9-1-7',
+              type: 'multiple-choice',
+              question: 'Која е промената на „mein" за женски род номинатив?',
+              options: ['mein', 'meiner', 'meine', 'meinen'],
+              correct: 'meine',
+              explanation: 'За женски род номинатив: meine (mein-e). На пр. meine Mutter, meine Schwester, meine Tasche.',
+            },
+            {
+              id: 'eger9-1-8',
+              type: 'multiple-choice',
+              question: 'Како се вика „жолто" на германски?',
+              options: ['rot', 'blau', 'gelb', 'grün'],
+              correct: 'gelb',
+              explanation: 'Gelb = жолто. Rot = црвено, blau = сино, grün = зелено.',
+            },
+            {
+              id: 'eger9-1-9',
+              type: 'true-false',
+              question: 'Определениот член за маж­ка форма во Nominativ е „der".',
+              correct: 'точно',
+              explanation: 'Точно — der (м), die (ж), das (среден) во Nominativ. Овие се менуваат по падеж.',
+            },
+          ],
+        },
+        {
+          id: 'ger9-1-4',
+          title: 'Konversation und Modalverben — Conversation and modal verbs',
+          content: `## Конверзација за слободно време
+
+### Полезни прашања
+- *Was machst du in deiner Freizeit?* (Што правиш во слободно време?)
+- *Hast du ein Hobby?* (Имаш ли хоби?)
+- *Wo gehst du gern hin?* (Каде сакаш да одиш?)
+- *Mit wem verbringst du deine Zeit?* (Со кого го поминуваш времето?)
+- *Was hast du am Wochenende gemacht?* (Што направи на викендот?)
+
+### Одговори
+- *Ich spiele gern Fußball.* (Сакам да играм фудбал.)
+- *Mein Hobby ist Lesen.* (Моето хоби е читање.)
+- *Ich gehe gern ins Kino.* (Сакам да одам во кино.)
+- *Ich verbringe Zeit mit meinen Freunden.* (Поминувам време со моите пријатели.)
+
+## Изразување на свидетелствo
+- *Das war toll!* (Беше супер!)
+- *Das war langweilig.* (Беше досадно.)
+- *Es hat Spaß gemacht.* (Беше забавно.)
+
+## Модални глаголи во конверзација
+
+### „können" (може)
+- *Ich **kann** schwimmen.* (Можам да пливам.)
+- *Wir **können** ins Kino gehen.* (Можеме да одиме во кино.)
+
+### „dürfen" (смее, дозволено)
+- *Du **darfst** mein Buch lesen.* (Смееш да го читаш мојот книга.)
+- *Ihr **dürft** nicht laut sein.* (Не смеете да бидете гласни.)
+
+### „müssen" (мора)
+- *Ich **muss** lernen.* (Морам да учам.)
+- *Sie **müssen** früher kommen.* (Тие мора да дојдат порано.)
+
+### „sollen" (треба)
+- *Du **sollst** mehr Sport treiben.* (Треба да спортуваш повеќе.)
+- *Wir **sollen** zusammen lernen.* (Треба да учиме заедно.)
+
+### „wollen" (сака, желее)
+- *Ich **will** ins Kino gehen.* (Сакам да одам во кино.)
+- *Sie **wollen** nach Berlin reisen.* (Тие сакаат да патуваат во Берлин.)
+
+### „mögen / möchten" (сака, би сакал)
+- *Ich **mag** Pizza.* (Сакам пица.)
+- *Ich **möchte** Wasser, bitte.* (Сакам вода, ве молам — учтиво.)
+
+## Граматичка структура
+**Модален глагол на 2-ра позиција + главен глагол на крај (инфинитив)**
+
+### Пример
+- *Ich **kann** heute nicht zum Training **kommen**.* (Не можам да дојдам на тренинг денес.)
+- *Wir **müssen** für die Prüfung **lernen**.* (Мора да учиме за испитот.)
+- *Sie **will** ins Konzert **gehen**.* (Таа сака да оди на концерт.)
+
+## „Möchten" (учтива форма)
+Поучтиво од „wollen". Се користи често во ресторан, продавница:
+- *Was **möchten** Sie? — Ich **möchte** einen Kaffee, bitte.* (Што сакате? — Сакам кафе, ве молам.)
+- *Ich **möchte** Tickets für das Konzert kaufen.* (Сакам да купам билети за концертот.)
+
+## Сврзници и сложени реченици
+
+### Подредувачки сврзници (verb at end)
+- **weil** (зашто)
+- **dass** (дека)
+- **wenn** (кога/ако)
+- **obwohl** (иако)
+
+### Пример
+- *Ich gehe heute nicht ins Kino, **weil** ich Hausaufgaben **machen muss**.* (Не одам во кино денес, зашто морам да правам домашна.)
+- *Er sagt, **dass** er kommt.* (Тој вели дека ќе дојде.)
+
+### Координативни сврзници (verb on 2nd position)
+- **und** (и)
+- **aber** (но)
+- **oder** (или)
+- **denn** (зашто)
+- **sondern** (туку)
+
+### Пример
+- *Ich spiele Fußball **und** mein Bruder spielt Basketball.* (Играм фудбал и брат ми игра кошарка.)
+- *Ich will kommen, **aber** ich kann nicht.* (Сакам да дојдам, но не можам.)
+
+**Поими:** разговор, модални глаголи, möchten, weil, dass, координативни/подредувачки сврзници.`,
+          exercises: [
+            {
+              id: 'eger9-1-10',
+              type: 'multiple-choice',
+              question: 'Што значи „Ich möchte" во ресторан?',
+              options: ['Морам', 'Сакам (учтиво)', 'Можам', 'Знам'],
+              correct: 'Сакам (учтиво)',
+              explanation: '„Möchten" е поучтива форма од „wollen" (сака). Се користи често во ресторан, продавница. На пр. Ich möchte einen Tee = Сакам чај.',
+            },
+            {
+              id: 'eger9-1-11',
+              type: 'multiple-choice',
+              question: 'Каде стои глаголот во сложена реченица со „weil"?',
+              options: [
+                'На почеток',
+                'На втора позиција',
+                'На крај',
+                'Не е важно',
+              ],
+              correct: 'На крај',
+              explanation: 'По подредувачки сврзник (weil, dass, wenn, obwohl) глаголот оди на крај на дел-реченицата. На пр. Ich bleibe zu Hause, weil ich krank bin.',
+            },
+            {
+              id: 'eger9-1-12',
+              type: 'true-false',
+              question: 'Со модални глаголи, главниот глагол стои на крајот на реченицата во инфинитив.',
+              correct: 'точно',
+              explanation: 'Точно — модалот е на 2-ра позиција, главниот глагол оди на крај во инфинитив (без „zu"). Ich muss lernen, Sie kann schwimmen.',
+            },
+          ],
+        },
+        {
+          id: 'ger9-1-5',
+          title: 'Schreiben — Personal letter and journal entry',
+          content: `## Писмено изразување за слободно време
+
+## Видови пишување
+1. **Личен дневник** (Tagebuch)
+2. **Лично писмо** (Persönlicher Brief)
+3. **Електронско писмо** (E-Mail)
+4. **Опис** (Beschreibung)
+5. **Расказ за минат настан** (Erzählung)
+
+## Структура на лично писмо
+
+### Делови
+1. **Место и датум** (горе десно)
+2. **Поздрав** (Liebe... / Lieber...)
+3. **Вовед** (Wie geht es dir?)
+4. **Главен текст** (вести, прашања, описи)
+5. **Завршен пасус** (Schreib bald! / Bis bald!)
+6. **Поздрав** (Liebe Grüße / Bis bald / Tschüss)
+7. **Потпис** (име)
+
+### Корисни фрази
+
+#### Започнување
+- *Wie geht es dir?* (Како си?)
+- *Danke für deinen Brief / deine E-Mail.* (Благодарам за писмото / e-mail-ot.)
+- *Ich freue mich, dass du mir geschrieben hast.* (Се радувам што ми пишa.)
+
+#### Прашања
+- *Was hast du am Wochenende gemacht?*
+- *Wie war dein Urlaub?* (Како беше твојот одмор?)
+- *Hast du neue Hobbys?* (Имаш ли нови хобија?)
+
+#### Опишување
+- *Letztes Wochenende war ich in Ohrid.*
+- *Ich habe viele Fotos gemacht.*
+
+#### Завршување
+- *Schreib mir bald!*
+- *Ich freue mich auf deine Antwort!*
+- *Liebe Grüße / Viele Grüße / Tschüss / Bis bald*
+
+## Пример лично писмо
+
+> Skopje, 15. Mai 2024
+>
+> Liebe Anna,
+>
+> wie geht es dir? Danke für deinen letzten Brief. Es war toll, von dir zu hören!
+>
+> Bei mir gibt es viele Neuigkeiten. Letzten Monat habe ich angefangen, Gitarre zu spielen. Es macht mir viel Spaß, aber es ist auch schwierig. Ich übe jeden Tag eine Stunde.
+>
+> Am Wochenende war ich mit meiner Familie in Ohrid. Wir sind im See geschwommen und haben am Strand gegrillt. Das Wetter war wunderschön!
+>
+> Wie war dein letztes Wochenende? Hast du etwas Interessantes gemacht? Schreib mir bald!
+>
+> Liebe Grüße,
+> Marija
+
+## Дневник (Tagebuch)
+По-лично, информално. Само за тебе.
+
+### Структура
+1. Датум
+2. Како се чувствуваш
+3. Што се случи денес
+4. Што мислиш
+
+### Пример
+
+> **15. Mai 2024**
+>
+> Heute war ein guter Tag. In der Schule hatten wir Sportunterricht und wir haben Fußball gespielt. Ich habe ein Tor geschossen!
+>
+> Nach der Schule bin ich mit Marko ins Eiscafé gegangen. Wir haben Eis gegessen und über die Schule gesprochen. Marko ist ein guter Freund.
+>
+> Am Abend habe ich Hausaufgaben gemacht und etwas ferngesehen. Jetzt bin ich müde. Morgen will ich früh aufstehen.
+
+## Совети за добро пишување
+1. **Планирaj** пред да пишеш
+2. **Користи** разни сврзници (und, aber, weil, dass)
+3. **Менувaj** видови реченици (просто, сложено)
+4. **Провери** граматика и правопис на крај
+5. **Не преведувaj** директно од македонски — мисли на германски
+
+## Чести грешки
+
+### Ред на зборови
+- ❌ Ich gestern bin ins Kino gegangen.
+- ✓ Ich bin gestern ins Kino gegangen. ИЛИ Gestern bin ich ins Kino gegangen.
+
+### Падежи
+- ❌ Ich gehe mit mein Freund.
+- ✓ Ich gehe mit meinem Freund. (Dativ после „mit")
+
+### Глагол на крај со weil
+- ❌ Ich bleibe zu Hause, weil ich bin krank.
+- ✓ Ich bleibe zu Hause, weil ich krank bin.
+
+**Поими:** лично писмо, дневник, структура, корисни фрази, чести грешки.`,
+          exercises: [
+            {
+              id: 'eger9-1-13',
+              type: 'multiple-choice',
+              question: 'Како се вика „Liebe Grüße" на македонски?',
+              options: [
+                'Здраво',
+                'Срдечни поздрави',
+                'Збогум',
+                'Добро утро',
+              ],
+              correct: 'Срдечни поздрави',
+              explanation: '„Liebe Grüße" е чест завршен поздрав во писма и e-mails. Превод: срдечни поздрави / срдечно. Користи се со пријатели и семејство.',
+            },
+            {
+              id: 'eger9-1-14',
+              type: 'multiple-choice',
+              question: 'Која реченица има правилен ред на зборови?',
+              options: [
+                'Ich gestern war ins Kino.',
+                'Gestern ich war ins Kino.',
+                'Gestern war ich ins Kino.',
+                'War ich gestern ins Kino.',
+              ],
+              correct: 'Gestern war ich ins Kino.',
+              explanation: 'Во германски: глаголот секогаш е на 2-ра позиција. „Gestern" (1) + „war" (2) + „ich" + „ins Kino". Тоа е инверзија.',
+            },
+            {
+              id: 'eger9-1-15',
+              type: 'true-false',
+              question: 'Во лично писмо до пријател, користиме формално обраќање „Sie".',
+              correct: 'неточно',
+              explanation: 'Неточно — за пријатели и блиски се користи „du" (ти). „Sie" (Вие учтиво) се користи во формално обраќање (странци, постари, бизнис).',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'ger9-2',
+      title: 'Theme 2: Umgebung (Опкружување)',
+      lessons: [
+        {
+          id: 'ger9-2-1',
+          title: 'Vokabeln — My environment and city',
+          content: `## Темата: Опкружување
+**Опкружување (Umgebung)** — мојата населба, улица, град, село.
+
+## Места во град (Orte in der Stadt)
+| Германски | Македонски |
+|-----------|------------|
+| das Rathaus | општина |
+| die Schule | школа |
+| das Krankenhaus | болница |
+| das Restaurant | ресторан |
+| die Bank | банка |
+| die Post | пошта |
+| das Kino | кино |
+| das Theater | театар |
+| das Museum | музеј |
+| die Bibliothek | библиотека |
+| der Park | парк |
+| der Spielplatz | игралиште |
+| die Apotheke | аптека |
+| der Supermarkt | супермаркет |
+| das Café | кафуле |
+
+## Природа и опкружување (Natur und Umwelt)
+| Германски | Македонски |
+|-----------|------------|
+| der Berg | планина |
+| der Fluss | река |
+| der See | езеро |
+| das Meer | море |
+| der Wald | шума |
+| die Wiese | ливада |
+| das Feld | поле |
+| die Blume | цвет |
+| der Baum | дрво |
+| der Himmel | небо |
+
+## Време (Wetter)
+- **Es ist sonnig.** (Сончево е)
+- **Es regnet.** (Врне)
+- **Es schneit.** (Снег врне)
+- **Es ist windig.** (Ветровито е)
+- **Es ist heiß / warm / kalt.** (Жешко / топло / студено)
+- **Es ist bewölkt.** (Облачно е)
+
+## Загадување (Verschmutzung) и средина
+- **die Verschmutzung** (загадување)
+- **der Müll** (отпадоци)
+- **das Recycling** (рециклажа)
+- **die Umweltverschmutzung** (загадување на животна средина)
+- **der Klimawandel** (климатски промени)
+
+### Зборови за заштита
+- **schützen** (заштитува)
+- **trennen** (одделува — за отпад)
+- **sparen** (заштедува — енергија, вода)
+- **vermeiden** (избегнува)
+
+## Опис на родниот град / село
+Структура:
+1. Каде се наоѓа (Wo liegt es?)
+2. Колку жители (Wie viele Einwohner?)
+3. Што е посебно (Was ist besonders?)
+4. Места за посета (Sehenswürdigkeiten)
+5. Активности (Aktivitäten)
+
+### Пример опис
+
+> **Mein Heimatort Skopje**
+>
+> Skopje liegt im Norden Mazedoniens und ist die Hauptstadt. Es hat etwa 500.000 Einwohner. Es ist eine alte Stadt mit interessanter Geschichte.
+>
+> In Skopje gibt es viele Sehenswürdigkeiten: die Steinerne Brücke, das Mutter Teresa Haus, die alte Türkische Basar (Alter Markt) und das Mazedonien-Platz mit der großen Statue.
+>
+> Man kann in Skopje viel machen — ins Kino oder Theater gehen, in Cafés sitzen, im Park spazieren oder in den Bergen wandern. Vodno ist ein schöner Berg in der Nähe.
+
+## Корисни глаголи
+- **liegen** (се наоѓа): *Skopje liegt im Norden.*
+- **haben** (има): *Es hat 500.000 Einwohner.*
+- **geben (es gibt)** (има): *In Skopje gibt es viele Cafés.*
+- **besuchen** (посетува): *Wir besuchen das Museum.*
+- **sehen** (гледа): *Man kann viele Sehenswürdigkeiten sehen.*
+
+**Поими:** Umgebung, Orte in der Stadt, Wetter, Verschmutzung, опис на град.`,
+          exercises: [
+            {
+              id: 'eger9-2-1',
+              type: 'multiple-choice',
+              question: 'Како се вика „болница" на германски?',
+              options: ['Schule', 'Bibliothek', 'Krankenhaus', 'Rathaus'],
+              correct: 'Krankenhaus',
+              explanation: 'Krankenhaus = болница. „Kranken" = болен, „Haus" = куќа. Сложена германска именка.',
+            },
+            {
+              id: 'eger9-2-2',
+              type: 'multiple-choice',
+              question: 'Што значи „Es regnet"?',
+              options: ['Сончево е', 'Врне', 'Снег врне', 'Ветровито е'],
+              correct: 'Врне',
+              explanation: 'Es regnet = врне (од regnen — врне). Es schneit = снег врне, Es ist sonnig = сончево е.',
+            },
+            {
+              id: 'eger9-2-3',
+              type: 'true-false',
+              question: '„Es gibt" значи „има" и се користи за да кажеме што постои на одредено место.',
+              correct: 'точно',
+              explanation: 'Точно — „Es gibt" е безличен израз за „има" / „постои". На пр. „In meiner Stadt gibt es einen Park" (Во мојот град има парк).',
+            },
+          ],
+        },
+        {
+          id: 'ger9-2-2',
+          title: 'Grammatik — Articles and prepositions',
+          content: `## Употреба на членовите
+
+### Кога користиме определен член (der/die/das)
+- За **специфични** предмети: *Der Park ist groß.* (Паркот е голем — конкретен.)
+- За **уникатни** работи: *Die Sonne scheint.* (Сонцето грее.)
+- За работи **веќе споменати**: *Da ist ein Hund. **Der** Hund ist klein.* (Има куче. Кучето е мало.)
+
+### Кога користиме неопределен член (ein/eine/ein)
+- За **первата спомин**: *Da ist **ein** Hund.* (Има едно куче.)
+- За **eden од многу**: *Ich habe **einen** Bruder.* (Имам брат — еден од можно.)
+
+### Нулов член (без член)
+- За **множина без специфичност**: *Ich mag Hunde.* (Сакам кучиња.)
+- За **апстрактни именки**: *Ich liebe Musik.* (Сакам музика.)
+- За **некои зани­мања**: *Sie ist Lehrerin.* (Таа е учителка.)
+
+## Предлози (Präpositionen)
+
+### Локални предлози со Dativ (каде?)
+- **in** (во): *Ich bin **in** der Schule.*
+- **an** (на/до): *Wir sind **an** dem See.* (= am See)
+- **auf** (на): *Das Buch liegt **auf** dem Tisch.*
+- **unter** (под): *Die Katze ist **unter** dem Bett.*
+- **neben** (поред): *Er sitzt **neben** mir.*
+- **zwischen** (меѓу): *Das Café ist **zwischen** der Bank und der Post.*
+- **vor** (пред): *Ich warte **vor** dem Kino.*
+- **hinter** (зад): *Der Garten ist **hinter** dem Haus.*
+
+### Локални предлози со Akkusativ (каде?, движење кон)
+Истите предлози со Akkusativ кога има движење:
+- **in** (во): *Ich gehe **in** die Schule.* (одам кон школата)
+- **an** (на/до): *Ich gehe **an** den See.* (одам кон езерото)
+- **auf** (на): *Ich stelle das Buch **auf** den Tisch.* (ставам книгата на масата)
+
+### Само со Dativ (без Akk алтернатива)
+- **mit** (со): *Ich gehe **mit** meinem Freund.*
+- **bei** (кај): *Sie wohnt **bei** ihrer Tante.*
+- **von** (од): *Das ist ein Geschenk **von** Maria.*
+- **zu** (кон): *Wir gehen **zu** Oma.*
+- **nach** (после/во): *Nach der Schule gehe ich nach Hause.*
+
+### Само со Akk
+- **für** (за): *Das ist **für** dich.*
+- **gegen** (против): *Ich bin **gegen** das Rauchen.*
+- **durch** (низ): *Wir gehen **durch** den Wald.*
+- **ohne** (без): *Ich komme **ohne** meinen Bruder.*
+
+## Релативни заменки (Relativpronomen)
+Се користат за поврзување реченици и опишување именки.
+
+### Форми
+| | Маж | Жена | Среден | Множ |
+|---|-----|------|--------|-----|
+| Nom | der | die | das | die |
+| Akk | den | die | das | die |
+| Dat | dem | der | dem | denen |
+
+### Пример
+- *Das ist der Mann, **der** in Berlin wohnt.* (Тоа е човекот кој живее во Берлин.)
+- *Das ist die Frau, **die** ich kenne.* (Тоа е жената кој ja познавам.)
+- *Das ist das Buch, **das** ich gelesen habe.* (Тоа е книгата што ja прочитав.)
+
+Глаголот оди на крај од релативната реченица.
+
+## Прилози за честотa
+- **immer** (секогаш)
+- **oft** (често)
+- **manchmal** (понекогаш)
+- **selten** (ретко)
+- **nie / niemals** (никогаш)
+
+### Пример
+- *Ich gehe **immer** zu Fuß.* (Секогаш одам пешки.)
+- *Sie kommt **manchmal** zu Besuch.* (Понекогаш доаѓа во посета.)
+- *Wir spielen **selten** Fußball.* (Ретко играме фудбал.)
+
+**Поими:** определен/неопределен член, локални предлози, релативни заменки, Dativ/Akkusativ, прилози за честотa.`,
+          exercises: [
+            {
+              id: 'eger9-2-4',
+              type: 'multiple-choice',
+              question: 'Кој падеж бараат предлозите „mit, bei, von, zu, nach"?',
+              options: ['Nominativ', 'Akkusativ', 'Dativ', 'Genitiv'],
+              correct: 'Dativ',
+              explanation: 'Овие предлози секогаш бараат Dativ. На пр. mit dem Freund, bei der Oma, zu Hause, nach der Schule.',
+            },
+            {
+              id: 'eger9-2-5',
+              type: 'multiple-choice',
+              question: 'Која релативна заменка завршува реченица „Das ist der Mann, ___ in Berlin wohnt"?',
+              options: ['die', 'der', 'das', 'den'],
+              correct: 'der',
+              explanation: '„Der Mann" е маж­ски род номинатив → релативна заменка „der". Реченицата: „...кој живее во Берлин".',
+            },
+            {
+              id: 'eger9-2-6',
+              type: 'true-false',
+              question: 'Локалните предлози (in, an, auf) можат да бараат Dativ (каде?) или Akkusativ (каде?, движење).',
+              correct: 'точно',
+              explanation: 'Точно — Wechselpräpositionen. Dativ за статична локација (Ich bin in der Schule), Akkusativ за движење кон (Ich gehe in die Schule).',
+            },
+          ],
+        },
+        {
+          id: 'ger9-2-3',
+          title: 'Speaking — Asking and giving information',
+          content: `## Барање и давање информации
+
+### Прашања за насока
+- *Wo ist...?* (Каде е...?)
+- *Wie komme ich zu...?* (Како да стигнам до...?)
+- *Können Sie mir helfen?* (Можете ли да ми помогнете?)
+- *Wo ist die nächste Apotheke?* (Каде е најблиската аптека?)
+
+### Одговори за насока
+- *Gehen Sie geradeaus.* (Одете право.)
+- *Biegen Sie rechts ab.* (Скршнете десно.)
+- *Biegen Sie links ab.* (Скршнете лево.)
+- *Es ist auf der rechten Seite.* (На десната страна е.)
+- *Es ist neben dem Kino.* (Поред киното е.)
+- *Es ist zwischen der Bank und der Post.* (Меѓу банката и поштата е.)
+
+### Пример дијалог
+
+> Tourist: Entschuldigung, wo ist das Mazedonien-Platz?
+> Lokaler: Gehen Sie geradeaus bis zur Steinerne Brücke. Dann biegen Sie rechts ab. Sie sehen es auf der linken Seite.
+> Tourist: Vielen Dank!
+> Lokaler: Bitte, gern geschehen!
+
+## Прашања за време и активности
+
+### За време
+- *Wie spät ist es?* (Колку е часот?)
+- *Wann öffnet das Museum?* (Кога се отвора музејот?)
+- *Wann ist das Konzert?* (Кога е концертот?)
+
+### Одговори
+- *Es ist drei Uhr.* (Три часа е.)
+- *Es ist halb fünf.* (Половина пет.) — 4:30
+- *Es ist Viertel nach zwei.* (15 минути по 2.) — 2:15
+- *Es ist Viertel vor drei.* (15 минути до 3.) — 2:45
+
+## Поканување
+
+### Покани
+- *Möchtest du ins Kino gehen?* (Сакаш да одиме во кино?)
+- *Hast du Lust auf einen Kaffee?* (Имаш желба за кафе?)
+- *Komm doch mit!* (Дојди со нас!)
+
+### Прифаќање
+- *Ja, gerne!* (Да, со задоволство!)
+- *Das ist eine gute Idee!* (Тоа е добра идеа!)
+- *Klar, ich komme mit.* (Сигурно, доaѓам со вас.)
+
+### Одбивање учтиво
+- *Tut mir leid, ich kann nicht.* (Жал ми е, не можам.)
+- *Vielleicht ein anderes Mal.* (Можеби друг пат.)
+- *Ich habe leider keine Zeit.* (За жал немам време.)
+
+## Изразувание на лична изјава
+
+### „Не сум сигурен" — претпоставки
+- *Ich glaube, dass...* (Мислам дека...)
+- *Vielleicht...* (Можеби...)
+- *Es könnte sein, dass...* (Може да биде дека...)
+
+### Мислење
+- *Ich finde, dass...* (Сметам дека...)
+- *Meiner Meinung nach...* (По мое мислење...)
+- *Ich bin der Meinung, dass...* (На мнение сум дека...)
+
+## Граматика: Конјунктив за учтивост
+
+### Würden + инфинитив
+По-учтиво од директни прашања:
+- *Würden Sie mir bitte helfen?* (Дали би ми помогнале, ве молам?)
+- *Würdest du gern ins Kino gehen?* (Дали би сакал/а да одиме во кино?)
+
+### Hätten / wären
+- *Ich hätte gern...* (Сакам / Би сакал/а...)
+- *Es wäre toll, wenn...* (Би било супер ако...)
+
+## Пример: Барање/давање информации во ресторан
+
+> Kellner: Guten Tag! Was möchten Sie?
+> Kunde: Guten Tag. Können Sie mir die Speisekarte bringen?
+> Kellner: Natürlich. Hier ist sie.
+> Kunde: Was ist heute das Tagesgericht?
+> Kellner: Heute haben wir Tafelspitz mit Kartoffeln.
+> Kunde: Das hört sich gut an. Ich hätte gern das Tagesgericht und ein Mineralwasser, bitte.
+> Kellner: Sehr gern.
+
+**Поими:** прашања за насока, време, поканување, прифаќање, одбивање, конјунктив за учтивост.`,
+          exercises: [
+            {
+              id: 'eger9-2-7',
+              type: 'multiple-choice',
+              question: 'Како се вика „Биди десно" на германски?',
+              options: [
+                'Gehen Sie geradeaus.',
+                'Biegen Sie rechts ab.',
+                'Biegen Sie links ab.',
+                'Es ist neben der Schule.',
+              ],
+              correct: 'Biegen Sie rechts ab.',
+              explanation: '„Biegen Sie rechts ab" = Скршнете десно. „Links" = лево, „geradeaus" = право.',
+            },
+            {
+              id: 'eger9-2-8',
+              type: 'multiple-choice',
+              question: 'Која е учтива форма за „Сакам кафе"?',
+              options: [
+                'Ich will Kaffee.',
+                'Ich möchte einen Kaffee, bitte.',
+                'Kaffee!',
+                'Gib mir Kaffee.',
+              ],
+              correct: 'Ich möchte einen Kaffee, bitte.',
+              explanation: '„Möchten" е поучтиво од „wollen". Со „bitte" е уште поучтиво. Совршено за ресторан или продавница.',
+            },
+            {
+              id: 'eger9-2-9',
+              type: 'true-false',
+              question: '„Es ist halb fünf" значи 4:30 на германски.',
+              correct: 'точно',
+              explanation: 'Точно — „halb fünf" буквално „половина пет" значи 4:30 (половина пред 5 часа). Тоа е специфичен германски начин на кажување време.',
+            },
+          ],
+        },
+        {
+          id: 'ger9-2-4',
+          title: 'Reading and writing about places',
+          content: `## Читање за места
+
+### Стратегии
+1. **Гледај наслов и поднаслови**
+2. **Видеш слики** (ако има)
+3. **Прв пасус** — главна идеа
+4. **Подвлекни клучни зборови**
+5. **Прашувај се** додека читаш
+
+## Пример текст за читање
+
+> **Wien — die Hauptstadt Österreichs**
+>
+> Wien ist die Hauptstadt von Österreich. Mit etwa 2 Millionen Einwohnern ist sie die größte Stadt des Landes. Wien liegt an der Donau und ist berühmt für ihre Geschichte, Kultur und Architektur.
+>
+> In Wien gibt es viele Sehenswürdigkeiten: das Schloss Schönbrunn, die Hofburg, den Stephansdom und das Riesenrad im Prater. Die Stadt ist auch berühmt für ihre Kaffeehaus-Kultur und ihre Sachertorte.
+>
+> Im Sommer kann man im Donaupark spazieren, im Winter zum Weihnachtsmarkt gehen. Es gibt viele Theater, Opernhäuser und Museen.
+
+### Разбирање — прашања
+1. Каде се наоѓа Виена?
+2. Колку жители има?
+3. Кои се главните забележителности?
+4. Што е специјално за виенската кафе-култура?
+5. Какви активности можат да се прават летом и зимом?
+
+## Опис на место — структура
+
+### Прв пасус: општо
+- Каде се наоѓа
+- Големина (жители)
+- Тип на место (град, село, планина)
+
+### Втор пасус: посебности
+- Историја
+- Култура
+- Природа
+- Карактеристики
+
+### Трет пасус: активности
+- Што може да се прави
+- Каде може да се оди
+- Што може да се види
+
+### Четврт пасус: лично искуство
+- Зошто го сакаш
+- Препораки за посетители
+
+## Пример опис на село
+
+> **Mein Dorf Krushevo**
+>
+> Krushevo ist ein kleines Dorf in den Bergen Mazedoniens. Es hat etwa 5.000 Einwohner und liegt 1.350 Meter über dem Meeresspiegel — es ist die höchste Stadt in Mazedonien!
+>
+> Krushevo ist berühmt für seine Geschichte. Hier wurde 1903 die kurzlebige Krushevo-Republik gegründet. Heute gibt es viele historische Denkmäler und das Museum der Ilinden-Aufstand.
+>
+> Im Sommer ist Krushevo ein beliebtes Reiseziel wegen des kühlen Wetters und der schönen Natur. Im Winter kann man Ski fahren auf dem Berg Pelister. Es gibt auch viele kleine Restaurants mit traditionellem mazedonischem Essen.
+>
+> Ich besuche Krushevo gern, weil es ruhig und schön ist. Wenn du nach Mazedonien kommst, solltest du es unbedingt besuchen!
+
+## Граматика: Сложени реченици со „obwohl" и „während"
+
+### „obwohl" (иако)
+- *Ich gehe schwimmen, **obwohl** das Wetter kalt ist.* (Одам да пливам иако времето е студено.)
+
+### „während" (додека / за разлика од)
+- *Manche Leute mögen Skopje, **während** andere Ohrid bevorzugen.* (Некои луѓе ja сакаат Скопје, додека други претпочитаат Охрид.)
+
+## Сравнителни форми
+- *Skopje ist größer **als** Bitola.* (Скопје е поголемо од Битола.)
+- *Krushevo ist die höchste Stadt in Mazedonien.* (Крушево е највисокиот град во Македонија.)
+
+## Заклучок
+- *Zusammenfassend kann man sagen, dass...* (За резимирање може да се каже дека...)
+- *Insgesamt...* (Севкупно...)
+- *Schließlich...* (На крај...)
+
+**Поими:** опис на место, структура, обы­wohl, während, сравнителни форми, заклучок.`,
+          exercises: [
+            {
+              id: 'eger9-2-10',
+              type: 'multiple-choice',
+              question: 'Што значи „obwohl"?',
+              options: ['Зашто', 'Иако', 'Кога', 'Ако'],
+              correct: 'Иако',
+              explanation: '„Obwohl" е подредувачки сврзник што значи „иако". Глаголот оди на крај: Ich gehe schwimmen, obwohl das Wetter kalt ist.',
+            },
+            {
+              id: 'eger9-2-11',
+              type: 'multiple-choice',
+              question: 'Како се вика „поголемо од" на германски?',
+              options: ['als', 'größer als', 'mehr', 'so'],
+              correct: 'größer als',
+              explanation: '„Größer als" = поголемо од. Сравнителна форма: gut → besser, groß → größer, klein → kleiner.',
+            },
+            {
+              id: 'eger9-2-12',
+              type: 'true-false',
+              question: 'Кога пишуваме за место, добро е да следиме структура: општо → посебности → активности → лично искуство.',
+              correct: 'точно',
+              explanation: 'Точно — логична структура помага читателот да разбере. Од општо кон специфично, со лично искуство на крај.',
+            },
+          ],
+        },
+        {
+          id: 'ger9-2-5',
+          title: 'Writing — Short texts about my city',
+          content: `## Пишување кратки текстови за мојот град
+
+### Видови кратки текстови
+1. **Запис за блог**
+2. **Реклама за туризам**
+3. **Препорака за пријател**
+4. **Опис за веб-страна**
+5. **Лична брошура**
+
+## Пример: Блог запис
+
+> **Mein Wochenende in Ohrid**
+>
+> Hallo Leute!
+>
+> Letztes Wochenende war ich mit meiner Familie in Ohrid. Was für eine wunderschöne Stadt! Ich muss euch davon erzählen.
+>
+> Wir sind am Freitag Abend angekommen und haben in einem Hotel am Strand übernachtet. Am Samstag sind wir früh aufgestanden und haben den Alten Markt besucht. Es gibt so viele kleine Läden mit Schmuck und Souvenirs!
+>
+> Dann sind wir zum Kloster Sveti Naum gefahren. Das Kloster ist auf einer kleinen Insel am See. Es ist sehr alt und schön. Wir haben auch im See geschwommen — das Wasser war kühl, aber erfrischend!
+>
+> Am Abend haben wir in einem traditionellen Restaurant gegessen. Mazedonisches Essen ist so lecker! Ich habe Tavče Gravče probiert — das beste Gericht!
+>
+> Wenn ihr nach Mazedonien kommt, müsst ihr Ohrid besuchen. Es ist die schönste Stadt!
+>
+> Bis bald!
+> Marija
+
+## Пример: Реклама за туризам
+
+> **Besuchen Sie Skopje — Die Hauptstadt Mazedoniens!**
+>
+> Skopje ist eine alte Stadt mit moderner Atmosphäre. Hier verbinden sich Geschichte und Kultur auf einzigartige Weise.
+>
+> **Was Sie sehen sollten:**
+> - Die Steinerne Brücke (Kameni Most)
+> - Das Mazedonien-Platz mit der Alexander-Statue
+> - Den Alten Markt (Stara Čaršija)
+> - Das Mutter Teresa Haus
+> - Den Vodno-Berg mit dem Millennium-Kreuz
+>
+> **Was Sie machen können:**
+> - Spaziergänge entlang des Vardar-Flusses
+> - Mazedonische Küche in traditionellen Restaurants probieren
+> - Einkaufen im Skopje City Mall
+> - Wandern im Vodno-Berg
+>
+> **Wann kommen?**
+> Das beste Wetter ist im Frühling (April-Juni) oder Herbst (September-Oktober). Im Sommer ist es heiß, im Winter kühl.
+>
+> Skopje wartet auf Sie!
+
+## Граматика: Императив (Заповедна форма)
+
+### За „du" (ти)
+- Без „st" на крај: lerne!, komm!, spiel!, geh!
+- Слаби глаголи: основа + e или без e
+
+### За „ihr" (вие — множина)
+- Со -t на крај: lernt!, kommt!, spielt!
+
+### За „Sie" (Вие — учтиво)
+- Глагол + Sie: Lernen Sie!, Kommen Sie!, Spielen Sie!
+
+### Примери
+- *Komm her!* (Дојди овде!)
+- *Lernt mehr Deutsch!* (Учете повеќе германски!)
+- *Besuchen Sie unsere Stadt!* (Посетете го нашиот град!)
+
+## „lassen" + инфинитив
+- *Lass uns gehen!* (Да одиме!)
+- *Lass mich nachdenken.* (Дозволи ми да размислам.)
+
+## Корисни фрази за писмени состави
+
+### Воведе
+- *Heute möchte ich euch erzählen, dass...* (Денес сакам да ви кажам дека...)
+- *In diesem Text geht es um...* (Во овој текст се однесува за...)
+
+### Главен дел
+- *Erstens... zweitens... drittens...* (Прво... второ... трето...)
+- *Ein wichtiger Punkt ist...* (Важна точка е...)
+- *Außerdem...* (Покрај тоа...)
+
+### Заклучок
+- *Zum Schluss...* (На крај...)
+- *Insgesamt finde ich, dass...* (Севкупно сметам дека...)
+- *Ich kann nur empfehlen!* (Само можам да препорачам!)
+
+## Самопроверка
+- ✓ Има ли наслов?
+- ✓ Има ли јасна структура?
+- ✓ Користам разни сврзници?
+- ✓ Менувам должина на реченици?
+- ✓ Проверив граматика и правопис?
+
+**Поими:** блог, реклама, императив, корисни фрази, структура на текст.`,
+          exercises: [
+            {
+              id: 'eger9-2-13',
+              type: 'multiple-choice',
+              question: 'Како се вика заповедна форма за „Учи!" на „du"?',
+              options: ['Lerne!', 'Lernen Sie!', 'Lernt!', 'Lernen!'],
+              correct: 'Lerne!',
+              explanation: 'За „du" заповедна форма е „Lerne!" (слаб глагол + e). За „ihr" — Lernt! За „Sie" — Lernen Sie!',
+            },
+            {
+              id: 'eger9-2-14',
+              type: 'multiple-choice',
+              question: 'Која фраза е добра за воведе на текст?',
+              options: [
+                'Bis bald!',
+                'Heute möchte ich euch erzählen, dass...',
+                'Zum Schluss...',
+                'Ende!',
+              ],
+              correct: 'Heute möchte ich euch erzählen, dass...',
+              explanation: 'За воведе: „Heute möchte ich euch erzählen, dass..." (Денес сакам да ви кажам дека...). Заклучок: „Zum Schluss" (на крај).',
+            },
+            {
+              id: 'eger9-2-15',
+              type: 'true-false',
+              question: 'Кога пишуваме блог запис за патување, можеме да бидеме поинформални и да користиме лични искуства.',
+              correct: 'точно',
+              explanation: 'Точно — блог записите се поинформални. Дозволени се лични искуства, чувства, шеги. Цел: ангажираш читател.',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'ger9-3',
+      title: 'Theme 3: Gesundheit und gesundes Leben (Здравје и здрав живот)',
+      lessons: [
+        {
+          id: 'ger9-3-1',
+          title: 'Vokabeln — Health and the body',
+          content: `## Темата: Здравје и здрав живот
+**Здравје (Gesundheit)** — една од најважните теми во животот.
+
+## Тело (der Körper)
+| Германски | Македонски |
+|-----------|------------|
+| der Kopf | глава |
+| das Haar / die Haare | коса / влакна |
+| die Augen | очи |
+| die Nase | нос |
+| der Mund | уста |
+| die Ohren | уши |
+| der Hals | врат |
+| die Schulter | рамо |
+| der Arm | рака |
+| die Hand | дланка |
+| der Finger | прст |
+| der Bauch | стомак |
+| der Rücken | рбет |
+| das Bein | нога |
+| der Fuß | стапало |
+
+## Внатрешни органи
+| Германски | Македонски |
+|-----------|------------|
+| das Herz | срце |
+| die Lunge | бели дробови |
+| der Magen | стомак (орган) |
+| die Leber | црн дроб |
+| die Niere | бубрег |
+
+## Болка и болести (Schmerz und Krankheiten)
+
+### Општи изрази
+- *Mir geht es nicht gut.* (Не ми е добро.)
+- *Ich bin krank.* (Болен сум.)
+- *Ich fühle mich schlecht.* (Се чувствувам лошо.)
+
+### Болка
+- *Ich habe Kopfschmerzen.* (Боли ме глава.)
+- *Ich habe Bauchschmerzen.* (Боли ме стомак.)
+- *Mein Hals tut weh.* (Ме боли врат.)
+- *Mir tut der Rücken weh.* (Ме боли рбет.)
+
+### Чести болести
+- **die Erkältung** (настинка)
+- **die Grippe** (грип)
+- **das Fieber** (треска)
+- **der Husten** (кашлица)
+- **die Allergie** (алергија)
+- **die Verletzung** (повреда)
+
+## Кај лекар (Beim Arzt)
+
+### Прашања на лекарот
+- *Was haben Sie?* (Што имате?)
+- *Wo tut es weh?* (Каде ве боли?)
+- *Seit wann?* (Од кога?)
+- *Haben Sie Fieber?* (Имате ли треска?)
+
+### Одговори на пациентот
+- *Ich habe Halsschmerzen.* (Имам болка во врат.)
+- *Mir ist schwindelig.* (Се чувствувам со виj.)
+- *Ich fühle mich schwach.* (Се чувствувам слабо.)
+
+### Препораки
+- *Sie müssen sich ausruhen.* (Морате да се одморaте.)
+- *Trinken Sie viel Wasser.* (Пиjте многу вода.)
+- *Nehmen Sie diese Tabletten.* (Земете овие таблети.)
+- *Bleiben Sie zu Hause.* (Останете дома.)
+
+## Здрав живот (Gesundes Leben)
+
+### Здрави активности
+- **Sport treiben** (спортувa)
+- **regelmäßig essen** (јаде редовно)
+- **genug schlafen** (спие доволно)
+- **viel Wasser trinken** (пиjе многу вода)
+- **Obst und Gemüse essen** (jаде овошje и зеленчук)
+
+### Нездрави активности
+- **rauchen** (пуши)
+- **Alkohol trinken** (пиjе алкохол)
+- **zu viel Süßigkeiten essen** (jаде премногу слатки)
+- **wenig schlafen** (спие малку)
+- **stundenlang am Computer sitzen** (седи со часови на компјутер)
+
+**Поими:** Gesundheit, Körper, Krankheit, Schmerz, beim Arzt, gesundes Leben.`,
+          exercises: [
+            {
+              id: 'eger9-3-1',
+              type: 'multiple-choice',
+              question: 'Како се вика „глава" на германски?',
+              options: ['Kopf', 'Hand', 'Bein', 'Mund'],
+              correct: 'Kopf',
+              explanation: 'Kopf = глава. Hand = дланка, Bein = нога, Mund = уста.',
+            },
+            {
+              id: 'eger9-3-2',
+              type: 'multiple-choice',
+              question: 'Како се вели „Боли ме глава" на германски?',
+              options: [
+                'Ich bin gut.',
+                'Ich habe Kopfschmerzen.',
+                'Mein Kopf ist schön.',
+                'Kopf weg.',
+              ],
+              correct: 'Ich habe Kopfschmerzen.',
+              explanation: '„Ich habe Kopfschmerzen" = Имам болки во глава / Боли ме глава. „Kopf" + „Schmerzen" (болки). Слично: Bauchschmerzen, Halsschmerzen.',
+            },
+            {
+              id: 'eger9-3-3',
+              type: 'true-false',
+              question: 'Пушењето и пиeњето алкохол спаѓаат во „gesundes Leben" (здрав живот).',
+              correct: 'неточно',
+              explanation: 'Неточно — rauchen (пуши) и Alkohol trinken (пиe алкохол) се НЕЗДРАВИ навики. „Gesundes Leben" вклучува спорт, здрава храна, доволен сон.',
+            },
+          ],
+        },
+        {
+          id: 'ger9-3-2',
+          title: 'Grammatik — Imperative and modal verbs for advice',
+          content: `## Заповеден начин (Imperativ) за совети
+
+### Форма за „du" (ти — пријатели, семејство)
+- *Iss mehr Obst!* (Jади повеќе овошje!)
+- *Trink Wasser!* (Пиj вода!)
+- *Mach Sport!* (Спортувај!)
+
+### Форма за „ihr" (вие множина)
+- *Esst gesund!* (Jадете здраво!)
+- *Geht öfter spazieren!* (Одете почесто на шетање!)
+
+### Форма за „Sie" (Вие учтиво)
+- *Essen Sie weniger Süßigkeiten!* (Jадете помалку слатки!)
+- *Trinken Sie viel Wasser!* (Пиjте многу вода!)
+- *Treiben Sie Sport!* (Спортувајте!)
+
+## Модални глаголи за совети
+
+### „sollen" (треба)
+- *Du **sollst** früher schlafen.* (Треба да си легнеш порано.)
+- *Ihr **sollt** weniger fernsehen.* (Треба помалку да гледате ТВ.)
+
+### „müssen" (мора)
+- *Du **musst** mehr trinken.* (Мора да пиeш повеќе.)
+- *Sie **müssen** sich ausruhen.* (Морате да се одморaте.)
+
+### „dürfen" (смее)
+- *Du **darfst** nicht so viel Zucker essen.* (Не смееш да јадеш толку шеќер.)
+- *Sie **dürfen** nicht rauchen.* (Не смеете да пушите.)
+
+### „können" (може)
+- *Du **kannst** Yoga probieren.* (Можеш да пробаш јога.)
+- *Wir **können** zusammen spazieren gehen.* (Можеме да одиме на шетање заедно.)
+
+## Конструкции со „sollte" (би требало — учтив совет)
+- *Du **solltest** mehr Obst essen.* (Би требало да јадеш повеќе овошje.)
+- *Sie **sollten** öfter zum Arzt gehen.* (Би требало почесто да одите на лекар.)
+
+## Условни реченици (Konditional)
+
+### „wenn... dann..."
+- *Wenn du gesund sein willst, dann musst du Sport treiben.* (Ако сакаш да си здрав, мора да спортуваш.)
+- *Wenn ich Kopfschmerzen habe, nehme ich eine Tablette.* (Кога имам главоболка, земам таблета.)
+
+### Реален услов (für sicher passierende Situationen)
+- *Wenn das Wetter schön ist, gehen wir spazieren.* (Ако времето е убаво, одиме на шетање.)
+
+## Изразуvanje согласување / несогласување
+
+### Согласување
+- *Ich stimme dir zu.* (Се согласувам со тебе.)
+- *Genau!* (Точно!)
+- *Du hast Recht.* (Имаш право.)
+- *Das stimmt.* (Тоа е точно.)
+
+### Несогласување
+- *Ich bin anderer Meinung.* (Сум на различно мнение.)
+- *Das sehe ich anders.* (Тоа го гледам поинаку.)
+- *Ich bin nicht einverstanden.* (Не се согласувам.)
+- *Vielleicht hast du Recht, aber...* (Можеби имаш право, но...)
+
+### Изразување сомнение
+- *Bist du sicher?* (Сигурен ли си?)
+- *Ich weiß nicht so genau.* (Не знам точно.)
+
+## Зависни сложени реченици со „obwohl"
+- *Obwohl ich müde bin, mache ich Sport.* (Иако сум уморна, спортувам.)
+- *Ich esse gesund, obwohl es schwierig ist.* (Jадам здраво, иако е тешко.)
+
+Се памти: глаголот на крај по подредувачки сврзник!
+
+**Поими:** императив, модални глаголи за совет, sollte, условни реченици, согласување/несогласување.`,
+          exercises: [
+            {
+              id: 'eger9-3-4',
+              type: 'multiple-choice',
+              question: 'Како се вели „Би требало да јадеш повеќе овошje" на германски?',
+              options: [
+                'Du musst Obst essen.',
+                'Du solltest mehr Obst essen.',
+                'Du kannst Obst essen.',
+                'Du willst Obst essen.',
+              ],
+              correct: 'Du solltest mehr Obst essen.',
+              explanation: '„Solltest" = би требало (учтив совет). „Musst" = мора (посилно). „Kannst" = можеш, „willst" = сакаш.',
+            },
+            {
+              id: 'eger9-3-5',
+              type: 'multiple-choice',
+              question: 'Која е форма за императив „Spiel!" за „du"?',
+              options: ['Spiele!', 'Spiel!', 'Spielst!', 'Spielen!'],
+              correct: 'Spiel!',
+              explanation: 'За „du" императивот е без -st: spielen → spiel! (или spiele). За „ihr" → spielt! За „Sie" → Spielen Sie!',
+            },
+            {
+              id: 'eger9-3-6',
+              type: 'true-false',
+              question: 'Во условна реченица „wenn..., dann...", глаголот по „wenn" оди на крај од дел-реченицата.',
+              correct: 'точно',
+              explanation: 'Точно — „wenn" е подредувачки сврзник → глагол на крај. Пр. „Wenn ich Zeit habe, lese ich" (Ако имам време, читам).',
+            },
+          ],
+        },
+        {
+          id: 'ger9-3-3',
+          title: 'Speaking — Discussing sports and hobbies',
+          content: `## Дискусија за спорт и хобија
+
+### Полезни прашања
+- *Treibst du Sport?* (Спортуваш ли?)
+- *Welchen Sport magst du?* (Кој спорт сакаш?)
+- *Wie oft trainierst du?* (Колку често тренираш?)
+- *Spielst du in einem Verein?* (Играш ли во клуб?)
+
+### Видови спорт
+| Германски | Македонски |
+|-----------|------------|
+| Fußball | фудбал |
+| Basketball | кошарка |
+| Volleyball | одбойка |
+| Tennis | тенис |
+| Schwimmen | пливање |
+| Laufen / Joggen | трчање |
+| Radfahren | возење велосипед |
+| Wandern | пешачи |
+| Ski fahren | скиjа |
+| Yoga | jога |
+| Karate | карате |
+| Tanzen | танцува |
+
+## Изрази за лични интереси
+- *Ich interessiere mich für...* (Се интересирам за...)
+- *Mein Lieblingssport ist...* (Мојот омилен спорт е...)
+- *Ich mache gern...* (Сакам да правам...)
+- *In meiner Freizeit treibe ich...* (Во слободно време правам...)
+
+## Опис на спортска активност
+
+### Структура
+1. Кој спорт правиш?
+2. Откако?
+3. Колку често?
+4. Каде?
+5. Со кого?
+6. Што ти се допаѓа?
+
+### Пример
+
+> Ich spiele Basketball seit fünf Jahren. Ich trainiere drei Mal in der Woche im Schulteam. Wir trainieren in der Sporthalle. Ich liebe Basketball, weil es Teamwork erfordert und sehr dynamisch ist. Mein größter Erfolg war, als wir den regionalen Wettkampf gewonnen haben!
+
+(Играм кошарка пет години. Тренирам три пати неделно во школското тим. Тренираме во спортска сала. Сакам кошарка, зашто бара тимска работа и е многу динамично. Мојот најголем успех беше кога го осво­ивме регионалниот натпревар!)
+
+## Реакции и емоции
+
+### Позитивни
+- *Toll!* (Супер!)
+- *Wunderbar!* (Прекрасно!)
+- *Klasse!* (Класно!)
+- *Beeindruckend!* (Импресивно!)
+
+### Неутрални
+- *Verstanden.* (Разбрано.)
+- *Interessant.* (Интересно.)
+
+### Негативни
+- *Schade!* (Штета!)
+- *Das ist schlecht.* (Тоа е лошо.)
+- *Schlimm!* (Сепак!)
+
+## Пример: Разговор за тренинг
+
+> A: Hi! Wie war dein Training gestern?
+> B: Es war anstrengend, aber gut. Wir haben viel gearbeitet.
+> A: Toll! Wie oft trainierst du pro Woche?
+> B: Drei Mal — Montag, Mittwoch und Freitag.
+> A: Das ist intensiv. Macht es dir Spaß?
+> B: Ja, sehr! Ich liebe Fußball. Und du? Treibst du Sport?
+> A: Ich gehe schwimmen. Zwei Mal in der Woche.
+> B: Cool!
+
+## Граматика: Возвратни глаголи (Reflexive Verben)
+
+### Со „sich"
+- *Ich freue **mich** auf das Wochenende.* (Се радувам за викендот.)
+- *Du musst **dich** ausruhen.* (Мора да се одмориш.)
+- *Wir treffen **uns** im Park.* (Се сретнуваме во паркот.)
+
+### Чести возвратни глаголи
+- **sich freuen** (се радува)
+- **sich ärgern** (се луди / нервира)
+- **sich treffen** (се сретнува)
+- **sich ausruhen** (се одмора)
+- **sich anziehen** (се облекува)
+- **sich waschen** (се мие)
+- **sich interessieren für** (се интересира за)
+
+### Возвратни заменки
+| Лице | Заменка |
+|------|---------|
+| ich | mich |
+| du | dich |
+| er/sie/es | sich |
+| wir | uns |
+| ihr | euch |
+| sie/Sie | sich |
+
+## Изрази за хобија и интереси
+
+### Изразување интерес
+- *Ich finde es toll, dass...* (Сметам дека е супер што...)
+- *Es macht mir Spaß zu...* (Ми е забавно да...)
+- *Ich liebe es, ... zu machen.* (Сакам да правам...)
+
+**Поими:** sports, hobbies, разговор, возвратни глаголи, реакции, опис на активност.`,
+          exercises: [
+            {
+              id: 'eger9-3-7',
+              type: 'multiple-choice',
+              question: 'Како се вели „Се радувам" на германски?',
+              options: ['Ich freue.', 'Ich freue mich.', 'Mich freue.', 'Freue ich.'],
+              correct: 'Ich freue mich.',
+              explanation: 'Возвратни глаголи бараат „sich" (или „mich" за „ich"). „Sich freuen" = се радува → Ich freue mich.',
+            },
+            {
+              id: 'eger9-3-8',
+              type: 'multiple-choice',
+              question: 'Како се вика „пливање" на германски?',
+              options: ['Laufen', 'Schwimmen', 'Wandern', 'Tanzen'],
+              correct: 'Schwimmen',
+              explanation: 'Schwimmen = пливање. Laufen = трчање, Wandern = пешачи, Tanzen = танцува.',
+            },
+            {
+              id: 'eger9-3-9',
+              type: 'true-false',
+              question: 'Возвратниот глагол „sich treffen" значи „се сретнува" (се среќаваат).',
+              correct: 'точно',
+              explanation: 'Точно — sich treffen = се сретнува. Пр. Wir treffen uns im Café = Се сретнуваме во кафулe.',
+            },
+          ],
+        },
+        {
+          id: 'ger9-3-4',
+          title: 'Reading — Advice for healthy living',
+          content: `## Читање текстови за совети за здрав живот
+
+### Пример текст
+
+> **Tipps für ein gesundes Leben**
+>
+> Wer gesund leben möchte, sollte einige wichtige Regeln beachten:
+>
+> **1. Gesunde Ernährung**
+> Iss viel Obst und Gemüse — mindestens fünf Portionen pro Tag. Vermeide zu viel Zucker und Fast Food. Trink viel Wasser, am besten zwei Liter pro Tag.
+>
+> **2. Regelmäßiger Sport**
+> Bewege dich täglich mindestens 30 Minuten. Du musst nicht ins Fitnessstudio gehen — Spazierengehen, Radfahren oder Treppensteigen sind auch effektiv.
+>
+> **3. Genug Schlaf**
+> Schlafe sieben bis neun Stunden pro Nacht. Schlafmangel macht müde und krank.
+>
+> **4. Stress vermeiden**
+> Mache Pausen während des Tages. Meditation und Yoga helfen, Stress zu reduzieren.
+>
+> **5. Nicht rauchen, wenig Alkohol**
+> Rauchen verursacht viele Krankheiten. Alkohol nur in Maßen!
+>
+> **6. Soziale Kontakte**
+> Verbringe Zeit mit Familie und Freunden. Glückliche Menschen sind gesünder!
+
+### Прашања за разбирање
+1. Колку порции овошje и зеленчук треба да јадеме?
+2. Колку часа сон е препорачано?
+3. Како можеме да го намалиме стресот?
+4. Зошто се препорачува да поминуваме време со пријатели?
+
+## Преку анализа на текстот
+
+### Главна идеа
+Главна идеа: има шест клучни правила за здрав живот.
+
+### Структура
+- Воведе: општа идеа
+- 6 точки со совети
+- Секoja точка: совет + објаснение
+
+### Корисни зборови за совети
+- **sollte** (би требало)
+- **muss** (мора)
+- **vermeiden** (избегнува)
+- **achten auf** (внимава на)
+- **mindestens** (минимум)
+- **regelmäßig** (редовно)
+
+## Споредба: здрава наспроти брза храна
+
+### Здрава храна (gesundes Essen)
+- **Obst** (овошje): Äpfel, Bananen, Beeren
+- **Gemüse** (зеленчук): Karotten, Brokkoli, Salat
+- **Vollkornprodukte** (производи од цел зрна): Vollkornbrot, Haferflocken
+- **Mageres Fleisch** (немасно месо): Hähnchen, Fisch
+- **Hülsenfrüchte** (мaхунарки): Linsen, Bohnen
+
+### Брза храна (Fast Food)
+- **Pizza** (пица)
+- **Burger** (бургер)
+- **Pommes** (пом-фрит)
+- **Hot Dog** (хот дог)
+
+### Проблеми со брза храна
+- Многу масти и шеќер
+- Малку витамини
+- Многу калории
+- Чести причини за дебелина, дијабет, срцеви болести
+
+## Граматика: Konjunktiv II за совети
+
+### „würden" + инфинитив
+- *Ich **würde** an deiner Stelle weniger essen.* (Јас на твое место би јаде помалку.)
+- *An deiner Stelle **würde** ich mehr Sport treiben.* (На твое место би спортувал/а повеќе.)
+
+### Корисно за давање мек совет
+- *Ich würde dir empfehlen, dass...* (Би ти препорачал/а да...)
+
+## Пасивен залог (Passiv)
+
+### Образувание
+**werden + Partizip II**
+
+### Примери
+- *Obst und Gemüse **werden** als gesund **betrachtet**.* (Овошjeто и зеленчукот се сметаат за здрави.)
+- *Zucker **wird** in zu großen Mengen **konsumiert**.* (Шеќерот се конзумира во премногу големи количини.)
+- *Es **wird empfohlen**, viel Wasser zu trinken.* (Се препорачува да се пиje многу вода.)
+
+## Заклучок од текстот
+- Здрав живот бара навики
+- Мали промени → големо влијание
+- Никогаш не е доцна да започнеш
+
+**Поими:** gesundes Leben, gesundes Essen, fast food, конјунктив, пасив, совети.`,
+          exercises: [
+            {
+              id: 'eger9-3-10',
+              type: 'multiple-choice',
+              question: 'Колку часа сон се препорачуваат за здрав живот?',
+              options: ['3-5', '5-7', '7-9', '10-12'],
+              correct: '7-9',
+              explanation: '7-9 часа сон е препорачано за возрасни. За тинејџери понекогаш 8-10. Спиење недоволно прави уморен и болестен.',
+            },
+            {
+              id: 'eger9-3-11',
+              type: 'multiple-choice',
+              question: 'Како се гради пасивен залог во германски?',
+              options: [
+                'haben + Partizip II',
+                'sein + Partizip II',
+                'werden + Partizip II',
+                'müssen + Partizip II',
+              ],
+              correct: 'werden + Partizip II',
+              explanation: 'Пасив = werden + Partizip II. Пр. „Das Essen wird gekocht" (Храната се готви). Преку пасив фокусот е на дејството, не на лицето.',
+            },
+            {
+              id: 'eger9-3-12',
+              type: 'true-false',
+              question: '„Würden" + инфинитив е учтив начин за давање совети на германски.',
+              correct: 'точно',
+              explanation: 'Точно — „Ich würde an deiner Stelle..." (Јас на твое место би...) е учтив начин да се препорача нешто, без директно команда.',
+            },
+          ],
+        },
+        {
+          id: 'ger9-3-5',
+          title: 'Writing — E-mail about healthy living',
+          content: `## Пишување електронско писмо за здрав живот
+
+### Структура на e-mail
+1. **Subject (тема)**: јасна и кратка
+2. **Поздрав**: Liebe/Lieber [име],
+3. **Воведе**: причина за пишување
+4. **Главен текст**: содржина (совети, информации)
+5. **Завршен пасус**: барање за одговор, поздрав
+6. **Поздрав за крaj**: Viele Grüße, Liebe Grüße
+7. **Потпис**: име
+
+## Пример e-mail
+
+> **Betreff: Tipps für gesundes Leben**
+>
+> Liebe Anna,
+>
+> ich hoffe, es geht dir gut! Du hast mich gefragt, wie ich so fit und gesund bleibe. Hier sind meine Tipps für dich.
+>
+> Erstens, ich versuche jeden Tag etwas Sport zu machen. Ich gehe morgens joggen oder mache Yoga zu Hause. Das ist nicht nur gut für den Körper, sondern auch für die Stimmung.
+>
+> Zweitens, ich achte auf meine Ernährung. Ich esse viel Obst und Gemüse und vermeide Fast Food. Ich trinke auch viel Wasser — mindestens 2 Liter pro Tag.
+>
+> Drittens, ich schlafe genug. Ich gehe um 22 Uhr ins Bett und stehe um 7 Uhr auf. Das gibt mir 9 Stunden Schlaf.
+>
+> Außerdem versuche ich, Stress zu vermeiden. Wenn ich gestresst bin, mache ich eine Pause und höre Musik.
+>
+> Was machst du, um gesund zu bleiben? Erzähl mir bitte!
+>
+> Liebe Grüße,
+> Marija
+
+## Корисни фрази за e-mail
+
+### Започнување
+- *Ich hoffe, es geht dir gut.* (Се надевам дека си добро.)
+- *Vielen Dank für deine letzte E-Mail.* (Многу благодарам за твојот последен e-mail.)
+- *Du hast mich gefragt, ob/wie...* (Ме праша дали/како...)
+
+### Главна содржина
+- *Erstens... zweitens... drittens... außerdem... schließlich...* (Прво... второ... трето... покрај тоа... на крај...)
+- *Ein wichtiger Punkt ist...* (Важна точка е...)
+- *Ich finde, dass...* (Сметам дека...)
+
+### Прашања на читателот
+- *Was meinst du dazu?* (Што мислиш за тоа?)
+- *Wie siehst du das?* (Како го гледаш тоа?)
+- *Hast du eigene Tipps?* (Имаш ли свои совети?)
+
+### Завршување
+- *Ich freue mich auf deine Antwort.* (Се радувам за твојот одговор.)
+- *Schreib mir bald!* (Напиши ми наскоро!)
+- *Bis bald!* (До скоро!)
+
+## Согласување и несогласување во писмо
+
+### Согласување
+- *Ich stimme dir völlig zu, dass...* (Целосно се согласувам со тебе дека...)
+- *Du hast Recht.* (Имаш право.)
+- *Das ist ein guter Punkt.* (Тоа е добра точка.)
+
+### Несогласување учтиво
+- *Ich sehe das ein bisschen anders.* (Го гледам тоа малку поинаку.)
+- *Ich bin nicht ganz deiner Meinung.* (Не сум целосно на твое мнение.)
+- *Vielleicht hast du Recht, aber...* (Можеби имаш право, но...)
+
+## Поправка на сопствени грешки
+
+### Чести грешки за избегнување
+
+#### Ред на зборови
+- ❌ Ich gestern habe Sport gemacht.
+- ✓ Ich habe gestern Sport gemacht. ИЛИ Gestern habe ich Sport gemacht.
+
+#### Падеж по предлози
+- ❌ mit mein Freund
+- ✓ mit meinem Freund (Dativ по „mit")
+
+#### Сврзници и ред на глагол
+- ❌ Ich bleibe zu Hause, weil ich bin krank.
+- ✓ Ich bleibe zu Hause, weil ich krank bin.
+
+#### Императив за „du"
+- ❌ Du müsst essen.
+- ✓ Iss! (без „du", без -st)
+
+## Самопроверка пред слање
+- ✓ Има ли Betreff (тема)?
+- ✓ Има ли поздрав?
+- ✓ Има ли јасна структура?
+- ✓ Користам разни сврзници?
+- ✓ Поставувам прашања на читателот?
+- ✓ Завршив со поздрав?
+- ✓ Проверив граматика и правопис?
+
+## Совети за писмено изразување
+
+### Покажи личност
+- Користи лични искуства
+- Спомeни конкретни примери
+- Изрази мислења
+
+### Биди јасен
+- Една идеа по пасус
+- Користи примери
+
+### Биди учтив
+- Прашуваj читателот
+- Покажи интерес
+
+**Поими:** e-mail структура, корисни фрази, согласување/несогласување, поправка на грешки, самопроверка.`,
+          exercises: [
+            {
+              id: 'eger9-3-13',
+              type: 'multiple-choice',
+              question: 'Што е „Betreff" во e-mail?',
+              options: ['Поздрав', 'Тема', 'Потпис', 'Содржина'],
+              correct: 'Тема',
+              explanation: '„Betreff" = тема на e-mail (subject). Прв ред пред почетокот на писмото. Треба да биде кратка и јасна.',
+            },
+            {
+              id: 'eger9-3-14',
+              type: 'multiple-choice',
+              question: 'Која е правилна форма за императив „Иди"?',
+              options: ['Du gehst!', 'Geh!', 'Gehen Sie!', 'Gehst!'],
+              correct: 'Geh!',
+              explanation: 'За „du" императив: „Geh!" (од gehen). За „Sie": „Gehen Sie!". За „ihr": „Geht!".',
+            },
+            {
+              id: 'eger9-3-15',
+              type: 'true-false',
+              question: 'При пишување e-mail, треба да поставуваме прашања на читателот за да ja поттикнуваме комуникацијата.',
+              correct: 'точно',
+              explanation: 'Точно — прашањата покажуваат интерес и поттикнуваат одговор. Пр. „Was meinst du?" (Што мислиш?). Гради дијалог.',
+            },
+          ],
+        },
+      ],
+    },
+  ],
 }
 
 // ── GRADE CONTENT LOOKUP ─────────────────────────────────────────

@@ -183,7 +183,7 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     flagCode: 'de',
     unitsCount: 3,
     category: 'languages',
-    grades: [6, 7, 8],
+    grades: [6, 7, 8, 9],
   },
   {
     id: 'italian',
