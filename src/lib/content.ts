@@ -30135,44 +30135,55 @@ XIX век е значаен период во развојот на макед�
   english: [
     {
       id: 'en8-1',
-      title: 'Мојот микро свет: јас, семејство и пријатели',
+      title: 'Theme 1: My micro world — me, family and friends',
       lessons: [
         {
           id: 'en8-1-1',
-          title: 'Present Simple, Continuous & Perfect',
+          title: 'Listening — Present Simple, Continuous and Perfect',
           content: `## Three Present Tenses
 
 ### Present Simple
 Use for **habits, routines, facts**:
 - She **plays** tennis every Saturday.
 - Water **boils** at 100°C.
+- I **work** in a bookshop on weekends.
+
+**Signal words:** always, usually, often, every day, never, sometimes.
 
 ### Present Continuous
-Use for **actions happening right now or temporary situations**:
+Use for **actions happening now or temporary situations**:
 - I **am writing** to you from Granada.
-- They **are staying** in a gorgeous hotel.
+- They **are staying** in a hotel this week.
+- Look! It **is raining**.
+
+**Signal words:** now, at the moment, look!, listen!, this week.
 
 ### Present Perfect
-Use for **experiences or recent actions** (with *ever, never, already, just*):
+Use for **experiences or recent actions linking past to present**:
 - **Have** you ever **seen** a comet?
 - She **has played** in a band.
 - I **have never visited** London.
 
-## Comparing the Three
+**Signal words:** ever, never, already, just, yet, since, for.
 
-| Tense | Signal words | Example |
-|-------|-------------|---------|
-| Present Simple | always, every day, usually | I write letters every week. |
-| Present Continuous | now, at the moment, look! | I am writing a letter now. |
-| Present Perfect | ever, never, already, just | I have written three letters. |`,
+## Listening strategy
+When listening, focus on:
+- **Signal words** — they tell you which tense
+- **Time markers** — yesterday vs. now vs. recently
+- **Tone of voice** — questions go up, statements go down
+
+## Practice context
+- Listening to a friend describe their week (Simple)
+- Listening to a phone call about right-now events (Continuous)
+- Listening to someone share life experiences (Perfect)`,
           exercises: [
             {
               id: 'een8-1-1', type: 'multiple-choice',
               question: 'Choose the correct tense: "Look! She ___ (run) in the garden."',
               options: ['runs', 'is running', 'has run', 'ran'],
               correct: 'is running',
-              hint: '"Look!" signals something happening right now.',
-              explanation: '"Look!" is a signal word for Present Continuous — the action is happening at this moment.',
+              hint: 'Look! signals something happening right now.',
+              explanation: 'Look! is a signal word for Present Continuous — the action is happening at this moment.',
             },
             {
               id: 'een8-1-2', type: 'multiple-choice',
@@ -30180,66 +30191,227 @@ Use for **experiences or recent actions** (with *ever, never, already, just*):
               options: ['I have gone to the park yesterday.', 'She has never tried sushi.', 'We have eat lunch now.', 'He is been to France.'],
               correct: 'She has never tried sushi.',
               hint: 'Present Perfect + never = life experience.',
-              explanation: '"Has never tried" is correct Present Perfect — talking about a life experience using "never".',
+              explanation: 'Has never tried is correct Present Perfect — talking about a life experience using never.',
             },
             {
               id: 'een8-1-3', type: 'true-false',
               question: 'We use Present Simple for facts that are always true.',
               options: ['True', 'False'], correct: 'True',
-              explanation: 'Present Simple describes facts and general truths, e.g. "The Earth revolves around the Sun."',
+              explanation: 'Present Simple describes facts and general truths, e.g. The Earth revolves around the Sun.',
             },
           ],
         },
         {
           id: 'en8-1-2',
-          title: 'Describing people and expressing opinions',
-          content: `## Describing Physical Appearance
+          title: 'Reading — Personal letters and family descriptions',
+          content: `## Reading a personal letter
+A **personal letter** uses informal language, contractions and personal tone.
 
-**Hair:** straight, wavy, curly, blonde, brunette, short, long
-**Face:** oval, round, slim, pale, freckled
-**Height/build:** tall, short, slim, medium-height
+### Structure
+1. **Greeting:** Dear / Hi + name
+2. **Opening line:** How are you? / I hope you are well.
+3. **Body:** news, descriptions, questions for the reader
+4. **Closing line:** Write back soon / Hope to hear from you
+5. **Sign-off:** Love / Best wishes / Cheers + name
 
-*Example dialogue:*
-> Kevin: You look similar. Your hair is brown, hers is blonde.
-> Maria: Her face is longer than mine, but we have the same noses.
+### Sample letter (Granada)
+> Dear Anna,
+>
+> I am writing to you from Granada. The weather is gorgeous and we are staying in a beautiful hotel near the Alhambra. My family loves the food here — we have already tried tapas, paella and gazpacho!
+>
+> Yesterday we visited the Alhambra palace. It was built in the 13th century. I have never seen such amazing architecture.
+>
+> Tell me about your holiday! Where did you go?
+>
+> Love,
+> Maria
 
-## Describing Personality
+## Describing family
+**Vocabulary:** parents, siblings, twin, cousin, aunt, uncle, grandparent, stepfather, half-sister.
 
-**Positive:** friendly, kind, generous, honest, patient, outgoing, independent
-**Negative:** lazy, bossy, stubborn, impatient
+**Physical appearance:** straight/wavy/curly hair, oval/round face, slim/tall/short build.
 
-## Expressing Opinions & Intentions
+**Personality:** friendly, kind, generous, stubborn, bossy, outgoing, shy.
 
-**Opinions:** *I think... / I believe... / In my opinion... / I find it...*
-**Intentions (want to + verb):**
-- She **wants to be** a pilot when she grows up.
-- I **want to spend** all my money on travelling.
+### Sample paragraph
+*My twin sister Maria and I look similar but our personalities are very different. She is outgoing and loves parties. I am shyer and prefer reading at home.*
 
-**Likes (like + -ing):**
-- I **like travelling** on my own.
-- We both **like being** independent.`,
+## Reading strategies
+- **Skim** for general meaning (who, where, what mood)
+- **Scan** for specific information (dates, names, places)
+- **Guess** unknown words from context — do not stop at every word`,
           exercises: [
             {
               id: 'een8-1-4', type: 'multiple-choice',
-              question: 'Which phrase correctly expresses a future intention?',
-              options: ['I like to travel next year.', 'I want to visit Paris.', 'I am wanting to go.', 'I have wanted going.'],
-              correct: 'I want to visit Paris.',
-              hint: 'want + to + infinitive for intentions.',
-              explanation: '"Want to + infinitive" expresses intention. "I want to visit Paris" is correct.',
+              question: 'Which opening greeting is INFORMAL?',
+              options: ['Dear Sir/Madam', 'Hi Anna!', 'To Whom It May Concern', 'Yours sincerely'],
+              correct: 'Hi Anna!',
+              hint: 'Informal letters use first names and casual language.',
+              explanation: 'Hi Anna! is informal — personal letters between friends use first names and casual greetings.',
             },
             {
               id: 'een8-1-5', type: 'multiple-choice',
-              question: 'Which word describes someone who enjoys being with many people?',
-              options: ['stubborn', 'outgoing', 'impatient', 'arrogant'],
-              correct: 'outgoing',
-              hint: 'Outgoing people love socialising.',
-              explanation: '"Outgoing" describes someone who is sociable and enjoys company.',
+              question: 'In the Granada letter, which tense is used in: "I have never seen such amazing architecture"?',
+              options: ['Present Simple', 'Past Simple', 'Present Perfect', 'Present Continuous'],
+              correct: 'Present Perfect',
+              hint: 'have + past participle = ?',
+              explanation: 'Have + past participle (seen) = Present Perfect, used here for a life experience.',
             },
             {
               id: 'een8-1-6', type: 'true-false',
-              question: '"Like" is followed by -ing form (e.g. "I like swimming").',
+              question: 'When reading, you should stop and check every unknown word in a dictionary.',
+              options: ['True', 'False'], correct: 'False',
+              explanation: 'Good readers guess word meaning from context first and only check the dictionary for important words.',
+            },
+          ],
+        },
+        {
+          id: 'en8-1-3',
+          title: 'Speaking — Comparing people and question tags',
+          content: `## Question tags
+A **question tag** is a short question added to the end of a statement.
+
+### Rule
+- **Positive statement → negative tag:** *She is your sister, **isn't she**?*
+- **Negative statement → positive tag:** *He doesn't speak French, **does he**?*
+
+### More examples
+- You like pizza, **don't you**?
+- They have finished, **haven't they**?
+- We can go now, **can't we**?
+- Maria is taller than Anna, **isn't she**?
+
+## Comparing people
+**Comparative (two things):** add **-er** or use **more**
+- tall → taller
+- friendly → friendlier
+- generous → more generous
+- intelligent → more intelligent
+
+**Superlative (three or more):** add **-est** or use **most**
+- tall → the tallest
+- friendly → the friendliest
+- generous → the most generous
+
+### Irregular forms
+- good → better → the best
+- bad → worse → the worst
+- far → farther/further → the farthest/furthest
+
+### Comparing self/family
+- My sister is **taller than** me.
+- I am **more outgoing than** my brother.
+- She is **the kindest** person in my family.
+
+## Conversation phrases
+- *In my opinion...*
+- *I think that...*
+- *It seems to me that...*
+- *That is a good point, but...*
+- *I agree / I disagree because...*
+
+## Speaking tip
+Use question tags to check understanding or invite the listener to agree.`,
+          exercises: [
+            {
+              id: 'een8-1-7', type: 'multiple-choice',
+              question: 'Complete: "She is your sister, ___?"',
+              options: ['is she', 'isn\'t she', 'does she', 'doesn\'t she'],
+              correct: 'isn\'t she',
+              hint: 'Positive statement (is) → negative tag.',
+              explanation: 'Positive statement (She is...) takes a negative question tag (isn\'t she?).',
+            },
+            {
+              id: 'een8-1-8', type: 'multiple-choice',
+              question: 'Choose the superlative form: "Maria is ___ student in class."',
+              options: ['the more clever', 'the cleverest', 'cleverer', 'most cleverest'],
+              correct: 'the cleverest',
+              hint: 'Three+ items → -est or most.',
+              explanation: 'Short adjectives add -est for superlative: clever → the cleverest.',
+            },
+            {
+              id: 'een8-1-9', type: 'true-false',
+              question: 'In a negative statement, we use a positive question tag.',
               options: ['True', 'False'], correct: 'True',
-              explanation: '"Like + -ing": I like swimming. / She likes reading. "Want", however, takes "to + infinitive".',
+              explanation: 'Correct: negative + positive (He doesn\'t like fish, does he?) and positive + negative (She likes fish, doesn\'t she?).',
+            },
+          ],
+        },
+        {
+          id: 'en8-1-4',
+          title: 'Writing — Personal letter or family description',
+          content: `## Writing a personal letter
+A **personal letter** is an informal text written to family or friends.
+
+### Plan before writing
+1. **Who** is the reader?
+2. **What** do you want to tell them?
+3. **Why** are you writing? (news, invitation, thanks)
+
+### Structure with checklist
+- [ ] Date (top right)
+- [ ] Greeting (Dear/Hi + name)
+- [ ] Opening line
+- [ ] Body — 2-3 paragraphs of news
+- [ ] Closing line
+- [ ] Sign-off + your name
+
+## Useful linkers
+- **And, but, so** — joining short ideas
+- **Because, although** — reasons and contrast
+- **First, then, after that, finally** — order of events
+- **For example, in fact** — adding details
+
+## Sample letter
+> 15 May 2026
+>
+> Dear Sam,
+>
+> Hi! How are you? I hope you are enjoying spring. I am writing to invite you to my birthday party next Saturday.
+>
+> The party starts at 5 pm at my house. We will have pizza, games and a karaoke contest. My sister Anna is baking a chocolate cake — she is the best baker in our family.
+>
+> Please let me know if you can come. It will be more fun with you here!
+>
+> Cheers,
+> Maria
+
+## Writing a family description
+**Structure:**
+1. **Opening:** Who is in your family? How many?
+2. **Description:** physical and personality, one paragraph per person
+3. **Closing:** what you like most about them
+
+### Sample paragraph
+*My grandfather Petar is the oldest member of our family. He is 75 but very active — he walks every day and plays chess every Sunday. He is patient and tells the funniest stories. I love spending time with him.*
+
+## Checklist before sending
+- Correct tense throughout?
+- Capital letters and punctuation?
+- Comparatives and superlatives spelled right?
+- Greeting matches sign-off (formal/informal)?`,
+          exercises: [
+            {
+              id: 'een8-1-10', type: 'multiple-choice',
+              question: 'Which closing matches an INFORMAL personal letter?',
+              options: ['Yours faithfully', 'Yours sincerely', 'Cheers', 'Kind regards'],
+              correct: 'Cheers',
+              hint: 'Informal = friend, casual.',
+              explanation: 'Cheers, Love and Best wishes are informal closings used in personal letters.',
+            },
+            {
+              id: 'een8-1-11', type: 'multiple-choice',
+              question: 'Which linker shows the ORDER of events?',
+              options: ['because', 'first, then, finally', 'for example', 'although'],
+              correct: 'first, then, finally',
+              hint: 'Time sequence.',
+              explanation: 'First, then, after that and finally are time sequencers showing order of events.',
+            },
+            {
+              id: 'een8-1-12', type: 'true-false',
+              question: 'A personal letter should always use formal language like Yours sincerely.',
+              options: ['True', 'False'], correct: 'False',
+              explanation: 'Personal letters to family or friends use informal language and casual sign-offs.',
             },
           ],
         },
@@ -30247,115 +30419,265 @@ Use for **experiences or recent actions** (with *ever, never, already, just*):
     },
     {
       id: 'en8-2',
-      title: 'Мојот макро свет: населба, град, држава',
+      title: 'Theme 2: My macro world — settlement, city, country',
       lessons: [
         {
           id: 'en8-2-1',
-          title: 'Past Simple & Past Continuous',
+          title: 'Listening — Past Simple and Past Continuous',
           content: `## Past Simple
-Use for **completed actions** at a specific time in the past:
-- I **rang** the bell on the door.
-- She **visited** Jamaica last summer.
-- Did she **ring** the bell? / I did **not ring** the bell.
+Use for **completed actions in the past** with a clear time.
+
+### Forms
+- Regular: add -ed → walk → walked, talk → talked
+- Irregular: go → went, see → saw, eat → ate, drive → drove, take → took
+
+### Examples
+- I **visited** my grandmother yesterday.
+- We **went** to the cinema last weekend.
+- She **finished** her homework an hour ago.
+
+**Signal words:** yesterday, last week, in 2020, ago, when, then.
 
 ## Past Continuous
-Use for **actions in progress** at a point in the past, or **background action interrupted**:
-- Luka **was eating** a sandwich at the time.
-- I **was walking** home when it started to rain.
+Use for **actions in progress at a moment in the past** or for **background** while another action happened.
 
-## Past Simple vs. Past Continuous
+### Form
+**was/were + verb-ing**
+- I **was reading** when the phone rang.
+- They **were playing** football at 4 pm.
 
-| | Past Simple | Past Continuous |
-|-|------------|-----------------|
-| Use | Completed action | Action in progress |
-| Signal | yesterday, last week, in 2010 | while, at that moment, when |
-| Example | She **called** me. | She **was calling** me when I arrived. |
+### Past Simple + Past Continuous together
+The **background** (long action) is in Past Continuous; the **interrupting** (short action) is in Past Simple:
+- While I **was walking** home, it **started** to rain.
+- She **was cooking** dinner when the doorbell **rang**.
 
-## Narrating Events
-
-When telling a story, combine both:
-> *I was walking to the bus stop when I suddenly saw an old friend. She was carrying heavy bags, so I helped her.*`,
+## Listening tips
+- Listen for **time signals** (yesterday, when, while)
+- Note **interruption words** — *when, while*
+- Background actions = -ing; interrupting actions = past simple`,
           exercises: [
             {
               id: 'een8-2-1', type: 'multiple-choice',
-              question: 'Choose the correct form: "She ___ (cook) when the phone rang."',
-              options: ['cooked', 'was cooking', 'has cooked', 'cooks'],
-              correct: 'was cooking',
-              hint: 'The phone ringing interrupted an action in progress.',
-              explanation: '"Was cooking" (Past Continuous) — an ongoing action interrupted by the phone ringing (Past Simple).',
+              question: 'Complete: "While I ___ home, I saw a beautiful sunset."',
+              options: ['walk', 'walked', 'was walking', 'have walked'],
+              correct: 'was walking',
+              hint: 'Long background action → Past Continuous.',
+              explanation: 'While + Past Continuous (was walking) sets the background; the short event (saw) is in Past Simple.',
             },
             {
               id: 'een8-2-2', type: 'multiple-choice',
-              question: 'Which tense: "I visited Paris last year."',
-              options: ['Present Perfect', 'Past Continuous', 'Past Simple', 'Present Simple'],
-              correct: 'Past Simple',
-              hint: '"Last year" is a specific past time.',
-              explanation: '"Last year" is a specific time reference → Past Simple: "visited".',
+              question: 'Which verb is irregular in Past Simple?',
+              options: ['walked', 'visited', 'went', 'finished'],
+              correct: 'went',
+              hint: 'go → ?',
+              explanation: 'Go is irregular: go → went → gone. The others are regular -ed verbs.',
             },
             {
               id: 'een8-2-3', type: 'true-false',
-              question: '"While" is commonly used with Past Continuous.',
+              question: 'Past Continuous is formed with was/were + verb-ing.',
               options: ['True', 'False'], correct: 'True',
-              explanation: '"While I was studying, my brother was playing games." — "while" connects two simultaneous past actions.',
+              explanation: 'Was/were + -ing form is correct: I was reading, They were playing.',
             },
           ],
         },
         {
           id: 'en8-2-2',
-          title: 'Navigating places and public transport',
-          content: `## Asking for Clarification
+          title: 'Reading — Places, settlements and urban legends',
+          content: `## Reading about places
+Texts about settlements describe **location, size, history, culture, transport**.
 
-When you do not understand, use these phrases:
-- *Sorry, but I do not understand.*
-- *Traffic jam? What does it mean?*
-- *Could you please explain that?*
-- *Can you give me an example?*
-- *Now I understand. Thanks a lot!*
+### Common features
+- **Population** — small village vs big city
+- **History** — when was it founded? what events happened?
+- **Architecture** — old town, modern district, monuments
+- **Transport** — bus, tram, metro, train station
 
-## Giving Directions
+### Sample text — Скопје
+> Skopje is the capital and largest city of North Macedonia, with a population of about 600,000. It is located on the Vardar River and has a history dating back over 2,000 years. The Old Bazaar in the city centre is one of the largest bazaars in the Balkans. The city was severely damaged by an earthquake in 1963 but has been rebuilt with modern architecture.
 
-- Go **straight ahead**.
-- Turn **left / right** at the traffic lights.
-- Take the **second** street on the right.
-- The station is **opposite** the park.
-- It is **next to** the post office.
-- It is **between** the bank and the supermarket.
+## Urban legends
+An **urban legend** is a modern story passed by word of mouth, often spooky or strange, set in a real place.
 
-## Public Transport Vocabulary
+### Features
+- Usually starts: *A friend of a friend...* or *They say that...*
+- Set in a real city or building
+- No clear evidence — sometimes scary, sometimes funny
+- Often warns about something (danger, behaviour)
 
-| Place | Vocabulary |
-|-------|-----------|
-| Bus stop | bus, route, timetable, ticket, fare |
-| Train station | platform, departure, arrival, delay |
-| City centre | museum, theatre, cinema, restaurant |
+### Sample legend
+> A friend of a friend was driving along a deserted road late at night. She stopped to help a hitchhiker — a young woman in a white dress. After a few minutes, the driver looked in the mirror — the back seat was empty! Later, she discovered that a girl in a white dress had disappeared on that same road many years ago.
 
-## Useful Phrases at Public Places
-
-- *Excuse me, how do I get to the bus station?*
-- *When is the next train to Skopje?*
-- *Can I have a return ticket, please?*`,
+## Reading skills for descriptive texts
+- **Find the topic sentence** (usually first sentence of each paragraph)
+- **Note numbers** — populations, dates, distances
+- **Underline key adjectives** that describe character of a place
+- **Identify fact vs opinion**`,
           exercises: [
             {
               id: 'een8-2-4', type: 'multiple-choice',
-              question: 'You did not understand a word. What do you say?',
-              options: ['"I agree!"', '"Could you please explain that?"', '"I am right."', '"No problem."'],
-              correct: '"Could you please explain that?"',
-              hint: 'Ask for clarification politely.',
-              explanation: '"Could you please explain that?" is a polite request for clarification when you do not understand.',
+              question: 'According to the text, what damaged Skopje in 1963?',
+              options: ['a flood', 'an earthquake', 'a fire', 'a war'],
+              correct: 'an earthquake',
+              hint: 'Scan the text for the date 1963.',
+              explanation: 'The text states: The city was severely damaged by an earthquake in 1963.',
             },
             {
               id: 'een8-2-5', type: 'multiple-choice',
-              question: 'The café is "opposite the park." This means:',
-              options: ['Next to the park', 'Behind the park', 'Directly across from the park', 'Far from the park'],
-              correct: 'Directly across from the park',
-              hint: 'Opposite = facing, across the street.',
-              explanation: '"Opposite" means directly facing something, across a road or space.',
+              question: 'How do urban legends typically start?',
+              options: ['Once upon a time...', 'A friend of a friend...', 'Dear Sir...', 'In conclusion...'],
+              correct: 'A friend of a friend...',
+              hint: 'Urban legends use a vague second-hand source.',
+              explanation: 'A friend of a friend... is the classic urban legend opener — a vague source that cannot be verified.',
             },
             {
               id: 'een8-2-6', type: 'true-false',
-              question: '"Departure" refers to when a train arrives at a station.',
+              question: 'Urban legends are usually based on a verified real event.',
               options: ['True', 'False'], correct: 'False',
-              explanation: '"Departure" = leaving (when the train goes). "Arrival" = when it arrives.',
+              explanation: 'Urban legends are passed by word of mouth without verification — they are folklore, not news.',
+            },
+          ],
+        },
+        {
+          id: 'en8-2-3',
+          title: 'Speaking — Asking for directions and public transport',
+          content: `## Asking for directions
+**Polite openers:**
+- *Excuse me, could you tell me how to get to the museum?*
+- *Sorry to bother you, do you know where the train station is?*
+- *Could you help me, please? I am looking for the post office.*
+
+## Giving directions
+**Vocabulary:**
+- **Go** straight on / down this street
+- **Turn** left / right at the traffic lights
+- **Take** the first / second turning on the left
+- **Cross** the bridge / the road
+- **Pass** the bank / the supermarket
+
+**Landmarks:**
+- traffic lights, roundabout, square, fountain, bridge, junction, corner, crossing
+
+### Sample dialogue
+> Tourist: Excuse me, how do I get to the Old Bazaar?
+> Local: Go straight down this street, then turn right at the traffic lights. Cross the bridge and the bazaar is on your left. It is about a 10-minute walk.
+> Tourist: Thanks a lot!
+
+## Public transport vocabulary
+- **bus stop, tram stop, metro station, train station, ticket office**
+- **single / return ticket, day pass, monthly pass**
+- **platform, timetable, delay, on time, late**
+
+### Useful phrases
+- *Which bus goes to the centre?*
+- *How much is a single to the airport?*
+- *Where do I change for line 3?*
+- *Does this train stop at...?*
+- *Is this seat taken?*
+
+## Speaking tip
+When you do not understand a direction, repeat it back:
+> *So, I go straight, then turn left at the bridge — is that right?*`,
+          exercises: [
+            {
+              id: 'een8-2-7', type: 'multiple-choice',
+              question: 'Which is a POLITE way to ask for directions?',
+              options: ['Where is the bank?', 'Tell me where the bank is.', 'Excuse me, could you tell me where the bank is?', 'Bank!'],
+              correct: 'Excuse me, could you tell me where the bank is?',
+              hint: 'Polite = Excuse me + could you.',
+              explanation: 'Excuse me and could you tell me are polite formulas for approaching strangers.',
+            },
+            {
+              id: 'een8-2-8', type: 'multiple-choice',
+              question: 'What is a single ticket?',
+              options: ['A ticket for one person only', 'A ticket for one journey only', 'A ticket bought online', 'A free ticket'],
+              correct: 'A ticket for one journey only',
+              hint: 'Opposite of return.',
+              explanation: 'A single ticket is for one journey in one direction. A return ticket includes the journey back.',
+            },
+            {
+              id: 'een8-2-9', type: 'true-false',
+              question: 'Roundabout is a type of road junction.',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'A roundabout is a circular junction where traffic flows around a central island.',
+            },
+          ],
+        },
+        {
+          id: 'en8-2-4',
+          title: 'Writing — Story or postcard about a place',
+          content: `## Writing a short story
+A **story** has a clear beginning, middle and end.
+
+### Structure
+1. **Beginning** — set the scene (when, where, who)
+2. **Middle** — develop events, build to a climax (problem)
+3. **End** — resolution (how did it finish?)
+
+### Useful tenses
+- **Past Simple** — main events: I went, she saw, we ran
+- **Past Continuous** — background: it was raining, they were walking
+- **Past Perfect** — earlier event: by the time I arrived, she had left
+
+### Useful linkers for stories
+- **First, then, after that, suddenly, in the end** — time order
+- **However, although, even though** — contrast
+- **Because, so** — cause and effect
+
+## Sample short story
+> **A strange night**
+>
+> It was a cold, foggy evening in October. I was walking home from school when I noticed a small black cat following me. At first, I thought nothing of it, but the cat followed me street after street.
+>
+> Suddenly, I heard a loud crash behind me. A tree branch had fallen exactly where I had been standing a minute before! The cat had saved my life. I picked it up gently and took it home. Now Luna sleeps on my bed every night.
+
+## Writing a postcard
+**Postcards** are short (usually 4-6 sentences) and casual.
+
+### Structure
+1. **Greeting:** Hi/Hello + name
+2. **Where you are:** *Greetings from Granada!*
+3. **What you are doing:** *We are staying in a small hotel near the Alhambra.*
+4. **Highlight:** *The food is amazing!*
+5. **Closing:** *Wish you were here! / See you soon!*
+6. **Sign-off:** Love/From + name
+
+### Sample postcard
+> Hi Anna!
+>
+> Greetings from Granada! We arrived three days ago and we are having a wonderful time. The Alhambra was breathtaking and the food is delicious. Yesterday we tried paella for the first time.
+>
+> Wish you were here!
+>
+> Love,
+> Maria
+
+## Checklist
+- Past tenses used correctly?
+- Beginning sets time and place?
+- Middle has a clear event or problem?
+- Ending wraps up the story?`,
+          exercises: [
+            {
+              id: 'een8-2-10', type: 'multiple-choice',
+              question: 'Which linker shows a SURPRISE in a story?',
+              options: ['first', 'because', 'suddenly', 'finally'],
+              correct: 'suddenly',
+              hint: 'Unexpected event.',
+              explanation: 'Suddenly signals an unexpected, surprising event — perfect for the climax of a story.',
+            },
+            {
+              id: 'een8-2-11', type: 'multiple-choice',
+              question: 'A postcard usually has:',
+              options: ['5-10 pages', '1-2 paragraphs (4-6 sentences)', 'a formal opening like Dear Sir', 'no greeting'],
+              correct: '1-2 paragraphs (4-6 sentences)',
+              hint: 'Postcards are SHORT.',
+              explanation: 'Postcards are very short — usually 4-6 sentences fitting on one side of a small card.',
+            },
+            {
+              id: 'een8-2-12', type: 'true-false',
+              question: 'A short story should mix Past Simple (main events) and Past Continuous (background).',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'Good stories mix Past Simple for main events with Past Continuous for background and atmosphere.',
             },
           ],
         },
@@ -30363,120 +30685,275 @@ When you do not understand, use these phrases:
     },
     {
       id: 'en8-3',
-      title: 'Наше образование, наша иднина',
+      title: 'Theme 3: Our education, our future',
       lessons: [
         {
           id: 'en8-3-1',
-          title: 'Modal verbs: must / have to / should',
-          content: `## Must — Strong Obligation
+          title: 'Listening — Modal verbs for obligation and advice',
+          content: `## Modal verbs of obligation
+Modal verbs go **before** the main verb (no -s, no -ing).
 
-Use **must** to express obligation or necessity:
-- You **must finish** this task in an hour.
-- Children **must learn** good habits.
-- Teachers **must check** all cords every week. (safety rule)
+### must — strong personal obligation
+- I **must** finish my homework tonight.
+- You **must** wear a uniform at school.
+- We **must** respect our teachers.
 
-**Negative — must not / mustn't** = prohibition:
-- You **must not** use your phone during the exam.
+### have to — external rule or necessity
+- I **have to** wear glasses to read. (medical need)
+- Students **have to** take exams in June. (school rule)
+- He **has to** get up early. (third person → has to)
 
-## Have to — External Obligation
+### must vs have to
+- **must** = the speaker thinks it is important
+- **have to** = someone else (rule, doctor) makes it necessary
 
-**Have to** shows obligation from outside (rules, laws):
-- I **have to wear** a uniform at school.
-- She **had to** submit her homework yesterday.
+### Negatives
+- **must not (mustn't)** = it is forbidden
+  - You **mustn't** copy in the exam.
+- **do not have to (don't have to)** = it is not necessary
+  - You **don't have to** wear a tie — it is optional.
 
-## Should — Advice
+## Modal verbs of advice
 
-Use **should** to give advice or recommendations:
-- You **should study** every day.
-- He **should not** stay up so late.
+### should / shouldn't
+- You **should** revise every day.
+- You **shouldn't** stay up too late before exams.
 
-## Comparing
+### ought to (slightly more formal than should)
+- Students **ought to** respect deadlines.
 
-| Modal | Meaning | Example |
-|-------|---------|---------|
-| must | strong personal obligation | You must be quiet. |
-| have to | external rule | I have to be at school by 8. |
-| should | advice/recommendation | You should eat breakfast. |`,
+### had better (strong recommendation, often warning)
+- You **had better** start studying — the test is tomorrow!
+
+## Listening tips for modals
+- **must** is usually stressed in speech
+- **don't have to** vs **mustn't** — listen carefully: they mean opposite things!
+- **had better** often shortened to **you'd better**`,
           exercises: [
             {
               id: 'een8-3-1', type: 'multiple-choice',
-              question: 'Choose the correct modal: "You ___ stop at a red light." (law)',
-              options: ['should', 'might', 'must', 'could'],
-              correct: 'must',
-              hint: 'A law is a strong obligation.',
-              explanation: '"Must" expresses strong obligation. Stopping at a red light is a legal requirement.',
+              question: 'Which sentence means it is NOT NECESSARY?',
+              options: ['You mustn\'t wear a uniform.', 'You don\'t have to wear a uniform.', 'You must wear a uniform.', 'You have to wear a uniform.'],
+              correct: 'You don\'t have to wear a uniform.',
+              hint: "mustn't = forbidden; don't have to = optional.",
+              explanation: "Don't have to means it is not necessary (optional). Mustn't means it is forbidden.",
             },
             {
               id: 'een8-3-2', type: 'multiple-choice',
-              question: 'Which sentence gives advice?',
-              options: ['You must not leave.', 'She has to pay a fine.', 'You should drink more water.', 'I must finish now.'],
-              correct: 'You should drink more water.',
-              hint: '"Should" = advice, not a strict rule.',
-              explanation: '"Should" is used for recommendations and advice, not strict obligation.',
+              question: 'Which is the best ADVICE form?',
+              options: ['You must study harder!', 'You should study a little every day.', 'You have to study now!', 'You will study tomorrow.'],
+              correct: 'You should study a little every day.',
+              hint: 'Should = advice, suggestion.',
+              explanation: 'Should is the standard verb for giving polite advice. Must and have to are stronger (obligation).',
             },
             {
               id: 'een8-3-3', type: 'true-false',
-              question: '"Must not" and "do not have to" have the same meaning.',
-              options: ['True', 'False'], correct: 'False',
-              explanation: '"Must not" = prohibition (it is forbidden). "Do not have to" = no obligation (but it is allowed). Very different!',
+              question: 'Modal verbs are always followed by the base form of the main verb (no to).',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'Modals (must, should, can, may) are followed by the bare infinitive: must go, should study (NOT must to go).',
             },
           ],
         },
         {
           id: 'en8-3-2',
-          title: 'Talking about education and future plans',
-          content: `## School and Education Vocabulary
+          title: 'Reading — Educational texts and future plans',
+          content: `## Reading educational texts
+School and education texts often use:
+- **Subject vocabulary:** maths, science, history, geography, IT
+- **Grading vocabulary:** grade, mark, average, distinction, fail, pass
+- **School systems:** primary, secondary, high school, university
+- **Activities:** lecture, lesson, project, group work, presentation
 
-**School subjects:** Maths, Science, History, Geography, Art, Music, PE, IT
-**People:** teacher, student, headmaster, librarian, counsellor
-**Places:** classroom, laboratory, library, canteen, gym, playground
-**Activities:** study, revise, take an exam, pass/fail, graduate
+### Sample text — School in Finland
+> Finland has one of the best education systems in the world. Children start school at age 7 and have very little homework compared to other countries. Teachers in Finland must have a master's degree, which makes the profession highly respected. Students do not take standardised tests until the end of high school. Instead, teachers assess students through projects and continuous observation.
 
-## Future Plans — will / going to
+## Talking about future plans
+**Tenses for future:**
 
-**Will** — spontaneous decision or prediction:
-- I think robots **will help** students in the future.
-- I **will call** you later.
+### will + verb
+For predictions, decisions made now, promises:
+- I think it **will rain** tomorrow.
+- I **will help** you with your homework.
 
-**Going to** — planned intention:
-- I **am going to study** medicine at university.
-- She **is going to apply** for a scholarship.
+### going to + verb
+For intentions and plans already decided:
+- I **am going to study** medicine next year.
+- We **are going to visit** Paris in summer.
 
-## Talking About Professions
+### Present Continuous (for arrangements)
+For fixed appointments:
+- I **am meeting** the teacher at 3 pm tomorrow.
 
-*Example:*
-> She **wants to be** a pilot when she grows up.
-> He **is going to study** engineering.
-> I **think** technology **will change** education completely.
+## Vocabulary for future plans
+- **dream of (+ verb-ing):** I dream of becoming a pilot.
+- **hope to (+ verb):** She hopes to study abroad.
+- **plan to:** They plan to start a business.
+- **aim to / intend to:** I intend to learn three languages.
 
-## Useful Phrases
-
-- I **would like to** become a doctor.
-- In the future, I **hope to** study abroad.
-- My dream job is to be a...
-- I **am interested in** working with computers.`,
+## Reading strategy — Inferring opinion
+The writer's **opinion** is not always stated. Look for:
+- **Positive words:** wonderful, excellent, best, respected
+- **Negative words:** worst, unfortunately, sadly
+- **Modal verbs:** should, must — indicate writer's recommendation`,
           exercises: [
             {
               id: 'een8-3-4', type: 'multiple-choice',
-              question: 'Which sentence shows a planned future intention?',
-              options: ['I will open the window.', 'She is going to study biology.', 'It will rain tomorrow.', 'I think he will come.'],
-              correct: 'She is going to study biology.',
-              hint: '"Going to" = already planned/decided.',
-              explanation: '"Going to" expresses a planned intention — the decision was already made.',
+              question: 'According to the text, what qualification must Finnish teachers have?',
+              options: ['Bachelor\'s degree', 'Master\'s degree', 'PhD', 'No degree required'],
+              correct: 'Master\'s degree',
+              hint: 'Scan for "must have".',
+              explanation: 'The text says: Teachers in Finland must have a master\'s degree.',
             },
             {
               id: 'een8-3-5', type: 'multiple-choice',
-              question: 'Which word means "successfully complete an exam"?',
-              options: ['fail', 'revise', 'pass', 'apply'],
-              correct: 'pass',
-              hint: 'The opposite of "fail".',
-              explanation: '"Pass" = get a good enough mark on an exam. "Fail" = not pass. "Revise" = study again before the exam.',
+              question: 'Which is BEST for talking about an already-decided plan?',
+              options: ['will + verb', 'going to + verb', 'past simple', 'Present Perfect'],
+              correct: 'going to + verb',
+              hint: 'Going to = pre-decided intention.',
+              explanation: 'Going to + verb is used for plans and intentions already decided before the moment of speaking.',
             },
             {
               id: 'een8-3-6', type: 'true-false',
-              question: '"Will" is used for spontaneous decisions made at the moment of speaking.',
+              question: 'Will is used for decisions made AT the moment of speaking.',
               options: ['True', 'False'], correct: 'True',
-              explanation: 'A: "The phone is ringing!" B: "I will answer it." — spontaneous decision, not planned in advance.',
+              explanation: "Correct — will is for spontaneous decisions (I'll have the pizza, please). Going to is for pre-decided plans.",
+            },
+          ],
+        },
+        {
+          id: 'en8-3-3',
+          title: 'Speaking — Subject and object questions, future plans',
+          content: `## Subject vs object questions
+**Subject question** — the question word (who/what) is the SUBJECT.
+
+### Subject question pattern
+**Wh- + verb + ...?** (no auxiliary, no inversion)
+- **Who** lives next door? — *My neighbour lives next door.*
+- **What** caused the noise? — *The wind caused the noise.*
+
+### Object question pattern
+**Wh- + auxiliary + subject + verb + ...?**
+- **Who** did you see? — *I saw my cousin.*
+- **What** did she buy? — *She bought a book.*
+
+### Compare
+| Subject question | Object question |
+|---|---|
+| Who **called** Maria? (Anna called Maria) | Who **did** Maria call? (Maria called Anna) |
+| What **happened**? | What **did** you do? |
+
+## Talking about future plans (speaking)
+**Useful structures:**
+- *I am thinking of studying...*
+- *I would like to become a...*
+- *My dream is to...*
+- *I hope to... but it depends on...*
+- *I am not sure yet, but I might...*
+
+### Sample mini-dialogue
+> A: What are you going to do after high school?
+> B: I am thinking of studying medicine. I would like to become a doctor.
+> A: Wow, that is a long course! Where will you study?
+> B: I am not sure yet — probably in Skopje, but I might apply abroad too.
+
+## Job and career vocabulary
+- **professions:** doctor, engineer, teacher, lawyer, programmer, designer, journalist, chef
+- **workplaces:** hospital, office, school, court, restaurant, studio
+- **qualities employers want:** punctual, hardworking, creative, team player, reliable
+
+## Speaking tip
+Use a mix of certainty levels:
+- **Certain:** I will / I am going to
+- **Likely:** I plan to / I hope to
+- **Less certain:** I might / I could / Maybe`,
+          exercises: [
+            {
+              id: 'een8-3-7', type: 'multiple-choice',
+              question: 'Which is a SUBJECT question?',
+              options: ['Who did you call?', 'Who called you?', 'What did she say?', 'What time is it?'],
+              correct: 'Who called you?',
+              hint: 'Subject question = no auxiliary (no did).',
+              explanation: 'Who called you? — who is the subject (the caller), so we use no auxiliary: Wh + verb directly.',
+            },
+            {
+              id: 'een8-3-8', type: 'multiple-choice',
+              question: 'Which phrase shows LESS CERTAINTY about the future?',
+              options: ['I will study medicine', 'I am going to study medicine', 'I might study medicine', 'I am studying medicine tomorrow'],
+              correct: 'I might study medicine',
+              hint: 'Might = possibility, not certainty.',
+              explanation: 'Might shows uncertainty (it is possible but not decided). Will and going to show stronger plans.',
+            },
+            {
+              id: 'een8-3-9', type: 'true-false',
+              question: 'Object questions need an auxiliary verb (do, did, have).',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'Object questions use Wh- + auxiliary + subject + verb (e.g., Who did you see?). Subject questions skip the auxiliary.',
+            },
+          ],
+        },
+        {
+          id: 'en8-3-4',
+          title: 'Writing — Describing school and future plans',
+          content: `## Writing a description of your school
+A school description is a **factual paragraph** with informative tone.
+
+### Structure
+1. **Opening:** Name, location, type, size
+2. **Body:** facilities, subjects, daily routine, teachers
+3. **Closing:** your opinion of the school
+
+### Sample paragraph
+> My school is called Goce Delcev Primary School and it is located in the centre of Skopje. We have about 800 students from grade 1 to grade 9. The school has a large library, a sports hall, a computer lab and a small garden. My favourite subjects are English and biology because the teachers make lessons interesting and we do many practical activities. I like my school because there is a friendly atmosphere and we organise lots of clubs after lessons.
+
+## Writing about your future plans
+A future-plans paragraph mixes **certainty and possibility**.
+
+### Structure
+1. **Opening:** What you plan to do after grade 9 / high school
+2. **Body:** Why, what you need to do to reach the goal
+3. **Closing:** Backup plan or hope
+
+### Useful future structures
+- **I plan to / I am going to / I hope to** — strong intention
+- **I would like to / My dream is to** — wish
+- **I might / I could** — possibility
+- **If I get good grades, I will...** — conditional plan
+
+## Sample paragraph
+> After grade 9, I plan to attend a gymnasium with a focus on natural sciences. I want to study biology and chemistry because my dream is to become a doctor. To reach this goal, I need to study hard, especially in maths and science, and to volunteer in the local hospital during the holidays. If I do not get into medical school in Skopje, I might apply to a university in Slovenia or Czech Republic. Either way, I will work hard to help people.
+
+## First Conditional (for future plans)
+**If + Present Simple, will + verb**
+- **If I study hard, I will pass** the exam.
+- **If she wins** the scholarship, **she will go** abroad.
+
+## Checklist
+- Mix of certain (will, am going to) and possible (might) plans?
+- First conditional used correctly?
+- Subject-verb agreement (he plans, NOT he plan)?
+- Vocabulary specific to school and careers?`,
+          exercises: [
+            {
+              id: 'een8-3-10', type: 'multiple-choice',
+              question: 'Complete the First Conditional: "If I ___ hard, I will pass."',
+              options: ['will study', 'studied', 'study', 'have studied'],
+              correct: 'study',
+              hint: 'First Conditional: If + Present Simple, will + verb.',
+              explanation: 'First Conditional structure: If + Present Simple (study), will + bare infinitive (will pass).',
+            },
+            {
+              id: 'een8-3-11', type: 'multiple-choice',
+              question: 'Which structure shows the STRONGEST intention?',
+              options: ['I might study medicine', 'I could study medicine', 'I am going to study medicine', 'I would like to study medicine'],
+              correct: 'I am going to study medicine',
+              hint: 'Going to = decided plan.',
+              explanation: 'Going to + verb is the strongest intention — it shows the plan is already decided.',
+            },
+            {
+              id: 'een8-3-12', type: 'true-false',
+              question: 'A school description should always include negative opinions to be honest.',
+              options: ['True', 'False'], correct: 'False',
+              explanation: 'A school description can include both positives and concerns, but it is usually balanced and respectful, not just negative.',
             },
           ],
         },
@@ -30484,122 +30961,286 @@ Use **should** to give advice or recommendations:
     },
     {
       id: 'en8-4',
-      title: 'Едно општество за сите',
+      title: 'Theme 4: One society for all',
       lessons: [
         {
           id: 'en8-4-1',
-          title: 'Modal verbs: can / could / may / might',
-          content: `## Can — Ability (present)
+          title: 'Listening — Social topics and modal verbs can/could/may/might',
+          content: `## Modal verbs of ability and permission
 
-Use **can** for ability or permission in the present:
-- Can the pupils in the back row hear me?
-- My grandmother **can** swim in cold water.
-- My grandfather **can not** do that.
+### can (ability — present)
+- I **can** speak three languages.
+- She **can** play the piano very well.
 
-## Could — Ability (past) or Polite Request
+### could (ability — past, or polite request)
+- When I was 5, I **could** swim.
+- **Could** you help me, please? (polite)
 
-**Past ability:**
-- When I was younger, I **could** run 10 km without stopping.
+### may (permission — formal)
+- **May** I leave the room?
+- You **may** start the test now.
 
-**Polite request:**
-- **Could** you pass me the salt, please?
-- **Could** you reach the North Pole in 15 hours?
+### might (possibility — uncertain)
+- It **might** rain later.
+- She **might** come to the party.
 
-## May / Might — Possibility
+## Compare can / could / may / might
 
-**May** = more likely possibility:
-- It **may** rain this afternoon. (quite possible)
+| Modal | Meaning | Example |
+|---|---|---|
+| can | ability now / informal permission | I can swim. Can I borrow your pen? |
+| could | past ability / polite request / possibility | I could swim at 4. Could you help? |
+| may | formal permission / possibility | May I come in? It may rain. |
+| might | weaker possibility | She might be late. |
 
-**Might** = less certain possibility:
-- The Fermans **might** be at home, but I am not sure.
-- Even I **could** climb that tree — it is not very tall.
+## Social topics vocabulary
+- **environment:** recycling, pollution, climate change, renewable energy
+- **society:** community, volunteer, charity, equality, diversity
+- **technology:** social media, fake news, online safety, digital divide
+- **lifestyle:** healthy/unhealthy, balanced diet, screen time
 
-## Summary
+## Formal vs informal register
+- **Informal:** Hey! / What's up? / yeah / kinda / wanna
+- **Formal:** Good morning / How do you do? / yes / somewhat / would like to
 
-| Modal | Use | Example |
-|-------|-----|---------|
-| can | ability / permission now | She can speak French. |
-| could | past ability / polite request | He could swim at age 4. |
-| may | quite possible | It may snow. |
-| might | less certain | It might snow. |`,
+### Listening tip
+- Note the **formality** of the speaker — vocabulary and tone tell you if it is a friendly chat or a serious talk.
+- Listen for **opinion markers:** I think, in my opinion, personally, frankly speaking.`,
           exercises: [
             {
               id: 'een8-4-1', type: 'multiple-choice',
-              question: 'Choose the correct modal: "When she was 5, she ___ read."',
-              options: ['can', 'could', 'might', 'may'],
-              correct: 'could',
-              hint: 'Past ability uses "could".',
-              explanation: '"Could" expresses past ability. She was able to read at age 5.',
+              question: 'Which is the most POLITE request?',
+              options: ['Give me the book.', 'I want the book.', 'Could you pass me the book, please?', 'Book, please.'],
+              correct: 'Could you pass me the book, please?',
+              hint: 'Could + please = polite.',
+              explanation: 'Could you... please? is the standard polite request formula in English.',
             },
             {
               id: 'een8-4-2', type: 'multiple-choice',
-              question: 'Which sentence expresses uncertainty about the future?',
-              options: ['She can swim.', 'He could run fast.', 'They might arrive late.', 'I can play piano.'],
-              correct: 'They might arrive late.',
-              hint: '"Might" = possible but not certain.',
-              explanation: '"Might" expresses possibility with uncertainty — we are not sure if they will be late.',
+              question: 'Which modal shows WEAK possibility?',
+              options: ['will', 'must', 'might', 'can'],
+              correct: 'might',
+              hint: 'Uncertain future.',
+              explanation: 'Might shows weak possibility — something that is possible but uncertain (it might rain).',
             },
             {
               id: 'een8-4-3', type: 'true-false',
-              question: '"Could you help me?" is a polite request.',
-              options: ['True', 'False'], correct: 'True',
-              explanation: '"Could you...?" is more polite than "Can you...?" and is commonly used for requests.',
+              question: '"What\'s up?" is FORMAL English.',
+              options: ['True', 'False'], correct: 'False',
+              explanation: "What's up? is very informal — used between friends. Formal greeting would be: How are you? or Good morning.",
             },
           ],
         },
         {
           id: 'en8-4-2',
-          title: 'Society, environment and future plans',
-          content: `## Talking About Society
+          title: 'Reading — Conclusions and inferences from social texts',
+          content: `## Reading for conclusions
+A **conclusion** is what you understand from the whole text — not always stated directly.
 
-**Key vocabulary:**
-- **community** — a group of people living in the same area
-- **environment** — the natural world around us
-- **rights** — things every person is entitled to
-- **responsibility** — a duty you have toward others
-- **diversity** — having many different types of people or things
+### Strategies for drawing conclusions
+1. **Read all paragraphs** before deciding the main point
+2. **Look at the title** — often contains the topic and writer\'s angle
+3. **Note repeated words** — they highlight what matters
+4. **Check the final paragraph** — often summarises the writer\'s view
 
-## Environmental Issues
+### Sample text — Plastic in our oceans
+> Every year, about 8 million tonnes of plastic end up in the world\'s oceans. This plastic harms sea animals — turtles eat plastic bags, mistaking them for jellyfish, and birds feed plastic pieces to their chicks. Microplastics now appear in fish that humans eat. Many countries have banned single-use plastic bags, but this is not enough. If we do not act now, by 2050 there could be more plastic than fish in the oceans.
+>
+> **Conclusion:** the writer believes individual and government action are urgently needed.
 
-- **climate change** — long-term changes in global temperatures
-- **pollution** — harmful substances in air, water or land
-- **recycling** — reusing materials to reduce waste
-- **renewable energy** — solar, wind, water power
+## Inferring opinion
+The writer may not say *I think...* but you can infer their view from:
+- **Choice of adjectives:** harms, urgently, not enough → negative urgency
+- **Statistics they choose to share:** big numbers about damage
+- **Calls to action:** if we do not act now...
 
-## Expressing Future Plans and Agreements
+## Vocabulary for social texts
+- **agree / disagree, conclude, claim, argue, suggest, recommend**
+- **positive change, negative impact, urgent issue, solution**
 
-- *I am going to help clean up the park on Saturday.*
-- *We will all bring our own bags to reduce plastic.*
-- *Maybe we could organise a school event.*
+## Sample paragraph — Inferring
+> Many schools have started recycling programmes. Students collect paper, plastic and metal in separate bins. Teachers say the programme has not only reduced waste but also taught children to think about the environment in everyday life.
 
-## Talking About Likes and Dislikes (why)
+**Inference:** the writer supports school recycling programmes — they mention positive outcomes (reduced waste, environmental awareness) without saying I think it is good.
 
-- *I like this idea because it helps everyone.*
-- *I do not agree with this because it is unfair.*
-- *I find pollution very worrying.*
-- *I enjoy activities that bring people together.*`,
+## Reading task — Quick check
+After reading, ask yourself:
+1. What is the **topic**?
+2. What is the **writer\'s opinion**?
+3. What **evidence** does the writer give?
+4. Do I **agree** or disagree?`,
           exercises: [
             {
               id: 'een8-4-4', type: 'multiple-choice',
-              question: 'What does "recycling" mean?',
-              options: ['Burning waste', 'Reusing materials to reduce waste', 'Dumping rubbish in rivers', 'Buying more things'],
-              correct: 'Reusing materials to reduce waste',
-              hint: 'Re-cycle = use again.',
-              explanation: 'Recycling converts used materials (paper, glass, plastic) into new products to reduce waste.',
+              question: 'According to the plastic text, what might happen by 2050?',
+              options: ['plastic will disappear', 'there could be more plastic than fish in oceans', 'fish will eat plastic safely', 'all countries will ban plastic'],
+              correct: 'there could be more plastic than fish in oceans',
+              hint: 'Scan for the year 2050.',
+              explanation: 'The text states: by 2050 there could be more plastic than fish in the oceans.',
             },
             {
               id: 'een8-4-5', type: 'multiple-choice',
-              question: '"I find pollution very worrying." This sentence expresses:',
-              options: ['A plan', 'A past event', 'A feeling/opinion about something', 'A polite request'],
-              correct: 'A feeling/opinion about something',
-              hint: '"I find ... worrying" = expressing how something makes you feel.',
-              explanation: '"I find + noun + adjective" expresses a personal reaction or opinion.',
+              question: 'Where is the writer\'s opinion most often found in a text?',
+              options: ['only in the title', 'only in the first sentence', 'in the final paragraph (summary)', 'in the middle of paragraph 2'],
+              correct: 'in the final paragraph (summary)',
+              hint: 'Conclusion = end.',
+              explanation: 'The final paragraph usually summarises the writer\'s main point and overall view of the topic.',
             },
             {
               id: 'een8-4-6', type: 'true-false',
-              question: 'Renewable energy sources include solar, wind and water power.',
+              question: 'You can infer a writer\'s opinion from the adjectives they choose.',
               options: ['True', 'False'], correct: 'True',
-              explanation: 'Solar (sun), wind and hydroelectric (water) power are all renewable — they will not run out.',
+              explanation: 'Writers reveal opinion through word choice — positive (wonderful, excellent) or negative (harmful, urgent) adjectives signal their view.',
+            },
+          ],
+        },
+        {
+          id: 'en8-4-3',
+          title: 'Speaking — Opinions on social issues',
+          content: `## Expressing opinions
+
+### Strong opinion
+- *I strongly believe that...*
+- *I am convinced that...*
+- *In my opinion, ... is the most important issue.*
+
+### Moderate opinion
+- *I think that...*
+- *I feel that...*
+- *It seems to me that...*
+
+### Asking for opinion
+- *What do you think about...?*
+- *How do you feel about...?*
+- *What is your view on...?*
+- *Do you agree that...?*
+
+## Agreeing and disagreeing politely
+
+### Agreeing
+- *I completely agree.*
+- *That is a good point.*
+- *I see what you mean.*
+- *Exactly!*
+
+### Disagreeing
+- *I see your point, but...*
+- *I am not sure I agree, because...*
+- *That may be true, however...*
+- *I have to disagree.*
+
+## Discussing social issues
+**Common topics:**
+- **environment** — plastic pollution, climate change
+- **technology** — screen time, social media
+- **equality** — gender, disability, minorities
+- **community** — volunteering, sport, school clubs
+
+### Sample mini-discussion
+> A: What do you think about banning single-use plastic in our school?
+> B: I think it is a great idea. Plastic harms the environment and we already use too much.
+> A: That is a good point. But what about students who buy snacks from the school shop?
+> B: The shop could switch to paper bags and reusable bottles.
+> A: I see your point. Maybe we could even start a recycling club.
+
+## Speaking tip — Take a position, give a reason, give an example
+**P-R-E:** Point → Reason → Example
+- *I think recycling should be compulsory at school.* (Point)
+- *It teaches us responsibility and protects the planet.* (Reason)
+- *In Sweden, all schools have recycling, and they recycle 99 percent of waste.* (Example)`,
+          exercises: [
+            {
+              id: 'een8-4-7', type: 'multiple-choice',
+              question: 'Which is a POLITE way to disagree?',
+              options: ['You are wrong.', 'I see your point, but...', 'That is stupid.', 'No way!'],
+              correct: 'I see your point, but...',
+              hint: 'Polite = acknowledge then disagree.',
+              explanation: 'I see your point, but... acknowledges the other person\'s view before disagreeing — polite and constructive.',
+            },
+            {
+              id: 'een8-4-8', type: 'multiple-choice',
+              question: 'What does P-R-E stand for in opinions?',
+              options: ['Point - Reason - Example', 'Person - Result - Effect', 'Plan - Read - Edit', 'Press - Repeat - End'],
+              correct: 'Point - Reason - Example',
+              hint: 'Structure for opinion answers.',
+              explanation: 'P-R-E (Point - Reason - Example) is a common framework for giving structured opinions in speaking and writing.',
+            },
+            {
+              id: 'een8-4-9', type: 'true-false',
+              question: 'When discussing social issues, you should never disagree to keep peace.',
+              options: ['True', 'False'], correct: 'False',
+              explanation: 'Polite disagreement is healthy in discussions. The skill is to disagree respectfully (I see your point, but...).',
+            },
+          ],
+        },
+        {
+          id: 'en8-4-4',
+          title: 'Writing — Creative writing and essays on social issues',
+          content: `## Creative writing — Short story with a social theme
+A **social-theme story** uses fiction to explore a real issue (environment, friendship, prejudice).
+
+### Plan
+1. **Issue** — what theme will you explore?
+2. **Character** — who is affected?
+3. **Conflict** — what problem must they solve?
+4. **Resolution** — how does it end? what is the lesson?
+
+### Sample story opening
+> Tom hated the pile of plastic on the beach. Every morning he ran along the sand, and every morning there was more rubbish than the day before. Today, he decided he had had enough...
+
+## Writing an opinion essay
+An **opinion essay** is a structured 4-paragraph text.
+
+### Structure
+1. **Introduction** — present the topic, state your opinion
+2. **First argument** — main reason + example
+3. **Second argument** — second reason + example (and address counterarguments)
+4. **Conclusion** — restate opinion, end with a strong final thought
+
+### Sample essay — Should schools ban mobile phones?
+> **Introduction:** Mobile phones are a normal part of teenage life, but should they be allowed at school? In my opinion, schools should ban phones during lessons but allow them during breaks.
+>
+> **Argument 1:** During lessons, phones distract students from learning. Research from Cambridge University shows that students who do not use phones in class score 6 percent higher on tests. For example, when my classmates put their phones away, they understand the lesson much better.
+>
+> **Argument 2:** During breaks, however, phones are useful. Students can call parents, listen to music to relax, or check important messages. Banning phones completely would be unfair and not realistic.
+>
+> **Conclusion:** To sum up, a balanced approach is best — no phones in lessons, free use during breaks. This way, students stay focused but keep their independence.
+
+## Useful linkers for essays
+- **Introduction:** Many people believe that..., It is often said that...
+- **Arguments:** Firstly, secondly, in addition, moreover, furthermore
+- **Examples:** for example, for instance, such as
+- **Counterargument:** however, on the other hand, despite this
+- **Conclusion:** to sum up, in conclusion, to conclude
+
+## Checklist
+- Clear opinion in introduction?
+- Each body paragraph has ONE argument with a REASON and EXAMPLE?
+- Did you address an opposing view?
+- Conclusion restates without copying?
+- Linkers between paragraphs?`,
+          exercises: [
+            {
+              id: 'een8-4-10', type: 'multiple-choice',
+              question: 'Which linker introduces an EXAMPLE?',
+              options: ['however', 'for example', 'firstly', 'in conclusion'],
+              correct: 'for example',
+              hint: 'Specific case to support an idea.',
+              explanation: 'For example (and for instance, such as) introduce examples that support a general claim.',
+            },
+            {
+              id: 'een8-4-11', type: 'multiple-choice',
+              question: 'In an opinion essay, where do you STATE your opinion?',
+              options: ['only in the title', 'in the introduction (and again in conclusion)', 'only in argument 2', 'never — you must be neutral'],
+              correct: 'in the introduction (and again in conclusion)',
+              hint: 'Opinion = clearly stated, twice.',
+              explanation: 'Opinion essays state the writer\'s view in the introduction and restate (differently) in the conclusion.',
+            },
+            {
+              id: 'een8-4-12', type: 'true-false',
+              question: 'A strong opinion essay considers AND addresses opposing views.',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'Addressing counterarguments (however, despite this) makes an essay more credible and shows balanced thinking.',
             },
           ],
         },
