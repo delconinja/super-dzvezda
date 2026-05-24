@@ -45840,388 +45840,1148 @@ HCl + NH₃ → NH₄Cl (pH < 7)`,
     },
   ],
   german: [
-    // ── EINHEIT 1: Моите пријатели и јас ─────────────────────────
     {
-      id: 'de8-1',
-      title: 'Моите пријатели и јас',
+      id: 'ger8-1',
+      title: 'Theme 1: Meine Freunde und ich (Моите пријатели и јас)',
       lessons: [
         {
-          id: 'de8-1-1',
-          title: 'Описување изглед и карактер — Aussehen und Charakter',
-          content: `## Описување на лице
+          id: 'ger8-1-1',
+          title: 'Wortschatz — Aussehen und Charakter',
+          content: `## Описување изглед на германски
 
-На германски јазик можеме да го опишеме изгледот и карактерот на некоја личност.
+### Изглед (Aussehen)
+| Германски | Македонски |
+|-----------|-----------|
+| groß | висок |
+| klein | низок |
+| schlank | тенок |
+| dick | дебел |
+| jung | млад |
+| alt | стар |
+| hübsch | убав |
 
-## Изглед — Aussehen
+### Коса (Haare)
+- lang (долга), kurz (кратка)
+- blond (русена), braun (кафеава), schwarz (црна), rot (црвена)
+- glatt (мазна), lockig (кадрава)
 
-| Deutsch | Македонски |
-|---------|-----------|
-| groß | висок/а |
-| klein | низок/а |
-| schlank | витка/о |
-| dick | дебел/а |
-| blonde Haare | плава коса |
-| dunkle Haare | темна коса |
-| blaue Augen | сини очи |
+### Очи (Augen)
+- blau (сини), grün (зелени), braun (кафеави)
 
-**Пример:**
-*Meine Freundin heißt Lena. Sie ist groß und schlank. Sie hat lange blonde Haare und blaue Augen.*
-
-## Карактер — Charakter
-
-| Deutsch | Македонски |
-|---------|-----------|
-| klug | паметен/а |
+## Карактер (Charakter)
+| Германски | Македонски |
+|-----------|-----------|
+| nett | мил |
 | freundlich | пријателски |
-| lustig | смешен/а |
-| nett | мил/а |
-| naiv | наивен/а |
+| lustig | смешен |
+| ruhig | мирен |
+| schüchtern | срамежлив |
+| sportlich | спортски |
+| fleißig | вреден |
+| faul | мрзлив |
+| klug | паметен |
+| ehrlich | искрен |
 
-**Пример:**
-*Mein Freund Max ist sehr klug und freundlich. Er ist manchmal auch lustig.*
+### Семејство (Familie)
+- die Mutter / der Vater (мајка / татко)
+- die Schwester / der Bruder (сестра / брат)
+- die Großmutter (Oma) / der Großvater (Opa) (баба / дедо)
+- die Tante / der Onkel (тетка / вујко)
+- der Cousin / die Cousine (братучед / братучеда)
 
-## Договарање состанок
+### Пример опис
+*„Meine Schwester Anna ist groß und schlank. Sie hat lange blonde Haare und blaue Augen. Sie ist sehr nett und lustig."*
 
-- *Möchtest du mitkommen?* — Сакаш ли да дојдеш?
-- *Ja, gern!* — Да, со задоволство!
-- *Tut mir leid, ich kann nicht.* — Жал ми е, не можам.`,
+(„Mojata сестра Ана е висока и тенка. Има долга русена коса и сини очи. Е многу мила и смешна.")
+
+## Личните заменки (Personalpronomen)
+- ich (јас), du (ти), er (тој), sie (таа), es (тоа)
+- wir (ние), ihr (вие), sie (тие), Sie (Вие учтиво)
+
+## Кратки фрази
+- *Wie heißt du?* (Како се вика ш?)
+- *Ich heiße Marko.* (Се вика м Марко.)
+- *Wie alt bist du?* (Колку године имаш?)
+- *Ich bin 13 Jahre alt.* (Имам 13 године.)
+- *Woher kommst du?* (Од каде си?)
+- *Ich komme aus Mazedonien.* (Од Македонија сум.)`,
           exercises: [
             {
-              id: 'ede8-1-1', type: 'multiple-choice',
-              question: 'Што значи зборот "freundlich" на македонски?',
-              options: ['висок/а', 'пријателски', 'паметен/а', 'смешен/а'],
-              correct: 'пријателски',
-              hint: 'Овој збор опишува карактерна особина — начин на однесување кон другите.',
-              explanation: '"Freundlich" значи пријателски/пријатен — се однесува на карактерот на некого.',
+              id: 'eger8-1-1', type: 'multiple-choice',
+              question: 'Како се вика „пријателски" на германски?',
+              options: ['lustig', 'freundlich', 'faul', 'schüchtern'],
+              correct: 'freundlich',
+              hint: 'Од „Freund" = пријател.',
+              explanation: 'freundlich = пријателски. Од „Freund" (пријател).',
             },
             {
-              id: 'ede8-1-2', type: 'multiple-choice',
-              question: 'Како се вели "сини очи" на германски?',
-              options: ['blonde Haare', 'dunkle Augen', 'blaue Augen', 'grüne Haare'],
-              correct: 'blaue Augen',
-              hint: '"Blau" = сина боја, "Augen" = очи.',
-              explanation: '"Blaue Augen" буквално значи "сини очи" — blau (сина) + Augen (очи).',
+              id: 'eger8-1-2', type: 'multiple-choice',
+              question: 'Што значи „Wie heißt du"?',
+              options: ['Колку године имаш?', 'Како се вика ш?', 'Од каде си?', 'Каде живе еш?'],
+              correct: 'Како се вика ш?',
+              hint: 'heißen = се вика.',
+              explanation: 'Wie heißt du? = Како се вика ш? Глагол heißen = се вика. Се одговара со „Ich heiße..." (Се вика м...).',
             },
             {
-              id: 'ede8-1-3', type: 'true-false',
-              question: '"Möchtest du mitkommen?" значи "Сакаш ли да дојдеш?"',
-              options: ['Точно', 'Неточно'], correct: 'Точно',
-              explanation: '"Möchtest du mitkommen?" е покана за заедничка активност — буквално значи "Сакаш ли да дојдеш со мене?"',
+              id: 'eger8-1-3', type: 'true-false',
+              question: 'На германски, „Sie" (со голема S) значи „Вие" учтиво.',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'Точно. „Sie" со голема S = Вие учтиво (за еден или повеќе). „sie" со мала s = таа или тие. Од контекст се разликува.',
             },
           ],
         },
         {
-          id: 'de8-1-2',
-          title: 'Нарачување во ресторан — Modalne Verben',
-          content: `## Нарачување во ресторан
+          id: 'ger8-1-2',
+          title: 'Grammatik — Artikel, Verben und Präsens',
+          content: `## Членови (Artikel) на германски
 
-Во ресторан на германски јазик користиме специфични изрази за нарачување.
+### Определени (der, die, das)
+- **der** + маш.: der Mann (мажот), der Tisch (масата)
+- **die** + жен.: die Frau (жената), die Tür (вратата)
+- **das** + ср. (среден): das Kind (детето), das Haus (куќата)
+- **die** + множ.: die Männer, die Frauen, die Kinder
 
-## Корисни изрази
+### Неопределени (ein, eine)
+- **ein** + маш./ср.: ein Mann, ein Kind
+- **eine** + жен.: eine Frau, eine Tür
 
-| Deutsch | Македонски |
-|---------|-----------|
-| Ich möchte bestellen. | Сакам да нарачам. |
-| Was kostet das? | Колку чини ова? |
-| Ich nehme... | Јас земам... |
-| Die Rechnung bitte! | Сметката, ве молам! |
+### Зошто 3 пола?
+На германски имат 3 пола (маш., жен., ср.) — често не логичен:
+- *das Mädchen* (девојчето) — среден!
+- *die Sonne* (сонцето) — женски!
+- *der Mond* (месечината) — машки!
 
-**Пример:**
-*Ich nehme einen Hamburger mit Pommes und noch eine Cola dazu.*
+Треба да памтиш родот со зборот.
 
-## Модални глаголи
+## Сегашно време — Präsens
 
-Модалните глаголи изразуваат желба, можност, потреба или дозвола:
+### Конјугација на правилни глаголи: lernen (учи)
+- ich lerne (учам)
+- du lernst (учиш)
+- er/sie/es lernt (учи)
+- wir lernen (учиме)
+- ihr lernt (учите)
+- sie/Sie lernen (тие учат / Вие учите)
 
-| Глагол | Значење | Пример |
-|--------|---------|--------|
-| können | можам | Ich kann schwimmen. |
-| müssen | морам | Du musst lernen. |
-| dürfen | смеам | Du darfst spielen. |
-| sollen | треба (должност) | Er soll kommen. |
-| wollen | сакам (намера) | Ich will essen. |
+### sein (е)
+- ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind
 
-**Реченична рамка со модален глагол:**
-*Sie **muss** heute **lernen**.* — модалниот глагол е на 2. место, главниот на крај.`,
+### haben (има)
+- ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie/Sie haben
+
+### gehen (оди)
+- ich gehe, du gehst, er/sie/es geht, wir gehen, ihr geht, sie/Sie gehen
+
+### machen (прави)
+- ich mache, du machst, er/sie/es macht, wir machen, ihr macht, sie/Sie machen
+
+## Пример реченици
+- *Ich bin Schüler.* (Ученик сум.)
+- *Du hast einen Bruder.* (Имаш брат.)
+- *Sie ist 14 Jahre alt.* (Таа има 14 године.)
+- *Wir lernen Deutsch.* (Ние учиме германски.)
+
+## Прашања
+### Со прашален збор
+- *Wer?* (Кој?) — *Wer ist das?*
+- *Was?* (Што?) — *Was machst du?*
+- *Wo?* (Каде?) — *Wo wohnst du?*
+- *Wie?* (Како?) — *Wie heißt du?*
+- *Wann?* (Кога?) — *Wann beginnt der Unterricht?*
+
+### Без прашален збор (со инверзија)
+- *Bist du Schüler?* (Ученик си?)
+- *Hast du einen Bruder?* (Имаш брат?)`,
           exercises: [
             {
-              id: 'ede8-1-4', type: 'multiple-choice',
-              question: 'Кој модален глагол изразува "морам"?',
-              options: ['können', 'dürfen', 'müssen', 'sollen'],
-              correct: 'müssen',
-              hint: '"Ich ___ lernen" — морам да учам.',
-              explanation: '"Müssen" изразува обврска или нужност — "морам". Пример: "Ich muss lernen" = Морам да учам.',
+              id: 'eger8-1-4', type: 'multiple-choice',
+              question: 'Колку родови (пола) имат зборовите на германски?',
+              options: ['1', '2', '3 (маш., жен., ср.)', '4'],
+              correct: '3 (маш., жен., ср.)',
+              hint: 'der, die, das.',
+              explanation: 'Германски има 3 родова: маш. (der), жен. (die), ср. (das). Често не логичен — мораш да памтиш со зборот.',
             },
             {
-              id: 'ede8-1-5', type: 'multiple-choice',
-              question: 'Каде одат модалниот и главниот глагол во реченицата "Sie muss heute lernen"?',
-              options: ['И двата на крај', 'Модален на 2. место, главен на крај', 'Главен на 2. место, модален на крај', 'И двата на почеток'],
-              correct: 'Модален на 2. место, главен на крај',
-              hint: 'Во германски реченица со 2 глаголи — еден доаѓа веднаш по субјектот, другиот на крај.',
-              explanation: 'Во реченица со модален глагол: модалниот е на 2. место (личноглаголска форма), а главниот (во инфинитив) оди на крај: "Sie muss heute lernen."',
+              id: 'eger8-1-5', type: 'multiple-choice',
+              question: 'Како се конјугира „lernen" за „ich"?',
+              options: ['ich lerne', 'ich lernst', 'ich lernt', 'ich lernen'],
+              correct: 'ich lerne',
+              hint: 'Глаголот завршува на -e.',
+              explanation: 'Ich lerne (учам). Прв лице ед. = глагол + -e (за правилни глаголи).',
             },
             {
-              id: 'ede8-1-6', type: 'true-false',
-              question: '"Die Rechnung bitte!" значи "Сметката, ве молам!"',
-              options: ['Точно', 'Неточно'], correct: 'Точно',
-              explanation: '"Rechnung" = сметка, "bitte" = ве молам. "Die Rechnung bitte!" е стандарден израз за барање сметка во ресторан.',
+              id: 'eger8-1-6', type: 'true-false',
+              question: 'Зборот „das Mädchen" (девојчето) е женски род.',
+              options: ['True', 'False'], correct: 'False',
+              explanation: 'НЕ. „Das Mädchen" е СРЕДЕН род (поради завршеток „-chen"). Иако значи „девојче", се класифицира како среден.',
+            },
+          ],
+        },
+        {
+          id: 'ger8-1-3',
+          title: 'Konversation — Sich vorstellen',
+          content: `## Запознавање на германски
+
+### Поздрави
+- *Hallo!* (Здраво)
+- *Guten Tag!* (Добар ден)
+- *Guten Morgen!* (Добро утро)
+- *Guten Abend!* (Добра вечер)
+- *Tschüss!* (Чао)
+- *Auf Wiedersehen!* (Довидување — формално)
+
+### Запознавање
+- *Ich heiße ...* (Се вика м...)
+- *Mein Name ist ...* (Моје име е...)
+- *Wie heißt du?* (Како се вика ш?)
+- *Freut mich!* (Драго ми е!)
+- *Schön, dich kennenzulernen!* (Убаво да те запознаам!)
+
+### Лични информации
+- *Ich bin ... Jahre alt.* (Имам ... године.)
+- *Wo wohnst du?* (Каде живе еш?)
+- *Ich wohne in Skopje.* (Живе ам во Скопје.)
+- *Was machst du?* (Што правиш?)
+- *Ich bin Schüler/Schülerin.* (Сум ученик/ученичка.)
+
+### Семејство
+- *Hast du Geschwister?* (Имаш ли браќа или сестри?)
+- *Ich habe einen Bruder und eine Schwester.* (Имам брат и сестра.)
+- *Wie heißt deine Mutter?* (Како се вика твојата мајка?)
+
+## Пример дијалог
+> **Tina:** Hallo! Wie heißt du?
+> **Max:** Hallo! Ich heiße Max. Und du?
+> **Tina:** Ich heiße Tina. Freut mich!
+> **Max:** Wie alt bist du, Tina?
+> **Tina:** Ich bin 13 Jahre alt. Und du?
+> **Max:** Ich bin auch 13. Wo wohnst du?
+> **Tina:** Ich wohne in Berlin. Und du?
+> **Max:** Ich wohne in München.
+
+## Изразување чувства
+- *Ich bin glücklich.* (Среќен сум.)
+- *Ich bin traurig.* (Тажен сум.)
+- *Ich bin müde.* (Уморен сум.)
+- *Ich bin hungrig.* (Гладен сум.)
+- *Ich habe Durst.* (Жаден сум.)
+- *Mir geht es gut/schlecht.* (Добро/лошо ми е.)
+
+## Учтиви форми
+- *Bitte* (Молам)
+- *Danke* (Фала)
+- *Vielen Dank!* (Многу фала!)
+- *Entschuldigung!* (Извини / Извинете)
+- *Es tut mir leid.* (Жал ми е.)
+
+## Бројки (1-20)
+- 1 eins, 2 zwei, 3 drei, 4 vier, 5 fünf
+- 6 sechs, 7 sieben, 8 acht, 9 neun, 10 zehn
+- 11 elf, 12 zwölf, 13 dreizehn, 14 vierzehn, 15 fünfzehn
+- 16 sechzehn, 17 siebzehn, 18 achtzehn, 19 neunzehn, 20 zwanzig`,
+          exercises: [
+            {
+              id: 'eger8-1-7', type: 'multiple-choice',
+              question: 'Како се вика „Драго ми е" на германски?',
+              options: ['Hallo', 'Tschüss', 'Freut mich', 'Bitte'],
+              correct: 'Freut mich',
+              hint: 'При запознавање.',
+              explanation: 'Freut mich = Драго ми е! Се вели при запознавање, како „Enchanté" на француски.',
+            },
+            {
+              id: 'eger8-1-8', type: 'multiple-choice',
+              question: 'Што значи „Tschüss"?',
+              options: ['Здраво', 'Молам', 'Чао (неформално)', 'Извини'],
+              correct: 'Чао (неформално)',
+              hint: 'При сбогување.',
+              explanation: 'Tschüss = чао, помеѓу пријатели. Формално: „Auf Wiedersehen" (довидување).',
+            },
+            {
+              id: 'eger8-1-9', type: 'true-false',
+              question: 'На германски „zehn" значи „10".',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'Точно. Zehn = 10. Други: eins (1), zwei (2), drei (3), vier (4), fünf (5)... zwanzig (20).',
+            },
+          ],
+        },
+        {
+          id: 'ger8-1-4',
+          title: 'Schreiben — Selbstvorstellung',
+          content: `## Како да напишеш претстава на себе
+
+### Структура
+1. Поздрав
+2. Име и возраст
+3. Од каде си
+4. Семејство
+5. Школа и интереси
+6. Што сакаш и не сакаш
+7. Поздрав за крај
+
+### Пример
+> *Hallo!*
+>
+> *Ich heiße Ana und bin 14 Jahre alt. Ich komme aus Mazedonien und wohne in Skopje. Meine Familie ist klein: meine Eltern, mein Bruder und ich.*
+>
+> *Ich gehe in die 8. Klasse. Meine Lieblingsfächer sind Deutsch, Englisch und Sport. Ich lerne sehr gerne Sprachen.*
+>
+> *In meiner Freizeit höre ich gerne Musik, lese Bücher und treffe meine Freunde. Ich spiele auch Tennis. Ich mag nicht Mathematik — es ist schwer für mich.*
+>
+> *Auf Wiedersehen!*
+> *Ana*
+
+## Корисни врски (Bindewörter)
+- **und** (и)
+- **aber** (но)
+- **oder** (или)
+- **weil** (затоа што)
+- **denn** (затоа што)
+- **auch** (исто)
+
+### Пример
+*„Ich spiele Tennis UND Fußball, ABER ich mag nicht Basketball, WEIL es zu langsam ist."*
+
+(„Играа тенис И фудбал, НО не сакам кошарка, ЗАТОА ШТО е премногу бавно.")
+
+## Корисни глаголи за хобита
+- *lesen* (чита) — *Ich lese gerne Bücher.*
+- *schreiben* (пишува) — *Ich schreibe Geschichten.*
+- *Musik hören* (слуша музика)
+- *Filme sehen* (гледа филмови)
+- *Sport machen* (спортува)
+- *Computerspiele spielen* (игра компјутерски игри)
+- *Freunde treffen* (се среќаа со пријатели)
+- *kochen* (готви)
+
+## Изразување на интерес
+- *Ich mag ...* (Сакам...)
+- *Ich liebe ...* (Обожавам...)
+- *Ich finde ... toll/super.* (Тоа е супер.)
+- *Ich mag nicht ...* (Не сакам...)
+- *... ist langweilig/blöd.* (... е здодевно / глупаво.)
+
+## Совети
+1. Кратки реченици
+2. Внимавај на родот на зборовите (der/die/das)
+3. Користи врски (und, aber, weil)
+4. Учи нови зборови како составни делови (со членот)
+5. Чести фрази: „Ich bin...", „Ich habe...", „Ich mag..."
+
+## Идеи за други теми
+- *Mein Hobby* (Мое хоби)
+- *Mein bester Freund / Meine beste Freundin*
+- *Meine Schule*
+- *Mein Lieblingstag*`,
+          exercises: [
+            {
+              id: 'eger8-1-10', type: 'multiple-choice',
+              question: 'Како се вика „но" на германски?',
+              options: ['und', 'aber', 'oder', 'auch'],
+              correct: 'aber',
+              hint: 'Спротивност.',
+              explanation: 'aber = но. Се користи за контраст: „Ich spiele Tennis, aber nicht Fußball."',
+            },
+            {
+              id: 'eger8-1-11', type: 'multiple-choice',
+              question: 'Што значи „Ich lese gerne Bücher"?',
+              options: ['Не сакам да читам', 'Сакам да читам книги', 'Купувам книги', 'Пишувам книги'],
+              correct: 'Сакам да читам книги',
+              hint: 'lesen = чита, gerne = со задоволство.',
+              explanation: 'Ich lese gerne Bücher = Сакам да читам книги. „Gerne" значи „со задоволство" или „радо".',
+            },
+            {
+              id: 'eger8-1-12', type: 'true-false',
+              question: 'На германски сите именки (Substantive) се пишуваат со голема почетна букба.',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'Точно! Уникатна особина на германски — сите именки имаат ГОЛЕМА ПОЧЕТНА БУКВА: das Buch, der Mann, die Schule.',
             },
           ],
         },
       ],
     },
-    // ── EINHEIT 2: Нашето слободно време ─────────────────────────
     {
-      id: 'de8-2',
-      title: 'Нашето слободно време',
+      id: 'ger8-2',
+      title: 'Theme 2: Unsere Freizeit (Нашето слободно време)',
       lessons: [
         {
-          id: 'de8-2-1',
-          title: 'Перфект — раскажување минати дејствија',
-          content: `## Перфект (Perfekt)
+          id: 'ger8-2-1',
+          title: 'Wortschatz — Hobbys und Sport',
+          content: `## Хобита и слободно време
 
-Перфектот се употребува за раскажување на минати настани во разговорен германски.
+### Глаголи за активности
+- *Sport machen* (спортува)
+- *Musik hören* (слуша музика)
+- *Bücher lesen* (чита книги)
+- *Filme sehen* (гледа филмови)
+- *Computerspiele spielen* (игра компјутерски игри)
+- *Freunde treffen* (се среќаа со пријатели)
+- *im Internet surfen* (сурфа интернет)
+- *spazieren gehen* (шета)
+- *einkaufen gehen* (оде во купување)
+- *Fotos machen* (прави фотографии)
 
-## Градење на перфект
+### Спортови
+- *Fußball* (фудбал)
+- *Basketball* (кошарка)
+- *Tennis*
+- *Schwimmen* (пливање)
+- *Skifahren* (ски)
+- *Radfahren* (велосипед)
+- *Joggen* (трчање)
+- *Tanzen* (танец)
+- *Yoga*
 
-**Формула:** haben/sein (на 2. место) + Partizip II (на крај)
+### Музички инструменти
+- *Klavier spielen* (свири пиано)
+- *Gitarre spielen* (свири гитара)
+- *Geige spielen* (свири виолина)
+- *Schlagzeug spielen* (свири барабани)
+- *Flöte spielen* (свири флејта)
 
-| Тип глагол | Партицип II | Пример |
-|-----------|-------------|--------|
-| Слаби глаголи | ge- + основа + -(e)t | lernen → ge**lern**t |
-| Јаки глаголи | ge- + основа (со аблаут) + -en | gehen → ge**gang**en |
-| Глаголи на -ieren | само -(i)ert (без ge-) | telefonieren → telefon**iert** |
+## Чести фрази
+- *Was machst du gerne?* (Што сакаш да правиш?)
+- *Ich spiele Tennis.* (Играа тенис.)
+- *Ich gehe ins Kino.* (Одам во кино.)
+- *Ich treffe meine Freunde.* (Се среќам со пријатели.)
+- *Ich habe ein Hobby.* (Имам хоби.)
+- *Mein Lieblingssport ist Basketball.* (Мојот омилен спорт е кошарка.)
 
-## Haben или Sein?
+## Каде се прават?
+- *im Park* (во парк)
+- *im Stadion* (на стадион)
+- *in der Sporthalle* (во спортска сала)
+- *im Schwimmbad* (во базен)
+- *in der Disco* (на диско)
+- *im Kino* (во кино)
+- *zu Hause* (дома)
 
-**Sein** се употребува со глаголи за движење и промена на состојба:
-- *Ich **bin** nach Spanien **gefahren**.* (патувал сум)
-- *Er **ist** nach Hause **gegangen**.* (отишол е)
+## Колку често?
+- *jeden Tag* (секој ден)
+- *manchmal* (понекогаш)
+- *oft* (често)
+- *selten* (ретко)
+- *nie* (никогаш)
+- *einmal pro Woche* (еднаш неделно)
+- *am Wochenende* (за викенд)
 
-**Haben** со останатите глаголи:
-- *Ich **habe** Deutsch **gelernt**.* (учел сум)
-- *Sie **hat** einen Text **gelesen**.* (читала е)
+### Пример реченици
+- *Ich spiele jeden Tag Klavier.* (Свирам пиано секој ден.)
+- *Wir gehen einmal pro Woche ins Schwimmbad.* (Одиме во базен еднаш неделно.)
+- *Am Wochenende treffe ich meine Freunde.* (За викенд се среќам со пријатели.)
+
+## Чувства за активности
+- *Es ist lustig!* (Тоа е забавно!)
+- *Es macht Spaß.* (Прави забава.)
+- *Es ist anstrengend.* (Тоа е напорно.)
+- *Es ist toll!* (Тоа е супер!)
+- *Es ist langweilig.* (Тоа е здодевно.)`,
+          exercises: [
+            {
+              id: 'eger8-2-1', type: 'multiple-choice',
+              question: 'Како се вика „пливање" на германски?',
+              options: ['Tanzen', 'Skifahren', 'Schwimmen', 'Radfahren'],
+              correct: 'Schwimmen',
+              hint: 'Спорт во вода.',
+              explanation: 'Schwimmen = пливање. Глагол: schwimmen.',
+            },
+            {
+              id: 'eger8-2-2', type: 'multiple-choice',
+              question: 'Што значи „Es macht Spaß"?',
+              options: ['Тоа е здодевно', 'Тоа прави забава', 'Не сакам', 'Премногу напорно'],
+              correct: 'Тоа прави забава',
+              hint: 'Spaß = забава.',
+              explanation: 'Es macht Spaß = Тоа прави забава / забавно е. „Spaß" е чест збор за забава.',
+            },
+            {
+              id: 'eger8-2-3', type: 'true-false',
+              question: '„Jeden Tag" значи „понекогаш".',
+              options: ['True', 'False'], correct: 'False',
+              explanation: 'НЕ. Jeden Tag = СЕКОЈ ДЕН. „Понекогаш" е „manchmal".',
+            },
+          ],
+        },
+        {
+          id: 'ger8-2-2',
+          title: 'Grammatik — Perfekt (минато време)',
+          content: `## Перфект — минато време
+
+### Структура
+**haben/sein (Präsens) + Partizip II**
+
+### Кога се користи?
+За **завршени дејства** во минатото. Главно во разговорен јазик.
+
+### Како се прави Partizip II?
+
+#### Правилни глаголи: ge- + основа + -t
+- *machen* (прави) → *gemacht*
+- *lernen* (учи) → *gelernt*
+- *spielen* (свири) → *gespielt*
+- *kaufen* (купи) → *gekauft*
+
+#### Неправилни глаголи — мора да памтиш
+- *sein* (е) → *gewesen*
+- *haben* (има) → *gehabt*
+- *gehen* (оде) → *gegangen*
+- *kommen* (доага) → *gekommen*
+- *sehen* (гледа) → *gesehen*
+- *essen* (јаде) → *gegessen*
+- *trinken* (пие) → *getrunken*
+- *fahren* (вози) → *gefahren*
+- *finden* (наога) → *gefunden*
+- *sprechen* (зборува) → *gesprochen*
+
+## Кога haben и кога sein?
+
+### sein (за движење и промена на состојба)
+- *Ich bin nach Berlin gefahren.* (Возев до Берлин.)
+- *Wir sind ins Kino gegangen.* (Одевме во кино.)
+- *Er ist müde geworden.* (Стана уморен.)
+
+### haben (сите други)
+- *Ich habe ein Buch gelesen.* (Прочитав книга.)
+- *Wir haben Pizza gegessen.* (Једевме пица.)
+- *Sie hat Musik gehört.* (Слуша музика.)
 
 ## Примери
+- *Gestern habe ich Fußball gespielt.* (Вчера играа фудбал.)
+- *Wir sind ins Kino gegangen.* (Одевме во кино.)
+- *Hast du das Buch gelesen?* (Прочита книга?)
+- *Sie hat einen Brief geschrieben.* (Таа напиша писмо.)
 
-- *In den Ferien **waren** wir in Spanien.* (Претеритум на sein)
-- *In Spanien **habe** ich surfen **gelernt**.*
-- *Es **war** spannend!*`,
+## Структура на реченица
+**Subject + haben/sein + ... + Partizip II (на крајот!)**
+
+Тоа е важно — Partizip II ОДИ НА КРАЈ од реченицата.
+
+### Пример
+- *Ich habe heute mit meinen Freunden gespielt.*
+  („Денеска со пријателите играа.")
+- *Wir sind gestern um 8 Uhr ins Restaurant gegangen.*
+  („Вчера во 8 часот одевме во ресторан.")
+
+## Маркери за минато време
+- *gestern* (вчера)
+- *vorgestern* (прет-вчера)
+- *letzte Woche* (мината недела)
+- *letzten Monat* (минат месец)
+- *vor einem Jahr* (пред една година)
+
+## Прашања
+- *Was hast du gestern gemacht?* (Што правеше вчера?)
+- *Wo bist du gewesen?* (Каде беше?)
+- *Hast du das Buch gelesen?* (Прочита книга?)`,
           exercises: [
             {
-              id: 'ede8-2-1', type: 'multiple-choice',
-              question: 'Кој е Partizip II на глаголот "lernen"?',
-              options: ['gelennt', 'gelernt', 'gelernten', 'lernte'],
-              correct: 'gelernt',
-              hint: 'Слаби глаголи: ge- + основа + -t. Основата на "lernen" е "lern-".',
-              explanation: '"Lernen" е слаб глагол: ge + lern + t = "gelernt". Пример: "Ich habe Deutsch gelernt."',
+              id: 'eger8-2-4', type: 'multiple-choice',
+              question: 'Како се прави Partizip II за „machen" (правилен глагол)?',
+              options: ['machte', 'gemacht', 'machen', 'gemach'],
+              correct: 'gemacht',
+              hint: 'ge- + основа + -t.',
+              explanation: 'Partizip II за правилни глаголи: ge- + основа + -t. Machen → gemacht.',
             },
             {
-              id: 'ede8-2-2', type: 'multiple-choice',
-              question: 'Со кој помошен глагол се гради перфектот на глаголот "fahren" (да патува)?',
-              options: ['haben', 'sein', 'werden', 'bleiben'],
+              id: 'eger8-2-5', type: 'multiple-choice',
+              question: 'Кој помошен глагол се користи за „gehen" во perfekt?',
+              options: ['haben', 'sein', 'werden', 'können'],
               correct: 'sein',
-              hint: '"Fahren" изразува движење — промена на место.',
-              explanation: 'Глаголите за движење (fahren, gehen, fliegen...) го градат перфектот со "sein": "Ich bin nach Berlin gefahren."',
+              hint: 'Гл. на движење.',
+              explanation: 'gehen е глагол на движење → се конјугира со SEIN: „Ich bin gegangen" (одев). НЕ „ich habe gegangen".',
             },
             {
-              id: 'ede8-2-3', type: 'true-false',
-              question: 'Глаголите на "-ieren" го добиваат префиксот "ge-" во партицип перфект.',
-              options: ['Точно', 'Неточно'], correct: 'Неточно',
-              explanation: 'Глаголите на "-ieren" НЕ добиваат "ge-": "telefonieren" → "telefoniert" (не "getelefoniert").',
+              id: 'eger8-2-6', type: 'true-false',
+              question: 'Во германски perfekt, Partizip II стои на КРАЈ од реченицата.',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'Точно. На германски глаголот во perfekt секогаш одди на крајот на реченицата: „Ich habe gestern Fußball gespielt".',
             },
           ],
         },
         {
-          id: 'de8-2-2',
-          title: 'Пишување покана — Eine Einladung schreiben',
-          content: `## Пишување покана на германски
+          id: 'ger8-2-3',
+          title: 'Konversation — Pläne und Verabredungen',
+          content: `## Планови и средби
 
-При пишување покана на германски јазик (за роденден, забава и сл.) употребуваме специфична структура.
+### Прашања за планови
+- *Was machst du heute Abend?* (Што правиш денеска вечер?)
+- *Hast du am Wochenende Zeit?* (Имаш ли време за викенд?)
+- *Möchtest du ins Kino gehen?* (Сакаш да одиш во кино?)
+- *Hast du Lust auf einen Spaziergang?* (Имаш желба за шета?)
 
-## Корисни изрази за покана
+### Прифакање
+- *Ja, gerne!* (Да, со задоволство!)
+- *Das ist eine gute Idee!* (Тоа е добра идеја!)
+- *Klar!* (Сигурно!)
+- *Mit Vergnügen.* (Со задоволство.)
 
-| Deutsch | Македонски |
-|---------|-----------|
-| Ich lade dich ein. | Те канам. |
-| Du bist herzlich eingeladen! | Срдечно си поканет/а! |
-| Wann? Um wie viel Uhr? | Кога? Во колку часот? |
-| Wo? Bei mir zu Hause. | Каде? Кај мене дома. |
-| Bitte komm! | Ве молам, дојди! |
+### Одбивање
+- *Tut mir leid, ich kann nicht.* (Жал ми е, не можам.)
+- *Ich habe leider keine Zeit.* (За жал, немам време.)
+- *Vielleicht ein anderes Mal.* (Можеби друг пат.)
+- *Ich bin müde.* (Уморен сум.)
 
-## Реагирање на покана
+### Предлагање време и место
+- *Wann?* (Кога?) — *Um drei Uhr.* (Во 3 часот.)
+- *Wo?* (Каде?) — *Vor dem Kino.* (Пред киното.)
+- *Wir treffen uns um 5 Uhr.* (Се среќаваме во 5 часот.)
+- *Bis später!* (До подоцна!)
 
-**Прифаќање:**
-- *Ja, gern! Ich komme.* — Да, со задоволство! Доаѓам.
-- *Das klingt super!* — Тоа звучи одлично!
+## Пример дијалог
+> **Marie:** Hallo Tom! Was machst du am Samstag?
+> **Tom:** Nichts Besonderes. Warum?
+> **Marie:** Möchtest du ins Kino gehen? Es gibt einen neuen Film.
+> **Tom:** Ja, gerne! Wann beginnt der Film?
+> **Marie:** Um 18 Uhr. Wir treffen uns um 17:30 vor dem Kino.
+> **Tom:** Klar! Bis Samstag!
 
-**Одбивање:**
-- *Tut mir leid, ich kann nicht.* — Жал ми е, не можам.
-- *Leider habe ich keine Zeit.* — За жал, немам време.
+## Како се вели време?
+- *Wie spät ist es?* (Колко е часот?)
+- *Es ist 8 Uhr.* (8 часот е.)
+- *Es ist halb 9 (= 8:30).* (Половина 9 е.)
+- *Es ist Viertel vor 10 (= 9:45).* (Четвртина пред 10 е.)
+- *Es ist Viertel nach 8 (= 8:15).* (Четвртина по 8 е.)
+- *Es ist Mittag.* (Полдне е.)
+- *Es ist Mitternacht.* (Полноќ е.)
 
-## Честитки
+## Денови во неделата
+- Montag (понеделник)
+- Dienstag (вторник)
+- Mittwoch (среда)
+- Donnerstag (четврток)
+- Freitag (петок)
+- Samstag (сабота)
+- Sonntag (недела)
 
-| Повод | Израз |
-|-------|-------|
-| Роденден | Alles Gute zum Geburtstag! |
-| Нова Година | Frohes Neues Jahr! |
-| Божиќ | Frohe Weihnachten! |
-| Велигден | Frohe Ostern! |`,
+## Месеци
+- Januar, Februar, März, April, Mai, Juni
+- Juli, August, September, Oktober, November, Dezember
+
+## Време-фрази
+- *am Wochenende* (за викенд)
+- *am Sonntag* (во недела)
+- *heute* (денеска), *morgen* (утре), *gestern* (вчера)
+- *am Vormittag* (преподне), *am Nachmittag* (попладне)
+- *am Abend* (вечер), *in der Nacht* (ноќе)`,
           exercises: [
             {
-              id: 'ede8-2-4', type: 'multiple-choice',
-              question: 'Кој израз се употребува за честитање роденден?',
-              options: ['Frohe Ostern!', 'Alles Gute zum Geburtstag!', 'Frohes Neues Jahr!', 'Frohe Weihnachten!'],
-              correct: 'Alles Gute zum Geburtstag!',
-              hint: '"Geburtstag" = роденден.',
-              explanation: '"Alles Gute zum Geburtstag!" е стандардниот израз за честитање роденден на германски.',
+              id: 'eger8-2-7', type: 'multiple-choice',
+              question: 'Како прашуваш „Имаш ли време?"',
+              options: ['Was machst du?', 'Hast du Zeit?', 'Wo bist du?', 'Wer bist du?'],
+              correct: 'Hast du Zeit?',
+              hint: 'Zeit = време.',
+              explanation: 'Hast du Zeit? = Имаш ли време? Често со „Am Wochenende": „Hast du am Wochenende Zeit?"',
             },
             {
-              id: 'ede8-2-5', type: 'multiple-choice',
-              question: 'Што значи "Tut mir leid, ich kann nicht"?',
-              options: ['Да, со задоволство!', 'Можеби следниот пат.', 'Жал ми е, не можам.', 'Многу благодарам!'],
-              correct: 'Жал ми е, не можам.',
-              hint: '"Tut mir leid" изразува жалење, "kann nicht" = не можам.',
-              explanation: '"Tut mir leid, ich kann nicht" се употребува кога одбиваме покана — значи "Жал ми е, не можам да дојдам."',
+              id: 'eger8-2-8', type: 'multiple-choice',
+              question: 'Што значи „halb 9"?',
+              options: ['9:00', '8:30 (половина 9)', '9:30', '8:00'],
+              correct: '8:30 (половина 9)',
+              hint: '„половина 9" на германски = 30 минути пред 9.',
+              explanation: 'На германски „halb 9" значи 30 минути ПРЕД 9, т.е. 8:30. Чест извор на конфузија!',
             },
             {
-              id: 'ede8-2-6', type: 'true-false',
-              question: '"Frohe Weihnachten!" се вели за честитање на Велигден.',
-              options: ['Точно', 'Неточно'], correct: 'Неточно',
-              explanation: '"Frohe Weihnachten!" е честитка за Божиќ (Weihnachten = Божиќ). За Велигден се вели "Frohe Ostern!"',
+              id: 'eger8-2-9', type: 'true-false',
+              question: '„Mittwoch" значи „среда".',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'Точно. Деновите на неделата: Montag (понед.), Dienstag (втор.), Mittwoch (среда), Donnerstag (четврт.), Freitag (петок), Samstag (саб.), Sonntag (нед.).',
+            },
+          ],
+        },
+        {
+          id: 'ger8-2-4',
+          title: 'Schreiben — Eine Einladung',
+          content: `## Покана (Einladung) на германски
+
+### Структура
+1. Поздрав
+2. Намена на покана
+3. Дата, време, место
+4. Што ќе се прави
+5. Молба за одговор
+6. Поздрав
+
+### Пример
+> *Liebe Sophie,*
+>
+> *am Samstag, den 15. März, feiere ich meinen 14. Geburtstag und ich möchte dich gerne einladen!*
+>
+> *Wann?: Samstag, 18 Uhr*
+> *Wo?: bei mir zu Hause, Karl-Marx-Straße 12*
+>
+> *Wir essen Pizza, hören Musik und spielen Spiele. Es wird bestimmt lustig!*
+>
+> *Bitte sag mir bis Donnerstag, ob du kommen kannst.*
+>
+> *Bis bald!*
+> *Marie*
+
+## Корисни фрази
+
+### Поздрави на писмо
+- *Liebe(r) ... ,* (Драга/Драг...)
+- *Hallo ...!*
+
+### Намена
+- *Ich möchte dich einladen.* (Сакам да те поканам.)
+- *Ich habe eine Einladung für dich.* (Имам покана за тебе.)
+- *Wir feiern...* (Празнуваме...)
+
+### Завршеток
+- *Ich freue mich auf dich!* (Се радувам да те видам!)
+- *Bitte sag Bescheid.* (Молам одговори.)
+- *Liebe Grüße / Viele Grüße* (Срдечни поздрави)
+- *Bis bald!* (До скоро!)
+
+## За кои поводи?
+- *Geburtstag* (роден ден)
+- *Party / Fest* (забава)
+- *Konzert* (концерт)
+- *Spielnachmittag* (попладне на игри)
+- *Schultreffen* (школски средби)
+
+## Корисни глаголи за пишување
+- *einladen* (поканува) — *Ich lade dich ein.*
+- *feiern* (празнува) — *Wir feiern.*
+- *kommen* (доага) — *Kannst du kommen?*
+- *machen* (прави) — *Wir machen eine Party.*
+- *bringen* (донесе) — *Bring etwas zu essen!*
+
+## Картичка (Karte)
+- Кратко (4-6 реченици)
+- Идеално за рожден ден, празник, поздрав од одмор
+
+### Пример картичка
+> *Liebe Oma,*
+>
+> *viele Grüße aus den Bergen! Wir machen Urlaub in den Alpen. Das Wetter ist schön und die Berge sind wunderschön. Wir wandern jeden Tag.*
+>
+> *Bis bald!*
+> *Maria*
+
+## Совети
+1. Кратки и јасни реченици
+2. Учтиви форми (Liebe(r), Bitte, Bis bald)
+3. Внимавај на правопис (Großschreibung на именки)
+4. Провери глагол-форма
+5. Не заборавај потпис`,
+          exercises: [
+            {
+              id: 'eger8-2-10', type: 'multiple-choice',
+              question: 'Како се вика „Среќен роден ден!" на германски?',
+              options: ['Frohe Weihnachten!', 'Gutes Neues Jahr!', 'Herzlichen Glückwunsch zum Geburtstag!', 'Viel Glück!'],
+              correct: 'Herzlichen Glückwunsch zum Geburtstag!',
+              hint: 'За роден ден.',
+              explanation: 'Herzlichen Glückwunsch zum Geburtstag! = Среќен роден ден! Кратко: „Alles Gute zum Geburtstag!"',
+            },
+            {
+              id: 'eger8-2-11', type: 'multiple-choice',
+              question: 'Како завршуваш писмо на пријател (учтиво)?',
+              options: ['Mit freundlichen Grüßen', 'Liebe Grüße', 'Sehr geehrte Damen und Herren', 'Hochachtungsvoll'],
+              correct: 'Liebe Grüße',
+              hint: 'За пријатели.',
+              explanation: 'Liebe Grüße = срдечни поздрави. За пријатели и блиски. За формално: „Mit freundlichen Grüßen".',
+            },
+            {
+              id: 'eger8-2-12', type: 'true-false',
+              question: 'На германски, ВО ПИСМО, „Liebe" се користи со жен. имена (Liebe Sophie), а „Lieber" со маш. имена (Lieber Tom).',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'Точно. Германски се менува зависно од пол: „Liebe Marie" (за девојке), „Lieber Tom" (за момче), „Liebe Eltern" (за две / повеќе луѓе).',
             },
           ],
         },
       ],
     },
-    // ── EINHEIT 3: Секојдневен живот ─────────────────────────────
     {
-      id: 'de8-3',
-      title: 'Секојдневен живот',
+      id: 'ger8-3',
+      title: 'Theme 3: Alltag (Секојдневен живот)',
       lessons: [
         {
-          id: 'de8-3-1',
-          title: 'Купување — облека и продавници',
-          content: `## Купување на германски
+          id: 'ger8-3-1',
+          title: 'Wortschatz — Einkaufen und Mode',
+          content: `## Купување и облека
 
-При купување облека и предмети во продавница употребуваме специфична лексика и изрази.
+### Облека (Kleidung)
+- *die Hose* (панталоник)
+- *die Jeans* (џинс)
+- *das Hemd* (кошула)
+- *das T-Shirt*
+- *der Pullover (Pulli)* (пуловер)
+- *die Jacke* (јакна)
+- *der Mantel* (палто)
+- *der Rock* (сукња)
+- *das Kleid* (фустан)
+- *die Schuhe* (чевли)
+- *die Socken* (чорапи)
+- *die Mütze* (капа)
+- *der Schal* (шал)
 
-## Облека — Kleidung
+### Боји (Farben)
+- weiß (бел), schwarz (црн), grau (сив)
+- rot (црвен), blau (син), grün (зелен)
+- gelb (жолт), orange (порокалов), violett (виолетов)
+- braun (кафеав), rosa (розов)
 
-| Deutsch | Македонски |
-|---------|-----------|
-| die Bluse | блузата |
-| das Hemd | кошулата |
-| die Hose | панталоните |
-| das Kleid | фустанот |
-| die Jeans | džинсите |
-| der Rock | здолништето |
-| die Schuhe | чевлите |
+### Купување — фрази
+- *Was kostet das?* (Колку чини?)
+- *Das kostet 20 Euro.* (Тоа чини 20 евра.)
+- *Wie viel?* (Колку?)
+- *Welche Größe?* (Која големина?)
+- *Größe 38* (големина 38)
+- *Haben Sie das in Rot?* (Имате ли тоа во црвено?)
+- *Kann ich das probieren?* (Можам да пробам?)
+- *Es passt mir.* (Ми стои добро.)
+- *Es ist zu groß/klein.* (Тоа е премногу големо/малечко.)
+- *Ich nehme es.* (Земам.)
 
-## Бои — Farben
+### Места (Geschäfte)
+- *das Kaufhaus* (магацин)
+- *der Supermarkt* (супермаркет)
+- *die Bäckerei* (пекара)
+- *die Apotheke* (аптека)
+- *die Buchhandlung* (книжарница)
+- *die Bank* (банка)
+- *das Schuhgeschäft* (продавница за чевли)
 
-blau (сина), rot (црвена), grün (зелена), schwarz (црна), weiß (бела), gelb (жолта), braun (кафена)
+## Пример дијалог
+> **Verkäufer:** Guten Tag! Kann ich Ihnen helfen?
+> **Kunde:** Ja, ich suche eine Jacke.
+> **Verkäufer:** Welche Größe?
+> **Kunde:** Größe 38.
+> **Verkäufer:** Welche Farbe?
+> **Kunde:** Schwarz oder dunkelblau.
+> **Verkäufer:** Hier haben wir eine schwarze. Möchten Sie sie probieren?
+> **Kunde:** Ja, gerne!
 
-## Корисни изрази при купување
+## Плаќање
+- *bar bezahlen* (плати кеш)
+- *mit Karte bezahlen* (плати со карта)
+- *Hier ist Ihr Wechselgeld.* (Еве вашата сорта.)
 
-| Deutsch | Македонски |
-|---------|-----------|
-| Was kostet das Kleid? | Колку чини фустанот? |
-| Nur 20 Euro. | Само 20 евра. |
-| Wo sind die Umkleidekabinen? | Каде се кабините за пресоблекување? |
-| Das steht dir gut! | Тоа ти стои добро! |
-| Ich finde, dass dir diese Kombination gut steht. | Мислам дека оваа комбинација ти стои добро. |
+## Описување облека
+- *modisch* (модерно)
+- *altmodisch* (старомодно)
+- *elegant* (елегантно)
+- *bequem* (удобно)
+- *teuer* (скапо)
+- *billig / preiswert* (евтино)
 
-## Продавници — Geschäfte
+### Пример
+*„Diese Jacke ist sehr elegant und modisch, aber zu teuer für mich."*
 
-| Deutsch | Македонски |
-|---------|-----------|
-| die Boutique | бутикот |
-| das Kaufhaus | стоковната куќа |
-| der Supermarkt | супермаркетот |
-| die Bäckerei | пекарата |`,
+(„Ова јакна е многу елегантна и модерна, но премногу скапа за мене.")`,
           exercises: [
             {
-              id: 'ede8-3-1', type: 'multiple-choice',
-              question: 'Što значи "das Kleid" на македонски?',
-              options: ['панталоните', 'кошулата', 'фустанот', 'јакната'],
-              correct: 'фустанот',
-              hint: '"Das Kleid" е женска облека.',
-              explanation: '"Das Kleid" = фустанот. Женска облека, цела, која го покрива горниот и долниот дел на телото.',
+              id: 'eger8-3-1', type: 'multiple-choice',
+              question: 'Како се вика „чевли" на германски?',
+              options: ['die Hose', 'das Hemd', 'die Schuhe', 'die Socken'],
+              correct: 'die Schuhe',
+              hint: 'За на нога.',
+              explanation: 'die Schuhe = чевли (множ.). Едн.: der Schuh.',
             },
             {
-              id: 'ede8-3-2', type: 'multiple-choice',
-              question: 'Кој израз се употребува за прашање за цена?',
-              options: ['Wo ist die Boutique?', 'Was kostet das Kleid?', 'Ich nehme die Hose.', 'Das steht dir gut!'],
-              correct: 'Was kostet das Kleid?',
-              hint: '"Kosten" = да чини (цена).',
-              explanation: '"Was kostet...?" = "Колку чини...?" — стандарден израз за прашање за цена при купување.',
+              id: 'eger8-3-2', type: 'multiple-choice',
+              question: 'Што значи „Es passt mir"?',
+              options: ['Ми стои добро', 'Тоа е скапо', 'Премногу големо', 'Сакам друго'],
+              correct: 'Ми стои добро',
+              hint: 'passen = одговара.',
+              explanation: 'Es passt mir = Ми стои добро (за облека, по големина). „Мир" значи „мене" (датив).',
             },
             {
-              id: 'ede8-3-3', type: 'true-false',
-              question: '"Schwarz" значи бела боја.',
-              options: ['Точно', 'Неточно'], correct: 'Неточно',
-              explanation: '"Schwarz" = ЦРНА боја. Белата боја на германски е "weiß".',
+              id: 'eger8-3-3', type: 'true-false',
+              question: '„Bäckerei" е банка на германски.',
+              options: ['True', 'False'], correct: 'False',
+              explanation: 'НЕ. Bäckerei = пекара (каде се прави и продава леб). Банка = die Bank.',
             },
           ],
         },
         {
-          id: 'de8-3-2',
-          title: 'Конјунктив претеритум — учтиво обраќање',
-          content: `## Учтиво обраќање (Höfliche Formen)
+          id: 'ger8-3-2',
+          title: 'Grammatik — Modalverben und Imperativ',
+          content: `## Модални глаголи (Modalverben)
+Модалните глаголи изразуваат можност, желба, обаваска.
 
-Во германски јазик за учтиво обраќање се употребува **Конјунктив претеритум** (Konjunktiv Prateritum).
+### Главни модални глаголи
+- *können* (може)
+- *wollen* (сака)
+- *müssen* (мора)
+- *sollen* (треба)
+- *dürfen* (смее)
+- *möchten* (би сака — учтиво)
 
-## Формите на mögen и haben
+### Конјугација: können (може)
+- ich kann
+- du kannst
+- er/sie/es kann
+- wir können
+- ihr könnt
+- sie/Sie können
 
-| Глагол | Конјунктив II | Употреба |
-|--------|--------------|---------|
-| mögen | möchte | желба, нарачување |
-| haben | hätte | учтива молба |
+### Конјугација: wollen (сака)
+- ich will, du willst, er will, wir wollen, ihr wollt, sie wollen
 
-**Примери:**
-- *Ich **möchte** einen Saft bestellen.* — Би сакал/а да нарачам сок.
-- *Ich **hätte** gerne ein Glas Wasser.* — Би сакал/а чаша вода.
+### Конјугација: müssen (мора)
+- ich muss, du musst, er muss, wir müssen, ihr müsst, sie müssen
 
-## Формалното обраќање — Sie
+### Конјугација: möchten (би сакал, учтиво)
+- ich möchte, du möchtest, er möchte, wir möchten, ihr möchtet, sie möchten
 
-Во формални ситуации (непознати луѓе, продавачи, возрасни) се употребува **Sie** (со голема буква).
+## Структура
+**Subject + Modalverb + ... + Infinitiv (на крајот!)**
 
-| Неформално (du) | Формално (Sie) |
-|----------------|----------------|
-| Möchtest du...? | **Möchten Sie...?** |
-| Kannst du...? | **Können Sie...?** |
+### Пример
+- *Ich kann Deutsch sprechen.* (Можам да зборувам германски.)
+- *Du musst die Hausaufgaben machen.* (Мораш да правиш задачи.)
+- *Wir wollen ins Kino gehen.* (Сакаме да одиме во кино.)
+- *Sie möchte einen Kaffee trinken.* (Таа би сакала кафе.)
 
-**Пример:**
-- *Möchten Sie noch etwas dazu?* — Дали сакате уште нешто?
-- *Nein, danke.* — Не, благодарам.
+## Користенје
 
-## Разлика: формално vs. неформално
+### können — можност, способност
+- *Ich kann schwimmen.* (Можам да пливам.)
+- *Kannst du mir helfen?* (Можеш да ми помогнаш?)
 
-- **du** — со пријатели, семејство, деца
-- **Sie** — со непознати возрасни, во официјални ситуации`,
+### wollen — силна желба
+- *Ich will Eis essen!* (Сакам сладолед!)
+
+### möchten — учтиво
+- *Ich möchte ein Wasser, bitte.* (Би сакала вода, молам.)
+
+### müssen — мора (нужно)
+- *Ich muss um 8 Uhr aufstehen.* (Мора да станам во 8.)
+
+### sollen — треба (обаваска од друг)
+- *Du sollst deine Mutter anrufen.* (Треба да ja јавиш мајка си.)
+
+### dürfen — смее (дозвола)
+- *Darf ich nach Hause gehen?* (Смеам да одам дома?)
+
+## Императив (Imperativ) — заповед
+
+### Du-форма (за еден пријател)
+- *Komm!* (Дојди!)
+- *Geh!* (Оди!)
+- *Mach!* (Прави!)
+- *Spiel!* (Играа!)
+
+### Ihr-форма (за повеќе пријатели)
+- *Kommt!* (Доидете!)
+- *Geht!*
+- *Macht!*
+- *Spielt!*
+
+### Sie-форма (учтиво)
+- *Kommen Sie!*
+- *Gehen Sie!*
+- *Bitte machen Sie das.*
+
+## Учтиви заповеди
+- *Bitte hilf mir!* (Молам те, помогни ми!)
+- *Sag mir bitte...* (Кажи ми, молам...)
+- *Mach das, bitte.* (Прави го, молам.)`,
           exercises: [
             {
-              id: 'ede8-3-4', type: 'multiple-choice',
-              question: 'Кој израз е УЧТИВА форма за нарачување?',
-              options: ['Ich will Saft!', 'Gib mir Saft!', 'Ich möchte einen Saft bestellen.', 'Ich brauche Saft.'],
-              correct: 'Ich möchte einen Saft bestellen.',
-              hint: '"Möchte" е конјунктив форма на "mögen" — употребувана за учтиво изразување желба.',
-              explanation: '"Ich möchte..." е учтивата форма за изразување желба. Многу почеста и поприфатена во ресторани и продавници.',
+              id: 'eger8-3-4', type: 'multiple-choice',
+              question: 'Кој модален глагол значи „може"?',
+              options: ['müssen', 'sollen', 'können', 'dürfen'],
+              correct: 'können',
+              hint: 'Можност, способност.',
+              explanation: 'können = може (има можност или способност). Ich kann schwimmen = Можам да пливам.',
             },
             {
-              id: 'ede8-3-5', type: 'multiple-choice',
-              question: 'Кога се употребува формалното обраќање "Sie"?',
-              options: ['Со пријатели', 'Со помлади браќа', 'Со непознати возрасни и во официјални ситуации', 'Само во писма'],
-              correct: 'Со непознати возрасни и во официјални ситуации',
-              hint: 'Помислете — во продавница, лекарска ординација, кај наставникот...',
-              explanation: '"Sie" (со голема буква) е формалната заменка за 2. лице. Се употребува со непознати возрасни, во бизнис-ситуации и сл.',
+              id: 'eger8-3-5', type: 'multiple-choice',
+              question: 'Каква е разликата меѓу „wollen" и „möchten"?',
+              options: ['Нема разлика', 'wollen е директно, möchten е учтиво', 'wollen е за минато, möchten за иднина', 'wollen е заповед'],
+              correct: 'wollen е директно, möchten е учтиво',
+              hint: 'Учтивост.',
+              explanation: 'Ich will Eis = Сакам сладолед (директно, малечко неучтиво). Ich möchte Eis = Би сакала сладолед (учтиво). „Möchten" е учтив облик.',
             },
             {
-              id: 'ede8-3-6', type: 'true-false',
-              question: '"Hätte" е форма на конјунктив претеритум на глаголот "haben".',
-              options: ['Точно', 'Неточно'], correct: 'Точно',
-              explanation: '"Hätte" е конјунктив II (Konjunktiv Prateritum) на "haben". Се употребува за учтиви молби: "Ich hätte gerne..." = "Би сакал/а..."',
+              id: 'eger8-3-6', type: 'true-false',
+              question: 'Во германски, модалниот глагол стои на крајот на реченицата.',
+              options: ['True', 'False'], correct: 'False',
+              explanation: 'НЕ. Модалниот глагол е НА ВТОРО МЕСТО, а инфинитивот (главен глагол) одди на крајот: „Ich kann gut Deutsch SPRECHEN."',
+            },
+          ],
+        },
+        {
+          id: 'ger8-3-3',
+          title: 'Konversation — Im Restaurant',
+          content: `## Во ресторан
+
+### Влез
+- *Guten Abend!* (Добра вечер!)
+- *Haben Sie einen Tisch für zwei Personen?* (Имате ли маса за две лица?)
+- *Ich habe reserviert.* (Имам резервација.)
+
+### Меню
+- *die Speisekarte* (мени)
+- *Die Speisekarte, bitte.* (Мени, молам.)
+- *Was empfehlen Sie?* (Што препоруачувате?)
+- *Was ist die Spezialität des Hauses?* (Која е специјалност на куќата?)
+
+### Нарачување
+- *Ich nehme den Salat.* (Земам салата.)
+- *Ich möchte das Schnitzel, bitte.* (Би сакал шницла, молам.)
+- *Für mich bitte die Pizza.* (За мене пица, молам.)
+- *Als Vorspeise / Hauptspeise / Nachspeise* (Како предјело / главно јело / десерт)
+
+### Пиења
+- *Was möchten Sie trinken?* (Што би сакале да пиете?)
+- *Ein Wasser, bitte.* (Вода, молам.)
+- *Eine Cola, bitte.*
+- *Einen Saft, bitte.* (Сок, молам.)
+- *Eine Tasse Kaffee.* (Чаша кафе.)
+
+### Плаќање
+- *Die Rechnung, bitte.* (Сметка, молам.)
+- *Wir möchten zahlen.* (Сакаме да платиме.)
+- *Bar oder mit Karte?* (Кеш или со карта?)
+- *Stimmt so.* (Чувајте.) — за бекшиш
+
+## Чести јадења
+- *die Suppe* (супа)
+- *der Salat* (салата)
+- *das Schnitzel* (шницла)
+- *der Braten* (печено)
+- *die Wurst* (колбас)
+- *das Brot* (леб)
+- *die Pommes* (помфрит)
+- *der Kuchen* (торта)
+- *das Eis* (сладолед)
+
+## Пример дијалог
+> **Kellner:** Guten Abend! Möchten Sie schon bestellen?
+> **Gast:** Ja, bitte. Als Vorspeise nehme ich die Tomatensuppe und als Hauptspeise das Wiener Schnitzel.
+> **Kellner:** Und zum Trinken?
+> **Gast:** Ein Wasser ohne Kohlensäure, bitte.
+> **Kellner:** Sehr gerne!
+> *(after meal)*
+> **Gast:** Die Rechnung, bitte.
+> **Kellner:** Sofort! Zusammen oder getrennt?
+> **Gast:** Zusammen, bitte.
+> **Kellner:** Das macht 25 Euro.
+> **Gast:** Hier sind 30. Stimmt so.
+
+## Изразување вкус
+- *Es schmeckt sehr gut.* (Многу е вкусно.)
+- *Es ist köstlich!* (Прекрасно е!)
+- *Es ist zu salzig.* (Премногу солено е.)
+- *Es ist nicht so mein Geschmack.* (Не ми е баш по вкус.)
+
+## Зрнца знаење
+- Во Германија, бекшиш (Trinkgeld) е 5-10%
+- Често се вели: „Stimmt so" = задржај го (за серверот)
+- Се плати обично кога серверот ja донесе сметка, не на крајот в лиценца`,
+          exercises: [
+            {
+              id: 'eger8-3-7', type: 'multiple-choice',
+              question: 'Како се вика „мени" на германски?',
+              options: ['die Rechnung', 'die Speisekarte', 'der Salat', 'das Eis'],
+              correct: 'die Speisekarte',
+              hint: 'Список на јадења.',
+              explanation: 'die Speisekarte = мени (буквално: „карта на јадења"). Кажи „Die Speisekarte, bitte!" за да добиеш мени.',
+            },
+            {
+              id: 'eger8-3-8', type: 'multiple-choice',
+              question: 'Што значи „Stimmt so"?',
+              options: ['Премногу скапо', 'Задржај го (за бекшиш)', 'Уште не', 'Не е добро'],
+              correct: 'Задржај го (за бекшиш)',
+              hint: 'За плаќање и бекшиш.',
+              explanation: 'Stimmt so = задржај го (т.е. не ми давај сорта). Учтив начин на давање бекшиш.',
+            },
+            {
+              id: 'eger8-3-9', type: 'true-false',
+              question: 'Во Германија, бекшиш е обично 20-30%.',
+              options: ['True', 'False'], correct: 'False',
+              explanation: 'НЕ. Во Германија бекшиш е обично 5-10% (помалечко од САД). Често само се закружува цена нагоре (на пр. од 18€ → 20€).',
+            },
+          ],
+        },
+        {
+          id: 'ger8-3-4',
+          title: 'Schreiben — Tagesablauf',
+          content: `## Опис на дневен ред
+
+### Структура
+1. Утро
+2. Школа / работа
+3. Попладне
+4. Вечер
+
+### Пример
+> *Mein Tagesablauf*
+>
+> *Mein Tag beginnt um 7 Uhr. Ich stehe auf, dusche und ziehe mich an. Dann frühstücke ich mit meiner Familie — meistens Brot mit Marmelade und ein Glas Milch.*
+>
+> *Um halb 8 gehe ich in die Schule. Der Unterricht beginnt um 8 Uhr und endet um 14 Uhr. Meine Lieblingsfächer sind Deutsch, Englisch und Sport.*
+>
+> *Nach der Schule gehe ich nach Hause. Ich mache meine Hausaufgaben, dann spiele ich ein bisschen oder höre Musik.*
+>
+> *Am Abend essen wir gemeinsam zu Abend. Manchmal schaue ich Fernsehen oder lese ein Buch. Um 22 Uhr gehe ich ins Bett.*
+
+## Корисни глаголи за рутина
+- *aufstehen* (станува) — *Ich stehe um 7 Uhr auf.*
+- *duschen* (зема душ)
+- *sich anziehen* (се облекува)
+- *frühstücken* (зема појадок)
+- *zur Schule gehen* (оде во школа)
+- *Mittag essen* (рача)
+- *Hausaufgaben machen* (прави задачи)
+- *spielen* (играа)
+- *fernsehen* (гледа ТВ)
+- *zu Abend essen* (вечера)
+- *ins Bett gehen* (легнува)
+
+## Време и зборови за ред
+- *zuerst* (прво)
+- *dann* (потоа)
+- *danach* (потоа)
+- *später* (подоцна)
+- *schließlich* (конечно)
+
+### Пример со врски
+*„Zuerst stehe ich auf, DANN frühstücke ich. DANACH gehe ich in die Schule. SCHLIESSLICH komme ich nach Hause und mache meine Hausaufgaben."*
+
+## Корисни именки
+- *der Morgen* (утро)
+- *der Mittag* (полдне)
+- *der Nachmittag* (попладне)
+- *der Abend* (вечер)
+- *die Nacht* (ноќ)
+
+## Идеи за теми
+- *Mein Wochenende* (Мојот викенд)
+- *Mein Schultag* (Мојот школски ден)
+- *Ein perfekter Tag* (Перфектниот ден)
+- *Was ich gerne mache* (Шо сакам да правам)
+
+## Совети
+1. Користи Präsens за турично ден
+2. Користи Perfekt за минат ден
+3. Не заборавај голема буква за именки!
+4. Користи врски за подобар тек
+5. Кратки реченици — добро за начеток`,
+          exercises: [
+            {
+              id: 'eger8-3-10', type: 'multiple-choice',
+              question: 'Како се вика „станува" на германски?',
+              options: ['gehen', 'aufstehen', 'schlafen', 'essen'],
+              correct: 'aufstehen',
+              hint: 'Од легло наутро.',
+              explanation: 'aufstehen = станува. „Ich stehe um 7 Uhr auf" = Станувам во 7 часот. „Auf" одди на крајот (separable verb).',
+            },
+            {
+              id: 'eger8-3-11', type: 'multiple-choice',
+              question: 'Што значи „zuerst, dann, danach"?',
+              options: ['Каде, кога, кој', 'Прво, потоа, потоа', 'Школа, работа, дома', 'Уторе, полдне, вечер'],
+              correct: 'Прво, потоа, потоа',
+              hint: 'Зборови за ред.',
+              explanation: 'zuerst (прво), dann (потоа), danach (потоа) — врски за организирање на низа активности.',
+            },
+            {
+              id: 'eger8-3-12', type: 'true-false',
+              question: 'За опис на турично ден (со рутина) се користи Präsens, не Perfekt.',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'Точно. За турично, секој-ден активности → Präsens. За одредени минати настани → Perfekt. „Ich stehe um 7 auf" (рутина) vs „Gestern bin ich um 8 aufgestanden" (минат ден).',
             },
           ],
         },
