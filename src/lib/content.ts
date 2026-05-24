@@ -64412,6 +64412,1724 @@ Daniel Ek забележа: пиратерија е огромна; луѓе с�
       ],
     },
   ],
+  french: [
+    {
+      id: 'fra9-1',
+      title: 'Theme 1: La santé et la vie saine (Здравје и здрав живот)',
+      lessons: [
+        {
+          id: 'fra9-1-1',
+          title: 'Vocabulaire — Santé et corps',
+          content: `## Темата: Здравје (La santé)
+**Здравјето (la santé)** е една од најважните теми во животот.
+
+## Тело (Le corps)
+| Француски | Македонски |
+|-----------|------------|
+| la tête | глава |
+| les cheveux | коса |
+| les yeux | очи |
+| le nez | нос |
+| la bouche | уста |
+| les oreilles | уши |
+| le cou | врат |
+| l'épaule | рамо |
+| le bras | рака |
+| la main | дланка |
+| le ventre | стомак |
+| le dos | рбет |
+| la jambe | нога |
+| le pied | стапало |
+
+## Како се чувствуваш? (Comment ça va?)
+
+### Општи изрази
+- **Ça va bien.** (Добро сум.)
+- **Ça va mal.** (Лошо сум.)
+- **Je ne me sens pas bien.** (Не се чувствувам добро.)
+- **Je suis fatigué/e.** (Уморен/а сум.)
+
+### Болка (avoir mal à...)
+Користиме: **avoir mal à + дел од тело**
+- *J'ai mal à la tête.* (Ме боли глава.)
+- *J'ai mal au ventre.* (Ме боли стомак.)
+- *J'ai mal à la gorge.* (Ме боли врат.)
+- *J'ai mal au dos.* (Ме боли рбет.)
+
+**Внимание:** À + ле = au, à + ла = à la
+
+## Болести (Les maladies)
+- **un rhume** (настинка)
+- **la grippe** (грип)
+- **la fièvre** (треска)
+- **la toux** (кашлица)
+- **une allergie** (алергија)
+
+## Кај лекар (Chez le médecin)
+
+### Прашања на лекарот
+- *Tu te sens comment?* (Како се чувствуваш?)
+- *Où as-tu mal?* (Каде те боли?)
+- *Depuis quand?* (Од кога?)
+- *Tu as de la fièvre?* (Имаш ли треска?)
+
+### Одговори на пациентот
+- *J'ai mal à la gorge.* (Ме боли врат.)
+- *Je suis malade.* (Болен сум.)
+- *Je ne me sens pas bien.* (Не се чувствувам добро.)
+
+### Препораки
+- *Tu dois te reposer.* (Мора да се одмориш.)
+- *Bois beaucoup d'eau.* (Пиj многу вода.)
+- *Prends ces médicaments.* (Земи овие лекови.)
+
+## Здрава храна (Une alimentation saine)
+- **les fruits** (овошje)
+- **les légumes** (зеленчук)
+- **les céréales** (зрна)
+- **le poisson** (риба)
+- **la viande** (месо)
+- **les produits laitiers** (млечни производи)
+- **les produits bio** (биолошки производи)
+
+## Здрав начин на живот (Style de vie saine)
+- *faire du sport* (спортувa)
+- *manger sainement* (jаде здраво)
+- *dormir 8 heures* (спие 8 часа)
+- *boire de l'eau* (пиje вода)
+- *être en forme* (е во форма)
+
+## Нездрави навики (Mauvaises habitudes)
+- *manger trop de bonbons* (jаде премногу слатки)
+- *fumer* (пуши)
+- *boire de l'alcool* (пиje алкохол)
+
+**Поими:** la santé, le corps, avoir mal à, maladies, chez le médecin, alimentation saine.`,
+          exercises: [
+            {
+              id: 'efra9-1-1',
+              type: 'multiple-choice',
+              question: 'Како се вика „глава" на француски?',
+              options: ['la main', 'la tête', 'le pied', 'le cou'],
+              correct: 'la tête',
+              explanation: 'La tête = глава. La main = дланка, le pied = стапало, le cou = врат.',
+            },
+            {
+              id: 'efra9-1-2',
+              type: 'multiple-choice',
+              question: 'Како се вели „Ме боли глава" на француски?',
+              options: [
+                'J\'ai la tête.',
+                'J\'ai mal à la tête.',
+                'Je suis tête.',
+                'Mal tête.',
+              ],
+              correct: 'J\'ai mal à la tête.',
+              explanation: '„J\'ai mal à + дел од тело" = ме боли... Тоа е основна конструкција за изразување болка во француски.',
+            },
+            {
+              id: 'efra9-1-3',
+              type: 'true-false',
+              question: '„Manger trop de bonbons" е здрава навика.',
+              correct: 'неточно',
+              explanation: 'Неточно — „manger trop de bonbons" (јаде премногу слатки) е нездрава навика. Здрави: jаде овошje, зеленчук, спорт.',
+            },
+          ],
+        },
+        {
+          id: 'fra9-1-2',
+          title: 'Grammaire — Le passé composé and le verbe avoir/être',
+          content: `## Минато сложено време (Le passé composé)
+**Passé composé** е најчестото минато време во француски разговор.
+
+## Образувание
+**avoir / être (помашки) + participe passé (минато партицип)**
+
+## Со „avoir" (повеќето глаголи)
+- *J'**ai mangé** une pomme.* (Изјаде едно јаболко.)
+- *Tu **as joué** au foot.* (Игра фудбал.)
+- *Nous **avons regardé** un film.* (Гледавме филм.)
+
+### Participe passé за глаголи на -er
+- Основа + é
+- mang**er** → mang**é**
+- pal**er** → parl**é**
+- jou**er** → jou**é**
+
+### Participe passé за -ir
+- Основа + i
+- fin**ir** → fin**i**
+- chois**ir** → chois**i**
+
+### Participe passé за -re (правилни)
+- Основа + u
+- attend**re** → attend**u**
+- vend**re** → vend**u**
+
+## Со „être" (глаголи на движење и промена)
+- *Je **suis allé/e**.* (Отидов.)
+- *Tu **es venu/e**.* (Дојде.)
+- *Elle **est partie**.* (Замина.)
+- *Nous **sommes restés/es**.* (Останавме.)
+
+### Глаголи кои бараат „être" (MRS VAN DER TRAMP):
+- **Monter** (качува)
+- **Rester** (останува)
+- **Sortir** (излегува)
+- **Venir** (доaѓа)
+- **Aller** (оди)
+- **Naître** (се раѓа)
+- **Descendre** (слегува)
+- **Entrer** (влегува)
+- **Rentrer** (се враќа)
+- **Tomber** (паѓа)
+- **Retourner** (се враќа)
+- **Arriver** (стигнува)
+- **Mourir** (умре)
+- **Partir** (заминува)
+
+И сите возвратни (verbes pronominaux):
+- *Je me suis levé.* (Се качив.)
+- *Elle s'est lavée.* (Се измила.)
+
+## Согласување со „être"
+Кога партиципот следи „être", тој се согласува со субјектот по род и број:
+- Маж: **allé**
+- Жена: **allée**
+- Множ маж: **allés**
+- Множ жена: **allées**
+
+### Примери
+- *Pierre est allé au cinéma.* (Пјер отиде во кино.)
+- *Marie est allée au marché.* (Мари отиде во пазар.)
+- *Pierre et Paul sont allés au stade.* (Пjер и Пол отидоа на стадион.)
+- *Marie et Anne sont allées en France.* (Мари и Ана отидоа во Франција.)
+
+## Негативна форма
+**ne + помашки + pas + participe**
+- *Je **n'ai pas mangé**.* (Не jадев.)
+- *Elle **n'est pas venue**.* (Не дојде.)
+- *Nous **n'avons pas regardé** la télé.* (Не гледавме телевизија.)
+
+## Пример мал разказ
+
+> Hier, je **suis allée** chez le médecin parce que j'**avais mal** à la tête. Il m'a **donné** des médicaments. Je **suis rentrée** à la maison et j'**ai dormi** toute la journée.
+
+(Вчера отидов кај лекар бидејќи ме болеше глава. Тој ми даде лекови. Се вратив дома и спиев цел ден.)
+
+**Поими:** passé composé, avoir/être, participe passé, согласување, MRS VAN DER TRAMP.`,
+          exercises: [
+            {
+              id: 'efra9-1-4',
+              type: 'multiple-choice',
+              question: 'Со кој помашки глагол се гради passé composé за „aller"?',
+              options: ['avoir', 'être', 'faire', 'venir'],
+              correct: 'être',
+              explanation: '„Aller" е глагол на движење → се конјугира со „être" во passé composé. Je suis allé, tu es allé, etc.',
+            },
+            {
+              id: 'efra9-1-5',
+              type: 'multiple-choice',
+              question: 'Кој е participe passé на „manger"?',
+              options: ['mangu', 'mangi', 'mangé', 'mangait'],
+              correct: 'mangé',
+              explanation: 'Глаголи на -er → participe passé со -é. Manger → mangé. Parler → parlé. Jouer → joué.',
+            },
+            {
+              id: 'efra9-1-6',
+              type: 'true-false',
+              question: 'Кога passé composé е со „être", партиципот се согласува по род и број со субјектот.',
+              correct: 'точно',
+              explanation: 'Точно — Marie est allée (жена), Pierre est allé (маж), Marie et Anne sont allées (множ жена). Партиципот се менува.',
+            },
+          ],
+        },
+        {
+          id: 'fra9-1-3',
+          title: 'Conversation — Advice and opinions',
+          content: `## Барање и давање совети
+
+### Прашања
+- *Qu'est-ce que tu en penses?* (Што мислиш за тоа?)
+- *Comment je peux...?* (Како можам...?)
+- *Tu peux me conseiller?* (Можеш ли да ми советувaш?)
+
+### Совети — модални изрази
+- *Tu dois...* (Мора да...) — обврска
+- *Tu devrais...* (Би требало да...) — учтив совет
+- *Il faut...* (Треба...) — безличен совет
+- *Tu peux...* (Можеш да...) — можност
+
+### Примери совети за здравје
+- *Tu dois manger plus de fruits.* (Мора да јадеш повеќе овошje.)
+- *Tu devrais faire plus de sport.* (Би требало да спортуваш повеќе.)
+- *Il faut boire beaucoup d'eau.* (Треба да пиeш многу вода.)
+- *Tu peux essayer le yoga.* (Можеш да пробаш јога.)
+
+## Изразување на мислења
+
+### Мислење
+- *Je pense que...* (Мислам дека...)
+- *Je crois que...* (Верувам дека...)
+- *À mon avis...* (По мое мислење...)
+- *Pour moi...* (За мене...)
+
+### Примери
+- *Je pense que le sport est important.* (Мислам дека спортот е важен.)
+- *À mon avis, manger sainement est essentiel.* (По мое мислење, здравото jадење е суштинско.)
+- *Je crois qu'on doit dormir 8 heures.* (Верувам дека треба да спиeме 8 часа.)
+
+## Согласување (Être d'accord)
+- *Tu as raison.* (Имаш право.)
+- *Je suis d'accord.* (Се согласувам.)
+- *C'est vrai.* (Тоа е точно.)
+- *Exactement!* (Точно!)
+- *Bien sûr!* (Се разбира!)
+
+## Несогласување (Ne pas être d'accord)
+- *Je ne suis pas d'accord.* (Не се согласувам.)
+- *Je ne pense pas.* (Не мислам.)
+- *C'est faux.* (Тоа не е точно.)
+- *Au contraire.* (Спротивно.)
+- *Pas vraiment.* (Не баш.)
+
+## Пример: дискусија за здраво jадење
+
+> Pierre: Je pense que tout le monde doit manger des fruits et des légumes.
+> Marie: Je suis d'accord. Mais c'est cher!
+> Pierre: Pas vraiment. Tu peux acheter des fruits de saison.
+> Marie: Tu as raison. Les pommes en automne sont délicieuses.
+> Pierre: Et il faut boire beaucoup d'eau.
+> Marie: D'accord. Je commence dès aujourd'hui!
+
+(Пjер: Мислам дека секој мора да jаде овошje и зеленчук.
+Мари: Се согласувам. Но е скапо!
+Пjер: Не баш. Можеш да купуваш сезонско овошje.
+Мари: Имаш право. Jаболките есен се вкусни.
+Пjер: И треба да пиeш многу вода.
+Мари: Се согласувам. Започнувам уште од денес!)
+
+## Меки совети — кондиционал
+
+### Кондиционал на „devoir" (треба)
+- Je **devrais** (Би требало да...)
+- Tu **devrais** (Би требало да...)
+- Il/Elle **devrait**
+- Nous **devrions**
+- Vous **devriez**
+- Ils/Elles **devraient**
+
+### Примери
+- *Tu **devrais** essayer.* (Би требало да пробаш.)
+- *On **devrait** sortir.* (Би требало да излеземе.)
+- *Vous **devriez** consulter un médecin.* (Би требало да консултирате лекар.)
+
+## Изразување на емоции
+- *C'est super!* (Супер е!)
+- *C'est génial!* (Сјаjно е!)
+- *Quelle bonne idée!* (Колку добра идеа!)
+- *C'est dommage.* (Штета е.)
+- *C'est dur.* (Тешко е.)
+
+**Поими:** conseils, opinions, être d'accord, conditionnel, devoir/devrais.`,
+          exercises: [
+            {
+              id: 'efra9-1-7',
+              type: 'multiple-choice',
+              question: 'Како се вели „Имаш право" на француски?',
+              options: [
+                'Tu as faim.',
+                'Tu as raison.',
+                'Tu es français.',
+                'Tu travailles.',
+              ],
+              correct: 'Tu as raison.',
+              explanation: '„Tu as raison" = Имаш право (буквално „имаш разум"). Често во дискусии. Спротивно: „Tu as tort" = Не си во право.',
+            },
+            {
+              id: 'efra9-1-8',
+              type: 'multiple-choice',
+              question: 'Кој е условен начин (би требало) за „tu" од „devoir"?',
+              options: ['tu dois', 'tu devais', 'tu devrais', 'tu as'],
+              correct: 'tu devrais',
+              explanation: 'Conditionnel на „devoir" → „tu devrais" = би требало да. Поучтиво од „tu dois" (мора).',
+            },
+            {
+              id: 'efra9-1-9',
+              type: 'true-false',
+              question: '„Je suis d\'accord" значи „Не се согласувам".',
+              correct: 'неточно',
+              explanation: 'Неточно — „Je suis d\'accord" = Се СОГЛАСУВАМ. „Je ne suis pas d\'accord" = Не се согласувам (со „ne...pas").',
+            },
+          ],
+        },
+        {
+          id: 'fra9-1-4',
+          title: 'Lecture — Reading about healthy life',
+          content: `## Читање текстови за здрав живот
+
+### Пример текст
+
+> **Vivre sainement**
+>
+> Pour vivre sainement, il est important de suivre quelques règles simples:
+>
+> **1. L'alimentation**
+> Mangez beaucoup de fruits et de légumes. Évitez le fast-food et les boissons sucrées. Buvez au moins 1,5 litres d'eau par jour.
+>
+> **2. L'exercice**
+> Faites du sport régulièrement, au moins 30 minutes par jour. Marcher, courir, faire du vélo — tout aide.
+>
+> **3. Le sommeil**
+> Dormez 8 heures chaque nuit. Le sommeil est essentiel pour la santé.
+>
+> **4. Le stress**
+> Évitez le stress. Faites des pauses, écoutez de la musique, méditez.
+>
+> **5. La vie sociale**
+> Passez du temps avec votre famille et vos amis. Les contacts sociaux sont importants pour le bonheur.
+
+### Прашања за разбирање
+1. Колку часа сон се препорачуваат?
+2. Колку вода треба да пиeме дневно?
+3. Како може да се избегне стрес?
+4. Зошто се важни контактите со пријатели?
+
+## Корисни зборови
+
+### Сврзници и фрази
+- **Pour** (за / да) — *Pour vivre sainement* (За да живееш здраво)
+- **Au moins** (барем) — *Au moins 30 minutes* (Барем 30 минути)
+- **Beaucoup de** (многу) — *Beaucoup de fruits* (Многу овошje)
+- **Évitez** (избегнувајте — императив) — *Évitez le fast-food*
+- **Buvez** (пиjте) — *Buvez de l'eau*
+
+## Граматика: Императив (Заповеден начин)
+
+### Форми за „tu"
+- Без -s за -er глаголи: **Mange!** (Jади!), **Bois!** (Пиj!)
+- Останати: ист како tu-форма: **Fais!** (Прави!), **Va!** (Оди!)
+
+### Форми за „vous"
+- Иста како vous-форма во сегашно: **Mangez!** **Buvez!** **Faites!**
+
+### Форми за „nous" (Aјдe ние...)
+- Иста како nous-форма: **Mangeons!** (Aјдe да jадеме!)
+
+### Негативна форма
+- **Ne mange pas!** (Не jади!)
+- **Ne buvez pas!** (Не пиjте!)
+
+## Споредба: здрава наспроти нездрава храна
+
+### Здрава храна (Aliments sains)
+- **Les fruits**: pommes, bananes, oranges
+- **Les légumes**: carottes, brocolis, salade
+- **Les céréales complètes**: pain complet, avoine
+- **Les viandes maigres**: poulet, poisson
+- **Les produits laitiers**: yaourt, fromage
+
+### Нездрава храна (Malbouffe / Fast-food)
+- **Les hamburgers** (хамбургер)
+- **Les frites** (пом-фрит)
+- **Les chips** (чипс)
+- **Les boissons sucrées** (засладени пијалоци)
+- **Les bonbons** (бонбони)
+
+## Сравнителни форми
+
+### Plus... que (повеќе од)
+- *Les fruits sont **plus** sains **que** les bonbons.* (Овошjeто е поздраво од бонбоните.)
+
+### Moins... que (помалку од)
+- *La salade est **moins** calorique **que** la pizza.* (Салатата е помалку калорична од пицата.)
+
+### Aussi... que (исто колку)
+- *Le sport est **aussi** important **que** l'alimentation.* (Спортот е исто толку важен колку и исхраната.)
+
+## Чести зборови за фреквенција
+- **toujours** (секогаш)
+- **souvent** (често)
+- **parfois** (понекогаш)
+- **rarement** (ретко)
+- **jamais** (никогаш)
+
+### Со „ne... jamais"
+- *Je **ne mange jamais** de fast-food.* (Никогаш не jадам fast-food.)
+
+**Поими:** lecture, alimentation saine, malbouffe, импер­атив, сравнителни форми, фреквенција.`,
+          exercises: [
+            {
+              id: 'efra9-1-10',
+              type: 'multiple-choice',
+              question: 'Како се вика „чест" на француски?',
+              options: ['rarement', 'jamais', 'souvent', 'toujours'],
+              correct: 'souvent',
+              explanation: 'Souvent = често. Toujours = секогаш, parfois = понекогаш, rarement = ретко, jamais = никогаш.',
+            },
+            {
+              id: 'efra9-1-11',
+              type: 'multiple-choice',
+              question: 'Кој императив за „vous" за глаголот „manger"?',
+              options: ['Mange!', 'Mangez!', 'Mangeons!', 'Mangé!'],
+              correct: 'Mangez!',
+              explanation: 'За „vous" императив = иста како „vous"-форма во сегашно. Vous mangez → Mangez! (без „vous").',
+            },
+            {
+              id: 'efra9-1-12',
+              type: 'true-false',
+              question: '„Au moins 30 minutes par jour" значи „Барем 30 минути дневно".',
+              correct: 'точно',
+              explanation: 'Точно — „au moins" = барем / најмалку. „Par jour" = по ден / дневно. Се користи за минимум препораки.',
+            },
+          ],
+        },
+        {
+          id: 'fra9-1-5',
+          title: 'Écriture — Daily habits and healthy life',
+          content: `## Пишување за здрав начин на живот
+
+### Структура на состав
+1. **Воведе** — за што е составот
+2. **Главна содржина** — описи, примери, мислења
+3. **Заклучок** — резимирање, лични мислења
+
+### Пример состав
+
+> **Mes habitudes saines**
+>
+> Aujourd'hui, je vais parler de mes habitudes pour rester en bonne santé.
+>
+> Le matin, je me lève à 7 heures et je fais du yoga pendant 20 minutes. C'est important pour bien commencer la journée. Ensuite, je prends un petit-déjeuner sain : un yaourt, des fruits et du pain complet.
+>
+> À l'école, j'essaie de marcher au lieu de prendre le bus. Pendant la pause, je mange une pomme ou des noix.
+>
+> Après l'école, je fais du sport. Je joue au basket deux fois par semaine avec mes amis. Le sport est important pour le corps et l'esprit.
+>
+> Le soir, j'évite les écrans avant de me coucher. Je lis un livre et je me couche à 22 heures. Je dors 9 heures par nuit.
+>
+> Pour conclure, je pense qu'une vie saine est très importante. C'est plus facile quand on a de bonnes habitudes!
+
+## Корисни конструкции
+
+### Изразување секојдневен живот
+- **Le matin** (наутро)
+- **À midi** (на пладне)
+- **Le soir** (вечер)
+- **La nuit** (ноќе)
+- **Tous les jours** (секој ден)
+- **Chaque semaine** (секоja недела)
+
+### Возвратни глаголи (verbes pronominaux)
+- **se lever** (станува): Je me lève à 7h.
+- **se coucher** (легнува): Je me couche à 22h.
+- **se laver** (мие): Elle se lave les dents.
+- **se reposer** (одмора): Tu te reposes le weekend.
+- **se sentir** (чувствува): Comment tu te sens?
+
+### Сегашно на возвратни глаголи
+| Лице | Возвратна заменка | Форма |
+|------|-------------------|-------|
+| Je | me | Je me lève |
+| Tu | te | Tu te lèves |
+| Il/Elle | se | Il se lève |
+| Nous | nous | Nous nous levons |
+| Vous | vous | Vous vous levez |
+| Ils/Elles | se | Ils se lèvent |
+
+## Сврзници и линкови
+
+### За редослед
+- **D'abord** (Прво)
+- **Ensuite / Puis** (Потоа)
+- **Après** (После)
+- **Enfin / Finalement** (На крај)
+
+### За причина и последица
+- **Parce que** (Зашто)
+- **Car** (Бидеjки)
+- **Donc** (Значи)
+- **Alors** (Тогаш)
+
+### За контраст
+- **Mais** (Но)
+- **Cependant** (Сепак)
+- **Par contre** (Спротивно)
+
+### Пример со сврзници
+> D'abord, je me lève. Ensuite, je fais du sport. Après, je prends mon petit-déjeuner. Enfin, je vais à l'école.
+
+## Совети за пишување
+
+### Структурирано
+- Еден пасус = една идеа
+- Линкови меѓу пасуси
+- Логичен ред
+
+### Лично
+- Користи „je" (јас)
+- Дeли свои искуства
+- Изразуваj мислења
+
+### Граматички правилно
+- Провери род на именки (le/la)
+- Провери согласувания (е, es)
+- Провери глаголски времиња
+
+## Пример план за пишување
+
+### Тема: „Mes habitudes saines"
+1. **Воведе:** Зошто здравjeто е важно
+2. **Утро:** Што правам наутро
+3. **Дeн:** Активности преку ден
+4. **Вечер:** Како се одморам
+5. **Заклучок:** Моите мисли
+
+## Самопроверка
+- ✓ Има ли јасна структура?
+- ✓ Користам разни сврзници?
+- ✓ Правилни глаголски времиња?
+- ✓ Согласувания (m/ž, jед/множ)?
+- ✓ Провисени имена и фрази?
+
+**Поими:** habitudes saines, verbes pronominaux, сврзници, structure d'écriture, самопроверка.`,
+          exercises: [
+            {
+              id: 'efra9-1-13',
+              type: 'multiple-choice',
+              question: 'Како се вика „станува" на француски (возвратен глагол)?',
+              options: ['se laver', 'se lever', 'se coucher', 'se sentir'],
+              correct: 'se lever',
+              explanation: 'Se lever = станува (од легнат). Se laver = се мие, se coucher = легнува, se sentir = чувствува.',
+            },
+            {
+              id: 'efra9-1-14',
+              type: 'multiple-choice',
+              question: 'Која возвратна заменка се користи со „nous"?',
+              options: ['me', 'te', 'se', 'nous'],
+              correct: 'nous',
+              explanation: 'За „nous" се користи „nous" како возвратна заменка. Nous nous levons. Слично vous vous levez.',
+            },
+            {
+              id: 'efra9-1-15',
+              type: 'true-false',
+              question: '„D\'abord, ensuite, après, enfin" се сврзници за редослед на настани.',
+              correct: 'точно',
+              explanation: 'Точно — се користат за логичен редослед. D\'abord = прво, ensuite = потоа, après = после, enfin = на крaj.',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'fra9-2',
+      title: 'Theme 2: Le temps libre (Слободно време)',
+      lessons: [
+        {
+          id: 'fra9-2-1',
+          title: 'Vocabulaire — Free time and activities',
+          content: `## Темата: Слободно време (Le temps libre)
+
+## Хобии (Les loisirs)
+| Француски | Македонски |
+|-----------|------------|
+| la musique | музика |
+| la lecture | читање |
+| le cinéma | кино |
+| le théâtre | театар |
+| les jeux vidéo | видео игри |
+| le bricolage | DIY / прави сам |
+| le jardinage | градинарство |
+| la photographie | фотографирање |
+| la danse | танцување |
+| la peinture | сликарство |
+
+## Спортови (Les sports)
+- **le football** (фудбал)
+- **le basket-ball / le basket** (кошарка)
+- **le volley-ball** (одбойка)
+- **le tennis** (тенис)
+- **la natation** (пливање)
+- **la course / le jogging** (трчање)
+- **le cyclisme** (велосипедизам)
+- **la randonnée** (пешачи)
+- **le ski** (скиjа)
+- **le yoga** (jога)
+
+## Изрази за активности
+- **faire du sport** (спортувa)
+- **jouer au + спорт** (игра): *jouer au foot, jouer au tennis*
+- **jouer de + инструмент** (свири): *jouer de la guitare, jouer du piano*
+- **aller au cinéma** (оди во кино)
+- **regarder la télé** (гледа ТВ)
+- **lire un livre** (чита книга)
+- **écouter de la musique** (слуша музика)
+
+## Прашања за хобија
+- *Qu'est-ce que tu aimes faire?* (Што сакаш да правиш?)
+- *Quel est ton hobby?* (Кој е твојот хоби?)
+- *Tu fais du sport?* (Спортуваш ли?)
+- *Tu joues d'un instrument?* (Свириш ли некој инструмент?)
+
+## Одговори
+- *J'aime + инфинитив*
+  - *J'aime lire.* (Сакам да читам.)
+  - *J'aime regarder des films.* (Сакам да гледам филмови.)
+- *Mon hobby c'est...*
+  - *Mon hobby c'est la photographie.* (Моето хоби е фотографирање.)
+
+## Изразување на честотa
+
+### Колку често?
+- **Tous les jours** (секој ден)
+- **Souvent** (често)
+- **De temps en temps / Parfois** (понекогаш)
+- **Rarement** (ретко)
+- **Jamais** (никогаш)
+
+### Со „ne... jamais"
+- *Je **ne joue jamais** au foot.* (Никогаш не играм фудбал.)
+
+## Време и денови
+
+### Денови (Les jours)
+- lundi (понеделник)
+- mardi (вторник)
+- mercredi (среда)
+- jeudi (четврток)
+- vendredi (петок)
+- samedi (сабота)
+- dimanche (недела)
+
+### Месеци (Les mois)
+- janvier, février, mars, avril, mai, juin
+- juillet, août, septembre, octobre, novembre, décembre
+
+### Време од денот
+- **le matin** (наутро)
+- **l'après-midi** (попладне)
+- **le soir** (вечер)
+- **la nuit** (ноќе)
+
+### Пример
+- *Je fais du sport **tous les matins**.* (Спортувам секoja утро.)
+- *Le **dimanche**, je joue au foot.* (Во неделата играм фудбал.)
+- *Je vais au cinéma **deux fois par semaine**.* (Одам во кино два пати неделно.)
+
+## Зборови за дејства во слободно време
+- **regarder** (гледа)
+- **lire** (чита)
+- **écouter** (слуша)
+- **jouer** (игра / свири)
+- **faire** (прави / правa)
+- **aller** (оди)
+- **voyager** (патува)
+- **se promener** (шета)
+- **discuter** (разговара)
+- **rencontrer** (среќава)
+
+**Поими:** le temps libre, loisirs, sports, jouer à / jouer de, фреквенција, денови, месеци.`,
+          exercises: [
+            {
+              id: 'efra9-2-1',
+              type: 'multiple-choice',
+              question: 'Како се вика „кошарка" на француски?',
+              options: ['le foot', 'le basket', 'le volley', 'le tennis'],
+              correct: 'le basket',
+              explanation: 'Le basket (или le basket-ball) = кошарка. Le foot = фудбал, le tennis = тенис, le volley = одбойка.',
+            },
+            {
+              id: 'efra9-2-2',
+              type: 'multiple-choice',
+              question: 'Која конструкција се користи за свирење инструмент?',
+              options: ['jouer à', 'jouer de', 'jouer en', 'jouer avec'],
+              correct: 'jouer de',
+              explanation: '„Jouer de" за инструмент: jouer de la guitare, jouer du piano. „Jouer à" за спорт: jouer au foot, jouer au tennis.',
+            },
+            {
+              id: 'efra9-2-3',
+              type: 'true-false',
+              question: 'Денот „mercredi" значи среда на француски.',
+              correct: 'точно',
+              explanation: 'Точно — mercredi = среда. Lundi (пон), mardi (вт), mercredi (сре), jeudi (чет), vendredi (пет), samedi (саб), dimanche (нед).',
+            },
+          ],
+        },
+        {
+          id: 'fra9-2-2',
+          title: 'Grammaire — Le futur proche and le futur simple',
+          content: `## Идно блиско време (Le futur proche)
+**Futur proche** — за блиски, планирани идни активности.
+
+### Образувание
+**aller (сегашно) + инфинитив**
+
+### Конјугација
+- Je vais + инфинитив
+- Tu vas + инфинитив
+- Il/Elle va + инфинитив
+- Nous allons + инфинитив
+- Vous allez + инфинитив
+- Ils/Elles vont + инфинитив
+
+### Примери
+- *Je **vais voir** un film ce soir.* (Ќе гледам филм вечерва.)
+- *Nous **allons partir** demain.* (Заминуваме утре.)
+- *Tu **vas faire** quoi ce weekend?* (Што ќе правиш овој викенд?)
+
+## Идно просто време (Le futur simple)
+**Futur simple** — за идни активности, посебно подалечни или формални.
+
+### Образувание (за -er и -ir правилни глаголи)
+**Инфинитив + завршетоци: -ai, -as, -a, -ons, -ez, -ont**
+
+### Пример — „parler" (зборува)
+- je parler**ai** (ќе зборувам)
+- tu parler**as**
+- il/elle parler**a**
+- nous parler**ons**
+- vous parler**ez**
+- ils/elles parler**ont**
+
+### Неправилни глаголи (память клучни)
+- **être** → ser- (je serai, tu seras...)
+- **avoir** → aur- (j'aurai, tu auras...)
+- **aller** → ir- (j'irai, tu iras...)
+- **faire** → fer- (je ferai, tu feras...)
+- **venir** → viendr- (je viendrai...)
+- **pouvoir** → pourr- (je pourrai...)
+- **savoir** → saur- (je saurai...)
+- **vouloir** → voudr- (je voudrai...)
+
+### Примери
+- *L'été prochain, je **partirai** en France.* (Лето идно ќе заминам во Франција.)
+- *Tu **feras** quoi après le bac?* (Што ќе правиш после матурата?)
+- *Nous **serons** prêts à 7 heures.* (Ќе бидеме готови во 7.)
+
+## Кога да користиме кој?
+
+### Futur proche
+- **Блиски активности**: денес, утре, идна недела
+- **Планирано / решено**
+- *Je **vais sortir** ce soir.* (Ќе излезам вечерва.)
+
+### Futur simple
+- **Подалечни активности**: идна година, после факултетот
+- **Прогнози / предвидувања**
+- *L'année prochaine, je **commencerai** l'université.* (Идна година ќе започнам факултет.)
+
+## Сврзници за иднина
+- **demain** (утре)
+- **après-demain** (задутре)
+- **la semaine prochaine** (идна недела)
+- **le mois prochain** (идниот месец)
+- **l'année prochaine** (идна година)
+- **dans deux jours** (за 2 дена)
+- **dans une heure** (за 1 час)
+
+## Идни планови — реченица примери
+
+### За студии
+- *Après le lycée, je **vais étudier** la médecine.* (После средно ќе студирам медицина.)
+- *Je **veux devenir** médecin.* (Сакам да станам лекар.)
+
+### За пaтуванje
+- *Cet été, nous **allons aller** en Italie.* (Ова лето ќе одиме во Италија.)
+- *J'**aimerais visiter** Paris un jour.* (Би сакал да го посетам Париз еден ден.)
+
+### За работа
+- *Je **vais chercher** un travail d'été.* (Ќе барам летна работа.)
+
+## Изразување желби и планови
+- *J'ai l'intention de + инфинитив* (Имам намера да...)
+  - *J'ai l'intention de voyager.* (Имам намера да патувам.)
+- *Je voudrais + инфинитив* (Би сакал/а...)
+  - *Je voudrais apprendre l'italien.* (Би сакал да учам италијански.)
+- *Je compte + инфинитив* (Планирам...)
+  - *Je compte étudier à Paris.* (Планирам да студирам во Париз.)
+
+**Поими:** futur proche, futur simple, конјугација, иднина, желби и планови.`,
+          exercises: [
+            {
+              id: 'efra9-2-4',
+              type: 'multiple-choice',
+              question: 'Како се гради futur proche?',
+              options: [
+                'инфинитив + завршетоци',
+                'aller + инфинитив',
+                'être + причастие',
+                'avoir + причастие',
+              ],
+              correct: 'aller + инфинитив',
+              explanation: 'Futur proche = aller (сегашно) + инфинитив. Je vais manger, tu vas voir, ils vont partir.',
+            },
+            {
+              id: 'efra9-2-5',
+              type: 'multiple-choice',
+              question: 'Кој е futur simple на „être" за „je"?',
+              options: ['je suis', 'je serai', 'je étais', 'je serais'],
+              correct: 'je serai',
+              explanation: '„Être" неправилен глагол. Futur simple основа = ser-. Je serai, tu seras, il sera, nous serons, vous serez, ils seront.',
+            },
+            {
+              id: 'efra9-2-6',
+              type: 'true-false',
+              question: 'Futur proche се користи за блиски идни активности (денес, утре), а futur simple за подалечни.',
+              correct: 'точно',
+              explanation: 'Точно — futur proche = блиско („Je vais sortir" = ќе излезам), futur simple = подалечно или формално („Je sortirai" = ќе излезам). Дополнително нијанси на сигурност.',
+            },
+          ],
+        },
+        {
+          id: 'fra9-2-3',
+          title: 'Conversation — Past experiences',
+          content: `## Разговор за минати настани
+
+### Прашања
+- *Qu'est-ce que tu as fait hier?* (Што направи вчера?)
+- *Tu as passé un bon weekend?* (Беше ли добар викендот?)
+- *Comment c'était?* (Како беше?)
+- *Tu es allé/e où?* (Каде отиде?)
+
+### Одговори
+- *Hier, j'ai...* (Вчера, ...)
+- *Je suis allé/e à...* (Отидов на...)
+- *C'était super / nul / sympa.* (Беше супер / на­ика / симпатично.)
+
+## Реакции
+
+### Позитивни
+- *C'est super!* (Супер е!)
+- *Génial!* (Сјаjно!)
+- *Quelle chance!* (Каква среќа!)
+- *Wow!*
+
+### Неутрални
+- *Ah bon?* (Така?)
+- *Vraiment?* (Навистина?)
+- *D'accord.* (Добро.)
+
+### Со сочувство
+- *Désolé/e!* (Жал ми е!)
+- *Quel dommage!* (Каква штета!)
+- *C'est nul.* (Нaika е.)
+
+## Пример: разговор за патување
+
+> Sophie: Salut Marc! Comment vas-tu?
+> Marc: Salut! Très bien. Je suis rentré du Maroc hier!
+> Sophie: Du Maroc? C'est génial! C'était comment?
+> Marc: C'était super! J'ai visité Marrakech et j'ai mangé beaucoup de plats traditionnels.
+> Sophie: Tu as aimé?
+> Marc: Oui, beaucoup! J'ai aussi fait du shopping dans les souks.
+> Sophie: Quelle chance! Moi, je suis restée à Skopje.
+
+## Граматика: L'imparfait (Несвршено минато)
+
+### Кога се користи
+- За **повторливи** дејства во минатото
+- За **описи** во минатото
+- За **состојби** (чувства, време)
+
+### Образувание
+- Основа од „nous" во сегашно + завршетоци: -ais, -ais, -ait, -ions, -iez, -aient
+
+### Пример — „parler"
+- nous parl-ons → parl-
+- je parlais
+- tu parlais
+- il/elle parlait
+- nous parlions
+- vous parliez
+- ils/elles parlaient
+
+### Примери
+- *Quand j'**étais** petit, je **jouais** au foot.* (Кога бев мал, играв фудбал.)
+- *Il **faisait** beau hier.* (Времето беше убаво вчера.)
+- *Nous **habitions** à Skopje.* (Живеевме во Скопие.)
+
+## Imparfait vs Passé Composé
+
+### Imparfait
+- **Описи / атмосфера**: *Il faisait beau.* (Времето беше убаво.)
+- **Состојби**: *J'étais fatigué.* (Бев уморен.)
+- **Повторливи дејства**: *Tous les jours, je marchais.* (Секој ден шетав.)
+
+### Passé Composé
+- **Завршени дејства**: *J'ai mangé.* (Изјаjадов.)
+- **Конкретни настани**: *Hier, j'ai vu un film.* (Вчера видов филм.)
+- **Серија настани**: *Je suis arrivé, j'ai mangé, je suis parti.* (Дојдов, изjадеjав, заминав.)
+
+### Заедно во разказ
+> Hier, il **faisait** beau (опис) et j'**ai décidé** d'aller au parc (дејство). Quand je **suis arrivé** (дејство), il y **avait** beaucoup de monde (опис). J'**ai rencontré** mon ami (дејство) et nous **avons joué** au foot (дејство).
+
+(Вчера, времето беше убаво и одлучив да одам во парк. Кога стигнав, имаше многу луѓе. Сретнав мојот пријател и играме фудбал.)
+
+## Корисни изрази за разговор
+
+### Да го привлечеш вниманието
+- *Tu sais quoi?* (Знаеш што?)
+- *Devine!* (Погоди!)
+- *Tu ne vas pas le croire!* (Нема да поверуваш!)
+
+### Да дадеш повеќе информации
+- *En fait,...* (Всушност,...)
+- *D'ailleurs,...* (Покрај тоа,...)
+- *Et puis...* (А потоа...)
+
+### За резимирање
+- *Bref,...* (Кратко...)
+- *En conclusion,...* (Заклучок,...)
+
+**Поими:** разговор за мината, imparfait, imparfait vs passé composé, описи, реакции.`,
+          exercises: [
+            {
+              id: 'efra9-2-7',
+              type: 'multiple-choice',
+              question: 'Кој е imparfait на „être" за „je"?',
+              options: ['j\'étais', 'j\'ai été', 'je serai', 'je suis'],
+              correct: 'j\'étais',
+              explanation: 'Imparfait на „être" е специјален: j\'étais, tu étais, il était, nous étions, vous étiez, ils étaient. Се користи за состојби во минатото.',
+            },
+            {
+              id: 'efra9-2-8',
+              type: 'multiple-choice',
+              question: 'Кога користиме imparfait?',
+              options: [
+                'За идни активности',
+                'За завршени дејства',
+                'За описи и повторливи дејства во минатото',
+                'За императив',
+              ],
+              correct: 'За описи и повторливи дејства во минатото',
+              explanation: 'Imparfait е за: описи (атмосфера, време), состојби (чувства), повторливи (секoj ден правев). Passé composé за конкретни завршени дејства.',
+            },
+            {
+              id: 'efra9-2-9',
+              type: 'true-false',
+              question: '„Quand j\'étais petit, je jouais au foot" е во imparfait затоа што е повторливо во минатото.',
+              correct: 'точно',
+              explanation: 'Точно — двете „étais" и „jouais" се imparfait затоа што опишуваат состојба и навика во детството. Имаше повторливост и опис.',
+            },
+          ],
+        },
+        {
+          id: 'fra9-2-4',
+          title: 'Lecture — Reading and culture',
+          content: `## Читање за слободно време и култура
+
+### Пример текст
+
+> **Les loisirs des Français**
+>
+> Les Français aiment beaucoup leurs loisirs. Selon les études, les activités préférées sont:
+>
+> 1. **Regarder la télévision** (3 heures par jour en moyenne)
+> 2. **Surfer sur Internet** (2 heures par jour)
+> 3. **Lire** (40% des Français lisent au moins un livre par mois)
+> 4. **Faire du sport** (35% font du sport régulièrement)
+> 5. **Aller au cinéma** (le cinéma français est très populaire)
+>
+> Le weekend, les Français aiment passer du temps en famille. Ils vont au restaurant, font des promenades dans les parcs ou visitent des musées.
+>
+> En vacances, les destinations préférées sont la Côte d'Azur (en été) et les Alpes (en hiver pour le ski).
+>
+> Les jeunes préfèrent les jeux vidéo, la musique et les réseaux sociaux.
+
+### Прашања за разбирање
+1. Колку часа дневно Французите гледат ТВ?
+2. Колку проценти Французи читаат барем една книга месечно?
+3. Каде одат Французите на летниот одмор?
+4. Што предпочитаат младите?
+
+## Француска култура
+
+### Кино (Le cinéma)
+- Француското кино е едно од најважните во светот
+- Кански филмски фестивал (Festival de Cannes) — еден од најголемите
+- Познати француски режисери: François Truffaut, Jean-Luc Godard
+- Современи: Luc Besson, Olivier Assayas
+
+### Литература (La littérature)
+- Виктор Иго (Victor Hugo) — „Les Misérables"
+- Алберт Ками (Albert Camus) — „L'Étranger"
+- Антоан де Сент Егзипери (Antoine de Saint-Exupéry) — „Le Petit Prince"
+
+### Музика (La musique)
+- Едит Пјаф (Édith Piaf)
+- Шарл Aзнавур (Charles Aznavour)
+- Современи: Stromae, Indila, ZAZ
+
+### Спорт (Le sport)
+- Tour de France (велосипедска трка)
+- Roland-Garros (тенис турнир)
+- Фудбал — двоен светски шампион (1998, 2018)
+
+## Граматика: Релативни заменки (Pronoms relatifs)
+
+### „Qui" (кој/која — субјект)
+- *L'ami **qui** habite à Paris est sympa.* (Пријателот кој живее во Париз е симпатичен.)
+- *La fille **qui** parle est ma sœur.* (Девојката кoja зборува е сестра ми.)
+
+### „Que" (кого/кoja — објект)
+- *Le livre **que** je lis est intéressant.* (Книгата кoja ja читам е интересна.)
+- *Le film **que** j'ai vu était super.* (Филмот кој го видов беше супер.)
+
+### „Où" (каде, кога)
+- *Le café **où** nous nous sommes rencontrés est fermé.* (Кафулeто каде се сретнавме е затворено.)
+- *L'année **où** je suis né.* (Годината кога се родив.)
+
+### „Dont" (за кого/чиј)
+- *L'auteur **dont** je parle est célèbre.* (Авторот за кого зборувам е познат.)
+
+## Сврзници и линкови за читање
+
+### За набројување
+- **D'abord** (Прво)
+- **Ensuite** (Потоа)
+- **Enfin** (На крaj)
+- **Aussi** (Исто така)
+
+### За контраст
+- **Mais** (Но)
+- **Cependant** (Сепак)
+- **Par contre** (Спротивно)
+
+### За причина
+- **Parce que** (Зашто)
+- **Car** (Бидеjки)
+
+### За пример
+- **Par exemple** (На пример)
+- **Comme** (Како)
+
+## Поими за француска култура
+- la francophonie (земји каде се зборува француски)
+- la baguette (типичен француски леб)
+- le croissant (кроасан)
+- le café français (француска кафе култура)
+- la mode (мода — Париз е светски центар на мода)
+- la gastronomie (гастрономија — UNESCO-Heritage)
+
+## Корисни изрази за читање
+- *Comme on peut voir...* (Како што може да се види...)
+- *Selon le texte...* (Според текстот...)
+- *L'auteur dit que...* (Авторот вели дека...)
+- *Le texte parle de...* (Текстот зборува за...)
+
+**Поими:** loisirs des Français, культура, релативни заменки, qui/que/où/dont, francophonie.`,
+          exercises: [
+            {
+              id: 'efra9-2-10',
+              type: 'multiple-choice',
+              question: 'Која е релативната заменка за субјект?',
+              options: ['que', 'qui', 'où', 'dont'],
+              correct: 'qui',
+              explanation: '„Qui" е субјектна заменка: „L\'ami qui parle" (пријателот кој зборува). „Que" е објект: „Le livre que je lis" (книгата што ja читам).',
+            },
+            {
+              id: 'efra9-2-11',
+              type: 'multiple-choice',
+              question: 'Како се вика познатиот филмски фестивал во Франција?',
+              options: [
+                'Festival de Paris',
+                'Festival de Cannes',
+                'Festival de Lyon',
+                'Festival de Marseille',
+              ],
+              correct: 'Festival de Cannes',
+              explanation: 'Festival de Cannes (Кански филмски фестивал) — еден од најважните светски кино настани. Се одржува секoja година во мај.',
+            },
+            {
+              id: 'efra9-2-12',
+              type: 'true-false',
+              question: 'Книгата „Le Petit Prince" е напишана од Антоан де Сент Егзипери.',
+              correct: 'точно',
+              explanation: 'Точно — „Le Petit Prince" (1943) од Антоан де Сент Егзипери. Една од најпреведуваните книги во светот. Класика на француска литература.',
+            },
+          ],
+        },
+        {
+          id: 'fra9-2-5',
+          title: 'Écriture — Writing about leisure activities',
+          content: `## Пишување за слободно време
+
+### Видови текстови
+1. **Дневник** (Journal intime)
+2. **Лично писмо** (Lettre personnelle)
+3. **E-mail** (Courriel)
+4. **Опис на викенд** (Description de weekend)
+5. **Биографски запис** (Note biographique)
+
+### Пример: писмо за патување
+
+> Skopje, le 15 juin 2024
+>
+> Chère Sophie,
+>
+> Comment vas-tu? Moi, je vais super bien! Je veux te raconter mes vacances en Italie.
+>
+> Je suis allée à Rome avec mes parents pendant une semaine. C'était incroyable! Nous avons visité le Colisée, la Fontaine de Trevi et le Vatican. La nourriture italienne est délicieuse — j'ai mangé beaucoup de pâtes et de pizzas!
+>
+> Le dernier jour, nous avons fait du shopping. J'ai acheté un beau sac et des chaussures. Mon père a aimé Rome aussi, surtout l'histoire.
+>
+> Et toi? Qu'est-ce que tu vas faire cet été? J'attends de tes nouvelles!
+>
+> À bientôt,
+> Marija
+
+## Структура
+
+### Започнување
+- *Cher / Chère [name],* (Драги / Драга...)
+- *Salut [name]!* (Здраво [име]!)
+- *Comment vas-tu? / Ça va?* (Како си?)
+- *J'espère que tu vas bien.* (Се надевам дека си добро.)
+
+### Вовед
+- *Je veux te raconter...* (Сакам да ти раскажам...)
+- *Je voulais te parler de...* (Сакав да ти зборувам за...)
+
+### Развој
+- *D'abord... ensuite... après... enfin...* (Прво... потоа... после... на крaj...)
+- *Le matin... l'après-midi... le soir...* (Утрина... попладне... вечер...)
+
+### Прашања
+- *Et toi?* (А ти?)
+- *Qu'est-ce que tu fais?* (Што правиш?)
+- *Tu vas faire quoi?* (Што ќе правиш?)
+
+### Завршување
+- *J'attends de tes nouvelles.* (Чекам твои новости.)
+- *Écris-moi vite!* (Напиши ми бргу!)
+- *À bientôt!* (До скоро!)
+- *Bisous! / Bisettes!* (Бакнежи!)
+
+### Закл­учен поздрав
+- *Amitiés* (Пријателства / Пријатно)
+- *Cordialement* (Срдечно)
+- *Je t'embrasse* (Те бакнувам)
+- *Affectueusement* (Со љубов)
+
+## Корисни конструкции
+
+### Сегашно за описи
+- *Je joue au foot tous les jours.* (Играм фудбал секoj ден.)
+- *Mon hobby est la peinture.* (Моето хоби е сликарство.)
+
+### Минатo за искуства
+- *Hier, j'ai vu un film super.* (Вчера видов супер филм.)
+- *Le weekend dernier, j'ai fait du sport.* (Минатиот викенд правев спорт.)
+
+### Иднина за планови
+- *Cet été, je vais voyager en France.* (Ова лето ќе патувам во Франција.)
+- *Demain, je ferai du shopping.* (Утре ќе правам шопинг.)
+
+## Чести грешки
+
+### Род на именки
+- ❌ Le maison (le → la)
+- ✓ La maison (куќа е жен.род)
+
+### Согласувания
+- ❌ Marie est allé.
+- ✓ Marie est allée. (со „être" партиципот се согласува)
+
+### Глаголски време
+- ❌ Hier, je vais au cinéma.
+- ✓ Hier, je suis allé/e au cinéma. (вчера = минато → passé composé)
+
+### Зборен ред
+- ❌ Je rouge la voiture aime.
+- ✓ J'aime la voiture rouge. (придавката оди по именката)
+
+## Совети за пишување
+1. **Планирај** пред да пишеш
+2. **Користи** разни сврзници
+3. **Менувај** структури на реченици
+4. **Дeли** свои лични искуства
+5. **Поставувa** прашања на адресатот
+6. **Провери** на крaj за грешки
+
+## Самопроверка
+- ✓ Има ли јасна структура (воведе, главно, заклучок)?
+- ✓ Користам разни глаголски времиња?
+- ✓ Менувам должина на реченици?
+- ✓ Корисни линкови (d'abord, ensuite, enfin)?
+- ✓ Поставувам прашања на адресатот?
+- ✓ Завршив со поздрав?
+
+**Поими:** lettre personnelle, structure, поздрави, разни времиња, чести грешки, самопроверка.`,
+          exercises: [
+            {
+              id: 'efra9-2-13',
+              type: 'multiple-choice',
+              question: 'Како се вика „Драга Софи" на француски?',
+              options: ['Sophie chère', 'Chère Sophie', 'Belle Sophie', 'Salut Sophie'],
+              correct: 'Chère Sophie',
+              explanation: '„Chère Sophie" е стандарден поздрав за писмо на жена (Cher Pierre за маж). Реди: придавка пред име.',
+            },
+            {
+              id: 'efra9-2-14',
+              type: 'multiple-choice',
+              question: 'Која фраза е добра за крaj на писмо?',
+              options: [
+                'Bonjour!',
+                'Comment vas-tu?',
+                'À bientôt!',
+                'Allez!',
+              ],
+              correct: 'À bientôt!',
+              explanation: '„À bientôt!" = До скоро! Стандарден завршен поздрав. Други: „Je t\'embrasse" (те бакнувам), „Amitiés" (пријателства), „Bisous" (бакнежи).',
+            },
+            {
+              id: 'efra9-2-15',
+              type: 'true-false',
+              question: 'Кога passé composé е со „être", партиципот мора да се согласува со субјектот по род и број.',
+              correct: 'точно',
+              explanation: 'Точно — Marie est allée (жена), Pierre est allé (маж). Marie et Anne sont allées (множ жена). Со „avoir" нема такво согласување.',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'fra9-3',
+      title: 'Theme 3: L\\u2019environnement plus large (Поширокото окружение)',
+      lessons: [
+        {
+          id: 'fra9-3-1',
+          title: 'Vocabulaire — City, places, and professions',
+          content: `## Темата: Поширокото окружение (L'environnement plus large)
+Опис на населба, улица, град или село.
+
+## Места во град (Lieux dans la ville)
+| Француски | Македонски |
+|-----------|------------|
+| la rue | улица |
+| le boulevard | булевар |
+| la place | плоштад |
+| le parc | парк |
+| le pont | мост |
+| le feu | семафор |
+| l'école | школа |
+| la mairie | општина |
+| la banque | банка |
+| la poste | пошта |
+| le supermarché | супермаркет |
+| le marché | пазар |
+| la pharmacie | аптека |
+| la boulangerie | пекарница |
+| la boucherie | месарница |
+| le café | кафулe |
+| le restaurant | ресторан |
+| le cinéma | кино |
+| le théâtre | театар |
+| la bibliothèque | библиотека |
+
+## Превозни средства (Les transports)
+- **le bus** (автобус)
+- **le taxi** (такси)
+- **la voiture** (автомобил)
+- **le vélo** (велосипед)
+- **la trottinette électrique** (електричен скутер)
+- **le métro** (метро)
+- **le tram** (трамвај)
+- **le RER** (брз воз во Париз)
+
+## Професии (Les métiers)
+| Француски | Македонски |
+|-----------|------------|
+| le médecin | лекар |
+| l'infirmier/ère | сестра |
+| le professeur | професор |
+| le boulanger | пекар |
+| le boucher | месар |
+| le banquier | банкар |
+| le facteur | поштар |
+| le chauffeur | возач |
+| le pâtissier | сладкар |
+| le charcutier | месар |
+| le coiffeur | фризер |
+| le pharmacien | аптекар |
+| le journaliste | новинар |
+| l'ingénieur | инженер |
+| l'architecte | архитект |
+
+## Опис на град / село
+
+### Општо
+- *Ma ville **s'appelle**...* (Мојот град се вика...)
+- *Elle **se trouve** dans le nord du pays.* (Се наоѓа на север на земјата.)
+- *Il y a **environ** 500 000 habitants.* (Има околу 500.000 жители.)
+
+### Карактеристики
+- *La ville **est belle / animée / calme / moderne / ancienne**.* (Градот е убав / жив / мирен / модерен / стар.)
+- *Il y a **beaucoup de** parcs.* (Има многу паркови.)
+- *Il y a **peu de** musées.* (Има малку музеи.)
+
+### Знаменитости
+- *On peut visiter...* (Може да се посети...)
+- *La place principale est...* (Главниот плоштад е...)
+
+## Опис на село (Description du village)
+- **petit / grand** (мал / голем)
+- **tranquille** (мирно)
+- **traditionnel** (традиционално)
+- **rural** (рурално)
+- **agricole** (земјоделско)
+
+### Карактеристики на село
+- *Il y a des **champs**.* (Има полиња.)
+- *Les gens **cultivent** la terre.* (Луѓето ja обработуваат земјата.)
+- *Il y a beaucoup de **fermes**.* (Има многу фарми.)
+- *On élève des **animaux**: vaches, moutons, chèvres.* (Се одгледуваат животни: крави, овци, кози.)
+
+## Природа и околина (Nature)
+- **la montagne** (планина)
+- **la mer** (море)
+- **le lac** (езеро)
+- **la rivière** (река)
+- **la forêt** (шума)
+- **la prairie** (ливада)
+- **les champs** (полиња)
+
+## Време (Météo)
+- *Il fait beau.* (Времето е убаво.)
+- *Il pleut.* (Врне.)
+- *Il neige.* (Снег врне.)
+- *Il fait du vent.* (Ветровито е.)
+- *Il fait chaud / froid.* (Жешко / студено е.)
+
+**Поими:** lieux dans la ville, transports, métiers, description, météo, nature.`,
+          exercises: [
+            {
+              id: 'efra9-3-1',
+              type: 'multiple-choice',
+              question: 'Како се вика „пекар" на француски?',
+              options: ['le pâtissier', 'le boulanger', 'le boucher', 'le facteur'],
+              correct: 'le boulanger',
+              explanation: 'Le boulanger = пекар (прави леб). Le pâtissier = сладкар (прави колачи), le boucher = месар, le facteur = поштар.',
+            },
+            {
+              id: 'efra9-3-2',
+              type: 'multiple-choice',
+              question: 'Како се вели „метро" на француски?',
+              options: ['le bus', 'le tram', 'le métro', 'le vélo'],
+              correct: 'le métro',
+              explanation: 'Le métro = метро (подземна железница). Le bus = автобус, le tram = трамвај, le vélo = велосипед.',
+            },
+            {
+              id: 'efra9-3-3',
+              type: 'true-false',
+              question: '„Il pleut" значи „Снег врне" на француски.',
+              correct: 'неточно',
+              explanation: 'Неточно — „Il pleut" = ВРНЕ (дожд). „Il neige" = СНЕГ ВРНЕ. Lo­гика: pluie = дожд, neige = снег.',
+            },
+          ],
+        },
+        {
+          id: 'fra9-3-2',
+          title: 'Grammaire — Articles, prepositions, and directions',
+          content: `## Членови (Les articles)
+
+### Определен член (Article défini)
+- **le** (маж) — *le livre*
+- **la** (жен) — *la maison*
+- **les** (множ) — *les enfants*
+- **l'** (пред самогласка) — *l'école*
+
+### Неопределен член (Article indéfini)
+- **un** (маж) — *un livre*
+- **une** (жен) — *une maison*
+- **des** (множ) — *des enfants*
+
+### Слеан член (Article contracté)
+Кога à или de се срастуваат со le или les:
+- **à + le → au** : *Je vais **au** cinéma.* (Одам во кино.)
+- **à + les → aux** : *Je parle **aux** enfants.* (Зборувам со децата.)
+- **de + le → du** : *Je viens **du** parc.* (Доaѓам од паркот.)
+- **de + les → des** : *Je viens **des** États-Unis.* (Доaѓам од САД.)
+
+### Без срастување за la и l'
+- **à la** : *Je vais **à la** plage.* (Одам на плажа.)
+- **à l'** : *Je vais **à l'**école.* (Одам во школа.)
+- **de la** : *Je viens **de la** maison.* (Доaѓам од дома.)
+- **de l'** : *Je viens **de l'**école.* (Доaѓам од школа.)
+
+## Предлози за насока
+
+### „à" (на / во)
+- *à Paris* (во Париз)
+- *à la maison* (дома)
+- *à droite* (десно)
+
+### „de" (од)
+- *de Paris* (од Париз)
+- *de la maison* (од дома)
+
+### „chez" (кaj)
+- *chez moi* (дома кaj мене)
+- *chez le médecin* (кaj лекар)
+- *chez mes amis* (кaj пријатели)
+
+### „en" (во)
+- *en France* (во Франција — без член)
+- *en voiture* (со кола)
+- *en bus* (со автобус)
+
+### „par" (низ)
+- *par la rue* (низ улица)
+
+## Барање и давање насоки
+
+### Прашања за насока
+- *Où est...?* (Каде е...?)
+- *Comment je vais à...?* (Како да стигнам до...?)
+- *Est-ce qu'il y a... près d'ici?* (Дали има... близу?)
+
+### Одговори
+- *À gauche* (Лево)
+- *À droite* (Десно)
+- *Tout droit* (Право)
+- *En face de* (Спротив)
+- *À côté de* (Поред)
+- *Entre... et...* (Меѓу... и...)
+- *Près de* (Близу)
+- *Loin de* (Далеку од)
+
+### Пример дијалог
+> Tourist: Excusez-moi, où est la mairie?
+> Local: Allez tout droit, puis prenez la première rue à gauche. C'est juste là, en face de la poste.
+> Tourist: Merci beaucoup!
+
+## Именки: род и број (Noms: genre et nombre)
+
+### Род
+- Имеките имаат род (маж: le, un / жен: la, une)
+- Не секогаш логично — мора да памтиш
+- *le livre* (книга — маж), *la table* (маса — жена)
+
+### Број
+- За множина додаваме -s
+- *un livre → des livres*
+- Некои се менуваат: *un cheval → des chevaux*
+
+## Придавки (Les adjectifs)
+
+### Согласување
+Придавката се согласува по род и број со именка:
+- *un grand garçon* (голем момче)
+- *une grande fille* (голема девојка)
+- *des grands garçons* (големи момчиња)
+- *des grandes filles* (големи девојки)
+
+### Описни придавки за град
+- **calme** (мирен)
+- **moderne** (модерен)
+- **animé/e** (жив/а)
+- **bruyant/e** (бучен/а)
+- **agréable** (пријатен)
+- **large** (широк)
+- **étroit/e** (тесен/а)
+- **joli/e** (убав/а)
+
+### Пример
+- *Skopje est une **grande** ville **moderne** et **animée**.* (Скопие е голем модерен и жив град.)
+- *Mon village est **petit** et **tranquille**.* (Моето село е мало и мирно.)
+
+**Поими:** articles, prépositions, насоки, genre/nombre, adjectifs, согласувания.`,
+          exercises: [
+            {
+              id: 'efra9-3-4',
+              type: 'multiple-choice',
+              question: 'Како се вели „Одам во киното" на француски?',
+              options: [
+                'Je vais à le cinéma.',
+                'Je vais au cinéma.',
+                'Je vais en cinéma.',
+                'Je vais cinéma.',
+              ],
+              correct: 'Je vais au cinéma.',
+              explanation: 'à + le = au (слеан член). „Je vais au cinéma". Никогаш „à le". Слично: au parc, au marché.',
+            },
+            {
+              id: 'efra9-3-5',
+              type: 'multiple-choice',
+              question: 'Која е правилна форма за „во Франција"?',
+              options: ['à France', 'en France', 'dans France', 'au France'],
+              correct: 'en France',
+              explanation: '„En" се користи за земји женски род (Франција, Италија, Шпанија). „Au" за машки (au Canada). За множина: „aux États-Unis".',
+            },
+            {
+              id: 'efra9-3-6',
+              type: 'true-false',
+              question: 'Француските придавки се согласуваат по род и број со именката.',
+              correct: 'точно',
+              explanation: 'Точно — un grand garçon (м.с.), une grande fille (ж.с.), des grands garçons (м.мн.), des grandes filles (ж.мн.). Согласувањето е основно правило.',
+            },
+          ],
+        },
+        {
+          id: 'fra9-3-3',
+          title: 'Écriture — Describing my surroundings',
+          content: `## Пишување за моето опкружување
+
+### Структура на опис
+
+#### Воведе
+- Каде живеам
+- Каков е градот / селото
+
+#### Главна содржина
+- Општи карактеристики (големина, тип)
+- Места и знаменитости
+- Активности и забава
+- Луѓе и атмосфера
+
+#### Заклучок
+- Лично мислење
+- Препораки
+
+### Пример опис на град
+
+> **Ma ville Skopje**
+>
+> Je m'appelle Marija et j'habite à Skopje, la capitale de la Macédoine. Skopje est une grande ville d'environ 500 000 habitants. Elle se trouve dans le nord du pays.
+>
+> Skopje est une ville moderne et ancienne en même temps. On peut voir des bâtiments très vieux comme le Vieux Bazar et la Tour de l'Horloge, mais aussi des bâtiments modernes comme le Centre commercial Skopje City Mall.
+>
+> Dans le centre, il y a la Place de la Macédoine avec la grande statue d'Alexandre le Grand. Le Pont de Pierre traverse la rivière Vardar et relie le centre moderne au Vieux Bazar.
+>
+> Les jeunes aiment aller au cinéma, dans les cafés ou au parc. En été, il fait très chaud, donc on va à la piscine. En hiver, on peut skier sur le mont Popova Šapka.
+>
+> Pour moi, Skopje est une ville agréable où on peut bien vivre. La nourriture est délicieuse et les gens sont accueillants. Si vous venez en Macédoine, visitez Skopje!
+
+### Пример опис на село
+
+> **Mon village**
+>
+> Mon village s'appelle Galičnik. C'est un petit village dans les montagnes de Macédoine. Il y a seulement 100 habitants permanents, mais en été, beaucoup de gens y viennent.
+>
+> Le village est très traditionnel. Les maisons sont anciennes, construites en pierre et en bois. Il y a une église traditionnelle et une vieille école.
+>
+> Les habitants élèvent des moutons et des chèvres. Ils font du fromage traditionnel — le célèbre fromage de Galičnik.
+>
+> Une fois par an, en juillet, il y a un grand mariage traditionnel — c'est très populaire et beaucoup de touristes viennent voir cette tradition.
+>
+> J'aime visiter Galičnik en été parce qu'il fait moins chaud qu'à Skopje et c'est très calme et reposant.
+
+## Корисни конструкции
+
+### Описи
+- *Il est / Elle est + придавка* (Тоj / Таа е...)
+- *Il y a + именка* (Има...)
+- *On peut voir / faire / visiter...* (Може да се види / прави / посети...)
+
+### Локализација
+- *Au centre de la ville* (Во центарот на градот)
+- *Dans le nord/sud/est/ouest* (На север/jуг/исток/запад)
+- *Près de* (Близу)
+- *Loin de* (Далеку од)
+
+### Изразувание чувство
+- *J'aime / Je n'aime pas...* (Сакам / Не сакам...)
+- *Je trouve que...* (Сметам дека...)
+- *Pour moi...* (За мене...)
+
+## Граматика: Présent на „être" и „avoir"
+
+### „être" (е, бидува)
+- je suis
+- tu es
+- il/elle est
+- nous sommes
+- vous êtes
+- ils/elles sont
+
+### „avoir" (има)
+- j'ai
+- tu as
+- il/elle a
+- nous avons
+- vous avez
+- ils/elles ont
+
+### Употреба
+- **être** за состојби, опис: *Je suis fatigué.* *La ville est belle.*
+- **avoir** за поседување: *J'ai un chien.* *Skopje a 500 000 habitants.*
+
+## Сврзници за писмено изразување
+
+### Време
+- **D'abord** (Прво)
+- **Ensuite / Puis** (Потоа)
+- **Après** (После)
+- **Enfin / Finalement** (На крaj)
+
+### Поголеми идеи
+- **Aussi** (Исто така)
+- **Et** (И)
+- **Mais** (Но)
+- **Cependant** (Сепак)
+
+### Заклучок
+- **Donc / Alors** (Така)
+- **En conclusion** (Заклучок)
+- **Pour conclure** (За резимирање)
+
+## Совет за пишување
+
+### Биди подробен
+- Опиши со 5 сетива (вид, звук, мирис, вкус, допир)
+- Користи специфични примери
+- Дeли лични искуства
+
+### Биди интересен
+- Започни со привлечна реченица
+- Користи разни должини на реченици
+- Завршaj со впечатлив заклучок
+
+### Биди јасен
+- Една идеа по пасус
+- Линкови меѓу пасуси
+- Логичен ред
+
+**Поими:** description ville/village, „être" et „avoir", сврзници, описи, личен став.`,
+          exercises: [
+            {
+              id: 'efra9-3-7',
+              type: 'multiple-choice',
+              question: 'Како се вели „Има 500 000 жители" на француски?',
+              options: [
+                'C\'est 500 000 habitants.',
+                'Il y a 500 000 habitants.',
+                'Habitent 500 000.',
+                'A 500 000 habitants.',
+              ],
+              correct: 'Il y a 500 000 habitants.',
+              explanation: '„Il y a" = има (постои). „Il y a 500 000 habitants" = Има 500 000 жители. Безличен израз за постоење.',
+            },
+            {
+              id: 'efra9-3-8',
+              type: 'multiple-choice',
+              question: 'Кој сврзник се користи за заклучок?',
+              options: ['D\'abord', 'Mais', 'En conclusion', 'Aussi'],
+              correct: 'En conclusion',
+              explanation: '„En conclusion" = За заклучок. Се користи на крaj за да резимирaш. Слично: „Pour conclure", „Donc", „Finalement".',
+            },
+            {
+              id: 'efra9-3-9',
+              type: 'true-false',
+              question: 'Кога опишуваш град на француски, добро е да користиш конкретни примери и да изразуваш свое мислење.',
+              correct: 'точно',
+              explanation: 'Точно — конкретни примери (имиња на места) и лични мислења ja прават описот живописен и интересен. Не само факти, туку и чувства.',
+            },
+          ],
+        },
+      ],
+    },
+  ],
 }
 
 // ── GRADE CONTENT LOOKUP ─────────────────────────────────────────
