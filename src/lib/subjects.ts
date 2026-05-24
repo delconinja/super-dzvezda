@@ -97,7 +97,7 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
     emoji: '💻',
     unitsCount: 4,
     category: 'science',
-    grades: [4, 5, 6, 7, 8],
+    grades: [4, 5, 6, 7],
   },
   {
     id: 'innovation',
