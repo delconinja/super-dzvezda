@@ -33522,6 +33522,1910 @@ export const GRADE9_CONTENT: Record<string, UnitData[]> = {
       ],
     },
   ],
+  english: [
+    {
+      id: 'eng9-1',
+      title: 'Theme 1: My micro world — me, family and friends',
+      lessons: [
+        {
+          id: 'eng9-1-1',
+          title: 'Listening — Present Perfect tense',
+          content: `## Present Perfect Tense
+**Present Perfect** describes actions that happened in the past but have a connection to the present. The time is unspecified.
+
+## Formation
+**Subject + have/has + past participle (V3)**
+
+| Subject | Form |
+|---------|------|
+| I/You/We/They | have + V3 |
+| He/She/It | has + V3 |
+
+## Time markers
+- **just** — recently
+- **already** — before now
+- **yet** — until now (in negatives and questions)
+- **since** — from a specific point in time
+- **for** — over a period of time
+- **ever / never** — at any time / not at any time
+
+## Examples
+- *I've **just** walked the dog.*
+- *He's **already** fed the cat.*
+- *I haven't bought bread **yet**.*
+- *I've moved house twice **this year**.*
+- *You've told me that **before**.*
+- *Ann has **already** seen the new movie.*
+- *Have you finished your homework **yet**? — Yes, I've **already** finished it.*
+- *She hasn't studied for the exam.*
+
+## Since vs For
+- **Since** + point in time: *since Sunday, since 2010, since I was 10*
+- **For** + period of time: *for 3 years, for 2 hours, for ages*
+
+## Examples with since/for
+- *We haven't seen each other **since** Sunday.*
+- *Jack and Pauline have been married **for** three years.*
+- *Stephen has worked here **since** last April.*
+
+## Listening tips
+- Listen for time markers (just, already, yet, since, for)
+- Listen for has/have + V3 pattern
+- Connect to context: is the action complete? Does it affect now?
+
+**Поими:** Present Perfect, just, already, yet, since, for, past participle.`,
+          exercises: [
+            {
+              id: 'eeng9-1-1',
+              type: 'multiple-choice',
+              question: 'Which sentence uses Present Perfect correctly?',
+              options: [
+                'I have went to school.',
+                'She have finished her homework.',
+                'They have just arrived.',
+                'He has just arrive.',
+              ],
+              correct: 'They have just arrived.',
+              explanation: 'Present Perfect = have/has + past participle. "Arrived" is the past participle of "arrive". "Have went" should be "have gone".',
+            },
+            {
+              id: 'eeng9-1-2',
+              type: 'multiple-choice',
+              question: 'Which word goes with "for" (period of time)?',
+              options: ['Monday', '2 hours', 'yesterday', 'last week'],
+              correct: '2 hours',
+              explanation: '"For" is used with a duration/period of time (2 hours, 5 years, ages). "Since" is used with a specific point in time (Monday, yesterday, 2010).',
+            },
+            {
+              id: 'eeng9-1-3',
+              type: 'true-false',
+              question: '"I have lived here since 2015" is grammatically correct.',
+              correct: 'точно',
+              explanation: 'Correct. "Since 2015" is a specific starting point in time, so we use "since". Present Perfect shows the action started in 2015 and continues now.',
+            },
+          ],
+        },
+        {
+          id: 'eng9-1-2',
+          title: 'Reading — Personal letters and descriptions',
+          content: `## Personal letters
+A **personal letter** is a written message between friends, family, or people who know each other. It is informal.
+
+## Structure of a personal letter
+1. **Address and date** (top right)
+2. **Greeting** (Dear..., Hi..., Hello...)
+3. **Opening paragraph** (How are you? Thank you for...)
+4. **Main body** (news, questions, requests)
+5. **Closing paragraph** (Hope to hear from you, Take care)
+6. **Sign-off** (Best wishes, Love, Yours, etc.)
+7. **Signature**
+
+## Example personal letter
+
+> 5 Park Street
+> Skopje
+> 15 May 2024
+>
+> Dear Marko,
+>
+> Thanks for your last letter! I'm so happy to hear about your trip to London.
+>
+> I've just finished my exams and I have great news — I passed all of them with high marks! My family is so proud. We're planning a trip to Ohrid next week to celebrate.
+>
+> How is your English class going? I've already started watching English movies to practice.
+>
+> Write back soon!
+>
+> Best wishes,
+> Ana
+
+## Description of a person
+A **description** tells what someone looks like and what their personality is.
+
+### Physical appearance (adjectives)
+- **Height:** tall, short, medium height
+- **Build:** slim, slender, athletic, muscular, overweight
+- **Hair:** long, short, curly, straight, blonde, brunette, red
+- **Eyes:** blue, brown, green, hazel
+- **Face:** round, oval, square, with freckles, with glasses
+
+### Personality (adjectives)
+- **Positive:** kind, friendly, generous, honest, brave, creative, hardworking
+- **Negative:** rude, lazy, selfish, mean, dishonest
+- **Other:** quiet, talkative, shy, outgoing, serious, funny
+
+### Adjective suffixes
+| Suffix | Example |
+|--------|---------|
+| -ful | helpful, careful |
+| -less | careless, useless |
+| -y | sleepy, funny |
+| -ous | famous, dangerous |
+| -ive | active, creative |
+| -able | comfortable, lovable |
+
+## Example description
+> My best friend Petar is a tall, athletic boy with short brown hair and green eyes. He's very friendly and outgoing, but also serious about his studies. He loves football and plays in our school team. He's also incredibly hardworking and helpful — always ready to help others with homework.
+
+**Поими:** personal letter, structure, description, physical appearance, personality, adjective suffixes.`,
+          exercises: [
+            {
+              id: 'eeng9-1-4',
+              type: 'multiple-choice',
+              question: 'Which is the correct order for a personal letter?',
+              options: [
+                'Greeting → Signature → Body',
+                'Address/Date → Greeting → Body → Closing → Signature',
+                'Body → Address → Greeting',
+                'Signature → Greeting → Body',
+              ],
+              correct: 'Address/Date → Greeting → Body → Closing → Signature',
+              explanation: 'A personal letter follows this structure: address & date (top), greeting, opening paragraph, main body, closing paragraph, sign-off, signature.',
+            },
+            {
+              id: 'eeng9-1-5',
+              type: 'multiple-choice',
+              question: 'Which adjective describes a personality (not appearance)?',
+              options: ['Tall', 'Curly', 'Friendly', 'Blonde'],
+              correct: 'Friendly',
+              explanation: '"Friendly" describes personality. Tall, curly, blonde describe physical appearance.',
+            },
+            {
+              id: 'eeng9-1-6',
+              type: 'true-false',
+              question: 'The suffix "-ful" usually creates positive adjectives (helpful, careful, beautiful).',
+              correct: 'точно',
+              explanation: 'Correct. "-ful" means "full of" — helpful = full of help, careful = full of care, beautiful = full of beauty.',
+            },
+          ],
+        },
+        {
+          id: 'eng9-1-3',
+          title: 'Speaking — Question tags and conversations',
+          content: `## Question tags
+**Question tags** are short questions added to the end of a statement to confirm information or invite agreement.
+
+## Formation rule
+- **Positive statement → negative tag**
+- **Negative statement → positive tag**
+
+| Statement | Tag |
+|-----------|-----|
+| You are a student, | aren't you? |
+| She isn't here, | is she? |
+| He can swim, | can't he? |
+| You don't like it, | do you? |
+| They have arrived, | haven't they? |
+
+## With auxiliary verbs
+Use the **same auxiliary** as in the statement:
+- *You **are** Macedonian, **aren't** you?*
+- *She **has** finished, **hasn't** she?*
+- *They **will** come, **won't** they?*
+
+## Without auxiliary (Present Simple, Past Simple)
+Use **do/does/did**:
+- *You **like** pizza, **don't** you?*
+- *He **works** here, **doesn't** he?*
+- *They **went** home, **didn't** they?*
+
+## Intonation
+- **Rising intonation** = real question (you're not sure)
+- **Falling intonation** = expecting agreement
+
+## Examples in conversation
+- *"You're coming to the party, aren't you?" → Yes, of course!*
+- *"She doesn't speak English, does she?" → Actually, she does.*
+- *"You've been to London, haven't you?" → Yes, twice!*
+
+## Using present tenses in conversation
+
+### Present Simple — habits, routines, facts
+- *I **study** English every day.*
+- *Water **boils** at 100°C.*
+
+### Present Continuous — actions happening now
+- *I **am studying** for my exam right now.*
+- *They **are playing** football outside.*
+
+### Present Perfect — completed actions affecting now
+- *I **have studied** English for 5 years.*
+- *She **has just arrived**.*
+
+## Comparing
+| Sentence | Tense |
+|----------|-------|
+| Peter and Sally study Mandarin. | Habit (Simple) |
+| Peter and Sally are studying Farsi. | Right now (Continuous) |
+| Peter and Sally have studied Mandarin. | Started in past, complete (Perfect) |
+
+## Conversation tips
+- Make eye contact
+- Show interest with "Really?", "Wow", "That's amazing"
+- Ask follow-up questions
+- Use question tags to keep the conversation going
+
+**Поими:** question tags, auxiliary verbs, intonation, present tenses comparison.`,
+          exercises: [
+            {
+              id: 'eeng9-1-7',
+              type: 'multiple-choice',
+              question: 'Complete: "You haven\'t finished your homework, ___?"',
+              options: ['do you', 'have you', "haven't you", 'will you'],
+              correct: 'have you',
+              explanation: 'Negative statement → positive tag. "Haven\'t finished" → "have you?" The auxiliary "have" stays the same.',
+            },
+            {
+              id: 'eeng9-1-8',
+              type: 'multiple-choice',
+              question: 'Complete: "Mary _____ the way to the doctor\'s."',
+              options: ['is knowing', 'knows', 'has known', 'knew'],
+              correct: 'knows',
+              explanation: '"Know" is a stative verb (not used in continuous). Present Simple expresses a fact. So: "Mary knows the way."',
+            },
+            {
+              id: 'eeng9-1-9',
+              type: 'true-false',
+              question: 'For question tags, a positive statement gets a negative tag, and vice versa.',
+              correct: 'точно',
+              explanation: 'Correct. "You are coming, aren\'t you?" (positive + negative). "You are not coming, are you?" (negative + positive).',
+            },
+          ],
+        },
+        {
+          id: 'eng9-1-4',
+          title: 'Writing — Personal letter and description',
+          content: `## Steps for writing a personal letter
+
+### Step 1: Plan
+- Who am I writing to?
+- What do I want to say?
+- What information do I want to share?
+
+### Step 2: Structure
+1. **Heading:** your address + date
+2. **Greeting:** "Dear [name]," or "Hi [name],"
+3. **Opening paragraph:** brief introduction, why you're writing
+4. **Body paragraphs:** main content, news, requests
+5. **Closing paragraph:** wishes, plans for next contact
+6. **Sign-off:** "Best wishes," "Love," "Take care,"
+7. **Signature:** your name
+
+### Step 3: Use proper tenses
+- **Recent events:** Present Perfect ("I've just bought...")
+- **Past events:** Past Simple ("Last week I went...")
+- **Current situations:** Present Simple/Continuous
+- **Plans:** "I'm going to..." or "I'll..."
+
+### Step 4: Use articles correctly
+- **A/An** — first mention, indefinite
+  - *I bought a book yesterday.*
+- **The** — specific, already mentioned, unique
+  - *The book is very interesting.*
+- **No article** — general, plural, abstract
+  - *I love books.*
+
+## Common phrases for personal letters
+
+### Opening
+- Thanks for your letter
+- How are you?
+- I was glad to hear from you
+- Sorry I haven't written for so long
+
+### Closing
+- Write back soon
+- Hope to hear from you
+- Looking forward to your reply
+- Take care
+- Give my love to your family
+
+## Example complete letter
+
+> 12 Rosa Luxemburg
+> Skopje 1000
+> 15 March 2024
+>
+> Hi Sarah,
+>
+> Thanks for your last email! It was great to hear about your trip to Italy. I've been wanting to ask you so many questions about Rome!
+>
+> Life has been busy here. I've just finished my mid-term exams (passed them all!), and I'm preparing for the school spring concert. I play guitar with the school band — we've been practising for weeks!
+>
+> Next month I'm going to visit my cousin in Skopje. We're planning to go hiking on Vodno mountain. Do you have any plans for summer? I'd love to hear them.
+>
+> Write back when you have time!
+>
+> Take care,
+> Petra
+
+## Writing a description of a person
+
+### Structure
+1. **Introduction:** who is the person, relationship
+2. **Physical appearance:** age, height, build, hair, eyes, clothes
+3. **Personality:** key traits with examples
+4. **Conclusion:** what you think about them, why they're special
+
+### Tips
+- Use varied adjectives
+- Use sense verbs: looks, seems, appears
+- Give specific examples
+- Show, don't just tell
+
+## Common mistakes to avoid
+- Forgetting articles (a, an, the)
+- Wrong tense use
+- Direct translation from Macedonian
+- Too informal expressions in formal situations
+
+**Поими:** writing process, articles, opening/closing phrases, descriptions structure.`,
+          exercises: [
+            {
+              id: 'eeng9-1-10',
+              type: 'multiple-choice',
+              question: 'Complete: "I bought ___ book yesterday. ___ book is very interesting."',
+              options: ['a / A', 'a / The', 'the / a', 'the / the'],
+              correct: 'a / The',
+              explanation: 'First mention = "a" (indefinite). Second mention (already known) = "the" (specific). Standard article usage.',
+            },
+            {
+              id: 'eeng9-1-11',
+              type: 'multiple-choice',
+              question: 'Which is an appropriate closing for a personal letter to a friend?',
+              options: ['Sincerely yours', 'Take care', 'Best regards from the management', 'Faithfully'],
+              correct: 'Take care',
+              explanation: '"Take care" is informal and friendly — perfect for letters to friends. "Sincerely yours" and "Faithfully" are formal.',
+            },
+            {
+              id: 'eeng9-1-12',
+              type: 'true-false',
+              question: 'When writing a description of a person, you should give specific examples to support your statements.',
+              correct: 'точно',
+              explanation: 'Correct. Instead of just saying "She is kind", give an example: "She always helps her friends with homework." Show, don\'t just tell.',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'eng9-2',
+      title: 'Theme 2: My macro world — settlement, city, country',
+      lessons: [
+        {
+          id: 'eng9-2-1',
+          title: 'Listening — Instructions and clarification',
+          content: `## Following instructions
+When listening to instructions, focus on:
+- **Action verbs** (turn, go, take, find, walk, cross)
+- **Prepositions** (left, right, at, on, in)
+- **Sequence words** (first, then, next, after that, finally)
+
+## Common instruction phrases
+- **Turn left/right** at the corner
+- **Go straight** ahead
+- **Cross the road**
+- **Walk for** 5 minutes
+- **You'll see** the building on your left
+- **It's between** the bank and the post office
+- **It's next to** the school
+
+## Example: Asking for directions
+> A: Excuse me, how do I get to the museum?
+> B: Sure. **Go straight** for two blocks. **Turn right** at the supermarket. The museum is **on your left**, next to the park.
+> A: Thanks!
+
+## Asking for clarification
+When you don't understand, use these phrases:
+
+### Polite phrases
+- Could you say it again, please?
+- Could you say it more slowly?
+- Could you **say it in another way**?
+- I didn't catch that.
+- Sorry, what was that?
+- Could you spell it, please?
+
+### Asking for specifics
+- What do you mean by...?
+- Could you give me an example?
+- What's that in English?
+- How do you spell it?
+
+## Example dialogue with clarification
+
+> A: The shop is on the corner of Macedonia and Partisanska Street.
+> B: **Sorry, could you say it again, please?**
+> A: Sure. The shop is on the corner of Macedonia and Partisanska Street.
+> B: **Could you spell "Partisanska", please?**
+> A: P-A-R-T-I-S-A-N-S-K-A.
+> B: Got it, thanks!
+
+## Listening tips
+- Don't worry about understanding every word
+- Focus on key information (names, places, times, numbers)
+- Listen for the main idea first
+- Ask for clarification when needed
+
+## Words for places
+- bus station (автобуска станица)
+- train station (железничка станица)
+- cinema (кино)
+- theatre (театар)
+- museum (музеј)
+- library (библиотека)
+- shopping centre (трговски центар)
+- restaurant (ресторан)
+- park (парк)
+- hospital (болница)
+- police station (полициска станица)
+- post office (пошта)
+
+**Поими:** instructions, directions, clarification, polite phrases, places.`,
+          exercises: [
+            {
+              id: 'eeng9-2-1',
+              type: 'multiple-choice',
+              question: 'Which phrase asks someone to repeat?',
+              options: [
+                'How are you?',
+                'Could you say it again, please?',
+                'What\'s your name?',
+                'How do I get there?',
+              ],
+              correct: 'Could you say it again, please?',
+              explanation: '"Could you say it again, please?" is a polite way to ask someone to repeat what they said. Also: "Could you say it more slowly?"',
+            },
+            {
+              id: 'eeng9-2-2',
+              type: 'multiple-choice',
+              question: 'Which preposition is correct: "The cinema is ___ the bank."',
+              options: ['next to', 'in', 'on top of', 'around'],
+              correct: 'next to',
+              explanation: '"Next to" means beside or adjacent to. Common preposition for location relations: next to, in front of, behind, opposite, between.',
+            },
+            {
+              id: 'eeng9-2-3',
+              type: 'true-false',
+              question: 'When listening to directions, key information includes action verbs, prepositions, and sequence words.',
+              correct: 'точно',
+              explanation: 'Correct. Focus on actions (turn, go), prepositions (left, right, at), and sequence (first, then, finally) to follow directions effectively.',
+            },
+          ],
+        },
+        {
+          id: 'eng9-2-2',
+          title: 'Reading — Reading about places, comparing',
+          content: `## Reading texts about places
+When reading about a place, look for:
+- **Location** (where is it?)
+- **Description** (what does it look like?)
+- **Features** (what does it have?)
+- **History** (what happened there?)
+- **People** (who lives/works there?)
+
+## Comparative and superlative adjectives
+
+### Short adjectives (1 syllable): -er, -est
+| Adjective | Comparative | Superlative |
+|-----------|-------------|-------------|
+| big | bigger | the biggest |
+| tall | taller | the tallest |
+| fast | faster | the fastest |
+| small | smaller | the smallest |
+
+### Long adjectives (2+ syllables): more, the most
+| Adjective | Comparative | Superlative |
+|-----------|-------------|-------------|
+| beautiful | more beautiful | the most beautiful |
+| expensive | more expensive | the most expensive |
+| interesting | more interesting | the most interesting |
+
+### Irregular
+| Adjective | Comparative | Superlative |
+|-----------|-------------|-------------|
+| good | better | the best |
+| bad | worse | the worst |
+| far | farther/further | the farthest/furthest |
+
+## Comparing places
+
+### Examples
+- *London is **bigger than** Skopje.*
+- *Paris is **more romantic than** Berlin.*
+- *Mount Everest is **the tallest** mountain in the world.*
+- *Skopje is **smaller than** Athens, but it has **better** food (in my opinion!).*
+
+## Comparing with as...as
+- *Macedonian food is **as tasty as** Greek food.*
+- *Bitola isn't **as big as** Skopje.*
+
+## Reading example: Skopje vs Ohrid
+
+> Skopje and Ohrid are two of Macedonia's most beautiful cities, but they are very different.
+>
+> Skopje, the capital, is the largest city with over 500,000 people. It's a busy, modern city with many businesses, restaurants, and cultural events. The Stone Bridge and Macedonia Square are famous landmarks.
+>
+> Ohrid is smaller (around 50,000 people) but older. It sits next to Lake Ohrid, one of the oldest and deepest lakes in Europe. The city has many ancient churches and is on UNESCO's World Heritage list. It's more peaceful than Skopje and is famous for its beautiful nature.
+
+## Comprehension questions
+After reading:
+1. Which city is bigger?
+2. What is Ohrid famous for?
+3. Why is Ohrid on the UNESCO list?
+4. Which city is more peaceful?
+
+## Reading tips
+- Read the title first
+- Skim for main idea
+- Read carefully for details
+- Look up new words (or guess from context)
+- Compare similarities and differences
+
+## Useful vocabulary
+- **landmark** — important building or feature
+- **heritage** — cultural inheritance
+- **ancient** — very old
+- **modern** — new, contemporary
+- **peaceful** — quiet and calm
+- **busy** — full of activity
+- **scenic** — beautiful natural views
+
+**Поими:** comparative, superlative, irregular adjectives, comparing places.`,
+          exercises: [
+            {
+              id: 'eeng9-2-4',
+              type: 'multiple-choice',
+              question: 'What is the comparative of "good"?',
+              options: ['gooder', 'more good', 'better', 'goodest'],
+              correct: 'better',
+              explanation: '"Good" is irregular. Comparative: better. Superlative: the best. Memorize: good-better-best, bad-worse-worst.',
+            },
+            {
+              id: 'eeng9-2-5',
+              type: 'multiple-choice',
+              question: 'Complete: "Mount Everest is ___ mountain in the world."',
+              options: ['the taller', 'the most tall', 'the tallest', 'more tall'],
+              correct: 'the tallest',
+              explanation: 'Superlative of short adjective = the + adjective + -est. "Tallest" is the correct form.',
+            },
+            {
+              id: 'eeng9-2-6',
+              type: 'true-false',
+              question: 'For long adjectives (2+ syllables), we use "more" for comparative and "the most" for superlative.',
+              correct: 'точно',
+              explanation: 'Correct. Long adjectives: beautiful → more beautiful → the most beautiful. Short adjectives use -er/-est.',
+            },
+          ],
+        },
+        {
+          id: 'eng9-2-3',
+          title: 'Speaking — Urban legends conversation',
+          content: `## Urban legends
+**Urban legends** are stories (often unverified) that spread through word of mouth. They often involve mysterious or scary events.
+
+## Examples of urban legends
+- The hitchhiker who disappears
+- The mysterious face in the mirror
+- Cursed chain letters
+- The hook on the car door
+- Bloody Mary in the mirror
+
+## Useful vocabulary
+
+### Telling stories
+- It seems that...
+- I've heard that...
+- Someone told me that...
+- According to...
+- The story goes that...
+
+### Reacting to stories
+- That's amazing!
+- No way!
+- You're kidding!
+- Really? Tell me more.
+- I can't believe it!
+- That sounds scary.
+- I don't believe it.
+
+### Expressing doubt
+- I'm not sure if...
+- It might be...
+- It could be just a story.
+- I doubt it.
+- It probably isn't true.
+
+## Example conversation
+> Nella: You know what? Monica is leaving!
+> Zahra: My goodness! Is that so?
+> Nella: I mean you can't tell her your secret.
+> Zahra: Oh, c'mon, don't have some doubts!
+> Nella: I've heard the urban legend about the chain letter...
+> Zahra: What chain letter?
+> Nella: Everybody knows this urban legend. You get a chain letter, an email or a communiqué, and if you don't pass it on, there'll be some terrible consequences. But it seems that this urban legend has been around for years!
+
+## Past Simple vs Past Continuous
+
+### Past Simple
+- Completed actions in the past
+- *Yesterday, I **walked** to school.*
+- *They **lived** in Paris in 2010.*
+
+### Past Continuous
+- Actions in progress at a specific past time
+- *At 6 PM yesterday, I **was studying**.*
+- *They **were playing** football when it started to rain.*
+
+### Together
+- *While I **was reading**, the phone **rang**.*
+- *When they **arrived**, we **were having** dinner.*
+
+## Passive voice (Past Simple)
+**Subject + was/were + past participle**
+
+- *The cake **was made** by my mum.*
+- *Many books **were stolen** from the library.*
+- *The urban legend **was started** decades ago.*
+
+## When to use passive
+- When we don't know who did the action
+- When the action is more important than who did it
+- For formal writing
+
+## Speaking tips for telling stories
+- Set the scene (when, where)
+- Use past tenses correctly
+- Use linking words: first, then, suddenly, finally
+- Show emotion with intonation
+- Pause for dramatic effect
+
+**Поими:** urban legends, storytelling, Past Simple, Past Continuous, passive voice.`,
+          exercises: [
+            {
+              id: 'eeng9-2-7',
+              type: 'multiple-choice',
+              question: 'What is the passive form of "Someone stole my bike yesterday"?',
+              options: [
+                'My bike stole yesterday.',
+                'My bike was stolen yesterday.',
+                'My bike were stolen yesterday.',
+                'My bike has been stolen yesterday.',
+              ],
+              correct: 'My bike was stolen yesterday.',
+              explanation: 'Past Simple passive = was/were + past participle. "Bike" (singular) + "was" + "stolen". "Yesterday" is a time marker for Past Simple.',
+            },
+            {
+              id: 'eeng9-2-8',
+              type: 'multiple-choice',
+              question: 'Complete: "While I ___ TV, the phone rang."',
+              options: ['watched', 'was watching', 'have watched', 'am watching'],
+              correct: 'was watching',
+              explanation: 'Past Continuous (was watching) describes an action in progress when another action (phone rang, Past Simple) interrupted it.',
+            },
+            {
+              id: 'eeng9-2-9',
+              type: 'true-false',
+              question: 'Urban legends are usually verified, true stories.',
+              correct: 'неточно',
+              explanation: 'Incorrect. Urban legends are typically unverified stories spread through word of mouth. They often have mysterious or supernatural elements but rarely turn out to be true.',
+            },
+          ],
+        },
+        {
+          id: 'eng9-2-4',
+          title: 'Writing — Story or urban legend',
+          content: `## Writing a story or urban legend
+
+### Structure
+1. **Setting** — when and where
+2. **Characters** — who is involved
+3. **Beginning** — what was happening
+4. **Middle** — main events, conflict
+5. **End** — resolution, conclusion
+
+### Tenses for storytelling
+- **Past Simple** for main events: *He walked into the house.*
+- **Past Continuous** for background actions: *It was raining heavily.*
+- **Past Perfect** for actions before the main events: *She had locked the door before going to bed.*
+- **Passive** when the action is more important than the doer: *The door was opened slowly.*
+
+## Linking words for stories
+| Function | Words |
+|----------|-------|
+| Time | first, then, after that, suddenly, meanwhile, finally |
+| Adding | also, furthermore, moreover |
+| Contrast | however, but, although, despite |
+| Reason | because, since, as |
+| Result | so, therefore, as a result |
+
+## Example urban legend
+
+> **The Hitchhiker**
+>
+> One dark and stormy night, John was driving home from a long business trip. The road was empty and the rain was falling heavily. Suddenly, he saw a young woman standing by the side of the road, soaked from the rain.
+>
+> She was wearing an old-fashioned white dress. John stopped his car and offered her a ride. She nodded silently and got into the back seat. She told him she lived in an old house just five miles down the road.
+>
+> When they arrived at the house, John turned around to talk to her — but the back seat was empty! Confused, he knocked on the door of the old house. An elderly woman answered.
+>
+> "I just gave a ride to your daughter," John said. "She just disappeared!"
+>
+> The elderly woman's face turned pale. "My daughter died ten years ago. She was walking home in a storm just like this..."
+
+## Tips for writing stories
+
+### Show, don't tell
+- Bad: *She was scared.*
+- Good: *Her hands were shaking and her heart was racing.*
+
+### Use sensory details
+- See: *The moon was bright.*
+- Hear: *The wind howled.*
+- Feel: *Her skin felt cold.*
+- Smell: *The air smelled like rain.*
+
+### Build suspense
+- Use short sentences for tension
+- Slow down at key moments
+- Use foreshadowing (hints about what's coming)
+
+## Cohesive writing
+**Cohesive** = sticks together logically.
+
+### Pronoun reference
+- Use **he/she/it/they** to refer back to people/things mentioned
+
+### Repetition with variation
+- Don't always repeat the same word — use synonyms
+- *He saw a woman. The woman was wearing white. She walked toward him.*
+
+### Consistent tenses
+- Stick to past tenses for storytelling
+
+## Common mistakes
+- Mixing past and present tenses
+- Forgetting linking words
+- Telling instead of showing
+- No clear ending
+
+## Checklist
+- ✓ Setting clear?
+- ✓ Characters introduced?
+- ✓ Clear beginning, middle, end?
+- ✓ Past tenses used correctly?
+- ✓ Linking words used?
+- ✓ Sensory details included?
+
+**Поими:** story structure, linking words, sensory details, suspense, cohesive writing.`,
+          exercises: [
+            {
+              id: 'eeng9-2-10',
+              type: 'multiple-choice',
+              question: 'Which sentence is better for "showing" emotion?',
+              options: [
+                'She was very angry.',
+                'Her face turned red and her hands clenched into fists.',
+                'She felt anger.',
+                'Anger was inside her.',
+              ],
+              correct: 'Her face turned red and her hands clenched into fists.',
+              explanation: '"Show, don\'t tell" — instead of stating "she was angry", describe the physical signs that show anger. More vivid and engaging.',
+            },
+            {
+              id: 'eeng9-2-11',
+              type: 'multiple-choice',
+              question: 'Which is a time linking word for storytelling?',
+              options: ['However', 'Suddenly', 'Therefore', 'Because'],
+              correct: 'Suddenly',
+              explanation: '"Suddenly" indicates a sudden time change. Other time linkers: first, then, after that, meanwhile, finally. "However" = contrast, "therefore" = result, "because" = reason.',
+            },
+            {
+              id: 'eeng9-2-12',
+              type: 'true-false',
+              question: 'In storytelling, you should mix past and present tenses to make it interesting.',
+              correct: 'неточно',
+              explanation: 'Incorrect. Stay consistent with past tenses throughout the story for clarity. Mixing tenses confuses readers. Only switch tenses if there\'s a clear reason (like dialogue or flashbacks).',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'eng9-3',
+      title: 'Theme 3: Our education, our future',
+      lessons: [
+        {
+          id: 'eng9-3-1',
+          title: 'Listening — Modal verbs for obligation and advice',
+          content: `## Modal verbs
+**Modal verbs** express ability, permission, obligation, advice, possibility, etc. They don't change form for different subjects.
+
+## Main modal verbs
+| Modal | Meaning |
+|-------|---------|
+| can | ability / permission |
+| could | past ability / polite request |
+| may | possibility / permission |
+| might | weak possibility |
+| must | strong obligation / certainty |
+| have to | obligation (external) |
+| should | advice / recommendation |
+| ought to | advice (formal) |
+| will | future / decision |
+| would | hypothetical / polite request |
+| shall | offer / suggestion |
+
+## Modals of obligation
+
+### Must
+- Strong obligation, internal feeling
+- *I **must** study for my exam tomorrow.*
+- *Students **must** wear uniforms in this school.*
+
+### Have to
+- External obligation (from rules, authority)
+- *I **have to** wake up at 6 AM for school.*
+- *We **have to** wear masks during the pandemic.*
+
+### Mustn't (must not)
+- Strong prohibition — DO NOT do this!
+- *You **mustn't** smoke here.*
+- *Students **mustn't** leave bicycles here.*
+- *Policemen **mustn't** drink on duty.*
+
+### Don't have to
+- No obligation — it's NOT necessary
+- *I **don't have to** go to work tomorrow — it's a holiday.*
+
+## Modals of advice
+
+### Should / Shouldn't
+- Advice, recommendation
+- *You **should** eat more vegetables.*
+- *You **shouldn't** stay up late before exams.*
+- *You **mustn't** watch so much television. It's really bad for your eyes.* (stronger than should)
+
+### Had better
+- Strong advice (sometimes warning)
+- *You **had better** study now or you'll fail.*
+
+## Examples in school context
+
+### Rules (must / have to / mustn't)
+- *Students **must** be on time.*
+- *We **have to** complete homework every day.*
+- *You **mustn't** talk during the exam.*
+- *Phones **must not** be used in class.*
+
+### Advice (should / shouldn't)
+- *You **should** take notes in class.*
+- *You **shouldn't** copy from others.*
+- *You **should** ask questions if you don't understand.*
+
+## Asking and giving advice
+- *What **should** I do? You **should** see a doctor.*
+- *Do I **have to** wash the fruit before eating? Yes, you **must**.*
+- *I'd like to say that young people **have to** be more independent.*
+
+## Listening tips for modals
+- Listen for the modal verb
+- Listen for the base form of the main verb after it (no -s, no -ed!)
+- Negative modals are often contracted (mustn't, shouldn't, can't)
+
+**Поими:** modal verbs, must, have to, should, advice, obligation, prohibition.`,
+          exercises: [
+            {
+              id: 'eeng9-3-1',
+              type: 'multiple-choice',
+              question: 'Which sentence expresses a strong prohibition?',
+              options: [
+                'You should not smoke.',
+                'You mustn\'t smoke.',
+                'You don\'t have to smoke.',
+                'You might not smoke.',
+              ],
+              correct: 'You mustn\'t smoke.',
+              explanation: '"Mustn\'t" = strong prohibition (DO NOT do this!). "Should not" = advice. "Don\'t have to" = not necessary. "Might not" = possibility.',
+            },
+            {
+              id: 'eeng9-3-2',
+              type: 'multiple-choice',
+              question: 'Complete: "If you want to do well on the exam, you ___ study every day."',
+              options: ['must', 'should', 'don\'t have to', 'mustn\'t'],
+              correct: 'should',
+              explanation: '"Should" gives advice. "Must" is strong obligation. Here it\'s a suggestion for success — "should" is appropriate.',
+            },
+            {
+              id: 'eeng9-3-3',
+              type: 'true-false',
+              question: 'After modal verbs (must, should, can), we use the base form of the verb (without "to").',
+              correct: 'точно',
+              explanation: 'Correct. Modal + base verb: "I must study" (not "I must to study"), "She should go" (not "she should goes"). Exception: "have to" uses "to".',
+            },
+          ],
+        },
+        {
+          id: 'eng9-3-2',
+          title: 'Reading — School and educational texts',
+          content: `## Reading school texts
+School texts are factual texts about education, schools, students, careers.
+
+## Example text
+
+> **Education in England**
+>
+> In England, most schoolchildren start school at age 5. Primary school lasts until age 11. Then students go to secondary school until age 16, when they take their GCSE exams.
+>
+> Many students continue to A-Level studies (ages 16-18), preparing for university. University takes 3-4 years for a bachelor's degree.
+>
+> Ben works as a bank teller, so he has to follow strict rules about money and customer service. He had to study finance at university.
+
+## Identifying passive voice in reading
+
+### How to spot it
+Passive voice = **form of "be" + past participle**
+
+### Examples
+- The exam **was given** by the teacher.
+- Many books **are read** by students.
+- The school **was built** in 1950.
+- Students **must be informed** of the rules.
+
+### When passive is used in texts
+- When the doer is unknown or unimportant
+- When the action is more important than who did it
+- In formal/academic writing
+- In news reports
+- In scientific texts
+
+## Comparing different sources
+
+### Same topic, different sources
+- A school textbook might present facts neutrally
+- A newspaper article might add opinions
+- A school website promotes its features
+
+### Compare:
+1. **Tone** (formal vs informal)
+2. **Purpose** (inform, persuade, advertise)
+3. **Information** (what they include or leave out)
+4. **Examples** (different students, different settings)
+
+## Distinguishing facts from opinions
+
+### Facts
+- Can be verified
+- Use objective language
+- Often include numbers, dates, names
+
+### Opinions
+- Personal views
+- Use words like: think, believe, feel, in my opinion
+- May use evaluation: best, worst, beautiful, terrible
+
+### Examples
+- **Fact:** Skopje is the capital of Macedonia.
+- **Opinion:** Skopje is the most beautiful city in the world.
+- **Fact:** Macedonian schools have 9 grades.
+- **Opinion:** Macedonian schools should have more art classes.
+
+## Health and education vocabulary
+- attendance
+- biology, chemistry, physics, math
+- campus, classroom, gym
+- curriculum, syllabus, lesson plan
+- diploma, certificate, degree
+- elementary/primary, secondary, high school, university
+
+## Reading strategies
+
+### Skimming
+- Read quickly for main idea
+- Look at title, headings, pictures
+- Read first sentence of each paragraph
+
+### Scanning
+- Look for specific information
+- Search for keywords, names, numbers
+
+### Detailed reading
+- Read carefully, sentence by sentence
+- Make notes
+- Look up new words
+
+**Поими:** school texts, passive voice in reading, fact vs opinion, comparing sources, reading strategies.`,
+          exercises: [
+            {
+              id: 'eeng9-3-4',
+              type: 'multiple-choice',
+              question: 'Which sentence is in passive voice?',
+              options: [
+                'The teacher writes on the board.',
+                'The book was written by Tolkien.',
+                'I read a book every week.',
+                'They are reading.',
+              ],
+              correct: 'The book was written by Tolkien.',
+              explanation: 'Passive voice = form of "be" + past participle. "Was written" is passive. The subject (book) receives the action (writing).',
+            },
+            {
+              id: 'eeng9-3-5',
+              type: 'multiple-choice',
+              question: 'Which is a fact (not an opinion)?',
+              options: [
+                'Macedonian food is the best in the world.',
+                'I think English is easy.',
+                'Macedonia became independent in 1991.',
+                'School should be shorter.',
+              ],
+              correct: 'Macedonia became independent in 1991.',
+              explanation: 'A fact can be verified. "Macedonia became independent in 1991" is verifiable history. The others are personal opinions ("best", "I think", "should").',
+            },
+            {
+              id: 'eeng9-3-6',
+              type: 'true-false',
+              question: 'Skimming means reading quickly to get the main idea, while scanning means looking for specific information.',
+              correct: 'точно',
+              explanation: 'Correct. Skimming = overview (main idea, gist). Scanning = locating specific details (names, numbers, keywords). Both are useful reading strategies.',
+            },
+          ],
+        },
+        {
+          id: 'eng9-3-3',
+          title: 'Speaking — Future plans and subject/object questions',
+          content: `## Talking about future plans
+
+### Going to (planned future)
+- *I'**m going to** study medicine after high school.*
+- *We'**re going to** travel to Italy this summer.*
+- For decisions already made
+
+### Will (predictions or decisions made now)
+- *I think it **will** rain tomorrow.* (prediction)
+- *I'**ll** help you with that.* (offer / decision now)
+
+### Present Continuous (arrangements)
+- *I**'m meeting** my friend at 5 PM.* (specific time)
+- *We**'re going** to Ohrid next weekend.* (fixed plan)
+
+## Subject vs Object questions
+
+### Subject questions
+- Ask about the **subject** (who/what did the action)
+- **No auxiliary needed**
+- Same word order as a statement
+
+#### Examples
+- *Who **lives** here?*
+- *What **happened** yesterday?*
+- *Which book **is** on the table?*
+
+### Object questions
+- Ask about the **object** (who/what received the action)
+- **Need auxiliary** (do/does/did, has/have, will, etc.)
+
+#### Examples
+- *Who **do** you **live** with?*
+- *What **did** they **eat**?*
+- *Which book **are** you **reading**?*
+
+### Compare
+| Subject | Object |
+|---------|--------|
+| Who called you? (Who = subject) | Who did you call? (Who = object) |
+| What broke? | What did you break? |
+| Which student answered? | Which student did the teacher praise? |
+
+## Expressing opinions
+
+### Phrases for opinions
+- I think that...
+- I believe that...
+- In my opinion...
+- It seems to me that...
+- I'd say that...
+
+### Examples
+- *I'**d like to say** that young people have to be more independent.*
+- *I **think** that our education fails us.*
+- *I **believe** that I did the task well. What do you think?*
+
+### Reporting clauses with "that"
+- *I think **that** he is right.*
+- *She said **that** she would come.*
+- *He believes **that** education is important.*
+
+## Comparing opinions
+- I agree with you.
+- That's a good point.
+- I see what you mean.
+- I'm afraid I disagree.
+- I see it differently.
+- On the other hand...
+
+## Education and future vocabulary
+- attendance, biology, chemistry, campus
+- career, profession, occupation
+- university, college, vocational school
+- bachelor's, master's, PhD
+- degree, diploma, certificate
+- exam, test, assignment
+
+## Conversation example
+
+> A: What are you going to do after high school?
+> B: I think I'm going to study medicine. What about you?
+> A: I'm not sure yet. I might study computer science.
+> B: That's cool! Who inspired you?
+> A: My older brother. He's a programmer.
+> B: Do you have to study a lot for that?
+> A: Yes, you must work very hard. But I love computers!
+
+**Поими:** future plans, going to, will, present continuous, subject/object questions, opinions.`,
+          exercises: [
+            {
+              id: 'eeng9-3-7',
+              type: 'multiple-choice',
+              question: 'Which is a subject question?',
+              options: [
+                'What did you do?',
+                'Who lives in this house?',
+                'Where are you going?',
+                'When will you arrive?',
+              ],
+              correct: 'Who lives in this house?',
+              explanation: '"Who lives in this house?" — "Who" asks about the subject (the person who lives). No auxiliary needed. Object questions need auxiliaries like "did you do".',
+            },
+            {
+              id: 'eeng9-3-8',
+              type: 'multiple-choice',
+              question: 'Which expresses a planned future action?',
+              options: [
+                'I want to study.',
+                'I am going to study medicine.',
+                'I have studied.',
+                'I study every day.',
+              ],
+              correct: 'I am going to study medicine.',
+              explanation: '"Going to" expresses planned future actions (decisions made before now). "Will" is for new decisions or predictions.',
+            },
+            {
+              id: 'eeng9-3-9',
+              type: 'true-false',
+              question: 'Subject questions need an auxiliary verb (do, does, did).',
+              correct: 'неточно',
+              explanation: 'Incorrect. Subject questions do NOT need auxiliaries. "Who broke the window?" (not "Who did break...?"). Object questions need auxiliaries: "What did you break?"',
+            },
+          ],
+        },
+        {
+          id: 'eng9-3-4',
+          title: 'Writing — Description of school and future plans',
+          content: `## Writing about your school
+
+### Structure
+1. **Introduction:** name and location of school
+2. **Description:** size, students, teachers
+3. **Facilities:** classrooms, library, gym, etc.
+4. **Subjects:** what you study
+5. **Activities:** sports, clubs, events
+6. **Your opinion:** what you like, what you'd change
+
+### Example
+
+> **My School**
+>
+> I attend Primary School "Kiril and Metodij" in Skopje. It's a large school with about 800 students from grades 1 to 9.
+>
+> Our school has many facilities including a modern gym, a library with over 5,000 books, computer labs, and an outdoor sports field. Each classroom has a smart board for interactive learning.
+>
+> We study many subjects: Macedonian language, mathematics, English, history, geography, biology, chemistry, physics, and art. My favourite subjects are English and biology — I'm planning to study medicine in the future.
+>
+> Besides regular classes, our school offers extracurricular activities like football team, drama club, choir, and a coding club. I'm in the drama club and we perform plays twice a year.
+>
+> Overall, I really enjoy my school. The teachers are dedicated and my classmates are friendly. If I could change one thing, I would make the lunch breaks longer!
+
+## Writing about future plans
+
+### Structure
+1. **Current situation:** where you are now in your education
+2. **Short-term plans:** next 1-3 years
+3. **Long-term plans:** career goals
+4. **Reasons:** why you chose this path
+5. **Steps:** how you'll achieve your goals
+
+### Example
+
+> **My Future Plans**
+>
+> Currently I'm in my final year of primary school. Next year I'm going to start gymnasium and study natural sciences.
+>
+> After gymnasium, I plan to apply to medical school. It's a long programme — 6 years — but I've always wanted to be a doctor. I love biology and I want to help people. My dream is to become a paediatrician.
+>
+> To achieve this, I have to study hard for my entrance exams. I'm also going to volunteer at a hospital next summer to gain experience.
+>
+> Eventually, I hope to work in a children's hospital in Macedonia. I believe our country needs more doctors, especially for children with chronic conditions.
+>
+> It's a challenging path, but I'm determined to succeed!
+
+## Modal verbs for plans and obligations
+
+### Plans
+- *I **will** study hard.*
+- *I **'m going to** apply to university.*
+
+### Necessity
+- *I **must** pass my exams.*
+- *I **have to** work harder.*
+
+### Possibility
+- *I **may** travel abroad.*
+- *I **might** study abroad.*
+
+### Ability
+- *I **can** speak three languages.*
+
+## Useful vocabulary
+
+### Education stages
+- primary school, secondary school, gymnasium, vocational school, university
+
+### Career-related verbs
+- apply for, become, train, study, qualify as, work as, specialize in
+
+### Adjectives for goals
+- challenging, achievable, ambitious, realistic, determined, motivated
+
+## Editing your writing
+
+### Check for:
+- ✓ Correct tenses (present for now, future for plans)
+- ✓ Subject-verb agreement
+- ✓ Articles (a, an, the)
+- ✓ Spelling
+- ✓ Clear paragraphs (one idea per paragraph)
+- ✓ Linking words between sentences
+
+### Common mistakes
+- ❌ "I will to study" → ✓ "I will study"
+- ❌ "She have a plan" → ✓ "She has a plan"
+- ❌ "I'm going to be doctor" → ✓ "I'm going to be a doctor"
+
+**Поими:** school description, future plans, modal verbs, editing, common mistakes.`,
+          exercises: [
+            {
+              id: 'eeng9-3-10',
+              type: 'multiple-choice',
+              question: 'Which sentence is correct?',
+              options: [
+                'I will to study medicine.',
+                'I am going to study medicine.',
+                'I going to study medicine.',
+                'I will studying medicine.',
+              ],
+              correct: 'I am going to study medicine.',
+              explanation: '"Going to" + base verb. "I am going to study" is correct. After "will" we don\'t use "to": "I will study" (not "I will to study").',
+            },
+            {
+              id: 'eeng9-3-11',
+              type: 'multiple-choice',
+              question: 'When writing about future plans, which structure should come first?',
+              options: [
+                'Career goals',
+                'Current situation',
+                'Steps to achieve goals',
+                'Long-term plans',
+              ],
+              correct: 'Current situation',
+              explanation: 'Logical structure: start with where you are now (current situation), then move to short-term plans, long-term plans, reasons, and steps. Build from present to future.',
+            },
+            {
+              id: 'eeng9-3-12',
+              type: 'true-false',
+              question: 'In writing, one paragraph should focus on one main idea.',
+              correct: 'точно',
+              explanation: 'Correct. Good writing has one main idea per paragraph. This makes your text easier to read and understand. Use linking words to connect paragraphs.',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'eng9-4',
+      title: 'Theme 4: One society for all',
+      lessons: [
+        {
+          id: 'eng9-4-1',
+          title: 'Listening — Social topics, formal/informal register',
+          content: `## Register: formal vs informal
+**Register** is how formal or informal your language is. We use different registers in different situations.
+
+## When to use each
+
+### Formal
+- Business meetings
+- School essays
+- Official letters
+- Talking to strangers, elders, officials
+- News reports
+- Academic writing
+
+### Informal
+- Talking to friends and family
+- Casual conversations
+- Text messages with friends
+- Social media (mostly)
+
+## Differences
+
+### Vocabulary
+| Formal | Informal |
+|--------|----------|
+| require | need |
+| obtain | get |
+| commence | start |
+| inquire | ask |
+| purchase | buy |
+| reside | live |
+
+### Phrases
+| Formal | Informal |
+|--------|----------|
+| How do you do? | Hi! / Hey! |
+| I would like... | I want... / I'd like... |
+| Could you please... | Can you...? |
+| Thank you very much. | Thanks! |
+| I am writing to inform you... | Just letting you know... |
+| Sincerely yours, | See you later! |
+
+### Grammar
+- **Formal:** full forms (do not, cannot, will not)
+- **Informal:** contractions (don't, can't, won't)
+
+### Social topics vocabulary
+- **diversity** — variety of people
+- **equality** — being equal
+- **discrimination** — unfair treatment
+- **inclusion** — including everyone
+- **community** — group of people
+- **society** — all people in a country
+- **culture** — way of life
+- **tolerance** — accepting differences
+- **prejudice** — judging without knowing
+- **stereotype** — fixed idea about a group
+
+## Examples of social conversations
+
+### Formal (radio interview)
+> Host: Good morning, Dr. Smith. Thank you for joining us today.
+> Dr. Smith: Good morning. It is a pleasure to be here.
+> Host: Could you tell us about your research on social inclusion?
+> Dr. Smith: Certainly. Our research indicates that...
+
+### Informal (friends chatting)
+> A: Hey! Did you watch that documentary?
+> B: Yeah, it was awesome. The part about disabilities was so cool.
+> A: Right? I think we need to do more in our school.
+> B: Totally agree.
+
+## Listening tips for register
+- Pay attention to vocabulary choice
+- Notice contractions vs full forms
+- Listen for politeness markers (please, would you mind)
+- Watch the speaker's tone
+
+## Quantifiers
+- **A lot of / lots of** — many (informal: lots of)
+- **Many** — countable nouns (many people)
+- **Much** — uncountable nouns (much time, money)
+- **Few / a few** — small number (countable)
+- **Little / a little** — small amount (uncountable)
+- **Some** — positive/offers (some water)
+- **Any** — negatives/questions (any water?)
+- **No / none** — zero
+
+### Examples
+- *There aren't **any** biscuits left.*
+- *There is **no** money in my purse.*
+- *Lots of girls and women work here.*
+- *There are **plenty of** bottles in the fridge.*
+- *Loneliness is a common problem.*
+
+**Поими:** register, formal, informal, contractions, quantifiers, social vocabulary.`,
+          exercises: [
+            {
+              id: 'eeng9-4-1',
+              type: 'multiple-choice',
+              question: 'Which is the formal version of "I want to buy a car"?',
+              options: [
+                'I gotta buy a car.',
+                'I would like to purchase a vehicle.',
+                'I\'m getting a car.',
+                'Buy me a car!',
+              ],
+              correct: 'I would like to purchase a vehicle.',
+              explanation: 'Formal: "would like" (vs "want"), "purchase" (vs "buy"), "vehicle" (vs "car"). Used in business or official contexts.',
+            },
+            {
+              id: 'eeng9-4-2',
+              type: 'multiple-choice',
+              question: 'Which quantifier is used with uncountable nouns?',
+              options: ['many', 'much', 'a few', 'these'],
+              correct: 'much',
+              explanation: '"Much" is for uncountable nouns: much water, much time, much money. "Many" is for countable: many books, many people.',
+            },
+            {
+              id: 'eeng9-4-3',
+              type: 'true-false',
+              question: 'In formal English, we usually avoid contractions (don\'t, can\'t, won\'t).',
+              correct: 'точно',
+              explanation: 'Correct. Formal writing/speaking uses full forms (do not, cannot, will not). Informal contexts allow contractions (don\'t, can\'t, won\'t).',
+            },
+          ],
+        },
+        {
+          id: 'eng9-4-2',
+          title: 'Reading — Conclusions from social texts',
+          content: `## Reading social texts
+Social texts discuss issues affecting society: equality, discrimination, environment, technology, etc.
+
+## Example social text
+
+> **Loneliness in the Modern Age**
+>
+> In today's connected world, more people feel lonely than ever before. Surveys show that 35% of people aged 14-30 feel lonely "often" or "always."
+>
+> Why is this happening? Experts point to several causes:
+> 1. **Social media** — people compare themselves to others online and feel inadequate
+> 2. **Urbanization** — people move to cities and lose community ties
+> 3. **Technology** — texting replaces face-to-face conversation
+> 4. **Busy lifestyles** — people don't have time for friendships
+>
+> The consequences are serious. Lonely people are more likely to have depression, anxiety, and even physical health problems like heart disease.
+>
+> What can we do? Communities are starting programmes to bring people together. Schools teach social skills. People are encouraged to spend less time online and more time with real friends.
+
+## Drawing conclusions
+
+### What is a conclusion?
+A conclusion is what you understand from reading — the message or main point.
+
+### How to draw conclusions
+1. Read the whole text
+2. Look at the title and headings
+3. Identify the main idea of each paragraph
+4. Connect the ideas
+5. Think about the writer's purpose
+
+### Example
+From the text above, we can conclude:
+- Loneliness is a serious modern problem
+- Technology contributes to loneliness despite connecting us
+- Both individuals and communities need to take action
+
+## Comparing forms for expressing habits
+
+### Present Simple (regular habits)
+- *I **walk** to school every day.*
+- *She **drinks** coffee in the morning.*
+
+### Used to (past habits, no longer)
+- *I **used to** play football, but now I prefer basketball.*
+- *We **used to** live in Bitola when I was a child.*
+
+### Would (past repeated actions)
+- *Every summer we **would** visit my grandparents.*
+- *She **would** always read before bed.*
+
+### Comparing
+| Form | Use |
+|------|-----|
+| present simple | current habit |
+| used to + verb | past habit (no longer) |
+| would + verb | repeated past actions |
+| be used to + -ing | accustomed to (current) |
+| get used to + -ing | becoming accustomed |
+
+## Vocabulary for social issues
+- discrimination, prejudice, stereotype
+- equality, inequality
+- diversity, inclusion, exclusion
+- minority, majority
+- poverty, wealth
+- education, illiteracy
+- unemployment, employment
+- migration, immigration, emigration
+- bullying, peer pressure
+
+## Reading comprehension skills
+
+### Distinguishing
+- **Facts** (verifiable information)
+- **Opinions** (personal views)
+- **Examples** (specific cases)
+- **Generalizations** (broad statements)
+
+### Identifying writer's purpose
+- **To inform** — share facts neutrally
+- **To persuade** — convince to think/act
+- **To entertain** — engage and amuse
+- **To express** — share feelings or opinions
+
+### Questions to ask while reading
+1. What is the main idea?
+2. What evidence supports it?
+3. Whose perspective is this?
+4. What is the writer's tone (serious, sarcastic, neutral)?
+5. What can I conclude?
+
+**Поими:** social texts, conclusions, used to, would for past habits, social issues, reading comprehension.`,
+          exercises: [
+            {
+              id: 'eeng9-4-4',
+              type: 'multiple-choice',
+              question: 'Complete: "I ___ play football, but I broke my leg last year and stopped."',
+              options: ['use to', 'used to', 'am used to', 'would'],
+              correct: 'used to',
+              explanation: '"Used to" expresses past habits no longer true. The negative is "didn\'t use to" (note: no "d" after "use" in negative/question forms).',
+            },
+            {
+              id: 'eeng9-4-5',
+              type: 'multiple-choice',
+              question: 'What is the writer\'s purpose if the text shares facts neutrally without opinions?',
+              options: ['To persuade', 'To entertain', 'To inform', 'To express feelings'],
+              correct: 'To inform',
+              explanation: '"To inform" = share factual information. "To persuade" = convince. "To entertain" = amuse. "To express" = share feelings/opinions.',
+            },
+            {
+              id: 'eeng9-4-6',
+              type: 'true-false',
+              question: 'When drawing conclusions, you should connect different parts of the text to understand the writer\'s message.',
+              correct: 'точно',
+              explanation: 'Correct. Conclusions require synthesizing information from multiple parts of the text. Don\'t just rely on one sentence — see the bigger picture.',
+            },
+          ],
+        },
+        {
+          id: 'eng9-4-3',
+          title: 'Speaking — Opinions on social issues',
+          content: `## Discussing social issues
+Social issues are problems that affect society. Discussing them helps us understand different perspectives.
+
+## Examples of social issues
+- Bullying in schools
+- Environmental pollution
+- Gender equality
+- Racial discrimination
+- Disability rights
+- Poverty
+- Cyberbullying
+- Animal rights
+- Free speech vs hate speech
+
+## Expressing opinions
+
+### Strong opinions
+- I strongly believe that...
+- I'm convinced that...
+- It's clear to me that...
+- Without a doubt...
+
+### Medium opinions
+- I think that...
+- In my opinion...
+- I feel that...
+
+### Soft opinions
+- I'd say that...
+- It seems to me that...
+- Perhaps...
+- I'm not sure, but...
+
+## Reasoning
+Give reasons for your opinions:
+- ...because...
+- ...since...
+- The reason is...
+- For example...
+- This is shown by...
+
+### Example
+- *I think bullying is a serious problem **because** it affects students' mental health. **For example**, my friend was bullied last year and now she's afraid to come to school.*
+
+## Agreeing
+- I completely agree.
+- You're absolutely right.
+- That's a good point.
+- Exactly!
+- I couldn't agree more.
+
+## Partially agreeing
+- I see your point, but...
+- I agree to some extent, but...
+- That's true, however...
+- You have a point, but consider...
+
+## Disagreeing politely
+- I'm afraid I disagree.
+- I see it differently.
+- I understand your point, but I think...
+- I'm not so sure about that.
+- I don't quite agree.
+
+## Connecting ideas
+- on the other hand
+- however
+- in addition
+- furthermore
+- nevertheless
+- in contrast
+- similarly
+
+## Example discussion on bullying
+
+> A: I think bullying is a huge problem in our school.
+> B: I agree. The school should do more to prevent it.
+> A: Exactly. **For example**, they could teach students about kindness and empathy.
+> B: That's a good point. **However**, students also need to feel safe to report bullying.
+> A: True. Maybe an anonymous reporting system would help.
+> B: Yes! And teachers need training to recognize the signs.
+
+## Conjunctions/connectors
+
+### Addition
+- and, also, in addition, moreover, furthermore
+
+### Contrast
+- but, however, nevertheless, on the other hand, although
+
+### Reason
+- because, since, as, due to
+
+### Result
+- so, therefore, as a result, consequently
+
+### Example
+- for example, for instance, such as
+
+## Useful phrases for discussion
+
+### To start
+- I'd like to talk about...
+- The first thing I want to say is...
+- Let me begin by saying...
+
+### To add
+- Another important point is...
+- It's also worth mentioning that...
+- Furthermore...
+
+### To conclude
+- In conclusion...
+- To sum up...
+- In short...
+
+**Поими:** social issues, opinions, agreeing, disagreeing, connectors, discussion phrases.`,
+          exercises: [
+            {
+              id: 'eeng9-4-7',
+              type: 'multiple-choice',
+              question: 'Which phrase expresses partial agreement?',
+              options: [
+                'I completely agree.',
+                'I see your point, but...',
+                'You\'re absolutely right.',
+                'Exactly!',
+              ],
+              correct: 'I see your point, but...',
+              explanation: '"I see your point, but..." acknowledges the other person\'s view while introducing a counterpoint. It\'s polite disagreement or partial agreement.',
+            },
+            {
+              id: 'eeng9-4-8',
+              type: 'multiple-choice',
+              question: 'Which connector shows contrast?',
+              options: ['furthermore', 'because', 'however', 'similarly'],
+              correct: 'however',
+              explanation: '"However" shows contrast. "Furthermore" = adding. "Because" = reason. "Similarly" = adding similar ideas.',
+            },
+            {
+              id: 'eeng9-4-9',
+              type: 'true-false',
+              question: 'When giving an opinion, supporting it with reasons or examples makes your argument stronger.',
+              correct: 'точно',
+              explanation: 'Correct. Opinions without support are just claims. Adding "because..." or "for example..." makes your argument more convincing and shows critical thinking.',
+            },
+          ],
+        },
+        {
+          id: 'eng9-4-4',
+          title: 'Writing — Creative writing and essays',
+          content: `## Creative writing
+Creative writing uses imagination to tell stories, describe scenes, or express ideas in interesting ways.
+
+## Types of creative writing
+- Short stories
+- Poems
+- Essays
+- Descriptions
+- Dialogues
+- Diary entries
+
+## Planning your writing
+
+### Step 1: Brainstorm
+- Free-write everything that comes to mind
+- Make a mind map
+- List ideas
+
+### Step 2: Outline
+- Structure your ideas
+- Beginning, middle, end
+- Key points for each section
+
+### Step 3: Draft
+- Write without worrying about perfection
+- Get all ideas down
+
+### Step 4: Edit
+- Check grammar
+- Improve word choices
+- Make sentences flow better
+
+## Simple essay structure
+
+### Introduction (1 paragraph)
+- Hook (interesting opening)
+- Background information
+- Thesis statement (main argument)
+
+### Body (2-3 paragraphs)
+- Each paragraph = one main point
+- Topic sentence
+- Supporting evidence/examples
+- Concluding sentence
+
+### Conclusion (1 paragraph)
+- Restate thesis
+- Summarize main points
+- Final thought
+
+## Example essay on social issue
+
+> **Why We Need More Kindness in Schools**
+>
+> Every day in schools around the world, students experience cruelty from peers. This problem is bigger than we think and we need to do something about it.
+>
+> First, bullying has serious effects on students. Victims often develop depression, anxiety, and low self-esteem. In some cases, they even drop out of school. Studies show that 1 in 3 students worldwide has experienced bullying.
+>
+> Second, kindness can change the school culture. When students see kind behaviour modelled by teachers and classmates, they are more likely to be kind themselves. Schools that have introduced "kindness programmes" report fewer bullying incidents.
+>
+> Finally, teaching kindness prepares students for life. The workplace, family, and community all benefit from people who can show empathy and respect.
+>
+> In conclusion, schools must prioritize kindness education. It's not just about preventing bullying — it's about building a better society for everyone.
+
+## Imperative form
+The **imperative** is used for instructions, commands, advice, and suggestions.
+
+### Form
+- Base form of the verb
+- Subject (you) is implied
+
+### Examples
+- *Open the door.* (instruction)
+- *Don't talk during the exam.* (prohibition)
+- *Please be quiet.* (polite request)
+- *Be kind to others.* (advice)
+
+### Uses
+- Recipes (Mix the eggs and flour.)
+- Directions (Turn left at the corner.)
+- Signs (Push. Pull. Stop.)
+- Advice (Drink lots of water.)
+- Polite requests with please/kindly
+
+## There is / There are
+
+### There is + singular/uncountable
+- There is a book on the table.
+- There is some water in the glass.
+
+### There are + plural
+- There are many people here.
+- There are some students absent today.
+
+### Negative
+- There isn't any money in my purse.
+- There aren't any biscuits left.
+
+### Questions
+- Is there a problem?
+- Are there any solutions?
+
+## Creative writing tips
+
+### Use vivid language
+- Specific details, not vague
+- Strong verbs (rushed, whispered, gazed)
+- Sensory details (sight, sound, smell, taste, touch)
+
+### Vary sentence structure
+- Mix short and long sentences
+- Use different sentence types (statements, questions, exclamations)
+
+### Show, don't tell
+- Bad: *She was happy.*
+- Good: *Her face lit up with a huge smile and she jumped for joy.*
+
+## Editing checklist
+- ✓ Clear introduction with thesis
+- ✓ Each paragraph has one main idea
+- ✓ Examples support each point
+- ✓ Strong conclusion
+- ✓ Grammar and spelling checked
+- ✓ Tenses consistent
+- ✓ No repetition of same words
+
+**Поими:** creative writing, essay structure, imperative, there is/are, editing.`,
+          exercises: [
+            {
+              id: 'eeng9-4-10',
+              type: 'multiple-choice',
+              question: 'Which is the imperative form of "Listen carefully"?',
+              options: [
+                'You listen carefully.',
+                'Listen carefully!',
+                'I listen carefully.',
+                'Listening carefully.',
+              ],
+              correct: 'Listen carefully!',
+              explanation: 'Imperative uses the base verb form, subject "you" is implied: "Listen carefully!" Used for commands, instructions, advice.',
+            },
+            {
+              id: 'eeng9-4-11',
+              type: 'multiple-choice',
+              question: 'Which sentence uses "show, don\'t tell" effectively?',
+              options: [
+                'She was very tired.',
+                'She felt tiredness.',
+                'Her eyes were heavy and she could barely keep them open.',
+                'Tiredness was inside her.',
+              ],
+              correct: 'Her eyes were heavy and she could barely keep them open.',
+              explanation: 'Instead of just saying "she was tired", show the physical signs (heavy eyes, can\'t keep them open). Makes writing more vivid and engaging.',
+            },
+            {
+              id: 'eeng9-4-12',
+              type: 'true-false',
+              question: 'In a simple essay, each body paragraph should focus on one main point with supporting evidence.',
+              correct: 'точно',
+              explanation: 'Correct. Good paragraph structure: topic sentence (main idea), supporting evidence/examples, concluding sentence. One paragraph = one main point.',
+            },
+          ],
+        },
+      ],
+    },
+  ],
   math: [
     {
       id: 'math9-1',
