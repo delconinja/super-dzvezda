@@ -124,8 +124,9 @@ export function EuropeMap({ highlightCountry, height = 520, className = '' }: Eu
       : null,
   );
   const [hovered, setHovered] = useState<string | null>(null);
+  const [kosovoOpen, setKosovoOpen] = useState(false);
 
-  const kosovSelected = selected?.isoCode === KOSOVO_CODE;
+  const kosovSelected = kosovoOpen;
 
   return (
     <div className={className}>
@@ -264,7 +265,7 @@ export function EuropeMap({ highlightCountry, height = 520, className = '' }: Eu
       }}>
         <button
           type="button"
-          onClick={() => setSelected(kosovSelected ? null : { ...KOSOVO, isoCode: KOSOVO_CODE })}
+          onClick={() => setKosovoOpen(o => !o)}
           style={{
             width: '100%', display: 'flex', alignItems: 'center', gap: 10,
             padding: '10px 16px', background: 'transparent', border: 'none',
