@@ -1,4 +1,4 @@
-import { Subject } from '@/types'
+import { Subject, SubjectId } from '@/types'
 
 const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
   {
@@ -213,14 +213,52 @@ const ALL_SUBJECTS: (Subject & { grades: number[] })[] = [
   },
 ]
 
-export const SUBJECTS: Subject[] = ALL_SUBJECTS
+// Display order across the platform:
+// 1. mk (Македонски)
+// 2. math (Математика)
+// 3. Civic/History group: society → history → civics → geography
+// 4. Natural sciences group: science → biology → chemistry → physics → innovation → tech
+// 5. Languages group: english → german → french → italian → russian
+const DISPLAY_ORDER: SubjectId[] = [
+  'mk',
+  'math',
+  // civic/history group
+  'society',
+  'history',
+  'civics',
+  'geography',
+  // natural sciences group
+  'science',
+  'biology',
+  'chemistry',
+  'physics',
+  'innovation',
+  'tech',
+  // languages group
+  'english',
+  'german',
+  'french',
+  'italian',
+  'russian',
+]
+
+function sortByDisplayOrder(subjects: Subject[]): Subject[] {
+  return [...subjects].sort((a, b) => {
+    const ai = DISPLAY_ORDER.indexOf(a.id)
+    const bi = DISPLAY_ORDER.indexOf(b.id)
+    return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi)
+  })
+}
+
+export const SUBJECTS: Subject[] = sortByDisplayOrder(ALL_SUBJECTS)
 
 export function getAllSubjects(): Subject[] {
-  return ALL_SUBJECTS
+  return SUBJECTS
 }
 
 export function getSubjectsForGrade(grade: number): Subject[] {
-  return grade === 0 ? ALL_SUBJECTS : ALL_SUBJECTS.filter((s) => s.grades.includes(grade))
+  const filtered = grade === 0 ? ALL_SUBJECTS : ALL_SUBJECTS.filter((s) => s.grades.includes(grade))
+  return sortByDisplayOrder(filtered)
 }
 
 export const getSubject = (id: string) =>
