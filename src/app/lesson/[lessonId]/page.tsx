@@ -85,6 +85,7 @@ export default function LessonPage() {
   const [videoQuizTimeLeft, setVideoQuizTimeLeft] = useState(10)
   const [videoQuizSelected, setVideoQuizSelected] = useState<string | null>(null)
   const [videoQuizAnswered, setVideoQuizAnswered] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   const activeStudent = getActiveStudent()
   const selectedGrade = getSelectedGrade()
@@ -110,64 +111,13 @@ export default function LessonPage() {
   const ytVideoId = isYTVideo && effectiveVideoUrl ? getYouTubeId(effectiveVideoUrl) : ''
 
   useEffect(() => {
+    setMounted(true)
     const active = getActiveStudent()
     if (!active) { router.push('/'); return }
     setStudent(active)
   }, [router])
 
-  if (!lesson || !subject) return (
-    <div className="min-h-screen flex items-center justify-center" style={{ background: '#F7F5FF' }}>
-      <p style={{ color: '#6B6B8A' }}>Лекцијата не е пронајдена.</p>
-    </div>
-  )
-
-  const exercises = lesson.exercises
-  const ex: ExerciseData = exercises[currentEx]
-  const starsEarned = correct >= exercises.length ? 3
-    : correct >= Math.ceil(exercises.length * 0.6) ? 2
-    : correct > 0 ? 1 : 0
-
-  const isQuizEx = v2Lesson !== null && currentEx >= practiceCount
-
-  const handleAnswer = (option: string) => {
-    if (revealed || hintShown) return
-    setSelected(option)
-    setAnswered(true)
-
-    if (option === ex.correct) {
-      setCorrect((c) => c + 1)
-      if (isQuizEx) setQuizCorrect((q) => q + 1)
-      setRevealed(true)
-      setShowStar(true)
-      setTimeout(() => setShowStar(false), 900)
-    } else {
-      const isFirstWrong = wrongAttempts.length === 0
-      setWrongAttempts((prev) => [...prev, option])
-      setShake(true)
-      setTimeout(() => setShake(false), 400)
-      // No hints during mastery quiz
-      if (ex.hint && isFirstWrong && !isQuizEx) {
-        setHintShown(true)
-      } else {
-        setRevealed(true)
-      }
-    }
-  }
-
-  const handleDragDropComplete = () => {
-    setCorrect((c) => c + 1)
-    setRevealed(true)
-    setShowStar(true)
-    setTimeout(() => setShowStar(false), 900)
-    setDragDropDone(true)
-  }
-
-  const handleRetry = () => {
-    setSelected(null)
-    setAnswered(false)
-    setHintShown(false)
-  }
-
+  // ── Audio helpers — defined before effects that use them ─────────
   const stopNarration = () => {
     if (audioRef.current) { audioRef.current.pause(); audioRef.current.onended = null }
     if (talkTimerRef.current) { clearTimeout(talkTimerRef.current); talkTimerRef.current = null }
@@ -201,7 +151,6 @@ export default function LessonPage() {
       narrationCache.current.set(text, url)
       playAudioUrl(url)
     } catch {
-      // Fallback: silent talking animation
       setIsSpeaking(true)
       talkTimerRef.current = setTimeout(() => setIsSpeaking(false), Math.max(2500, text.length * 65))
     }
@@ -217,6 +166,7 @@ export default function LessonPage() {
     stopNarration()
   }
 
+  // ── All useEffects — must all be before any early return ─────────
   useEffect(() => {
     return () => {
       if (audioRef.current) audioRef.current.pause()
@@ -224,7 +174,6 @@ export default function LessonPage() {
     }
   }, [])
 
-  // Pre-fetch all narration audio so there's no delay when cues trigger
   useEffect(() => {
     if (!lesson?.videoNarration?.length) return
     lesson.videoNarration.forEach(async (cue) => {
@@ -238,12 +187,11 @@ export default function LessonPage() {
         if (!res.ok) return
         const blob = await res.blob()
         narrationCache.current.set(cue.text, URL.createObjectURL(blob))
-      } catch { /* silently fail — speakText will retry on demand */ }
+      } catch { /* silently fail */ }
     })
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lesson?.id])
 
-  // YouTube IFrame Player API setup
   useEffect(() => {
     if (!isYTVideo || !ytVideoId) return
 
@@ -265,7 +213,6 @@ export default function LessonPage() {
               if (currentNarrationRef.current) speakText(currentNarrationRef.current)
               ytIntervalRef.current = setInterval(() => {
                 const t = ytPlayerRef.current?.getCurrentTime() ?? 0
-                // Interaction points (quiz overlays)
                 for (const ip of interactionPoints) {
                   if (!firedTimestamps.current.has(ip.time) && t >= ip.time) {
                     firedTimestamps.current.add(ip.time)
@@ -279,7 +226,6 @@ export default function LessonPage() {
                     break
                   }
                 }
-                // Narration cues
                 if (narrationCues.length) {
                   const sorted = [...narrationCues].sort((a, b) => b.timestamp - a.timestamp)
                   const activeCue = sorted.find(c => t >= c.timestamp)
@@ -317,6 +263,69 @@ export default function LessonPage() {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lesson?.id])
+
+  useEffect(() => {
+    if (!videoQuizActive || videoQuizAnswered) return
+    if (videoQuizTimeLeft <= 0) {
+      setVideoQuizAnswered(true)
+      dismissTimerRef.current = setTimeout(dismissVideoQuiz, 5000)
+      return
+    }
+    const t = setTimeout(() => setVideoQuizTimeLeft((n) => n - 1), 1000)
+    return () => clearTimeout(t)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [videoQuizActive, videoQuizTimeLeft, videoQuizAnswered])
+
+  // ── Early return — after ALL hooks ──────────────────────────────
+  if (!mounted || !lesson || !subject) return (
+    <main className="min-h-screen" style={{ background: '#F4F6FB' }} />
+  )
+
+  const exercises = lesson.exercises
+  const ex: ExerciseData = exercises[currentEx]
+  const starsEarned = correct >= exercises.length ? 3
+    : correct >= Math.ceil(exercises.length * 0.6) ? 2
+    : correct > 0 ? 1 : 0
+
+  const isQuizEx = v2Lesson !== null && currentEx >= practiceCount
+
+  const handleAnswer = (option: string) => {
+    if (revealed || hintShown) return
+    setSelected(option)
+    setAnswered(true)
+
+    if (option === ex.correct) {
+      setCorrect((c) => c + 1)
+      if (isQuizEx) setQuizCorrect((q) => q + 1)
+      setRevealed(true)
+      setShowStar(true)
+      setTimeout(() => setShowStar(false), 900)
+    } else {
+      const isFirstWrong = wrongAttempts.length === 0
+      setWrongAttempts((prev) => [...prev, option])
+      setShake(true)
+      setTimeout(() => setShake(false), 400)
+      if (ex.hint && isFirstWrong && !isQuizEx) {
+        setHintShown(true)
+      } else {
+        setRevealed(true)
+      }
+    }
+  }
+
+  const handleDragDropComplete = () => {
+    setCorrect((c) => c + 1)
+    setRevealed(true)
+    setShowStar(true)
+    setTimeout(() => setShowStar(false), 900)
+    setDragDropDone(true)
+  }
+
+  const handleRetry = () => {
+    setSelected(null)
+    setAnswered(false)
+    setHintShown(false)
+  }
 
   const handleTimeUpdate = () => {
     if (!videoRef.current) return
@@ -373,19 +382,6 @@ export default function LessonPage() {
     if (dismissTimerRef.current) clearTimeout(dismissTimerRef.current)
     dismissTimerRef.current = setTimeout(dismissVideoQuiz, 5000)
   }
-
-  useEffect(() => {
-    if (!videoQuizActive || videoQuizAnswered) return
-    if (videoQuizTimeLeft <= 0) {
-      setVideoQuizAnswered(true)
-      // Store in ref so React cleanup cannot cancel it
-      dismissTimerRef.current = setTimeout(dismissVideoQuiz, 5000)
-      return
-    }
-    const t = setTimeout(() => setVideoQuizTimeLeft((n) => n - 1), 1000)
-    return () => clearTimeout(t)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [videoQuizActive, videoQuizTimeLeft, videoQuizAnswered])
 
   const handleNext = () => {
     if (currentEx < exercises.length - 1) {

@@ -44,4 +44,10 @@ next-env.d.ts
 
 # manim generated output
 /manim/__pycache__/
+/manim/grade8/__pycache__/
+/manim/grade8/media/
 /manim/media/
+/media/
+
+# rendered videos — review locally, upload to YouTube, never commit MP4s
+/public/videos/
