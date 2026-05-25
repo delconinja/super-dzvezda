@@ -99,8 +99,8 @@ export function EuropeMap({ highlightCountry, height = 520, className = '' }: Eu
         >
           <ZoomableGroup>
             <Geographies geography={GEO_URL}>
-              {({ geographies }) =>
-                geographies.map((geo) => {
+              {({ geographies }: { geographies: any[] }) =>
+                geographies.map((geo: any) => {
                   const isoCode = String(geo.id).padStart(3, '0');
                   const isEurope  = EUROPE_CODES.has(isoCode);
                   const isHovered  = hovered  === isoCode;
