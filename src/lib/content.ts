@@ -85910,7 +85910,7 @@ Daniel Ek забележа: пиратерија е огромна; луѓе с�
     },
     {
       id: 'ger9-2',
-      title: 'Theme 2: Umgebung (Опкружување)',
+      title: 'Theme 2: Gesundheit und gesundes Leben (Здравје и здрав живот)',
       lessons: [
         {
           id: 'ger9-2-1',
@@ -86498,7 +86498,7 @@ Daniel Ek забележа: пиратерија е огромна; луѓе с�
     },
     {
       id: 'ger9-3',
-      title: 'Theme 3: Gesundheit und gesundes Leben (Здравје и здрав живот)',
+      title: 'Theme 3: Gesunde Umwelt, gesundes Leben (Здрава околина, здрав живот)',
       lessons: [
         {
           id: 'ger9-3-1',
