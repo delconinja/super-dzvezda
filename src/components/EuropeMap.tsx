@@ -149,7 +149,10 @@ export function EuropeMap({ highlightCountry, height = 520, className = '' }: Eu
               <Geographies geography={GEO_URL}>
                 {({ geographies }: { geographies: any[] }) =>
                   geographies.map((geo: any) => {
-                    const isoCode = String(geo.id).padStart(3, '0');
+                    // Kosovo has no numeric id in Natural Earth — identify by name
+                    const isoCode = geo.id !== undefined
+                      ? String(geo.id).padStart(3, '0')
+                      : geo.properties?.name === 'Kosovo' ? '383' : 'unknown';
                     const isEurope   = EUROPE_CODES.has(isoCode);
                     const isHovered  = hovered   === isoCode;
                     const isSelected = selected?.isoCode === isoCode;
