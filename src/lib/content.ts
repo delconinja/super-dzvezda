@@ -30415,6 +30415,116 @@ A **personal letter** is an informal text written to family or friends.
             },
           ],
         },
+{
+          id: 'en8-1-5',
+          title: 'Intercultural — Family and traditions in English-speaking countries',
+          content: `## Family in different cultures
+**Family** means different things in different cultures.
+
+### United Kingdom
+- **Smaller nuclear families** (parents + 1-2 children)
+- Many single-parent families (~25%)
+- Teenagers often leave home at 18 (for university)
+- Sunday roast — traditional family lunch
+- Polite distance from family — adults expected to be independent
+
+### United States
+- **Diverse family types** — single-parent, blended, same-sex couples
+- Big extended family gatherings (Thanksgiving, Christmas)
+- Multicultural traditions
+- Children often move far from parents (different cities/states)
+
+### Australia
+- **Outdoor lifestyle** — barbecues with family
+- Multicultural society (immigrants from UK, Italy, Greece, Asia)
+- Christmas in summer! (December = hot)
+
+### India (English-speaking)
+- **Extended families** — 3 generations under one roof
+- Strong respect for elders
+- Arranged marriages still common
+
+### Common English traditions
+- **Birthday cakes** with candles
+- **Christmas** (December 25) — gift exchange, family meal
+- **Easter** — eggs, family meal
+- **Thanksgiving** (USA, Canada) — family gratitude meal
+
+## Family vocabulary across cultures
+| English | What it means |
+|---------|---------------|
+| Nuclear family | Parents + children only |
+| Extended family | + grandparents, aunts, uncles, cousins |
+| Blended family | Step-parents and step-siblings |
+| Foster family | Temporary care for children |
+| Adopted family | Legally adopted children |
+
+## Greetings in English cultures
+
+### UK
+- Polite, reserved
+- "How do you do?" (formal)
+- Handshake at first meeting
+- No kissing on cheeks (unlike France)
+
+### USA
+- Friendly, casual
+- "Hi! How are you doing?"
+- Hugs are common between friends
+
+### Australia
+- Very casual
+- "G'day mate!"
+- Informal even with strangers
+
+## Compare with Macedonia
+- Macedonian families: traditionally **larger**, with extended family
+- Strong respect for elders
+- Sunday family meals
+- Many cultural similarities with the UK/USA but more **collectivist**
+
+## Famous English-speaking family figures
+- **Queen Elizabeth II** (1926-2022) — symbol of UK family values
+- **Obama family** — first African-American US presidential family
+- **Royal family** of UK — followed by people worldwide
+
+## Cultural sensitivity
+When meeting people from English-speaking cultures:
+- **UK**: be polite, queue properly, don't ask personal questions too soon
+- **USA**: be friendly, small talk OK, eye contact important
+- **Australia**: be casual, friendly, direct
+- **Don't assume** — every culture is diverse
+
+## Speaking task
+Tell a partner about your family in English:
+- Who is in your family?
+- What do you do together on weekends?
+- What traditions does your family have?`,
+          exercises: [
+            {
+              id: 'een8-1-13', type: 'multiple-choice',
+              question: 'Which country has Christmas in summer?',
+              options: ['UK', 'USA', 'Canada', 'Australia'],
+              correct: 'Australia',
+              hint: 'Southern hemisphere.',
+              explanation: 'Australia is in the Southern hemisphere — December is summer there! Australians have BBQ Christmas on the beach.',
+            },
+            {
+              id: 'een8-1-14', type: 'multiple-choice',
+              question: 'What is a "nuclear family"?',
+              options: ['A family of scientists', 'Parents + children only', 'Extended family with grandparents', 'A radioactive family'],
+              correct: 'Parents + children only',
+              hint: 'The core unit.',
+              explanation: 'Nuclear family = parents + their children only. Extended family adds grandparents, aunts, uncles, cousins.',
+            },
+            {
+              id: 'een8-1-15', type: 'true-false',
+              question: 'In the UK, people typically kiss on cheeks when meeting (like in France).',
+              options: ['True', 'False'], correct: 'False',
+              explanation: 'British culture is more reserved — typically a handshake or just "hello" at first meeting. Cheek kissing is more common in France, Italy, Macedonia.',
+            },
+          ],
+        },
       ],
     },
     {
@@ -30678,6 +30788,138 @@ A **story** has a clear beginning, middle and end.
               question: 'A short story should mix Past Simple (main events) and Past Continuous (background).',
               options: ['True', 'False'], correct: 'True',
               explanation: 'Good stories mix Past Simple for main events with Past Continuous for background and atmosphere.',
+            },
+          ],
+        },
+{
+          id: 'en8-2-5',
+          title: 'Intercultural — Famous cities in English-speaking countries',
+          content: `## London (UK)
+
+### Key facts
+- Capital of the United Kingdom
+- Population: ~9 million
+- One of the most multicultural cities in the world
+
+### Famous landmarks
+- **Big Ben** (Elizabeth Tower) — iconic clock
+- **London Eye** — giant Ferris wheel
+- **Tower Bridge** — famous bridge over the Thames
+- **Buckingham Palace** — Queen's residence
+- **British Museum** — free, world-famous artifacts
+- **Westminster Abbey** — coronations and royal weddings
+- **Hyde Park** — large central park
+
+### Iconic features
+- **Black taxi cabs** (Hackney carriages)
+- **Red double-decker buses**
+- **The Tube** (London Underground) — oldest metro in the world (1863)
+- **Pubs** — traditional British meeting places
+
+## New York City (USA)
+
+### Key facts
+- Largest city in USA
+- Population: ~8.5 million
+- Nickname: "The Big Apple"
+- Known as "the city that never sleeps"
+
+### Famous landmarks
+- **Statue of Liberty** — gift from France (1886), symbol of freedom
+- **Empire State Building** — 102 floors
+- **Central Park** — huge green space in Manhattan
+- **Times Square** — bright lights, billboards
+- **Brooklyn Bridge** — beautiful Manhattan-Brooklyn link
+- **9/11 Memorial** — at site of former Twin Towers
+
+### Boroughs
+- Manhattan, Brooklyn, Queens, The Bronx, Staten Island
+
+## Sydney (Australia)
+
+### Key facts
+- Largest city in Australia (~5.5 million)
+- NOT the capital (Canberra is the capital!)
+- Beautiful harbor
+
+### Famous landmarks
+- **Sydney Opera House** — iconic architecture (1973)
+- **Sydney Harbour Bridge** — "the Coathanger"
+- **Bondi Beach** — famous surfing beach
+
+## Toronto (Canada)
+
+### Key facts
+- Largest city in Canada (~3 million)
+- Capital of Ontario province
+- Multicultural — 50% born outside Canada!
+
+### Famous landmarks
+- **CN Tower** — once tallest free-standing structure (553m)
+- **Niagara Falls** — nearby (Ontario)
+
+## Other major English-speaking cities
+- **Los Angeles** (USA) — Hollywood
+- **San Francisco** (USA) — Golden Gate Bridge, tech industry
+- **Chicago** (USA) — skyscrapers, jazz
+- **Edinburgh** (Scotland) — historic castle
+- **Dublin** (Ireland) — literature, Guinness
+- **Cape Town** (South Africa) — Table Mountain
+- **Singapore** — modern Asian financial hub
+- **Auckland** (New Zealand) — sailing city
+
+## Urban culture in English-speaking countries
+- **Diverse** populations (many languages spoken)
+- **Public transport** important in cities
+- **Coffee culture** (Starbucks origin: Seattle)
+- **Street food** — diverse cuisines
+- **Sports** — football (UK), American football (USA), cricket (UK, India, Australia)
+
+## Compare with Macedonia
+- Skopje is much smaller (~600K) than London or New York
+- Still has international atmosphere (multiethnic)
+- Old Bazaar — historic Ottoman quarter
+- Stone Bridge — symbol of Skopje
+
+## Cultural differences in cities
+- **British**: queue politely, mind your manners
+- **American**: fast-paced, friendly to strangers
+- **Australian**: relaxed, beach culture
+
+## Travel vocabulary
+- **Tourist attraction**, **landmark**, **museum**, **gallery**
+- **Subway / Underground / Metro / Tube** (different names!)
+- **Sightseeing**, **tour guide**, **brochure**
+- **Map**, **GPS**, **directions**
+
+## Speaking task
+Plan a 1-day visit to London with a partner:
+- What 3 landmarks would you visit?
+- How would you travel?
+- Where would you eat?
+- What souvenir would you buy?`,
+          exercises: [
+            {
+              id: 'een8-2-13', type: 'multiple-choice',
+              question: 'Which is the capital of Australia?',
+              options: ['Sydney', 'Melbourne', 'Canberra', 'Perth'],
+              correct: 'Canberra',
+              hint: 'Not the biggest city!',
+              explanation: 'Canberra is the capital of Australia — purpose-built between Sydney and Melbourne to settle the rivalry. Sydney is the largest city but NOT the capital.',
+            },
+            {
+              id: 'een8-2-14', type: 'multiple-choice',
+              question: 'What is "the Tube" in London?',
+              options: ['A TV channel', 'The London Underground (metro)', 'A river boat', 'A bus'],
+              correct: 'The London Underground (metro)',
+              hint: 'Oldest metro in the world (1863).',
+              explanation: 'The Tube = London Underground / London Metro. Opened in 1863 — oldest metro system in the world.',
+            },
+            {
+              id: 'een8-2-15', type: 'true-false',
+              question: 'The Statue of Liberty was a gift from France to the USA.',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'Correct. France gifted the Statue of Liberty in 1886 — symbol of friendship and freedom. It stands on Liberty Island in New York Harbor.',
             },
           ],
         },
@@ -30954,6 +31196,143 @@ A future-plans paragraph mixes **certainty and possibility**.
               question: 'A school description should always include negative opinions to be honest.',
               options: ['True', 'False'], correct: 'False',
               explanation: 'A school description can include both positives and concerns, but it is usually balanced and respectful, not just negative.',
+            },
+          ],
+        },
+{
+          id: 'en8-3-5',
+          title: 'Intercultural — Education systems in English-speaking countries',
+          content: `## United Kingdom education system
+
+### Stages
+1. **Primary school** (ages 5-11): Years 1-6
+2. **Secondary school** (ages 11-16): Years 7-11
+3. **Sixth form / college** (ages 16-18): A-levels
+4. **University** (ages 18+): Bachelor's (3 years), Master's, PhD
+
+### Famous universities
+- **Oxford** — founded 1096 (oldest English-speaking university)
+- **Cambridge** — founded 1209
+- **Imperial College London**
+- **University College London (UCL)**
+
+### Key features
+- School uniforms
+- Free state schools, but also expensive private schools (~7% of students)
+- "Public schools" actually means private schools (like Eton, Harrow)
+- Strict discipline traditions
+
+## United States education system
+
+### Stages
+1. **Elementary school** (ages 5-11): Grades K-5
+2. **Middle school** (ages 11-14): Grades 6-8
+3. **High school** (ages 14-18): Grades 9-12
+4. **College / University** (ages 18+): Bachelor's, Master's, PhD
+
+### Famous universities
+- **Harvard** — founded 1636
+- **MIT** (Massachusetts Institute of Technology)
+- **Stanford** — Silicon Valley
+- **Yale, Princeton, Columbia** — "Ivy League"
+
+### Key features
+- No school uniforms (mostly)
+- Free public schools, expensive private schools
+- High school sports very important (American football, basketball)
+- Yearbook, prom (end-of-year party)
+- SAT/ACT tests for university admission
+
+## Canada education system
+- Similar to UK and USA
+- Free public schools
+- Many world-class universities (Toronto, McGill)
+
+## Australia education system
+- Similar to UK
+- Year 1 to Year 12
+- HSC (Higher School Certificate)
+
+## India education system
+- 10+2+3 system (10 years school + 2 years junior college + 3 years bachelor)
+- Many subjects in English
+- Famous universities: IIT, IIM
+- Very competitive
+
+## Future careers and education
+
+### Common professions
+- **Doctor** — requires medical school (6-7 years)
+- **Lawyer** — law school (3-4 years after bachelor)
+- **Engineer** — bachelor's degree
+- **Teacher** — bachelor + teaching qualification
+- **Computer programmer / Software developer** — bachelor's or self-taught
+- **Designer** — bachelor's or vocational training
+
+### New careers (XXI century)
+- **Data scientist**
+- **AI engineer**
+- **UX designer**
+- **Social media manager**
+- **YouTuber / influencer**
+
+## Compare with Macedonia education
+- Primary school: 9 years (1-9 grade)
+- High school: 4 years (1-4 godina)
+- University: Bachelor (3-4 years), Master, PhD
+- Similar structure to many European countries
+- Free public schools
+
+## Studying abroad
+Many Macedonian students study abroad in:
+- **UK** — high quality but expensive (£20,000+/year)
+- **Germany** — many free programs
+- **Italy** — affordable
+- **USA** — very expensive but scholarships available
+- **Erasmus** — EU exchange program (semester or year abroad)
+
+## Vocabulary
+- **Tuition fees** — money for university
+- **Scholarship** — financial aid
+- **GPA** (Grade Point Average) — your academic performance
+- **Credits** — units of study
+- **Degree** — qualification you receive
+- **Major** — main subject of study (USA)
+- **Subject** — what you study (UK)
+
+## Famous English-speaking education figures
+- **Sir Isaac Newton** (UK) — Cambridge mathematician
+- **Albert Einstein** (USA naturalized) — Princeton
+- **Stephen Hawking** (UK) — Cambridge
+
+## Speaking task
+Discuss with a partner:
+- What do you want to study after grade 9?
+- Would you like to study abroad? Where?
+- What career interests you?
+- What skills do you need to develop?`,
+          exercises: [
+            {
+              id: 'een8-3-13', type: 'multiple-choice',
+              question: 'How long is a typical Bachelor\'s degree in the UK?',
+              options: ['2 years', '3 years', '4 years', '6 years'],
+              correct: '3 years',
+              hint: 'Shorter than USA.',
+              explanation: 'In the UK, a typical Bachelor\'s degree is 3 years (vs 4 years in the USA). After that, you can do Master\'s (1 year UK) or PhD.',
+            },
+            {
+              id: 'een8-3-14', type: 'multiple-choice',
+              question: 'What is the "Ivy League"?',
+              options: ['Sports league', 'Eight elite US universities (Harvard, Yale, Princeton, etc.)', 'Plant club', 'A music genre'],
+              correct: 'Eight elite US universities (Harvard, Yale, Princeton, etc.)',
+              hint: 'Most prestigious USA universities.',
+              explanation: 'Ivy League = 8 elite USA universities: Harvard, Yale, Princeton, Columbia, Cornell, Dartmouth, Brown, Pennsylvania. Among the most prestigious in the world.',
+            },
+            {
+              id: 'een8-3-15', type: 'true-false',
+              question: 'In the UK, "public school" means a state-funded school.',
+              options: ['True', 'False'], correct: 'False',
+              explanation: 'CONFUSING — in the UK, "public school" actually means PRIVATE school (like Eton). State-funded schools are called "state schools". Different from American usage!',
             },
           ],
         },
@@ -31241,6 +31620,158 @@ An **opinion essay** is a structured 4-paragraph text.
               question: 'A strong opinion essay considers AND addresses opposing views.',
               options: ['True', 'False'], correct: 'True',
               explanation: 'Addressing counterarguments (however, despite this) makes an essay more credible and shows balanced thinking.',
+            },
+          ],
+        },
+{
+          id: 'en8-4-5',
+          title: 'Intercultural — Multicultural English-speaking societies',
+          content: `## English-speaking world
+**English** is spoken as a first or second language by **~1.5 billion people** worldwide.
+
+### Countries where English is official
+- UK, USA, Canada, Australia, New Zealand, Ireland
+- India, Pakistan, Singapore, Hong Kong
+- Many African countries (Nigeria, Kenya, South Africa, Ghana)
+- Many Caribbean countries
+
+### Why English became global?
+1. **British Empire** (XVIII-XX century) — colonialism spread English
+2. **USA influence** (XX-XXI century) — movies, music, technology
+3. **Internet** — most content in English
+4. **Business** — international trade language
+
+## Multicultural London
+
+### Statistics
+- **300+ languages spoken** in London
+- ~37% of population born abroad
+- Many cultural neighborhoods:
+  - **Chinatown**
+  - **Little India** (Southall)
+  - **Bangladesh** (Brick Lane)
+  - **Polish areas**
+
+### Cultural fusion
+- **Chicken Tikka Masala** — Indian-British dish (now Britain's "national dish"!)
+- **Notting Hill Carnival** — Caribbean festival
+- **Chinese New Year parade**
+
+## Multicultural USA
+
+### "Melting pot" or "Salad bowl"?
+- **Melting pot** = cultures blend together
+- **Salad bowl** = cultures stay distinct (newer concept)
+
+### Major ethnic groups
+- White (60%) — mostly European origin
+- Hispanic/Latino (19%) — Spanish-speaking
+- Black/African American (13%)
+- Asian American (6%)
+- Native American (1%)
+- Mixed and others
+
+### Cultural impact
+- **Jazz** (Black American origins)
+- **Hip-hop** (born in Bronx, NYC)
+- **Mexican food** — tacos, burritos popular nationwide
+- **Italian-American** — pizza, pasta evolved
+- **Chinese-American** — different from authentic Chinese
+
+## Multicultural Australia
+- ~30% born abroad
+- Many immigrants from UK, Italy, Greece, China, India
+- Indigenous Aboriginal culture
+- 7+ different ethnic groups
+
+## Social issues in English-speaking societies
+
+### Diversity and inclusion
+- Laws against racial, religious, gender discrimination
+- LGBTQ+ rights
+- Disability rights (Americans with Disabilities Act, 1990)
+
+### Challenges
+- **Racism** — still exists, BLM movement raised awareness
+- **Income inequality** — rich-poor gap growing
+- **Healthcare access** — major issue in USA
+- **Climate change** — affects everyone
+
+### Movements
+- **#MeToo** (2017) — against sexual harassment
+- **Black Lives Matter** (2013) — against police brutality
+- **LGBTQ+ rights** — same-sex marriage legalized in many countries (UK 2014, USA 2015, Australia 2017)
+
+## Comparing with Macedonian society
+
+### Similarities
+- Multiethnic country (Macedonians, Albanians, Turks, Roma, others)
+- Constitutional protection of minority rights (since 2001)
+- Diverse cultures and traditions
+- Free movement within EU after future membership
+
+### Differences
+- Smaller scale (~2 million population)
+- Most people speak Macedonian as first language
+- Different historical context
+
+## Famous multicultural English-speaking figures
+- **Barack Obama** (USA) — first African-American president
+- **Kamala Harris** (USA) — first female VP, mixed heritage
+- **Rishi Sunak** (UK) — first British PM of Indian heritage
+- **Malala Yousafzai** (Pakistan/UK) — Nobel Peace Prize winner
+
+## English-language entertainment going global
+
+### Movies
+- Hollywood blockbusters seen worldwide
+- Marvel, Star Wars, Disney
+
+### Music
+- Pop (Taylor Swift, BTS partially English)
+- Hip-hop (Drake, Eminem)
+- Rock (Coldplay, etc.)
+
+### TV
+- Netflix shows reach 200+ countries
+- "Friends" — still popular worldwide
+
+## Importance of learning English
+- **Global communication**
+- **Job opportunities**
+- **Internet access**
+- **Travel**
+- **Education** (many universities use English)
+- **Culture access**
+
+## Speaking task
+Discuss with a partner:
+- What English-speaking country would you most like to visit? Why?
+- How do English-language movies, music or YouTube affect your life?
+- Is it important to keep your own culture alongside English?
+- How can we celebrate multiculturalism in Macedonia?`,
+          exercises: [
+            {
+              id: 'een8-4-13', type: 'multiple-choice',
+              question: 'How many people worldwide speak English (first or second language)?',
+              options: ['100 million', '500 million', 'About 1.5 billion', '10 billion'],
+              correct: 'About 1.5 billion',
+              hint: 'Most spoken language in the world.',
+              explanation: '~1.5 billion people speak English. Most-spoken language globally (counting native + second-language speakers).',
+            },
+            {
+              id: 'een8-4-14', type: 'multiple-choice',
+              question: 'What is the difference between "melting pot" and "salad bowl"?',
+              options: ['Cooking methods', 'Melting pot = cultures blend together; Salad bowl = cultures stay distinct', 'Same thing', 'Types of food'],
+              correct: 'Melting pot = cultures blend together; Salad bowl = cultures stay distinct',
+              hint: 'Cultural integration metaphors.',
+              explanation: 'Melting pot = classic American idea that immigrants blend into one culture. Salad bowl = newer idea that cultures coexist while staying distinct. Both metaphors for multiculturalism.',
+            },
+            {
+              id: 'een8-4-15', type: 'true-false',
+              question: 'Same-sex marriage is legal in the UK, USA, and Australia.',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'Correct. Same-sex marriage was legalized in: UK (England and Wales 2014, Scotland 2014, Northern Ireland 2020), USA (2015 — Supreme Court ruling), Australia (2017 — by referendum).',
             },
           ],
         },
@@ -52960,6 +53491,185 @@ HCl + NH₃ → NH₄Cl (pH < 7)`,
             },
           ],
         },
+{
+          id: 'ger8-1-5',
+          title: 'Intercultural — Familie und Tradition in Deutschland',
+          content: `## Семејство во Германија
+
+### Карактеристики
+- **Помалечки семејства** (1-2 деца, многу единствено деце)
+- Просечна возраст за прв брак: 32 (мажи), 30 (жени)
+- ~40% од сите семејства имаат само 1 дете
+- Много самохрани родители
+
+### Семејни вредности
+- **Punktlichkeit** (точност) — клучно
+- **Ordnung** (ред) — Немачки често "redovni"
+- **Privatsphäre** (приватност) — се почитува
+- Деца стануваат независни рано (18 — фактички возрасни)
+
+## Немачки традиции
+
+### Главни празници
+- **Weihnachten** (Божиќ) — 24-26 декември
+  - Adventski венец (4 недели пред)
+  - Adventski календар за деца (со чоколадо)
+- **Silvester** (Нова година) — 31 декември со огномет
+- **Ostern** (Великден) — бој на јајца
+- **Tag der Deutschen Einheit** (3 октомври) — ден на обединание (1990)
+
+### Регионални празници
+- **Oktoberfest** (Минхен, септ-окт) — пиво фестивал
+- **Karneval** (Колн, февруари) — масовни маски
+- **Christkindlmarkt** (декември) — Божиќен пазар
+
+## Немачки храна
+
+### Главни јадења
+- **Wurst** (колбас) — над 1.500 видови!
+- **Brot** (леб) — Германци имают над 300 видови леб
+- **Brezel** (солени бухтици)
+- **Sauerkraut** (фрментирана зелка)
+- **Schnitzel** (телешко котлета)
+- **Bratwurst** (печен колбас)
+- **Spätzle** (немачки паста)
+- **Kartoffeln** (картофи) во многу форми
+- **Currywurst** (Берлин — колбас со кари сос)
+- **Apfelstrudel** (Апфел-штрудел) — десерт
+
+### Пиво
+- Немачка култура е јако поврзана со пиво
+- 1.500+ пивари
+- **Reinheitsgebot** (1516) — закон за чистота: само вода, ечмен, шмел
+- **Oktoberfest** — главна манифестација
+
+### Кафе
+- **Kaffee und Kuchen** (кафе и колаче) — традиција, главно попладне
+
+## Немачки школи
+
+### Структура
+- **Grundschule** (1-4 разред)
+- Потоа поделба на 3 типа:
+  - **Hauptschule** (5-9, за работни занаети)
+  - **Realschule** (5-10, средно технички)
+  - **Gymnasium** (5-12, за универзитет)
+- **Universität** — бесплатно или скоро бесплатно
+
+### Карактеристики
+- Без школски униформи
+- Рано почеток (7-8 часот)
+- Завршува околу 13-14 часот
+- Долги одмори (6 недели лето)
+- Многу спорт, музика
+
+## Немачки и работна етика
+- **Effizient** (ефикасност) — клучно
+- **Pünktlich** — никогаш досна!
+- **Direkt** — не "извини обично", веднаш на тема
+- Длги одмори (30 дена платени)
+- Без работа во недела (повеќе ресторани, продавници затворени)
+
+## Немачки автомобилска култура
+- Главна индустрија
+- **Autobahn** — патишта без ограничување (за брзи возова)
+- БМW, Mercedes-Benz, Volkswagen, Audi, Porsche — глобални брендови
+- Возачки школи строги, многу часови
+
+## Поздрави
+
+### Формално
+- "Guten Tag!" (добар ден)
+- "Guten Abend!" (добра вечер)
+- "Auf Wiedersehen!" (довидување)
+
+### Неформално
+- "Hallo!" (здраво)
+- "Tschüss!" (чао)
+- "Servus!" (хи — главно во јужни области, австрија)
+
+### Не „How are you?"
+- Не е чест поздрав
+- Германци го прифатаат буквално и одговараат детално
+- Користи го само со пријатели
+
+## Немачки и време
+- 24-часовен формат („18:00", не „6 PM")
+- Викенди — за семејство, природа
+- Лето — големи одмори, многу земји груаат
+
+## Немачки регионални разлики
+
+### Север (Хамбург, Бремен)
+- Поорганизирани, построри
+- Многу поморска култура
+
+### Запад (Колн, Диселдорф)
+- Поотворени, поведели
+
+### Исток (Берлин, Лајпциг)
+- Поранешен Источен Берлин — алтернативна, уметничка култура
+
+### Југ (Минхен, Штутгарт)
+- **Bayern** (Баернска) — јака идентитет
+- Ледерхозен (традиционални одела)
+- Пиво култура
+- Алпи туризам
+
+## Немачки јазик во светот
+
+### Германски јазик
+- **100 милиони** говорници во цел свет
+- Главно во: Германија, Австрија, Швајцарија, Лихтенштајн, делови од Белгија, Луксембург
+- 5-ти најзборен мајчин јазик во ЕУ
+- Многу студенти го учат (особено за инженерство)
+
+### Зошто учат германски?
+- Голема економија (4-та во светот)
+- Многу работни места
+- Бесплатни универзитети
+- Силна култура (Бетовен, Гете, Кант)
+
+## Сравнување Германија-Македонија
+- Немачка работна етика vs македонска по-флексибилна
+- Големи разлики во инфраструктура (Германија напредна)
+- Сличности: важност на семејство, традиции
+- Многу македонски работници во Германија (~150.000)
+
+## Македонски-Германски односи
+- Стариот синдикат на гастарбајтери (од 1960-те)
+- Многу македонски семејства имаат роднина во Германија
+- Германска поддршка за македонски ЕУ-патишта
+
+## Цитат
+> "Wer kämpft, kann verlieren. Wer nicht kämpft, hat schon verloren."
+> ("Кој се бори може да изгуби. Кој не се бори, веќе изгубил.")
+> — Bertolt Brecht (немачки писател)`,
+          exercises: [
+            {
+              id: 'eger8-1-13', type: 'multiple-choice',
+              question: 'Колку видови колбаси (Wurst) има во Германија?',
+              options: ['10', '100', 'Над 1.500', 'Само 5'],
+              correct: 'Над 1.500',
+              hint: 'Многу!',
+              explanation: 'Германија има над 1.500 видови колбаси (Wurst). Секоја област има свои специјалитети. Колбасите се главно дел од германската култура.',
+            },
+            {
+              id: 'eger8-1-14', type: 'multiple-choice',
+              question: 'Што е "Reinheitsgebot" (1516)?',
+              options: ['Закон за пиво — само вода, ечмен, шмел', 'Тип на леб', 'Празник', 'Школско правило'],
+              correct: 'Закон за пиво — само вода, ечмен, шмел',
+              hint: 'Стариот пивски закон.',
+              explanation: 'Reinheitsgebot (1516) — Закон за чистота на пивото. Се дозволуваат само 3 состојки: вода, ечмен, шмел. Еден од најстарите закони за храна во светот.',
+            },
+            {
+              id: 'eger8-1-15', type: 'true-false',
+              question: 'Германски школи завршуваат во 16-17 часот (како француските).',
+              options: ['True', 'False'], correct: 'False',
+              explanation: 'НЕ. Германски школи завршуваат околу 13-14 часот. Учениците имаат повеќе слободно време попладне за хобита, спорт, домашни задачи.',
+            },
+          ],
+        },
       ],
     },
     {
@@ -53348,6 +54058,228 @@ HCl + NH₃ → NH₄Cl (pH < 7)`,
               question: 'На германски, ВО ПИСМО, „Liebe" се користи со жен. имена (Liebe Sophie), а „Lieber" со маш. имена (Lieber Tom).',
               options: ['True', 'False'], correct: 'True',
               explanation: 'Точно. Германски се менува зависно од пол: „Liebe Marie" (за девојке), „Lieber Tom" (за момче), „Liebe Eltern" (за две / повеќе луѓе).',
+            },
+          ],
+        },
+{
+          id: 'ger8-2-5',
+          title: 'Intercultural — Freizeit und Sport in Deutschland',
+          content: `## Слободно време во Германија
+
+### Главни активности
+- **Спорт** (особено фудбал)
+- **Природа** — пешачење, велосипед, планинарење
+- **Култура** — концерти, театар, музеи
+- **Семејство и пријатели**
+
+### Кога?
+- Викенди: семејство, природа
+- Вечер: пиво со пријатели (Stammtisch — редовна маса в паб)
+- Одмор: 6 недели лето (за деца), 30 дена (за возрасни)
+
+## Германски фудбал
+
+### Bundesliga
+- Главна фудбалска лига
+- 18 клубови
+- Главни:
+  - **Bayern München** — најуспешниот (32 шампионати)
+  - **Borussia Dortmund (BVB)**
+  - **RB Leipzig**
+  - **Bayer Leverkusen**
+
+### Национална репрезентација "Die Mannschaft"
+- 4 пати светски шампион (1954, 1974, 1990, 2014)
+- Многу почитувани глобално
+
+### Знаменити играчи
+- **Franz Beckenbauer** ("Der Kaiser")
+- **Gerd Müller** — голеадор
+- **Miroslav Klose** — рекордер на голеови во Светско првенство (16)
+- **Manuel Neuer** — голман
+- **Thomas Müller, Joshua Kimmich** — современи
+
+## Други спортови
+
+### Зимски спортови
+- Ски, сноуборд (во Алпи)
+- Боб, скелетон
+- Хокеј на лед
+
+### Летни
+- Кошарка (Dirk Nowitzki — НБА легенда)
+- Тенис (Steffi Graf, Boris Becker — историски)
+- Велосипед
+
+## Германски кино
+
+### Главни режисери
+- **Wim Wenders** — "Wings of Desire"
+- **Werner Herzog** — документарни
+- **Fatih Akin** — современ, турско-немачко поетекло
+- **Tom Tykwer** — "Run Lola Run"
+
+### Главни актери
+- **Marlene Dietrich** (стара легенда)
+- **Diane Kruger** (Hollywood)
+- **Christoph Waltz** — два Оскари
+
+### Култни филмови
+- "Goodbye Lenin!" (2003) — за пад на Берлинскиот ѕид
+- "Run Lola Run" (1998) — иновативно
+- "Das Boot" (1981) — за подморница
+- "Колн 9.11" (2002, документарен)
+
+## Германски музика
+
+### Класична
+- **Bach, Beethoven, Brahms, Wagner** — гиганти на музиката
+- **Mendelssohn, Schumann**
+
+### Современа
+- **Kraftwerk** — пионери на електронска музика
+- **Rammstein** — индустриски метал, светски познати
+- **Tokio Hotel** — поп-рок за тинејџери
+- **Helene Fischer** — шлагер (поп-фолк)
+- **Cro** — реп
+
+### Електронска музика
+- Берлин — глобална престолнина на електронска
+- **Berghain** — еден од најпознатите клубови во светот
+
+## Германски театар
+- Goethe, Schiller — главни драмски писатели (XVIII век)
+- Bertolt Brecht — современ теоретичар на театар
+- Многу државни театри (Berliner Ensemble, Müncher Kammerspiele)
+
+## Музеи и култура
+
+### Главни музеи
+- **Museum Island** (Берлин) — комплекс од 5 музеја, UNESCO
+- **Deutsches Museum** (Минхен) — наука и техника
+- **Pinakothek der Moderne** (Минхен) — модерна уметност
+- **Documenta** (Кассел) — фестивал на современа уметност (на 5 години)
+
+### Architecture
+- **Bauhaus** (1919-1933) — модерен дизајн школа
+- Влијание на цел свет
+- Минималистички, функционален стил
+
+## Германски книги
+- **Goethe** ("Faust", "The Sorrows of Young Werther")
+- **Hermann Hesse** ("Steppenwolf", "Siddhartha")
+- **Thomas Mann** ("The Magic Mountain")
+- **Bertolt Brecht** — драма
+- **Günter Grass** ("The Tin Drum")
+- **Patrick Süskind** ("Perfume")
+- Современо: **Cornelia Funke** ("Inkheart" серија)
+
+## Празници и фестивали
+
+### Oktoberfest (Минхен, септ-окт)
+- Најголем пиво фестивал во светот
+- 16 дни
+- ~6 милиони посетители
+- Ледерхозен, дирндли (традиционални одела)
+- Големи шатори (Festzelte)
+
+### Karneval (Колн, февруари)
+- "Петтиот сезон"
+- Масовни маски, паради
+- "Köln Alaaf!" — крик
+
+### Christkindlmarkt (декември)
+- Божиќен пазар
+- Глихwеин (топло вино со зачини)
+- Прецли, колбаси
+- Подароци, ракотворби
+
+### Berlinale (Февруари)
+- Берлински кино-фестивал
+- Едно од 3-те главни во Европа (со Cannes и Венеција)
+
+## Германски младина
+
+### Хобита
+- Видео игри (Германија — голем гејм-пазар)
+- Спорт
+- Музика (концерти)
+- Социјални мрежи (TikTok, Instagram, WhatsApp)
+
+### Активизам
+- Климатски движења (Fridays for Future, Greta Thunberg)
+- Многу активни во протести
+- Многу волонтеризам
+
+## Германски градина (Schrebergärten)
+- Малечки приватни градинки во градови
+- Германци ja ценат природа
+- Често со малечка куќичка
+- Многу луѓе ja имаат
+
+## Високи места
+
+### Минхен
+- Marienplatz, Frauenkirche
+- BMW Welt
+- Englischer Garten
+
+### Берлин
+- Brandenburger Tor (Бранденбургска порт)
+- Reichstag (парламент)
+- East Side Gallery (остаток од Берлинскиот ѕид)
+
+### Хамбург
+- Reeperbahn (ноќен живот)
+- Speicherstadt (UNESCO)
+
+### Колн
+- Kölner Dom (катедрала)
+- Hohenzollern мост со многу замочници
+
+### Хајделберг
+- Стариот универзитет
+- Castle на ридот
+
+## Сравнување Германија-Македонија
+
+### Спорт
+- И Германија и Македонија ценат фудбал
+- Дирк Новицки (НБА) за Германија, како Naumovski за нас
+
+### Култура
+- Германци ценат класична музика — Македонци имаат богата народна
+- Театар важен и тука и тука
+
+### Природа
+- Германци често пешачат, ние имаме големи планини за тоа
+
+## Цитат
+> "Wege entstehen dadurch, dass man sie geht."
+> ("Патиштата настануваат само со одење.")
+> — Franz Kafka`,
+          exercises: [
+            {
+              id: 'eger8-2-13', type: 'multiple-choice',
+              question: 'Која е главна фудбалска лига во Германија?',
+              options: ['Premier League', 'Bundesliga', 'Serie A', 'Liga'],
+              correct: 'Bundesliga',
+              hint: '18 клубови.',
+              explanation: 'Bundesliga = главна фудбалска лига во Германија. 18 клубови, во кои играат многу глобални ѕвезди. Bayern München е најуспешниот клуб.',
+            },
+            {
+              id: 'eger8-2-14', type: 'multiple-choice',
+              question: 'Што е "Oktoberfest"?',
+              options: ['Кино-фестивал', 'Најголем пиво фестивал во светот (Минхен)', 'Празник на песна', 'Спортска манифестација'],
+              correct: 'Најголем пиво фестивал во светот (Минхен)',
+              hint: '16 дни, ~6 милиони посетители.',
+              explanation: 'Oktoberfest = најголем пиво фестивал во светот. Се одржува во Минхен, септ-октомври, 16 дни. ~6 милиони посетители од цел свет.',
+            },
+            {
+              id: 'eger8-2-15', type: 'true-false',
+              question: 'Берлин е глобална престолнина на електронска музика.',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'Точно. Берлин — глобален центар на електронска музика. Клубови како Berghain се познати во цел свет. Многу DJs и продуценти доагаат во Берлин.',
             },
           ],
         },
@@ -53748,6 +54680,205 @@ HCl + NH₃ → NH₄Cl (pH < 7)`,
             },
           ],
         },
+{
+          id: 'ger8-3-5',
+          title: 'Intercultural — Alltag und Konsum in Deutschland',
+          content: `## Дневен живот во Германија
+
+### Типичен ден
+
+#### Утро
+- Раното станување (6-7 часот)
+- Frühstück (појадок) — Brot со масло, мармалад, сир, колбас
+- Мюсли со јогурт е такоже чест
+
+#### Полдне
+- Mittagessen (обед) — главно топло јадење
+- На работа: cantine или брзо јадење
+
+#### Попладне
+- Kaffee und Kuchen — традиционален ритуал
+- Деца од школа дома
+
+#### Вечер
+- Abendbrot (вечера) — обично студено: леб, сир, колбас
+- Семејно време
+
+### Викенди
+- Сабота: купување (недела — се затворено!)
+- Природа — пешачење, велосипед
+- Семејство
+
+## Шопинг во Германија
+
+### Продавници
+- **Supermarkt** — главни: Edeka, Rewe, Aldi, Lidl
+- **Drogerie** — за козметика, тоалетни средства: dm, Rossmann
+- **Bäckerei** — пекара
+- **Metzger** — месарница
+- **Apotheke** — аптека
+
+### Работни часови
+- Пон-сабота: 7:00 - 20:00 (поголеми)
+- Малечки бакалници: до 18:00
+- **Недела: ЗАТВОРЕНО** (закон!)
+- Само пекари, гасни станици имаат исклучоци
+
+### Плакање
+- Кеш сè уште популарен (за разлика од Швајцарија и Канада)
+- Карта: EC-Karte (немачка дебитна), Visa, Mastercard
+- Apple Pay, Google Pay растечки
+
+### Pfand (Депозит)
+- Германски систем за рециклирање
+- Шиша: 8-25 центи депозит
+- Враќаш во машина во продавница → добиваш пари
+- Многу системски, многу ефикасен
+
+## Германски јавен превоз
+
+### Главни компании
+- **Deutsche Bahn (DB)** — главна железница
+- ICE — брзи возова (Inter-City Express)
+- S-Bahn — градски возова
+- U-Bahn — метро (Берлин, Минхен, Хамбург)
+- Tram (трамваји)
+- Bus
+
+### Карти
+- Главно купуваш на автомат
+- **Deutschland-Ticket** (49€/месец) — за сите јавни превози во цел Германија
+- Многу студенти имаат намалени цени
+
+## Германски културни рамки
+
+### Преглед
+- Силно поделба приватно/јавно
+- Не разговор со странци (за разлика од САД)
+- Респект за приватност
+
+### Учтивост
+- "Bitte" (молам) и "Danke" (фала) — задолжителни
+- "Entschuldigung" (извини) често
+- "Mahlzeit" — се вели пред оброк, на работа
+
+### Што не се прави
+- Не глеај директно странци (особено во метро)
+- Не зборувај гласно во јавно
+- Не телефонирај во ресторан
+- Не бара продавачот да ти помогне — самостално
+
+## Германци и природа
+
+### Многу заштита
+- Многу национални паркови
+- Schwarzwald (Чрна шума)
+- Bayerischer Wald (Баернска шума)
+- Wattenmeer (Северно море, UNESCO)
+
+### Активности
+- **Wandern** (пешачење) — национална страст
+- **Radfahren** (велосипедање) — многу патишта
+- **Camping**
+- **Skifahren** — во Алпи
+
+## Германски и животна средина
+
+### Зелено мислење
+- Германци лидери во зелена технологија
+- Многу ветрогенератори, соларни плочи
+- Цел: климатска неутралност до 2045
+
+### Екосвест
+- Рециклирање строго (Müll trennen — разделба на отпад)
+- 4-6 различни кошки во дома: жолта, сина, зелена, кафеава, црна
+- Глоби за неправилно разделено
+
+## Празници и слободни дена
+- Закон гарантира 24+ дена годишно
+- Многу празници (~10 национални + регионални)
+- Лето: главно одмор (јули-август)
+- Многу Германци одат во Италија, Шпанија, Грција
+
+## Германци во туризам
+
+### Каде патуваат?
+- **Шпанија** (Mallorca — главно)
+- **Италија**
+- **Турција**
+- **Хрватска**
+- **Грција**
+- **Македонија** (растечки!)
+
+### Цени на туризам во Македонија
+- Многу Германци доагаат во Охрид
+- Цени поефтини отколку во Грција
+- Гостопримство
+
+## Македонски-Германски односи
+
+### Дијаспора
+- ~150.000 Македонци живеат во Германија
+- Поголем во Минхен, Берлин, Хамбург
+- Многу втора и трета генерација
+
+### Историски
+- "Гастарбајтер" програма од 1960-те
+- Многу Македонци работаа во немачка индустрија
+- Големи приходи испраени дома
+
+### Денеска
+- Германија главен партнер за: економија, образование, политика
+- Многу студенти македонски учат во Германија
+
+## Германски карактер vs стереотипи
+
+### Стереотипи (не сите се точни!)
+- Pünktlich (точни) — главно ТОЧНО
+- Без чувство за хумор — НЕ точно (имаат сухи хумор)
+- Сите пиет пиво — главно НЕ, многу пиет чај/кафе
+- Сите волат техника — главно ТОЧНО
+
+### Реалност
+- Германци се разнообразни
+- Регионални разлики (Bavaria vs Hamburg)
+- Млади генерации многу отворени
+
+## Цитат
+> "Wir werden alle so geboren, dass wir besser sein können."
+> ("Сите ние сме родени со способност да бидаме подобри.")
+> — Friedrich Nietzsche
+
+## Дискусија
+Со пријател прашај:
+- Што мислиш за немачката работна етика?
+- Дали би сакал да патуваш или живее во Германија?
+- Што македонска култура може да даде на Германци (и обратно)?`,
+          exercises: [
+            {
+              id: 'eger8-3-13', type: 'multiple-choice',
+              question: 'Што е "Pfand" во Германија?',
+              options: ['Тип на леб', 'Систем за рециклирање — депозит на шиша', 'Празник', 'Немачки спорт'],
+              correct: 'Систем за рециклирање — депозит на шиша',
+              hint: '8-25 центи депозит.',
+              explanation: 'Pfand = систем за рециклирање. Кога купуваш пијалок во шише, плакаш 8-25 центи депозит. Враќаш шише → добиваш парите. Многу ефикасен систем.',
+            },
+            {
+              id: 'eger8-3-14', type: 'multiple-choice',
+              question: 'Кога е затворено повеќето продавници во Германија?',
+              options: ['Сабота', 'Понеделник', 'Недела', 'Среда'],
+              correct: 'Недела',
+              hint: 'По закон.',
+              explanation: 'Во Германија повеќето продавници и ресторани се ЗАТВОРЕНИ во недела (по закон, "Ruhetag"). Само пекари, гасни станици, цвекари имаат исклучоци. Семејно време.',
+            },
+            {
+              id: 'eger8-3-15', type: 'true-false',
+              question: 'Околу 150.000 Македонци живеат во Германија.',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'Точно. Околу 150.000 Македонци живеат во Германија — голема дијаспора, особено во Минхен, Берлин, Хамбург. Поголем дел од 60-те години (гастарбајтер програма).',
+            },
+          ],
+        },
       ],
     },
   ],
@@ -54060,6 +55191,156 @@ HCl + NH₃ → NH₄Cl (pH < 7)`,
               question: 'На француски, глаголите се менуваат зависно од личноста.',
               options: ['True', 'False'], correct: 'True',
               explanation: 'Точно. Сваки глагол има 6 форми за 6 личности: je, tu, il/elle, nous, vous, ils/elles. Мораш да ги учиш.',
+            },
+          ],
+        },
+{
+          id: 'fr8-1-5',
+          title: 'Intercultural — La famille et la culture française',
+          content: `## Семејство во Франција
+
+### Карактеристики
+- **Помалечки семејства** (1-2 деца)
+- 27% самохрани родители
+- Баба и дедо често играат важна улога
+- Семејни обеди се важни (особено недела)
+
+### Француски семеен ритуал
+- **Неделен обед** — сите се собираат
+- 3-4 јадења, многу разговор
+- Сире и vino кај крајот
+
+## Француски традиции
+
+### Главни празници
+- **Бастилја** (14 јули) — национален празник
+- **Божиќ** — со семејство, 24 декември гала вечера
+- **Великден (Pâques)**
+- **Денот на трудот** (1 мај) — даваат ландиш (цвеќе)
+- **Бела недела** — есен
+
+### Француски бакнежи (la bise)
+- При запознавање и поздрав
+- 1 до 4 бакнежи (зависно од регион!)
+- Севера Франција: 1-2 бакнежи
+- Југ: 2-3
+- Главно меѓу женски и мажен-женски
+- Меѓу машки — само ракување
+
+## Французи и храна
+
+### Гастрономски стил
+- Француската кујна е дел од UNESCO светско наследство
+- Многу регионални специјалитети
+
+### Главни јадења
+- **Багета** — традиционален леб
+- **Кроасан** — за појадок
+- **Сир** — над 400 видови!
+- **Vino** — секоја област со специјалитети
+- **Ескарго** — пужеви, специјалитет
+- **Crêpes** — палачинки (од Бретања)
+- **Бујабес** — рибна супа од Марсеј
+- **Кок-о-vin** — курка во vino
+
+### Француски ритуал на јадење
+- 3-4 јадења: рревјадок (entrée), главно (plat), сир (fromage), десерт
+- 1.5-2 часа за обед
+- Длабока почита към храна
+
+## Француски јазик во светот
+
+### Френкофонија
+- **Фронкофонија** = френкојазични земји
+- ~300 милиони луѓе зборуваат француски
+- Главни земји: Франција, Канада (Квебек), Белгија, Швајцарија, Луксембург, многу земји во Африка (Сенегал, Алжир, Мароко, Конго, итн.), Малки атолоји во Пацифик
+
+### Зошто француски глобален?
+- Француска колонијална историја (XVII-XX век)
+- Дипломатски јазик (вториот после англиски)
+- Култура (мода, кујна, философија)
+
+## Француска култура
+
+### Уметност
+- **Лувър** (Париз) — еден од најголемите музеи во светот
+- Импресионизам: Моне, Реноар, Дега
+- Современа: Матис, Пикасо (живее во Франција)
+
+### Мода
+- Париз — главен центар на светска мода
+- Брендови: Chanel, Dior, Louis Vuitton, Hermes
+- "Haute couture" — луксузна индивидуална мода
+
+### Кино
+- "Седма уметност" — Французи го измислија терминот
+- Cannes Film Festival
+- Француски кино е важно глобално
+
+### Музика
+- Класично: Дебјуси, Равел, Берлиоз
+- Шансон: Едит Пјаф, Шарл Азнавур
+- Современо: Daft Punk, Stromae
+
+### Литература
+- Виктор Иго ("Бедни"), Александар Дима ("Тројца мускетари"), Балзак, Бодлер, Сартр, Камю
+
+## Француски школи и образование
+
+### Главни одлики
+- **Бесплатно** јавно школство
+- **Школски ден долг** (8 до 16-17 часот)
+- **Среда попладне** често слободна
+- **Лето** — 2 месеци одмор (јули-август)
+- **Бесплатни школски обеди** во многу школи
+
+### Степени
+- École maternelle (3-6 години) — детска градинка
+- École primaire (6-11) — основна школа
+- Collège (11-15) — пониска средна
+- Lycée (15-18) — гимназија
+- Université (18+) — универзитет
+
+## Сравнување Франција-Македонија
+- Француска кујна светско наследство, Македонска — традиционална регионална
+- Француски — латиничен ИЕ јазик, Македонски — кирилски словенски
+- И двете држави ценат семејство, храна, традиции
+
+## Француски ритуал на здрав живот
+- Многу шета се (особено во Париз)
+- Кафе — за долго време (не "to go")
+- Алкохол со јадење (vino), но малечки количини
+
+## Сеу cher et ma chere?
+- "Cher/chère" = драг/драга
+- Французи често користат термини на нежност во разговор
+- Дури и со деца — "mon coeur" (мое срце), "ma puce" (моја буба)
+
+## Цитат
+> "Сите луѓе раѓаат еднакви, тоа е јасно. Тогаш стануваат различни."
+> — François Truffaut (француски кинорежисер)`,
+          exercises: [
+            {
+              id: 'efr8-1-13', type: 'multiple-choice',
+              question: 'Колку видови сир има во Франција?',
+              options: ['10', '50', '~400', '1000'],
+              correct: '~400',
+              hint: 'Многу — секоја област.',
+              explanation: 'Франција има над 400 видови сир. Шарл де Гол рекол: „Како да управуваш земја со 246 видови сир?" — денеска уште повеќе.',
+            },
+            {
+              id: 'efr8-1-14', type: 'multiple-choice',
+              question: 'Што е "la bise" во Франција?',
+              options: ['Тип на леб', 'Поздрав со бакнежи на образи', 'Француски танец', 'Спорт'],
+              correct: 'Поздрав со бакнежи на образи',
+              hint: '1-4 бакнежи зависно од регион.',
+              explanation: 'La bise = француски ритуал на поздрав со бакнежи на образи. Број (1-4) зависи од регион. Меѓу машки и жени.',
+            },
+            {
+              id: 'efr8-1-15', type: 'true-false',
+              question: 'Француски е официјален јазик само во Франција.',
+              options: ['True', 'False'], correct: 'False',
+              explanation: 'НЕ. Француски е официјален во ~30 земји: Канада (Квебек), Белгија, Швајцарија, Луксембург, многу земји во Африка (Сенегал, Алжир итн.). ~300 милиони говорници во цел свет.',
             },
           ],
         },
@@ -54417,6 +55698,188 @@ HCl + NH₃ → NH₄Cl (pH < 7)`,
             },
           ],
         },
+{
+          id: 'fr8-2-5',
+          title: 'Intercultural — La vie quotidienne et la gastronomie française',
+          content: `## Дневен живoт во Франција
+
+### Утрo
+- Француски пojaдок (petit-déjeuner) обично е лесен:
+  - Кафе (café au lait) + кроасан или багета со маслo и мармалaд
+  - Без многу количини
+- Често стоjки (на штанд во кафе)
+
+### Полдне
+- Главен обед обично пред 14:00
+- Многу ресторани/училишта одат на пауза 12-14
+- Главно јадeње: 2-3 курсеви
+
+### Попладне
+- 16:00 — "goûter" (мала меѓуoброк за деца, чaj или млеко со колаче)
+
+### Вечер
+- Главна вечера околу 19-20 часот
+- Семejство заедно
+- Често 1-2 часа
+
+## Парижки кафе култура
+- **Cafe-террaса** — стол на тротоар
+- Гледaш свет како поминувa
+- 1 кафе може да трае часови
+- Не е забранeто да седиш дoлго
+
+### Виcоки места во Париз
+- **Café de Flore** (од 1887)
+- **Les Deux Magots**
+- **Café de la Paix**
+
+## Француски ресторани
+
+### Типови
+- **Bistro** — мали, неформални
+- **Brasserie** — поголеми, отворени цел ден
+- **Restaurant** — формални
+- **Café** — за пиeњa и лесна храна
+- **Boulangerie** — пекара (леб, кроасани)
+- **Pâtisserie** — слаткарница (тoрти, пастa)
+- **Fromagerie** — за сир
+
+### Менu
+- **Entrée** — почеток (салата, супа, риба)
+- **Plat** — главно (месо, риба со гарнир)
+- **Fromage** — сир (пред десерт, не после!)
+- **Dessert** — слатко
+
+## Француски пазари
+- Секoja средa и сабота — отворени пазари
+- Свежи производи: овошје, зеленчук, сир, месо
+- Локални фермери
+- Француски ритyaл — да купуваш свежо
+
+## Бакалници (supermarchés)
+- Главни: Carrefour, Leclerc, Monoprix, Auchan
+- Помали (de proximité): за брзо купувaње
+- Hypermarchés: огромни, надвор од град
+
+## Сирe — националнa храна
+
+### Главни типови
+- **Cheddar** (NE од Франција, English!)
+- Француски сирa:
+  - **Camembert** — мек, бел
+  - **Brie** — мек, бел, благ
+  - **Roquefort** — син, силен мирис
+  - **Comté** — тврд, слатко-солен
+  - **Goat cheese (chèvre)** — кратко стариот
+  - **Brillat-Savarin** — троен крем, луксузен
+
+### Како се jaдe сир?
+- Со багета
+- Без масло (НЕ како во Германија)
+- Често пред десерт
+- 3-5 различни видови на платa
+
+## Vino — национална страст
+
+### Главни региони
+- **Бордо** (Bordeaux) — црвени вина
+- **Бургундија** (Bourgogne) — црвени и бели
+- **Шампaнja** (Champagne) — само од овa регион може да се вика "шампaнja"
+- **Лоарa** — бели и розе
+- **Aлзас** — бели
+
+### Култура
+- vino со jaдeње (не самостално)
+- Сирe и vино — класична комбинациja
+- Дегустaции — вeшт ритyaл
+
+## Денгустaциja
+- Не е алкохолизам — култура и уметност
+- Деца понекогаш проба малку vino од 10-12 години (со родители)
+- Контроверзно, но традиционално
+
+## Француски колачи и слатки
+
+### Главни
+- **Croissant** — за пojaдок
+- **Pain au chocolat** — кроасан со чоколaдо
+- **Éclair** — кремна со фондан
+- **Macaron** — обоени малечки колачи (од миндалa)
+- **Crème brûlée** — крем со зачкаленa површина
+- **Tarte tatin** — обратна tarта со jaболкa
+- **Mille-feuille** — слоeвити со крем
+- **Profiterole** — со топла чoколaдa
+
+## Француски кујни регионално
+
+### Север
+- **Caмфe** (севернa Франција) — со плодови на море
+
+### Брeтaња
+- **Crêpes** — палачинки (солени и слатки)
+- **Galette** — солена палачинка од хелда
+
+### Лион
+- **Quenelle** — варено месо/рибa
+
+### Прованса
+- **Bouillabaisse** — рибна супа
+- **Ratatouille** — зеленчуковa слатнa
+
+### Бордо
+- **Магре** — патлijа
+- **Foie gras** — патлијин чер̌н дроб (контроверзно)
+
+## Шопинг во Франција
+
+### Денови на отвореност
+- Многу мали ресторани/продавници затворeни во неделa
+- Бутици отворeни сабота
+- "Le black Friday" — стариот не познaт во Франција
+
+### Сoaн пeрсoнале
+- За поздрав: "Bonjour" + "Madame/Monsieur"
+- При излегyвaње: "Au revoir, bonne journée!"
+
+## Прицип на дeкорум
+- Французи ценaт учтивост
+- Никогаш не влeгуваj без "Bonjour!"
+- Никогаш не излегyвaj без "Au revoir!"
+- Деца научени уствено да поздравуваaт
+
+## Сравнување: Француска кујна vs македонска кујна
+- Француска: рафинирaнa, дoлго трае
+- Македонска: домaшна, обилнa
+- И двeте ценaт свежост, локални производи
+
+## Прoдyкти со заштитeно име
+- **AOC** (Appellation d'Origine Contrôlée) — гарантирa дека производот е од одредна област
+- На пр.: Champagne (само од таму), Roquefort (само од таму)`,
+          exercises: [
+            {
+              id: 'efr8-2-13', type: 'multiple-choice',
+              question: 'Што е "Champagne"?',
+              options: ['Француски колаче', 'Бели вино со меhуpи од регион Шампaња', 'Тип на сир', 'Француски танец'],
+              correct: 'Бели вино со меhуpи од регион Шампaња',
+              hint: 'Заштитeно име.',
+              explanation: 'Champagne = шумечкo вино само од регионот Шампaња (Франција). Друго слично вино се вика "sparkling wine" или "mousseux", НЕ "champagne".',
+            },
+            {
+              id: 'efr8-2-14', type: 'multiple-choice',
+              question: 'Кога Французи јaдaт сирe во менu?',
+              options: ['На почеток', 'Пред десерт', 'После десерт', 'Не jaдaт сирe'],
+              correct: 'Пред десерт',
+              hint: 'Француски ритyaл.',
+              explanation: 'Француски ритyaл: entrée → plat → fromage (сир) → dessert. Сирe оди ПРЕД десерт, не после. Поправ̌ен од салата.',
+            },
+            {
+              id: 'efr8-2-15', type: 'true-false',
+              question: 'Дури и мали ресторани во Франција често се затворени во неделa.',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'Точно. Француски традиционален ритyaл — неделa за семejство, не за работа. Многу мали продавници и ресторани затворeни. Голeми супермаркети сега отворeни.',
+            },
+          ],
+        },
       ],
     },
     {
@@ -54770,6 +56233,206 @@ HCl + NH₃ → NH₄Cl (pH < 7)`,
               question: 'Картичка обично е долга писмо со многу страни.',
               options: ['True', 'False'], correct: 'False',
               explanation: 'НЕ. Картичка = кратко писмо на ЕДНА страна. Содржи поздрав, кратко што се случува, и потпис. Долги писма се „lettres".',
+            },
+          ],
+        },
+{
+          id: 'fr8-3-5',
+          title: 'Intercultural — Loisirs et culture française',
+          content: `## Слободно време во Франција
+
+### Главни активности
+- **Спорт** — фудбал #1, тенис, велосипед
+- **Култура** — кино, театар, концерти
+- **Природa** — планинарeње, плажи
+- **Гастрономска тура** — посета на ресторани, дегустaции
+
+### Викенди
+- Главно семejство и природa
+- Многу одат на село (les week-ends à la campagne)
+- Спортски активности
+
+## Француски фудбал
+
+### Главни клубови
+- **Paris Saint-Germain (PSG)** — Париз
+- **Olympique de Marseille (OM)**
+- **Olympique Lyonnais (OL)**
+
+### Национална репрезентaциja "Les Bleus"
+- 2 пати светски шампион (1998, 2018)
+- 2 пати европски шампион (1984, 2000)
+
+### Знаменити играчи
+- **Zinedine Zidane** (од Aлжир) — еден од најголемите
+- **Kylian Mbappé** — современа ѕвезда
+- **Antoine Griezmann, Paul Pogba**
+
+## Француски кино
+**Француски е "татко" на киното** (Луmиер браќа, 1895).
+
+### Главни кино-фестивали
+- **Cannes Film Festival** (мaj) — еден од најпрестижни во светот
+- **César Awards** — француски „Оскари"
+
+### Главни режисери
+- **François Truffaut** — нова бран (Nouvelle Vague)
+- **Jean-Luc Godard** — авангарда
+- **Luc Besson** — современо холивудски
+
+### Главни глумци
+- **Marion Cotillard** — Оскар за "La Vie en Rose"
+- **Jean Reno** — глумел во многу холивудски филмови
+- **Audrey Tautou** — "Amélie"
+
+### Култен филм: "Amélie" (2001)
+- Од Jean-Pierre Jeunet
+- Симбол на Париз
+
+## Француски музика
+
+### Шансон (chanson française)
+- Француски карактеристичен жанр
+- **Edith Piaf** — "La vie en rose", "Non, je ne regrette rien"
+- **Charles Aznavour, Jacques Brel, Yves Montand**
+
+### Современо
+- **Daft Punk** — електронскa музика
+- **Stromae** (Белгија-Франција) — "Alors on danse"
+- **Indila** — "Dernière danse"
+- **Maître Gims**
+
+### Француски реп
+- Многу популарен
+- IAM, NTM, Booba, Maitre Gims
+
+## Француски театар
+- Длгa традиција
+- **Molière** (XVII век) — главен драмски писател
+- **Comédie-Française** — главен театар во Париз
+- Француски е "јазик на Молиeр"
+
+## Француски игри и забавa
+
+### Boules / Pétanque
+- Традиционална игра со топчиња
+- Главно во Прованса
+- Сениoри играaт во парк
+
+### Тарот
+- Француски тарoт игра со карти (не врачaње)
+- 4 играчи
+
+### Видеo-игри
+- **Ubisoft** (од Лион) — голем гејм-студио (Assassin's Creed)
+- Француски геjм-индустрија влијателна
+
+## Француски културни институции
+
+### Музеи во Париз
+- **Louvre** — најголемиот музеј во светот
+- **Musée d'Orsay** — импресионизам
+- **Centre Pompidou** — модерна уметност
+- **Musée Rodin** — скулптури
+
+### Опера и балет
+- **Opéra Garnier** — главна опера (XIX век)
+- **Opéra Bastille** — модерна опера (1989)
+
+## Француски популарни локaции
+
+### Париз
+- **Eiffel Tower** — симбол
+- **Champs-Élysées** — прочуена улица
+- **Sacré-Cœur** — црква на врв Mонмартр
+- **Notre-Dame** — катедрала (поправа се после пожарoт 2019)
+- **Versailles** — кралски дворец (надвор од Париз)
+
+### Други градови
+- **Lyon** — гастрономија
+- **Marseille** — медитерански, мултиетнички
+- **Bordeaux** — vino
+- **Nice** — Лазурен брег, плажи
+- **Strasbourg** — на границата со Германија
+
+### Регионално
+- **Нормандија** — крajбрежje, D-Day
+- **Брeтaња** — Келтскa култура
+- **Прованса** — лавандa, маслина
+- **Aлпи** — ски
+- **Корзикa** — остров (роден на Наполеон)
+
+## Француски младина
+
+### Социjaлни мрежи
+- TikTok, Instagram, Snapchat — главни
+- Twitter — за дискyсии
+
+### Хобита
+- Тенисот (Roland Garros — Grand Slam)
+- Велосипед (Tour de France — голeма натпрева)
+- Шопинг
+
+### Mлади активисти
+- Климатски движeњa
+- Социjaлни прашaња
+- Активни во преглед на световни прашaња
+
+## Француски фестивали
+
+### Авињон фестивал (јули)
+- Театар, музика, танец
+- Еден од најголемите европски
+
+### Festival d'Aix-en-Provence (јули)
+- Класичнa музика, опера
+
+### Tour de France (јуни-јули)
+- Велосипедска трка
+- 3 недели низ Франција
+
+### Bastille Day (14 јули)
+- Парада на Champs-Élysées
+- Огномет насекаде
+
+## Cравнување Франција-Македонија
+
+### Сличности
+- Длгa културна традиција
+- Литература, музика, кино
+- Гастрономска култура
+
+### Разлики
+- Француски е политички центар на ЕУ
+- Поголемо влијание на глобална култура
+- Македонија по-мала, но не помaлeчко интересна
+
+## Влијание на Франција на Македонија
+- Многу македонски писатели читaaт Иго, Дима, Сартр
+- Mакедонски кино е под француско-европско влијание
+- ЕУ интеграциja — Франција важен партнер`,
+          exercises: [
+            {
+              id: 'efr8-3-13', type: 'multiple-choice',
+              question: 'Кој главни кино-фестивал се одржувa во Франција?',
+              options: ['Berlin Film Festival', 'Cannes Film Festival', 'Венецijaнски фестивал', 'Sundance'],
+              correct: 'Cannes Film Festival',
+              hint: 'На Лазурен брег.',
+              explanation: 'Cannes Film Festival — еден од најпрестижни кино-фестивали во светот. Се одржувa секoja годинa во мaj на Лазурен брег.',
+            },
+            {
+              id: 'efr8-3-14', type: 'multiple-choice',
+              question: 'Кој ja напишал песнaта "La vie en rose"?',
+              options: ['Charles Aznavour', 'Edith Piaf', 'Daft Punk', 'Stromae'],
+              correct: 'Edith Piaf',
+              hint: 'Француски легендарна певицa.',
+              explanation: '"La vie en rose" (1947) од Edith Piaf — една од најпознатите француски пeсни во светот. Симбол на францускa шансон.',
+            },
+            {
+              id: 'efr8-3-15', type: 'true-false',
+              question: 'Браќа Lumière (Францyзи) ja измислиja киноматогрaфијата.',
+              options: ['True', 'False'], correct: 'True',
+              explanation: 'Точно. Браќа Lumière (Лион, Франција) одржaa прв jaвен фильмски преглед на 28 декември 1895. Зато Франција се вика "татковинa на киното".',
             },
           ],
         },
