@@ -14,6 +14,7 @@ import StarMascot from '@/components/StarMascot'
 import { getActiveStudent, saveProgress, getSelectedGrade, StudentProfile } from '@/lib/auth'
 import MathVisual from '@/components/math/MathVisual'
 import DragDropExercise from '@/components/DragDropExercise'
+import { EuropeMap } from '@/components/EuropeMap'
 
 type Phase = 'lesson' | 'exercises' | 'results' | 'quiz-failed'
 
@@ -482,6 +483,13 @@ export default function LessonPage() {
                   style={{ background: '#0D1B2A', maxHeight: 240 }}
                 />
               )}
+            </div>
+          )}
+
+          {/* Europe Map — geo8 lessons */}
+          {lessonId.startsWith('geo8') && (
+            <div className="px-4 pb-2">
+              <EuropeMap height={400} className="rounded-2xl" />
             </div>
           )}
 
