@@ -24,14 +24,14 @@ const FLAG_CODE: Record<string, string> = {
 function FlagImg({ isoCode, size = 24 }: { isoCode: string; size?: number }) {
   const code = FLAG_CODE[isoCode];
   if (!code) return null;
-  const w = Math.round(size * 1.33);
+  // flagcdn.com supports w20, w40, w80 etc — width-only format
+  const w = size <= 22 ? 20 : size <= 36 ? 40 : 80;
   return (
     <img
-      src={`https://flagcdn.com/${w}x${size}/${code}.png`}
-      width={w}
+      src={`https://flagcdn.com/w${w}/${code}.png`}
       height={size}
       alt=""
-      style={{ borderRadius: 2, objectFit: 'cover', flexShrink: 0 }}
+      style={{ borderRadius: 2, flexShrink: 0 }}
     />
   );
 }
@@ -254,29 +254,48 @@ export function EuropeMap({ highlightCountry, height = 520, className = '' }: Eu
         </div>
       </div>
 
-      {/* Kosovo — not in Natural Earth TopoJSON, shown as clickable strip */}
-      <button
-        type="button"
-        onClick={() => setSelected({ ...KOSOVO, isoCode: KOSOVO_CODE })}
-        style={{
-          width: '100%', display: 'flex', alignItems: 'center', gap: 10,
-          padding: '10px 16px',
-          background: kosovSelected ? '#ffd54f18' : '#0f1729',
-          border: kosovSelected ? '1px solid #ffd54f' : '1px solid #263248',
-          borderTop: '1px solid #263248',
-          borderRadius: '0 0 12px 12px',
-          cursor: 'pointer', textAlign: 'left',
-        }}
-      >
-        <FlagImg isoCode={KOSOVO_CODE} size={18} />
-        <span style={{ fontSize: 13, fontWeight: 700, color: kosovSelected ? '#ffd54f' : '#90a4ae' }}>
-          Косово
-        </span>
-        <span style={{ fontSize: 11, color: '#546e7a', marginLeft: 4 }}>· Приштина · 1.8 мил.</span>
-        <span style={{ fontSize: 11, color: '#37474f', marginLeft: 'auto' }}>
-          не е во картографските податоци
-        </span>
-      </button>
+      {/* Kosovo — not in Natural Earth TopoJSON, shown as expandable strip */}
+      <div style={{
+        background: '#0f1729',
+        border: kosovSelected ? '1px solid #ffd54f' : '1px solid #263248',
+        borderTop: '1px solid #263248',
+        borderRadius: '0 0 12px 12px',
+        overflow: 'hidden',
+      }}>
+        <button
+          type="button"
+          onClick={() => setSelected(kosovSelected ? null : { ...KOSOVO, isoCode: KOSOVO_CODE })}
+          style={{
+            width: '100%', display: 'flex', alignItems: 'center', gap: 10,
+            padding: '10px 16px', background: 'transparent', border: 'none',
+            cursor: 'pointer', textAlign: 'left',
+          }}
+        >
+          <FlagImg isoCode={KOSOVO_CODE} size={18} />
+          <span style={{ fontSize: 13, fontWeight: 700, color: kosovSelected ? '#ffd54f' : '#90a4ae' }}>
+            Косово
+          </span>
+          <span style={{ fontSize: 11, color: '#546e7a', marginLeft: 4 }}>· Приштина · 1.8 мил.</span>
+          <span style={{ fontSize: 12, color: kosovSelected ? '#ffd54f' : '#546e7a', marginLeft: 'auto' }}>
+            {kosovSelected ? '▲' : '▼'}
+          </span>
+        </button>
+
+        {kosovSelected && (
+          <div style={{ padding: '0 16px 14px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <div style={{ width: 40, height: 3, background: '#4fc3f7', borderRadius: 2 }} />
+            <InfoRow label="Главен град"  value={KOSOVO.capital}    color="#4fc3f7" />
+            <InfoRow label="Население"    value={KOSOVO.population} color="#81c784" />
+            <InfoRow label="Површина"     value={KOSOVO.area}       color="#90caf9" />
+            <div style={{
+              padding: '10px 12px', background: '#1a2a45', borderRadius: 8,
+              fontSize: 12, color: '#b0bec5', lineHeight: 1.55, borderLeft: '3px solid #ffd54f',
+            }}>
+              {KOSOVO.fact}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
