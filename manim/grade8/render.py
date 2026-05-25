@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Render helper for Grade 8 Physics videos.
+Render helper for Grade 8 videos.
 Usage:
   python render.py                        # list all lessons
   python render.py physics 1 1           # render phys8-1-1
+  python render.py math 5 4              # render m8-5-4
   python render.py physics 1 all         # render all lessons in unit 1
-  python render.py physics all           # render ALL physics lessons
+  python render.py math all              # render ALL math lessons
   python render.py all                   # render everything
 
 Quality flags (add after lesson args):
@@ -18,6 +19,33 @@ import sys
 import os
 
 LESSONS = {
+    "math": {
+        1: {
+            1: ("m8-1-1.py", "M811Scene", "Цели броеви, степени и корени"),
+            2: ("m8-1-2.py", "M812Scene", "Вредност, подредување и заокружување"),
+            3: ("m8-1-3.py", "M813Scene", "Дропки, децимални, проценти, размери, пропорции"),
+            4: ("m8-1-4.py", "M814Scene", "Математички операции"),
+        },
+        2: {
+            1: ("m8-2-1.py", "M821Scene", "Изрази, равенки и формули"),
+            2: ("m8-2-2.py", "M822Scene", "Низи, функции и графици"),
+        },
+        3: {
+            1: ("m8-3-1.py", "M831Scene", "Форми и геометриско размислување"),
+            2: ("m8-3-2.py", "M832Scene", "Положба и движење"),
+            3: ("m8-3-3.py", "M833Scene", "Плоштина, периметар и зафатнина"),
+        },
+        4: {
+            1: ("m8-4-1.py", "M841Scene", "Должина, маса и зафатнина"),
+            2: ("m8-4-2.py", "M842Scene", "Време"),
+        },
+        5: {
+            1: ("m8-5-1.py", "M851Scene", "Планирање и собирање податоци"),
+            2: ("m8-5-2.py", "M852Scene", "Обработка и претставување на податоци"),
+            3: ("m8-5-3.py", "M853Scene", "Толкување и дискутирање за резултатите"),
+            4: ("m8-5-4.py", "M854Scene", "Веројатност"),
+        },
+    },
     "physics": {
         1: {
             1: ("phys8-1-1.py", "Phys811Scene", "Што прават силите?"),
@@ -56,6 +84,7 @@ LESSONS = {
 
 # Human-readable subject names (Macedonian)
 SUBJECT_LABELS = {
+    "math": "Математика 8",
     "physics": "Физика 8",
 }
 
