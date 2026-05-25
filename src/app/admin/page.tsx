@@ -16,7 +16,7 @@ import SubjectIcon from '@/components/SubjectIcon'
 import { setActiveStudent, setSelectedGrade, clearFamilySession } from '@/lib/auth'
 
 const ADMIN_EMAILS = ['delco.k.de@gmail.com', 'apostolova.marija22@gmail.com', 'stefanijavk02@gmail.com']
-const GRADES_WITH_CONTENT = [1, 2, 3, 4, 5, 6, 7]
+const GRADES_WITH_CONTENT = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 type Section = 'partners' | 'content' | 'users'
 type Tab = 'affiliates' | 'subscriptions' | 'payouts'
