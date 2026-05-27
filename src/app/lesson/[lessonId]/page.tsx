@@ -65,6 +65,7 @@ export default function LessonPage() {
   const [shake, setShake] = useState(false)
   const [dragDropDone, setDragDropDone] = useState(false)
   const [fillInText, setFillInText] = useState('')
+  const [shuffledExercises, setShuffledExercises] = useState<ExerciseData[] | null>(null)
   const [progressSaving, setProgressSaving] = useState(false)
   const [saveError, setSaveError] = useState<string | null>(null)
 
@@ -130,6 +131,25 @@ export default function LessonPage() {
     if (!active) { router.push('/'); return }
     setStudent(active)
   }, [router])
+
+  // ── Shuffle exercises + options once per lesson ──────────────────
+  useEffect(() => {
+    if (!lesson) return
+    const shuffle = <T,>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5)
+    const v2 = convertToV2(lesson)
+    let ordered: ExerciseData[]
+    if (v2) {
+      const pc = v2GetPracticeCount(v2)
+      ordered = [...shuffle(lesson.exercises.slice(0, pc)), ...shuffle(lesson.exercises.slice(pc))]
+    } else {
+      ordered = shuffle(lesson.exercises)
+    }
+    setShuffledExercises(ordered.map(ex => ({
+      ...ex,
+      options: ex.options ? shuffle(ex.options) : ex.options,
+    })))
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lesson?.id])
 
   // ── Audio helpers — defined before effects that use them ─────────
   const stopNarration = () => {
@@ -295,7 +315,7 @@ export default function LessonPage() {
     <main className="min-h-screen" style={{ background: '#F4F6FB' }} />
   )
 
-  const exercises = lesson.exercises
+  const exercises = shuffledExercises ?? lesson.exercises
   const ex: ExerciseData = exercises[currentEx]
   const starsEarned = correct >= exercises.length ? 3
     : correct >= Math.ceil(exercises.length * 0.6) ? 2
