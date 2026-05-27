@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { getGradeContent, ExerciseData, VideoQuiz } from '@/lib/content'
+import { getGradeContent, ExerciseData, VideoQuiz, UnitData } from '@/lib/content'
 import { convertToV2, v2GetPracticeCount, v2GetQuizBlock } from '@/lib/content-v2'
 import { getSubject } from '@/lib/subjects'
 import SubjectIcon from '@/components/SubjectIcon'
@@ -100,6 +100,19 @@ export default function LessonPage() {
   )?.[0]
 
   const subject = getSubject(subjectId ?? '')
+
+  // ── Next-lesson logic (used in results phase) ─────────────────────
+  const allUnits: UnitData[] = gradeContent[subjectId ?? ''] ?? []
+  const allRegularLessons = allUnits.flatMap(u => u.lessons.filter(l => !l.isChallenge))
+  const currentLessonIdx = allRegularLessons.findIndex(l => l.id === lessonId)
+  const nextRegularLesson = currentLessonIdx >= 0 && currentLessonIdx < allRegularLessons.length - 1
+    ? allRegularLessons[currentLessonIdx + 1]
+    : null
+  const currentUnit = allUnits.find(u => u.lessons.some(l => l.id === lessonId))
+  const unitRegularLessons = currentUnit?.lessons.filter(l => !l.isChallenge) ?? []
+  const isLastInUnit = unitRegularLessons[unitRegularLessons.length - 1]?.id === lessonId
+  const unitHasBoss = !!currentUnit?.lessons.find(l => l.isChallenge)
+  const nextIsBoss = isLastInUnit && unitHasBoss
 
   const v2Lesson = lesson ? convertToV2(lesson) : null
   const practiceCount = v2Lesson ? v2GetPracticeCount(v2Lesson) : (lesson?.exercises.length ?? 0)
@@ -1120,6 +1133,31 @@ export default function LessonPage() {
 
         {/* Buttons */}
         <div className="flex flex-col gap-3 w-full max-w-xs">
+          {/* Primary CTA — next lesson, boss, or back to map */}
+          {!progressSaving && nextIsBoss && currentUnit && (
+            <button
+              onClick={() => router.push(`/challenge/${currentUnit.id}`)}
+              className="w-full py-4 rounded-2xl font-black text-base text-white transition-all active:scale-[0.98] shadow-md"
+              style={{ background: 'linear-gradient(135deg, #7B5CE5, #A855F7)' }}>
+              Оди на предизвик! 👾
+            </button>
+          )}
+          {!progressSaving && !nextIsBoss && nextRegularLesson && (
+            <button
+              onClick={() => router.push(`/lesson/${nextRegularLesson.id}`)}
+              className="w-full py-4 rounded-2xl font-black text-base text-white transition-all active:scale-[0.98] shadow-md"
+              style={{ background: `linear-gradient(135deg, ${subject.color}, ${subject.color}cc)` }}>
+              Следна лекција →
+            </button>
+          )}
+          {progressSaving && (
+            <div className="w-full py-4 rounded-2xl font-black text-base text-center"
+              style={{ background: '#F0F0F5', color: '#9B9BAA' }}>
+              Зачувување...
+            </div>
+          )}
+
+          {/* Secondary — repeat */}
           <button
             onClick={() => {
               setPhase('exercises')
@@ -1127,16 +1165,25 @@ export default function LessonPage() {
               setHintShown(false); setRevealed(false)
               setWrongAttempts([]); setCorrect(0); setQuizCorrect(0)
             }}
-            className="w-full py-4 rounded-2xl font-black text-base transition-all active:scale-[0.98]"
+            className="w-full py-3 rounded-2xl font-black text-sm transition-all active:scale-[0.98]"
             style={{ background: 'white', color: subject.color, border: `2px solid ${subject.color}` }}>
             Повтори уште еднаш
           </button>
+
+          {/* Tertiary — back to map */}
+          {!nextRegularLesson && !nextIsBoss && (
+            <button
+              onClick={() => router.push(`/subject/${subject.id}`)}
+              className="w-full py-3 rounded-2xl font-black text-sm transition-all active:scale-[0.98]"
+              style={{ background: 'white', color: '#9B9BAA', border: '2px solid #E8EAF0' }}>
+              ← Назад кон картата
+            </button>
+          )}
           <button
-            onClick={() => { window.location.href = `/subject/${subject.id}` }}
-            disabled={progressSaving}
-            className="w-full py-4 rounded-2xl font-black text-base text-white transition-all active:scale-[0.98] shadow-md"
-            style={{ background: `linear-gradient(135deg, ${subject.color}, ${subject.color}cc)`, opacity: progressSaving ? 0.6 : 1 }}>
-            {progressSaving ? 'Зачувување...' : `← Назад кон ${subject.nameMk}`}
+            onClick={() => router.push(`/subject/${subject.id}`)}
+            className="w-full py-2 text-sm font-semibold text-center"
+            style={{ color: '#C4C4D4' }}>
+            ← Кон картата
           </button>
         </div>
 
