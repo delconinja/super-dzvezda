@@ -64,6 +64,7 @@ export default function LessonPage() {
   const [student, setStudent] = useState<StudentProfile | null>(null)
   const [shake, setShake] = useState(false)
   const [dragDropDone, setDragDropDone] = useState(false)
+  const [fillInText, setFillInText] = useState('')
   const [progressSaving, setProgressSaving] = useState(false)
   const [saveError, setSaveError] = useState<string | null>(null)
 
@@ -307,7 +308,11 @@ export default function LessonPage() {
     setSelected(option)
     setAnswered(true)
 
-    if (option === ex.correct) {
+    const isCorrect = ex.type === 'fill-in'
+      ? option.trim().toLowerCase() === (ex.correct ?? '').toLowerCase()
+      : option === ex.correct
+
+    if (isCorrect) {
       setCorrect((c) => c + 1)
       if (isQuizEx) setQuizCorrect((q) => q + 1)
       setRevealed(true)
@@ -338,6 +343,7 @@ export default function LessonPage() {
     setSelected(null)
     setAnswered(false)
     setHintShown(false)
+    setFillInText('')
   }
 
   const handleTimeUpdate = () => {
@@ -405,6 +411,7 @@ export default function LessonPage() {
       setRevealed(false)
       setWrongAttempts([])
       setDragDropDone(false)
+      setFillInText('')
     } else {
       const stars = correct >= exercises.length ? 3
         : correct >= Math.ceil(exercises.length * 0.6) ? 2
@@ -828,7 +835,7 @@ export default function LessonPage() {
           <div className="px-5 pt-4 pb-1">
             <span className="text-xs font-black tracking-widest uppercase"
               style={{ color: subject.color, opacity: 0.7 }}>
-              {ex.type === 'true-false' ? 'Точно или Неточно?' : 'Одбери точен одговор'}
+              {ex.type === 'true-false' ? 'Точно или Неточно?' : ex.type === 'fill-in' ? 'Напиши го одговорот' : 'Одбери точен одговор'}
             </span>
           </div>
 
@@ -851,8 +858,44 @@ export default function LessonPage() {
           />
         )}
 
+        {/* Fill-in exercise */}
+        {ex.type === 'fill-in' && (
+          <div className={`flex flex-col gap-3 ${shake ? 'animate-shake' : ''}`}>
+            <input
+              type="text"
+              value={fillInText}
+              onChange={(e) => { if (!hintShown && !revealed) setFillInText(e.target.value) }}
+              disabled={hintShown || revealed}
+              placeholder="Напиши го твојот одговор..."
+              autoComplete="off"
+              className="w-full rounded-2xl text-sm font-semibold"
+              style={{
+                border: `2px solid ${revealed ? '#4CAF50' : hintShown ? '#FFD93D' : '#E8EAF0'}`,
+                padding: '14px 16px',
+                background: revealed ? '#EDFFF2' : hintShown ? '#FFFBEA' : 'white',
+                color: '#1A1A2E',
+                outline: 'none',
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && fillInText.trim() && !hintShown && !revealed)
+                  handleAnswer(fillInText.trim())
+              }}
+            />
+            {!hintShown && !revealed && (
+              <button
+                onClick={() => { if (fillInText.trim()) handleAnswer(fillInText.trim()) }}
+                disabled={!fillInText.trim()}
+                className="w-full py-3 rounded-2xl font-black text-sm transition-all active:scale-95"
+                style={{ background: subject.color, color: 'white', opacity: fillInText.trim() ? 1 : 0.4 }}
+              >
+                Провери →
+              </button>
+            )}
+          </div>
+        )}
+
         {/* Options — chip-style for T/F, full-width for multiple choice */}
-        {ex.type !== 'drag-drop' && (
+        {ex.type !== 'drag-drop' && ex.type !== 'fill-in' && (
           ex.type === 'true-false' ? (
             // True/False — two large equal chips
             <div className={`grid grid-cols-2 gap-3 ${shake ? 'animate-shake' : ''}`}>
@@ -1031,7 +1074,7 @@ export default function LessonPage() {
                 setSelected(null); setAnswered(false)
                 setHintShown(false); setRevealed(false)
                 setWrongAttempts([]); setDragDropDone(false)
-                setQuizCorrect(0); setPhase('exercises')
+                setFillInText(''); setQuizCorrect(0); setPhase('exercises')
               }}
               className="w-full py-4 rounded-2xl font-black text-base text-white transition-all active:scale-[0.98] shadow-md"
               style={{ background: 'linear-gradient(135deg, #7C3AED, #9D6BE8)' }}>
@@ -1042,7 +1085,7 @@ export default function LessonPage() {
                 setCurrentEx(0); setSelected(null); setAnswered(false)
                 setHintShown(false); setRevealed(false)
                 setWrongAttempts([]); setCorrect(0); setQuizCorrect(0)
-                setPhase('exercises')
+                setFillInText(''); setPhase('exercises')
               }}
               className="w-full py-4 rounded-2xl font-black text-base transition-all active:scale-[0.98]"
               style={{ background: 'white', color: '#6B6B8A', border: '2px solid #E8EAF0' }}>
@@ -1164,6 +1207,7 @@ export default function LessonPage() {
               setCurrentEx(0); setSelected(null); setAnswered(false)
               setHintShown(false); setRevealed(false)
               setWrongAttempts([]); setCorrect(0); setQuizCorrect(0)
+              setFillInText('')
             }}
             className="w-full py-3 rounded-2xl font-black text-sm transition-all active:scale-[0.98]"
             style={{ background: 'white', color: subject.color, border: `2px solid ${subject.color}` }}>

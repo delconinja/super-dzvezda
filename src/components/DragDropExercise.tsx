@@ -5,7 +5,7 @@ import { useState } from 'react'
 export interface DragDropItem {
   id: string
   label: string
-  shapeType: 'circle' | 'triangle' | 'square' | 'cube'
+  shapeType?: 'circle' | 'triangle' | 'square' | 'cube'
 }
 
 export interface DragDropTarget {
@@ -22,7 +22,8 @@ interface Props {
   onComplete: () => void
 }
 
-function ShapeSVG({ type }: { type: string }) {
+function ShapeSVG({ type }: { type?: string }) {
+  if (!type) return null
   if (type === 'circle') return (
     <svg width="64" height="64" viewBox="0 0 80 80">
       <circle cx="40" cy="40" r="36" fill="#FF6B6B" stroke="white" strokeWidth="3"/>
@@ -103,7 +104,10 @@ export default function DragDropExercise({ items, targets, color, explanation, o
                 cursor: isPlaced ? 'default' : 'pointer',
                 transition: 'all 0.2s',
               }}>
-              <ShapeSVG type={item.shapeType} />
+              {item.shapeType
+                ? <ShapeSVG type={item.shapeType} />
+                : <span className="text-xs font-black text-center px-1" style={{ color: '#1A1A2E', maxWidth: 90, lineHeight: 1.3 }}>{item.label}</span>
+              }
             </button>
           )
         })}
@@ -140,7 +144,7 @@ export default function DragDropExercise({ items, targets, color, explanation, o
                 transition: 'all 0.2s',
               }}>
               {placedItem
-                ? <ShapeSVG type={placedItem.shapeType} />
+                ? (placedItem.shapeType ? <ShapeSVG type={placedItem.shapeType} /> : <span style={{ fontSize: 18, fontWeight: 900, color: '#2E7D32' }}>{placedItem.label}</span>)
                 : <span style={{ fontSize: 28, opacity: 0.2 }}>?</span>
               }
               <span className="text-xs font-black" style={{ color: placedItemId ? '#2E7D32' : '#6B6B8A' }}>
