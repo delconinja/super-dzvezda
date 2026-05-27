@@ -136,18 +136,25 @@ export default function LessonPage() {
   useEffect(() => {
     if (!lesson) return
     const shuffle = <T,>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5)
-    const v2 = convertToV2(lesson)
-    let ordered: ExerciseData[]
-    if (v2) {
-      const pc = v2GetPracticeCount(v2)
-      ordered = [...shuffle(lesson.exercises.slice(0, pc)), ...shuffle(lesson.exercises.slice(pc))]
-    } else {
-      ordered = shuffle(lesson.exercises)
-    }
-    setShuffledExercises(ordered.map(ex => ({
+    const shuffleOptions = (ex: ExerciseData): ExerciseData => ({
       ...ex,
       options: ex.options ? shuffle(ex.options) : ex.options,
-    })))
+    })
+
+    let ordered: ExerciseData[]
+    if (lesson.bank && lesson.bank.length > 0) {
+      const n = lesson.sessionSize ?? (selectedGrade >= 5 ? 7 : 5)
+      ordered = shuffle(lesson.bank).slice(0, n)
+    } else {
+      const v2 = convertToV2(lesson)
+      if (v2) {
+        const pc = v2GetPracticeCount(v2)
+        ordered = [...shuffle(lesson.exercises.slice(0, pc)), ...shuffle(lesson.exercises.slice(pc))]
+      } else {
+        ordered = shuffle(lesson.exercises)
+      }
+    }
+    setShuffledExercises(ordered.map(shuffleOptions))
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lesson?.id])
 
