@@ -11,7 +11,8 @@ export interface DragDropItem {
 export interface DragDropTarget {
   id: string
   label: string
-  correctItemId: string
+  correctItemId?: string
+  correctItemIds?: string[]
 }
 
 interface Props {
@@ -68,7 +69,11 @@ export default function DragDropExercise({ items, targets, color, explanation, o
     const target = targets.find(t => t.id === targetId)!
     if (placed[targetId]) return
 
-    if (target.correctItemId === selectedItemId) {
+    const isCorrect = target.correctItemIds
+      ? target.correctItemIds.includes(selectedItemId)
+      : target.correctItemId === selectedItemId
+
+    if (isCorrect) {
       const next = { ...placed, [targetId]: selectedItemId }
       setPlaced(next)
       setSelectedItemId(null)

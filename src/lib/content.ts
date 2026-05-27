@@ -39,7 +39,8 @@ export interface DragDropItem {
 export interface DragDropTarget {
   id: string
   label: string
-  correctItemId: string
+  correctItemId?: string
+  correctItemIds?: string[]
 }
 
 export interface ExerciseData {
@@ -23054,10 +23055,10 @@ km² → hm² → dkm² → m² → dm² → cm² → mm²
                 { id: 'di-flag',   label: 'Знаме = земја'      },
               ],
               dragTargets: [
-                { id: 'dt-signal', label: 'Сигнал',  correctItemId: 'di-smoke'  },
-                { id: 'dt-symbol', label: 'Симбол',  correctItemId: 'di-letter' },
-                { id: 'dt-sig2',   label: 'Сигнал',  correctItemId: 'di-cry'    },
-                { id: 'dt-sym2',   label: 'Симбол',  correctItemId: 'di-flag'   },
+                { id: 'dt-signal', label: 'Сигнал',  correctItemIds: ['di-smoke', 'di-cry']    },
+                { id: 'dt-symbol', label: 'Симбол',  correctItemIds: ['di-letter', 'di-flag']  },
+                { id: 'dt-sig2',   label: 'Сигнал',  correctItemIds: ['di-smoke', 'di-cry']    },
+                { id: 'dt-sym2',   label: 'Симбол',  correctItemIds: ['di-letter', 'di-flag']  },
               ],
             },
             {
