@@ -15,15 +15,24 @@ export default function ResetPasswordPage() {
 
   const handleReset = async () => {
     setError('')
-    if (!email.includes('@')) return setError('Внеси валидна е-пошта.')
+    const trimmed = email.trim().toLowerCase()
+    if (!trimmed.includes('@')) return setError('Внеси валидна е-пошта.')
+    // Reject non-ASCII characters — fetch headers only accept Latin-1
+    if (/[^\x00-\x7F]/.test(trimmed)) return setError('Е-поштата смее да содржи само латинични букви.')
     setLoading(true)
-    const { error: err } = await supabase.auth.resetPasswordForEmail(
-      email.trim().toLowerCase(),
-      { redirectTo: `${window.location.origin}/update-password` },
-    )
-    setLoading(false)
-    if (err) return setError('Грешка: ' + err.message)
-    setSent(true)
+    try {
+      const { error: err } = await supabase.auth.resetPasswordForEmail(
+        trimmed,
+        { redirectTo: `${window.location.origin}/update-password` },
+      )
+      if (err) return setError('Грешка: ' + err.message)
+      setSent(true)
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : 'Непозната грешка.'
+      setError('Грешка: ' + msg)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
