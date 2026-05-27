@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Subject } from '@/types'
 
 const WAVE_XPCT = [50, 67, 78, 67, 50, 33, 22, 33]
-const ROW_H = 130
+const ROW_H = 160
 const PAD_V = 70
 const NODE_R = 34
 const BOSS_R = 42
@@ -17,7 +17,7 @@ export type MapNode = {
   type: 'lesson' | 'boss' | 'gift'
   lessonId?: string
   unitId?: string
-  unitTitle?: string  // shown as label for first node of each unit
+  unitTitle?: string
   stars: number
   locked: boolean
 }
@@ -70,7 +70,6 @@ export default function LevelMap({ nodes, subject }: Props) {
     }
   }
 
-  // Build SVG bezier segments between consecutive nodes
   const segments = nodes.slice(0, -1).map((node, i) => {
     const x1 = xOf(i), y1 = yOf(i)
     const x2 = xOf(i + 1), y2 = yOf(i + 1)
@@ -113,7 +112,6 @@ export default function LevelMap({ nodes, subject }: Props) {
         const isActive = !node.locked && !done && node.type !== 'gift'
         const isBoss = node.type === 'boss'
         const isGift = node.type === 'gift'
-        const isRight = x > cW / 2
 
         const circleBg = node.locked
           ? '#E5E7EB'
@@ -133,28 +131,31 @@ export default function LevelMap({ nodes, subject }: Props) {
           ? '✓'
           : '▶'
 
-        const labelX = isRight ? x + r + 10 : x - r - 10
-        const labelAlign: React.CSSProperties['textAlign'] = isRight ? 'left' : 'right'
-        const labelW = Math.min(cW * 0.35, 110)
+        // Label width — wide enough to be readable but not overflow container
+        const labelW = Math.min(cW * 0.6, 200)
 
         return (
           <div key={node.id}>
-            {/* Unit title label above first node of each unit */}
+            {/* Unit section header — above first node of each unit */}
             {node.unitTitle && (
               <div
                 style={{
                   position: 'absolute',
-                  left: x,
-                  top: y - r - 28,
+                  left: cW / 2,
+                  top: y - r - 36,
                   transform: 'translateX(-50%)',
-                  fontSize: 10,
+                  background: `${subject.color}18`,
+                  border: `1.5px solid ${subject.color}40`,
+                  borderRadius: 20,
+                  padding: '3px 14px',
+                  fontSize: 11,
                   fontWeight: 900,
                   color: subject.color,
                   textAlign: 'center',
-                  letterSpacing: '0.05em',
+                  letterSpacing: '0.06em',
                   textTransform: 'uppercase',
                   whiteSpace: 'nowrap',
-                  maxWidth: cW * 0.7,
+                  maxWidth: cW * 0.8,
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
                   pointerEvents: 'none',
@@ -176,7 +177,7 @@ export default function LevelMap({ nodes, subject }: Props) {
                 height: r * 2,
                 borderRadius: '50%',
                 background: circleBg,
-                border: `4px solid ${node.locked ? '#D1D5DB' : isGift ? '#F59E0B' : isBoss ? '#5C35D4' : done ? 'white' : 'white'}`,
+                border: `4px solid ${node.locked ? '#D1D5DB' : isGift ? '#F59E0B' : isBoss ? '#5C35D4' : 'white'}`,
                 boxShadow: isActive
                   ? `0 0 0 6px ${subject.color}22, 0 4px 20px ${subject.color}50`
                   : isBoss && !node.locked
@@ -193,7 +194,8 @@ export default function LevelMap({ nodes, subject }: Props) {
                 zIndex: 1,
               }}
               onMouseEnter={e => {
-                if (!node.locked && !isGift) (e.currentTarget as HTMLDivElement).style.transform = 'translate(-50%, -50%) scale(1.08)'
+                if (!node.locked && !isGift)
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translate(-50%, -50%) scale(1.08)'
               }}
               onMouseLeave={e => {
                 (e.currentTarget as HTMLDivElement).style.transform = 'translate(-50%, -50%) scale(1)'
@@ -208,36 +210,42 @@ export default function LevelMap({ nodes, subject }: Props) {
                 style={{
                   position: 'absolute',
                   left: x,
-                  top: y + r + 4,
+                  top: y + r + 6,
                   transform: 'translateX(-50%)',
                   display: 'flex',
-                  gap: 2,
+                  gap: 3,
                   pointerEvents: 'none',
                 }}
               >
                 {[1, 2, 3].map(s => (
-                  <span key={s} style={{ fontSize: 10, color: s <= node.stars ? '#FFD93D' : '#E5E7EB' }}>★</span>
+                  <span key={s} style={{ fontSize: 12, color: s <= node.stars ? '#FFD93D' : '#E5E7EB' }}>★</span>
                 ))}
               </div>
             )}
 
-            {/* Side label */}
+            {/* Title — centered below circle, always readable */}
             <div
               style={{
                 position: 'absolute',
-                left: labelX,
-                top: y,
-                transform: 'translateY(-50%)',
+                left: x,
+                top: y + r + (isGift || isBoss ? 10 : 28),
+                transform: 'translateX(-50%)',
                 width: labelW,
-                textAlign: labelAlign,
-                fontSize: isGift || isBoss ? 12 : 11,
+                textAlign: 'center',
+                fontSize: isBoss ? 13 : isGift ? 13 : 13,
                 fontWeight: isBoss ? 900 : 700,
-                color: node.locked ? '#9CA3AF' : isBoss ? '#5C35D4' : isGift ? '#D97706' : '#1A1A2E',
-                lineHeight: 1.3,
+                color: node.locked
+                  ? '#B0B0C0'
+                  : isBoss
+                  ? '#5C35D4'
+                  : isGift
+                  ? '#D97706'
+                  : '#1A1A2E',
+                lineHeight: 1.35,
                 pointerEvents: 'none',
               }}
             >
-              {isBoss ? 'ПРЕДИЗВИК' : isGift ? 'Награда!' : node.title}
+              {isBoss ? 'ПРЕДИЗВИК' : isGift ? '🎁 Награда!' : node.title}
             </div>
           </div>
         )
