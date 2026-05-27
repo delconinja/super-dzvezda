@@ -1,12 +1,12 @@
 """Splice Grade 1, 2, 3 BRO 1:1 content into content.ts.
 
-Run: python _g123_build.py [1|2|3|all]
+Imports per-subject modules: g{N}_math.py, g{N}_mk.py, g{N}_society.py,
+g{N}_science.py, g{N}_english.py
 """
-import sys, io, os, re
+import sys, io, os, re, importlib
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-# Subject order for Grades 1-3: math, mk, society, science, english (no history)
 SUBJECTS_ORDER = ['math', 'mk', 'society', 'science', 'english']
 
 def safe(s): return s.replace("'", "’")
@@ -33,15 +33,17 @@ def lesson(lid, title, content_md, exercises, is_test=False):
           ],
         }}"""
 def unit(uid, title, lessons_list):
+    inner = ',\n'.join(lessons_list)
     return f"""    {{
       id: '{uid}',
       title: '{safe(title)}',
       lessons: [
-{','.join(['\n' + l for l in lessons_list])[1:]},
+{inner},
       ],
     }}"""
 def subject(key, units_list):
-    return f"  {key}: [\n{','.join(['\n' + u for u in units_list])[1:]},\n  ]"
+    inner = ',\n'.join(units_list)
+    return f"  {key}: [\n{inner},\n  ]"
 
 import builtins
 for fn in (mc, tf, lesson, unit, safe):
@@ -54,12 +56,45 @@ CONTENT = r'C:\Users\User\super-dzvedza\src\lib\content.ts'
 with open(CONTENT, encoding='utf-8') as f: src = f.read()
 
 for grade in GRADES:
-    mod = __import__(f'g{grade}_all')
-    ALL = mod.ALL
+    # Try per-subject modules first, fall back to g{N}_all
+    subj_data = {}
+    for skey in SUBJECTS_ORDER:
+        # Try g{N}_{skey}.py first
+        mod_name = f'g{grade}_{skey}'
+        try:
+            mod = importlib.import_module(mod_name)
+            importlib.reload(mod)
+            # module should have SUBJECT = [...] or specific var
+            for attr in (skey.upper(), 'SUBJECT', 'UNITS'):
+                if hasattr(mod, attr):
+                    subj_data[skey] = getattr(mod, attr)
+                    break
+        except ImportError:
+            pass
+
+    # Fall back to bundled g{N}_all.py for missing subjects
+    if len(subj_data) < len(SUBJECTS_ORDER):
+        try:
+            bundle = importlib.import_module(f'g{grade}_all')
+            importlib.reload(bundle)
+            if hasattr(bundle, 'ALL'):
+                for k, v in bundle.ALL.items():
+                    if k not in subj_data:
+                        subj_data[k] = v
+            else:
+                # try direct attribute access
+                for skey in SUBJECTS_ORDER:
+                    if skey not in subj_data:
+                        for attr in (skey.upper(),):
+                            if hasattr(bundle, attr):
+                                subj_data[skey] = getattr(bundle, attr)
+                                break
+        except ImportError:
+            pass
+
     subj_strs = []
     for key in SUBJECTS_ORDER:
-        if key not in ALL: continue
-        units = ALL[key]
+        units = subj_data.get(key, [])
         if not units:
             subj_strs.append(f"  {key}: []")
             continue
@@ -75,7 +110,7 @@ for grade in GRADES:
     end = m.end() + m2.start() + 1 if m2 else len(src)
     old = src[start:end]
     src = src[:start] + full_block + '\n' + src[end:]
-    print(f'G{grade}: old {len(old):>6} → new {len(full_block):>6}, ids: {full_block.count("id: ")}')
+    print(f'G{grade}: old {len(old):>6} → new {len(full_block):>6}, ids: {full_block.count("id: ")}, subjects: {list(subj_data.keys())}')
 
 with open(CONTENT, 'w', encoding='utf-8') as f: f.write(src)
 print('Done.')
