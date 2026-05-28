@@ -28180,6 +28180,7 @@ P = 6/36 = 1/6
         {
           id: 'mk8-1-1',
           title: 'Македонскиот јазик во XIX век',
+          videoUrl: 'https://dojwmvbppbbaifwkvlwd.supabase.co/storage/v1/object/public/videos/mk8-1-1.mp4',
           content: `## Македонскиот јазик во XIX век
 XIX век е значаен период во развојот на македонскиот јазик и литература. Се појавуваат првите македонски писатели и учебници.
 
