@@ -26,7 +26,7 @@ function buildMapNodes(
   challengeStarsMap: Record<string, ChallengeStars>,
   grade: number
 ): MapNode[] {
-  const playMode = false
+  const playMode = grade <= 4
   const nodes: MapNode[] = []
   let lessonCount = 0
   let prevBlockerDone = true  // tracks if the last lesson/boss was completed
@@ -169,7 +169,7 @@ export default function SubjectPage() {
           {grade <= 4 ? '🎮 Режим на игра' : '⚔️ Режим на предизвик'}
         </span>
         <span className="text-xs font-semibold" style={{ color: '#9B9BAA' }}>
-          Заврши лекција за да ја отклучиш следната
+          {grade <= 4 ? 'Нема казни — само учење!' : 'Заврши лекција за да ја отклучиш следната'}
         </span>
       </div>
 

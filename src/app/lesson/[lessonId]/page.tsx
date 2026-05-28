@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { getGradeContent, ExerciseData, VideoQuiz, UnitData } from '@/lib/content'
+import { getGradeContent, ExerciseData, VideoQuiz } from '@/lib/content'
 import { convertToV2, v2GetPracticeCount, v2GetQuizBlock } from '@/lib/content-v2'
 import { getSubject } from '@/lib/subjects'
 import SubjectIcon from '@/components/SubjectIcon'
@@ -64,8 +64,6 @@ export default function LessonPage() {
   const [student, setStudent] = useState<StudentProfile | null>(null)
   const [shake, setShake] = useState(false)
   const [dragDropDone, setDragDropDone] = useState(false)
-  const [fillInText, setFillInText] = useState('')
-  const [shuffledExercises, setShuffledExercises] = useState<ExerciseData[] | null>(null)
   const [progressSaving, setProgressSaving] = useState(false)
   const [saveError, setSaveError] = useState<string | null>(null)
 
@@ -103,19 +101,6 @@ export default function LessonPage() {
 
   const subject = getSubject(subjectId ?? '')
 
-  // ── Next-lesson logic (used in results phase) ─────────────────────
-  const allUnits: UnitData[] = gradeContent[subjectId ?? ''] ?? []
-  const allRegularLessons = allUnits.flatMap(u => u.lessons.filter(l => !l.isChallenge))
-  const currentLessonIdx = allRegularLessons.findIndex(l => l.id === lessonId)
-  const nextRegularLesson = currentLessonIdx >= 0 && currentLessonIdx < allRegularLessons.length - 1
-    ? allRegularLessons[currentLessonIdx + 1]
-    : null
-  const currentUnit = allUnits.find(u => u.lessons.some(l => l.id === lessonId))
-  const unitRegularLessons = currentUnit?.lessons.filter(l => !l.isChallenge) ?? []
-  const isLastInUnit = unitRegularLessons[unitRegularLessons.length - 1]?.id === lessonId
-  const unitHasBoss = !!currentUnit?.lessons.find(l => l.isChallenge)
-  const nextIsBoss = isLastInUnit && unitHasBoss
-
   const v2Lesson = lesson ? convertToV2(lesson) : null
   const practiceCount = v2Lesson ? v2GetPracticeCount(v2Lesson) : (lesson?.exercises.length ?? 0)
 
@@ -131,32 +116,6 @@ export default function LessonPage() {
     if (!active) { router.push('/'); return }
     setStudent(active)
   }, [router])
-
-  // ── Shuffle exercises + options once per lesson ──────────────────
-  useEffect(() => {
-    if (!lesson) return
-    const shuffle = <T,>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5)
-    const shuffleOptions = (ex: ExerciseData): ExerciseData => ({
-      ...ex,
-      options: ex.options ? shuffle(ex.options) : ex.options,
-    })
-
-    let ordered: ExerciseData[]
-    if (lesson.bank && lesson.bank.length > 0) {
-      const n = lesson.sessionSize ?? (selectedGrade >= 5 ? 7 : 5)
-      ordered = shuffle(lesson.bank).slice(0, n)
-    } else {
-      const v2 = convertToV2(lesson)
-      if (v2) {
-        const pc = v2GetPracticeCount(v2)
-        ordered = [...shuffle(lesson.exercises.slice(0, pc)), ...shuffle(lesson.exercises.slice(pc))]
-      } else {
-        ordered = shuffle(lesson.exercises)
-      }
-    }
-    setShuffledExercises(ordered.map(shuffleOptions))
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lesson?.id])
 
   // ── Audio helpers — defined before effects that use them ─────────
   const stopNarration = () => {
@@ -322,7 +281,7 @@ export default function LessonPage() {
     <main className="min-h-screen" style={{ background: '#F4F6FB' }} />
   )
 
-  const exercises = shuffledExercises ?? lesson.exercises
+  const exercises = lesson.exercises
   const ex: ExerciseData = exercises[currentEx]
   const starsEarned = correct >= exercises.length ? 3
     : correct >= Math.ceil(exercises.length * 0.6) ? 2
@@ -335,11 +294,7 @@ export default function LessonPage() {
     setSelected(option)
     setAnswered(true)
 
-    const isCorrect = ex.type === 'fill-in'
-      ? option.trim().toLowerCase() === (ex.correct ?? '').toLowerCase()
-      : option === ex.correct
-
-    if (isCorrect) {
+    if (option === ex.correct) {
       setCorrect((c) => c + 1)
       if (isQuizEx) setQuizCorrect((q) => q + 1)
       setRevealed(true)
@@ -370,7 +325,6 @@ export default function LessonPage() {
     setSelected(null)
     setAnswered(false)
     setHintShown(false)
-    setFillInText('')
   }
 
   const handleTimeUpdate = () => {
@@ -438,7 +392,6 @@ export default function LessonPage() {
       setRevealed(false)
       setWrongAttempts([])
       setDragDropDone(false)
-      setFillInText('')
     } else {
       const stars = correct >= exercises.length ? 3
         : correct >= Math.ceil(exercises.length * 0.6) ? 2
@@ -862,7 +815,7 @@ export default function LessonPage() {
           <div className="px-5 pt-4 pb-1">
             <span className="text-xs font-black tracking-widest uppercase"
               style={{ color: subject.color, opacity: 0.7 }}>
-              {ex.type === 'true-false' ? 'Точно или Неточно?' : ex.type === 'fill-in' ? 'Напиши го одговорот' : 'Одбери точен одговор'}
+              {ex.type === 'true-false' ? 'Точно или Неточно?' : 'Одбери точен одговор'}
             </span>
           </div>
 
@@ -885,44 +838,8 @@ export default function LessonPage() {
           />
         )}
 
-        {/* Fill-in exercise */}
-        {ex.type === 'fill-in' && (
-          <div className={`flex flex-col gap-3 ${shake ? 'animate-shake' : ''}`}>
-            <input
-              type="text"
-              value={fillInText}
-              onChange={(e) => { if (!hintShown && !revealed) setFillInText(e.target.value) }}
-              disabled={hintShown || revealed}
-              placeholder="Напиши го твојот одговор..."
-              autoComplete="off"
-              className="w-full rounded-2xl text-sm font-semibold"
-              style={{
-                border: `2px solid ${revealed ? '#4CAF50' : hintShown ? '#FFD93D' : '#E8EAF0'}`,
-                padding: '14px 16px',
-                background: revealed ? '#EDFFF2' : hintShown ? '#FFFBEA' : 'white',
-                color: '#1A1A2E',
-                outline: 'none',
-              }}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' && fillInText.trim() && !hintShown && !revealed)
-                  handleAnswer(fillInText.trim())
-              }}
-            />
-            {!hintShown && !revealed && (
-              <button
-                onClick={() => { if (fillInText.trim()) handleAnswer(fillInText.trim()) }}
-                disabled={!fillInText.trim()}
-                className="w-full py-3 rounded-2xl font-black text-sm transition-all active:scale-95"
-                style={{ background: subject.color, color: 'white', opacity: fillInText.trim() ? 1 : 0.4 }}
-              >
-                Провери →
-              </button>
-            )}
-          </div>
-        )}
-
         {/* Options — chip-style for T/F, full-width for multiple choice */}
-        {ex.type !== 'drag-drop' && ex.type !== 'fill-in' && (
+        {ex.type !== 'drag-drop' && (
           ex.type === 'true-false' ? (
             // True/False — two large equal chips
             <div className={`grid grid-cols-2 gap-3 ${shake ? 'animate-shake' : ''}`}>
@@ -1101,7 +1018,7 @@ export default function LessonPage() {
                 setSelected(null); setAnswered(false)
                 setHintShown(false); setRevealed(false)
                 setWrongAttempts([]); setDragDropDone(false)
-                setFillInText(''); setQuizCorrect(0); setPhase('exercises')
+                setQuizCorrect(0); setPhase('exercises')
               }}
               className="w-full py-4 rounded-2xl font-black text-base text-white transition-all active:scale-[0.98] shadow-md"
               style={{ background: 'linear-gradient(135deg, #7C3AED, #9D6BE8)' }}>
@@ -1112,7 +1029,7 @@ export default function LessonPage() {
                 setCurrentEx(0); setSelected(null); setAnswered(false)
                 setHintShown(false); setRevealed(false)
                 setWrongAttempts([]); setCorrect(0); setQuizCorrect(0)
-                setFillInText(''); setPhase('exercises')
+                setPhase('exercises')
               }}
               className="w-full py-4 rounded-2xl font-black text-base transition-all active:scale-[0.98]"
               style={{ background: 'white', color: '#6B6B8A', border: '2px solid #E8EAF0' }}>
@@ -1203,58 +1120,23 @@ export default function LessonPage() {
 
         {/* Buttons */}
         <div className="flex flex-col gap-3 w-full max-w-xs">
-          {/* Primary CTA — next lesson, boss, or back to map */}
-          {!progressSaving && nextIsBoss && currentUnit && (
-            <button
-              onClick={() => router.push(`/challenge/${currentUnit.id}`)}
-              className="w-full py-4 rounded-2xl font-black text-base text-white transition-all active:scale-[0.98] shadow-md"
-              style={{ background: 'linear-gradient(135deg, #7B5CE5, #A855F7)' }}>
-              Оди на предизвик! 👾
-            </button>
-          )}
-          {!progressSaving && !nextIsBoss && nextRegularLesson && (
-            <button
-              onClick={() => router.push(`/lesson/${nextRegularLesson.id}`)}
-              className="w-full py-4 rounded-2xl font-black text-base text-white transition-all active:scale-[0.98] shadow-md"
-              style={{ background: `linear-gradient(135deg, ${subject.color}, ${subject.color}cc)` }}>
-              Следна лекција →
-            </button>
-          )}
-          {progressSaving && (
-            <div className="w-full py-4 rounded-2xl font-black text-base text-center"
-              style={{ background: '#F0F0F5', color: '#9B9BAA' }}>
-              Зачувување...
-            </div>
-          )}
-
-          {/* Secondary — repeat */}
           <button
             onClick={() => {
               setPhase('exercises')
               setCurrentEx(0); setSelected(null); setAnswered(false)
               setHintShown(false); setRevealed(false)
               setWrongAttempts([]); setCorrect(0); setQuizCorrect(0)
-              setFillInText('')
             }}
-            className="w-full py-3 rounded-2xl font-black text-sm transition-all active:scale-[0.98]"
+            className="w-full py-4 rounded-2xl font-black text-base transition-all active:scale-[0.98]"
             style={{ background: 'white', color: subject.color, border: `2px solid ${subject.color}` }}>
             Повтори уште еднаш
           </button>
-
-          {/* Tertiary — back to map */}
-          {!nextRegularLesson && !nextIsBoss && (
-            <button
-              onClick={() => router.push(`/subject/${subject.id}`)}
-              className="w-full py-3 rounded-2xl font-black text-sm transition-all active:scale-[0.98]"
-              style={{ background: 'white', color: '#9B9BAA', border: '2px solid #E8EAF0' }}>
-              ← Назад кон картата
-            </button>
-          )}
           <button
-            onClick={() => router.push(`/subject/${subject.id}`)}
-            className="w-full py-2 text-sm font-semibold text-center"
-            style={{ color: '#C4C4D4' }}>
-            ← Кон картата
+            onClick={() => { window.location.href = `/subject/${subject.id}` }}
+            disabled={progressSaving}
+            className="w-full py-4 rounded-2xl font-black text-base text-white transition-all active:scale-[0.98] shadow-md"
+            style={{ background: `linear-gradient(135deg, ${subject.color}, ${subject.color}cc)`, opacity: progressSaving ? 0.6 : 1 }}>
+            {progressSaving ? 'Зачувување...' : `← Назад кон ${subject.nameMk}`}
           </button>
         </div>
 

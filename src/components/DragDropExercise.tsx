@@ -5,14 +5,13 @@ import { useState } from 'react'
 export interface DragDropItem {
   id: string
   label: string
-  shapeType?: 'circle' | 'triangle' | 'square' | 'cube'
+  shapeType: 'circle' | 'triangle' | 'square' | 'cube'
 }
 
 export interface DragDropTarget {
   id: string
   label: string
-  correctItemId?: string
-  correctItemIds?: string[]
+  correctItemId: string
 }
 
 interface Props {
@@ -23,8 +22,7 @@ interface Props {
   onComplete: () => void
 }
 
-function ShapeSVG({ type }: { type?: string }) {
-  if (!type) return null
+function ShapeSVG({ type }: { type: string }) {
   if (type === 'circle') return (
     <svg width="64" height="64" viewBox="0 0 80 80">
       <circle cx="40" cy="40" r="36" fill="#FF6B6B" stroke="white" strokeWidth="3"/>
@@ -69,11 +67,7 @@ export default function DragDropExercise({ items, targets, color, explanation, o
     const target = targets.find(t => t.id === targetId)!
     if (placed[targetId]) return
 
-    const isCorrect = target.correctItemIds
-      ? target.correctItemIds.includes(selectedItemId)
-      : target.correctItemId === selectedItemId
-
-    if (isCorrect) {
+    if (target.correctItemId === selectedItemId) {
       const next = { ...placed, [targetId]: selectedItemId }
       setPlaced(next)
       setSelectedItemId(null)
@@ -109,10 +103,7 @@ export default function DragDropExercise({ items, targets, color, explanation, o
                 cursor: isPlaced ? 'default' : 'pointer',
                 transition: 'all 0.2s',
               }}>
-              {item.shapeType
-                ? <ShapeSVG type={item.shapeType} />
-                : <span className="text-xs font-black text-center px-1" style={{ color: '#1A1A2E', maxWidth: 90, lineHeight: 1.3 }}>{item.label}</span>
-              }
+              <ShapeSVG type={item.shapeType} />
             </button>
           )
         })}
@@ -149,7 +140,7 @@ export default function DragDropExercise({ items, targets, color, explanation, o
                 transition: 'all 0.2s',
               }}>
               {placedItem
-                ? (placedItem.shapeType ? <ShapeSVG type={placedItem.shapeType} /> : <span style={{ fontSize: 18, fontWeight: 900, color: '#2E7D32' }}>{placedItem.label}</span>)
+                ? <ShapeSVG type={placedItem.shapeType} />
                 : <span style={{ fontSize: 28, opacity: 0.2 }}>?</span>
               }
               <span className="text-xs font-black" style={{ color: placedItemId ? '#2E7D32' : '#6B6B8A' }}>
