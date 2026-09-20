@@ -51,3 +51,18 @@ next-env.d.ts
 
 # rendered videos — review locally, upload to YouTube, never commit MP4s
 /public/videos/
+reference_raw/
+
+# Python bytecode and the scratch logs the corpus/download scripts write
+__pycache__/
+*.pyc
+dl_log_*.txt
+dev_log.txt
+corpus_upload_math.log
+
+# videos/ is its own Remotion project - keep its source, not its build
+videos/node_modules/
+videos/out/
+videos/render.log
+videos/install.log
+videos/studio.log

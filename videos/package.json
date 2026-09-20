@@ -1,0 +1,28 @@
+{
+  "name": "super-dzvezda-videos",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "remotion studio src/index.ts",
+    "build": "remotion render src/index.ts",
+    "render": "remotion render src/index.ts m8-1-1 out/m8-1-1.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.0",
+    "@remotion/google-fonts": "^4.0.468",
+    "@types/opentype.js": "^1.3.9",
+    "katex": "^0.17.0",
+    "opentype.js": "^2.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-katex": "^3.1.0",
+    "remotion": "^4.0.0",
+    "roughjs": "^4.6.6"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.16.8",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@types/react-katex": "^3.0.4",
+    "typescript": "^5.5.3"
+  }
+}
